@@ -1,0 +1,17 @@
+# regenerable / downloadable large binaries stay out of git
+experiments/stimuli/
+experiments/assets/soundfonts/*
+!experiments/assets/soundfonts/.gitkeep
+experiments/genmodel/outputs/*.wav
+experiments/listening.html
+experiments/.venv/
+experiments/acts/
+
+__pycache__/
+*.pyc
+.DS_Store
+
+# results/ IS tracked on purpose: the mentor commits model outputs there
+# (parquet + review CSVs are small); only bulky intermediates are excluded.
+
+.claude/

@@ -1,0 +1,13 @@
+# local (installed in experiments/.venv); system dep: fluidsynth (brew install fluid-synth)
+numpy
+pandas
+pyarrow
+scipy
+scikit-learn
+soundfile
+mido
+pretty_midi
+matplotlib
+# API runners (install when needed):
+# openai
+# google-genai
