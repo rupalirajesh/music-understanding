@@ -32,7 +32,7 @@ def call_dry(prompt: str, audio_path: str | None, model: str, max_tokens: int = 
 
 def call_openai(prompt: str, audio_path: str | None, model: str, max_tokens: int = 64) -> str:
     from openai import OpenAI  # lazy import
-    client = OpenAI()
+    client = OpenAI(timeout=120)
     content = [{"type": "text", "text": prompt}]
     if audio_path:
         b64 = base64.b64encode(_wav_bytes(audio_path)).decode()
@@ -47,7 +47,7 @@ def call_openai(prompt: str, audio_path: str | None, model: str, max_tokens: int
 def call_gemini(prompt: str, audio_path: str | None, model: str, max_tokens: int = 64) -> str:
     from google import genai  # lazy import
     from google.genai import types
-    client = genai.Client()
+    client = genai.Client(http_options=types.HttpOptions(timeout=120_000))  # ms
     parts = [types.Part.from_text(text=prompt)]
     if audio_path:
         parts.append(types.Part.from_bytes(data=_wav_bytes(audio_path),
@@ -91,7 +91,9 @@ def run(model: str, limit: int | None = None, tasks: list[str] | None = None):
     for n, row in enumerate(todo.itertuples(), 1):
         try:
             mt = 512 if row.format == "explain" else 64
-            raw = backend(row.prompt, row.audio_path, model, mt)
+            # no-audio jobs store no path; parquet round-trips None as NaN
+            path = row.audio_path if isinstance(row.audio_path, str) else None
+            raw = backend(row.prompt, path, model, mt)
             err = None
         except Exception as e:  # log and continue; rerun picks failures up again
             raw, err = None, f"{type(e).__name__}: {e}"

@@ -94,7 +94,9 @@ def run(model: str, limit: int | None = None, tasks: list[str] | None = None):
     for n, row in enumerate(todo.itertuples(), 1):
         try:
             mt = 512 if row.format == "explain" else 64
-            raw, err = generate(row.prompt, row.audio_path, mt), None
+            # no-audio jobs store no path; parquet round-trips None as NaN
+            path = row.audio_path if isinstance(row.audio_path, str) else None
+            raw, err = generate(row.prompt, path, mt), None
         except Exception as e:
             raw, err = None, f"{type(e).__name__}: {e}"
         results.append({"job_id": row.job_id, "model": model,
