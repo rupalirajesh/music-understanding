@@ -104,9 +104,9 @@ def run(model: str, limit: int | None = None, tasks: list[str] | None = None):
         })
         if n % 20 == 0 or n == len(todo):
             RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-            ok = [r for r in results if r.get("error") is None]
+            n_err = sum(1 for r in results if isinstance(r.get("error"), str))
             pd.DataFrame(results).to_parquet(out_path, index=False)
-            print(f"  {n}/{len(todo)} done ({len(results) - len(ok)} errors)")
+            print(f"  {n}/{len(todo)} done ({n_err} errors)")
     return out_path
 
 
