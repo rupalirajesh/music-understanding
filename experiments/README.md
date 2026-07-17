@@ -60,7 +60,7 @@ cd experiments
 .venv/bin/python scripts/04_export_for_review.py --model gemini-2.5-flash
 ```
 
-### On the H100 box — sethu quickstart
+### On the H100 box — quickstart
 
 ```bash
 git clone <this repo> && cd Music_Understanding/experiments
