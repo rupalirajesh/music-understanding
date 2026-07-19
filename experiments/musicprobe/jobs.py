@@ -31,9 +31,8 @@ EXPLAIN_FRACTION = 0.15    # fraction that also get an answer+explanation job
 FIXED_CHOICE_TASKS = ("tempo_bpm", "cents_discrimination", "tuning_judgment")
 
 
-def build_jobs(tasks: list[str] | None = None) -> pd.DataFrame:
-    man = load_manifest(tasks)
-    rng = np.random.default_rng(GLOBAL_SEED)
+def _expand(man: pd.DataFrame, all_paths: list[str],
+            rng: np.random.Generator) -> list[dict]:
     jobs = []
 
     def add(row, condition, fmt, audio_path):
@@ -60,7 +59,6 @@ def build_jobs(tasks: list[str] | None = None) -> pd.DataFrame:
             "audio_path": audio_path,
         })
 
-    all_paths = man["audio_path"].tolist()
     for row in man.itertuples():
         fmt_main = "open" if row.task in FIXED_CHOICE_TASKS else "mcq"
         add(row, "audio", fmt_main, row.audio_path)
@@ -73,8 +71,10 @@ def build_jobs(tasks: list[str] | None = None) -> pd.DataFrame:
             add(row, "audio", "open", row.audio_path)
         if rng.random() < EXPLAIN_FRACTION:
             add(row, "audio", "explain", row.audio_path)
+    return jobs
 
-    df = pd.DataFrame(jobs)
+
+def _save(df: pd.DataFrame) -> pd.DataFrame:
     JOBS_PATH.parent.mkdir(parents=True, exist_ok=True)
     df.to_parquet(JOBS_PATH, index=False)
     print(f"[jobs] {len(df)} jobs "
@@ -82,3 +82,25 @@ def build_jobs(tasks: list[str] | None = None) -> pd.DataFrame:
           f"{(df.condition == 'no_audio').sum()} no-audio, "
           f"{(df.condition == 'wrong_audio').sum()} wrong-audio)")
     return df
+
+
+def build_jobs(tasks: list[str] | None = None) -> pd.DataFrame:
+    man = load_manifest(tasks)
+    rng = np.random.default_rng(GLOBAL_SEED)
+    return _save(pd.DataFrame(_expand(man, man["audio_path"].tolist(), rng)))
+
+
+def append_jobs(tasks: list[str]) -> pd.DataFrame:
+    """Add jobs for newly added tasks WITHOUT rebuilding the rest: existing
+    rows pass through byte-identical, so job_ids already answered stay valid
+    and reruns remain resumable. (A full build_jobs() would reshuffle the
+    wrong-audio pairings of every existing job — never do that after a model
+    has run.) Idempotent: already-present job_ids are skipped."""
+    old = pd.read_parquet(JOBS_PATH)
+    man = load_manifest(tasks)
+    rng = np.random.default_rng(GLOBAL_SEED)
+    all_paths = load_manifest()["audio_path"].tolist()  # wrong-audio partners: full battery
+    new = pd.DataFrame(_expand(man, all_paths, rng))
+    new = new[~new["job_id"].isin(set(old["job_id"]))]
+    print(f"[jobs] appending {len(new)} new jobs for {tasks}")
+    return _save(pd.concat([old, new], ignore_index=True))

@@ -82,7 +82,7 @@ def strict_generate(prompt, audio_path, max_new_tokens):
         assert isinstance(audio_path, str), f"non-string path: {audio_path!r}"
         assert (EXP_ROOT / audio_path).exists()
     return "A"
-run_local.pick_loader = lambda model: strict_generate
+run_local.pick_loader = lambda model: (lambda m: strict_generate)  # factory contract
 out_l = run_local.run("selftest-local")
 res_l = pd.read_parquet(out_l)
 check("run_local: zero errors over all jobs",

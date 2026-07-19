@@ -6,6 +6,14 @@ ground-truth vocabulary is defined exactly once.
 
 NOTE_NAMES = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
 
+# Spoken names for the GM programs in config.GM_PROGRAMS (instrument_id task).
+INSTRUMENT_SPOKEN = {
+    "piano": "piano",
+    "violin": "violin",
+    "flute": "flute",
+    "synth_lead": "synth lead",
+}
+
 INTERVALS = {  # semitones -> (short, spoken name)
     1: ("m2", "minor second"),
     2: ("M2", "major second"),

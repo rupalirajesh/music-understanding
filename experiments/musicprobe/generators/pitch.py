@@ -1,14 +1,14 @@
-"""Tier 1: single-note pitch identification + octave placement.
+"""Tier 1: single-note pitch identification + octave placement + instrument ID.
 
-Same audio serves two tasks (pitch class, octave) as separate manifest rows.
-Factors crossed: pitch class x octave x instrument x soundfont.
+Same audio serves three tasks (pitch class, octave, instrument) as separate
+manifest rows. Factors crossed: pitch class x octave x instrument x soundfont.
 """
 import numpy as np
 
 from ..config import STIMULI_DIR, EXP_ROOT, GM_PROGRAMS, available_soundfonts
 from ..manifest import StimulusRow
 from ..synth import midi_notes, render_midi
-from ..theory import midi_to_pitch_class, midi_to_name
+from ..theory import midi_to_pitch_class, midi_to_name, INSTRUMENT_SPOKEN
 
 DUR = 2.0
 
@@ -42,4 +42,7 @@ def generate(rng: np.random.Generator, quick: bool = False) -> list[StimulusRow]
                                         DUR + 0.5, seed))
                 rows.append(StimulusRow(f"octave_id/{sid}", "octave_id", 1,
                                         rel, str(octave), factors, DUR + 0.5, seed))
+                rows.append(StimulusRow(f"instrument_id/{sid}", "instrument_id", 1,
+                                        rel, INSTRUMENT_SPOKEN[prog_name], factors,
+                                        DUR + 0.5, seed))
     return rows

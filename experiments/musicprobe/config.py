@@ -4,7 +4,17 @@ from pathlib import Path
 EXP_ROOT = Path(__file__).resolve().parent.parent
 STIMULI_DIR = EXP_ROOT / "stimuli"
 MANIFEST_DIR = EXP_ROOT / "manifests"
-RESULTS_DIR = EXP_ROOT / "results"
+
+# results/ is organized by track so a git pull delivers everything in one place:
+#   trackA/    behavioral runs (responses, scored, review exports, workbook)
+#   trackB/    probes + attention diagnostics (activations stay on the GPU box)
+#   genmodel/  generation-model adherence measurements
+#   l1_baseline.parquet  the shared DSP floor, at the root
+RESULTS_ROOT = EXP_ROOT / "results"
+RESULTS_DIR = RESULTS_ROOT / "trackA"
+TRACKB_DIR = RESULTS_ROOT / "trackB"
+GENMODEL_RESULTS_DIR = RESULTS_ROOT / "genmodel"
+
 SOUNDFONT_DIR = EXP_ROOT / "assets" / "soundfonts"
 
 MANIFEST_PATH = MANIFEST_DIR / "stimuli.parquet"

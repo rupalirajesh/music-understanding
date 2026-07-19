@@ -17,6 +17,14 @@ from .prompts import LETTERS
 
 # ------------------------------------------------------------------ parsing
 
+# Declining to answer ("I cannot hear audio") is epistemically honest on
+# no-audio controls — it must count as incorrect (not be dropped from the
+# denominator, which biases acc toward the rows where the model guessed),
+# and be reported separately from genuine parse failures.
+REFUSAL_RE = re.compile(
+    r"cannot|can'?t|unable|sorry|please provide|need (?:the|to (?:see|hear))"
+    r"|text-based|don'?t have", re.I)
+
 def parse_response(row) -> str | None:
     """Extract the model's answer as a canonical string, or None if unparseable."""
     raw = (row.raw_response or "").strip()
@@ -42,6 +50,12 @@ def parse_response(row) -> str | None:
         for o in row.options.split("|"):
             if o.lower() in low:
                 return o
+        return None
+    if row.task == "instrument_id":  # open format; MCQ handled above
+        low = raw.lower()
+        for w in ("piano", "violin", "flute", "synth"):
+            if w in low:
+                return "synth lead" if w == "synth" else w
         return None
     if row.task == "tempo_bpm":
         m = re.search(r"\d+(?:\.\d+)?", raw)
@@ -90,15 +104,19 @@ def score_model(model: str) -> pd.DataFrame:
 
 def summary_table(df: pd.DataFrame) -> pd.DataFrame:
     """Per task: accuracy under each condition + the text-prior verdict.
+    Accuracy is over ALL jobs in the condition — refusals and parse failures
+    score as incorrect, and are reported separately (refused_* / unparseable_*).
     Explain-format jobs are excluded (manual analysis only)."""
     df = df[df["format"] != "explain"]
     rows = []
     for task, g in df.groupby("task"):
         rec = {"task": task, "tier": g["tier"].iloc[0], "n_audio": 0}
         for cond, gg in g.groupby("condition"):
-            valid = gg["correct"].notna()
-            rec[f"acc_{cond}"] = gg.loc[valid, "correct"].mean() if valid.any() else np.nan
-            rec[f"unparseable_{cond}"] = 1 - valid.mean()
+            unanswered = gg["correct"].isna()
+            refused = unanswered & gg["raw_response"].fillna("").str.contains(REFUSAL_RE)
+            rec[f"acc_{cond}"] = gg["correct"].eq(True).mean()
+            rec[f"refused_{cond}"] = refused.mean()
+            rec[f"unparseable_{cond}"] = (unanswered & ~refused).mean()
             if cond == "audio":
                 rec["n_audio"] = int(len(gg))
         a, na = rec.get("acc_audio", np.nan), rec.get("acc_no_audio", np.nan)

@@ -27,6 +27,7 @@ import soundfile as sf
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from musicprobe.config import GENMODEL_RESULTS_DIR
 from musicprobe.l1_baselines import f0_autocorr, f0_to_midi, tempo_estimate, key_estimate
 
 
@@ -74,6 +75,11 @@ def main(gen_dir: str):
         rows.append(rec)
     df = pd.DataFrame(rows)
     df.to_csv(d / "adherence.csv", index=False)
+    # measurements also go to the tracked results tree (WAVs stay gitignored)
+    GENMODEL_RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+    tag = str(man["model"].iloc[0]).replace("/", "_")
+    df.to_csv(GENMODEL_RESULTS_DIR / f"adherence__{tag}.csv", index=False)
+    man.to_parquet(GENMODEL_RESULTS_DIR / f"generations__{tag}.parquet", index=False)
 
     # Also measure every BASELINE clip against every constraint family's
     # checkers to get base rates (tempo/key only — register needs solo texture)

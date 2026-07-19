@@ -10,7 +10,7 @@ musically structured way — that difference is half of RQ3.
 import numpy as np
 
 from .theory import (NOTE_NAMES, INTERVALS, MODE_SPOKEN, CHORD_SPOKEN,
-                     METERS, fifths_neighbors)
+                     METERS, INSTRUMENT_SPOKEN, fifths_neighbors)
 
 LETTERS = ["A", "B", "C", "D"]
 
@@ -80,6 +80,11 @@ TEMPLATES = {
         "Count the number of different pitches played at the same time. How many are there?",
         "How many notes make up the sound you hear (played together at once)?",
     ],
+    "instrument_id": [
+        "What instrument is playing in this clip?",
+        "Listen to this recording. Which instrument do you hear?",
+        "Identify the instrument that plays the note in this clip.",
+    ],
 }
 
 _ALL_MODES = list(MODE_SPOKEN.values())
@@ -134,6 +139,8 @@ def mcq_options(task: str, truth: str, factors: dict, rng: np.random.Generator):
         cands = [str(m) for m in range(max(1, n - 2), n + 3) if str(m) != truth]
         rng.shuffle(cands)
         opts = {truth, *cands[:3]}
+    elif task == "instrument_id":
+        opts = set(INSTRUMENT_SPOKEN.values())  # the full 4-instrument roster
     else:
         raise ValueError(f"no MCQ builder for task {task}")
 

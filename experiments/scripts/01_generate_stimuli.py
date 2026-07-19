@@ -20,7 +20,7 @@ from musicprobe.generators import (pitch, intervals, cents, tempo_meter,
                                    key_mode, chords, quantization)
 
 GENERATORS = {
-    "pitch": (pitch.generate, ["pitch_note_id", "octave_id"]),
+    "pitch": (pitch.generate, ["pitch_note_id", "octave_id", "instrument_id"]),
     "intervals": (intervals.generate, ["interval_id"]),
     "cents": (cents.generate, ["cents_discrimination"]),
     "tempo_meter": (tempo_meter.generate, ["tempo_bpm", "beats_per_bar"]),

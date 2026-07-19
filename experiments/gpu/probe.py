@@ -38,6 +38,18 @@ def load_xy(acts_dir: Path, man: pd.DataFrame, target: str, layer: int):
 def probe_layer(X, y, groups) -> float:
     """Accuracy averaged over held-out-soundfont folds."""
     accs = []
+    if len(np.unique(groups)) < 2:
+        # numpy-tone tasks (cents, tuning) have no soundfont factor -> no
+        # leakage-guard folds possible; fall back to a seeded random split
+        idx = np.random.default_rng(0).permutation(len(y))
+        cut = int(0.75 * len(y))
+        tr_i, te_i = idx[:cut], idx[cut:]
+        if len(np.unique(y[tr_i])) < 2 or len(te_i) < 5:
+            return np.nan
+        clf = make_pipeline(StandardScaler(),
+                            LogisticRegression(max_iter=2000, C=1.0))
+        clf.fit(X[tr_i], y[tr_i])
+        return float(clf.score(X[te_i], y[te_i]))
     for held in np.unique(groups):
         tr, te = groups != held, groups == held
         if len(np.unique(y[tr])) < 2 or te.sum() < 5:
@@ -50,7 +62,8 @@ def probe_layer(X, y, groups) -> float:
 
 
 def main(acts_dir: str, task: str, target: str,
-         manifest="manifests/stimuli.parquet", max_layers=40):
+         manifest="manifests/stimuli.parquet", max_layers=40,
+         out_dir="results/trackB/probes"):
     man = pd.read_parquet(manifest)
     man = man[man["task"] == task].reset_index(drop=True)
     acts = Path(acts_dir)
@@ -64,7 +77,11 @@ def main(acts_dir: str, task: str, target: str,
         chance = 1 / len(np.unique(y))
         results.append({"layer": layer, "probe_acc": acc, "chance": chance})
         print(f"  layer {layer:2d}: {acc:.3f} (chance {chance:.3f})")
-    pd.DataFrame(results).to_csv(f"probe__{task}__{target}.csv", index=False)
+    out = Path(out_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    dst = out / f"probe__{acts.name}__{task}__{target}.csv"  # acts dir name = encoder tag
+    pd.DataFrame(results).to_csv(dst, index=False)
+    print(f"wrote {dst}")
 
 
 if __name__ == "__main__":
@@ -74,5 +91,6 @@ if __name__ == "__main__":
     ap.add_argument("--target", required=True,
                     help="factor name (pitch_class, mode, quality, ...) or 'ground_truth'")
     ap.add_argument("--manifest", default="manifests/stimuli.parquet")
+    ap.add_argument("--out", default="results/trackB/probes")
     args = ap.parse_args()
-    main(args.acts, args.task, args.target, args.manifest)
+    main(args.acts, args.task, args.target, args.manifest, out_dir=args.out)

@@ -13,7 +13,7 @@ import pandas as pd
 import soundfile as sf
 from scipy.signal import find_peaks
 
-from .config import RESULTS_DIR
+from .config import RESULTS_ROOT
 from .manifest import load_manifest, audio_abspath
 from .theory import NOTE_NAMES, MODES
 
@@ -131,8 +131,8 @@ def run() -> pd.DataFrame:
         rows.append({"stimulus_id": r.stimulus_id, "task": task,
                      "l1_estimate": str(est), "l1_correct": correct})
     df = pd.DataFrame(rows)
-    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-    df.to_parquet(RESULTS_DIR / "l1_baseline.parquet", index=False)
+    RESULTS_ROOT.mkdir(parents=True, exist_ok=True)
+    df.to_parquet(RESULTS_ROOT / "l1_baseline.parquet", index=False)
     print(df.groupby("task")["l1_correct"].agg(["mean", "count"]))
     return df
 

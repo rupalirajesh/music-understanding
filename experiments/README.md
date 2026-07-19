@@ -25,10 +25,19 @@ musicprobe/            the Python package
   l1_baselines.py      classical DSP floor (pitch, cents, tempo, key)
 scripts/               numbered entry points (incl. listening page + review export)
 gpu/                   Track B on the H100 box: activation extraction (MERT /
-                       Whisper-enc / CLAP = the encoder-family comparison) + probes
+                       Whisper-enc / CLAP = the encoder-family comparison),
+                       probes, and attention_audio.py (does the LM attend to
+                       the audio tokens, and does it decay over generation?)
 genmodel/              generation-model battery: run_musicgen.py + score_gen.py
 assets/soundfonts/     3 GM soundfonts (timbre held-out splits)
-stimuli/  manifests/  results/    generated artifacts
+stimuli/  manifests/   generated artifacts
+results/               tracked outputs, organized by track:
+  trackA/              behavioral runs: responses__/scored__ parquets,
+                       review__<model>/ CSVs, analysis_workbook.xlsx
+  trackB/              probes/ (layer-wise linear probe curves per encoder)
+                       + attention/ (audio-token attention diagnostics)
+  genmodel/            adherence__/generations__ measurements
+  l1_baseline.parquet  the shared DSP floor
 ```
 
 ## Run order
@@ -59,6 +68,22 @@ cd experiments
 # 6. export EVERYTHING (full verbatim responses) for manual verification
 .venv/bin/python scripts/04_export_for_review.py --model gemini-2.5-flash
 ```
+
+### Running everything that's left (collaborator: this one)
+
+```bash
+bash scripts/09_smoke_test.sh     # preflight (~2 min, no GPU/API cost): fix
+                                  # anything it flags, rerun until it passes
+bash scripts/08_run_remaining.sh  # then the real thing
+```
+
+One script, dependency-ordered, resumable (rerun it after any crash — finished
+work is skipped), logs to results/runlogs/. It covers: instrument_id top-ups
+for Qwen2-Audio + Gemini, the remaining Track-A models, scoring + review +
+workbook exports, all three Track-B encoder extractions + the full probe
+suite + the attention diagnostic, the MusicGen battery, and the final
+results/ commit+push. See the script header for one-time prereqs (AF3 needs
+NVIDIA's llava fork; API top-ups need PORTKEY_API_KEY / OPENAI_API_KEY).
 
 ### On the H100 box — quickstart
 
@@ -139,7 +164,16 @@ same stimuli.
   "progression", added tuning_judgment (12-TET probe), explain-format jobs,
   listening.html audit page, full-response review exports, H100 local runner,
   MusicGen adherence battery scripts.
-- 📋 Next: Gemini/GPT-4o small pilot (~$; check per-model audio format limits);
-  on H100: Qwen2-Audio replication of a published MMAU-music number (harness
-  validation), MERT/Whisper/CLAP extraction + probes, MusicGen battery.
+- ✅ 2026-07-19: Qwen2-Audio-7B + Gemini-2.5-pro full runs landed (PR #1);
+  refusal-aware scoring (refusing without audio counts as incorrect, reported
+  as refused_*); analysis workbook export (scripts/06).
+- ✅ 2026-07-20: instrument_id task added over the pitch clips (jobs appended,
+  existing job rows untouched — reruns stay resumable); results/ reorganized
+  into trackA/trackB/genmodel; loaders written (UNVERIFIED) for Qwen2.5-Omni,
+  Qwen3-Omni, AF3, Music Flamingo; gpu/attention_audio.py (audio-token
+  attention mass + decay); scripts/08_run_remaining.sh = the one-shot H100
+  runbook for everything below.
+- 📋 Next (all inside scripts/08): remaining Track-A models, MERT/Whisper/CLAP
+  extraction + probe suite, attention diagnostic, MusicGen battery; Qwen2-Audio
+  MMAU-music replication (harness validation) still pending.
 - 📋 Tier 3 (VocalSet/GuitarSet/Jamendo): specced, not implemented.
