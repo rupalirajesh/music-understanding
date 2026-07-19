@@ -58,9 +58,31 @@ def call_gemini(prompt: str, audio_path: str | None, model: str, max_tokens: int
     return resp.text or ""
 
 
+def call_portkey(prompt: str, audio_path: str | None, model: str, max_tokens: int = 64) -> str:
+    """Route through the Portkey gateway (OpenAI-compatible). `model` like
+    'portkey-gemini-2.5-flash' -> Portkey slug '@google-gemini-default/gemini-2.5-flash'.
+    Audio sent as an OpenAI-style input_audio content part."""
+    import os
+    from portkey_ai import Portkey
+    client = Portkey(api_key=os.environ["PORTKEY_API_KEY"])
+    slug = "@google-gemini-default/" + model[len("portkey-"):]  # strip 'portkey-'
+    content = [{"type": "text", "text": prompt}]
+    if audio_path:
+        b64 = base64.b64encode(_wav_bytes(audio_path)).decode()
+        content.append({"type": "input_audio",
+                        "input_audio": {"data": b64, "format": "wav"}})
+    resp = client.chat.completions.create(
+        model=slug, temperature=0, max_tokens=max_tokens,
+        reasoning_effort="low",  # 2.5-pro always thinks; cap it so it doesn't
+        messages=[{"role": "user", "content": content}])  # eat the whole budget
+    return resp.choices[0].message.content or ""
+
+
 def get_backend(model: str):
     if model == "dry":
         return call_dry
+    if model.startswith("portkey-"):
+        return call_portkey
     if model.startswith(("gpt-", "o")):
         return call_openai
     if model.startswith("gemini"):
@@ -90,8 +112,12 @@ def run(model: str, limit: int | None = None, tasks: list[str] | None = None):
     backend = get_backend(model)
     for n, row in enumerate(todo.itertuples(), 1):
         try:
-            mt = 512 if row.format == "explain" else 64
-            raw = backend(row.prompt, row.audio_path, model, mt)
+            if model.startswith("portkey-"):   # thinking model: reserve budget for reasoning
+                mt = 1600 if row.format == "explain" else 1200
+            else:
+                mt = 512 if row.format == "explain" else 64
+            ap = row.audio_path if isinstance(row.audio_path, str) else None  # NaN -> no audio
+            raw = backend(row.prompt, ap, model, mt)
             err = None
         except Exception as e:  # log and continue; rerun picks failures up again
             raw, err = None, f"{type(e).__name__}: {e}"

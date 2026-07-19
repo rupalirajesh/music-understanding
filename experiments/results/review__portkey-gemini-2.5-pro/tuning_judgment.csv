@@ -1,0 +1,464 @@
+job_id,stimulus_id,task,condition,format,paraphrase_idx,audio_path,prompt,options,ground_truth,raw_response,parsed,correct,error,factors
+tuning_judgment/tune_0000::audio::open,tuning_judgment/tune_0000,tuning_judgment,audio,open,0,stimuli/tuning/tune_0000.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 70, ""base_name"": ""A#4"", ""detune_cents"": 0, ""midi_exact"": 70.0, ""sign"": 1}"
+tuning_judgment/tune_0000::audio::explain,tuning_judgment/tune_0000,tuning_judgment,audio,explain,2,stimuli/tuning/tune_0000.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,in tune,"The note you hear is **in tune**.
+
+Here is the explanation of what I heard that supports this answer:
+
+*   **00:00 - 00:01**: The audio clip consists of a single, sustained note. This note is an **A4**.
+*   In standard Western tuning (also known as concert pitch), the note A4 is tuned to a frequency of **440 Hz**.
+*   The note played in the clip is a very clear and stable A4, holding steady at almost exactly 440 Hz. There is no perceptible sharpness or flatness, making it perfectly in tune with the modern standard.",,,,"{""base_midi"": 70, ""base_name"": ""A#4"", ""detune_cents"": 0, ""midi_exact"": 70.0, ""sign"": 1}"
+tuning_judgment/tune_0001::audio::open,tuning_judgment/tune_0001,tuning_judgment,audio,open,1,stimuli/tuning/tune_0001.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 74, ""base_name"": ""D5"", ""detune_cents"": 0, ""midi_exact"": 74.0, ""sign"": 1}"
+tuning_judgment/tune_0002::audio::open,tuning_judgment/tune_0002,tuning_judgment,audio,open,0,stimuli/tuning/tune_0002.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 65, ""base_name"": ""F4"", ""detune_cents"": 0, ""midi_exact"": 65.0, ""sign"": 1}"
+tuning_judgment/tune_0002::audio::explain,tuning_judgment/tune_0002,tuning_judgment,audio,explain,1,stimuli/tuning/tune_0002.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,in tune,"This note would **match a key on a well-tuned piano**.
+
+Here is the explanation of what I heard:
+
+*   **00:00 - 00:01**: The audio consists of a single, sustained note. This note is a **B-flat (B♭)**.
+*   A well-tuned piano, using the standard A4=440 Hz tuning system, has a B-flat in the fourth octave (B♭4) with a precise frequency of 466.16 Hz. The note in your audio has a fundamental frequency that is stable at approximately 466 Hz, making it a virtually perfect match for this piano key.",,,,"{""base_midi"": 65, ""base_name"": ""F4"", ""detune_cents"": 0, ""midi_exact"": 65.0, ""sign"": 1}"
+tuning_judgment/tune_0003::audio::open,tuning_judgment/tune_0003,tuning_judgment,audio,open,1,stimuli/tuning/tune_0003.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 69, ""base_name"": ""A4"", ""detune_cents"": 0, ""midi_exact"": 69.0, ""sign"": -1}"
+tuning_judgment/tune_0004::audio::open,tuning_judgment/tune_0004,tuning_judgment,audio,open,1,stimuli/tuning/tune_0004.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 60, ""base_name"": ""C4"", ""detune_cents"": 0, ""midi_exact"": 60.0, ""sign"": -1}"
+tuning_judgment/tune_0005::audio::open,tuning_judgment/tune_0005,tuning_judgment,audio,open,2,stimuli/tuning/tune_0005.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 68, ""base_name"": ""G#4"", ""detune_cents"": 0, ""midi_exact"": 68.0, ""sign"": 1}"
+tuning_judgment/tune_0006::audio::open,tuning_judgment/tune_0006,tuning_judgment,audio,open,2,stimuli/tuning/tune_0006.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,out of tune,out of tune,False,,"{""base_midi"": 68, ""base_name"": ""G#4"", ""detune_cents"": 0, ""midi_exact"": 68.0, ""sign"": -1}"
+tuning_judgment/tune_0007::audio::open,tuning_judgment/tune_0007,tuning_judgment,audio,open,2,stimuli/tuning/tune_0007.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 67, ""base_name"": ""G4"", ""detune_cents"": 0, ""midi_exact"": 67.0, ""sign"": -1}"
+tuning_judgment/tune_0008::audio::open,tuning_judgment/tune_0008,tuning_judgment,audio,open,1,stimuli/tuning/tune_0008.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 54, ""base_name"": ""F#3"", ""detune_cents"": 0, ""midi_exact"": 54.0, ""sign"": 1}"
+tuning_judgment/tune_0009::audio::open,tuning_judgment/tune_0009,tuning_judgment,audio,open,2,stimuli/tuning/tune_0009.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 74, ""base_name"": ""D5"", ""detune_cents"": 0, ""midi_exact"": 74.0, ""sign"": 1}"
+tuning_judgment/tune_0010::audio::open,tuning_judgment/tune_0010,tuning_judgment,audio,open,0,stimuli/tuning/tune_0010.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,in tune,out of tune,out of tune,False,,"{""base_midi"": 61, ""base_name"": ""C#4"", ""detune_cents"": 0, ""midi_exact"": 61.0, ""sign"": -1}"
+tuning_judgment/tune_0011::audio::open,tuning_judgment/tune_0011,tuning_judgment,audio,open,1,stimuli/tuning/tune_0011.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 59, ""base_name"": ""B3"", ""detune_cents"": 0, ""midi_exact"": 59.0, ""sign"": 1}"
+tuning_judgment/tune_0012::audio::open,tuning_judgment/tune_0012,tuning_judgment,audio,open,1,stimuli/tuning/tune_0012.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 59, ""base_name"": ""B3"", ""detune_cents"": 0, ""midi_exact"": 59.0, ""sign"": -1}"
+tuning_judgment/tune_0012::audio::explain,tuning_judgment/tune_0012,tuning_judgment,audio,explain,1,stimuli/tuning/tune_0012.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,in tune,"It would match a key on a well-tuned piano.
+
+Here is the explanation of what I heard:
+
+The audio contains a single, sustained note that is held from the very beginning **(00:00)** until it fades out around **(00:01)**.
+
+This note is a **C**, specifically **C5** (the C one octave above Middle C). Its pitch is very stable and its fundamental frequency is approximately 523 Hz. In standard A4=440 Hz tuning, the note C5 is 523.25 Hz. The note in the audio is almost exactly at this frequency, meaning it is perfectly in tune and would match the corresponding key on a well-tuned piano.",,,,"{""base_midi"": 59, ""base_name"": ""B3"", ""detune_cents"": 0, ""midi_exact"": 59.0, ""sign"": -1}"
+tuning_judgment/tune_0013::audio::open,tuning_judgment/tune_0013,tuning_judgment,audio,open,1,stimuli/tuning/tune_0013.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 70, ""base_name"": ""A#4"", ""detune_cents"": 0, ""midi_exact"": 70.0, ""sign"": -1}"
+tuning_judgment/tune_0014::audio::open,tuning_judgment/tune_0014,tuning_judgment,audio,open,1,stimuli/tuning/tune_0014.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 57, ""base_name"": ""A3"", ""detune_cents"": 0, ""midi_exact"": 57.0, ""sign"": -1}"
+tuning_judgment/tune_0015::audio::open,tuning_judgment/tune_0015,tuning_judgment,audio,open,2,stimuli/tuning/tune_0015.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 65, ""base_name"": ""F4"", ""detune_cents"": 0, ""midi_exact"": 65.0, ""sign"": -1}"
+tuning_judgment/tune_0016::audio::open,tuning_judgment/tune_0016,tuning_judgment,audio,open,2,stimuli/tuning/tune_0016.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,out of tune,out of tune,False,,"{""base_midi"": 59, ""base_name"": ""B3"", ""detune_cents"": 0, ""midi_exact"": 59.0, ""sign"": -1}"
+tuning_judgment/tune_0017::audio::open,tuning_judgment/tune_0017,tuning_judgment,audio,open,0,stimuli/tuning/tune_0017.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 58, ""base_name"": ""A#3"", ""detune_cents"": 0, ""midi_exact"": 58.0, ""sign"": -1}"
+tuning_judgment/tune_0018::audio::open,tuning_judgment/tune_0018,tuning_judgment,audio,open,2,stimuli/tuning/tune_0018.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 70, ""base_name"": ""A#4"", ""detune_cents"": 0, ""midi_exact"": 70.0, ""sign"": 1}"
+tuning_judgment/tune_0019::audio::open,tuning_judgment/tune_0019,tuning_judgment,audio,open,2,stimuli/tuning/tune_0019.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 72, ""base_name"": ""C5"", ""detune_cents"": 0, ""midi_exact"": 72.0, ""sign"": -1}"
+tuning_judgment/tune_0019::audio::explain,tuning_judgment/tune_0019,tuning_judgment,audio,explain,0,stimuli/tuning/tune_0019.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,in tune,"In tune.
+
+The note played is a C6 (the C two octaves above middle C). It begins at **00:00** and is held steadily for the entire duration of the clip. The pitch is very stable and accurately matches the standard concert pitch for C6 (approximately 1046.5 Hz), with no perceptible sharpness or flatness.",,,,"{""base_midi"": 72, ""base_name"": ""C5"", ""detune_cents"": 0, ""midi_exact"": 72.0, ""sign"": -1}"
+tuning_judgment/tune_0020::audio::open,tuning_judgment/tune_0020,tuning_judgment,audio,open,0,stimuli/tuning/tune_0020.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 66, ""base_name"": ""F#4"", ""detune_cents"": 0, ""midi_exact"": 66.0, ""sign"": 1}"
+tuning_judgment/tune_0021::audio::open,tuning_judgment/tune_0021,tuning_judgment,audio,open,1,stimuli/tuning/tune_0021.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 66, ""base_name"": ""F#4"", ""detune_cents"": 0, ""midi_exact"": 66.0, ""sign"": 1}"
+tuning_judgment/tune_0022::audio::open,tuning_judgment/tune_0022,tuning_judgment,audio,open,2,stimuli/tuning/tune_0022.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,out of tune,out of tune,False,,"{""base_midi"": 56, ""base_name"": ""G#3"", ""detune_cents"": 0, ""midi_exact"": 56.0, ""sign"": -1}"
+tuning_judgment/tune_0022::audio::explain,tuning_judgment/tune_0022,tuning_judgment,audio,explain,2,stimuli/tuning/tune_0022.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,in tune,"The note you hear is **in tune**.
+
+Here is the explanation of what I heard:
+
+*   **00:00:** The audio consists of a single, sustained pitch from the very beginning. This note is **A4**, which is the A above middle C.
+*   In standard Western tuning, this specific note is the reference pitch used for tuning orchestras and other instruments. It is defined by the A440 standard as having a frequency of exactly 440 Hz.
+*   The tone in the audio is a pure, stable sine wave at 440 Hz, making it a perfect example of an ""in tune"" reference A.",,,,"{""base_midi"": 56, ""base_name"": ""G#3"", ""detune_cents"": 0, ""midi_exact"": 56.0, ""sign"": -1}"
+tuning_judgment/tune_0023::audio::open,tuning_judgment/tune_0023,tuning_judgment,audio,open,2,stimuli/tuning/tune_0023.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 76, ""base_name"": ""E5"", ""detune_cents"": 0, ""midi_exact"": 76.0, ""sign"": -1}"
+tuning_judgment/tune_0024::audio::open,tuning_judgment/tune_0024,tuning_judgment,audio,open,0,stimuli/tuning/tune_0024.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 76, ""base_name"": ""E5"", ""detune_cents"": 0, ""midi_exact"": 76.0, ""sign"": 1}"
+tuning_judgment/tune_0025::audio::open,tuning_judgment/tune_0025,tuning_judgment,audio,open,1,stimuli/tuning/tune_0025.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 71, ""base_name"": ""B4"", ""detune_cents"": 0, ""midi_exact"": 71.0, ""sign"": 1}"
+tuning_judgment/tune_0026::audio::open,tuning_judgment/tune_0026,tuning_judgment,audio,open,0,stimuli/tuning/tune_0026.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,in tune,out of tune,out of tune,False,,"{""base_midi"": 57, ""base_name"": ""A3"", ""detune_cents"": 0, ""midi_exact"": 57.0, ""sign"": 1}"
+tuning_judgment/tune_0027::audio::open,tuning_judgment/tune_0027,tuning_judgment,audio,open,2,stimuli/tuning/tune_0027.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,out of tune,out of tune,False,,"{""base_midi"": 64, ""base_name"": ""E4"", ""detune_cents"": 0, ""midi_exact"": 64.0, ""sign"": 1}"
+tuning_judgment/tune_0028::audio::open,tuning_judgment/tune_0028,tuning_judgment,audio,open,1,stimuli/tuning/tune_0028.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 71, ""base_name"": ""B4"", ""detune_cents"": 0, ""midi_exact"": 71.0, ""sign"": -1}"
+tuning_judgment/tune_0029::audio::open,tuning_judgment/tune_0029,tuning_judgment,audio,open,1,stimuli/tuning/tune_0029.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 68, ""base_name"": ""G#4"", ""detune_cents"": 0, ""midi_exact"": 68.0, ""sign"": 1}"
+tuning_judgment/tune_0030::audio::open,tuning_judgment/tune_0030,tuning_judgment,audio,open,0,stimuli/tuning/tune_0030.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,in tune,out of tune,out of tune,False,,"{""base_midi"": 75, ""base_name"": ""D#5"", ""detune_cents"": 0, ""midi_exact"": 75.0, ""sign"": 1}"
+tuning_judgment/tune_0031::audio::open,tuning_judgment/tune_0031,tuning_judgment,audio,open,0,stimuli/tuning/tune_0031.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 73, ""base_name"": ""C#5"", ""detune_cents"": 0, ""midi_exact"": 73.0, ""sign"": 1}"
+tuning_judgment/tune_0032::audio::open,tuning_judgment/tune_0032,tuning_judgment,audio,open,2,stimuli/tuning/tune_0032.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 56, ""base_name"": ""G#3"", ""detune_cents"": 0, ""midi_exact"": 56.0, ""sign"": 1}"
+tuning_judgment/tune_0033::audio::open,tuning_judgment/tune_0033,tuning_judgment,audio,open,1,stimuli/tuning/tune_0033.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 72, ""base_name"": ""C5"", ""detune_cents"": 0, ""midi_exact"": 72.0, ""sign"": -1}"
+tuning_judgment/tune_0034::audio::open,tuning_judgment/tune_0034,tuning_judgment,audio,open,2,stimuli/tuning/tune_0034.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,out of tune,out of tune,False,,"{""base_midi"": 71, ""base_name"": ""B4"", ""detune_cents"": 0, ""midi_exact"": 71.0, ""sign"": 1}"
+tuning_judgment/tune_0035::audio::open,tuning_judgment/tune_0035,tuning_judgment,audio,open,1,stimuli/tuning/tune_0035.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 71, ""base_name"": ""B4"", ""detune_cents"": 0, ""midi_exact"": 71.0, ""sign"": -1}"
+tuning_judgment/tune_0036::audio::open,tuning_judgment/tune_0036,tuning_judgment,audio,open,2,stimuli/tuning/tune_0036.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 70, ""base_name"": ""A#4"", ""detune_cents"": 0, ""midi_exact"": 70.0, ""sign"": -1}"
+tuning_judgment/tune_0037::audio::open,tuning_judgment/tune_0037,tuning_judgment,audio,open,0,stimuli/tuning/tune_0037.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,in tune,out of tune,out of tune,False,,"{""base_midi"": 54, ""base_name"": ""F#3"", ""detune_cents"": 0, ""midi_exact"": 54.0, ""sign"": 1}"
+tuning_judgment/tune_0038::audio::open,tuning_judgment/tune_0038,tuning_judgment,audio,open,2,stimuli/tuning/tune_0038.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,out of tune,out of tune,False,,"{""base_midi"": 57, ""base_name"": ""A3"", ""detune_cents"": 0, ""midi_exact"": 57.0, ""sign"": -1}"
+tuning_judgment/tune_0039::audio::open,tuning_judgment/tune_0039,tuning_judgment,audio,open,1,stimuli/tuning/tune_0039.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 52, ""base_name"": ""E3"", ""detune_cents"": 0, ""midi_exact"": 52.0, ""sign"": -1}"
+tuning_judgment/tune_0040::audio::open,tuning_judgment/tune_0040,tuning_judgment,audio,open,2,stimuli/tuning/tune_0040.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,out of tune,out of tune,False,,"{""base_midi"": 66, ""base_name"": ""F#4"", ""detune_cents"": 0, ""midi_exact"": 66.0, ""sign"": -1}"
+tuning_judgment/tune_0041::audio::open,tuning_judgment/tune_0041,tuning_judgment,audio,open,0,stimuli/tuning/tune_0041.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 66, ""base_name"": ""F#4"", ""detune_cents"": 0, ""midi_exact"": 66.0, ""sign"": -1}"
+tuning_judgment/tune_0042::audio::open,tuning_judgment/tune_0042,tuning_judgment,audio,open,2,stimuli/tuning/tune_0042.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,out of tune,out of tune,False,,"{""base_midi"": 66, ""base_name"": ""F#4"", ""detune_cents"": 0, ""midi_exact"": 66.0, ""sign"": 1}"
+tuning_judgment/tune_0043::audio::open,tuning_judgment/tune_0043,tuning_judgment,audio,open,0,stimuli/tuning/tune_0043.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,in tune,out of tune,out of tune,False,,"{""base_midi"": 56, ""base_name"": ""G#3"", ""detune_cents"": 0, ""midi_exact"": 56.0, ""sign"": 1}"
+tuning_judgment/tune_0043::audio::explain,tuning_judgment/tune_0043,tuning_judgment,audio,explain,1,stimuli/tuning/tune_0043.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,in tune,"It would match a key on a well-tuned piano.
+
+Here is the explanation of what I heard:
+
+The audio contains a single, sustained electronic tone. The pitch is a clear and stable **C#** (also known as D♭).
+
+*   **00:00 - 00:02**: The note C# begins and is held consistently at the same pitch for the entire duration of the clip. It does not waver or fall in between standard pitches.",,,,"{""base_midi"": 56, ""base_name"": ""G#3"", ""detune_cents"": 0, ""midi_exact"": 56.0, ""sign"": 1}"
+tuning_judgment/tune_0044::audio::open,tuning_judgment/tune_0044,tuning_judgment,audio,open,2,stimuli/tuning/tune_0044.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 75, ""base_name"": ""D#5"", ""detune_cents"": 0, ""midi_exact"": 75.0, ""sign"": 1}"
+tuning_judgment/tune_0044::audio::explain,tuning_judgment/tune_0044,tuning_judgment,audio,explain,1,stimuli/tuning/tune_0044.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,in tune,"**Answer:** The note is **off-pitch** (between piano notes).
+
+**Explanation:**
+
+The audio contains a single, sustained synthesized note that is noticeably sharp compared to standard tuning.
+
+*   **0:00 - 0:01**: The note played is very close to a **B4**, but it is sharp by about 21 cents. A well-tuned piano note would be within 5 cents of its target pitch. This pitch falls almost a quarter of the way between a B and the next highest note, C, making it sound distinctly ""in the crack"" between the two keys on a piano.",,,,"{""base_midi"": 75, ""base_name"": ""D#5"", ""detune_cents"": 0, ""midi_exact"": 75.0, ""sign"": 1}"
+tuning_judgment/tune_0045::audio::open,tuning_judgment/tune_0045,tuning_judgment,audio,open,0,stimuli/tuning/tune_0045.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 56, ""base_name"": ""G#3"", ""detune_cents"": 5, ""midi_exact"": 55.95, ""sign"": -1}"
+tuning_judgment/tune_0046::audio::open,tuning_judgment/tune_0046,tuning_judgment,audio,open,1,stimuli/tuning/tune_0046.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 69, ""base_name"": ""A4"", ""detune_cents"": 5, ""midi_exact"": 68.95, ""sign"": -1}"
+tuning_judgment/tune_0047::audio::open,tuning_judgment/tune_0047,tuning_judgment,audio,open,1,stimuli/tuning/tune_0047.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 63, ""base_name"": ""D#4"", ""detune_cents"": 5, ""midi_exact"": 63.05, ""sign"": 1}"
+tuning_judgment/tune_0048::audio::open,tuning_judgment/tune_0048,tuning_judgment,audio,open,2,stimuli/tuning/tune_0048.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 62, ""base_name"": ""D4"", ""detune_cents"": 5, ""midi_exact"": 62.05, ""sign"": 1}"
+tuning_judgment/tune_0049::audio::open,tuning_judgment/tune_0049,tuning_judgment,audio,open,2,stimuli/tuning/tune_0049.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 63, ""base_name"": ""D#4"", ""detune_cents"": 5, ""midi_exact"": 62.95, ""sign"": -1}"
+tuning_judgment/tune_0050::audio::open,tuning_judgment/tune_0050,tuning_judgment,audio,open,0,stimuli/tuning/tune_0050.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 64, ""base_name"": ""E4"", ""detune_cents"": 5, ""midi_exact"": 63.95, ""sign"": -1}"
+tuning_judgment/tune_0051::audio::open,tuning_judgment/tune_0051,tuning_judgment,audio,open,2,stimuli/tuning/tune_0051.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 69, ""base_name"": ""A4"", ""detune_cents"": 5, ""midi_exact"": 68.95, ""sign"": -1}"
+tuning_judgment/tune_0052::audio::open,tuning_judgment/tune_0052,tuning_judgment,audio,open,0,stimuli/tuning/tune_0052.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 69, ""base_name"": ""A4"", ""detune_cents"": 5, ""midi_exact"": 68.95, ""sign"": -1}"
+tuning_judgment/tune_0053::audio::open,tuning_judgment/tune_0053,tuning_judgment,audio,open,0,stimuli/tuning/tune_0053.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 65, ""base_name"": ""F4"", ""detune_cents"": 5, ""midi_exact"": 64.95, ""sign"": -1}"
+tuning_judgment/tune_0054::audio::open,tuning_judgment/tune_0054,tuning_judgment,audio,open,0,stimuli/tuning/tune_0054.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 56, ""base_name"": ""G#3"", ""detune_cents"": 5, ""midi_exact"": 55.95, ""sign"": -1}"
+tuning_judgment/tune_0055::audio::open,tuning_judgment/tune_0055,tuning_judgment,audio,open,1,stimuli/tuning/tune_0055.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 60, ""base_name"": ""C4"", ""detune_cents"": 5, ""midi_exact"": 60.05, ""sign"": 1}"
+tuning_judgment/tune_0056::audio::open,tuning_judgment/tune_0056,tuning_judgment,audio,open,2,stimuli/tuning/tune_0056.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 71, ""base_name"": ""B4"", ""detune_cents"": 5, ""midi_exact"": 70.95, ""sign"": -1}"
+tuning_judgment/tune_0057::audio::open,tuning_judgment/tune_0057,tuning_judgment,audio,open,0,stimuli/tuning/tune_0057.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 62, ""base_name"": ""D4"", ""detune_cents"": 5, ""midi_exact"": 61.95, ""sign"": -1}"
+tuning_judgment/tune_0058::audio::open,tuning_judgment/tune_0058,tuning_judgment,audio,open,1,stimuli/tuning/tune_0058.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 72, ""base_name"": ""C5"", ""detune_cents"": 5, ""midi_exact"": 71.95, ""sign"": -1}"
+tuning_judgment/tune_0059::audio::open,tuning_judgment/tune_0059,tuning_judgment,audio,open,1,stimuli/tuning/tune_0059.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 69, ""base_name"": ""A4"", ""detune_cents"": 5, ""midi_exact"": 69.05, ""sign"": 1}"
+tuning_judgment/tune_0060::audio::open,tuning_judgment/tune_0060,tuning_judgment,audio,open,0,stimuli/tuning/tune_0060.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 61, ""base_name"": ""C#4"", ""detune_cents"": 10, ""midi_exact"": 60.9, ""sign"": -1}"
+tuning_judgment/tune_0061::audio::open,tuning_judgment/tune_0061,tuning_judgment,audio,open,2,stimuli/tuning/tune_0061.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 55, ""base_name"": ""G3"", ""detune_cents"": 10, ""midi_exact"": 54.9, ""sign"": -1}"
+tuning_judgment/tune_0062::audio::open,tuning_judgment/tune_0062,tuning_judgment,audio,open,1,stimuli/tuning/tune_0062.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 65, ""base_name"": ""F4"", ""detune_cents"": 10, ""midi_exact"": 64.9, ""sign"": -1}"
+tuning_judgment/tune_0063::audio::open,tuning_judgment/tune_0063,tuning_judgment,audio,open,0,stimuli/tuning/tune_0063.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 68, ""base_name"": ""G#4"", ""detune_cents"": 10, ""midi_exact"": 68.1, ""sign"": 1}"
+tuning_judgment/tune_0064::audio::open,tuning_judgment/tune_0064,tuning_judgment,audio,open,2,stimuli/tuning/tune_0064.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 69, ""base_name"": ""A4"", ""detune_cents"": 10, ""midi_exact"": 69.1, ""sign"": 1}"
+tuning_judgment/tune_0065::audio::open,tuning_judgment/tune_0065,tuning_judgment,audio,open,0,stimuli/tuning/tune_0065.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 74, ""base_name"": ""D5"", ""detune_cents"": 10, ""midi_exact"": 74.1, ""sign"": 1}"
+tuning_judgment/tune_0066::audio::open,tuning_judgment/tune_0066,tuning_judgment,audio,open,1,stimuli/tuning/tune_0066.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 62, ""base_name"": ""D4"", ""detune_cents"": 10, ""midi_exact"": 62.1, ""sign"": 1}"
+tuning_judgment/tune_0067::audio::open,tuning_judgment/tune_0067,tuning_judgment,audio,open,0,stimuli/tuning/tune_0067.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 57, ""base_name"": ""A3"", ""detune_cents"": 10, ""midi_exact"": 56.9, ""sign"": -1}"
+tuning_judgment/tune_0068::audio::open,tuning_judgment/tune_0068,tuning_judgment,audio,open,2,stimuli/tuning/tune_0068.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 74, ""base_name"": ""D5"", ""detune_cents"": 10, ""midi_exact"": 74.1, ""sign"": 1}"
+tuning_judgment/tune_0069::audio::open,tuning_judgment/tune_0069,tuning_judgment,audio,open,1,stimuli/tuning/tune_0069.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 60, ""base_name"": ""C4"", ""detune_cents"": 10, ""midi_exact"": 60.1, ""sign"": 1}"
+tuning_judgment/tune_0070::audio::open,tuning_judgment/tune_0070,tuning_judgment,audio,open,1,stimuli/tuning/tune_0070.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 65, ""base_name"": ""F4"", ""detune_cents"": 10, ""midi_exact"": 64.9, ""sign"": -1}"
+tuning_judgment/tune_0071::audio::open,tuning_judgment/tune_0071,tuning_judgment,audio,open,2,stimuli/tuning/tune_0071.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 56, ""base_name"": ""G#3"", ""detune_cents"": 10, ""midi_exact"": 56.1, ""sign"": 1}"
+tuning_judgment/tune_0072::audio::open,tuning_judgment/tune_0072,tuning_judgment,audio,open,2,stimuli/tuning/tune_0072.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 73, ""base_name"": ""C#5"", ""detune_cents"": 10, ""midi_exact"": 72.9, ""sign"": -1}"
+tuning_judgment/tune_0072::audio::explain,tuning_judgment/tune_0072,tuning_judgment,audio,explain,0,stimuli/tuning/tune_0072.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,out of tune,"In tune.
+
+Here is the explanation of what I heard:
+
+*   **0:00 - 0:01**: A single, sustained note is played. This note is A4 (the A above middle C).
+*   Standard concert pitch sets the frequency of A4 to 440 Hz. The note in the audio has a fundamental frequency that is almost perfectly 440 Hz, making it precisely in tune with this standard.",,,,"{""base_midi"": 73, ""base_name"": ""C#5"", ""detune_cents"": 10, ""midi_exact"": 72.9, ""sign"": -1}"
+tuning_judgment/tune_0073::audio::open,tuning_judgment/tune_0073,tuning_judgment,audio,open,0,stimuli/tuning/tune_0073.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 66, ""base_name"": ""F#4"", ""detune_cents"": 10, ""midi_exact"": 66.1, ""sign"": 1}"
+tuning_judgment/tune_0074::audio::open,tuning_judgment/tune_0074,tuning_judgment,audio,open,2,stimuli/tuning/tune_0074.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 56, ""base_name"": ""G#3"", ""detune_cents"": 10, ""midi_exact"": 56.1, ""sign"": 1}"
+tuning_judgment/tune_0075::audio::open,tuning_judgment/tune_0075,tuning_judgment,audio,open,1,stimuli/tuning/tune_0075.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 61, ""base_name"": ""C#4"", ""detune_cents"": 20, ""midi_exact"": 60.8, ""sign"": -1}"
+tuning_judgment/tune_0076::audio::open,tuning_judgment/tune_0076,tuning_judgment,audio,open,1,stimuli/tuning/tune_0076.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 56, ""base_name"": ""G#3"", ""detune_cents"": 20, ""midi_exact"": 56.2, ""sign"": 1}"
+tuning_judgment/tune_0077::audio::open,tuning_judgment/tune_0077,tuning_judgment,audio,open,2,stimuli/tuning/tune_0077.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 70, ""base_name"": ""A#4"", ""detune_cents"": 20, ""midi_exact"": 70.2, ""sign"": 1}"
+tuning_judgment/tune_0078::audio::open,tuning_judgment/tune_0078,tuning_judgment,audio,open,2,stimuli/tuning/tune_0078.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 71, ""base_name"": ""B4"", ""detune_cents"": 20, ""midi_exact"": 71.2, ""sign"": 1}"
+tuning_judgment/tune_0079::audio::open,tuning_judgment/tune_0079,tuning_judgment,audio,open,0,stimuli/tuning/tune_0079.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 52, ""base_name"": ""E3"", ""detune_cents"": 20, ""midi_exact"": 51.8, ""sign"": -1}"
+tuning_judgment/tune_0080::audio::open,tuning_judgment/tune_0080,tuning_judgment,audio,open,0,stimuli/tuning/tune_0080.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 71, ""base_name"": ""B4"", ""detune_cents"": 20, ""midi_exact"": 70.8, ""sign"": -1}"
+tuning_judgment/tune_0081::audio::open,tuning_judgment/tune_0081,tuning_judgment,audio,open,0,stimuli/tuning/tune_0081.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 66, ""base_name"": ""F#4"", ""detune_cents"": 20, ""midi_exact"": 66.2, ""sign"": 1}"
+tuning_judgment/tune_0082::audio::open,tuning_judgment/tune_0082,tuning_judgment,audio,open,2,stimuli/tuning/tune_0082.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 59, ""base_name"": ""B3"", ""detune_cents"": 20, ""midi_exact"": 58.8, ""sign"": -1}"
+tuning_judgment/tune_0083::audio::open,tuning_judgment/tune_0083,tuning_judgment,audio,open,0,stimuli/tuning/tune_0083.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 65, ""base_name"": ""F4"", ""detune_cents"": 20, ""midi_exact"": 64.8, ""sign"": -1}"
+tuning_judgment/tune_0084::audio::open,tuning_judgment/tune_0084,tuning_judgment,audio,open,1,stimuli/tuning/tune_0084.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 60, ""base_name"": ""C4"", ""detune_cents"": 20, ""midi_exact"": 60.2, ""sign"": 1}"
+tuning_judgment/tune_0085::audio::open,tuning_judgment/tune_0085,tuning_judgment,audio,open,1,stimuli/tuning/tune_0085.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 68, ""base_name"": ""G#4"", ""detune_cents"": 20, ""midi_exact"": 68.2, ""sign"": 1}"
+tuning_judgment/tune_0086::audio::open,tuning_judgment/tune_0086,tuning_judgment,audio,open,2,stimuli/tuning/tune_0086.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 63, ""base_name"": ""D#4"", ""detune_cents"": 20, ""midi_exact"": 62.8, ""sign"": -1}"
+tuning_judgment/tune_0086::audio::explain,tuning_judgment/tune_0086,tuning_judgment,audio,explain,2,stimuli/tuning/tune_0086.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,out of tune,"The note you hear is **in tune**.
+
+Here is the explanation of what I heard that supports this answer:
+
+*   **00:00 - 00:01**: The audio clip consists of a single, sustained note. This note is a **G4**. In standard Western tuning (A4=440 Hz), the frequency for G4 is 392 Hz. The pitch of the note in the recording is centered almost perfectly on this frequency, making it in tune.",,,,"{""base_midi"": 63, ""base_name"": ""D#4"", ""detune_cents"": 20, ""midi_exact"": 62.8, ""sign"": -1}"
+tuning_judgment/tune_0087::audio::open,tuning_judgment/tune_0087,tuning_judgment,audio,open,1,stimuli/tuning/tune_0087.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 76, ""base_name"": ""E5"", ""detune_cents"": 20, ""midi_exact"": 76.2, ""sign"": 1}"
+tuning_judgment/tune_0088::audio::open,tuning_judgment/tune_0088,tuning_judgment,audio,open,2,stimuli/tuning/tune_0088.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 52, ""base_name"": ""E3"", ""detune_cents"": 20, ""midi_exact"": 51.8, ""sign"": -1}"
+tuning_judgment/tune_0088::audio::explain,tuning_judgment/tune_0088,tuning_judgment,audio,explain,2,stimuli/tuning/tune_0088.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,out of tune,"Out of tune.
+
+The sound you hear is intentionally out of tune, created by a phenomenon called ""beating."" Here is the breakdown:
+
+*   **00:00 - 00:01**: Throughout the entire clip, you can hear a rapid, pulsating ""wah-wah-wah"" sound. This is known as beating, and it occurs when two or more notes that are very close in pitch (but not identical) are played at the same time.
+*   **00:00**: The central pitch is approximately a **G3** (the G below middle C). However, instead of a single, stable G, what you are hearing is at least two distinct frequencies. One is slightly flat of G3 and the other is slightly sharp of G3. The interference between these two slightly different sound waves causes the rapid volume fluctuation that defines the sound's out-of-tune character.",,,,"{""base_midi"": 52, ""base_name"": ""E3"", ""detune_cents"": 20, ""midi_exact"": 51.8, ""sign"": -1}"
+tuning_judgment/tune_0089::audio::open,tuning_judgment/tune_0089,tuning_judgment,audio,open,0,stimuli/tuning/tune_0089.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 66, ""base_name"": ""F#4"", ""detune_cents"": 20, ""midi_exact"": 65.8, ""sign"": -1}"
+tuning_judgment/tune_0090::audio::open,tuning_judgment/tune_0090,tuning_judgment,audio,open,1,stimuli/tuning/tune_0090.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 61, ""base_name"": ""C#4"", ""detune_cents"": 35, ""midi_exact"": 61.35, ""sign"": 1}"
+tuning_judgment/tune_0091::audio::open,tuning_judgment/tune_0091,tuning_judgment,audio,open,2,stimuli/tuning/tune_0091.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 57, ""base_name"": ""A3"", ""detune_cents"": 35, ""midi_exact"": 56.65, ""sign"": -1}"
+tuning_judgment/tune_0092::audio::open,tuning_judgment/tune_0092,tuning_judgment,audio,open,2,stimuli/tuning/tune_0092.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 54, ""base_name"": ""F#3"", ""detune_cents"": 35, ""midi_exact"": 53.65, ""sign"": -1}"
+tuning_judgment/tune_0093::audio::open,tuning_judgment/tune_0093,tuning_judgment,audio,open,2,stimuli/tuning/tune_0093.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 60, ""base_name"": ""C4"", ""detune_cents"": 35, ""midi_exact"": 60.35, ""sign"": 1}"
+tuning_judgment/tune_0094::audio::open,tuning_judgment/tune_0094,tuning_judgment,audio,open,2,stimuli/tuning/tune_0094.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 70, ""base_name"": ""A#4"", ""detune_cents"": 35, ""midi_exact"": 69.65, ""sign"": -1}"
+tuning_judgment/tune_0095::audio::open,tuning_judgment/tune_0095,tuning_judgment,audio,open,0,stimuli/tuning/tune_0095.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 70, ""base_name"": ""A#4"", ""detune_cents"": 35, ""midi_exact"": 69.65, ""sign"": -1}"
+tuning_judgment/tune_0096::audio::open,tuning_judgment/tune_0096,tuning_judgment,audio,open,2,stimuli/tuning/tune_0096.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 59, ""base_name"": ""B3"", ""detune_cents"": 35, ""midi_exact"": 58.65, ""sign"": -1}"
+tuning_judgment/tune_0097::audio::open,tuning_judgment/tune_0097,tuning_judgment,audio,open,0,stimuli/tuning/tune_0097.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 57, ""base_name"": ""A3"", ""detune_cents"": 35, ""midi_exact"": 57.35, ""sign"": 1}"
+tuning_judgment/tune_0098::audio::open,tuning_judgment/tune_0098,tuning_judgment,audio,open,1,stimuli/tuning/tune_0098.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 74, ""base_name"": ""D5"", ""detune_cents"": 35, ""midi_exact"": 73.65, ""sign"": -1}"
+tuning_judgment/tune_0098::audio::explain,tuning_judgment/tune_0098,tuning_judgment,audio,explain,0,stimuli/tuning/tune_0098.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,out of tune,"**In tune.**
+
+The note played is almost perfectly in tune with standard concert pitch.
+
+*   **00:00:** A single note, **A4** (the A above middle C), is played. Its fundamental frequency is centered at **440 Hz**, which is the international standard for concert pitch.",,,,"{""base_midi"": 74, ""base_name"": ""D5"", ""detune_cents"": 35, ""midi_exact"": 73.65, ""sign"": -1}"
+tuning_judgment/tune_0099::audio::open,tuning_judgment/tune_0099,tuning_judgment,audio,open,2,stimuli/tuning/tune_0099.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 75, ""base_name"": ""D#5"", ""detune_cents"": 35, ""midi_exact"": 74.65, ""sign"": -1}"
+tuning_judgment/tune_0100::audio::open,tuning_judgment/tune_0100,tuning_judgment,audio,open,1,stimuli/tuning/tune_0100.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 60, ""base_name"": ""C4"", ""detune_cents"": 35, ""midi_exact"": 59.65, ""sign"": -1}"
+tuning_judgment/tune_0100::audio::explain,tuning_judgment/tune_0100,tuning_judgment,audio,explain,1,stimuli/tuning/tune_0100.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,out of tune,"It would **match a key on a well-tuned piano**.
+
+Here is the explanation of what I heard:
+
+*   **00:00:** The audio consists of a single, sustained note that begins at the start of the clip.
+*   The note played is **C4**, also known as Middle C.
+*   Its pitch is stable and corresponds very precisely to the standard tuning for C4 (approximately 261.6 Hz) used for a well-tuned piano. There is no audible wavering, and it is not sharp or flat, meaning it is not ""between the notes.""",,,,"{""base_midi"": 60, ""base_name"": ""C4"", ""detune_cents"": 35, ""midi_exact"": 59.65, ""sign"": -1}"
+tuning_judgment/tune_0101::audio::open,tuning_judgment/tune_0101,tuning_judgment,audio,open,0,stimuli/tuning/tune_0101.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 65, ""base_name"": ""F4"", ""detune_cents"": 35, ""midi_exact"": 65.35, ""sign"": 1}"
+tuning_judgment/tune_0101::audio::explain,tuning_judgment/tune_0101,tuning_judgment,audio,explain,2,stimuli/tuning/tune_0101.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,out of tune,"The note you hear is **in tune**.
+
+Here is the explanation of what I heard that supports this answer:
+
+*   **00:00 - 00:01**: The audio contains a single, sustained note. This note is a **B-flat (B♭)**.
+*   Specifically, it is the note **B♭4**. In standard Western tuning (where A4 = 440 Hz), the target frequency for B♭4 is approximately **466.16 Hz**.
+*   The note played in the recording has a fundamental frequency that is extremely close to this target, making it sound perfectly in tune to the human ear.",,,,"{""base_midi"": 65, ""base_name"": ""F4"", ""detune_cents"": 35, ""midi_exact"": 65.35, ""sign"": 1}"
+tuning_judgment/tune_0102::audio::open,tuning_judgment/tune_0102,tuning_judgment,audio,open,1,stimuli/tuning/tune_0102.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 67, ""base_name"": ""G4"", ""detune_cents"": 35, ""midi_exact"": 66.65, ""sign"": -1}"
+tuning_judgment/tune_0103::audio::open,tuning_judgment/tune_0103,tuning_judgment,audio,open,2,stimuli/tuning/tune_0103.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 56, ""base_name"": ""G#3"", ""detune_cents"": 35, ""midi_exact"": 55.65, ""sign"": -1}"
+tuning_judgment/tune_0104::audio::open,tuning_judgment/tune_0104,tuning_judgment,audio,open,1,stimuli/tuning/tune_0104.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 69, ""base_name"": ""A4"", ""detune_cents"": 35, ""midi_exact"": 68.65, ""sign"": -1}"
+tuning_judgment/tune_0105::audio::open,tuning_judgment/tune_0105,tuning_judgment,audio,open,0,stimuli/tuning/tune_0105.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 65, ""base_name"": ""F4"", ""detune_cents"": 50, ""midi_exact"": 64.5, ""sign"": -1}"
+tuning_judgment/tune_0105::audio::explain,tuning_judgment/tune_0105,tuning_judgment,audio,explain,2,stimuli/tuning/tune_0105.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,out of tune,"Out of tune.
+
+Here is the explanation of what I heard:
+
+The sound you hear is not a single note, but two distinct notes played simultaneously from the very beginning at **00:00**.
+
+*   **Note 1:** C4 (Middle C), which has a frequency of approximately 261.6 Hz.
+*   **Note 2:** C#4, which has a frequency of approximately 277.2 Hz.
+
+Playing these two notes together, which are only a semitone apart, creates a highly dissonant interval known as a minor second. This clash is what makes the sound feel ""out of tune."" You can also hear a fast, pulsating or ""beating"" effect throughout the clip, which is a direct result of these two clashing frequencies interfering with each other.",,,,"{""base_midi"": 65, ""base_name"": ""F4"", ""detune_cents"": 50, ""midi_exact"": 64.5, ""sign"": -1}"
+tuning_judgment/tune_0106::audio::open,tuning_judgment/tune_0106,tuning_judgment,audio,open,2,stimuli/tuning/tune_0106.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 73, ""base_name"": ""C#5"", ""detune_cents"": 50, ""midi_exact"": 73.5, ""sign"": 1}"
+tuning_judgment/tune_0107::audio::open,tuning_judgment/tune_0107,tuning_judgment,audio,open,1,stimuli/tuning/tune_0107.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 61, ""base_name"": ""C#4"", ""detune_cents"": 50, ""midi_exact"": 61.5, ""sign"": 1}"
+tuning_judgment/tune_0108::audio::open,tuning_judgment/tune_0108,tuning_judgment,audio,open,0,stimuli/tuning/tune_0108.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 76, ""base_name"": ""E5"", ""detune_cents"": 50, ""midi_exact"": 76.5, ""sign"": 1}"
+tuning_judgment/tune_0109::audio::open,tuning_judgment/tune_0109,tuning_judgment,audio,open,1,stimuli/tuning/tune_0109.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 76, ""base_name"": ""E5"", ""detune_cents"": 50, ""midi_exact"": 76.5, ""sign"": 1}"
+tuning_judgment/tune_0110::audio::open,tuning_judgment/tune_0110,tuning_judgment,audio,open,1,stimuli/tuning/tune_0110.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 52, ""base_name"": ""E3"", ""detune_cents"": 50, ""midi_exact"": 52.5, ""sign"": 1}"
+tuning_judgment/tune_0111::audio::open,tuning_judgment/tune_0111,tuning_judgment,audio,open,0,stimuli/tuning/tune_0111.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 54, ""base_name"": ""F#3"", ""detune_cents"": 50, ""midi_exact"": 53.5, ""sign"": -1}"
+tuning_judgment/tune_0112::audio::open,tuning_judgment/tune_0112,tuning_judgment,audio,open,0,stimuli/tuning/tune_0112.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 74, ""base_name"": ""D5"", ""detune_cents"": 50, ""midi_exact"": 73.5, ""sign"": -1}"
+tuning_judgment/tune_0113::audio::open,tuning_judgment/tune_0113,tuning_judgment,audio,open,2,stimuli/tuning/tune_0113.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 59, ""base_name"": ""B3"", ""detune_cents"": 50, ""midi_exact"": 59.5, ""sign"": 1}"
+tuning_judgment/tune_0114::audio::open,tuning_judgment/tune_0114,tuning_judgment,audio,open,1,stimuli/tuning/tune_0114.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 62, ""base_name"": ""D4"", ""detune_cents"": 50, ""midi_exact"": 61.5, ""sign"": -1}"
+tuning_judgment/tune_0115::audio::open,tuning_judgment/tune_0115,tuning_judgment,audio,open,0,stimuli/tuning/tune_0115.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 56, ""base_name"": ""G#3"", ""detune_cents"": 50, ""midi_exact"": 56.5, ""sign"": 1}"
+tuning_judgment/tune_0116::audio::open,tuning_judgment/tune_0116,tuning_judgment,audio,open,1,stimuli/tuning/tune_0116.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 58, ""base_name"": ""A#3"", ""detune_cents"": 50, ""midi_exact"": 58.5, ""sign"": 1}"
+tuning_judgment/tune_0116::audio::explain,tuning_judgment/tune_0116,tuning_judgment,audio,explain,0,stimuli/tuning/tune_0116.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,out of tune,"In tune.
+
+The note played is an A4, and it is perfectly in tune with standard concert pitch (A4 = 440 Hz).
+
+*   **0:00:** The note begins and is sustained throughout the clip. Its pitch is very stable and clear, with a frequency of approximately 440 Hz, which is the standard reference for tuning. There is no wavering or beating, indicating it is a precise, electronically generated tone.",,,,"{""base_midi"": 58, ""base_name"": ""A#3"", ""detune_cents"": 50, ""midi_exact"": 58.5, ""sign"": 1}"
+tuning_judgment/tune_0117::audio::open,tuning_judgment/tune_0117,tuning_judgment,audio,open,0,stimuli/tuning/tune_0117.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 54, ""base_name"": ""F#3"", ""detune_cents"": 50, ""midi_exact"": 53.5, ""sign"": -1}"
+tuning_judgment/tune_0118::audio::open,tuning_judgment/tune_0118,tuning_judgment,audio,open,2,stimuli/tuning/tune_0118.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 55, ""base_name"": ""G3"", ""detune_cents"": 50, ""midi_exact"": 54.5, ""sign"": -1}"
+tuning_judgment/tune_0119::audio::open,tuning_judgment/tune_0119,tuning_judgment,audio,open,2,stimuli/tuning/tune_0119.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 62, ""base_name"": ""D4"", ""detune_cents"": 50, ""midi_exact"": 62.5, ""sign"": 1}"
+tuning_judgment/tune_0119::audio::explain,tuning_judgment/tune_0119,tuning_judgment,audio,explain,2,stimuli/tuning/tune_0119.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,out of tune,"The note you hear is **in tune**.
+
+Here is the explanation of what I heard that supports this answer:
+
+*   **00:00 - 00:01**: The audio clip consists of a single, sustained note. This note is a **B-flat (Bb)**.
+*   In standard Western tuning (where A4 = 440 Hz), the frequency for the note Bb3 (the B-flat below middle C) is 233.08 Hz. The note played in the recording has a fundamental frequency that is almost exactly 233 Hz, making it exceptionally well-tuned to the standard. The deviation is less than one cent, a microtonal difference that is imperceptible to the human ear.",,,,"{""base_midi"": 62, ""base_name"": ""D4"", ""detune_cents"": 50, ""midi_exact"": 62.5, ""sign"": 1}"
+tuning_judgment/tune_0001::no_audio::open,tuning_judgment/tune_0001,tuning_judgment,no_audio,open,1,,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,"I am a text-based AI and cannot listen to or analyze audio. Therefore, I am unable to determine if the note is in tune or out of tune.",out of tune,False,,"{""base_midi"": 74, ""base_name"": ""D5"", ""detune_cents"": 0, ""midi_exact"": 74.0, ""sign"": 1}"
+tuning_judgment/tune_0006::no_audio::open,tuning_judgment/tune_0006,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,"I am a text-based AI and cannot hear audio. Therefore, I cannot determine if the note you are hearing is in tune or out of tune.",out of tune,False,,"{""base_midi"": 68, ""base_name"": ""G#4"", ""detune_cents"": 0, ""midi_exact"": 68.0, ""sign"": -1}"
+tuning_judgment/tune_0009::no_audio::open,tuning_judgment/tune_0009,tuning_judgment,no_audio,open,0,,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,in tune,I cannot answer that question because you have not provided a note for me to hear or analyze.,,,,"{""base_midi"": 74, ""base_name"": ""D5"", ""detune_cents"": 0, ""midi_exact"": 74.0, ""sign"": 1}"
+tuning_judgment/tune_0010::no_audio::open,tuning_judgment/tune_0010,tuning_judgment,no_audio,open,1,,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,"I am an AI and cannot listen to audio. Therefore, I cannot tell you if the note is in tune or out of tune.",out of tune,False,,"{""base_midi"": 61, ""base_name"": ""C#4"", ""detune_cents"": 0, ""midi_exact"": 61.0, ""sign"": -1}"
+tuning_judgment/tune_0014::no_audio::open,tuning_judgment/tune_0014,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,"I am a text-based AI and cannot hear audio. Therefore, I cannot determine if the note you are hearing is in tune or out of tune.",out of tune,False,,"{""base_midi"": 57, ""base_name"": ""A3"", ""detune_cents"": 0, ""midi_exact"": 57.0, ""sign"": -1}"
+tuning_judgment/tune_0015::no_audio::open,tuning_judgment/tune_0015,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,"As a text-based AI, I cannot hear audio. Therefore, I am unable to determine if the note you are referring to is in tune or out of tune.",out of tune,False,,"{""base_midi"": 65, ""base_name"": ""F4"", ""detune_cents"": 0, ""midi_exact"": 65.0, ""sign"": -1}"
+tuning_judgment/tune_0016::no_audio::open,tuning_judgment/tune_0016,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,"I am a text-based AI and cannot hear audio. Therefore, I cannot determine if the note you are hearing is in tune or out of tune.",out of tune,False,,"{""base_midi"": 59, ""base_name"": ""B3"", ""detune_cents"": 0, ""midi_exact"": 59.0, ""sign"": -1}"
+tuning_judgment/tune_0019::no_audio::open,tuning_judgment/tune_0019,tuning_judgment,no_audio,open,1,,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,"I am a text-based AI and cannot listen to or analyze audio. Therefore, I am unable to determine if the note is in tune or out of tune.",out of tune,False,,"{""base_midi"": 72, ""base_name"": ""C5"", ""detune_cents"": 0, ""midi_exact"": 72.0, ""sign"": -1}"
+tuning_judgment/tune_0021::no_audio::open,tuning_judgment/tune_0021,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,"I am a text-based AI and cannot hear audio. Therefore, I cannot determine if the note you are hearing is in tune or out of tune.",out of tune,False,,"{""base_midi"": 66, ""base_name"": ""F#4"", ""detune_cents"": 0, ""midi_exact"": 66.0, ""sign"": 1}"
+tuning_judgment/tune_0023::no_audio::open,tuning_judgment/tune_0023,tuning_judgment,no_audio,open,1,,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,"I am a text-based AI and cannot listen to or analyze audio. Therefore, I cannot determine if the note is in tune or out of tune.",out of tune,False,,"{""base_midi"": 76, ""base_name"": ""E5"", ""detune_cents"": 0, ""midi_exact"": 76.0, ""sign"": -1}"
+tuning_judgment/tune_0029::no_audio::open,tuning_judgment/tune_0029,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,"I am a text-based AI and cannot hear audio. Therefore, I cannot determine if the note you are hearing is in tune or out of tune.",out of tune,False,,"{""base_midi"": 68, ""base_name"": ""G#4"", ""detune_cents"": 0, ""midi_exact"": 68.0, ""sign"": 1}"
+tuning_judgment/tune_0030::no_audio::open,tuning_judgment/tune_0030,tuning_judgment,no_audio,open,1,,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,"I am a text-based AI and cannot listen to or analyze audio. Therefore, I cannot determine if the note is in tune or out of tune.",out of tune,False,,"{""base_midi"": 75, ""base_name"": ""D#5"", ""detune_cents"": 0, ""midi_exact"": 75.0, ""sign"": 1}"
+tuning_judgment/tune_0041::no_audio::open,tuning_judgment/tune_0041,tuning_judgment,no_audio,open,0,,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,in tune,I cannot answer this question because you have not provided the note for me to analyze.,,,,"{""base_midi"": 66, ""base_name"": ""F#4"", ""detune_cents"": 0, ""midi_exact"": 66.0, ""sign"": -1}"
+tuning_judgment/tune_0042::no_audio::open,tuning_judgment/tune_0042,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,"I am a text-based AI and cannot hear audio. Therefore, I cannot determine if the note you are hearing is in tune or out of tune.",out of tune,False,,"{""base_midi"": 66, ""base_name"": ""F#4"", ""detune_cents"": 0, ""midi_exact"": 66.0, ""sign"": 1}"
+tuning_judgment/tune_0046::no_audio::open,tuning_judgment/tune_0046,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I am a text-based AI and cannot hear audio. Therefore, I cannot determine if the note you are hearing is in tune or out of tune.",out of tune,True,,"{""base_midi"": 69, ""base_name"": ""A4"", ""detune_cents"": 5, ""midi_exact"": 68.95, ""sign"": -1}"
+tuning_judgment/tune_0047::no_audio::open,tuning_judgment/tune_0047,tuning_judgment,no_audio,open,1,,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I am a text-based AI and cannot listen to or analyze audio. Therefore, I am unable to determine if the note is in tune or out of tune.",out of tune,True,,"{""base_midi"": 63, ""base_name"": ""D#4"", ""detune_cents"": 5, ""midi_exact"": 63.05, ""sign"": 1}"
+tuning_judgment/tune_0048::no_audio::open,tuning_judgment/tune_0048,tuning_judgment,no_audio,open,1,,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I am sorry, but I cannot listen to audio. As a text-based AI, I don't have the ability to process sound files. Therefore, I cannot determine if the note is in tune or out of tune.",out of tune,True,,"{""base_midi"": 62, ""base_name"": ""D4"", ""detune_cents"": 5, ""midi_exact"": 62.05, ""sign"": 1}"
+tuning_judgment/tune_0050::no_audio::open,tuning_judgment/tune_0050,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,"As a text-based AI, I cannot hear audio. Therefore, I am unable to determine if the note you are referring to is in tune or out of tune.",out of tune,True,,"{""base_midi"": 64, ""base_name"": ""E4"", ""detune_cents"": 5, ""midi_exact"": 63.95, ""sign"": -1}"
+tuning_judgment/tune_0056::no_audio::open,tuning_judgment/tune_0056,tuning_judgment,no_audio,open,0,,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,I cannot answer that question because you have not provided a note for me to hear or analyze.,,,,"{""base_midi"": 71, ""base_name"": ""B4"", ""detune_cents"": 5, ""midi_exact"": 70.95, ""sign"": -1}"
+tuning_judgment/tune_0059::no_audio::open,tuning_judgment/tune_0059,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I am a text-based AI and cannot hear audio. Therefore, I cannot determine if the note you are hearing is in tune or out of tune.",out of tune,True,,"{""base_midi"": 69, ""base_name"": ""A4"", ""detune_cents"": 5, ""midi_exact"": 69.05, ""sign"": 1}"
+tuning_judgment/tune_0066::no_audio::open,tuning_judgment/tune_0066,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I am a text-based AI and cannot hear audio. Therefore, I cannot determine if the note you are hearing is in tune or out of tune.",out of tune,True,,"{""base_midi"": 62, ""base_name"": ""D4"", ""detune_cents"": 10, ""midi_exact"": 62.1, ""sign"": 1}"
+tuning_judgment/tune_0069::no_audio::open,tuning_judgment/tune_0069,tuning_judgment,no_audio,open,0,,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,I cannot answer this question because you have not provided the note for me to analyze.,,,,"{""base_midi"": 60, ""base_name"": ""C4"", ""detune_cents"": 10, ""midi_exact"": 60.1, ""sign"": 1}"
+tuning_judgment/tune_0070::no_audio::open,tuning_judgment/tune_0070,tuning_judgment,no_audio,open,1,,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I am sorry, but I cannot listen to audio. As a text-based AI, I don't have the ability to process sound files. Therefore, I cannot determine if the note is in tune or out of tune.",out of tune,True,,"{""base_midi"": 65, ""base_name"": ""F4"", ""detune_cents"": 10, ""midi_exact"": 64.9, ""sign"": -1}"
+tuning_judgment/tune_0074::no_audio::open,tuning_judgment/tune_0074,tuning_judgment,no_audio,open,1,,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I am an AI and cannot listen to audio. Therefore, I cannot tell you if the note is in tune or out of tune.",out of tune,True,,"{""base_midi"": 56, ""base_name"": ""G#3"", ""detune_cents"": 10, ""midi_exact"": 56.1, ""sign"": 1}"
+tuning_judgment/tune_0084::no_audio::open,tuning_judgment/tune_0084,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I am a text-based AI and cannot hear audio. Therefore, I cannot determine if the note you are hearing is in tune or out of tune.",out of tune,True,,"{""base_midi"": 60, ""base_name"": ""C4"", ""detune_cents"": 20, ""midi_exact"": 60.2, ""sign"": 1}"
+tuning_judgment/tune_0085::no_audio::open,tuning_judgment/tune_0085,tuning_judgment,no_audio,open,0,,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,I cannot answer this question because you have not provided the note for me to analyze.,,,,"{""base_midi"": 68, ""base_name"": ""G#4"", ""detune_cents"": 20, ""midi_exact"": 68.2, ""sign"": 1}"
+tuning_judgment/tune_0088::no_audio::open,tuning_judgment/tune_0088,tuning_judgment,no_audio,open,0,,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I cannot answer that question. As a text-based AI, I cannot hear or analyze audio. To determine if a note is in tune, I would need an audio file or its specific frequency in Hertz (Hz).",in tune,False,,"{""base_midi"": 52, ""base_name"": ""E3"", ""detune_cents"": 20, ""midi_exact"": 51.8, ""sign"": -1}"
+tuning_judgment/tune_0089::no_audio::open,tuning_judgment/tune_0089,tuning_judgment,no_audio,open,0,,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,I cannot answer that question because you have not provided a note for me to hear or analyze.,,,,"{""base_midi"": 66, ""base_name"": ""F#4"", ""detune_cents"": 20, ""midi_exact"": 65.8, ""sign"": -1}"
+tuning_judgment/tune_0092::no_audio::open,tuning_judgment/tune_0092,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I am a text-based AI and cannot hear audio. Therefore, I cannot determine if the note you are hearing is in tune or out of tune.",out of tune,True,,"{""base_midi"": 54, ""base_name"": ""F#3"", ""detune_cents"": 35, ""midi_exact"": 53.65, ""sign"": -1}"
+tuning_judgment/tune_0093::no_audio::open,tuning_judgment/tune_0093,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,"As a text-based AI, I cannot hear audio. Therefore, I am unable to determine if the note you are referring to is in tune or out of tune.",out of tune,True,,"{""base_midi"": 60, ""base_name"": ""C4"", ""detune_cents"": 35, ""midi_exact"": 60.35, ""sign"": 1}"
+tuning_judgment/tune_0098::no_audio::open,tuning_judgment/tune_0098,tuning_judgment,no_audio,open,0,,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I cannot answer that question. To determine if a note is in tune, I would need to hear the note or be given its frequency to compare it against a standard pitch.",in tune,False,,"{""base_midi"": 74, ""base_name"": ""D5"", ""detune_cents"": 35, ""midi_exact"": 73.65, ""sign"": -1}"
+tuning_judgment/tune_0099::no_audio::open,tuning_judgment/tune_0099,tuning_judgment,no_audio,open,1,,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I am sorry, but I cannot listen to audio. As a text-based AI, I don't have the ability to hear or analyze sound files. Therefore, I cannot tell you if the note is in tune or out of tune.",out of tune,True,,"{""base_midi"": 75, ""base_name"": ""D#5"", ""detune_cents"": 35, ""midi_exact"": 74.65, ""sign"": -1}"
+tuning_judgment/tune_0100::no_audio::open,tuning_judgment/tune_0100,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I am a text-based AI and cannot hear audio. Therefore, I cannot determine if the note you are hearing is in tune or out of tune.",out of tune,True,,"{""base_midi"": 60, ""base_name"": ""C4"", ""detune_cents"": 35, ""midi_exact"": 59.65, ""sign"": -1}"
+tuning_judgment/tune_0101::no_audio::open,tuning_judgment/tune_0101,tuning_judgment,no_audio,open,0,,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,I cannot answer that question because you have not provided a note for me to hear or analyze.,,,,"{""base_midi"": 65, ""base_name"": ""F4"", ""detune_cents"": 35, ""midi_exact"": 65.35, ""sign"": 1}"
+tuning_judgment/tune_0103::no_audio::open,tuning_judgment/tune_0103,tuning_judgment,no_audio,open,0,,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,I cannot answer this question because you have not provided the note for me to analyze.,,,,"{""base_midi"": 56, ""base_name"": ""G#3"", ""detune_cents"": 35, ""midi_exact"": 55.65, ""sign"": -1}"
+tuning_judgment/tune_0105::no_audio::open,tuning_judgment/tune_0105,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I am a text-based AI and cannot hear audio. Therefore, I cannot determine if the note you are hearing is in tune or out of tune.",out of tune,True,,"{""base_midi"": 65, ""base_name"": ""F4"", ""detune_cents"": 50, ""midi_exact"": 64.5, ""sign"": -1}"
+tuning_judgment/tune_0108::no_audio::open,tuning_judgment/tune_0108,tuning_judgment,no_audio,open,0,,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I cannot answer that question. As a text-based AI, I am unable to hear or analyze audio. To determine if a note is in tune, you would need to use a chromatic tuner.",in tune,False,,"{""base_midi"": 76, ""base_name"": ""E5"", ""detune_cents"": 50, ""midi_exact"": 76.5, ""sign"": 1}"
+tuning_judgment/tune_0109::no_audio::open,tuning_judgment/tune_0109,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I am a text-based AI and cannot hear audio. Therefore, I cannot determine if the note you are hearing is in tune or out of tune.",out of tune,True,,"{""base_midi"": 76, ""base_name"": ""E5"", ""detune_cents"": 50, ""midi_exact"": 76.5, ""sign"": 1}"
+tuning_judgment/tune_0114::no_audio::open,tuning_judgment/tune_0114,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I am a text-based AI and cannot hear audio. Therefore, I cannot determine if the note you are hearing is in tune or out of tune.",out of tune,True,,"{""base_midi"": 62, ""base_name"": ""D4"", ""detune_cents"": 50, ""midi_exact"": 61.5, ""sign"": -1}"
+tuning_judgment/tune_0116::no_audio::open,tuning_judgment/tune_0116,tuning_judgment,no_audio,open,2,,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,"I am a text-based AI and cannot hear audio. Therefore, I cannot determine if the note you are hearing is in tune or out of tune.",out of tune,True,,"{""base_midi"": 58, ""base_name"": ""A#3"", ""detune_cents"": 50, ""midi_exact"": 58.5, ""sign"": 1}"
+tuning_judgment/tune_0119::no_audio::open,tuning_judgment/tune_0119,tuning_judgment,no_audio,open,0,,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,I cannot answer this question because you have not provided the note for me to analyze.,,,,"{""base_midi"": 62, ""base_name"": ""D4"", ""detune_cents"": 50, ""midi_exact"": 62.5, ""sign"": 1}"
+tuning_judgment/tune_0009::wrong_audio::open,tuning_judgment/tune_0009,tuning_judgment,wrong_audio,open,1,stimuli/progressions/ii-V-I_62_6.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 74, ""base_name"": ""D5"", ""detune_cents"": 0, ""midi_exact"": 74.0, ""sign"": 1}"
+tuning_judgment/tune_0022::wrong_audio::open,tuning_judgment/tune_0022,tuning_judgment,wrong_audio,open,1,stimuli/tempo/tempo_032.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 56, ""base_name"": ""G#3"", ""detune_cents"": 0, ""midi_exact"": 56.0, ""sign"": -1}"
+tuning_judgment/tune_0031::wrong_audio::open,tuning_judgment/tune_0031,tuning_judgment,wrong_audio,open,2,stimuli/meter/meter_4-4_13.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,in tune,in tune,in tune,True,,"{""base_midi"": 73, ""base_name"": ""C#5"", ""detune_cents"": 0, ""midi_exact"": 73.0, ""sign"": 1}"
+tuning_judgment/tune_0056::wrong_audio::open,tuning_judgment/tune_0056,tuning_judgment,wrong_audio,open,0,stimuli/intervals/m6_melodic_asc_61_0.wav,"A single note is played. Is it in tune (matching standard concert pitch, like a piano note) or out of tune?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 71, ""base_name"": ""B4"", ""detune_cents"": 5, ""midi_exact"": 70.95, ""sign"": -1}"
+tuning_judgment/tune_0069::wrong_audio::open,tuning_judgment/tune_0069,tuning_judgment,wrong_audio,open,1,stimuli/tuning/tune_0031.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 60, ""base_name"": ""C4"", ""detune_cents"": 10, ""midi_exact"": 60.1, ""sign"": 1}"
+tuning_judgment/tune_0070::wrong_audio::open,tuning_judgment/tune_0070,tuning_judgment,wrong_audio,open,2,stimuli/chords/minor7_block_60_4.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 65, ""base_name"": ""F4"", ""detune_cents"": 10, ""midi_exact"": 64.9, ""sign"": -1}"
+tuning_judgment/tune_0073::wrong_audio::open,tuning_judgment/tune_0073,tuning_judgment,wrong_audio,open,2,stimuli/cents/trial_0117.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 66, ""base_name"": ""F#4"", ""detune_cents"": 10, ""midi_exact"": 66.1, ""sign"": 1}"
+tuning_judgment/tune_0089::wrong_audio::open,tuning_judgment/tune_0089,tuning_judgment,wrong_audio,open,1,stimuli/meter/meter_4-4_16.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 66, ""base_name"": ""F#4"", ""detune_cents"": 20, ""midi_exact"": 65.8, ""sign"": -1}"
+tuning_judgment/tune_0092::wrong_audio::open,tuning_judgment/tune_0092,tuning_judgment,wrong_audio,open,2,stimuli/tempo/tempo_019.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 54, ""base_name"": ""F#3"", ""detune_cents"": 35, ""midi_exact"": 53.65, ""sign"": -1}"
+tuning_judgment/tune_0096::wrong_audio::open,tuning_judgment/tune_0096,tuning_judgment,wrong_audio,open,2,stimuli/tuning/tune_0010.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,out of tune,out of tune,True,,"{""base_midi"": 59, ""base_name"": ""B3"", ""detune_cents"": 35, ""midi_exact"": 58.65, ""sign"": -1}"
+tuning_judgment/tune_0109::wrong_audio::open,tuning_judgment/tune_0109,tuning_judgment,wrong_audio,open,2,stimuli/tuning/tune_0043.wav,"Is the note you hear in tune or out of tune relative to standard Western tuning?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 76, ""base_name"": ""E5"", ""detune_cents"": 50, ""midi_exact"": 76.5, ""sign"": 1}"
+tuning_judgment/tune_0118::wrong_audio::open,tuning_judgment/tune_0118,tuning_judgment,wrong_audio,open,1,stimuli/meter/meter_6-8_18.wav,"Listen to this note. Would it match a key on a well-tuned piano, or is it off-pitch (between piano notes)?
+Answer with exactly: in tune, or out of tune.",,out of tune,in tune,in tune,False,,"{""base_midi"": 55, ""base_name"": ""G3"", ""detune_cents"": 50, ""midi_exact"": 54.5, ""sign"": -1}"
