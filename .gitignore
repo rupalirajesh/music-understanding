@@ -11,7 +11,10 @@ __pycache__/
 *.pyc
 .DS_Store
 
-# results/ IS tracked on purpose: the mentor commits model outputs there
+# results/ IS tracked on purpose: model outputs are committed there
 # (parquet + review CSVs are small); only bulky intermediates are excluded.
 
 .claude/
+
+# personal working notes stay local
+RUPALI_READ_THIS.md
