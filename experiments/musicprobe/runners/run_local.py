@@ -9,17 +9,16 @@ Ship the whole experiments/ directory to the GPU box, then:
 Same jobs file, same resumable results format as run_api.py, so scoring and
 review exports work identically for API and local models.
 
-Model roster (plan §3.5) and loader status:
-  Qwen/Qwen2-Audio-7B-Instruct   ✅ implemented + validated (full run done)
-  Qwen/Qwen2.5-Omni-7B           ✅ loader below (transformers>=4.52) — UNVERIFIED
-                                    on hardware: smoke-test with --limit 5 first
-  Qwen/Qwen3-Omni-30B-A3B-Instruct  ✅ same loader (transformers>=4.57; ~60GB bf16,
-                                    fits one H100-80GB) — UNVERIFIED, smoke-test
-  nvidia/audio-flamingo-3        ✅ loader below, but needs NVIDIA's llava fork
-                                    installed first (see load_audio_flamingo
-                                    docstring) — UNVERIFIED, smoke-test
-  nvidia/music-flamingo          ✅ same AF3 stack — VERIFY the exact HF repo id
-                                    on the hub before running
+Model roster (plan §3.5) and loader status — all plain transformers (>=5.14),
+no vendor forks. Checkpoint ids verified against the HF hub 2026-07-20 (all
+ungated, all natively supported in transformers main):
+  Qwen/Qwen2-Audio-7B-Instruct       ✅ implemented + validated (full run done)
+  Qwen/Qwen2.5-Omni-7B               ✅ loader below — UNVERIFIED on hardware:
+                                        smoke-test with --limit 5 first
+  Qwen/Qwen3-Omni-30B-A3B-Instruct   ✅ same loader (~60GB bf16, fits one
+                                        H100-80GB) — UNVERIFIED, smoke-test
+  nvidia/audio-flamingo-3-hf         ✅ loader below — UNVERIFIED, smoke-test
+  nvidia/music-flamingo-2601-hf      ✅ same loader (AF3 family) — UNVERIFIED
 Add a loader function per model family; the job loop never changes.
 """
 import argparse
@@ -113,33 +112,36 @@ def load_qwen_omni(model_name: str):
 
 
 def load_audio_flamingo(model_name: str):
-    """Audio Flamingo 3 / Music Flamingo (NVIDIA). NOT plain transformers —
-    one-time setup on the H100 box first:
+    """Audio Flamingo 3 / Music Flamingo via the transformers-NATIVE "-hf"
+    checkpoints (nvidia/audio-flamingo-3-hf, nvidia/music-flamingo-2601-hf) —
+    no NVIDIA vendor fork needed. The processor's chat template loads and
+    resamples the audio itself from a path.
+    UNVERIFIED on hardware — smoke-test with --limit 5 and eyeball responses."""
+    import torch
+    from transformers import AutoProcessor
+    if "music-flamingo" in model_name.lower():
+        from transformers import MusicFlamingoForConditionalGeneration as Cls
+    else:
+        from transformers import AudioFlamingo3ForConditionalGeneration as Cls
 
-      git clone https://github.com/NVIDIA/audio-flamingo -b audio_flamingo_3
-      cd audio-flamingo && pip install -e .   # provides the `llava` package
-
-    Checkpoints from HF: nvidia/audio-flamingo-3; for Music Flamingo verify
-    the exact repo id on the hub (search "nvidia music-flamingo").
-    UNVERIFIED — smoke-test with --limit 5 and eyeball responses."""
-    try:
-        import llava
-    except ImportError as e:
-        raise ImportError(
-            "AF3/Music Flamingo need NVIDIA's llava fork — see "
-            "load_audio_flamingo docstring for the two setup commands") from e
-
-    model = llava.load(model_name)
-    gen_cfg = getattr(model, "default_generation_config", None)
-    if gen_cfg is not None:  # greedy == temperature 0, like every other runner
-        gen_cfg.update(do_sample=False, temperature=None, top_p=None)
+    processor = AutoProcessor.from_pretrained(model_name)
+    model = Cls.from_pretrained(model_name, torch_dtype=torch.bfloat16,
+                                device_map="cuda").eval()
 
     def generate(prompt: str, audio_path: str | None, max_new_tokens: int) -> str:
-        parts = []
+        content = []
         if isinstance(audio_path, str) and audio_path:
-            parts.append(llava.Sound(str(EXP_ROOT / audio_path)))
-        parts.append(prompt)
-        return model.generate_content(parts)
+            content.append({"type": "audio", "path": str(EXP_ROOT / audio_path)})
+        content.append({"type": "text", "text": prompt})
+        conversation = [{"role": "user", "content": content}]
+        inputs = processor.apply_chat_template(
+            conversation, add_generation_prompt=True, tokenize=True,
+            return_dict=True, return_tensors="pt").to(model.device)
+        with torch.no_grad():
+            out = model.generate(**inputs, max_new_tokens=max_new_tokens,
+                                 do_sample=False)
+        out = out[:, inputs["input_ids"].shape[1]:]
+        return processor.batch_decode(out, skip_special_tokens=True)[0]
 
     return generate
 

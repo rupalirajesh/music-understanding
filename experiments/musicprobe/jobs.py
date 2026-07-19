@@ -84,7 +84,18 @@ def _save(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def build_jobs(tasks: list[str] | None = None) -> pd.DataFrame:
+def build_jobs(tasks: list[str] | None = None, force: bool = False) -> pd.DataFrame:
+    """FROM-SCRATCH battery build. Refuses to run once any model responses
+    exist: rebuilding reshuffles every control draw and wrong-audio pairing,
+    which orphans all collected results. Grow the battery with append_jobs()
+    instead (see scripts/07_add_instrument_task.py for the pattern)."""
+    from .config import RESULTS_DIR
+    existing = sorted(RESULTS_DIR.glob("responses__*.parquet"))
+    if existing and not force:
+        raise RuntimeError(
+            f"{len(existing)} response file(s) exist under {RESULTS_DIR} — "
+            "rebuilding jobs.parquet would orphan them. Use append_jobs() for "
+            "new tasks; build_jobs(force=True) only for a brand-new battery.")
     man = load_manifest(tasks)
     rng = np.random.default_rng(GLOBAL_SEED)
     return _save(pd.DataFrame(_expand(man, man["audio_path"].tolist(), rng)))

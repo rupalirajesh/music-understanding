@@ -9,13 +9,13 @@
 # Full output is logged to results/runlogs/ (tracked in git).
 #
 # Prereqs on the box (one-time):
-#   pip install -r requirements.txt torch transformers accelerate soundfile pandas pyarrow librosa openpyxl scikit-learn torchaudio
+#   pip install -r requirements.txt torch accelerate soundfile pandas pyarrow librosa openpyxl scikit-learn torchaudio openai portkey_ai
 #   bash scripts/00_download_soundfonts.sh
 #   python scripts/01_generate_stimuli.py          # regenerate WAVs (~12 min) if not present
-#   # AF3/Music Flamingo only:
-#   #   git clone https://github.com/NVIDIA/audio-flamingo -b audio_flamingo_3 && pip install -e audio-flamingo
-#   # Gemini top-up only: export PORTKEY_API_KEY=...
-#   # GPT-4o-audio only:  export OPENAI_API_KEY=...
+#   export PORTKEY_API_KEY=...   # REQUIRED (Gemini instrument_id top-up)
+#   export OPENAI_API_KEY=...    # REQUIRED (GPT-4o-audio full battery)
+# All five local models run on plain transformers (>=5.14, auto-installed
+# below) with checkpoint ids verified on the HF hub — no vendor forks.
 
 cd "$(dirname "$0")/.."
 PY=${PY:-python}
@@ -25,33 +25,41 @@ exec > >(tee -a "$LOG") 2>&1
 step() { echo; echo "===== $* ====="; }
 try()  { "$@" || echo "!! step failed (continuing): $*"; }
 
+# ---------- Preflight: refuse to start half-blind --------------------------
+step "Preflight: API keys (hard requirement — nothing gets silently skipped)"
+missing=0
+[ -z "${PORTKEY_API_KEY:-}" ] \
+  && { echo "PORTKEY_API_KEY not set — needed for the Gemini instrument_id top-up"; missing=1; }
+[ -z "${OPENAI_API_KEY:-}" ] \
+  && { echo "OPENAI_API_KEY not set — needed for the GPT-4o-audio battery"; missing=1; }
+if [ "$missing" -eq 1 ]; then
+  echo "STOPPING: export the key(s) above, then rerun this script."
+  exit 1
+fi
+
+step "Preflight: transformers new enough for all five model families"
+$PY -m pip install -q -U "transformers>=5.14" \
+  || echo "!! pip upgrade failed — check manually that transformers>=5.14"
+
 # ---------- Track A: behavioral battery ------------------------------------
 # Already-run models first: they only pick up the new instrument_id jobs.
 step "Track A / local: Qwen2-Audio instrument_id top-up"
 try $PY -m musicprobe.runners.run_local --model Qwen/Qwen2-Audio-7B-Instruct
 
-step "Track A / local: Qwen2.5-Omni (smoke-test 5, then full)"
-try $PY -m musicprobe.runners.run_local --model Qwen/Qwen2.5-Omni-7B --limit 5
-try $PY -m musicprobe.runners.run_local --model Qwen/Qwen2.5-Omni-7B
-
-step "Track A / local: Audio Flamingo 3 (needs NVIDIA llava fork, see prereqs)"
-try $PY -m musicprobe.runners.run_local --model nvidia/audio-flamingo-3 --limit 5
-try $PY -m musicprobe.runners.run_local --model nvidia/audio-flamingo-3
-
-# Uncomment when ready (verify HF repo id for Music Flamingo; Qwen3-Omni needs
-# transformers>=4.57 and ~60GB):
-# try $PY -m musicprobe.runners.run_local --model nvidia/music-flamingo
-# try $PY -m musicprobe.runners.run_local --model Qwen/Qwen3-Omni-30B-A3B-Instruct
+# Each new model: --limit 5 smoke run first — EYEBALL those 5 responses in
+# results/trackA before the full pass burns hours.
+for M in Qwen/Qwen2.5-Omni-7B nvidia/audio-flamingo-3-hf \
+         nvidia/music-flamingo-2601-hf Qwen/Qwen3-Omni-30B-A3B-Instruct; do
+  step "Track A / local: $M (smoke-test 5, then full)"
+  try $PY -m musicprobe.runners.run_local --model "$M" --limit 5
+  try $PY -m musicprobe.runners.run_local --model "$M"
+done
 
 step "Track A / API: Gemini instrument_id top-up"
-if [ -n "${PORTKEY_API_KEY:-}" ]; then
-  try $PY -m musicprobe.runners.run_api --model portkey-gemini-2.5-pro
-else echo "PORTKEY_API_KEY not set — skipping Gemini top-up"; fi
+try $PY -m musicprobe.runners.run_api --model portkey-gemini-2.5-pro
 
 step "Track A / API: GPT-4o-audio full battery"
-if [ -n "${OPENAI_API_KEY:-}" ]; then
-  try $PY -m musicprobe.runners.run_api --model gpt-4o-audio-preview
-else echo "OPENAI_API_KEY not set — skipping GPT-4o-audio"; fi
+try $PY -m musicprobe.runners.run_api --model gpt-4o-audio-preview
 
 step "Track A: score + review-export every model that has responses"
 for f in results/trackA/responses__*.parquet; do

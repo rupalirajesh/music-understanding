@@ -20,7 +20,8 @@ musicprobe/            the Python package
   jobs.py              manifest -> jobs.parquet (no-audio/wrong-audio/explain jobs)
   runners/run_api.py   Track A, API models: dry | OpenAI | Gemini (temp 0, resumable)
   runners/run_local.py Track A, open models on the H100 box (Qwen2-Audio done;
-                       AF3 / Music Flamingo / Qwen-Omni loaders TODO)
+                       AF3-hf / Music Flamingo-hf / Qwen-Omni loaders written,
+                       hardware-unverified — runbook smoke-tests each first)
   scoring.py           parse -> accuracy/audio_gain/confusions/psychometric curves
   l1_baselines.py      classical DSP floor (pitch, cents, tempo, key)
 scripts/               numbered entry points (incl. listening page + review export)
@@ -48,8 +49,9 @@ cd experiments
 # 1. stimuli (~1200 clips, ~12 min; --quick for a 1-min smoke test)
 .venv/bin/python scripts/01_generate_stimuli.py
 
-# 2. expand into eval jobs with controls
-.venv/bin/python scripts/02_build_jobs.py
+# 2. eval jobs: manifests/jobs.parquet is COMMITTED — never rebuild it once
+#    responses exist (jobs.build_jobs refuses; it would orphan all results).
+#    Grow the battery with jobs.append_jobs() — see scripts/07 for the pattern.
 
 # 2b. audit stimuli by ear (blind: answers hidden behind a click)
 .venv/bin/python scripts/03_listening_page.py && open listening.html
@@ -82,8 +84,11 @@ work is skipped), logs to results/runlogs/. It covers: instrument_id top-ups
 for Qwen2-Audio + Gemini, the remaining Track-A models, scoring + review +
 workbook exports, all three Track-B encoder extractions + the full probe
 suite + the attention diagnostic, the MusicGen battery, and the final
-results/ commit+push. See the script header for one-time prereqs (AF3 needs
-NVIDIA's llava fork; API top-ups need PORTKEY_API_KEY / OPENAI_API_KEY).
+results/ commit+push. One-time prereqs are in the script header; both
+PORTKEY_API_KEY and OPENAI_API_KEY are REQUIRED (the runbook stops rather
+than silently skipping API work). All five local models run on plain
+transformers with hub-verified checkpoint ids — nothing to install by hand
+beyond the pip line.
 
 ### On the H100 box — quickstart
 
@@ -96,7 +101,7 @@ pip install -r requirements.txt
 bash scripts/00_download_soundfonts.sh
 python scripts/01_generate_stimuli.py       # deterministic: seeded, stable hashing —
                                             # reproduces exactly the committed manifest
-# do NOT rerun 02: use the committed manifests/jobs.parquet as-is
+# jobs.parquet is committed — use as-is (rebuilding is disabled while results exist)
 
 # sanity check before burning GPU time:
 python -m musicprobe.runners.run_api --model dry && python -m musicprobe.scoring --model dry
@@ -136,7 +141,7 @@ run into per-task CSVs (full prompts + full raw responses + audio paths) plus
 |---|---|---|
 | Gemini 2.x, GPT-4o-audio | `run_api.py` (laptop) | full battery — behavioral ceilings |
 | Qwen2-Audio-7B | `run_local.py` (H100) | full battery — harness-validation anchor (replicate its published MMAU-music score first) |
-| Audio Flamingo 3, Music Flamingo, Qwen2.5/3-Omni | `run_local.py`, loaders TODO | full battery + Track B layer-wise probes |
+| AF3-hf, Music Flamingo-2601-hf, Qwen2.5/3-Omni | `run_local.py` (loaders written, unverified) | full battery + Track B layer-wise probes |
 | MERT / Whisper-enc / CLAP | `gpu/extract_activations.py` | Track B only — encoder-family comparison |
 | MusicGen (Stable Audio Open later; Suno/Udio manual) | `genmodel/` (H100) | constraint-adherence battery |
 | Claude | API, text only | symbolic ABC-notation contrast arm (specced, task 3.7) |

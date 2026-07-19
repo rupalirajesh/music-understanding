@@ -7,9 +7,9 @@
 # any model or spending API money (~2 min). Fix anything it flags, rerun until
 # it passes, then start the real runbook.
 #
-# NEVER rerun scripts/02_build_jobs.py on this box: it would reshuffle job
-# controls and orphan every already-collected response. The committed
-# manifests/jobs.parquet is the single source of truth.
+# The committed manifests/jobs.parquet is the single source of truth — never
+# rebuild it (jobs.build_jobs refuses while responses exist; the from-scratch
+# build script was removed on purpose).
 set -u
 cd "$(dirname "$0")/.."
 PY=${PY:-python}
@@ -45,7 +45,8 @@ man = pd.read_parquet(MANIFEST_PATH)
 jobs = pd.read_parquet(JOBS_PATH)
 missing = [p for p in man.audio_path.unique() if not (EXP_ROOT / p).exists()]
 assert not missing, (f"[FAIL] {len(missing)} WAVs missing — regenerate with: "
-                    "python scripts/01_generate_stimuli.py  (do NOT rerun 02!)")
+                    "python scripts/01_generate_stimuli.py  (jobs.parquet is "
+                    "committed; never rebuild it)")
 assert len(jobs) == 2208, f"[FAIL] jobs.parquet has {len(jobs)} rows, expected 2208 — wrong checkout? never rebuild it"
 assert jobs.task.nunique() == 13, f"[FAIL] expected 13 tasks, got {jobs.task.nunique()}"
 print(f"  [ok] {len(man)} stimuli, all WAVs on disk; {len(jobs)} jobs / 13 tasks (incl. instrument_id)")
@@ -60,11 +61,11 @@ $PY -c "import torch; assert torch.cuda.is_available(); \
 print('  [ok] ' + torch.cuda.get_device_name(0))" 2>/dev/null \
   || warn "no CUDA GPU visible — local models + Track B will not run here"
 
-echo "6. API keys (only the matching steps are skipped if unset)"
+echo "6. API keys (REQUIRED — the runbook refuses to start without them)"
 [ -n "${PORTKEY_API_KEY:-}" ] && ok "PORTKEY_API_KEY set (Gemini top-up)" \
-  || warn "PORTKEY_API_KEY not set — Gemini instrument_id top-up will be skipped"
+  || bad "PORTKEY_API_KEY not set — export it before running 08"
 [ -n "${OPENAI_API_KEY:-}" ] && ok "OPENAI_API_KEY set (GPT-4o-audio)" \
-  || warn "OPENAI_API_KEY not set — GPT-4o-audio battery will be skipped"
+  || bad "OPENAI_API_KEY not set — export it before running 08"
 
 echo
 if [ "$fail" -eq 0 ]; then
