@@ -42,7 +42,7 @@ def load_qwen2_audio(model_name: str):
     def generate(prompt: str, audio_path: str | None, max_new_tokens: int) -> str:
         content = []
         audios = None
-        if audio_path:
+        if isinstance(audio_path, str) and audio_path:
             y, sr = sf.read(EXP_ROOT / audio_path)
             y = librosa.resample(y, orig_sr=sr, target_sr=target_sr)
             audios = [y]
@@ -51,7 +51,7 @@ def load_qwen2_audio(model_name: str):
         conversation = [{"role": "user", "content": content}]
         text = processor.apply_chat_template(conversation, add_generation_prompt=True,
                                              tokenize=False)
-        inputs = processor(text=text, audios=audios, sampling_rate=target_sr,
+        inputs = processor(text=text, audio=audios, sampling_rate=target_sr,
                            return_tensors="pt", padding=True).to("cuda")
         with torch.no_grad():
             out = model.generate(**inputs, max_new_tokens=max_new_tokens,
@@ -90,7 +90,7 @@ def run(model: str, limit: int | None = None, tasks: list[str] | None = None):
         todo = todo.head(limit)
     print(f"[run_local] {model}: {len(todo)} jobs ({len(done)} done)")
 
-    generate = pick_loader(model)
+    generate = pick_loader(model)(model)  # build the loader closure (loads model once)
     for n, row in enumerate(todo.itertuples(), 1):
         try:
             mt = 512 if row.format == "explain" else 64

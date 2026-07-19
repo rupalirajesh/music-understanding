@@ -32,7 +32,7 @@ def call_dry(prompt: str, audio_path: str | None, model: str, max_tokens: int = 
 
 def call_openai(prompt: str, audio_path: str | None, model: str, max_tokens: int = 64) -> str:
     from openai import OpenAI  # lazy import
-    client = OpenAI(timeout=120)
+    client = OpenAI()
     content = [{"type": "text", "text": prompt}]
     if audio_path:
         b64 = base64.b64encode(_wav_bytes(audio_path)).decode()
@@ -47,7 +47,7 @@ def call_openai(prompt: str, audio_path: str | None, model: str, max_tokens: int
 def call_gemini(prompt: str, audio_path: str | None, model: str, max_tokens: int = 64) -> str:
     from google import genai  # lazy import
     from google.genai import types
-    client = genai.Client(http_options=types.HttpOptions(timeout=120_000))  # ms
+    client = genai.Client()
     parts = [types.Part.from_text(text=prompt)]
     if audio_path:
         parts.append(types.Part.from_bytes(data=_wav_bytes(audio_path),
@@ -58,9 +58,31 @@ def call_gemini(prompt: str, audio_path: str | None, model: str, max_tokens: int
     return resp.text or ""
 
 
+def call_portkey(prompt: str, audio_path: str | None, model: str, max_tokens: int = 64) -> str:
+    """Route through the Portkey gateway (OpenAI-compatible). `model` like
+    'portkey-gemini-2.5-flash' -> Portkey slug '@google-gemini-default/gemini-2.5-flash'.
+    Audio sent as an OpenAI-style input_audio content part."""
+    import os
+    from portkey_ai import Portkey
+    client = Portkey(api_key=os.environ["PORTKEY_API_KEY"])
+    slug = "@google-gemini-default/" + model[len("portkey-"):]  # strip 'portkey-'
+    content = [{"type": "text", "text": prompt}]
+    if audio_path:
+        b64 = base64.b64encode(_wav_bytes(audio_path)).decode()
+        content.append({"type": "input_audio",
+                        "input_audio": {"data": b64, "format": "wav"}})
+    resp = client.chat.completions.create(
+        model=slug, temperature=0, max_tokens=max_tokens,
+        reasoning_effort="low",  # 2.5-pro always thinks; cap it so it doesn't
+        messages=[{"role": "user", "content": content}])  # eat the whole budget
+    return resp.choices[0].message.content or ""
+
+
 def get_backend(model: str):
     if model == "dry":
         return call_dry
+    if model.startswith("portkey-"):
+        return call_portkey
     if model.startswith(("gpt-", "o")):
         return call_openai
     if model.startswith("gemini"):
@@ -90,10 +112,12 @@ def run(model: str, limit: int | None = None, tasks: list[str] | None = None):
     backend = get_backend(model)
     for n, row in enumerate(todo.itertuples(), 1):
         try:
-            mt = 512 if row.format == "explain" else 64
-            # no-audio jobs store no path; parquet round-trips None as NaN
-            path = row.audio_path if isinstance(row.audio_path, str) else None
-            raw = backend(row.prompt, path, model, mt)
+            if model.startswith("portkey-"):   # thinking model: reserve budget for reasoning
+                mt = 1600 if row.format == "explain" else 1200
+            else:
+                mt = 512 if row.format == "explain" else 64
+            ap = row.audio_path if isinstance(row.audio_path, str) else None  # NaN -> no audio
+            raw = backend(row.prompt, ap, model, mt)
             err = None
         except Exception as e:  # log and continue; rerun picks failures up again
             raw, err = None, f"{type(e).__name__}: {e}"
@@ -104,9 +128,9 @@ def run(model: str, limit: int | None = None, tasks: list[str] | None = None):
         })
         if n % 20 == 0 or n == len(todo):
             RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-            n_err = sum(1 for r in results if isinstance(r.get("error"), str))
+            ok = [r for r in results if r.get("error") is None]
             pd.DataFrame(results).to_parquet(out_path, index=False)
-            print(f"  {n}/{len(todo)} done ({n_err} errors)")
+            print(f"  {n}/{len(todo)} done ({len(results) - len(ok)} errors)")
     return out_path
 
 
