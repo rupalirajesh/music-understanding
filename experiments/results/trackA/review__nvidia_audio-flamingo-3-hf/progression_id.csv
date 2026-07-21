@@ -1,0 +1,293 @@
+job_id,stimulus_id,task,condition,format,paraphrase_idx,audio_path,prompt,options,ground_truth,raw_response,parsed,correct,error,factors
+progression_id/12-bar-blues_54_1::audio::mcq,progression_id/12-bar-blues_54_1,progression_id,audio,mcq,2,stimuli/progressions/12-bar-blues_54_1.wav,"Identify the chord progression in this passage.
+A. 12-bar-blues
+B. I-IV-V-I
+C. ii-V-I
+D. I-V-vi-IV
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",12-bar-blues|I-IV-V-I|ii-V-I|I-V-vi-IV,12-bar-blues,A,12-bar-blues,True,,"{""program"": ""flute"", ""progression"": ""12-bar-blues"", ""soundfont"": ""fluidr3"", ""tonic"": 54}"
+progression_id/12-bar-blues_54_1::audio::open,progression_id/12-bar-blues_54_1,progression_id,audio,open,1,stimuli/progressions/12-bar-blues_54_1.wav,"Listen to the harmony. What progression is being played?
+Give a short, direct answer.",,12-bar-blues,A minor,A minor,False,,"{""program"": ""flute"", ""progression"": ""12-bar-blues"", ""soundfont"": ""fluidr3"", ""tonic"": 54}"
+progression_id/12-bar-blues_54_1::audio::explain,progression_id/12-bar-blues_54_1,progression_id,audio,explain,0,stimuli/progressions/12-bar-blues_54_1.wav,"Which chord progression does this clip follow?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,12-bar-blues,"The clip follows a B major chord progression. This is supported by the sound of a B major chord being played throughout the entire clip, with no other chords or notes present.",,,,"{""program"": ""flute"", ""progression"": ""12-bar-blues"", ""soundfont"": ""fluidr3"", ""tonic"": 54}"
+progression_id/12-bar-blues_54_4::audio::mcq,progression_id/12-bar-blues_54_4,progression_id,audio,mcq,0,stimuli/progressions/12-bar-blues_54_4.wav,"Which chord progression does this clip follow?
+A. I-IV-V-I
+B. I-V-vi-IV
+C. 12-bar-blues
+D. ii-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-IV-V-I|I-V-vi-IV|12-bar-blues|ii-V-I,12-bar-blues,A,I-IV-V-I,False,,"{""program"": ""violin"", ""progression"": ""12-bar-blues"", ""soundfont"": ""musescore"", ""tonic"": 54}"
+progression_id/12-bar-blues_54_4::audio::open,progression_id/12-bar-blues_54_4,progression_id,audio,open,1,stimuli/progressions/12-bar-blues_54_4.wav,"Listen to the harmony. What progression is being played?
+Give a short, direct answer.",,12-bar-blues,A minor.,A minor.,False,,"{""program"": ""violin"", ""progression"": ""12-bar-blues"", ""soundfont"": ""musescore"", ""tonic"": 54}"
+progression_id/12-bar-blues_54_7::audio::mcq,progression_id/12-bar-blues_54_7,progression_id,audio,mcq,0,stimuli/progressions/12-bar-blues_54_7.wav,"Which chord progression does this clip follow?
+A. I-V-vi-IV
+B. 12-bar-blues
+C. I-IV-V-I
+D. ii-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-V-vi-IV|12-bar-blues|I-IV-V-I|ii-V-I,12-bar-blues,C,I-IV-V-I,False,,"{""program"": ""piano"", ""progression"": ""12-bar-blues"", ""soundfont"": ""musescore"", ""tonic"": 54}"
+progression_id/12-bar-blues_56_5::audio::mcq,progression_id/12-bar-blues_56_5,progression_id,audio,mcq,0,stimuli/progressions/12-bar-blues_56_5.wav,"Which chord progression does this clip follow?
+A. I-V-vi-IV
+B. ii-V-I
+C. I-IV-V-I
+D. 12-bar-blues
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-V-vi-IV|ii-V-I|I-IV-V-I|12-bar-blues,12-bar-blues,C,I-IV-V-I,False,,"{""program"": ""flute"", ""progression"": ""12-bar-blues"", ""soundfont"": ""fluidr3"", ""tonic"": 56}"
+progression_id/12-bar-blues_56_5::audio::open,progression_id/12-bar-blues_56_5,progression_id,audio,open,0,stimuli/progressions/12-bar-blues_56_5.wav,"Which chord progression does this clip follow?
+Give a short, direct answer.",,12-bar-blues,The clip follows a C# major chord progression.,The clip follows a C# major chord progression.,False,,"{""program"": ""flute"", ""progression"": ""12-bar-blues"", ""soundfont"": ""fluidr3"", ""tonic"": 56}"
+progression_id/12-bar-blues_58_0::audio::mcq,progression_id/12-bar-blues_58_0,progression_id,audio,mcq,1,stimuli/progressions/12-bar-blues_58_0.wav,"Listen to the harmony. What progression is being played?
+A. I-V-vi-IV
+B. 12-bar-blues
+C. I-IV-V-I
+D. ii-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-V-vi-IV|12-bar-blues|I-IV-V-I|ii-V-I,12-bar-blues,C,I-IV-V-I,False,,"{""program"": ""violin"", ""progression"": ""12-bar-blues"", ""soundfont"": ""fluidr3"", ""tonic"": 58}"
+progression_id/12-bar-blues_58_2::audio::mcq,progression_id/12-bar-blues_58_2,progression_id,audio,mcq,0,stimuli/progressions/12-bar-blues_58_2.wav,"Which chord progression does this clip follow?
+A. I-V-vi-IV
+B. ii-V-I
+C. 12-bar-blues
+D. I-IV-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-V-vi-IV|ii-V-I|12-bar-blues|I-IV-V-I,12-bar-blues,D,I-IV-V-I,False,,"{""program"": ""synth_lead"", ""progression"": ""12-bar-blues"", ""soundfont"": ""musescore"", ""tonic"": 58}"
+progression_id/12-bar-blues_58_3::audio::mcq,progression_id/12-bar-blues_58_3,progression_id,audio,mcq,1,stimuli/progressions/12-bar-blues_58_3.wav,"Listen to the harmony. What progression is being played?
+A. 12-bar-blues
+B. ii-V-I
+C. I-V-vi-IV
+D. I-IV-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",12-bar-blues|ii-V-I|I-V-vi-IV|I-IV-V-I,12-bar-blues,D,I-IV-V-I,False,,"{""program"": ""synth_lead"", ""progression"": ""12-bar-blues"", ""soundfont"": ""timgm"", ""tonic"": 58}"
+progression_id/12-bar-blues_63_6::audio::mcq,progression_id/12-bar-blues_63_6,progression_id,audio,mcq,1,stimuli/progressions/12-bar-blues_63_6.wav,"Listen to the harmony. What progression is being played?
+A. I-V-vi-IV
+B. I-IV-V-I
+C. 12-bar-blues
+D. ii-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-V-vi-IV|I-IV-V-I|12-bar-blues|ii-V-I,12-bar-blues,A,I-V-vi-IV,False,,"{""program"": ""flute"", ""progression"": ""12-bar-blues"", ""soundfont"": ""timgm"", ""tonic"": 63}"
+progression_id/I-IV-V-I_53_2::audio::mcq,progression_id/I-IV-V-I_53_2,progression_id,audio,mcq,1,stimuli/progressions/I-IV-V-I_53_2.wav,"Listen to the harmony. What progression is being played?
+A. 12-bar-blues
+B. I-V-vi-IV
+C. I-IV-V-I
+D. ii-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",12-bar-blues|I-V-vi-IV|I-IV-V-I|ii-V-I,I-IV-V-I,C,I-IV-V-I,True,,"{""program"": ""flute"", ""progression"": ""I-IV-V-I"", ""soundfont"": ""timgm"", ""tonic"": 53}"
+progression_id/I-IV-V-I_53_2::audio::open,progression_id/I-IV-V-I_53_2,progression_id,audio,open,1,stimuli/progressions/I-IV-V-I_53_2.wav,"Listen to the harmony. What progression is being played?
+Give a short, direct answer.",,I-IV-V-I,A minor.,A minor.,False,,"{""program"": ""flute"", ""progression"": ""I-IV-V-I"", ""soundfont"": ""timgm"", ""tonic"": 53}"
+progression_id/I-IV-V-I_54_0::audio::mcq,progression_id/I-IV-V-I_54_0,progression_id,audio,mcq,2,stimuli/progressions/I-IV-V-I_54_0.wav,"Identify the chord progression in this passage.
+A. I-V-vi-IV
+B. ii-V-I
+C. 12-bar-blues
+D. I-IV-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-V-vi-IV|ii-V-I|12-bar-blues|I-IV-V-I,I-IV-V-I,D,I-IV-V-I,True,,"{""program"": ""synth_lead"", ""progression"": ""I-IV-V-I"", ""soundfont"": ""timgm"", ""tonic"": 54}"
+progression_id/I-IV-V-I_54_3::audio::mcq,progression_id/I-IV-V-I_54_3,progression_id,audio,mcq,2,stimuli/progressions/I-IV-V-I_54_3.wav,"Identify the chord progression in this passage.
+A. I-IV-V-I
+B. I-V-vi-IV
+C. 12-bar-blues
+D. ii-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-IV-V-I|I-V-vi-IV|12-bar-blues|ii-V-I,I-IV-V-I,A,I-IV-V-I,True,,"{""program"": ""violin"", ""progression"": ""I-IV-V-I"", ""soundfont"": ""timgm"", ""tonic"": 54}"
+progression_id/I-IV-V-I_55_1::audio::mcq,progression_id/I-IV-V-I_55_1,progression_id,audio,mcq,0,stimuli/progressions/I-IV-V-I_55_1.wav,"Which chord progression does this clip follow?
+A. I-V-vi-IV
+B. ii-V-I
+C. 12-bar-blues
+D. I-IV-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-V-vi-IV|ii-V-I|12-bar-blues|I-IV-V-I,I-IV-V-I,D,I-IV-V-I,True,,"{""program"": ""piano"", ""progression"": ""I-IV-V-I"", ""soundfont"": ""fluidr3"", ""tonic"": 55}"
+progression_id/I-IV-V-I_55_1::audio::open,progression_id/I-IV-V-I_55_1,progression_id,audio,open,0,stimuli/progressions/I-IV-V-I_55_1.wav,"Which chord progression does this clip follow?
+Give a short, direct answer.",,I-IV-V-I,"The clip follows a chord progression of E major, G major, and A major.","The clip follows a chord progression of E major, G major, and A major.",False,,"{""program"": ""piano"", ""progression"": ""I-IV-V-I"", ""soundfont"": ""fluidr3"", ""tonic"": 55}"
+progression_id/I-IV-V-I_59_4::audio::mcq,progression_id/I-IV-V-I_59_4,progression_id,audio,mcq,0,stimuli/progressions/I-IV-V-I_59_4.wav,"Which chord progression does this clip follow?
+A. I-IV-V-I
+B. I-V-vi-IV
+C. ii-V-I
+D. 12-bar-blues
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-IV-V-I|I-V-vi-IV|ii-V-I|12-bar-blues,I-IV-V-I,A,I-IV-V-I,True,,"{""program"": ""flute"", ""progression"": ""I-IV-V-I"", ""soundfont"": ""timgm"", ""tonic"": 59}"
+progression_id/I-IV-V-I_59_4::audio::open,progression_id/I-IV-V-I_59_4,progression_id,audio,open,1,stimuli/progressions/I-IV-V-I_59_4.wav,"Listen to the harmony. What progression is being played?
+Give a short, direct answer.",,I-IV-V-I,A minor,A minor,False,,"{""program"": ""flute"", ""progression"": ""I-IV-V-I"", ""soundfont"": ""timgm"", ""tonic"": 59}"
+progression_id/I-IV-V-I_59_6::audio::mcq,progression_id/I-IV-V-I_59_6,progression_id,audio,mcq,0,stimuli/progressions/I-IV-V-I_59_6.wav,"Which chord progression does this clip follow?
+A. ii-V-I
+B. I-V-vi-IV
+C. I-IV-V-I
+D. 12-bar-blues
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",ii-V-I|I-V-vi-IV|I-IV-V-I|12-bar-blues,I-IV-V-I,C,I-IV-V-I,True,,"{""program"": ""violin"", ""progression"": ""I-IV-V-I"", ""soundfont"": ""timgm"", ""tonic"": 59}"
+progression_id/I-IV-V-I_59_7::audio::mcq,progression_id/I-IV-V-I_59_7,progression_id,audio,mcq,1,stimuli/progressions/I-IV-V-I_59_7.wav,"Listen to the harmony. What progression is being played?
+A. I-IV-V-I
+B. ii-V-I
+C. 12-bar-blues
+D. I-V-vi-IV
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-IV-V-I|ii-V-I|12-bar-blues|I-V-vi-IV,I-IV-V-I,A,I-IV-V-I,True,,"{""program"": ""piano"", ""progression"": ""I-IV-V-I"", ""soundfont"": ""musescore"", ""tonic"": 59}"
+progression_id/I-IV-V-I_60_5::audio::mcq,progression_id/I-IV-V-I_60_5,progression_id,audio,mcq,2,stimuli/progressions/I-IV-V-I_60_5.wav,"Identify the chord progression in this passage.
+A. I-IV-V-I
+B. ii-V-I
+C. 12-bar-blues
+D. I-V-vi-IV
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-IV-V-I|ii-V-I|12-bar-blues|I-V-vi-IV,I-IV-V-I,A,I-IV-V-I,True,,"{""program"": ""piano"", ""progression"": ""I-IV-V-I"", ""soundfont"": ""musescore"", ""tonic"": 60}"
+progression_id/I-IV-V-I_60_5::audio::explain,progression_id/I-IV-V-I_60_5,progression_id,audio,explain,1,stimuli/progressions/I-IV-V-I_60_5.wav,"Listen to the harmony. What progression is being played?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,I-IV-V-I,The progression being played is [insert progression here]. I heard [insert specific notes/chords/beats here] at [insert approximate timestamps here].,,,,"{""program"": ""piano"", ""progression"": ""I-IV-V-I"", ""soundfont"": ""musescore"", ""tonic"": 60}"
+progression_id/I-V-vi-IV_53_4::audio::mcq,progression_id/I-V-vi-IV_53_4,progression_id,audio,mcq,1,stimuli/progressions/I-V-vi-IV_53_4.wav,"Listen to the harmony. What progression is being played?
+A. ii-V-I
+B. I-IV-V-I
+C. 12-bar-blues
+D. I-V-vi-IV
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",ii-V-I|I-IV-V-I|12-bar-blues|I-V-vi-IV,I-V-vi-IV,A,ii-V-I,False,,"{""program"": ""flute"", ""progression"": ""I-V-vi-IV"", ""soundfont"": ""musescore"", ""tonic"": 53}"
+progression_id/I-V-vi-IV_53_5::audio::mcq,progression_id/I-V-vi-IV_53_5,progression_id,audio,mcq,0,stimuli/progressions/I-V-vi-IV_53_5.wav,"Which chord progression does this clip follow?
+A. 12-bar-blues
+B. I-IV-V-I
+C. ii-V-I
+D. I-V-vi-IV
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",12-bar-blues|I-IV-V-I|ii-V-I|I-V-vi-IV,I-V-vi-IV,B,I-IV-V-I,False,,"{""program"": ""piano"", ""progression"": ""I-V-vi-IV"", ""soundfont"": ""fluidr3"", ""tonic"": 53}"
+progression_id/I-V-vi-IV_54_1::audio::mcq,progression_id/I-V-vi-IV_54_1,progression_id,audio,mcq,1,stimuli/progressions/I-V-vi-IV_54_1.wav,"Listen to the harmony. What progression is being played?
+A. I-IV-V-I
+B. I-V-vi-IV
+C. 12-bar-blues
+D. ii-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-IV-V-I|I-V-vi-IV|12-bar-blues|ii-V-I,I-V-vi-IV,A,I-IV-V-I,False,,"{""program"": ""piano"", ""progression"": ""I-V-vi-IV"", ""soundfont"": ""musescore"", ""tonic"": 54}"
+progression_id/I-V-vi-IV_55_0::audio::mcq,progression_id/I-V-vi-IV_55_0,progression_id,audio,mcq,0,stimuli/progressions/I-V-vi-IV_55_0.wav,"Which chord progression does this clip follow?
+A. 12-bar-blues
+B. ii-V-I
+C. I-V-vi-IV
+D. I-IV-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",12-bar-blues|ii-V-I|I-V-vi-IV|I-IV-V-I,I-V-vi-IV,D,I-IV-V-I,False,,"{""program"": ""flute"", ""progression"": ""I-V-vi-IV"", ""soundfont"": ""musescore"", ""tonic"": 55}"
+progression_id/I-V-vi-IV_56_3::audio::mcq,progression_id/I-V-vi-IV_56_3,progression_id,audio,mcq,0,stimuli/progressions/I-V-vi-IV_56_3.wav,"Which chord progression does this clip follow?
+A. I-IV-V-I
+B. I-V-vi-IV
+C. 12-bar-blues
+D. ii-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-IV-V-I|I-V-vi-IV|12-bar-blues|ii-V-I,I-V-vi-IV,A,I-IV-V-I,False,,"{""program"": ""synth_lead"", ""progression"": ""I-V-vi-IV"", ""soundfont"": ""timgm"", ""tonic"": 56}"
+progression_id/I-V-vi-IV_57_6::audio::mcq,progression_id/I-V-vi-IV_57_6,progression_id,audio,mcq,2,stimuli/progressions/I-V-vi-IV_57_6.wav,"Identify the chord progression in this passage.
+A. I-IV-V-I
+B. I-V-vi-IV
+C. 12-bar-blues
+D. ii-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-IV-V-I|I-V-vi-IV|12-bar-blues|ii-V-I,I-V-vi-IV,A,I-IV-V-I,False,,"{""program"": ""flute"", ""progression"": ""I-V-vi-IV"", ""soundfont"": ""timgm"", ""tonic"": 57}"
+progression_id/I-V-vi-IV_62_7::audio::mcq,progression_id/I-V-vi-IV_62_7,progression_id,audio,mcq,2,stimuli/progressions/I-V-vi-IV_62_7.wav,"Identify the chord progression in this passage.
+A. 12-bar-blues
+B. I-V-vi-IV
+C. I-IV-V-I
+D. ii-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",12-bar-blues|I-V-vi-IV|I-IV-V-I|ii-V-I,I-V-vi-IV,C,I-IV-V-I,False,,"{""program"": ""piano"", ""progression"": ""I-V-vi-IV"", ""soundfont"": ""timgm"", ""tonic"": 62}"
+progression_id/I-V-vi-IV_62_7::audio::open,progression_id/I-V-vi-IV_62_7,progression_id,audio,open,0,stimuli/progressions/I-V-vi-IV_62_7.wav,"Which chord progression does this clip follow?
+Give a short, direct answer.",,I-V-vi-IV,The clip follows a I-V-I chord progression in the key of D major.,The clip follows a I-V-I chord progression in the key of D major.,False,,"{""program"": ""piano"", ""progression"": ""I-V-vi-IV"", ""soundfont"": ""timgm"", ""tonic"": 62}"
+progression_id/I-V-vi-IV_62_7::audio::explain,progression_id/I-V-vi-IV_62_7,progression_id,audio,explain,2,stimuli/progressions/I-V-vi-IV_62_7.wav,"Identify the chord progression in this passage.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,I-V-vi-IV,"The chord progression is D major, G major, A major, D major. I heard a D major chord from 0.3 to 1.3 seconds, a G major chord from 1.3 to 2.3 seconds, an A major chord from 2.3 to 3.3 seconds, and a D major chord from 3.3 to 4.3 seconds.",,,,"{""program"": ""piano"", ""progression"": ""I-V-vi-IV"", ""soundfont"": ""timgm"", ""tonic"": 62}"
+progression_id/I-V-vi-IV_64_2::audio::mcq,progression_id/I-V-vi-IV_64_2,progression_id,audio,mcq,2,stimuli/progressions/I-V-vi-IV_64_2.wav,"Identify the chord progression in this passage.
+A. ii-V-I
+B. I-IV-V-I
+C. 12-bar-blues
+D. I-V-vi-IV
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",ii-V-I|I-IV-V-I|12-bar-blues|I-V-vi-IV,I-V-vi-IV,B,I-IV-V-I,False,,"{""program"": ""flute"", ""progression"": ""I-V-vi-IV"", ""soundfont"": ""musescore"", ""tonic"": 64}"
+progression_id/I-V-vi-IV_64_2::audio::open,progression_id/I-V-vi-IV_64_2,progression_id,audio,open,1,stimuli/progressions/I-V-vi-IV_64_2.wav,"Listen to the harmony. What progression is being played?
+Give a short, direct answer.",,I-V-vi-IV,A minor,A minor,False,,"{""program"": ""flute"", ""progression"": ""I-V-vi-IV"", ""soundfont"": ""musescore"", ""tonic"": 64}"
+progression_id/ii-V-I_53_2::audio::mcq,progression_id/ii-V-I_53_2,progression_id,audio,mcq,0,stimuli/progressions/ii-V-I_53_2.wav,"Which chord progression does this clip follow?
+A. ii-V-I
+B. I-V-vi-IV
+C. I-IV-V-I
+D. 12-bar-blues
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",ii-V-I|I-V-vi-IV|I-IV-V-I|12-bar-blues,ii-V-I,A,ii-V-I,True,,"{""program"": ""piano"", ""progression"": ""ii-V-I"", ""soundfont"": ""musescore"", ""tonic"": 53}"
+progression_id/ii-V-I_56_5::audio::mcq,progression_id/ii-V-I_56_5,progression_id,audio,mcq,0,stimuli/progressions/ii-V-I_56_5.wav,"Which chord progression does this clip follow?
+A. I-V-vi-IV
+B. 12-bar-blues
+C. ii-V-I
+D. I-IV-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-V-vi-IV|12-bar-blues|ii-V-I|I-IV-V-I,ii-V-I,D,I-IV-V-I,False,,"{""program"": ""flute"", ""progression"": ""ii-V-I"", ""soundfont"": ""musescore"", ""tonic"": 56}"
+progression_id/ii-V-I_56_7::audio::mcq,progression_id/ii-V-I_56_7,progression_id,audio,mcq,1,stimuli/progressions/ii-V-I_56_7.wav,"Listen to the harmony. What progression is being played?
+A. ii-V-I
+B. I-V-vi-IV
+C. I-IV-V-I
+D. 12-bar-blues
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",ii-V-I|I-V-vi-IV|I-IV-V-I|12-bar-blues,ii-V-I,A,ii-V-I,True,,"{""program"": ""synth_lead"", ""progression"": ""ii-V-I"", ""soundfont"": ""fluidr3"", ""tonic"": 56}"
+progression_id/ii-V-I_56_7::audio::open,progression_id/ii-V-I_56_7,progression_id,audio,open,0,stimuli/progressions/ii-V-I_56_7.wav,"Which chord progression does this clip follow?
+Give a short, direct answer.",,ii-V-I,The clip follows a D# major chord progression.,The clip follows a D# major chord progression.,False,,"{""program"": ""synth_lead"", ""progression"": ""ii-V-I"", ""soundfont"": ""fluidr3"", ""tonic"": 56}"
+progression_id/ii-V-I_58_1::audio::mcq,progression_id/ii-V-I_58_1,progression_id,audio,mcq,1,stimuli/progressions/ii-V-I_58_1.wav,"Listen to the harmony. What progression is being played?
+A. I-V-vi-IV
+B. 12-bar-blues
+C. ii-V-I
+D. I-IV-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-V-vi-IV|12-bar-blues|ii-V-I|I-IV-V-I,ii-V-I,A,I-V-vi-IV,False,,"{""program"": ""synth_lead"", ""progression"": ""ii-V-I"", ""soundfont"": ""fluidr3"", ""tonic"": 58}"
+progression_id/ii-V-I_58_1::audio::open,progression_id/ii-V-I_58_1,progression_id,audio,open,0,stimuli/progressions/ii-V-I_58_1.wav,"Which chord progression does this clip follow?
+Give a short, direct answer.",,ii-V-I,The clip follows a D minor chord progression.,The clip follows a D minor chord progression.,False,,"{""program"": ""synth_lead"", ""progression"": ""ii-V-I"", ""soundfont"": ""fluidr3"", ""tonic"": 58}"
+progression_id/ii-V-I_58_1::audio::explain,progression_id/ii-V-I_58_1,progression_id,audio,explain,1,stimuli/progressions/ii-V-I_58_1.wav,"Listen to the harmony. What progression is being played?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,ii-V-I,"The harmony is being played in a sequence of A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G",,,,"{""program"": ""synth_lead"", ""progression"": ""ii-V-I"", ""soundfont"": ""fluidr3"", ""tonic"": 58}"
+progression_id/ii-V-I_58_4::audio::mcq,progression_id/ii-V-I_58_4,progression_id,audio,mcq,2,stimuli/progressions/ii-V-I_58_4.wav,"Identify the chord progression in this passage.
+A. 12-bar-blues
+B. I-V-vi-IV
+C. I-IV-V-I
+D. ii-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",12-bar-blues|I-V-vi-IV|I-IV-V-I|ii-V-I,ii-V-I,A,12-bar-blues,False,,"{""program"": ""piano"", ""progression"": ""ii-V-I"", ""soundfont"": ""musescore"", ""tonic"": 58}"
+progression_id/ii-V-I_59_0::audio::mcq,progression_id/ii-V-I_59_0,progression_id,audio,mcq,2,stimuli/progressions/ii-V-I_59_0.wav,"Identify the chord progression in this passage.
+A. 12-bar-blues
+B. I-IV-V-I
+C. I-V-vi-IV
+D. ii-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",12-bar-blues|I-IV-V-I|I-V-vi-IV|ii-V-I,ii-V-I,B,I-IV-V-I,False,,"{""program"": ""flute"", ""progression"": ""ii-V-I"", ""soundfont"": ""timgm"", ""tonic"": 59}"
+progression_id/ii-V-I_62_6::audio::mcq,progression_id/ii-V-I_62_6,progression_id,audio,mcq,0,stimuli/progressions/ii-V-I_62_6.wav,"Which chord progression does this clip follow?
+A. I-V-vi-IV
+B. I-IV-V-I
+C. ii-V-I
+D. 12-bar-blues
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-V-vi-IV|I-IV-V-I|ii-V-I|12-bar-blues,ii-V-I,B,I-IV-V-I,False,,"{""program"": ""piano"", ""progression"": ""ii-V-I"", ""soundfont"": ""musescore"", ""tonic"": 62}"
+progression_id/ii-V-I_64_3::audio::mcq,progression_id/ii-V-I_64_3,progression_id,audio,mcq,1,stimuli/progressions/ii-V-I_64_3.wav,"Listen to the harmony. What progression is being played?
+A. I-IV-V-I
+B. I-V-vi-IV
+C. ii-V-I
+D. 12-bar-blues
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-IV-V-I|I-V-vi-IV|ii-V-I|12-bar-blues,ii-V-I,A,I-IV-V-I,False,,"{""program"": ""violin"", ""progression"": ""ii-V-I"", ""soundfont"": ""timgm"", ""tonic"": 64}"
+progression_id/12-bar-blues_58_0::no_audio::mcq,progression_id/12-bar-blues_58_0,progression_id,no_audio,mcq,0,,"Which chord progression does this clip follow?
+A. I-V-vi-IV
+B. 12-bar-blues
+C. I-IV-V-I
+D. ii-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-V-vi-IV|12-bar-blues|I-IV-V-I|ii-V-I,12-bar-blues,A,I-V-vi-IV,False,,"{""program"": ""violin"", ""progression"": ""12-bar-blues"", ""soundfont"": ""fluidr3"", ""tonic"": 58}"
+progression_id/12-bar-blues_58_3::no_audio::mcq,progression_id/12-bar-blues_58_3,progression_id,no_audio,mcq,1,,"Listen to the harmony. What progression is being played?
+A. I-IV-V-I
+B. I-V-vi-IV
+C. ii-V-I
+D. 12-bar-blues
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-IV-V-I|I-V-vi-IV|ii-V-I|12-bar-blues,12-bar-blues,A,I-IV-V-I,False,,"{""program"": ""synth_lead"", ""progression"": ""12-bar-blues"", ""soundfont"": ""timgm"", ""tonic"": 58}"
+progression_id/12-bar-blues_63_6::no_audio::mcq,progression_id/12-bar-blues_63_6,progression_id,no_audio,mcq,0,,"Which chord progression does this clip follow?
+A. I-V-vi-IV
+B. I-IV-V-I
+C. ii-V-I
+D. 12-bar-blues
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-V-vi-IV|I-IV-V-I|ii-V-I|12-bar-blues,12-bar-blues,A,I-V-vi-IV,False,,"{""program"": ""flute"", ""progression"": ""12-bar-blues"", ""soundfont"": ""timgm"", ""tonic"": 63}"
+progression_id/I-V-vi-IV_53_4::no_audio::mcq,progression_id/I-V-vi-IV_53_4,progression_id,no_audio,mcq,1,,"Listen to the harmony. What progression is being played?
+A. ii-V-I
+B. I-IV-V-I
+C. I-V-vi-IV
+D. 12-bar-blues
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",ii-V-I|I-IV-V-I|I-V-vi-IV|12-bar-blues,I-V-vi-IV,A,ii-V-I,False,,"{""program"": ""flute"", ""progression"": ""I-V-vi-IV"", ""soundfont"": ""musescore"", ""tonic"": 53}"
+progression_id/I-V-vi-IV_62_7::no_audio::mcq,progression_id/I-V-vi-IV_62_7,progression_id,no_audio,mcq,2,,"Identify the chord progression in this passage.
+A. ii-V-I
+B. I-IV-V-I
+C. 12-bar-blues
+D. I-V-vi-IV
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",ii-V-I|I-IV-V-I|12-bar-blues|I-V-vi-IV,I-V-vi-IV,B,I-IV-V-I,False,,"{""program"": ""piano"", ""progression"": ""I-V-vi-IV"", ""soundfont"": ""timgm"", ""tonic"": 62}"
+progression_id/ii-V-I_56_7::no_audio::mcq,progression_id/ii-V-I_56_7,progression_id,no_audio,mcq,0,,"Which chord progression does this clip follow?
+A. ii-V-I
+B. I-IV-V-I
+C. 12-bar-blues
+D. I-V-vi-IV
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",ii-V-I|I-IV-V-I|12-bar-blues|I-V-vi-IV,ii-V-I,B,I-IV-V-I,False,,"{""program"": ""synth_lead"", ""progression"": ""ii-V-I"", ""soundfont"": ""fluidr3"", ""tonic"": 56}"
+progression_id/12-bar-blues_63_6::wrong_audio::mcq,progression_id/12-bar-blues_63_6,progression_id,wrong_audio,mcq,0,stimuli/mode/blues_64_bare_scale.wav,"Which chord progression does this clip follow?
+A. 12-bar-blues
+B. ii-V-I
+C. I-V-vi-IV
+D. I-IV-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",12-bar-blues|ii-V-I|I-V-vi-IV|I-IV-V-I,12-bar-blues,D,I-IV-V-I,False,,"{""program"": ""flute"", ""progression"": ""12-bar-blues"", ""soundfont"": ""timgm"", ""tonic"": 63}"
+progression_id/I-IV-V-I_53_2::wrong_audio::mcq,progression_id/I-IV-V-I_53_2,progression_id,wrong_audio,mcq,2,stimuli/intervals/P5_melodic_asc_55_0.wav,"Identify the chord progression in this passage.
+A. I-V-vi-IV
+B. 12-bar-blues
+C. ii-V-I
+D. I-IV-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-V-vi-IV|12-bar-blues|ii-V-I|I-IV-V-I,I-IV-V-I,D,I-IV-V-I,True,,"{""program"": ""flute"", ""progression"": ""I-IV-V-I"", ""soundfont"": ""timgm"", ""tonic"": 53}"
+progression_id/I-IV-V-I_55_1::wrong_audio::mcq,progression_id/I-IV-V-I_55_1,progression_id,wrong_audio,mcq,0,stimuli/intervals/M2_harmonic_51_0.wav,"Which chord progression does this clip follow?
+A. 12-bar-blues
+B. I-IV-V-I
+C. I-V-vi-IV
+D. ii-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",12-bar-blues|I-IV-V-I|I-V-vi-IV|ii-V-I,I-IV-V-I,B,I-IV-V-I,True,,"{""program"": ""piano"", ""progression"": ""I-IV-V-I"", ""soundfont"": ""fluidr3"", ""tonic"": 55}"
+progression_id/I-V-vi-IV_55_0::wrong_audio::mcq,progression_id/I-V-vi-IV_55_0,progression_id,wrong_audio,mcq,2,stimuli/intervals/P5_harmonic_58_1.wav,"Identify the chord progression in this passage.
+A. ii-V-I
+B. 12-bar-blues
+C. I-V-vi-IV
+D. I-IV-V-I
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",ii-V-I|12-bar-blues|I-V-vi-IV|I-IV-V-I,I-V-vi-IV,A,ii-V-I,False,,"{""program"": ""flute"", ""progression"": ""I-V-vi-IV"", ""soundfont"": ""musescore"", ""tonic"": 55}"
+progression_id/I-V-vi-IV_57_6::wrong_audio::mcq,progression_id/I-V-vi-IV_57_6,progression_id,wrong_audio,mcq,1,stimuli/chords/major7_block_48_0.wav,"Listen to the harmony. What progression is being played?
+A. I-V-vi-IV
+B. ii-V-I
+C. I-IV-V-I
+D. 12-bar-blues
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",I-V-vi-IV|ii-V-I|I-IV-V-I|12-bar-blues,I-V-vi-IV,C,I-IV-V-I,False,,"{""program"": ""flute"", ""progression"": ""I-V-vi-IV"", ""soundfont"": ""timgm"", ""tonic"": 57}"
+progression_id/ii-V-I_62_6::wrong_audio::mcq,progression_id/ii-V-I_62_6,progression_id,wrong_audio,mcq,2,stimuli/intervals/P4_melodic_asc_59_3.wav,"Identify the chord progression in this passage.
+A. ii-V-I
+B. I-IV-V-I
+C. 12-bar-blues
+D. I-V-vi-IV
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",ii-V-I|I-IV-V-I|12-bar-blues|I-V-vi-IV,ii-V-I,B,I-IV-V-I,False,,"{""program"": ""piano"", ""progression"": ""ii-V-I"", ""soundfont"": ""musescore"", ""tonic"": 62}"

@@ -1,0 +1,1038 @@
+job_id,stimulus_id,task,condition,format,paraphrase_idx,audio_path,prompt,options,ground_truth,raw_response,parsed,correct,error,factors
+key_id/A_major_progression_0::audio::mcq,key_id/A_major_progression_0,key_id,audio,mcq,2,stimuli/key/A_major_progression_0.wav,"Name the key of the passage you just heard.
+A. E major
+B. D major
+C. F# minor
+D. A major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E major|D major|F# minor|A major,A major,D,A major,True,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 9}"
+key_id/A_major_progression_1::audio::mcq,key_id/A_major_progression_1,key_id,audio,mcq,1,stimuli/key/A_major_progression_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. F# minor
+B. E major
+C. D major
+D. A major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F# minor|E major|D major|A major,A major,B,E major,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 9}"
+key_id/A_major_progression_1::audio::explain,key_id/A_major_progression_1,key_id,audio,explain,0,stimuli/key/A_major_progression_1.wav,"What key is this music in?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,A major,"The music is in the key of A major.
+
+The specific notes/chords and their approximate timestamps are:
+- A major chord at 0:00 to 0:02
+- D major chord at 0:02 to 0:04
+- E major chord at 0:04 to 0:06
+- A major chord at 0:06 to 0:08
+- D major chord at 0:08 to 0:10
+- E major chord at 0:10 to 0:12
+- A major chord at 0:12 to 0:14",,,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 9}"
+key_id/A_major_scale_0::audio::mcq,key_id/A_major_scale_0,key_id,audio,mcq,2,stimuli/key/A_major_scale_0.wav,"Name the key of the passage you just heard.
+A. D major
+B. A major
+C. E major
+D. F# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D major|A major|E major|F# minor,A major,B,A major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 9}"
+key_id/A_major_scale_1::audio::mcq,key_id/A_major_scale_1,key_id,audio,mcq,2,stimuli/key/A_major_scale_1.wav,"Name the key of the passage you just heard.
+A. A major
+B. F# minor
+C. D major
+D. E major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A major|F# minor|D major|E major,A major,C,D major,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 9}"
+key_id/A_major_scale_1::audio::open,key_id/A_major_scale_1,key_id,audio,open,0,stimuli/key/A_major_scale_1.wav,"What key is this music in?
+Give a short, direct answer.",,A major,A major,A major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 9}"
+key_id/A_minor_progression_0::audio::mcq,key_id/A_minor_progression_0,key_id,audio,mcq,0,stimuli/key/A_minor_progression_0.wav,"What key is this music in?
+A. D minor
+B. C major
+C. A minor
+D. E minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D minor|C major|A minor|E minor,A minor,B,C major,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 9}"
+key_id/A_minor_progression_1::audio::mcq,key_id/A_minor_progression_1,key_id,audio,mcq,0,stimuli/key/A_minor_progression_1.wav,"What key is this music in?
+A. D minor
+B. A minor
+C. E minor
+D. C major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D minor|A minor|E minor|C major,A minor,D,C major,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 9}"
+key_id/A_minor_scale_0::audio::mcq,key_id/A_minor_scale_0,key_id,audio,mcq,2,stimuli/key/A_minor_scale_0.wav,"Name the key of the passage you just heard.
+A. C major
+B. A minor
+C. E minor
+D. D minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C major|A minor|E minor|D minor,A minor,A,C major,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 9}"
+key_id/A_minor_scale_1::audio::mcq,key_id/A_minor_scale_1,key_id,audio,mcq,0,stimuli/key/A_minor_scale_1.wav,"What key is this music in?
+A. A minor
+B. C major
+C. E minor
+D. D minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A minor|C major|E minor|D minor,A minor,B,C major,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 9}"
+key_id/As_major_progression_0::audio::mcq,key_id/As_major_progression_0,key_id,audio,mcq,2,stimuli/key/As_major_progression_0.wav,"Name the key of the passage you just heard.
+A. D# major
+B. G minor
+C. A# major
+D. F major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D# major|G minor|A# major|F major,A# major,D,F major,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 10}"
+key_id/As_major_progression_0::audio::open,key_id/As_major_progression_0,key_id,audio,open,2,stimuli/key/As_major_progression_0.wav,"Name the key of the passage you just heard.
+Give a short, direct answer.",,A# major,F major,F major,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 10}"
+key_id/As_major_progression_0::audio::explain,key_id/As_major_progression_0,key_id,audio,explain,2,stimuli/key/As_major_progression_0.wav,"Name the key of the passage you just heard.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,A# major,"The key is F major. The F major chord is played from 0.00 to 2.00 seconds, and the F major chord is played again from 2.08 to 4.08 seconds.",,,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 10}"
+key_id/As_major_progression_1::audio::mcq,key_id/As_major_progression_1,key_id,audio,mcq,1,stimuli/key/As_major_progression_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. G minor
+B. D# major
+C. A# major
+D. F major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G minor|D# major|A# major|F major,A# major,D,F major,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 10}"
+key_id/As_major_scale_0::audio::mcq,key_id/As_major_scale_0,key_id,audio,mcq,0,stimuli/key/As_major_scale_0.wav,"What key is this music in?
+A. F major
+B. D# major
+C. G minor
+D. A# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F major|D# major|G minor|A# major,A# major,A,F major,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 10}"
+key_id/As_major_scale_1::audio::mcq,key_id/As_major_scale_1,key_id,audio,mcq,2,stimuli/key/As_major_scale_1.wav,"Name the key of the passage you just heard.
+A. A# major
+B. F major
+C. G minor
+D. D# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A# major|F major|G minor|D# major,A# major,B,F major,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 10}"
+key_id/As_minor_progression_0::audio::mcq,key_id/As_minor_progression_0,key_id,audio,mcq,2,stimuli/key/As_minor_progression_0.wav,"Name the key of the passage you just heard.
+A. D# minor
+B. F minor
+C. C# major
+D. A# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D# minor|F minor|C# major|A# minor,A# minor,B,F minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_pc"": 10}"
+key_id/As_minor_progression_0::audio::open,key_id/As_minor_progression_0,key_id,audio,open,1,stimuli/key/As_minor_progression_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+Give a short, direct answer.",,A# minor,Bb minor.,Bb minor.,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_pc"": 10}"
+key_id/As_minor_progression_0::audio::explain,key_id/As_minor_progression_0,key_id,audio,explain,1,stimuli/key/As_minor_progression_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,A# minor,"The musical key is Bb minor.
+
+The music begins with a descending chord progression starting from a high Bb major chord (Bb major) at around 0.24 seconds. This is followed by a series of chords that include a D# major chord (D# major) at approximately 0.48 seconds, an F# major chord (F# major) at around 0.72 seconds, and a G# major chord (G# major) at approximately 0.96 seconds. These chords are played in a descending pattern, creating a minor tonality. The music continues with a series of chords that include a C# major chord (C# major) at around 1.20 seconds, an E major chord (E major) at approximately 1.44 seconds, and a G# major chord (G# major) at around 1.68 seconds. The music then returns to the initial Bb major chord at around 1.92 seconds, followed by a series of chords that include a D# major chord (D# major) at approximately 2.16 seconds, an F# major chord (F# major) at around 2.40 seconds, and a G# major chord (G# major) at around 2.64 seconds. The music continues with a series of chords that include a C# major chord (C# major) at around 2.88 seconds, an E major chord (E major) at approximately 3.12 seconds, and a G# major chord (G# major) at around 3.36 seconds. The music then returns to the initial Bb major chord at around 3.60 seconds, followed by a series of chords that include a D# major chord (D# major) at approximately 3.84 seconds, an F# major chord (F# major) at around 4.08 seconds, and a G# major chord (G# major) at around 4.32 seconds. The music continues with a series of chords that include a C# major chord (C# major) at around 4.56 seconds, an E major chord (E major) at approximately 4.80 seconds, and a G# major chord (G# major) at around 5.04 seconds. The music then returns to the initial Bb major chord at around 5.28 seconds, followed by a series of chords that include a D# major chord (D# major) at approximately 5.52 seconds, an F# major chord (F# major) at around 5.76 seconds, and a G# major chord (G# major) at around 6.00 seconds. The music continues with a series of chords that include a C# major chord (C# major) at around 6.24 seconds, an E major chord (E major) at approximately 6.48 seconds, and a G# major chord (G# major) at around 6.72 seconds. The music then returns to the initial Bb major chord at around 6.96 seconds, followed by a series of chords that include a D# major chord (D# major) at approximately 7.20 seconds, an F# major chord (F# major) at around 7.44 seconds, and a G# major chord (G# major) at around 7.68 seconds. The music continues with a series of chords that include a C# major chord (C# major) at around 7.92 seconds, an E major chord (E major) at approximately 8.16 seconds, and a G# major chord (G# major) at around 8.40 seconds. The music then returns to the initial Bb major chord at around 8.64 seconds, followed by a series of chords that include a D# major chord (D# major) at approximately 8.88 seconds, an F# major chord (F# major) at around 9.12 seconds, and a G# major chord (G# major) at around 9.36 seconds. The music continues with a series of chords that include a C# major chord (C# major) at around 9.60 seconds, an E major chord (E major) at approximately 9.84 seconds, and a G# major chord (G# major) at around 10.08 seconds. The music then returns to the initial Bb major chord at around 10.32 seconds, followed by a series of chords that include a D# major chord (D# major) at approximately 10.56 seconds, an F# major chord (F# major) at around 10.80 seconds, and a G# major chord (",,,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_pc"": 10}"
+key_id/As_minor_progression_1::audio::mcq,key_id/As_minor_progression_1,key_id,audio,mcq,2,stimuli/key/As_minor_progression_1.wav,"Name the key of the passage you just heard.
+A. F minor
+B. A# minor
+C. D# minor
+D. C# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F minor|A# minor|D# minor|C# major,A# minor,A,F minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 10}"
+key_id/As_minor_scale_0::audio::mcq,key_id/As_minor_scale_0,key_id,audio,mcq,0,stimuli/key/As_minor_scale_0.wav,"What key is this music in?
+A. D# minor
+B. A# minor
+C. F minor
+D. C# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D# minor|A# minor|F minor|C# major,A# minor,B,A# minor,True,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 10}"
+key_id/As_minor_scale_0::audio::open,key_id/As_minor_scale_0,key_id,audio,open,2,stimuli/key/As_minor_scale_0.wav,"Name the key of the passage you just heard.
+Give a short, direct answer.",,A# minor,Db major,Db major,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 10}"
+key_id/As_minor_scale_1::audio::mcq,key_id/As_minor_scale_1,key_id,audio,mcq,2,stimuli/key/As_minor_scale_1.wav,"Name the key of the passage you just heard.
+A. A# minor
+B. C# major
+C. D# minor
+D. F minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A# minor|C# major|D# minor|F minor,A# minor,A,A# minor,True,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 10}"
+key_id/B_major_progression_0::audio::mcq,key_id/B_major_progression_0,key_id,audio,mcq,1,stimuli/key/B_major_progression_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. F# major
+B. B major
+C. G# minor
+D. E major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F# major|B major|G# minor|E major,B major,A,F# major,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_pc"": 11}"
+key_id/B_major_progression_1::audio::mcq,key_id/B_major_progression_1,key_id,audio,mcq,2,stimuli/key/B_major_progression_1.wav,"Name the key of the passage you just heard.
+A. E major
+B. B major
+C. G# minor
+D. F# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E major|B major|G# minor|F# major,B major,C,G# minor,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_pc"": 11}"
+key_id/B_major_scale_0::audio::mcq,key_id/B_major_scale_0,key_id,audio,mcq,1,stimuli/key/B_major_scale_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. F# major
+B. G# minor
+C. E major
+D. B major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F# major|G# minor|E major|B major,B major,C,E major,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 11}"
+key_id/B_major_scale_0::audio::open,key_id/B_major_scale_0,key_id,audio,open,0,stimuli/key/B_major_scale_0.wav,"What key is this music in?
+Give a short, direct answer.",,B major,B major,B major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 11}"
+key_id/B_major_scale_1::audio::mcq,key_id/B_major_scale_1,key_id,audio,mcq,2,stimuli/key/B_major_scale_1.wav,"Name the key of the passage you just heard.
+A. G# minor
+B. F# major
+C. E major
+D. B major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G# minor|F# major|E major|B major,B major,C,E major,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 11}"
+key_id/B_minor_progression_0::audio::mcq,key_id/B_minor_progression_0,key_id,audio,mcq,1,stimuli/key/B_minor_progression_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. E minor
+B. D major
+C. F# minor
+D. B minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E minor|D major|F# minor|B minor,B minor,C,F# minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_pc"": 11}"
+key_id/B_minor_progression_1::audio::mcq,key_id/B_minor_progression_1,key_id,audio,mcq,2,stimuli/key/B_minor_progression_1.wav,"Name the key of the passage you just heard.
+A. B minor
+B. D major
+C. E minor
+D. F# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B minor|D major|E minor|F# minor,B minor,D,F# minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_pc"": 11}"
+key_id/B_minor_scale_0::audio::mcq,key_id/B_minor_scale_0,key_id,audio,mcq,2,stimuli/key/B_minor_scale_0.wav,"Name the key of the passage you just heard.
+A. B minor
+B. D major
+C. E minor
+D. F# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B minor|D major|E minor|F# minor,B minor,B,D major,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_pc"": 11}"
+key_id/B_minor_scale_1::audio::mcq,key_id/B_minor_scale_1,key_id,audio,mcq,2,stimuli/key/B_minor_scale_1.wav,"Name the key of the passage you just heard.
+A. F# minor
+B. D major
+C. E minor
+D. B minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F# minor|D major|E minor|B minor,B minor,B,D major,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_pc"": 11}"
+key_id/C_major_progression_0::audio::mcq,key_id/C_major_progression_0,key_id,audio,mcq,2,stimuli/key/C_major_progression_0.wav,"Name the key of the passage you just heard.
+A. F major
+B. G major
+C. C major
+D. A minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F major|G major|C major|A minor,C major,C,C major,True,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 0}"
+key_id/C_major_progression_1::audio::mcq,key_id/C_major_progression_1,key_id,audio,mcq,0,stimuli/key/C_major_progression_1.wav,"What key is this music in?
+A. C major
+B. G major
+C. A minor
+D. F major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C major|G major|A minor|F major,C major,A,C major,True,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 0}"
+key_id/C_major_progression_1::audio::explain,key_id/C_major_progression_1,key_id,audio,explain,0,stimuli/key/C_major_progression_1.wav,"What key is this music in?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,C major,"The music is in the key of C major.
+
+The specific notes/chords and their approximate timestamps are as follows:
+- C major chord at 0:00 to 0:02
+- G major chord at 0:02 to 0:04
+- F major chord at 0:04 to 0:06
+- C major chord at 0:06 to 0:08
+- G major chord at 0:08 to 0:10
+- F major chord at 0:10 to 0:12
+- C major chord at 0:12 to 0:14
+- G major chord at 0:14 to 0:16
+- F major chord at 0:16 to 0:18
+- C major chord at 0:18 to 0:20
+- G major chord at 0:20 to 0:22
+- F major chord at 0:22 to 0:24
+- C major chord at 0:24 to 0:26
+- G major chord at 0:26 to 0:28
+- F major chord at 0:28 to 0:30
+- C major chord at 0:30 to 0:32
+- G major chord at 0:32 to 0:34
+- F major chord at 0:34 to 0:36
+- C major chord at 0:36 to 0:38
+- G major chord at 0:38 to 0:40
+- F major chord at 0:40 to 0:42
+- C major chord at 0:42 to 0:44
+- G major chord at 0:44 to 0:46
+- F major chord at 0:46 to 0:48
+- C major chord at 0:48 to 0:50
+- G major chord at 0:50 to 0:52
+- F major chord at 0:52 to 0:54
+- C major chord at 0:54 to 0:56
+- G major chord at 0:56 to 0:58
+- F major chord at 0:58 to 1:00
+- C major chord at 1:00 to 1:02",,,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 0}"
+key_id/C_major_scale_0::audio::mcq,key_id/C_major_scale_0,key_id,audio,mcq,0,stimuli/key/C_major_scale_0.wav,"What key is this music in?
+A. A minor
+B. C major
+C. F major
+D. G major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A minor|C major|F major|G major,C major,B,C major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_pc"": 0}"
+key_id/C_major_scale_1::audio::mcq,key_id/C_major_scale_1,key_id,audio,mcq,1,stimuli/key/C_major_scale_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. C major
+B. A minor
+C. F major
+D. G major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C major|A minor|F major|G major,C major,A,C major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 0}"
+key_id/C_minor_progression_0::audio::mcq,key_id/C_minor_progression_0,key_id,audio,mcq,0,stimuli/key/C_minor_progression_0.wav,"What key is this music in?
+A. C minor
+B. G minor
+C. D# major
+D. F minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C minor|G minor|D# major|F minor,C minor,A,C minor,True,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_pc"": 0}"
+key_id/C_minor_progression_1::audio::mcq,key_id/C_minor_progression_1,key_id,audio,mcq,1,stimuli/key/C_minor_progression_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. F minor
+B. D# major
+C. C minor
+D. G minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F minor|D# major|C minor|G minor,C minor,A,F minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 0}"
+key_id/C_minor_progression_1::audio::open,key_id/C_minor_progression_1,key_id,audio,open,0,stimuli/key/C_minor_progression_1.wav,"What key is this music in?
+Give a short, direct answer.",,C minor,C major,C major,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 0}"
+key_id/C_minor_scale_0::audio::mcq,key_id/C_minor_scale_0,key_id,audio,mcq,1,stimuli/key/C_minor_scale_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. C minor
+B. F minor
+C. D# major
+D. G minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C minor|F minor|D# major|G minor,C minor,A,C minor,True,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 0}"
+key_id/C_minor_scale_1::audio::mcq,key_id/C_minor_scale_1,key_id,audio,mcq,0,stimuli/key/C_minor_scale_1.wav,"What key is this music in?
+A. F minor
+B. C minor
+C. D# major
+D. G minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F minor|C minor|D# major|G minor,C minor,A,F minor,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 0}"
+key_id/Cs_major_progression_0::audio::mcq,key_id/Cs_major_progression_0,key_id,audio,mcq,0,stimuli/key/Cs_major_progression_0.wav,"What key is this music in?
+A. G# major
+B. C# major
+C. A# minor
+D. F# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G# major|C# major|A# minor|F# major,C# major,C,A# minor,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 1}"
+key_id/Cs_major_progression_0::audio::explain,key_id/Cs_major_progression_0,key_id,audio,explain,2,stimuli/key/Cs_major_progression_0.wav,"Name the key of the passage you just heard.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,C# major,"The key of the passage is F minor. The music features a progression of chords that are characteristic of F minor, including F minor, A# major, and C# major. The chord progression starts at 0.14 seconds and ends at 8.98 seconds.",,,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 1}"
+key_id/Cs_major_progression_1::audio::mcq,key_id/Cs_major_progression_1,key_id,audio,mcq,0,stimuli/key/Cs_major_progression_1.wav,"What key is this music in?
+A. G# major
+B. C# major
+C. A# minor
+D. F# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G# major|C# major|A# minor|F# major,C# major,C,A# minor,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 1}"
+key_id/Cs_major_scale_0::audio::mcq,key_id/Cs_major_scale_0,key_id,audio,mcq,1,stimuli/key/Cs_major_scale_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. C# major
+B. G# major
+C. F# major
+D. A# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C# major|G# major|F# major|A# minor,C# major,D,A# minor,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 1}"
+key_id/Cs_major_scale_0::audio::open,key_id/Cs_major_scale_0,key_id,audio,open,0,stimuli/key/Cs_major_scale_0.wav,"What key is this music in?
+Give a short, direct answer.",,C# major,Db major,Db major,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 1}"
+key_id/Cs_major_scale_1::audio::mcq,key_id/Cs_major_scale_1,key_id,audio,mcq,0,stimuli/key/Cs_major_scale_1.wav,"What key is this music in?
+A. G# major
+B. F# major
+C. A# minor
+D. C# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G# major|F# major|A# minor|C# major,C# major,D,C# major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_pc"": 1}"
+key_id/Cs_major_scale_1::audio::open,key_id/Cs_major_scale_1,key_id,audio,open,2,stimuli/key/Cs_major_scale_1.wav,"Name the key of the passage you just heard.
+Give a short, direct answer.",,C# major,Db major,Db major,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_pc"": 1}"
+key_id/Cs_minor_progression_0::audio::mcq,key_id/Cs_minor_progression_0,key_id,audio,mcq,2,stimuli/key/Cs_minor_progression_0.wav,"Name the key of the passage you just heard.
+A. G# minor
+B. E major
+C. C# minor
+D. F# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G# minor|E major|C# minor|F# minor,C# minor,D,F# minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 1}"
+key_id/Cs_minor_progression_0::audio::explain,key_id/Cs_minor_progression_0,key_id,audio,explain,2,stimuli/key/Cs_minor_progression_0.wav,"Name the key of the passage you just heard.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,C# minor,"The key of the passage is C# minor. The music features a flute playing a melody in C# minor, with the notes C#4, E4, and G#4. The flute plays a C#4 at the beginning, followed by an E4, and then a G#4. The rhythm is in 4/4 time, with a tempo of approximately 176.47 bpm.",,,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 1}"
+key_id/Cs_minor_progression_1::audio::mcq,key_id/Cs_minor_progression_1,key_id,audio,mcq,1,stimuli/key/Cs_minor_progression_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. F# minor
+B. E major
+C. C# minor
+D. G# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F# minor|E major|C# minor|G# minor,C# minor,A,F# minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 1}"
+key_id/Cs_minor_scale_0::audio::mcq,key_id/Cs_minor_scale_0,key_id,audio,mcq,2,stimuli/key/Cs_minor_scale_0.wav,"Name the key of the passage you just heard.
+A. C# minor
+B. G# minor
+C. E major
+D. F# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C# minor|G# minor|E major|F# minor,C# minor,C,E major,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_pc"": 1}"
+key_id/Cs_minor_scale_0::audio::open,key_id/Cs_minor_scale_0,key_id,audio,open,2,stimuli/key/Cs_minor_scale_0.wav,"Name the key of the passage you just heard.
+Give a short, direct answer.",,C# minor,C# major,C# major,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_pc"": 1}"
+key_id/Cs_minor_scale_1::audio::mcq,key_id/Cs_minor_scale_1,key_id,audio,mcq,0,stimuli/key/Cs_minor_scale_1.wav,"What key is this music in?
+A. E major
+B. C# minor
+C. F# minor
+D. G# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E major|C# minor|F# minor|G# minor,C# minor,C,F# minor,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_pc"": 1}"
+key_id/Cs_minor_scale_1::audio::explain,key_id/Cs_minor_scale_1,key_id,audio,explain,2,stimuli/key/Cs_minor_scale_1.wav,"Name the key of the passage you just heard.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,C# minor,"The key of the passage is C# minor.
+
+The melody begins with a C# major chord at the start (0:00-0:02), followed by an E major chord (0:02-0:04), then an F# major chord (0:04-0:06), and finally a G major chord (0:06-0:08). These chords are played in a sequence that suggests a progression within the key of C# minor.",,,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_pc"": 1}"
+key_id/D_major_progression_0::audio::mcq,key_id/D_major_progression_0,key_id,audio,mcq,0,stimuli/key/D_major_progression_0.wav,"What key is this music in?
+A. D major
+B. A major
+C. B minor
+D. G major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D major|A major|B minor|G major,D major,A,D major,True,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 2}"
+key_id/D_major_progression_1::audio::mcq,key_id/D_major_progression_1,key_id,audio,mcq,1,stimuli/key/D_major_progression_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. B minor
+B. G major
+C. D major
+D. A major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B minor|G major|D major|A major,D major,C,D major,True,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 2}"
+key_id/D_major_scale_0::audio::mcq,key_id/D_major_scale_0,key_id,audio,mcq,1,stimuli/key/D_major_scale_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. D major
+B. A major
+C. G major
+D. B minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D major|A major|G major|B minor,D major,A,D major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 2}"
+key_id/D_major_scale_0::audio::explain,key_id/D_major_scale_0,key_id,audio,explain,1,stimuli/key/D_major_scale_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,D major,"The musical key is D major.
+
+The melody begins with a D major chord at the start of the clip, which is played on the flute. The notes of the D major chord are D, F#, and A. The D major chord is played from 0.20 to 0.36 seconds. The melody then transitions to a G major chord, which is played from 0.36 to 0.52 seconds. The notes of the G major chord are G, B, and D. The melody then transitions to an A major chord, which is played from 0.52 to 0.68 seconds. The notes of the A major chord are A, C#, and E. The melody then transitions to a D major chord again, which is played from 0.68 to 0.84 seconds. The notes of the D major chord are D, F#, and A. The melody then transitions to a G major chord again, which is played from 0.84 to 1.00 seconds. The notes of the G major chord are G, B, and D. The melody then transitions to an A major chord again, which is played from 1.00 to 1.16 seconds. The notes of the A major chord are A, C#, and E. The melody then transitions to a D major chord again, which is played from 1.16 to 1.32 seconds. The notes of the D major chord are D, F#, and A. The melody then transitions to a G major chord again, which is played from 1.32 to 1.48 seconds. The notes of the G major chord are G, B, and D. The melody then transitions to an A major chord again, which is played from 1.48 to 1.64 seconds. The notes of the A major chord are A, C#, and E. The melody then transitions to a D major chord again, which is played from 1.64 to 1.80 seconds. The notes of the D major chord are D, F#, and A. The melody then transitions to a G major chord again, which is played from 1.80 to 1.96 seconds. The notes of the G major chord are G, B, and D. The melody then transitions to an A major chord again, which is played from 1.96 to 2.12 seconds. The notes of the A major chord are A, C#, and E. The melody then transitions to a D major chord again, which is played from 2.12 to 2.28 seconds. The notes of the D major chord are D, F#, and A. The melody then transitions to a G major chord again, which is played from 2.28 to 2.44 seconds. The notes of the G major chord are G, B, and D. The melody then transitions to an A major chord again, which is played from 2.44 to 2.60 seconds. The notes of the A major chord are A, C#, and E. The melody then transitions to a D major chord again, which is played from 2.60 to 2.76 seconds. The notes of the D major chord are D, F#, and A. The melody then transitions to a G major chord again, which is played from 2.76 to 2.92 seconds. The notes of the G major chord are G, B, and D. The melody then transitions to an A major chord again, which is played from 2.92 to 3.08 seconds. The notes of the A major chord are A, C#, and E. The melody then transitions to a D major chord again, which is played from 3.08 to 3.24 seconds. The notes of the D major chord are D, F#, and A. The melody then transitions to a G major chord again, which is played from 3.24 to 3.40 seconds. The notes of the G major chord are G, B, and D. The melody then transitions to an A major chord again, which is played from 3.40 to 3.56 seconds. The notes of the A major chord are A, C#, and E. The melody then transitions to a D major chord again, which is played from 3.56 to 3.72 seconds. The notes of the D major chord are D, F#, and A. The melody then transitions to a G major chord again, which is played from 3.72 to 3.88 seconds. The notes of the G major chord are G, B, and D. The melody then transitions to an A major chord again, which is played from ",,,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 2}"
+key_id/D_major_scale_1::audio::mcq,key_id/D_major_scale_1,key_id,audio,mcq,1,stimuli/key/D_major_scale_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. B minor
+B. D major
+C. G major
+D. A major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B minor|D major|G major|A major,D major,B,D major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 2}"
+key_id/D_major_scale_1::audio::open,key_id/D_major_scale_1,key_id,audio,open,0,stimuli/key/D_major_scale_1.wav,"What key is this music in?
+Give a short, direct answer.",,D major,D major,D major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 2}"
+key_id/D_minor_progression_0::audio::mcq,key_id/D_minor_progression_0,key_id,audio,mcq,2,stimuli/key/D_minor_progression_0.wav,"Name the key of the passage you just heard.
+A. D minor
+B. G minor
+C. F major
+D. A minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D minor|G minor|F major|A minor,D minor,D,A minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_pc"": 2}"
+key_id/D_minor_progression_0::audio::open,key_id/D_minor_progression_0,key_id,audio,open,0,stimuli/key/D_minor_progression_0.wav,"What key is this music in?
+Give a short, direct answer.",,D minor,A minor,A minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_pc"": 2}"
+key_id/D_minor_progression_0::audio::explain,key_id/D_minor_progression_0,key_id,audio,explain,1,stimuli/key/D_minor_progression_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,D minor,"The musical key is A minor.
+
+The melody begins with a descending pattern of notes starting from A4, moving down to G3, F3, and E3. This sequence repeats, creating a minor tonality. The chords primarily consist of A minor, G major, and F major, which are characteristic of the A minor key. The rhythm is steady, with a consistent beat throughout the clip.",,,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_pc"": 2}"
+key_id/D_minor_progression_1::audio::mcq,key_id/D_minor_progression_1,key_id,audio,mcq,2,stimuli/key/D_minor_progression_1.wav,"Name the key of the passage you just heard.
+A. A minor
+B. G minor
+C. F major
+D. D minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A minor|G minor|F major|D minor,D minor,C,F major,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 2}"
+key_id/D_minor_scale_0::audio::mcq,key_id/D_minor_scale_0,key_id,audio,mcq,0,stimuli/key/D_minor_scale_0.wav,"What key is this music in?
+A. F major
+B. D minor
+C. A minor
+D. G minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F major|D minor|A minor|G minor,D minor,A,F major,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 2}"
+key_id/D_minor_scale_0::audio::explain,key_id/D_minor_scale_0,key_id,audio,explain,1,stimuli/key/D_minor_scale_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,D minor,"The musical key is D minor.
+
+The melody begins with a D major chord at the start of the clip, which transitions into a D minor chord. The melody then alternates between D major and D minor chords, with the D minor chord being the dominant one. The melody is played on a flute, and the notes are D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G, A, B, C, D, E, F, G",,,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 2}"
+key_id/D_minor_scale_1::audio::mcq,key_id/D_minor_scale_1,key_id,audio,mcq,0,stimuli/key/D_minor_scale_1.wav,"What key is this music in?
+A. G minor
+B. A minor
+C. D minor
+D. F major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G minor|A minor|D minor|F major,D minor,D,F major,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 2}"
+key_id/Ds_major_progression_0::audio::mcq,key_id/Ds_major_progression_0,key_id,audio,mcq,1,stimuli/key/Ds_major_progression_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. A# major
+B. C minor
+C. D# major
+D. G# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A# major|C minor|D# major|G# major,D# major,B,C minor,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 3}"
+key_id/Ds_major_progression_1::audio::mcq,key_id/Ds_major_progression_1,key_id,audio,mcq,0,stimuli/key/Ds_major_progression_1.wav,"What key is this music in?
+A. C minor
+B. G# major
+C. D# major
+D. A# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C minor|G# major|D# major|A# major,D# major,C,D# major,True,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_pc"": 3}"
+key_id/Ds_major_scale_0::audio::mcq,key_id/Ds_major_scale_0,key_id,audio,mcq,2,stimuli/key/Ds_major_scale_0.wav,"Name the key of the passage you just heard.
+A. G# major
+B. D# major
+C. C minor
+D. A# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G# major|D# major|C minor|A# major,D# major,C,C minor,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_pc"": 3}"
+key_id/Ds_major_scale_1::audio::mcq,key_id/Ds_major_scale_1,key_id,audio,mcq,1,stimuli/key/Ds_major_scale_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. G# major
+B. C minor
+C. D# major
+D. A# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G# major|C minor|D# major|A# major,D# major,B,C minor,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 3}"
+key_id/Ds_major_scale_1::audio::open,key_id/Ds_major_scale_1,key_id,audio,open,2,stimuli/key/Ds_major_scale_1.wav,"Name the key of the passage you just heard.
+Give a short, direct answer.",,D# major,Eb major.,Eb major.,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 3}"
+key_id/Ds_minor_progression_0::audio::mcq,key_id/Ds_minor_progression_0,key_id,audio,mcq,2,stimuli/key/Ds_minor_progression_0.wav,"Name the key of the passage you just heard.
+A. A# minor
+B. G# minor
+C. F# major
+D. D# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A# minor|G# minor|F# major|D# minor,D# minor,D,D# minor,True,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 3}"
+key_id/Ds_minor_progression_0::audio::explain,key_id/Ds_minor_progression_0,key_id,audio,explain,1,stimuli/key/Ds_minor_progression_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,D# minor,"The musical key is D# minor.
+
+The audio features a melody that starts at 0.00 seconds and ends at 8.13 seconds. The melody is played on a keyboard instrument, likely a piano or organ, and it consists of the following notes: D# major, A# major, and G# major. The melody is played in a 4/4 time signature with a tempo of 120.0 bpm. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern, starting with a D# major chord, followed by an A# major chord, and then a G# major chord. The melody is played in a descending pattern",,,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 3}"
+key_id/Ds_minor_progression_1::audio::mcq,key_id/Ds_minor_progression_1,key_id,audio,mcq,0,stimuli/key/Ds_minor_progression_1.wav,"What key is this music in?
+A. D# minor
+B. A# minor
+C. G# minor
+D. F# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D# minor|A# minor|G# minor|F# major,D# minor,B,A# minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_pc"": 3}"
+key_id/Ds_minor_progression_1::audio::open,key_id/Ds_minor_progression_1,key_id,audio,open,2,stimuli/key/Ds_minor_progression_1.wav,"Name the key of the passage you just heard.
+Give a short, direct answer.",,D# minor,Eb major.,Eb major.,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_pc"": 3}"
+key_id/Ds_minor_scale_0::audio::mcq,key_id/Ds_minor_scale_0,key_id,audio,mcq,1,stimuli/key/Ds_minor_scale_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. G# minor
+B. D# minor
+C. F# major
+D. A# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G# minor|D# minor|F# major|A# minor,D# minor,B,D# minor,True,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 3}"
+key_id/Ds_minor_scale_1::audio::mcq,key_id/Ds_minor_scale_1,key_id,audio,mcq,2,stimuli/key/Ds_minor_scale_1.wav,"Name the key of the passage you just heard.
+A. F# major
+B. G# minor
+C. D# minor
+D. A# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F# major|G# minor|D# minor|A# minor,D# minor,D,A# minor,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 3}"
+key_id/Ds_minor_scale_1::audio::open,key_id/Ds_minor_scale_1,key_id,audio,open,2,stimuli/key/Ds_minor_scale_1.wav,"Name the key of the passage you just heard.
+Give a short, direct answer.",,D# minor,D# minor,D# minor,True,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 3}"
+key_id/E_major_progression_0::audio::mcq,key_id/E_major_progression_0,key_id,audio,mcq,2,stimuli/key/E_major_progression_0.wav,"Name the key of the passage you just heard.
+A. A major
+B. C# minor
+C. B major
+D. E major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A major|C# minor|B major|E major,E major,D,E major,True,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_pc"": 4}"
+key_id/E_major_progression_0::audio::explain,key_id/E_major_progression_0,key_id,audio,explain,0,stimuli/key/E_major_progression_0.wav,"What key is this music in?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,E major,"The music is in the key of E major.
+
+The specific notes/chords/beats that support this are:
+- From 0.24 to 0.44 seconds, the music features a C# major chord.
+- From 0.52 to 0.68 seconds, the music features a D major chord.
+- From 0.76 to 0.92 seconds, the music features an E major chord.
+- From 0.98 to 1.14 seconds, the music features a G major chord.
+- From 1.22 to 1.38 seconds, the music features a C# major chord.
+- From 1.46 to 1.62 seconds, the music features a D major chord.
+- From 1.70 to 1.86 seconds, the music features an E major chord.
+- From 1.94 to 2.10 seconds, the music features a G major chord.
+- From 2.18 to 2.34 seconds, the music features a C# major chord.
+- From 2.42 to 2.58 seconds, the music features a D major chord.
+- From 2.66 to 2.82 seconds, the music features an E major chord.
+- From 2.90 to 3.06 seconds, the music features a G major chord.
+- From 3.14 to 3.30 seconds, the music features a C# major chord.
+- From 3.38 to 3.54 seconds, the music features a D major chord.
+- From 3.62 to 3.78 seconds, the music features an E major chord.
+- From 3.86 to 4.02 seconds, the music features a G major chord.
+- From 4.10 to 4.26 seconds, the music features a C# major chord.
+- From 4.34 to 4.50 seconds, the music features a D major chord.
+- From 4.58 to 4.74 seconds, the music features an E major chord.
+- From 4.82 to 4.98 seconds, the music features a G major chord.
+- From 5.06 to 5.22 seconds, the music features a C# major chord.
+- From 5.30 to 5.46 seconds, the music features a D major chord.
+- From 5.54 to 5.70 seconds, the music features an E major chord.
+- From 5.78 to 5.94 seconds, the music features a G major chord.
+- From 6.02 to 6.18 seconds, the music features a C# major chord.
+- From 6.26 to 6.42 seconds, the music features a D major chord.
+- From 6.50 to 6.66 seconds, the music features an E major chord.
+- From 6.74 to 6.90 seconds, the music features a G major chord.
+- From 6.98 to 7.14 seconds, the music features a C# major chord.
+- From 7.22 to 7.38 seconds, the music features a D major chord.
+- From 7.46 to 7.62 seconds, the music features an E major chord.
+- From 7.70 to 7.86 seconds, the music features a G major chord.
+- From 7.94 to 8.10 seconds, the music features a C# major chord.
+- From 8.18 to 8.34 seconds, the music features a D major chord.
+- From 8.42 to 8.58 seconds, the music features an E major chord.
+- From 8.66 to 8.82 seconds, the music features a G major chord.
+- From 8.90 to 9.06 seconds, the music features a C# major chord.
+- From 9.14 to 9.30 seconds, the music features a D major chord.
+- From 9.38 to 9.54 seconds, the music features an E major chord.
+- From 9.62 to 9.78 seconds, the music features a G major chord.
+- From 9.86 to 10.02 seconds, the music features a C# major chord.
+- From 10.10 to 10.26 seconds, the music features a D major chord.
+- From 10.34 to 10.50 seconds, the music features an E",,,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_pc"": 4}"
+key_id/E_major_progression_1::audio::mcq,key_id/E_major_progression_1,key_id,audio,mcq,0,stimuli/key/E_major_progression_1.wav,"What key is this music in?
+A. E major
+B. B major
+C. C# minor
+D. A major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E major|B major|C# minor|A major,E major,A,E major,True,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 4}"
+key_id/E_major_scale_0::audio::mcq,key_id/E_major_scale_0,key_id,audio,mcq,0,stimuli/key/E_major_scale_0.wav,"What key is this music in?
+A. C# minor
+B. B major
+C. E major
+D. A major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C# minor|B major|E major|A major,E major,D,A major,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 4}"
+key_id/E_major_scale_1::audio::mcq,key_id/E_major_scale_1,key_id,audio,mcq,0,stimuli/key/E_major_scale_1.wav,"What key is this music in?
+A. A major
+B. B major
+C. E major
+D. C# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A major|B major|E major|C# minor,E major,C,E major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_pc"": 4}"
+key_id/E_major_scale_1::audio::open,key_id/E_major_scale_1,key_id,audio,open,1,stimuli/key/E_major_scale_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+Give a short, direct answer.",,E major,E major.,E major.,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_pc"": 4}"
+key_id/E_minor_progression_0::audio::mcq,key_id/E_minor_progression_0,key_id,audio,mcq,0,stimuli/key/E_minor_progression_0.wav,"What key is this music in?
+A. G major
+B. E minor
+C. B minor
+D. A minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G major|E minor|B minor|A minor,E minor,B,E minor,True,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_pc"": 4}"
+key_id/E_minor_progression_0::audio::explain,key_id/E_minor_progression_0,key_id,audio,explain,2,stimuli/key/E_minor_progression_0.wav,"Name the key of the passage you just heard.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,E minor,"The key of the passage is E minor.
+
+The music begins with a chord progression that starts at 0.00 seconds and ends at 8.88 seconds. The first chord is E minor, which is played from 0.00 to 0.88 seconds. This is followed by a progression to A major, which is played from 0.88 to 2.08 seconds. Then, the music transitions to B major, which is played from 2.08 to 3.28 seconds. After that, the music returns to E minor, which is played from 3.28 to 4.48 seconds. Finally, the music transitions to G major, which is played from 4.48 to 8.88 seconds.",,,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_pc"": 4}"
+key_id/E_minor_progression_1::audio::mcq,key_id/E_minor_progression_1,key_id,audio,mcq,2,stimuli/key/E_minor_progression_1.wav,"Name the key of the passage you just heard.
+A. B minor
+B. A minor
+C. E minor
+D. G major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B minor|A minor|E minor|G major,E minor,C,E minor,True,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_pc"": 4}"
+key_id/E_minor_scale_0::audio::mcq,key_id/E_minor_scale_0,key_id,audio,mcq,1,stimuli/key/E_minor_scale_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. G major
+B. A minor
+C. E minor
+D. B minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G major|A minor|E minor|B minor,E minor,C,E minor,True,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 4}"
+key_id/E_minor_scale_1::audio::mcq,key_id/E_minor_scale_1,key_id,audio,mcq,2,stimuli/key/E_minor_scale_1.wav,"Name the key of the passage you just heard.
+A. B minor
+B. E minor
+C. A minor
+D. G major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B minor|E minor|A minor|G major,E minor,D,G major,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 4}"
+key_id/E_minor_scale_1::audio::open,key_id/E_minor_scale_1,key_id,audio,open,0,stimuli/key/E_minor_scale_1.wav,"What key is this music in?
+Give a short, direct answer.",,E minor,E minor,E minor,True,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 4}"
+key_id/F_major_progression_0::audio::mcq,key_id/F_major_progression_0,key_id,audio,mcq,2,stimuli/key/F_major_progression_0.wav,"Name the key of the passage you just heard.
+A. D minor
+B. C major
+C. A# major
+D. F major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D minor|C major|A# major|F major,F major,B,C major,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 5}"
+key_id/F_major_progression_0::audio::explain,key_id/F_major_progression_0,key_id,audio,explain,0,stimuli/key/F_major_progression_0.wav,"What key is this music in?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,F major,"The music is in the key of C major.
+
+The melody features a repetitive pattern of notes that are characteristic of the C major scale. The first note is C4, which is played at the beginning of the audio. The second note is E4, which is played at approximately 0.3 seconds into the audio. The third note is G4, which is played at approximately 0.7 seconds into the audio. The fourth note is C5, which is played at approximately 1.1 seconds into the audio. The fifth note is E5, which is played at approximately 1.5 seconds into the audio. The sixth note is G5, which is played at approximately 1.9 seconds into the audio. The seventh note is C6, which is played at approximately 2.3 seconds into the audio. The eighth note is E6, which is played at approximately 2.7 seconds into the audio. The ninth note is G6, which is played at approximately 3.1 seconds into the audio. The tenth note is C7, which is played at approximately 3.5 seconds into the audio. The eleventh note is E7, which is played at approximately 3.9 seconds into the audio. The twelfth note is G7, which is played at approximately 4.3 seconds into the audio. The thirteenth note is C8, which is played at approximately 4.7 seconds into the audio. The fourteenth note is E8, which is played at approximately 5.1 seconds into the audio. The fifteenth note is G8, which is played at approximately 5.5 seconds into the audio. The sixteenth note is C9, which is played at approximately 5.9 seconds into the audio. The seventeenth note is E9, which is played at approximately 6.3 seconds into the audio. The eighteenth note is G9, which is played at approximately 6.7 seconds into the audio. The nineteenth note is C10, which is played at approximately 7.1 seconds into the audio. The twentieth note is E10, which is played at approximately 7.5 seconds into the audio. The twenty-first note is G10, which is played at approximately 7.9 seconds into the audio. The twenty-second note is C11, which is played at approximately 8.3 seconds into the audio. The twenty-third note is E11, which is played at approximately 8.7 seconds into the audio. The twenty-fourth note is G11, which is played at approximately 9.1 seconds into the audio. The twenty-fifth note is C12, which is played at approximately 9.5 seconds into the audio. The twenty-sixth note is E12, which is played at approximately 9.9 seconds into the audio. The twenty-seventh note is G12, which is played at approximately 10.3 seconds into the audio. The twenty-eighth note is C13, which is played at approximately 10.7 seconds into the audio. The twenty-ninth note is E13, which is played at approximately 11.1 seconds into the audio. The thirtieth note is G13, which is played at approximately 11.5 seconds into the audio. The thirty-first note is C14, which is played at approximately 11.9 seconds into the audio. The thirty-second note is E14, which is played at approximately 12.3 seconds into the audio. The thirty-third note is G14, which is played at approximately 12.7 seconds into the audio. The thirty-fourth note is C15, which is played at approximately 13.1 seconds into the audio. The thirty-fifth note is E15, which is played at approximately 13.5 seconds into the audio. The thirty-sixth note is G15, which is played at approximately 13.9 seconds into the audio. The thirty-seventh note is C16, which is played at approximately 14.3 seconds into the audio. The thirty-eighth note is E16, which is played at approximately 14.7 seconds into the audio. The thirty-ninth note is G16, which is played at approximately 15.1 seconds into the audio. The fortieth note is C17, which is played at approximately 15.5 seconds into the audio. The forty-first note is E17, which is played at approximately 15.9 seconds into the audio. The forty-second note is G17, which is played at approximately 16.3 seconds into the audio. The forty-third note is C18, which is played at approximately 16.7 seconds into the audio. The forty-fourth note is E18",,,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 5}"
+key_id/F_major_progression_1::audio::mcq,key_id/F_major_progression_1,key_id,audio,mcq,2,stimuli/key/F_major_progression_1.wav,"Name the key of the passage you just heard.
+A. F major
+B. D minor
+C. C major
+D. A# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F major|D minor|C major|A# major,F major,C,C major,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_pc"": 5}"
+key_id/F_major_scale_0::audio::mcq,key_id/F_major_scale_0,key_id,audio,mcq,1,stimuli/key/F_major_scale_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. F major
+B. A# major
+C. C major
+D. D minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F major|A# major|C major|D minor,F major,C,C major,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 5}"
+key_id/F_major_scale_1::audio::mcq,key_id/F_major_scale_1,key_id,audio,mcq,0,stimuli/key/F_major_scale_1.wav,"What key is this music in?
+A. F major
+B. C major
+C. A# major
+D. D minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F major|C major|A# major|D minor,F major,A,F major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 5}"
+key_id/F_major_scale_1::audio::open,key_id/F_major_scale_1,key_id,audio,open,1,stimuli/key/F_major_scale_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+Give a short, direct answer.",,F major,F major.,F major.,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 5}"
+key_id/F_minor_progression_0::audio::mcq,key_id/F_minor_progression_0,key_id,audio,mcq,2,stimuli/key/F_minor_progression_0.wav,"Name the key of the passage you just heard.
+A. A# minor
+B. F minor
+C. G# major
+D. C minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A# minor|F minor|G# major|C minor,F minor,B,F minor,True,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 5}"
+key_id/F_minor_progression_0::audio::explain,key_id/F_minor_progression_0,key_id,audio,explain,0,stimuli/key/F_minor_progression_0.wav,"What key is this music in?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,F minor,"The music is in the key of F minor.
+
+The music begins with a chord progression that starts at 0.24 seconds and ends at 1.56 seconds. The chord is a C# major chord, which is a common chord in F minor music. The music then transitions to a chord progression that starts at 1.56 seconds and ends at 3.00 seconds. The chord is a D# major chord, which is also a common chord in F minor music. The music then transitions to a chord progression that starts at 3.00 seconds and ends at 4.44 seconds. The chord is a G# major chord, which is also a common chord in F minor music. The music then transitions to a chord progression that starts at 4.44 seconds and ends at 6.00 seconds. The chord is a C# major chord, which is also a common chord in F minor music. The music then transitions to a chord progression that starts at 6.00 seconds and ends at 7.20 seconds. The chord is a D# major chord, which is also a common chord in F minor music. The music then transitions to a chord progression that starts at 7.20 seconds and ends at 8.48 seconds. The chord is a G# major chord, which is also a common chord in F minor music. The music then transitions to a chord progression that starts at 8.48 seconds and ends at 9.48 seconds. The chord is a C# major chord, which is also a common chord in F minor music.",,,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 5}"
+key_id/F_minor_progression_1::audio::mcq,key_id/F_minor_progression_1,key_id,audio,mcq,2,stimuli/key/F_minor_progression_1.wav,"Name the key of the passage you just heard.
+A. C minor
+B. A# minor
+C. F minor
+D. G# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C minor|A# minor|F minor|G# major,F minor,B,A# minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_pc"": 5}"
+key_id/F_minor_scale_0::audio::mcq,key_id/F_minor_scale_0,key_id,audio,mcq,1,stimuli/key/F_minor_scale_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. F minor
+B. G# major
+C. A# minor
+D. C minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F minor|G# major|A# minor|C minor,F minor,A,F minor,True,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_pc"": 5}"
+key_id/F_minor_scale_1::audio::mcq,key_id/F_minor_scale_1,key_id,audio,mcq,0,stimuli/key/F_minor_scale_1.wav,"What key is this music in?
+A. G# major
+B. A# minor
+C. F minor
+D. C minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G# major|A# minor|F minor|C minor,F minor,C,F minor,True,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 5}"
+key_id/Fs_major_progression_0::audio::mcq,key_id/Fs_major_progression_0,key_id,audio,mcq,2,stimuli/key/Fs_major_progression_0.wav,"Name the key of the passage you just heard.
+A. B major
+B. C# major
+C. D# minor
+D. F# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B major|C# major|D# minor|F# major,F# major,D,F# major,True,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 6}"
+key_id/Fs_major_progression_1::audio::mcq,key_id/Fs_major_progression_1,key_id,audio,mcq,1,stimuli/key/Fs_major_progression_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. D# minor
+B. B major
+C. F# major
+D. C# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D# minor|B major|F# major|C# major,F# major,B,B major,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 6}"
+key_id/Fs_major_scale_0::audio::mcq,key_id/Fs_major_scale_0,key_id,audio,mcq,0,stimuli/key/Fs_major_scale_0.wav,"What key is this music in?
+A. F# major
+B. C# major
+C. D# minor
+D. B major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F# major|C# major|D# minor|B major,F# major,A,F# major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_pc"": 6}"
+key_id/Fs_major_scale_0::audio::explain,key_id/Fs_major_scale_0,key_id,audio,explain,2,stimuli/key/Fs_major_scale_0.wav,"Name the key of the passage you just heard.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,F# major,"The key of the passage is F# major.
+
+The music features a flute playing a melody in F# major. The specific notes and their approximate timestamps are as follows:
+- F#4 (0.00-0.50)
+- A#3 (0.50-1.00)
+- G#3 (1.00-1.50)
+- F#4 (1.50-2.00)
+- A#3 (2.00-2.50)
+- F#4 (2.50-3.00)
+- A#3 (3.00-3.50)
+- G#3 (3.50-4.00)
+- F#4 (4.00-4.50)
+- A#3 (4.50-5.00)
+- F#4 (5.00-5.50)
+- A#3 (5.50-6.00)
+- G#3 (6.00-6.50)
+- F#4 (6.50-7.00)
+- A#3 (7.00-7.50)
+- F#4 (7.50-8.00)
+- A#3 (8.00-8.50)
+- G#3 (8.50-9.00)
+- F#4 (9.00-9.50)
+- A#3 (9.50-10.00)
+
+These notes are played in a sequence that is characteristic of the F# major scale.",,,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_pc"": 6}"
+key_id/Fs_major_scale_1::audio::mcq,key_id/Fs_major_scale_1,key_id,audio,mcq,0,stimuli/key/Fs_major_scale_1.wav,"What key is this music in?
+A. D# minor
+B. B major
+C. C# major
+D. F# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D# minor|B major|C# major|F# major,F# major,D,F# major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 6}"
+key_id/Fs_minor_progression_0::audio::mcq,key_id/Fs_minor_progression_0,key_id,audio,mcq,1,stimuli/key/Fs_minor_progression_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. B minor
+B. F# minor
+C. A major
+D. C# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B minor|F# minor|A major|C# minor,F# minor,B,F# minor,True,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 6}"
+key_id/Fs_minor_progression_1::audio::mcq,key_id/Fs_minor_progression_1,key_id,audio,mcq,1,stimuli/key/Fs_minor_progression_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. C# minor
+B. F# minor
+C. A major
+D. B minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C# minor|F# minor|A major|B minor,F# minor,B,F# minor,True,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_pc"": 6}"
+key_id/Fs_minor_scale_0::audio::mcq,key_id/Fs_minor_scale_0,key_id,audio,mcq,0,stimuli/key/Fs_minor_scale_0.wav,"What key is this music in?
+A. B minor
+B. A major
+C. C# minor
+D. F# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B minor|A major|C# minor|F# minor,F# minor,B,A major,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_pc"": 6}"
+key_id/Fs_minor_scale_1::audio::mcq,key_id/Fs_minor_scale_1,key_id,audio,mcq,0,stimuli/key/Fs_minor_scale_1.wav,"What key is this music in?
+A. A major
+B. B minor
+C. C# minor
+D. F# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A major|B minor|C# minor|F# minor,F# minor,D,F# minor,True,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 6}"
+key_id/G_major_progression_0::audio::mcq,key_id/G_major_progression_0,key_id,audio,mcq,0,stimuli/key/G_major_progression_0.wav,"What key is this music in?
+A. G major
+B. C major
+C. D major
+D. E minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G major|C major|D major|E minor,G major,B,C major,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_pc"": 7}"
+key_id/G_major_progression_1::audio::mcq,key_id/G_major_progression_1,key_id,audio,mcq,1,stimuli/key/G_major_progression_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. D major
+B. E minor
+C. C major
+D. G major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D major|E minor|C major|G major,G major,B,E minor,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_pc"": 7}"
+key_id/G_major_scale_0::audio::mcq,key_id/G_major_scale_0,key_id,audio,mcq,0,stimuli/key/G_major_scale_0.wav,"What key is this music in?
+A. G major
+B. E minor
+C. C major
+D. D major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G major|E minor|C major|D major,G major,A,G major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_pc"": 7}"
+key_id/G_major_scale_0::audio::explain,key_id/G_major_scale_0,key_id,audio,explain,2,stimuli/key/G_major_scale_0.wav,"Name the key of the passage you just heard.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,G major,"The key of the passage is G major.
+
+The melody begins with a G major chord at 0.00 seconds, which is the root note of the key. The melody then transitions to a D major chord at 0.88 seconds, which is the fifth note of the G major scale. The melody then returns to a G major chord at 1.67 seconds, which is the root note of the key. The melody then transitions to a C major chord at 2.46 seconds, which is the fourth note of the G major scale. The melody then returns to a G major chord at 3.25 seconds, which is the root note of the key. The melody then transitions to a D major chord at 4.04 seconds, which is the fifth note of the G major scale. The melody then returns to a G major chord at 4.83 seconds, which is the root note of the key. The melody then transitions to a C major chord at 5.62 seconds, which is the fourth note of the G major scale. The melody then returns to a G major chord at 6.41 seconds, which is the root note of the key. The melody then transitions to a D major chord at 7.20 seconds, which is the fifth note of the G major scale. The melody then returns to a G major chord at 8.00 seconds, which is the root note of the key.",,,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_pc"": 7}"
+key_id/G_major_scale_1::audio::mcq,key_id/G_major_scale_1,key_id,audio,mcq,2,stimuli/key/G_major_scale_1.wav,"Name the key of the passage you just heard.
+A. C major
+B. E minor
+C. D major
+D. G major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C major|E minor|D major|G major,G major,D,G major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 7}"
+key_id/G_minor_progression_0::audio::mcq,key_id/G_minor_progression_0,key_id,audio,mcq,2,stimuli/key/G_minor_progression_0.wav,"Name the key of the passage you just heard.
+A. C minor
+B. A# major
+C. D minor
+D. G minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C minor|A# major|D minor|G minor,G minor,C,D minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 7}"
+key_id/G_minor_progression_1::audio::mcq,key_id/G_minor_progression_1,key_id,audio,mcq,1,stimuli/key/G_minor_progression_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. A# major
+B. G minor
+C. C minor
+D. D minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A# major|G minor|C minor|D minor,G minor,B,G minor,True,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 7}"
+key_id/G_minor_scale_0::audio::mcq,key_id/G_minor_scale_0,key_id,audio,mcq,2,stimuli/key/G_minor_scale_0.wav,"Name the key of the passage you just heard.
+A. G minor
+B. C minor
+C. A# major
+D. D minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G minor|C minor|A# major|D minor,G minor,B,C minor,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_pc"": 7}"
+key_id/G_minor_scale_1::audio::mcq,key_id/G_minor_scale_1,key_id,audio,mcq,0,stimuli/key/G_minor_scale_1.wav,"What key is this music in?
+A. C minor
+B. G minor
+C. A# major
+D. D minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C minor|G minor|A# major|D minor,G minor,A,C minor,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 7}"
+key_id/Gs_major_progression_0::audio::mcq,key_id/Gs_major_progression_0,key_id,audio,mcq,1,stimuli/key/Gs_major_progression_0.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. G# major
+B. F minor
+C. D# major
+D. C# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G# major|F minor|D# major|C# major,G# major,B,F minor,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 8}"
+key_id/Gs_major_progression_1::audio::mcq,key_id/Gs_major_progression_1,key_id,audio,mcq,1,stimuli/key/Gs_major_progression_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. G# major
+B. D# major
+C. C# major
+D. F minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G# major|D# major|C# major|F minor,G# major,D,F minor,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_pc"": 8}"
+key_id/Gs_major_progression_1::audio::explain,key_id/Gs_major_progression_1,key_id,audio,explain,0,stimuli/key/Gs_major_progression_1.wav,"What key is this music in?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,G# major,"The music is in the key of F minor.
+
+From 0.25 to 8.25 seconds, the music features a repetitive chord progression. The first chord is F minor, which is played from 0.25 to 1.25 seconds. The second chord is A# major, which is played from 1.25 to 2.25 seconds. The third chord is C major, which is played from 2.25 to 3.25 seconds. The fourth chord is D# major, which is played from 3.25 to 4.25 seconds. The fifth chord is F minor, which is played from 4.25 to 5.25 seconds. The sixth chord is A# major, which is played from 5.25 to 6.25 seconds. The seventh chord is C major, which is played from 6.25 to 7.25 seconds. The eighth chord is D# major, which is played from 7.25 to 8.25 seconds. This pattern repeats throughout the music, creating a repetitive and rhythmic feel.",,,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_pc"": 8}"
+key_id/Gs_major_scale_0::audio::mcq,key_id/Gs_major_scale_0,key_id,audio,mcq,0,stimuli/key/Gs_major_scale_0.wav,"What key is this music in?
+A. C# major
+B. D# major
+C. G# major
+D. F minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C# major|D# major|G# major|F minor,G# major,D,F minor,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 8}"
+key_id/Gs_major_scale_1::audio::mcq,key_id/Gs_major_scale_1,key_id,audio,mcq,2,stimuli/key/Gs_major_scale_1.wav,"Name the key of the passage you just heard.
+A. D# major
+B. F minor
+C. C# major
+D. G# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D# major|F minor|C# major|G# major,G# major,B,F minor,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 8}"
+key_id/Gs_major_scale_1::audio::open,key_id/Gs_major_scale_1,key_id,audio,open,1,stimuli/key/Gs_major_scale_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+Give a short, direct answer.",,G# major,Ab major,Ab major,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 8}"
+key_id/Gs_minor_progression_0::audio::mcq,key_id/Gs_minor_progression_0,key_id,audio,mcq,2,stimuli/key/Gs_minor_progression_0.wav,"Name the key of the passage you just heard.
+A. B major
+B. C# minor
+C. D# minor
+D. G# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B major|C# minor|D# minor|G# minor,G# minor,B,C# minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 8}"
+key_id/Gs_minor_progression_1::audio::mcq,key_id/Gs_minor_progression_1,key_id,audio,mcq,2,stimuli/key/Gs_minor_progression_1.wav,"Name the key of the passage you just heard.
+A. D# minor
+B. C# minor
+C. B major
+D. G# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D# minor|C# minor|B major|G# minor,G# minor,B,C# minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 8}"
+key_id/Gs_minor_progression_1::audio::open,key_id/Gs_minor_progression_1,key_id,audio,open,1,stimuli/key/Gs_minor_progression_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+Give a short, direct answer.",,G# minor,G# minor.,G# minor.,True,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 8}"
+key_id/Gs_minor_scale_0::audio::mcq,key_id/Gs_minor_scale_0,key_id,audio,mcq,0,stimuli/key/Gs_minor_scale_0.wav,"What key is this music in?
+A. D# minor
+B. B major
+C. C# minor
+D. G# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D# minor|B major|C# minor|G# minor,G# minor,D,G# minor,True,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 8}"
+key_id/Gs_minor_scale_1::audio::mcq,key_id/Gs_minor_scale_1,key_id,audio,mcq,0,stimuli/key/Gs_minor_scale_1.wav,"What key is this music in?
+A. D# minor
+B. C# minor
+C. G# minor
+D. B major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D# minor|C# minor|G# minor|B major,G# minor,D,B major,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 8}"
+key_id/Gs_minor_scale_1::audio::open,key_id/Gs_minor_scale_1,key_id,audio,open,0,stimuli/key/Gs_minor_scale_1.wav,"What key is this music in?
+Give a short, direct answer.",,G# minor,G# minor,G# minor,True,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 8}"
+key_id/A_major_progression_0::no_audio::mcq,key_id/A_major_progression_0,key_id,no_audio,mcq,0,,"What key is this music in?
+A. D major
+B. A major
+C. F# minor
+D. E major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D major|A major|F# minor|E major,A major,C,F# minor,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 9}"
+key_id/A_major_scale_0::no_audio::mcq,key_id/A_major_scale_0,key_id,no_audio,mcq,0,,"What key is this music in?
+A. F# minor
+B. A major
+C. D major
+D. E major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F# minor|A major|D major|E major,A major,B,A major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 9}"
+key_id/A_major_scale_1::no_audio::mcq,key_id/A_major_scale_1,key_id,no_audio,mcq,1,,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. F# minor
+B. E major
+C. D major
+D. A major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F# minor|E major|D major|A major,A major,A,F# minor,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 9}"
+key_id/As_major_scale_0::no_audio::mcq,key_id/As_major_scale_0,key_id,no_audio,mcq,1,,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. D# major
+B. G minor
+C. F major
+D. A# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D# major|G minor|F major|A# major,A# major,B,G minor,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 10}"
+key_id/As_minor_progression_0::no_audio::mcq,key_id/As_minor_progression_0,key_id,no_audio,mcq,1,,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. C# major
+B. A# minor
+C. D# minor
+D. F minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C# major|A# minor|D# minor|F minor,A# minor,B,A# minor,True,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_pc"": 10}"
+key_id/As_minor_progression_1::no_audio::mcq,key_id/As_minor_progression_1,key_id,no_audio,mcq,0,,"What key is this music in?
+A. A# minor
+B. D# minor
+C. C# major
+D. F minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A# minor|D# minor|C# major|F minor,A# minor,B,D# minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 10}"
+key_id/B_major_scale_0::no_audio::mcq,key_id/B_major_scale_0,key_id,no_audio,mcq,2,,"Name the key of the passage you just heard.
+A. F# major
+B. E major
+C. G# minor
+D. B major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F# major|E major|G# minor|B major,B major,C,G# minor,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 11}"
+key_id/B_minor_scale_1::no_audio::mcq,key_id/B_minor_scale_1,key_id,no_audio,mcq,1,,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. D major
+B. F# minor
+C. E minor
+D. B minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D major|F# minor|E minor|B minor,B minor,B,F# minor,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_pc"": 11}"
+key_id/C_major_progression_0::no_audio::mcq,key_id/C_major_progression_0,key_id,no_audio,mcq,0,,"What key is this music in?
+A. F major
+B. G major
+C. A minor
+D. C major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F major|G major|A minor|C major,C major,D,C major,True,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 0}"
+key_id/C_major_progression_1::no_audio::mcq,key_id/C_major_progression_1,key_id,no_audio,mcq,1,,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. F major
+B. A minor
+C. G major
+D. C major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F major|A minor|G major|C major,C major,A,F major,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 0}"
+key_id/C_minor_scale_1::no_audio::mcq,key_id/C_minor_scale_1,key_id,no_audio,mcq,1,,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. G minor
+B. C minor
+C. D# major
+D. F minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G minor|C minor|D# major|F minor,C minor,A,G minor,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 0}"
+key_id/Cs_major_progression_1::no_audio::mcq,key_id/Cs_major_progression_1,key_id,no_audio,mcq,0,,"What key is this music in?
+A. G# major
+B. A# minor
+C. F# major
+D. C# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G# major|A# minor|F# major|C# major,C# major,B,A# minor,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 1}"
+key_id/Cs_minor_progression_0::no_audio::mcq,key_id/Cs_minor_progression_0,key_id,no_audio,mcq,2,,"Name the key of the passage you just heard.
+A. F# minor
+B. G# minor
+C. E major
+D. C# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F# minor|G# minor|E major|C# minor,C# minor,B,G# minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 1}"
+key_id/Cs_minor_progression_1::no_audio::mcq,key_id/Cs_minor_progression_1,key_id,no_audio,mcq,1,,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. G# minor
+B. F# minor
+C. E major
+D. C# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G# minor|F# minor|E major|C# minor,C# minor,A,G# minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 1}"
+key_id/Cs_minor_scale_0::no_audio::mcq,key_id/Cs_minor_scale_0,key_id,no_audio,mcq,1,,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. C# minor
+B. E major
+C. G# minor
+D. F# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C# minor|E major|G# minor|F# minor,C# minor,D,F# minor,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_pc"": 1}"
+key_id/D_major_progression_1::no_audio::mcq,key_id/D_major_progression_1,key_id,no_audio,mcq,2,,"Name the key of the passage you just heard.
+A. A major
+B. B minor
+C. D major
+D. G major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A major|B minor|D major|G major,D major,D,G major,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 2}"
+key_id/D_major_scale_0::no_audio::mcq,key_id/D_major_scale_0,key_id,no_audio,mcq,0,,"What key is this music in?
+A. A major
+B. G major
+C. B minor
+D. D major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A major|G major|B minor|D major,D major,A,A major,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 2}"
+key_id/D_major_scale_1::no_audio::mcq,key_id/D_major_scale_1,key_id,no_audio,mcq,1,,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. D major
+B. B minor
+C. A major
+D. G major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D major|B minor|A major|G major,D major,A,D major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 2}"
+key_id/Ds_major_progression_0::no_audio::mcq,key_id/Ds_major_progression_0,key_id,no_audio,mcq,0,,"What key is this music in?
+A. G# major
+B. A# major
+C. D# major
+D. C minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G# major|A# major|D# major|C minor,D# major,B,A# major,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 3}"
+key_id/Ds_major_progression_1::no_audio::mcq,key_id/Ds_major_progression_1,key_id,no_audio,mcq,2,,"Name the key of the passage you just heard.
+A. D# major
+B. G# major
+C. C minor
+D. A# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D# major|G# major|C minor|A# major,D# major,D,A# major,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_pc"": 3}"
+key_id/Ds_major_scale_0::no_audio::mcq,key_id/Ds_major_scale_0,key_id,no_audio,mcq,2,,"Name the key of the passage you just heard.
+A. C minor
+B. A# major
+C. G# major
+D. D# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C minor|A# major|G# major|D# major,D# major,D,D# major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_pc"": 3}"
+key_id/E_major_progression_0::no_audio::mcq,key_id/E_major_progression_0,key_id,no_audio,mcq,2,,"Name the key of the passage you just heard.
+A. E major
+B. A major
+C. B major
+D. C# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E major|A major|B major|C# minor,E major,D,C# minor,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_pc"": 4}"
+key_id/E_major_progression_1::no_audio::mcq,key_id/E_major_progression_1,key_id,no_audio,mcq,1,,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. B major
+B. C# minor
+C. E major
+D. A major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B major|C# minor|E major|A major,E major,B,C# minor,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 4}"
+key_id/E_minor_progression_1::no_audio::mcq,key_id/E_minor_progression_1,key_id,no_audio,mcq,0,,"What key is this music in?
+A. A minor
+B. E minor
+C. B minor
+D. G major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A minor|E minor|B minor|G major,E minor,B,E minor,True,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_pc"": 4}"
+key_id/F_major_progression_1::no_audio::mcq,key_id/F_major_progression_1,key_id,no_audio,mcq,0,,"What key is this music in?
+A. F major
+B. D minor
+C. A# major
+D. C major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F major|D minor|A# major|C major,F major,D,C major,False,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_pc"": 5}"
+key_id/F_major_scale_0::no_audio::mcq,key_id/F_major_scale_0,key_id,no_audio,mcq,1,,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. C major
+B. D minor
+C. A# major
+D. F major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C major|D minor|A# major|F major,F major,A,C major,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 5}"
+key_id/F_minor_progression_1::no_audio::mcq,key_id/F_minor_progression_1,key_id,no_audio,mcq,0,,"What key is this music in?
+A. F minor
+B. C minor
+C. A# minor
+D. G# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F minor|C minor|A# minor|G# major,F minor,C,A# minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_pc"": 5}"
+key_id/Fs_major_scale_1::no_audio::mcq,key_id/Fs_major_scale_1,key_id,no_audio,mcq,0,,"What key is this music in?
+A. D# minor
+B. B major
+C. C# major
+D. F# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D# minor|B major|C# major|F# major,F# major,D,F# major,True,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 6}"
+key_id/Fs_minor_progression_0::no_audio::mcq,key_id/Fs_minor_progression_0,key_id,no_audio,mcq,0,,"What key is this music in?
+A. A major
+B. B minor
+C. F# minor
+D. C# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A major|B minor|F# minor|C# minor,F# minor,D,C# minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 6}"
+key_id/G_major_scale_1::no_audio::mcq,key_id/G_major_scale_1,key_id,no_audio,mcq,0,,"What key is this music in?
+A. C major
+B. D major
+C. E minor
+D. G major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C major|D major|E minor|G major,G major,A,C major,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 7}"
+key_id/G_minor_progression_0::no_audio::mcq,key_id/G_minor_progression_0,key_id,no_audio,mcq,1,,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. A# major
+B. D minor
+C. C minor
+D. G minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A# major|D minor|C minor|G minor,G minor,D,G minor,True,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 7}"
+key_id/G_minor_progression_1::no_audio::mcq,key_id/G_minor_progression_1,key_id,no_audio,mcq,1,,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. D minor
+B. C minor
+C. A# major
+D. G minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D minor|C minor|A# major|G minor,G minor,D,G minor,True,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_pc"": 7}"
+key_id/Gs_major_scale_0::no_audio::mcq,key_id/Gs_major_scale_0,key_id,no_audio,mcq,0,,"What key is this music in?
+A. C# major
+B. G# major
+C. F minor
+D. D# major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C# major|G# major|F minor|D# major,G# major,D,D# major,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 8}"
+key_id/As_minor_scale_1::wrong_audio::mcq,key_id/As_minor_scale_1,key_id,wrong_audio,mcq,2,stimuli/polyphony/count3_09.wav,"Name the key of the passage you just heard.
+A. D# minor
+B. A# minor
+C. C# major
+D. F minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D# minor|A# minor|C# major|F minor,A# minor,B,A# minor,True,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_pc"": 10}"
+key_id/C_minor_progression_0::wrong_audio::mcq,key_id/C_minor_progression_0,key_id,wrong_audio,mcq,1,stimuli/mode/lydian_64_bare_scale.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. D# major
+B. G minor
+C. F minor
+D. C minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D# major|G minor|F minor|C minor,C minor,A,D# major,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_pc"": 0}"
+key_id/Cs_major_scale_1::wrong_audio::mcq,key_id/Cs_major_scale_1,key_id,wrong_audio,mcq,1,stimuli/pitch/049_piano_timgm_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. G# major
+B. F# major
+C. C# major
+D. A# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G# major|F# major|C# major|A# minor,C# major,D,A# minor,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_pc"": 1}"
+key_id/D_minor_scale_0::wrong_audio::mcq,key_id/D_minor_scale_0,key_id,wrong_audio,mcq,1,stimuli/polyphony/count2_06.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. D minor
+B. A minor
+C. F major
+D. G minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D minor|A minor|F major|G minor,D minor,C,F major,False,,"{""form"": ""scale"", ""mode"": ""minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 2}"
+key_id/Ds_minor_progression_1::wrong_audio::mcq,key_id/Ds_minor_progression_1,key_id,wrong_audio,mcq,2,stimuli/intervals/P8_harmonic_54_3.wav,"Name the key of the passage you just heard.
+A. F# major
+B. D# minor
+C. G# minor
+D. A# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F# major|D# minor|G# minor|A# minor,D# minor,A,F# major,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_pc"": 3}"
+key_id/E_major_progression_1::wrong_audio::mcq,key_id/E_major_progression_1,key_id,wrong_audio,mcq,1,stimuli/intervals/P8_harmonic_66_1.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. B major
+B. E major
+C. C# minor
+D. A major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B major|E major|C# minor|A major,E major,B,E major,True,,"{""form"": ""progression"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_pc"": 4}"
+key_id/F_minor_progression_0::wrong_audio::mcq,key_id/F_minor_progression_0,key_id,wrong_audio,mcq,1,stimuli/cents/trial_0036.wav,"Listen to this clip and identify its musical key (e.g. D major, F# minor).
+A. C minor
+B. F minor
+C. G# major
+D. A# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C minor|F minor|G# major|A# minor,F minor,D,A# minor,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 5}"
+key_id/Fs_major_scale_0::wrong_audio::mcq,key_id/Fs_major_scale_0,key_id,wrong_audio,mcq,0,stimuli/tuning/tune_0089.wav,"What key is this music in?
+A. C# major
+B. B major
+C. F# major
+D. D# minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C# major|B major|F# major|D# minor,F# major,B,B major,False,,"{""form"": ""scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_pc"": 6}"
+key_id/Gs_minor_progression_1::wrong_audio::mcq,key_id/Gs_minor_progression_1,key_id,wrong_audio,mcq,2,stimuli/cents/trial_0140.wav,"Name the key of the passage you just heard.
+A. C# minor
+B. D# minor
+C. G# minor
+D. B major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C# minor|D# minor|G# minor|B major,G# minor,D,B major,False,,"{""form"": ""progression"", ""mode"": ""minor"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_pc"": 8}"

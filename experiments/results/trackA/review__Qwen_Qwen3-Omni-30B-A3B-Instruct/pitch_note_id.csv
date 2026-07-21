@@ -1,0 +1,778 @@
+job_id,stimulus_id,task,condition,format,paraphrase_idx,audio_path,prompt,options,ground_truth,raw_response,parsed,correct,error,factors
+pitch_note_id/pitch/048_synth_lead_musescore_1::audio::mcq,pitch_note_id/pitch/048_synth_lead_musescore_1,pitch_note_id,audio,mcq,1,stimuli/pitch/048_synth_lead_musescore_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. C
+B. B
+C. C#
+D. F#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C|B|C#|F#,C,C,C#,True,,"{""midi"": 48, ""note_name"": ""C3"", ""octave"": 3, ""pitch_class"": ""C"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/048_violin_timgm_0::audio::mcq,pitch_note_id/pitch/048_violin_timgm_0,pitch_note_id,audio,mcq,1,stimuli/pitch/048_violin_timgm_0.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. A#
+B. B
+C. C#
+D. C
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A#|B|C#|C,C,D,C,True,,"{""midi"": 48, ""note_name"": ""C3"", ""octave"": 3, ""pitch_class"": ""C"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/048_violin_timgm_0::audio::explain,pitch_note_id/pitch/048_violin_timgm_0,pitch_note_id,audio,explain,0,stimuli/pitch/048_violin_timgm_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,C,"F
+
+I heard a single, sustained note starting at 00:00 and ending at 00:02. The pitch of this note is F.",,,,"{""midi"": 48, ""note_name"": ""C3"", ""octave"": 3, ""pitch_class"": ""C"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/049_piano_timgm_1::audio::mcq,pitch_note_id/pitch/049_piano_timgm_1,pitch_note_id,audio,mcq,1,stimuli/pitch/049_piano_timgm_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. C#
+B. C
+C. F#
+D. D
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C#|C|F#|D,C#,B,C,False,,"{""midi"": 49, ""note_name"": ""C#3"", ""octave"": 3, ""pitch_class"": ""C#"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/049_piano_timgm_1::audio::explain,pitch_note_id/pitch/049_piano_timgm_1,pitch_note_id,audio,explain,2,stimuli/pitch/049_piano_timgm_1.wav,"Identify the musical note you hear, by letter name only.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,C#,"C
+
+I heard a single, sustained note starting at 00:00 and ending at 00:03. The pitch of this note is C.",,,,"{""midi"": 49, ""note_name"": ""C#3"", ""octave"": 3, ""pitch_class"": ""C#"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/049_synth_lead_fluidr3_0::audio::mcq,pitch_note_id/pitch/049_synth_lead_fluidr3_0,pitch_note_id,audio,mcq,0,stimuli/pitch/049_synth_lead_fluidr3_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. D
+B. A#
+C. C
+D. C#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D|A#|C|C#,C#,D,C#,True,,"{""midi"": 49, ""note_name"": ""C#3"", ""octave"": 3, ""pitch_class"": ""C#"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/050_flute_fluidr3_0::audio::mcq,pitch_note_id/pitch/050_flute_fluidr3_0,pitch_note_id,audio,mcq,0,stimuli/pitch/050_flute_fluidr3_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. D#
+B. C#
+C. D
+D. C
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D#|C#|D|C,D,C,D,True,,"{""midi"": 50, ""note_name"": ""D3"", ""octave"": 3, ""pitch_class"": ""D"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/050_flute_fluidr3_0::audio::open,pitch_note_id/pitch/050_flute_fluidr3_0,pitch_note_id,audio,open,1,stimuli/pitch/050_flute_fluidr3_0.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+Give a short, direct answer.",,D,D,D,True,,"{""midi"": 50, ""note_name"": ""D3"", ""octave"": 3, ""pitch_class"": ""D"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/050_flute_fluidr3_1::audio::mcq,pitch_note_id/pitch/050_flute_fluidr3_1,pitch_note_id,audio,mcq,2,stimuli/pitch/050_flute_fluidr3_1.wav,"Identify the musical note you hear, by letter name only.
+A. D
+B. D#
+C. C#
+D. E
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D|D#|C#|E,D,A,D,True,,"{""midi"": 50, ""note_name"": ""D3"", ""octave"": 3, ""pitch_class"": ""D"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/051_flute_timgm_0::audio::mcq,pitch_note_id/pitch/051_flute_timgm_0,pitch_note_id,audio,mcq,0,stimuli/pitch/051_flute_timgm_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. B
+B. E
+C. D
+D. D#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B|E|D|D#,D#,B,E,False,,"{""midi"": 51, ""note_name"": ""D#3"", ""octave"": 3, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/051_flute_timgm_0::audio::open,pitch_note_id/pitch/051_flute_timgm_0,pitch_note_id,audio,open,0,stimuli/pitch/051_flute_timgm_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+Give a short, direct answer.",,D#,G,G,False,,"{""midi"": 51, ""note_name"": ""D#3"", ""octave"": 3, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/051_piano_fluidr3_1::audio::mcq,pitch_note_id/pitch/051_piano_fluidr3_1,pitch_note_id,audio,mcq,1,stimuli/pitch/051_piano_fluidr3_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. E
+B. D
+C. D#
+D. A#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E|D|D#|A#,D#,C,D#,True,,"{""midi"": 51, ""note_name"": ""D#3"", ""octave"": 3, ""pitch_class"": ""D#"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/051_piano_fluidr3_1::audio::explain,pitch_note_id/pitch/051_piano_fluidr3_1,pitch_note_id,audio,explain,1,stimuli/pitch/051_piano_fluidr3_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,D#,"The note played is **D**.
+
+**Explanation:**
+
+At **00:00**, a single, clear, and sustained note is played on what sounds like a piano or electric piano. The pitch is distinctly higher than C but lower than E. The note has a bright, slightly metallic timbre with a clear fundamental frequency and harmonics, consistent with a piano.
+
+By comparing the pitch to a standard piano keyboard:
+- C is the note just below middle C (C4).
+- D is the next note up from C.
+- E is the next note up from D.
+
+The note is clearly higher than C but not as high as E. It matches the pitch of **D4** (approximately 293.66 Hz), which is the D above middle C.
+
+No other notes, chords, or rhythmic elements are present. The note is held for about 2 seconds and then cuts off cleanly at **00:02**.",,,,"{""midi"": 51, ""note_name"": ""D#3"", ""octave"": 3, ""pitch_class"": ""D#"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/052_violin_fluidr3_0::audio::mcq,pitch_note_id/pitch/052_violin_fluidr3_0,pitch_note_id,audio,mcq,2,stimuli/pitch/052_violin_fluidr3_0.wav,"Identify the musical note you hear, by letter name only.
+A. D#
+B. E
+C. F#
+D. F
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D#|E|F#|F,E,B,E,True,,"{""midi"": 52, ""note_name"": ""E3"", ""octave"": 3, ""pitch_class"": ""E"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/052_violin_musescore_1::audio::mcq,pitch_note_id/pitch/052_violin_musescore_1,pitch_note_id,audio,mcq,1,stimuli/pitch/052_violin_musescore_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. E
+B. A
+C. F
+D. D#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E|A|F|D#,E,A,E,True,,"{""midi"": 52, ""note_name"": ""E3"", ""octave"": 3, ""pitch_class"": ""E"", ""program"": ""violin"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/053_flute_fluidr3_1::audio::mcq,pitch_note_id/pitch/053_flute_fluidr3_1,pitch_note_id,audio,mcq,2,stimuli/pitch/053_flute_fluidr3_1.wav,"Identify the musical note you hear, by letter name only.
+A. G#
+B. F#
+C. E
+D. F
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G#|F#|E|F,F,D,F,True,,"{""midi"": 53, ""note_name"": ""F3"", ""octave"": 3, ""pitch_class"": ""F"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/053_synth_lead_musescore_0::audio::mcq,pitch_note_id/pitch/053_synth_lead_musescore_0,pitch_note_id,audio,mcq,2,stimuli/pitch/053_synth_lead_musescore_0.wav,"Identify the musical note you hear, by letter name only.
+A. A
+B. E
+C. F
+D. F#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A|E|F|F#,F,C,F,True,,"{""midi"": 53, ""note_name"": ""F3"", ""octave"": 3, ""pitch_class"": ""F"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/054_synth_lead_musescore_1::audio::mcq,pitch_note_id/pitch/054_synth_lead_musescore_1,pitch_note_id,audio,mcq,1,stimuli/pitch/054_synth_lead_musescore_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. F
+B. G
+C. A#
+D. F#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F|G|A#|F#,F#,A,F,False,,"{""midi"": 54, ""note_name"": ""F#3"", ""octave"": 3, ""pitch_class"": ""F#"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/054_synth_lead_timgm_0::audio::mcq,pitch_note_id/pitch/054_synth_lead_timgm_0,pitch_note_id,audio,mcq,2,stimuli/pitch/054_synth_lead_timgm_0.wav,"Identify the musical note you hear, by letter name only.
+A. G
+B. D
+C. F
+D. F#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G|D|F|F#,F#,C,F,False,,"{""midi"": 54, ""note_name"": ""F#3"", ""octave"": 3, ""pitch_class"": ""F#"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/055_piano_fluidr3_1::audio::mcq,pitch_note_id/pitch/055_piano_fluidr3_1,pitch_note_id,audio,mcq,2,stimuli/pitch/055_piano_fluidr3_1.wav,"Identify the musical note you hear, by letter name only.
+A. G
+B. G#
+C. A#
+D. F#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G|G#|A#|F#,G,A,G,True,,"{""midi"": 55, ""note_name"": ""G3"", ""octave"": 3, ""pitch_class"": ""G"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/055_violin_fluidr3_0::audio::mcq,pitch_note_id/pitch/055_violin_fluidr3_0,pitch_note_id,audio,mcq,0,stimuli/pitch/055_violin_fluidr3_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. G#
+B. G
+C. A#
+D. F#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G#|G|A#|F#,G,A,G#,True,,"{""midi"": 55, ""note_name"": ""G3"", ""octave"": 3, ""pitch_class"": ""G"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/056_flute_timgm_1::audio::mcq,pitch_note_id/pitch/056_flute_timgm_1,pitch_note_id,audio,mcq,1,stimuli/pitch/056_flute_timgm_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. E
+B. A
+C. G
+D. G#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E|A|G|G#,G#,C,G,False,,"{""midi"": 56, ""note_name"": ""G#3"", ""octave"": 3, ""pitch_class"": ""G#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/056_violin_fluidr3_0::audio::mcq,pitch_note_id/pitch/056_violin_fluidr3_0,pitch_note_id,audio,mcq,2,stimuli/pitch/056_violin_fluidr3_0.wav,"Identify the musical note you hear, by letter name only.
+A. G#
+B. C#
+C. A
+D. G
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G#|C#|A|G,G#,A,G#,True,,"{""midi"": 56, ""note_name"": ""G#3"", ""octave"": 3, ""pitch_class"": ""G#"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/057_piano_musescore_1::audio::mcq,pitch_note_id/pitch/057_piano_musescore_1,pitch_note_id,audio,mcq,2,stimuli/pitch/057_piano_musescore_1.wav,"Identify the musical note you hear, by letter name only.
+A. E
+B. G#
+C. A
+D. A#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E|G#|A|A#,A,C,A,True,,"{""midi"": 57, ""note_name"": ""A3"", ""octave"": 3, ""pitch_class"": ""A"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/057_piano_musescore_1::audio::open,pitch_note_id/pitch/057_piano_musescore_1,pitch_note_id,audio,open,2,stimuli/pitch/057_piano_musescore_1.wav,"Identify the musical note you hear, by letter name only.
+Give a short, direct answer.",,A,A,A,True,,"{""midi"": 57, ""note_name"": ""A3"", ""octave"": 3, ""pitch_class"": ""A"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/057_synth_lead_musescore_0::audio::mcq,pitch_note_id/pitch/057_synth_lead_musescore_0,pitch_note_id,audio,mcq,2,stimuli/pitch/057_synth_lead_musescore_0.wav,"Identify the musical note you hear, by letter name only.
+A. A
+B. G#
+C. E
+D. A#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A|G#|E|A#,A,A,A,True,,"{""midi"": 57, ""note_name"": ""A3"", ""octave"": 3, ""pitch_class"": ""A"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/058_piano_musescore_0::audio::mcq,pitch_note_id/pitch/058_piano_musescore_0,pitch_note_id,audio,mcq,0,stimuli/pitch/058_piano_musescore_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. B
+B. A
+C. A#
+D. C#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B|A|A#|C#,A#,A,B,False,,"{""midi"": 58, ""note_name"": ""A#3"", ""octave"": 3, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/058_piano_musescore_0::audio::open,pitch_note_id/pitch/058_piano_musescore_0,pitch_note_id,audio,open,2,stimuli/pitch/058_piano_musescore_0.wav,"Identify the musical note you hear, by letter name only.
+Give a short, direct answer.",,A#,A,A,False,,"{""midi"": 58, ""note_name"": ""A#3"", ""octave"": 3, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/058_piano_timgm_1::audio::mcq,pitch_note_id/pitch/058_piano_timgm_1,pitch_note_id,audio,mcq,1,stimuli/pitch/058_piano_timgm_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. B
+B. A
+C. A#
+D. D
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B|A|A#|D,A#,A,B,False,,"{""midi"": 58, ""note_name"": ""A#3"", ""octave"": 3, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/058_piano_timgm_1::audio::explain,pitch_note_id/pitch/058_piano_timgm_1,pitch_note_id,audio,explain,0,stimuli/pitch/058_piano_timgm_1.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,A#,"B
+
+I heard a single, sustained note starting at 00:00 and continuing until the end of the audio at 00:04. The pitch of this note is B.",,,,"{""midi"": 58, ""note_name"": ""A#3"", ""octave"": 3, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/059_synth_lead_timgm_1::audio::mcq,pitch_note_id/pitch/059_synth_lead_timgm_1,pitch_note_id,audio,mcq,1,stimuli/pitch/059_synth_lead_timgm_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. B
+B. A#
+C. E
+D. C
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B|A#|E|C,B,A,B,True,,"{""midi"": 59, ""note_name"": ""B3"", ""octave"": 3, ""pitch_class"": ""B"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/059_synth_lead_timgm_1::audio::explain,pitch_note_id/pitch/059_synth_lead_timgm_1,pitch_note_id,audio,explain,1,stimuli/pitch/059_synth_lead_timgm_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,B,"**Answer:** C
+
+**Explanation:**
+
+I heard a single, sustained note starting at 00:00 and ending at approximately 00:03. The pitch of this note is C.",,,,"{""midi"": 59, ""note_name"": ""B3"", ""octave"": 3, ""pitch_class"": ""B"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/059_violin_timgm_0::audio::mcq,pitch_note_id/pitch/059_violin_timgm_0,pitch_note_id,audio,mcq,1,stimuli/pitch/059_violin_timgm_0.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. F#
+B. C
+C. B
+D. A#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F#|C|B|A#,B,A,F#,False,,"{""midi"": 59, ""note_name"": ""B3"", ""octave"": 3, ""pitch_class"": ""B"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/059_violin_timgm_0::audio::explain,pitch_note_id/pitch/059_violin_timgm_0,pitch_note_id,audio,explain,1,stimuli/pitch/059_violin_timgm_0.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,B,"**Answer:** C
+
+**Explanation:**
+
+I heard a single, sustained note starting at 00:00 and ending at approximately 00:02. The pitch of this note is C.",,,,"{""midi"": 59, ""note_name"": ""B3"", ""octave"": 3, ""pitch_class"": ""B"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/060_piano_timgm_0::audio::mcq,pitch_note_id/pitch/060_piano_timgm_0,pitch_note_id,audio,mcq,1,stimuli/pitch/060_piano_timgm_0.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. F
+B. C
+C. C#
+D. B
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F|C|C#|B,C,B,C,True,,"{""midi"": 60, ""note_name"": ""C4"", ""octave"": 4, ""pitch_class"": ""C"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/060_violin_fluidr3_1::audio::mcq,pitch_note_id/pitch/060_violin_fluidr3_1,pitch_note_id,audio,mcq,2,stimuli/pitch/060_violin_fluidr3_1.wav,"Identify the musical note you hear, by letter name only.
+A. B
+B. C
+C. C#
+D. D#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B|C|C#|D#,C,C,C#,True,,"{""midi"": 60, ""note_name"": ""C4"", ""octave"": 4, ""pitch_class"": ""C"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/060_violin_fluidr3_1::audio::open,pitch_note_id/pitch/060_violin_fluidr3_1,pitch_note_id,audio,open,2,stimuli/pitch/060_violin_fluidr3_1.wav,"Identify the musical note you hear, by letter name only.
+Give a short, direct answer.",,C,C,C,True,,"{""midi"": 60, ""note_name"": ""C4"", ""octave"": 4, ""pitch_class"": ""C"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/061_flute_timgm_1::audio::mcq,pitch_note_id/pitch/061_flute_timgm_1,pitch_note_id,audio,mcq,2,stimuli/pitch/061_flute_timgm_1.wav,"Identify the musical note you hear, by letter name only.
+A. F#
+B. D
+C. C
+D. C#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F#|D|C|C#,C#,C,C,False,,"{""midi"": 61, ""note_name"": ""C#4"", ""octave"": 4, ""pitch_class"": ""C#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/061_flute_timgm_1::audio::open,pitch_note_id/pitch/061_flute_timgm_1,pitch_note_id,audio,open,0,stimuli/pitch/061_flute_timgm_1.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+Give a short, direct answer.",,C#,C,C,False,,"{""midi"": 61, ""note_name"": ""C#4"", ""octave"": 4, ""pitch_class"": ""C#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/061_synth_lead_fluidr3_0::audio::mcq,pitch_note_id/pitch/061_synth_lead_fluidr3_0,pitch_note_id,audio,mcq,1,stimuli/pitch/061_synth_lead_fluidr3_0.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. C
+B. F#
+C. C#
+D. D
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C|F#|C#|D,C#,C,C#,True,,"{""midi"": 61, ""note_name"": ""C#4"", ""octave"": 4, ""pitch_class"": ""C#"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/061_synth_lead_fluidr3_0::audio::explain,pitch_note_id/pitch/061_synth_lead_fluidr3_0,pitch_note_id,audio,explain,2,stimuli/pitch/061_synth_lead_fluidr3_0.wav,"Identify the musical note you hear, by letter name only.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,C#,"C
+
+I heard a single, sustained note starting at 00:00 and ending at 00:03. The pitch of this note is C.",,,,"{""midi"": 61, ""note_name"": ""C#4"", ""octave"": 4, ""pitch_class"": ""C#"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/062_flute_fluidr3_0::audio::mcq,pitch_note_id/pitch/062_flute_fluidr3_0,pitch_note_id,audio,mcq,1,stimuli/pitch/062_flute_fluidr3_0.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. F
+B. D#
+C. D
+D. C#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F|D#|D|C#,D,B,D#,True,,"{""midi"": 62, ""note_name"": ""D4"", ""octave"": 4, ""pitch_class"": ""D"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/062_synth_lead_fluidr3_1::audio::mcq,pitch_note_id/pitch/062_synth_lead_fluidr3_1,pitch_note_id,audio,mcq,2,stimuli/pitch/062_synth_lead_fluidr3_1.wav,"Identify the musical note you hear, by letter name only.
+A. G#
+B. D
+C. D#
+D. C#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G#|D|D#|C#,D,C,D#,True,,"{""midi"": 62, ""note_name"": ""D4"", ""octave"": 4, ""pitch_class"": ""D"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/063_flute_timgm_1::audio::mcq,pitch_note_id/pitch/063_flute_timgm_1,pitch_note_id,audio,mcq,1,stimuli/pitch/063_flute_timgm_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. C
+B. D#
+C. E
+D. D
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C|D#|E|D,D#,C,E,False,,"{""midi"": 63, ""note_name"": ""D#4"", ""octave"": 4, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/063_flute_timgm_1::audio::open,pitch_note_id/pitch/063_flute_timgm_1,pitch_note_id,audio,open,1,stimuli/pitch/063_flute_timgm_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+Give a short, direct answer.",,D#,D,D,False,,"{""midi"": 63, ""note_name"": ""D#4"", ""octave"": 4, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/063_synth_lead_timgm_0::audio::mcq,pitch_note_id/pitch/063_synth_lead_timgm_0,pitch_note_id,audio,mcq,0,stimuli/pitch/063_synth_lead_timgm_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. E
+B. A
+C. D#
+D. D
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E|A|D#|D,D#,C,D#,True,,"{""midi"": 63, ""note_name"": ""D#4"", ""octave"": 4, ""pitch_class"": ""D#"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/064_flute_timgm_0::audio::mcq,pitch_note_id/pitch/064_flute_timgm_0,pitch_note_id,audio,mcq,0,stimuli/pitch/064_flute_timgm_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. D#
+B. F#
+C. E
+D. F
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D#|F#|E|F,E,C,E,True,,"{""midi"": 64, ""note_name"": ""E4"", ""octave"": 4, ""pitch_class"": ""E"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/064_violin_musescore_1::audio::mcq,pitch_note_id/pitch/064_violin_musescore_1,pitch_note_id,audio,mcq,2,stimuli/pitch/064_violin_musescore_1.wav,"Identify the musical note you hear, by letter name only.
+A. D#
+B. E
+C. G#
+D. F
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D#|E|G#|F,E,B,E,True,,"{""midi"": 64, ""note_name"": ""E4"", ""octave"": 4, ""pitch_class"": ""E"", ""program"": ""violin"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/064_violin_musescore_1::audio::explain,pitch_note_id/pitch/064_violin_musescore_1,pitch_note_id,audio,explain,1,stimuli/pitch/064_violin_musescore_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,E,"E
+
+Explanation:
+At 00:00, a single, sustained note is played on a string instrument, likely a violin. The pitch is clearly E.",,,,"{""midi"": 64, ""note_name"": ""E4"", ""octave"": 4, ""pitch_class"": ""E"", ""program"": ""violin"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/065_synth_lead_fluidr3_0::audio::mcq,pitch_note_id/pitch/065_synth_lead_fluidr3_0,pitch_note_id,audio,mcq,2,stimuli/pitch/065_synth_lead_fluidr3_0.wav,"Identify the musical note you hear, by letter name only.
+A. E
+B. C#
+C. F#
+D. F
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E|C#|F#|F,F,C,F#,True,,"{""midi"": 65, ""note_name"": ""F4"", ""octave"": 4, ""pitch_class"": ""F"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/065_synth_lead_fluidr3_0::audio::open,pitch_note_id/pitch/065_synth_lead_fluidr3_0,pitch_note_id,audio,open,2,stimuli/pitch/065_synth_lead_fluidr3_0.wav,"Identify the musical note you hear, by letter name only.
+Give a short, direct answer.",,F,C,C,False,,"{""midi"": 65, ""note_name"": ""F4"", ""octave"": 4, ""pitch_class"": ""F"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/065_synth_lead_fluidr3_1::audio::mcq,pitch_note_id/pitch/065_synth_lead_fluidr3_1,pitch_note_id,audio,mcq,2,stimuli/pitch/065_synth_lead_fluidr3_1.wav,"Identify the musical note you hear, by letter name only.
+A. E
+B. F
+C. F#
+D. C#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E|F|F#|C#,F,C,F#,True,,"{""midi"": 65, ""note_name"": ""F4"", ""octave"": 4, ""pitch_class"": ""F"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/065_synth_lead_fluidr3_1::audio::explain,pitch_note_id/pitch/065_synth_lead_fluidr3_1,pitch_note_id,audio,explain,2,stimuli/pitch/065_synth_lead_fluidr3_1.wav,"Identify the musical note you hear, by letter name only.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,F,"F6
+
+The audio contains a single, sustained electronic tone. This tone is a clear, pure sine wave with a very high pitch. It starts at 00:00 and continues until the end of the clip at 00:04. The frequency of this tone is approximately 1760 Hz, which corresponds to the musical note F6.",,,,"{""midi"": 65, ""note_name"": ""F4"", ""octave"": 4, ""pitch_class"": ""F"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/066_piano_fluidr3_0::audio::mcq,pitch_note_id/pitch/066_piano_fluidr3_0,pitch_note_id,audio,mcq,2,stimuli/pitch/066_piano_fluidr3_0.wav,"Identify the musical note you hear, by letter name only.
+A. D#
+B. F#
+C. G
+D. F
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D#|F#|G|F,F#,B,F#,True,,"{""midi"": 66, ""note_name"": ""F#4"", ""octave"": 4, ""pitch_class"": ""F#"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/066_piano_fluidr3_0::audio::open,pitch_note_id/pitch/066_piano_fluidr3_0,pitch_note_id,audio,open,2,stimuli/pitch/066_piano_fluidr3_0.wav,"Identify the musical note you hear, by letter name only.
+Give a short, direct answer.",,F#,F,F,False,,"{""midi"": 66, ""note_name"": ""F#4"", ""octave"": 4, ""pitch_class"": ""F#"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/066_piano_musescore_1::audio::mcq,pitch_note_id/pitch/066_piano_musescore_1,pitch_note_id,audio,mcq,0,stimuli/pitch/066_piano_musescore_1.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. G
+B. F
+C. F#
+D. E
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G|F|F#|E,F#,B,F,False,,"{""midi"": 66, ""note_name"": ""F#4"", ""octave"": 4, ""pitch_class"": ""F#"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/066_piano_musescore_1::audio::open,pitch_note_id/pitch/066_piano_musescore_1,pitch_note_id,audio,open,2,stimuli/pitch/066_piano_musescore_1.wav,"Identify the musical note you hear, by letter name only.
+Give a short, direct answer.",,F#,F,F,False,,"{""midi"": 66, ""note_name"": ""F#4"", ""octave"": 4, ""pitch_class"": ""F#"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/066_piano_musescore_1::audio::explain,pitch_note_id/pitch/066_piano_musescore_1,pitch_note_id,audio,explain,2,stimuli/pitch/066_piano_musescore_1.wav,"Identify the musical note you hear, by letter name only.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,F#,"F
+
+I heard a single, sustained piano note at the beginning of the audio, from 00:00 to 00:02. The pitch of this note is F.",,,,"{""midi"": 66, ""note_name"": ""F#4"", ""octave"": 4, ""pitch_class"": ""F#"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/067_piano_musescore_0::audio::mcq,pitch_note_id/pitch/067_piano_musescore_0,pitch_note_id,audio,mcq,0,stimuli/pitch/067_piano_musescore_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. G
+B. F#
+C. G#
+D. C#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G|F#|G#|C#,G,A,G,True,,"{""midi"": 67, ""note_name"": ""G4"", ""octave"": 4, ""pitch_class"": ""G"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/067_piano_musescore_0::audio::open,pitch_note_id/pitch/067_piano_musescore_0,pitch_note_id,audio,open,0,stimuli/pitch/067_piano_musescore_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+Give a short, direct answer.",,G,G,G,True,,"{""midi"": 67, ""note_name"": ""G4"", ""octave"": 4, ""pitch_class"": ""G"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/067_piano_musescore_0::audio::explain,pitch_note_id/pitch/067_piano_musescore_0,pitch_note_id,audio,explain,2,stimuli/pitch/067_piano_musescore_0.wav,"Identify the musical note you hear, by letter name only.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,G,"G
+
+I heard a single, sustained piano note. The note is G, and it plays from 00:00 to 00:02.",,,,"{""midi"": 67, ""note_name"": ""G4"", ""octave"": 4, ""pitch_class"": ""G"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/067_synth_lead_timgm_1::audio::mcq,pitch_note_id/pitch/067_synth_lead_timgm_1,pitch_note_id,audio,mcq,1,stimuli/pitch/067_synth_lead_timgm_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. G
+B. F#
+C. G#
+D. F
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G|F#|G#|F,G,C,G#,True,,"{""midi"": 67, ""note_name"": ""G4"", ""octave"": 4, ""pitch_class"": ""G"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/068_flute_musescore_0::audio::mcq,pitch_note_id/pitch/068_flute_musescore_0,pitch_note_id,audio,mcq,2,stimuli/pitch/068_flute_musescore_0.wav,"Identify the musical note you hear, by letter name only.
+A. G
+B. A
+C. G#
+D. A#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G|A|G#|A#,G#,B,A,False,,"{""midi"": 68, ""note_name"": ""G#4"", ""octave"": 4, ""pitch_class"": ""G#"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/068_violin_timgm_1::audio::mcq,pitch_note_id/pitch/068_violin_timgm_1,pitch_note_id,audio,mcq,1,stimuli/pitch/068_violin_timgm_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. A
+B. G#
+C. G
+D. B
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A|G#|G|B,G#,A,A,False,,"{""midi"": 68, ""note_name"": ""G#4"", ""octave"": 4, ""pitch_class"": ""G#"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/069_flute_musescore_1::audio::mcq,pitch_note_id/pitch/069_flute_musescore_1,pitch_note_id,audio,mcq,2,stimuli/pitch/069_flute_musescore_1.wav,"Identify the musical note you hear, by letter name only.
+A. G#
+B. A#
+C. B
+D. A
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G#|A#|B|A,A,D,A,True,,"{""midi"": 69, ""note_name"": ""A4"", ""octave"": 4, ""pitch_class"": ""A"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/069_flute_musescore_1::audio::explain,pitch_note_id/pitch/069_flute_musescore_1,pitch_note_id,audio,explain,1,stimuli/pitch/069_flute_musescore_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,A,"**Answer:** A
+
+**Explanation:**  
+At 00:00, a single, sustained note is played. The pitch is clearly A, as it is the note that corresponds to the standard tuning pitch of A4 = 440 Hz. The note is held steadily from 00:00 to approximately 00:03, with no vibrato or pitch variation. There are no other notes, chords, or rhythmic elements present. The timbre is clear and pure, consistent with a digital or synthesized tone.",,,,"{""midi"": 69, ""note_name"": ""A4"", ""octave"": 4, ""pitch_class"": ""A"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/069_synth_lead_timgm_0::audio::mcq,pitch_note_id/pitch/069_synth_lead_timgm_0,pitch_note_id,audio,mcq,0,stimuli/pitch/069_synth_lead_timgm_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. A
+B. B
+C. G#
+D. A#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A|B|G#|A#,A,D,A#,True,,"{""midi"": 69, ""note_name"": ""A4"", ""octave"": 4, ""pitch_class"": ""A"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/070_piano_fluidr3_0::audio::mcq,pitch_note_id/pitch/070_piano_fluidr3_0,pitch_note_id,audio,mcq,2,stimuli/pitch/070_piano_fluidr3_0.wav,"Identify the musical note you hear, by letter name only.
+A. B
+B. D
+C. A
+D. A#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B|D|A|A#,A#,C,A,False,,"{""midi"": 70, ""note_name"": ""A#4"", ""octave"": 4, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/070_piano_fluidr3_0::audio::open,pitch_note_id/pitch/070_piano_fluidr3_0,pitch_note_id,audio,open,0,stimuli/pitch/070_piano_fluidr3_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+Give a short, direct answer.",,A#,A,A,False,,"{""midi"": 70, ""note_name"": ""A#4"", ""octave"": 4, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/070_piano_timgm_1::audio::mcq,pitch_note_id/pitch/070_piano_timgm_1,pitch_note_id,audio,mcq,1,stimuli/pitch/070_piano_timgm_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. A#
+B. G
+C. B
+D. A
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A#|G|B|A,A#,C,B,False,,"{""midi"": 70, ""note_name"": ""A#4"", ""octave"": 4, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/070_piano_timgm_1::audio::explain,pitch_note_id/pitch/070_piano_timgm_1,pitch_note_id,audio,explain,2,stimuli/pitch/070_piano_timgm_1.wav,"Identify the musical note you hear, by letter name only.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,A#,"A
+
+I heard a single, sustained musical note starting at 00:00 and continuing until the end of the audio at 00:04. The pitch of this note is A.",,,,"{""midi"": 70, ""note_name"": ""A#4"", ""octave"": 4, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/071_flute_fluidr3_0::audio::mcq,pitch_note_id/pitch/071_flute_fluidr3_0,pitch_note_id,audio,mcq,0,stimuli/pitch/071_flute_fluidr3_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. A
+B. B
+C. C
+D. A#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A|B|C|A#,B,B,B,True,,"{""midi"": 71, ""note_name"": ""B4"", ""octave"": 4, ""pitch_class"": ""B"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/071_piano_musescore_1::audio::mcq,pitch_note_id/pitch/071_piano_musescore_1,pitch_note_id,audio,mcq,1,stimuli/pitch/071_piano_musescore_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. C#
+B. C
+C. A#
+D. B
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C#|C|A#|B,B,D,B,True,,"{""midi"": 71, ""note_name"": ""B4"", ""octave"": 4, ""pitch_class"": ""B"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/072_flute_timgm_0::audio::mcq,pitch_note_id/pitch/072_flute_timgm_0,pitch_note_id,audio,mcq,2,stimuli/pitch/072_flute_timgm_0.wav,"Identify the musical note you hear, by letter name only.
+A. G
+B. B
+C. C
+D. C#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G|B|C|C#,C,C,C,True,,"{""midi"": 72, ""note_name"": ""C5"", ""octave"": 5, ""pitch_class"": ""C"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/072_flute_timgm_0::audio::open,pitch_note_id/pitch/072_flute_timgm_0,pitch_note_id,audio,open,2,stimuli/pitch/072_flute_timgm_0.wav,"Identify the musical note you hear, by letter name only.
+Give a short, direct answer.",,C,C,C,True,,"{""midi"": 72, ""note_name"": ""C5"", ""octave"": 5, ""pitch_class"": ""C"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/072_flute_timgm_0::audio::explain,pitch_note_id/pitch/072_flute_timgm_0,pitch_note_id,audio,explain,0,stimuli/pitch/072_flute_timgm_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,C,"Pitch class: C
+
+Explanation: At 00:00, I heard a single, sustained note. The pitch of this note is C.",,,,"{""midi"": 72, ""note_name"": ""C5"", ""octave"": 5, ""pitch_class"": ""C"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/072_violin_musescore_1::audio::mcq,pitch_note_id/pitch/072_violin_musescore_1,pitch_note_id,audio,mcq,1,stimuli/pitch/072_violin_musescore_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. D
+B. C
+C. B
+D. C#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D|C|B|C#,C,D,C#,True,,"{""midi"": 72, ""note_name"": ""C5"", ""octave"": 5, ""pitch_class"": ""C"", ""program"": ""violin"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/072_violin_musescore_1::audio::open,pitch_note_id/pitch/072_violin_musescore_1,pitch_note_id,audio,open,0,stimuli/pitch/072_violin_musescore_1.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+Give a short, direct answer.",,C,C,C,True,,"{""midi"": 72, ""note_name"": ""C5"", ""octave"": 5, ""pitch_class"": ""C"", ""program"": ""violin"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/073_flute_timgm_0::audio::mcq,pitch_note_id/pitch/073_flute_timgm_0,pitch_note_id,audio,mcq,0,stimuli/pitch/073_flute_timgm_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. C#
+B. E
+C. D
+D. C
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C#|E|D|C,C#,D,C,False,,"{""midi"": 73, ""note_name"": ""C#5"", ""octave"": 5, ""pitch_class"": ""C#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/073_synth_lead_timgm_1::audio::mcq,pitch_note_id/pitch/073_synth_lead_timgm_1,pitch_note_id,audio,mcq,1,stimuli/pitch/073_synth_lead_timgm_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. D
+B. C
+C. F#
+D. C#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D|C|F#|C#,C#,D,C#,True,,"{""midi"": 73, ""note_name"": ""C#5"", ""octave"": 5, ""pitch_class"": ""C#"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/074_flute_musescore_0::audio::mcq,pitch_note_id/pitch/074_flute_musescore_0,pitch_note_id,audio,mcq,1,stimuli/pitch/074_flute_musescore_0.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. D#
+B. C#
+C. D
+D. A
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D#|C#|D|A,D,A,D#,True,,"{""midi"": 74, ""note_name"": ""D5"", ""octave"": 5, ""pitch_class"": ""D"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/074_synth_lead_timgm_1::audio::mcq,pitch_note_id/pitch/074_synth_lead_timgm_1,pitch_note_id,audio,mcq,1,stimuli/pitch/074_synth_lead_timgm_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. B
+B. C#
+C. D#
+D. D
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B|C#|D#|D,D,C,D#,True,,"{""midi"": 74, ""note_name"": ""D5"", ""octave"": 5, ""pitch_class"": ""D"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/074_synth_lead_timgm_1::audio::explain,pitch_note_id/pitch/074_synth_lead_timgm_1,pitch_note_id,audio,explain,2,stimuli/pitch/074_synth_lead_timgm_1.wav,"Identify the musical note you hear, by letter name only.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,D,"D6
+
+The audio contains a single, sustained musical note. This note is a clear, high-pitched tone with a pure, electronic quality, characteristic of a sine wave. It is present from the beginning of the audio at 00:00 and continues until the end at 00:04. The pitch of this note corresponds to the musical note D6.",,,,"{""midi"": 74, ""note_name"": ""D5"", ""octave"": 5, ""pitch_class"": ""D"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/075_flute_musescore_0::audio::mcq,pitch_note_id/pitch/075_flute_musescore_0,pitch_note_id,audio,mcq,1,stimuli/pitch/075_flute_musescore_0.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. D#
+B. D
+C. E
+D. A#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D#|D|E|A#,D#,C,E,False,,"{""midi"": 75, ""note_name"": ""D#5"", ""octave"": 5, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/075_piano_musescore_1::audio::mcq,pitch_note_id/pitch/075_piano_musescore_1,pitch_note_id,audio,mcq,2,stimuli/pitch/075_piano_musescore_1.wav,"Identify the musical note you hear, by letter name only.
+A. E
+B. D#
+C. D
+D. A#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E|D#|D|A#,D#,B,D#,True,,"{""midi"": 75, ""note_name"": ""D#5"", ""octave"": 5, ""pitch_class"": ""D#"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/076_piano_fluidr3_1::audio::mcq,pitch_note_id/pitch/076_piano_fluidr3_1,pitch_note_id,audio,mcq,2,stimuli/pitch/076_piano_fluidr3_1.wav,"Identify the musical note you hear, by letter name only.
+A. E
+B. D#
+C. C#
+D. F
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E|D#|C#|F,E,A,E,True,,"{""midi"": 76, ""note_name"": ""E5"", ""octave"": 5, ""pitch_class"": ""E"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/076_violin_timgm_0::audio::mcq,pitch_note_id/pitch/076_violin_timgm_0,pitch_note_id,audio,mcq,1,stimuli/pitch/076_violin_timgm_0.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. C#
+B. D#
+C. F
+D. E
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C#|D#|F|E,E,D,E,True,,"{""midi"": 76, ""note_name"": ""E5"", ""octave"": 5, ""pitch_class"": ""E"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/076_violin_timgm_0::audio::explain,pitch_note_id/pitch/076_violin_timgm_0,pitch_note_id,audio,explain,0,stimuli/pitch/076_violin_timgm_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,E,"A
+
+I heard a single, sustained note from 00:00 to 00:03. The pitch of this note is A.",,,,"{""midi"": 76, ""note_name"": ""E5"", ""octave"": 5, ""pitch_class"": ""E"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/077_synth_lead_musescore_0::audio::mcq,pitch_note_id/pitch/077_synth_lead_musescore_0,pitch_note_id,audio,mcq,0,stimuli/pitch/077_synth_lead_musescore_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. E
+B. F#
+C. A
+D. F
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E|F#|A|F,F,B,F#,True,,"{""midi"": 77, ""note_name"": ""F5"", ""octave"": 5, ""pitch_class"": ""F"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/077_violin_fluidr3_1::audio::mcq,pitch_note_id/pitch/077_violin_fluidr3_1,pitch_note_id,audio,mcq,2,stimuli/pitch/077_violin_fluidr3_1.wav,"Identify the musical note you hear, by letter name only.
+A. A#
+B. F
+C. F#
+D. E
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A#|F|F#|E,F,C,F#,True,,"{""midi"": 77, ""note_name"": ""F5"", ""octave"": 5, ""pitch_class"": ""F"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/078_flute_fluidr3_0::audio::mcq,pitch_note_id/pitch/078_flute_fluidr3_0,pitch_note_id,audio,mcq,1,stimuli/pitch/078_flute_fluidr3_0.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. G
+B. F
+C. F#
+D. A#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G|F|F#|A#,F#,C,F#,True,,"{""midi"": 78, ""note_name"": ""F#5"", ""octave"": 5, ""pitch_class"": ""F#"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/078_flute_fluidr3_0::audio::open,pitch_note_id/pitch/078_flute_fluidr3_0,pitch_note_id,audio,open,0,stimuli/pitch/078_flute_fluidr3_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+Give a short, direct answer.",,F#,D,D,False,,"{""midi"": 78, ""note_name"": ""F#5"", ""octave"": 5, ""pitch_class"": ""F#"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/078_flute_musescore_1::audio::mcq,pitch_note_id/pitch/078_flute_musescore_1,pitch_note_id,audio,mcq,0,stimuli/pitch/078_flute_musescore_1.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. F
+B. E
+C. F#
+D. G
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F|E|F#|G,F#,C,F#,True,,"{""midi"": 78, ""note_name"": ""F#5"", ""octave"": 5, ""pitch_class"": ""F#"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/079_violin_timgm_0::audio::mcq,pitch_note_id/pitch/079_violin_timgm_0,pitch_note_id,audio,mcq,0,stimuli/pitch/079_violin_timgm_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. G#
+B. F#
+C. G
+D. E
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G#|F#|G|E,G,A,G#,True,,"{""midi"": 79, ""note_name"": ""G5"", ""octave"": 5, ""pitch_class"": ""G"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/079_violin_timgm_1::audio::mcq,pitch_note_id/pitch/079_violin_timgm_1,pitch_note_id,audio,mcq,1,stimuli/pitch/079_violin_timgm_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. F#
+B. G#
+C. G
+D. F
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F#|G#|G|F,G,C,G,True,,"{""midi"": 79, ""note_name"": ""G5"", ""octave"": 5, ""pitch_class"": ""G"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/080_synth_lead_fluidr3_1::audio::mcq,pitch_note_id/pitch/080_synth_lead_fluidr3_1,pitch_note_id,audio,mcq,1,stimuli/pitch/080_synth_lead_fluidr3_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. G#
+B. E
+C. A
+D. G
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G#|E|A|G,G#,A,G#,True,,"{""midi"": 80, ""note_name"": ""G#5"", ""octave"": 5, ""pitch_class"": ""G#"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/080_synth_lead_musescore_0::audio::mcq,pitch_note_id/pitch/080_synth_lead_musescore_0,pitch_note_id,audio,mcq,0,stimuli/pitch/080_synth_lead_musescore_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. G
+B. C
+C. G#
+D. A
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G|C|G#|A,G#,C,G#,True,,"{""midi"": 80, ""note_name"": ""G#5"", ""octave"": 5, ""pitch_class"": ""G#"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/080_synth_lead_musescore_0::audio::open,pitch_note_id/pitch/080_synth_lead_musescore_0,pitch_note_id,audio,open,0,stimuli/pitch/080_synth_lead_musescore_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+Give a short, direct answer.",,G#,G,G,False,,"{""midi"": 80, ""note_name"": ""G#5"", ""octave"": 5, ""pitch_class"": ""G#"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/080_synth_lead_musescore_0::audio::explain,pitch_note_id/pitch/080_synth_lead_musescore_0,pitch_note_id,audio,explain,2,stimuli/pitch/080_synth_lead_musescore_0.wav,"Identify the musical note you hear, by letter name only.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,G#,"G5
+
+The audio contains a single, sustained musical note. This note is a G5, which is the G above middle C. It is played from 00:00 to 00:02.",,,,"{""midi"": 80, ""note_name"": ""G#5"", ""octave"": 5, ""pitch_class"": ""G#"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/081_piano_timgm_1::audio::mcq,pitch_note_id/pitch/081_piano_timgm_1,pitch_note_id,audio,mcq,1,stimuli/pitch/081_piano_timgm_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. D
+B. A
+C. A#
+D. G#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D|A|A#|G#,A,B,A,True,,"{""midi"": 81, ""note_name"": ""A5"", ""octave"": 5, ""pitch_class"": ""A"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/081_piano_timgm_1::audio::open,pitch_note_id/pitch/081_piano_timgm_1,pitch_note_id,audio,open,0,stimuli/pitch/081_piano_timgm_1.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+Give a short, direct answer.",,A,A,A,True,,"{""midi"": 81, ""note_name"": ""A5"", ""octave"": 5, ""pitch_class"": ""A"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/081_piano_timgm_1::audio::explain,pitch_note_id/pitch/081_piano_timgm_1,pitch_note_id,audio,explain,2,stimuli/pitch/081_piano_timgm_1.wav,"Identify the musical note you hear, by letter name only.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,A,"A
+
+I heard a single, sustained musical note. It is a clear, high-pitched tone that starts at 00:00 and continues until the end of the audio at 00:04. The pitch corresponds to the musical note A.",,,,"{""midi"": 81, ""note_name"": ""A5"", ""octave"": 5, ""pitch_class"": ""A"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/081_synth_lead_timgm_0::audio::mcq,pitch_note_id/pitch/081_synth_lead_timgm_0,pitch_note_id,audio,mcq,0,stimuli/pitch/081_synth_lead_timgm_0.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. A
+B. G#
+C. A#
+D. D#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A|G#|A#|D#,A,A,A,True,,"{""midi"": 81, ""note_name"": ""A5"", ""octave"": 5, ""pitch_class"": ""A"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/082_synth_lead_timgm_1::audio::mcq,pitch_note_id/pitch/082_synth_lead_timgm_1,pitch_note_id,audio,mcq,0,stimuli/pitch/082_synth_lead_timgm_1.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. B
+B. D#
+C. A#
+D. A
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B|D#|A#|A,A#,C,A#,True,,"{""midi"": 82, ""note_name"": ""A#5"", ""octave"": 5, ""pitch_class"": ""A#"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/082_violin_timgm_0::audio::mcq,pitch_note_id/pitch/082_violin_timgm_0,pitch_note_id,audio,mcq,1,stimuli/pitch/082_violin_timgm_0.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. A#
+B. E
+C. A
+D. B
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A#|E|A|B,A#,A,A#,True,,"{""midi"": 82, ""note_name"": ""A#5"", ""octave"": 5, ""pitch_class"": ""A#"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/082_violin_timgm_0::audio::explain,pitch_note_id/pitch/082_violin_timgm_0,pitch_note_id,audio,explain,2,stimuli/pitch/082_violin_timgm_0.wav,"Identify the musical note you hear, by letter name only.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,A#,"A
+
+I heard a single, sustained musical note starting at 00:00 and ending at 00:03. The pitch of this note is A.",,,,"{""midi"": 82, ""note_name"": ""A#5"", ""octave"": 5, ""pitch_class"": ""A#"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/083_flute_timgm_1::audio::mcq,pitch_note_id/pitch/083_flute_timgm_1,pitch_note_id,audio,mcq,0,stimuli/pitch/083_flute_timgm_1.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. B
+B. E
+C. C
+D. A#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B|E|C|A#,B,A,B,True,,"{""midi"": 83, ""note_name"": ""B5"", ""octave"": 5, ""pitch_class"": ""B"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/083_flute_timgm_1::audio::open,pitch_note_id/pitch/083_flute_timgm_1,pitch_note_id,audio,open,1,stimuli/pitch/083_flute_timgm_1.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+Give a short, direct answer.",,B,B,B,True,,"{""midi"": 83, ""note_name"": ""B5"", ""octave"": 5, ""pitch_class"": ""B"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/083_synth_lead_timgm_0::audio::mcq,pitch_note_id/pitch/083_synth_lead_timgm_0,pitch_note_id,audio,mcq,1,stimuli/pitch/083_synth_lead_timgm_0.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. F
+B. A#
+C. C
+D. B
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F|A#|C|B,B,A,F,False,,"{""midi"": 83, ""note_name"": ""B5"", ""octave"": 5, ""pitch_class"": ""B"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/048_synth_lead_musescore_1::no_audio::mcq,pitch_note_id/pitch/048_synth_lead_musescore_1,pitch_note_id,no_audio,mcq,1,,"A single note is played. Which note is it (C, C#, D, ...)?
+A. F
+B. B
+C. C#
+D. C
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F|B|C#|C,C,C,C#,True,,"{""midi"": 48, ""note_name"": ""C3"", ""octave"": 3, ""pitch_class"": ""C"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/049_synth_lead_fluidr3_0::no_audio::mcq,pitch_note_id/pitch/049_synth_lead_fluidr3_0,pitch_note_id,no_audio,mcq,2,,"Identify the musical note you hear, by letter name only.
+A. A
+B. C#
+C. D
+D. C
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A|C#|D|C,C#,A,A,False,,"{""midi"": 49, ""note_name"": ""C#3"", ""octave"": 3, ""pitch_class"": ""C#"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/050_flute_fluidr3_0::no_audio::mcq,pitch_note_id/pitch/050_flute_fluidr3_0,pitch_note_id,no_audio,mcq,1,,"A single note is played. Which note is it (C, C#, D, ...)?
+A. D
+B. C#
+C. D#
+D. F#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D|C#|D#|F#,D,A,D,True,,"{""midi"": 50, ""note_name"": ""D3"", ""octave"": 3, ""pitch_class"": ""D"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/050_flute_fluidr3_1::no_audio::mcq,pitch_note_id/pitch/050_flute_fluidr3_1,pitch_note_id,no_audio,mcq,0,,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. A
+B. C#
+C. D
+D. D#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A|C#|D|D#,D,D,D#,True,,"{""midi"": 50, ""note_name"": ""D3"", ""octave"": 3, ""pitch_class"": ""D"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/051_flute_timgm_0::no_audio::mcq,pitch_note_id/pitch/051_flute_timgm_0,pitch_note_id,no_audio,mcq,0,,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. D#
+B. E
+C. F
+D. D
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D#|E|F|D,D#,A,D#,True,,"{""midi"": 51, ""note_name"": ""D#3"", ""octave"": 3, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/052_violin_fluidr3_0::no_audio::mcq,pitch_note_id/pitch/052_violin_fluidr3_0,pitch_note_id,no_audio,mcq,0,,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. D
+B. E
+C. F
+D. D#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D|E|F|D#,E,D,D#,False,,"{""midi"": 52, ""note_name"": ""E3"", ""octave"": 3, ""pitch_class"": ""E"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/054_synth_lead_timgm_0::no_audio::mcq,pitch_note_id/pitch/054_synth_lead_timgm_0,pitch_note_id,no_audio,mcq,1,,"A single note is played. Which note is it (C, C#, D, ...)?
+A. F
+B. F#
+C. G
+D. C
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F|F#|G|C,F#,A,F,False,,"{""midi"": 54, ""note_name"": ""F#3"", ""octave"": 3, ""pitch_class"": ""F#"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/055_piano_fluidr3_1::no_audio::mcq,pitch_note_id/pitch/055_piano_fluidr3_1,pitch_note_id,no_audio,mcq,0,,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. C#
+B. G
+C. G#
+D. F#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C#|G|G#|F#,G,C,G#,True,,"{""midi"": 55, ""note_name"": ""G3"", ""octave"": 3, ""pitch_class"": ""G"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/056_flute_timgm_1::no_audio::mcq,pitch_note_id/pitch/056_flute_timgm_1,pitch_note_id,no_audio,mcq,2,,"Identify the musical note you hear, by letter name only.
+A. G#
+B. G
+C. A
+D. C#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G#|G|A|C#,G#,C,A,False,,"{""midi"": 56, ""note_name"": ""G#3"", ""octave"": 3, ""pitch_class"": ""G#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/056_violin_fluidr3_0::no_audio::mcq,pitch_note_id/pitch/056_violin_fluidr3_0,pitch_note_id,no_audio,mcq,2,,"Identify the musical note you hear, by letter name only.
+A. A
+B. G#
+C. G
+D. F
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A|G#|G|F,G#,C,G,False,,"{""midi"": 56, ""note_name"": ""G#3"", ""octave"": 3, ""pitch_class"": ""G#"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/058_piano_timgm_1::no_audio::mcq,pitch_note_id/pitch/058_piano_timgm_1,pitch_note_id,no_audio,mcq,0,,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. D
+B. A
+C. B
+D. A#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D|A|B|A#,A#,B,A,False,,"{""midi"": 58, ""note_name"": ""A#3"", ""octave"": 3, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/061_synth_lead_fluidr3_0::no_audio::mcq,pitch_note_id/pitch/061_synth_lead_fluidr3_0,pitch_note_id,no_audio,mcq,1,,"A single note is played. Which note is it (C, C#, D, ...)?
+A. C
+B. E
+C. C#
+D. D
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C|E|C#|D,C#,A,C,False,,"{""midi"": 61, ""note_name"": ""C#4"", ""octave"": 4, ""pitch_class"": ""C#"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/063_flute_timgm_1::no_audio::mcq,pitch_note_id/pitch/063_flute_timgm_1,pitch_note_id,no_audio,mcq,0,,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. E
+B. D#
+C. F#
+D. D
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E|D#|F#|D,D#,B,D#,True,,"{""midi"": 63, ""note_name"": ""D#4"", ""octave"": 4, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/063_synth_lead_timgm_0::no_audio::mcq,pitch_note_id/pitch/063_synth_lead_timgm_0,pitch_note_id,no_audio,mcq,1,,"A single note is played. Which note is it (C, C#, D, ...)?
+A. C
+B. D
+C. D#
+D. E
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C|D|D#|E,D#,A,C,False,,"{""midi"": 63, ""note_name"": ""D#4"", ""octave"": 4, ""pitch_class"": ""D#"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/067_synth_lead_timgm_1::no_audio::mcq,pitch_note_id/pitch/067_synth_lead_timgm_1,pitch_note_id,no_audio,mcq,2,,"Identify the musical note you hear, by letter name only.
+A. F#
+B. G#
+C. G
+D. A#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F#|G#|G|A#,G,B,G#,True,,"{""midi"": 67, ""note_name"": ""G4"", ""octave"": 4, ""pitch_class"": ""G"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/068_flute_musescore_0::no_audio::mcq,pitch_note_id/pitch/068_flute_musescore_0,pitch_note_id,no_audio,mcq,0,,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. G#
+B. C#
+C. G
+D. A
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G#|C#|G|A,G#,D,A,False,,"{""midi"": 68, ""note_name"": ""G#4"", ""octave"": 4, ""pitch_class"": ""G#"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/069_synth_lead_timgm_0::no_audio::mcq,pitch_note_id/pitch/069_synth_lead_timgm_0,pitch_note_id,no_audio,mcq,1,,"A single note is played. Which note is it (C, C#, D, ...)?
+A. A
+B. B
+C. A#
+D. G#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A|B|A#|G#,A,A,A,True,,"{""midi"": 69, ""note_name"": ""A4"", ""octave"": 4, ""pitch_class"": ""A"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/070_piano_timgm_1::no_audio::mcq,pitch_note_id/pitch/070_piano_timgm_1,pitch_note_id,no_audio,mcq,1,,"A single note is played. Which note is it (C, C#, D, ...)?
+A. A#
+B. A
+C. C#
+D. B
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A#|A|C#|B,A#,A,A#,True,,"{""midi"": 70, ""note_name"": ""A#4"", ""octave"": 4, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/071_piano_musescore_1::no_audio::mcq,pitch_note_id/pitch/071_piano_musescore_1,pitch_note_id,no_audio,mcq,2,,"Identify the musical note you hear, by letter name only.
+A. B
+B. A#
+C. C
+D. A
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B|A#|C|A,B,D,A,False,,"{""midi"": 71, ""note_name"": ""B4"", ""octave"": 4, ""pitch_class"": ""B"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/072_flute_timgm_0::no_audio::mcq,pitch_note_id/pitch/072_flute_timgm_0,pitch_note_id,no_audio,mcq,2,,"Identify the musical note you hear, by letter name only.
+A. C
+B. B
+C. C#
+D. D#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",C|B|C#|D#,C,C,C#,True,,"{""midi"": 72, ""note_name"": ""C5"", ""octave"": 5, ""pitch_class"": ""C"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/075_flute_musescore_0::no_audio::mcq,pitch_note_id/pitch/075_flute_musescore_0,pitch_note_id,no_audio,mcq,0,,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. G
+B. D
+C. E
+D. D#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G|D|E|D#,D#,C,E,False,,"{""midi"": 75, ""note_name"": ""D#5"", ""octave"": 5, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/078_flute_fluidr3_0::no_audio::mcq,pitch_note_id/pitch/078_flute_fluidr3_0,pitch_note_id,no_audio,mcq,2,,"Identify the musical note you hear, by letter name only.
+A. G#
+B. F#
+C. G
+D. F
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G#|F#|G|F,F#,C,G,False,,"{""midi"": 78, ""note_name"": ""F#5"", ""octave"": 5, ""pitch_class"": ""F#"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/080_synth_lead_fluidr3_1::no_audio::mcq,pitch_note_id/pitch/080_synth_lead_fluidr3_1,pitch_note_id,no_audio,mcq,0,,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. A
+B. G
+C. B
+D. G#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A|G|B|G#,G#,A,A,False,,"{""midi"": 80, ""note_name"": ""G#5"", ""octave"": 5, ""pitch_class"": ""G#"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/080_synth_lead_musescore_0::no_audio::mcq,pitch_note_id/pitch/080_synth_lead_musescore_0,pitch_note_id,no_audio,mcq,2,,"Identify the musical note you hear, by letter name only.
+A. F
+B. G#
+C. A
+D. G
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F|G#|A|G,G#,C,A,False,,"{""midi"": 80, ""note_name"": ""G#5"", ""octave"": 5, ""pitch_class"": ""G#"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/082_synth_lead_timgm_1::no_audio::mcq,pitch_note_id/pitch/082_synth_lead_timgm_1,pitch_note_id,no_audio,mcq,1,,"A single note is played. Which note is it (C, C#, D, ...)?
+A. A#
+B. G
+C. A
+D. B
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A#|G|A|B,A#,C,A,False,,"{""midi"": 82, ""note_name"": ""A#5"", ""octave"": 5, ""pitch_class"": ""A#"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/082_violin_timgm_0::no_audio::mcq,pitch_note_id/pitch/082_violin_timgm_0,pitch_note_id,no_audio,mcq,2,,"Identify the musical note you hear, by letter name only.
+A. A
+B. B
+C. D
+D. A#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A|B|D|A#,A#,A,A,False,,"{""midi"": 82, ""note_name"": ""A#5"", ""octave"": 5, ""pitch_class"": ""A#"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/083_flute_timgm_1::no_audio::mcq,pitch_note_id/pitch/083_flute_timgm_1,pitch_note_id,no_audio,mcq,2,,"Identify the musical note you hear, by letter name only.
+A. B
+B. A#
+C. C
+D. D#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B|A#|C|D#,B,C,C,False,,"{""midi"": 83, ""note_name"": ""B5"", ""octave"": 5, ""pitch_class"": ""B"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/083_synth_lead_timgm_0::no_audio::mcq,pitch_note_id/pitch/083_synth_lead_timgm_0,pitch_note_id,no_audio,mcq,1,,"A single note is played. Which note is it (C, C#, D, ...)?
+A. B
+B. F
+C. A#
+D. C
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",B|F|A#|C,B,D,C,False,,"{""midi"": 83, ""note_name"": ""B5"", ""octave"": 5, ""pitch_class"": ""B"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/053_synth_lead_musescore_0::wrong_audio::mcq,pitch_note_id/pitch/053_synth_lead_musescore_0,pitch_note_id,wrong_audio,mcq,0,stimuli/chords/diminished_arpeggio_55_4.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. E
+B. F#
+C. C
+D. F
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E|F#|C|F,F,B,F#,True,,"{""midi"": 53, ""note_name"": ""F3"", ""octave"": 3, ""pitch_class"": ""F"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/054_synth_lead_musescore_1::wrong_audio::mcq,pitch_note_id/pitch/054_synth_lead_musescore_1,pitch_note_id,wrong_audio,mcq,2,stimuli/mode/lydian_62_bare_scale.wav,"Identify the musical note you hear, by letter name only.
+A. F
+B. G
+C. G#
+D. F#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",F|G|G#|F#,F#,D,F#,True,,"{""midi"": 54, ""note_name"": ""F#3"", ""octave"": 3, ""pitch_class"": ""F#"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/054_synth_lead_timgm_0::wrong_audio::mcq,pitch_note_id/pitch/054_synth_lead_timgm_0,pitch_note_id,wrong_audio,mcq,1,stimuli/tuning/tune_0057.wav,"A single note is played. Which note is it (C, C#, D, ...)?
+A. G
+B. F#
+C. F
+D. D#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G|F#|F|D#,F#,A,G,False,,"{""midi"": 54, ""note_name"": ""F#3"", ""octave"": 3, ""pitch_class"": ""F#"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/055_piano_fluidr3_1::wrong_audio::mcq,pitch_note_id/pitch/055_piano_fluidr3_1,pitch_note_id,wrong_audio,mcq,2,stimuli/meter/meter_4-4_04.wav,"Identify the musical note you hear, by letter name only.
+A. G
+B. F#
+C. C
+D. G#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",G|F#|C|G#,G,C,C,False,,"{""midi"": 55, ""note_name"": ""G3"", ""octave"": 3, ""pitch_class"": ""G"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/056_violin_fluidr3_0::wrong_audio::mcq,pitch_note_id/pitch/056_violin_fluidr3_0,pitch_note_id,wrong_audio,mcq,2,stimuli/polyphony/count2_07.wav,"Identify the musical note you hear, by letter name only.
+A. E
+B. G#
+C. A
+D. G
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",E|G#|A|G,G#,C,A,False,,"{""midi"": 56, ""note_name"": ""G#3"", ""octave"": 3, ""pitch_class"": ""G#"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+pitch_note_id/pitch/064_flute_timgm_0::wrong_audio::mcq,pitch_note_id/pitch/064_flute_timgm_0,pitch_note_id,wrong_audio,mcq,2,stimuli/tuning/tune_0031.wav,"Identify the musical note you hear, by letter name only.
+A. A
+B. D#
+C. E
+D. F
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A|D#|E|F,E,C,E,True,,"{""midi"": 64, ""note_name"": ""E4"", ""octave"": 4, ""pitch_class"": ""E"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+pitch_note_id/pitch/075_flute_musescore_0::wrong_audio::mcq,pitch_note_id/pitch/075_flute_musescore_0,pitch_note_id,wrong_audio,mcq,0,stimuli/progressions/12-bar-blues_63_6.wav,"Listen to this note. What is its pitch class (note name, ignoring octave)?
+A. D
+B. E
+C. D#
+D. G#
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",D|E|D#|G#,D#,C,D#,True,,"{""midi"": 75, ""note_name"": ""D#5"", ""octave"": 5, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+pitch_note_id/pitch/081_synth_lead_timgm_0::wrong_audio::mcq,pitch_note_id/pitch/081_synth_lead_timgm_0,pitch_note_id,wrong_audio,mcq,2,stimuli/tempo/tempo_017.wav,"Identify the musical note you hear, by letter name only.
+A. A#
+B. G#
+C. D#
+D. A
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",A#|G#|D#|A,A,A,A#,True,,"{""midi"": 81, ""note_name"": ""A5"", ""octave"": 5, ""pitch_class"": ""A"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"

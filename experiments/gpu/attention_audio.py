@@ -76,9 +76,10 @@ def main(model_name: str, per_task: int, seed: int = 0):
     model, processor, encode = prepare_qwen2_audio(model_name)
     jobs = pd.read_parquet(JOBS_PATH)
     jobs = jobs[(jobs["condition"] == "audio") & (jobs["format"] == "mcq")]
-    sample = (jobs.groupby("task", group_keys=False)
-                  .apply(lambda g: g.sample(min(per_task, len(g)),
-                                            random_state=seed)))
+    # pandas 3.0's groupby.apply drops the grouping column; iterate groups instead
+    sample = pd.concat(
+        [g.sample(min(per_task, len(g)), random_state=seed)
+         for _, g in jobs.groupby("task")]).reset_index(drop=True)
     print(f"[attn] {model_name}: {len(sample)} jobs "
           f"({sample['task'].nunique()} tasks x <= {per_task})")
 
@@ -103,9 +104,17 @@ def main(model_name: str, per_task: int, seed: int = 0):
         # take the last query position = the token that starts the answer).
         for step, layers in enumerate(out.attentions):
             k_len = layers[0].shape[-1]
+            # align the audio mask to this step's key length: pad with False for
+            # generated (non-audio) key positions, or clip to k_len
+            if k_len >= audio_mask.shape[0]:
+                m = torch.cat([audio_mask, torch.zeros(
+                    k_len - audio_mask.shape[0], dtype=torch.bool,
+                    device=audio_mask.device)])
+            else:
+                m = audio_mask[:k_len]
             for li, att in enumerate(layers):
                 a = att[0, :, -1, :]                        # (heads, k_len)
-                frac = a[:, audio_mask[:k_len]].sum(-1).mean()
+                frac = a[:, m].sum(-1).mean()
                 rows.append({"model": model_name, "job_id": job.job_id,
                              "task": job.task, "answer": answer,
                              "step": step, "layer": li,

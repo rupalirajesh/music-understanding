@@ -1,0 +1,1248 @@
+job_id,stimulus_id,task,condition,format,paraphrase_idx,audio_path,prompt,options,ground_truth,raw_response,parsed,correct,error,factors
+mode_id/blues_57_bare_scale::audio::mcq,mode_id/blues_57_bare_scale,mode_id,audio,mcq,1,stimuli/mode/blues_57_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+A. blues scale
+B. Lydian
+C. major
+D. Locrian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",blues scale|Lydian|major|Locrian,blues scale,C,major,False,,"{""form"": ""bare_scale"", ""mode"": ""blues"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_midi"": 57}"
+mode_id/blues_57_bare_scale::audio::explain,mode_id/blues_57_bare_scale,mode_id,audio,explain,1,stimuli/mode/blues_57_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,blues scale,"**Answer:** The scale being used is the **A minor natural scale**.
+
+**Explanation:**
+
+The melody played on the violin is a descending run of the A minor natural scale. The specific notes and their approximate timestamps are:
+
+*   **00:00 - 00:01:** A (the root note)
+*   **00:01 - 00:02:** G
+*   **00:02 - 00:03:** F
+*   **00:03 - 00:04:** E
+*   **00:04 - 00:05:** D
+*   **00:05 - 00:06:** C
+*   **00:06 - 00:07:** B
+*   **00:07 - 00:08:** A (the root note again)
+
+This sequence of notes (A-G-F-E-D-C-B-A) is the exact descending form of the A minor natural scale. The scale is confirmed by the presence of the B-natural, which is the defining characteristic of the natural minor scale (as opposed to the harmonic minor, which would have a B-sharp).",,,,"{""form"": ""bare_scale"", ""mode"": ""blues"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_midi"": 57}"
+mode_id/blues_57_melody_drone::audio::mcq,mode_id/blues_57_melody_drone,mode_id,audio,mcq,0,stimuli/mode/blues_57_melody_drone.wav,"What scale or mode is this music based on?
+A. blues scale
+B. major
+C. melodic minor
+D. Locrian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",blues scale|major|melodic minor|Locrian,blues scale,C,melodic minor,False,,"{""form"": ""melody_drone"", ""mode"": ""blues"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_midi"": 57}"
+mode_id/blues_60_bare_scale::audio::mcq,mode_id/blues_60_bare_scale,mode_id,audio,mcq,0,stimuli/mode/blues_60_bare_scale.wav,"What scale or mode is this music based on?
+A. Phrygian
+B. major pentatonic
+C. natural minor
+D. blues scale
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Phrygian|major pentatonic|natural minor|blues scale,blues scale,C,natural minor,False,,"{""form"": ""bare_scale"", ""mode"": ""blues"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/blues_60_bare_scale::audio::open,mode_id/blues_60_bare_scale,mode_id,audio,open,2,stimuli/mode/blues_60_bare_scale.wav,"Identify the mode or scale type of this passage.
+Give a short, direct answer.",,blues scale,Major,Major,False,,"{""form"": ""bare_scale"", ""mode"": ""blues"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/blues_60_melody_drone::audio::mcq,mode_id/blues_60_melody_drone,mode_id,audio,mcq,0,stimuli/mode/blues_60_melody_drone.wav,"What scale or mode is this music based on?
+A. Lydian
+B. Dorian
+C. blues scale
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Lydian|Dorian|blues scale|major,blues scale,D,major,False,,"{""form"": ""melody_drone"", ""mode"": ""blues"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 60}"
+mode_id/blues_60_melody_drone::audio::open,mode_id/blues_60_melody_drone,mode_id,audio,open,1,stimuli/mode/blues_60_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+Give a short, direct answer.",,blues scale,C major,C major,False,,"{""form"": ""melody_drone"", ""mode"": ""blues"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 60}"
+mode_id/blues_62_bare_scale::audio::mcq,mode_id/blues_62_bare_scale,mode_id,audio,mcq,0,stimuli/mode/blues_62_bare_scale.wav,"What scale or mode is this music based on?
+A. blues scale
+B. natural minor
+C. Mixolydian
+D. melodic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",blues scale|natural minor|Mixolydian|melodic minor,blues scale,C,Mixolydian,False,,"{""form"": ""bare_scale"", ""mode"": ""blues"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_midi"": 62}"
+mode_id/blues_62_melody_drone::audio::mcq,mode_id/blues_62_melody_drone,mode_id,audio,mcq,2,stimuli/mode/blues_62_melody_drone.wav,"Identify the mode or scale type of this passage.
+A. whole-tone
+B. blues scale
+C. Mixolydian
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",whole-tone|blues scale|Mixolydian|major,blues scale,D,major,False,,"{""form"": ""melody_drone"", ""mode"": ""blues"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/blues_64_bare_scale::audio::mcq,mode_id/blues_64_bare_scale,mode_id,audio,mcq,0,stimuli/mode/blues_64_bare_scale.wav,"What scale or mode is this music based on?
+A. whole-tone
+B. melodic minor
+C. blues scale
+D. Phrygian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",whole-tone|melodic minor|blues scale|Phrygian,blues scale,D,Phrygian,False,,"{""form"": ""bare_scale"", ""mode"": ""blues"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/blues_64_bare_scale::audio::explain,mode_id/blues_64_bare_scale,mode_id,audio,explain,1,stimuli/mode/blues_64_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,blues scale,"The scale being used is the **C major scale**.
+
+**Explanation:**
+
+The melody played is a descending sequence of notes that clearly outlines the C major scale. The specific notes and their approximate timestamps are:
+
+*   **00:00 - 00:01:** C (the root note)
+*   **00:01 - 00:02:** B (the major 7th)
+*   **00:02 - 00:03:** A (the major 6th)
+*   **00:03 - 00:04:** G (the perfect 5th)
+*   **00:04 - 00:05:** F (the major 4th)
+*   **00:05 - 00:06:** E (the major 3rd)
+*   **00:06 - 00:07:** D (the major 2nd)
+*   **00:07 - 00:08:** C (the root note, an octave lower)
+
+This descending run from C to C is a classic arpeggio of the C major chord (C-E-G), which is the tonic chord of the C major scale. The absence of any accidentals (sharps or flats) and the use of the natural notes of the C major scale confirm the mode.",,,,"{""form"": ""bare_scale"", ""mode"": ""blues"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/blues_64_melody_drone::audio::mcq,mode_id/blues_64_melody_drone,mode_id,audio,mcq,0,stimuli/mode/blues_64_melody_drone.wav,"What scale or mode is this music based on?
+A. Phrygian
+B. melodic minor
+C. Locrian
+D. blues scale
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Phrygian|melodic minor|Locrian|blues scale,blues scale,A,Phrygian,False,,"{""form"": ""melody_drone"", ""mode"": ""blues"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/dorian_57_bare_scale::audio::mcq,mode_id/dorian_57_bare_scale,mode_id,audio,mcq,0,stimuli/mode/dorian_57_bare_scale.wav,"What scale or mode is this music based on?
+A. major pentatonic
+B. Dorian
+C. Locrian
+D. blues scale
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major pentatonic|Dorian|Locrian|blues scale,Dorian,A,major pentatonic,False,,"{""form"": ""bare_scale"", ""mode"": ""dorian"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"
+mode_id/dorian_57_melody_drone::audio::mcq,mode_id/dorian_57_melody_drone,mode_id,audio,mcq,2,stimuli/mode/dorian_57_melody_drone.wav,"Identify the mode or scale type of this passage.
+A. Dorian
+B. Phrygian
+C. melodic minor
+D. natural minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Dorian|Phrygian|melodic minor|natural minor,Dorian,B,Phrygian,False,,"{""form"": ""melody_drone"", ""mode"": ""dorian"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"
+mode_id/dorian_60_bare_scale::audio::mcq,mode_id/dorian_60_bare_scale,mode_id,audio,mcq,2,stimuli/mode/dorian_60_bare_scale.wav,"Identify the mode or scale type of this passage.
+A. minor pentatonic
+B. natural minor
+C. Dorian
+D. Phrygian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor pentatonic|natural minor|Dorian|Phrygian,Dorian,B,natural minor,False,,"{""form"": ""bare_scale"", ""mode"": ""dorian"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/dorian_60_melody_drone::audio::mcq,mode_id/dorian_60_melody_drone,mode_id,audio,mcq,0,stimuli/mode/dorian_60_melody_drone.wav,"What scale or mode is this music based on?
+A. harmonic minor
+B. natural minor
+C. Dorian
+D. Phrygian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",harmonic minor|natural minor|Dorian|Phrygian,Dorian,C,Dorian,True,,"{""form"": ""melody_drone"", ""mode"": ""dorian"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 60}"
+mode_id/dorian_62_bare_scale::audio::mcq,mode_id/dorian_62_bare_scale,mode_id,audio,mcq,1,stimuli/mode/dorian_62_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+A. blues scale
+B. Dorian
+C. melodic minor
+D. major pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",blues scale|Dorian|melodic minor|major pentatonic,Dorian,D,major pentatonic,False,,"{""form"": ""bare_scale"", ""mode"": ""dorian"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 62}"
+mode_id/dorian_62_melody_drone::audio::mcq,mode_id/dorian_62_melody_drone,mode_id,audio,mcq,0,stimuli/mode/dorian_62_melody_drone.wav,"What scale or mode is this music based on?
+A. Mixolydian
+B. natural minor
+C. Dorian
+D. Phrygian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Mixolydian|natural minor|Dorian|Phrygian,Dorian,B,natural minor,False,,"{""form"": ""melody_drone"", ""mode"": ""dorian"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_midi"": 62}"
+mode_id/dorian_64_bare_scale::audio::mcq,mode_id/dorian_64_bare_scale,mode_id,audio,mcq,2,stimuli/mode/dorian_64_bare_scale.wav,"Identify the mode or scale type of this passage.
+A. harmonic minor
+B. whole-tone
+C. major
+D. Dorian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",harmonic minor|whole-tone|major|Dorian,Dorian,C,major,False,,"{""form"": ""bare_scale"", ""mode"": ""dorian"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/dorian_64_melody_drone::audio::mcq,mode_id/dorian_64_melody_drone,mode_id,audio,mcq,1,stimuli/mode/dorian_64_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+A. major pentatonic
+B. major
+C. Dorian
+D. whole-tone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major pentatonic|major|Dorian|whole-tone,Dorian,C,Dorian,True,,"{""form"": ""melody_drone"", ""mode"": ""dorian"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/dorian_64_melody_drone::audio::explain,mode_id/dorian_64_melody_drone,mode_id,audio,explain,1,stimuli/mode/dorian_64_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,Dorian,"The scale being used is the **A minor natural scale**.
+
+**Explanation:**
+
+The melody is played on a flute and is clearly centered around the note A. The specific notes of the melody are:
+
+*   **00:00 - 00:01:** A, B, C#, D, E, F#, G#, A
+*   **00:01 - 00:02:** A, G#, F#, E, D, C#, B, A
+*   **00:02 - 00:03:** A, B, C#, D, E, F#, G#, A
+*   **00:03 - 00:04:** A, G#, F#, E, D, C#, B, A
+*   **00:04 - 00:05:** A, B, C#, D, E, F#, G#, A
+*   **00:05 - 00:06:** A, G#, F#, E, D, C#, B, A
+*   **00:06 - 00:07:** A, B, C#, D, E, F#, G#, A
+*   **00:07 - 00:08:** A, G#, F#, E, D, C#, B, A
+*   **00:08 - 00:09:** A, B, C#, D, E, F#, G#, A
+*   **00:09 - 00:10:** A, G#, F#, E, D, C#, B, A
+
+This sequence of notes (A-B-C#-D-E-F#-G#) is the complete ascending and descending form of the A minor natural scale. The harmony in the background is built on the same notes, reinforcing A as the tonic.",,,,"{""form"": ""melody_drone"", ""mode"": ""dorian"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/harmonic_minor_57_bare_scale::audio::mcq,mode_id/harmonic_minor_57_bare_scale,mode_id,audio,mcq,1,stimuli/mode/harmonic_minor_57_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+A. blues scale
+B. Locrian
+C. natural minor
+D. harmonic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",blues scale|Locrian|natural minor|harmonic minor,harmonic minor,D,harmonic minor,True,,"{""form"": ""bare_scale"", ""mode"": ""harmonic_minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 57}"
+mode_id/harmonic_minor_57_bare_scale::audio::open,mode_id/harmonic_minor_57_bare_scale,mode_id,audio,open,0,stimuli/mode/harmonic_minor_57_bare_scale.wav,"What scale or mode is this music based on?
+Give a short, direct answer.",,harmonic minor,A minor,A minor,False,,"{""form"": ""bare_scale"", ""mode"": ""harmonic_minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 57}"
+mode_id/harmonic_minor_57_melody_drone::audio::mcq,mode_id/harmonic_minor_57_melody_drone,mode_id,audio,mcq,0,stimuli/mode/harmonic_minor_57_melody_drone.wav,"What scale or mode is this music based on?
+A. Mixolydian
+B. major
+C. natural minor
+D. harmonic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Mixolydian|major|natural minor|harmonic minor,harmonic minor,B,major,False,,"{""form"": ""melody_drone"", ""mode"": ""harmonic_minor"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 57}"
+mode_id/harmonic_minor_60_bare_scale::audio::mcq,mode_id/harmonic_minor_60_bare_scale,mode_id,audio,mcq,1,stimuli/mode/harmonic_minor_60_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+A. natural minor
+B. Dorian
+C. harmonic minor
+D. melodic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",natural minor|Dorian|harmonic minor|melodic minor,harmonic minor,A,natural minor,False,,"{""form"": ""bare_scale"", ""mode"": ""harmonic_minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/harmonic_minor_60_bare_scale::audio::open,mode_id/harmonic_minor_60_bare_scale,mode_id,audio,open,1,stimuli/mode/harmonic_minor_60_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+Give a short, direct answer.",,harmonic minor,C minor,C minor,False,,"{""form"": ""bare_scale"", ""mode"": ""harmonic_minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/harmonic_minor_60_bare_scale::audio::explain,mode_id/harmonic_minor_60_bare_scale,mode_id,audio,explain,1,stimuli/mode/harmonic_minor_60_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,harmonic minor,"The scale being used is the C major scale.
+
+**Explanation:**
+
+The notes played in the clip are C, D, E, F, G, A, B, and C. This is the complete sequence of the C major scale, starting and ending on C.
+
+*   **00:00 - 00:04:** The melody is played in a descending run: C (00:00), D (00:01), E (00:01), F (00:02), G (00:02), A (00:03), B (00:03), C (00:04). This is a descending run of the C major scale.
+*   **00:04 - 00:05:** The melody then plays a descending sequence of the notes G, F, E, D, C. These are all notes within the C major scale.",,,,"{""form"": ""bare_scale"", ""mode"": ""harmonic_minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/harmonic_minor_60_melody_drone::audio::mcq,mode_id/harmonic_minor_60_melody_drone,mode_id,audio,mcq,2,stimuli/mode/harmonic_minor_60_melody_drone.wav,"Identify the mode or scale type of this passage.
+A. Locrian
+B. harmonic minor
+C. Lydian
+D. Dorian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Locrian|harmonic minor|Lydian|Dorian,harmonic minor,B,harmonic minor,True,,"{""form"": ""melody_drone"", ""mode"": ""harmonic_minor"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/harmonic_minor_60_melody_drone::audio::open,mode_id/harmonic_minor_60_melody_drone,mode_id,audio,open,1,stimuli/mode/harmonic_minor_60_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+Give a short, direct answer.",,harmonic minor,C minor,C minor,False,,"{""form"": ""melody_drone"", ""mode"": ""harmonic_minor"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/harmonic_minor_62_bare_scale::audio::mcq,mode_id/harmonic_minor_62_bare_scale,mode_id,audio,mcq,2,stimuli/mode/harmonic_minor_62_bare_scale.wav,"Identify the mode or scale type of this passage.
+A. whole-tone
+B. harmonic minor
+C. Dorian
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",whole-tone|harmonic minor|Dorian|major,harmonic minor,A,whole-tone,False,,"{""form"": ""bare_scale"", ""mode"": ""harmonic_minor"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/harmonic_minor_62_melody_drone::audio::mcq,mode_id/harmonic_minor_62_melody_drone,mode_id,audio,mcq,1,stimuli/mode/harmonic_minor_62_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+A. Locrian
+B. blues scale
+C. Lydian
+D. harmonic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Locrian|blues scale|Lydian|harmonic minor,harmonic minor,C,Lydian,False,,"{""form"": ""melody_drone"", ""mode"": ""harmonic_minor"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/harmonic_minor_64_bare_scale::audio::mcq,mode_id/harmonic_minor_64_bare_scale,mode_id,audio,mcq,2,stimuli/mode/harmonic_minor_64_bare_scale.wav,"Identify the mode or scale type of this passage.
+A. Locrian
+B. whole-tone
+C. Phrygian
+D. harmonic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Locrian|whole-tone|Phrygian|harmonic minor,harmonic minor,D,harmonic minor,True,,"{""form"": ""bare_scale"", ""mode"": ""harmonic_minor"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/harmonic_minor_64_melody_drone::audio::mcq,mode_id/harmonic_minor_64_melody_drone,mode_id,audio,mcq,0,stimuli/mode/harmonic_minor_64_melody_drone.wav,"What scale or mode is this music based on?
+A. major
+B. blues scale
+C. harmonic minor
+D. Dorian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|blues scale|harmonic minor|Dorian,harmonic minor,C,harmonic minor,True,,"{""form"": ""melody_drone"", ""mode"": ""harmonic_minor"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/locrian_57_bare_scale::audio::mcq,mode_id/locrian_57_bare_scale,mode_id,audio,mcq,1,stimuli/mode/locrian_57_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+A. Locrian
+B. Mixolydian
+C. melodic minor
+D. harmonic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Locrian|Mixolydian|melodic minor|harmonic minor,Locrian,D,harmonic minor,False,,"{""form"": ""bare_scale"", ""mode"": ""locrian"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_midi"": 57}"
+mode_id/locrian_57_melody_drone::audio::mcq,mode_id/locrian_57_melody_drone,mode_id,audio,mcq,1,stimuli/mode/locrian_57_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+A. major
+B. Phrygian
+C. Locrian
+D. natural minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|Phrygian|Locrian|natural minor,Locrian,B,Phrygian,False,,"{""form"": ""melody_drone"", ""mode"": ""locrian"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_midi"": 57}"
+mode_id/locrian_57_melody_drone::audio::explain,mode_id/locrian_57_melody_drone,mode_id,audio,explain,0,stimuli/mode/locrian_57_melody_drone.wav,"What scale or mode is this music based on?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,Locrian,"The music is based on the **C minor scale**.
+
+**Explanation:**
+
+The piece is a short, arpeggiated melody played on a synthesizer. The notes played are:
+
+*   **00:00 - 00:01:** C, E-flat, G, C
+*   **00:01 - 00:02:** C, E-flat, G, C
+*   **00:02 - 00:03:** C, E-flat, G, C
+*   **00:03 - 00:04:** C, E-flat, G, C
+*   **00:04 - 00:05:** C, E-flat, G, C
+*   **00:05 - 00:06:** C, E-flat, G, C
+
+The melody is built entirely on the notes of a C minor triad: C (the root), E-flat (the minor third), and G (the perfect fifth). The progression is a simple, repeating arpeggio of this chord. The use of E-flat instead of E natural is the defining characteristic of the minor scale, which gives the music its somber and melancholic quality.",,,,"{""form"": ""melody_drone"", ""mode"": ""locrian"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_midi"": 57}"
+mode_id/locrian_60_bare_scale::audio::mcq,mode_id/locrian_60_bare_scale,mode_id,audio,mcq,0,stimuli/mode/locrian_60_bare_scale.wav,"What scale or mode is this music based on?
+A. Mixolydian
+B. Lydian
+C. Locrian
+D. Phrygian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Mixolydian|Lydian|Locrian|Phrygian,Locrian,A,Mixolydian,False,,"{""form"": ""bare_scale"", ""mode"": ""locrian"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/locrian_60_melody_drone::audio::mcq,mode_id/locrian_60_melody_drone,mode_id,audio,mcq,0,stimuli/mode/locrian_60_melody_drone.wav,"What scale or mode is this music based on?
+A. Dorian
+B. melodic minor
+C. Locrian
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Dorian|melodic minor|Locrian|major,Locrian,B,melodic minor,False,,"{""form"": ""melody_drone"", ""mode"": ""locrian"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/locrian_62_bare_scale::audio::mcq,mode_id/locrian_62_bare_scale,mode_id,audio,mcq,1,stimuli/mode/locrian_62_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+A. harmonic minor
+B. natural minor
+C. Locrian
+D. minor pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",harmonic minor|natural minor|Locrian|minor pentatonic,Locrian,A,harmonic minor,False,,"{""form"": ""bare_scale"", ""mode"": ""locrian"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/locrian_62_bare_scale::audio::open,mode_id/locrian_62_bare_scale,mode_id,audio,open,2,stimuli/mode/locrian_62_bare_scale.wav,"Identify the mode or scale type of this passage.
+Give a short, direct answer.",,Locrian,Major scale,Major scale,False,,"{""form"": ""bare_scale"", ""mode"": ""locrian"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/locrian_62_melody_drone::audio::mcq,mode_id/locrian_62_melody_drone,mode_id,audio,mcq,0,stimuli/mode/locrian_62_melody_drone.wav,"What scale or mode is this music based on?
+A. Dorian
+B. minor pentatonic
+C. Mixolydian
+D. Locrian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Dorian|minor pentatonic|Mixolydian|Locrian,Locrian,A,Dorian,False,,"{""form"": ""melody_drone"", ""mode"": ""locrian"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/locrian_64_bare_scale::audio::mcq,mode_id/locrian_64_bare_scale,mode_id,audio,mcq,2,stimuli/mode/locrian_64_bare_scale.wav,"Identify the mode or scale type of this passage.
+A. Locrian
+B. Phrygian
+C. harmonic minor
+D. major pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Locrian|Phrygian|harmonic minor|major pentatonic,Locrian,D,major pentatonic,False,,"{""form"": ""bare_scale"", ""mode"": ""locrian"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/locrian_64_bare_scale::audio::open,mode_id/locrian_64_bare_scale,mode_id,audio,open,1,stimuli/mode/locrian_64_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+Give a short, direct answer.",,Locrian,C major scale,C major scale,False,,"{""form"": ""bare_scale"", ""mode"": ""locrian"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/locrian_64_bare_scale::audio::explain,mode_id/locrian_64_bare_scale,mode_id,audio,explain,0,stimuli/mode/locrian_64_bare_scale.wav,"What scale or mode is this music based on?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,Locrian,"The music is based on the **C major scale**.
+
+**Explanation:**
+
+The melody played on the flute is a descending run of the C major scale. The specific notes and their approximate timestamps are:
+
+*   **00:00 - 00:01:** C
+*   **00:01 - 00:02:** D
+*   **00:02 - 00:03:** E
+*   **00:03 - 00:04:** F
+*   **00:04 - 00:05:** G
+*   **00:05 - 00:06:** A
+*   **00:06 - 00:07:** B
+*   **00:07 - 00:08:** C
+
+This sequence of notes (C-D-E-F-G-A-B-C) is the complete C major scale, played in descending order.",,,,"{""form"": ""bare_scale"", ""mode"": ""locrian"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/locrian_64_melody_drone::audio::mcq,mode_id/locrian_64_melody_drone,mode_id,audio,mcq,2,stimuli/mode/locrian_64_melody_drone.wav,"Identify the mode or scale type of this passage.
+A. minor pentatonic
+B. Locrian
+C. natural minor
+D. Dorian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor pentatonic|Locrian|natural minor|Dorian,Locrian,C,natural minor,False,,"{""form"": ""melody_drone"", ""mode"": ""locrian"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/locrian_64_melody_drone::audio::explain,mode_id/locrian_64_melody_drone,mode_id,audio,explain,2,stimuli/mode/locrian_64_melody_drone.wav,"Identify the mode or scale type of this passage.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,Locrian,"The mode of this passage is **Dorian**.
+
+**Explanation:**
+
+The passage is in the key of **C minor**, but it features a **major 6th** note, which is the defining characteristic of the **C Dorian** mode.
+
+*   **C Dorian scale:** C, D, E♭, F, G, A, B♭, C
+*   **C natural minor scale:** C, D, E♭, F, G, A♭, B♭, C
+
+The key difference is the 6th note: **A** in Dorian vs. **A♭** in natural minor.
+
+**Evidence from the audio:**
+
+1.  **00:00 - 00:02:** The melody begins on **C** and moves up to **D** and **E♭**. This establishes the tonic and the minor third, confirming the minor key center.
+2.  **00:02 - 00:04:** The melody continues to **F**, then **G**, and then **A**. The note **A** is a **major 6th** above the tonic **C**. This is the crucial note that shifts the mode from natural minor to Dorian.
+3.  **00:04 - 00:06:** The melody descends from **A** to **G**, then **F**, and finally **E♭**. The return to **E♭** (the minor 3rd) confirms that the tonic **C** is still the center of the piece.
+
+The combination of a **minor 3rd (E♭)** and a **major 6th (A)** in the same melodic phrase is the definitive sound of the Dorian mode.",,,,"{""form"": ""melody_drone"", ""mode"": ""locrian"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/lydian_57_bare_scale::audio::mcq,mode_id/lydian_57_bare_scale,mode_id,audio,mcq,0,stimuli/mode/lydian_57_bare_scale.wav,"What scale or mode is this music based on?
+A. Mixolydian
+B. blues scale
+C. Lydian
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Mixolydian|blues scale|Lydian|major,Lydian,D,major,False,,"{""form"": ""bare_scale"", ""mode"": ""lydian"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 57}"
+mode_id/lydian_57_melody_drone::audio::mcq,mode_id/lydian_57_melody_drone,mode_id,audio,mcq,0,stimuli/mode/lydian_57_melody_drone.wav,"What scale or mode is this music based on?
+A. Phrygian
+B. Mixolydian
+C. Lydian
+D. major pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Phrygian|Mixolydian|Lydian|major pentatonic,Lydian,A,Phrygian,False,,"{""form"": ""melody_drone"", ""mode"": ""lydian"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_midi"": 57}"
+mode_id/lydian_60_bare_scale::audio::mcq,mode_id/lydian_60_bare_scale,mode_id,audio,mcq,0,stimuli/mode/lydian_60_bare_scale.wav,"What scale or mode is this music based on?
+A. Mixolydian
+B. blues scale
+C. Lydian
+D. harmonic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Mixolydian|blues scale|Lydian|harmonic minor,Lydian,D,harmonic minor,False,,"{""form"": ""bare_scale"", ""mode"": ""lydian"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_midi"": 60}"
+mode_id/lydian_60_melody_drone::audio::mcq,mode_id/lydian_60_melody_drone,mode_id,audio,mcq,0,stimuli/mode/lydian_60_melody_drone.wav,"What scale or mode is this music based on?
+A. Lydian
+B. harmonic minor
+C. minor pentatonic
+D. Mixolydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Lydian|harmonic minor|minor pentatonic|Mixolydian,Lydian,B,harmonic minor,False,,"{""form"": ""melody_drone"", ""mode"": ""lydian"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 60}"
+mode_id/lydian_60_melody_drone::audio::open,mode_id/lydian_60_melody_drone,mode_id,audio,open,2,stimuli/mode/lydian_60_melody_drone.wav,"Identify the mode or scale type of this passage.
+Give a short, direct answer.",,Lydian,Phrygian mode,Phrygian mode,False,,"{""form"": ""melody_drone"", ""mode"": ""lydian"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 60}"
+mode_id/lydian_62_bare_scale::audio::mcq,mode_id/lydian_62_bare_scale,mode_id,audio,mcq,2,stimuli/mode/lydian_62_bare_scale.wav,"Identify the mode or scale type of this passage.
+A. Lydian
+B. major pentatonic
+C. major
+D. minor pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Lydian|major pentatonic|major|minor pentatonic,Lydian,C,major,False,,"{""form"": ""bare_scale"", ""mode"": ""lydian"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_midi"": 62}"
+mode_id/lydian_62_melody_drone::audio::mcq,mode_id/lydian_62_melody_drone,mode_id,audio,mcq,1,stimuli/mode/lydian_62_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+A. Lydian
+B. Dorian
+C. major
+D. Phrygian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Lydian|Dorian|major|Phrygian,Lydian,C,major,False,,"{""form"": ""melody_drone"", ""mode"": ""lydian"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_midi"": 62}"
+mode_id/lydian_64_bare_scale::audio::mcq,mode_id/lydian_64_bare_scale,mode_id,audio,mcq,0,stimuli/mode/lydian_64_bare_scale.wav,"What scale or mode is this music based on?
+A. Phrygian
+B. Dorian
+C. minor pentatonic
+D. Lydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Phrygian|Dorian|minor pentatonic|Lydian,Lydian,C,minor pentatonic,False,,"{""form"": ""bare_scale"", ""mode"": ""lydian"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/lydian_64_bare_scale::audio::open,mode_id/lydian_64_bare_scale,mode_id,audio,open,1,stimuli/mode/lydian_64_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+Give a short, direct answer.",,Lydian,Phrygian mode,Phrygian mode,False,,"{""form"": ""bare_scale"", ""mode"": ""lydian"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/lydian_64_melody_drone::audio::mcq,mode_id/lydian_64_melody_drone,mode_id,audio,mcq,0,stimuli/mode/lydian_64_melody_drone.wav,"What scale or mode is this music based on?
+A. major
+B. Lydian
+C. natural minor
+D. Dorian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|Lydian|natural minor|Dorian,Lydian,C,natural minor,False,,"{""form"": ""melody_drone"", ""mode"": ""lydian"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/major_57_bare_scale::audio::mcq,mode_id/major_57_bare_scale,mode_id,audio,mcq,0,stimuli/mode/major_57_bare_scale.wav,"What scale or mode is this music based on?
+A. Mixolydian
+B. minor pentatonic
+C. major pentatonic
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Mixolydian|minor pentatonic|major pentatonic|major,major,D,major,True,,"{""form"": ""bare_scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"
+mode_id/major_57_melody_drone::audio::mcq,mode_id/major_57_melody_drone,mode_id,audio,mcq,0,stimuli/mode/major_57_melody_drone.wav,"What scale or mode is this music based on?
+A. Locrian
+B. major
+C. natural minor
+D. Mixolydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Locrian|major|natural minor|Mixolydian,major,C,natural minor,False,,"{""form"": ""melody_drone"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"
+mode_id/major_57_melody_drone::audio::explain,mode_id/major_57_melody_drone,mode_id,audio,explain,2,stimuli/mode/major_57_melody_drone.wav,"Identify the mode or scale type of this passage.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,major,"The mode of this passage is **Dorian**.
+
+**Explanation:**
+
+The passage is in the key of **A minor**. The specific notes and chords that establish the Dorian mode are:
+
+*   **00:00 - 00:02:** The piece begins with a descending melodic line: **A - G - F# - E**. The presence of the **F#** (the major 6th scale degree) instead of the **F natural** (the minor 6th) is the defining characteristic of the Dorian mode.
+*   **00:02 - 00:04:** The line continues with **D - C - B - A**. This reinforces the A minor tonality, with the **B** (the major 3rd) confirming the minor key.
+*   **00:04 - 00:06:** The line ascends with **A - B - C - D - E**. This ascending run clearly outlines the A Dorian scale, highlighting the **F#** again in the context of the full scale.
+*   **00:06 - 00:07:** The passage concludes with a descending **E - D - C - B - A**, which is a clear arpeggio of the A minor chord, solidifying the tonic.
+
+The combination of a minor tonic (A), a major 3rd (C#), and a major 6th (F#) is the exact formula for the A Dorian mode.",,,,"{""form"": ""melody_drone"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"
+mode_id/major_60_bare_scale::audio::mcq,mode_id/major_60_bare_scale,mode_id,audio,mcq,2,stimuli/mode/major_60_bare_scale.wav,"Identify the mode or scale type of this passage.
+A. harmonic minor
+B. melodic minor
+C. major
+D. whole-tone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",harmonic minor|melodic minor|major|whole-tone,major,C,major,True,,"{""form"": ""bare_scale"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/major_60_melody_drone::audio::mcq,mode_id/major_60_melody_drone,mode_id,audio,mcq,0,stimuli/mode/major_60_melody_drone.wav,"What scale or mode is this music based on?
+A. major
+B. Locrian
+C. natural minor
+D. Lydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|Locrian|natural minor|Lydian,major,C,natural minor,False,,"{""form"": ""melody_drone"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 60}"
+mode_id/major_60_melody_drone::audio::open,mode_id/major_60_melody_drone,mode_id,audio,open,0,stimuli/mode/major_60_melody_drone.wav,"What scale or mode is this music based on?
+Give a short, direct answer.",,major,C major,C major,True,,"{""form"": ""melody_drone"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 60}"
+mode_id/major_62_bare_scale::audio::mcq,mode_id/major_62_bare_scale,mode_id,audio,mcq,0,stimuli/mode/major_62_bare_scale.wav,"What scale or mode is this music based on?
+A. major
+B. Mixolydian
+C. Dorian
+D. major pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|Mixolydian|Dorian|major pentatonic,major,A,major,True,,"{""form"": ""bare_scale"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_midi"": 62}"
+mode_id/major_62_melody_drone::audio::mcq,mode_id/major_62_melody_drone,mode_id,audio,mcq,2,stimuli/mode/major_62_melody_drone.wav,"Identify the mode or scale type of this passage.
+A. natural minor
+B. melodic minor
+C. major
+D. Locrian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",natural minor|melodic minor|major|Locrian,major,C,major,True,,"{""form"": ""melody_drone"", ""mode"": ""major"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/major_64_bare_scale::audio::mcq,mode_id/major_64_bare_scale,mode_id,audio,mcq,1,stimuli/mode/major_64_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+A. Phrygian
+B. blues scale
+C. minor pentatonic
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Phrygian|blues scale|minor pentatonic|major,major,D,major,True,,"{""form"": ""bare_scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/major_64_bare_scale::audio::open,mode_id/major_64_bare_scale,mode_id,audio,open,1,stimuli/mode/major_64_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+Give a short, direct answer.",,major,Aeolian mode (natural minor scale),Aeolian mode (natural minor scale),False,,"{""form"": ""bare_scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/major_64_melody_drone::audio::mcq,mode_id/major_64_melody_drone,mode_id,audio,mcq,1,stimuli/mode/major_64_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+A. major
+B. Dorian
+C. major pentatonic
+D. Lydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|Dorian|major pentatonic|Lydian,major,A,major,True,,"{""form"": ""melody_drone"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/major_64_melody_drone::audio::open,mode_id/major_64_melody_drone,mode_id,audio,open,2,stimuli/mode/major_64_melody_drone.wav,"Identify the mode or scale type of this passage.
+Give a short, direct answer.",,major,Dorian mode,Dorian mode,False,,"{""form"": ""melody_drone"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/major_pentatonic_57_bare_scale::audio::mcq,mode_id/major_pentatonic_57_bare_scale,mode_id,audio,mcq,0,stimuli/mode/major_pentatonic_57_bare_scale.wav,"What scale or mode is this music based on?
+A. major pentatonic
+B. Locrian
+C. whole-tone
+D. Mixolydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major pentatonic|Locrian|whole-tone|Mixolydian,major pentatonic,A,major pentatonic,True,,"{""form"": ""bare_scale"", ""mode"": ""major_pentatonic"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 57}"
+mode_id/major_pentatonic_57_melody_drone::audio::mcq,mode_id/major_pentatonic_57_melody_drone,mode_id,audio,mcq,1,stimuli/mode/major_pentatonic_57_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+A. major pentatonic
+B. natural minor
+C. Phrygian
+D. minor pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major pentatonic|natural minor|Phrygian|minor pentatonic,major pentatonic,D,minor pentatonic,False,,"{""form"": ""melody_drone"", ""mode"": ""major_pentatonic"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 57}"
+mode_id/major_pentatonic_60_bare_scale::audio::mcq,mode_id/major_pentatonic_60_bare_scale,mode_id,audio,mcq,1,stimuli/mode/major_pentatonic_60_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+A. Locrian
+B. major pentatonic
+C. Mixolydian
+D. harmonic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Locrian|major pentatonic|Mixolydian|harmonic minor,major pentatonic,B,major pentatonic,True,,"{""form"": ""bare_scale"", ""mode"": ""major_pentatonic"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 60}"
+mode_id/major_pentatonic_60_melody_drone::audio::mcq,mode_id/major_pentatonic_60_melody_drone,mode_id,audio,mcq,2,stimuli/mode/major_pentatonic_60_melody_drone.wav,"Identify the mode or scale type of this passage.
+A. Phrygian
+B. harmonic minor
+C. major
+D. major pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Phrygian|harmonic minor|major|major pentatonic,major pentatonic,A,Phrygian,False,,"{""form"": ""melody_drone"", ""mode"": ""major_pentatonic"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/major_pentatonic_60_melody_drone::audio::open,mode_id/major_pentatonic_60_melody_drone,mode_id,audio,open,0,stimuli/mode/major_pentatonic_60_melody_drone.wav,"What scale or mode is this music based on?
+Give a short, direct answer.",,major pentatonic,C minor,C minor,False,,"{""form"": ""melody_drone"", ""mode"": ""major_pentatonic"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/major_pentatonic_60_melody_drone::audio::explain,mode_id/major_pentatonic_60_melody_drone,mode_id,audio,explain,2,stimuli/mode/major_pentatonic_60_melody_drone.wav,"Identify the mode or scale type of this passage.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,major pentatonic,"The mode of this passage is **Phrygian**.
+
+**Explanation:**
+
+The passage is in the key of **E Phrygian**. This is established by the following:
+
+1.  **Root Note:** The bass line and the root of the main chord at the beginning (00:00) is E. This establishes E as the tonic, or ""home"" note of the piece.
+
+2.  **The Defining Characteristic - The Minor Second:** The most crucial element is the interval between the root (E) and the second note of the scale (F). At 00:00, the harmony consists of the notes E, G, and B. The interval from E to G is a minor third, which is expected in a minor key. However, the very next chord at 00:01 introduces the note F. The interval from E to F is a minor second (a half-step). This is the defining characteristic of the Phrygian mode, which has a minor second interval between its first and second scale degrees.
+
+3.  **Chord Progression:** The progression is E minor (E-G-B) to F major (F-A-C). In the key of E Phrygian, the F major chord is the **I** chord (the tonic), and the E minor chord is the **♭VII** chord (the flat-seventh). This progression is a very common and characteristic sound in Phrygian mode, where the tonic chord is major and the subdominant chord is minor.
+
+4.  **Melodic Contour:** The melody reinforces this. It starts on the root (E) and immediately moves down to the minor second (F) at 00:01, a movement that is typical of Phrygian melodies.",,,,"{""form"": ""melody_drone"", ""mode"": ""major_pentatonic"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/major_pentatonic_62_bare_scale::audio::mcq,mode_id/major_pentatonic_62_bare_scale,mode_id,audio,mcq,0,stimuli/mode/major_pentatonic_62_bare_scale.wav,"What scale or mode is this music based on?
+A. major pentatonic
+B. Mixolydian
+C. Lydian
+D. Locrian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major pentatonic|Mixolydian|Lydian|Locrian,major pentatonic,A,major pentatonic,True,,"{""form"": ""bare_scale"", ""mode"": ""major_pentatonic"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_midi"": 62}"
+mode_id/major_pentatonic_62_bare_scale::audio::open,mode_id/major_pentatonic_62_bare_scale,mode_id,audio,open,2,stimuli/mode/major_pentatonic_62_bare_scale.wav,"Identify the mode or scale type of this passage.
+Give a short, direct answer.",,major pentatonic,Major,Major,False,,"{""form"": ""bare_scale"", ""mode"": ""major_pentatonic"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_midi"": 62}"
+mode_id/major_pentatonic_62_melody_drone::audio::mcq,mode_id/major_pentatonic_62_melody_drone,mode_id,audio,mcq,2,stimuli/mode/major_pentatonic_62_melody_drone.wav,"Identify the mode or scale type of this passage.
+A. minor pentatonic
+B. Lydian
+C. major pentatonic
+D. Phrygian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor pentatonic|Lydian|major pentatonic|Phrygian,major pentatonic,C,major pentatonic,True,,"{""form"": ""melody_drone"", ""mode"": ""major_pentatonic"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 62}"
+mode_id/major_pentatonic_62_melody_drone::audio::open,mode_id/major_pentatonic_62_melody_drone,mode_id,audio,open,2,stimuli/mode/major_pentatonic_62_melody_drone.wav,"Identify the mode or scale type of this passage.
+Give a short, direct answer.",,major pentatonic,D major,D major,False,,"{""form"": ""melody_drone"", ""mode"": ""major_pentatonic"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 62}"
+mode_id/major_pentatonic_64_bare_scale::audio::mcq,mode_id/major_pentatonic_64_bare_scale,mode_id,audio,mcq,1,stimuli/mode/major_pentatonic_64_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+A. major
+B. Mixolydian
+C. major pentatonic
+D. melodic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|Mixolydian|major pentatonic|melodic minor,major pentatonic,C,major pentatonic,True,,"{""form"": ""bare_scale"", ""mode"": ""major_pentatonic"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 64}"
+mode_id/major_pentatonic_64_bare_scale::audio::open,mode_id/major_pentatonic_64_bare_scale,mode_id,audio,open,2,stimuli/mode/major_pentatonic_64_bare_scale.wav,"Identify the mode or scale type of this passage.
+Give a short, direct answer.",,major pentatonic,Major scale,Major scale,False,,"{""form"": ""bare_scale"", ""mode"": ""major_pentatonic"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 64}"
+mode_id/major_pentatonic_64_melody_drone::audio::mcq,mode_id/major_pentatonic_64_melody_drone,mode_id,audio,mcq,0,stimuli/mode/major_pentatonic_64_melody_drone.wav,"What scale or mode is this music based on?
+A. major
+B. major pentatonic
+C. natural minor
+D. Phrygian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|major pentatonic|natural minor|Phrygian,major pentatonic,D,Phrygian,False,,"{""form"": ""melody_drone"", ""mode"": ""major_pentatonic"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/melodic_minor_57_bare_scale::audio::mcq,mode_id/melodic_minor_57_bare_scale,mode_id,audio,mcq,0,stimuli/mode/melodic_minor_57_bare_scale.wav,"What scale or mode is this music based on?
+A. minor pentatonic
+B. major pentatonic
+C. melodic minor
+D. blues scale
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor pentatonic|major pentatonic|melodic minor|blues scale,melodic minor,A,minor pentatonic,False,,"{""form"": ""bare_scale"", ""mode"": ""melodic_minor"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"
+mode_id/melodic_minor_57_melody_drone::audio::mcq,mode_id/melodic_minor_57_melody_drone,mode_id,audio,mcq,2,stimuli/mode/melodic_minor_57_melody_drone.wav,"Identify the mode or scale type of this passage.
+A. major
+B. Locrian
+C. Lydian
+D. melodic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|Locrian|Lydian|melodic minor,melodic minor,A,major,False,,"{""form"": ""melody_drone"", ""mode"": ""melodic_minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 57}"
+mode_id/melodic_minor_57_melody_drone::audio::open,mode_id/melodic_minor_57_melody_drone,mode_id,audio,open,0,stimuli/mode/melodic_minor_57_melody_drone.wav,"What scale or mode is this music based on?
+Give a short, direct answer.",,melodic minor,A minor,A minor,False,,"{""form"": ""melody_drone"", ""mode"": ""melodic_minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 57}"
+mode_id/melodic_minor_60_bare_scale::audio::mcq,mode_id/melodic_minor_60_bare_scale,mode_id,audio,mcq,0,stimuli/mode/melodic_minor_60_bare_scale.wav,"What scale or mode is this music based on?
+A. Locrian
+B. melodic minor
+C. minor pentatonic
+D. whole-tone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Locrian|melodic minor|minor pentatonic|whole-tone,melodic minor,C,minor pentatonic,False,,"{""form"": ""bare_scale"", ""mode"": ""melodic_minor"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 60}"
+mode_id/melodic_minor_60_bare_scale::audio::explain,mode_id/melodic_minor_60_bare_scale,mode_id,audio,explain,1,stimuli/mode/melodic_minor_60_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,melodic minor,"The scale being used is the **C minor natural scale**.
+
+**Explanation:**
+
+The notes played in the clip are, in order:
+
+*   **00:00 - 00:01:** C, D, E♭, F, G, A♭, B♭, C
+*   **00:01 - 00:02:** C, B♭, A♭, G, F, E♭, D, C
+*   **00:02 - 00:03:** C, D, E♭, F, G, A♭, B♭, C
+
+This is a clear ascending and descending run of the C minor natural scale. The defining characteristic of this scale is the presence of the **E♭** (the minor third) and the **A♭** (the minor sixth), which are clearly audible. The scale is built on the root note C, which is established as the tonic at the beginning and end of the phrase.",,,,"{""form"": ""bare_scale"", ""mode"": ""melodic_minor"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 60}"
+mode_id/melodic_minor_60_melody_drone::audio::mcq,mode_id/melodic_minor_60_melody_drone,mode_id,audio,mcq,1,stimuli/mode/melodic_minor_60_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+A. melodic minor
+B. Locrian
+C. Phrygian
+D. Lydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",melodic minor|Locrian|Phrygian|Lydian,melodic minor,C,Phrygian,False,,"{""form"": ""melody_drone"", ""mode"": ""melodic_minor"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 60}"
+mode_id/melodic_minor_62_bare_scale::audio::mcq,mode_id/melodic_minor_62_bare_scale,mode_id,audio,mcq,0,stimuli/mode/melodic_minor_62_bare_scale.wav,"What scale or mode is this music based on?
+A. Mixolydian
+B. melodic minor
+C. harmonic minor
+D. Lydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Mixolydian|melodic minor|harmonic minor|Lydian,melodic minor,A,Mixolydian,False,,"{""form"": ""bare_scale"", ""mode"": ""melodic_minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 62}"
+mode_id/melodic_minor_62_melody_drone::audio::mcq,mode_id/melodic_minor_62_melody_drone,mode_id,audio,mcq,0,stimuli/mode/melodic_minor_62_melody_drone.wav,"What scale or mode is this music based on?
+A. Mixolydian
+B. blues scale
+C. melodic minor
+D. Locrian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Mixolydian|blues scale|melodic minor|Locrian,melodic minor,A,Mixolydian,False,,"{""form"": ""melody_drone"", ""mode"": ""melodic_minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 62}"
+mode_id/melodic_minor_64_bare_scale::audio::mcq,mode_id/melodic_minor_64_bare_scale,mode_id,audio,mcq,0,stimuli/mode/melodic_minor_64_bare_scale.wav,"What scale or mode is this music based on?
+A. melodic minor
+B. blues scale
+C. Mixolydian
+D. Locrian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",melodic minor|blues scale|Mixolydian|Locrian,melodic minor,A,melodic minor,True,,"{""form"": ""bare_scale"", ""mode"": ""melodic_minor"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 64}"
+mode_id/melodic_minor_64_bare_scale::audio::open,mode_id/melodic_minor_64_bare_scale,mode_id,audio,open,1,stimuli/mode/melodic_minor_64_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+Give a short, direct answer.",,melodic minor,Aeolian mode,Aeolian mode,False,,"{""form"": ""bare_scale"", ""mode"": ""melodic_minor"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 64}"
+mode_id/melodic_minor_64_melody_drone::audio::mcq,mode_id/melodic_minor_64_melody_drone,mode_id,audio,mcq,1,stimuli/mode/melodic_minor_64_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+A. Mixolydian
+B. melodic minor
+C. Lydian
+D. Dorian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Mixolydian|melodic minor|Lydian|Dorian,melodic minor,D,Dorian,False,,"{""form"": ""melody_drone"", ""mode"": ""melodic_minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/minor_pentatonic_57_bare_scale::audio::mcq,mode_id/minor_pentatonic_57_bare_scale,mode_id,audio,mcq,1,stimuli/mode/minor_pentatonic_57_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+A. major pentatonic
+B. melodic minor
+C. minor pentatonic
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major pentatonic|melodic minor|minor pentatonic|major,minor pentatonic,D,major,False,,"{""form"": ""bare_scale"", ""mode"": ""minor_pentatonic"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"
+mode_id/minor_pentatonic_57_bare_scale::audio::explain,mode_id/minor_pentatonic_57_bare_scale,mode_id,audio,explain,0,stimuli/mode/minor_pentatonic_57_bare_scale.wav,"What scale or mode is this music based on?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor pentatonic,"The music is based on the **C major scale**.
+
+**Explanation:**
+
+The melody consists of the following notes in sequence:
+
+*   **00:00 - 00:01:** C, D, E, F, G
+*   **00:01 - 00:02:** G, F, E, D, C
+
+This sequence of notes (C-D-E-F-G-F-E-D-C) is a classic ascending and descending run of the C major scale. The piece begins and ends on the note C, which functions as the tonic or ""home"" note, establishing it as the root of the scale.",,,,"{""form"": ""bare_scale"", ""mode"": ""minor_pentatonic"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"
+mode_id/minor_pentatonic_57_melody_drone::audio::mcq,mode_id/minor_pentatonic_57_melody_drone,mode_id,audio,mcq,0,stimuli/mode/minor_pentatonic_57_melody_drone.wav,"What scale or mode is this music based on?
+A. Phrygian
+B. Locrian
+C. minor pentatonic
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Phrygian|Locrian|minor pentatonic|major,minor pentatonic,A,Phrygian,False,,"{""form"": ""melody_drone"", ""mode"": ""minor_pentatonic"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"
+mode_id/minor_pentatonic_57_melody_drone::audio::open,mode_id/minor_pentatonic_57_melody_drone,mode_id,audio,open,1,stimuli/mode/minor_pentatonic_57_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+Give a short, direct answer.",,minor pentatonic,A minor,A minor,False,,"{""form"": ""melody_drone"", ""mode"": ""minor_pentatonic"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"
+mode_id/minor_pentatonic_60_bare_scale::audio::mcq,mode_id/minor_pentatonic_60_bare_scale,mode_id,audio,mcq,1,stimuli/mode/minor_pentatonic_60_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+A. major pentatonic
+B. major
+C. minor pentatonic
+D. whole-tone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major pentatonic|major|minor pentatonic|whole-tone,minor pentatonic,A,major pentatonic,False,,"{""form"": ""bare_scale"", ""mode"": ""minor_pentatonic"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 60}"
+mode_id/minor_pentatonic_60_melody_drone::audio::mcq,mode_id/minor_pentatonic_60_melody_drone,mode_id,audio,mcq,0,stimuli/mode/minor_pentatonic_60_melody_drone.wav,"What scale or mode is this music based on?
+A. natural minor
+B. minor pentatonic
+C. Lydian
+D. Phrygian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",natural minor|minor pentatonic|Lydian|Phrygian,minor pentatonic,B,minor pentatonic,True,,"{""form"": ""melody_drone"", ""mode"": ""minor_pentatonic"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_midi"": 60}"
+mode_id/minor_pentatonic_62_bare_scale::audio::mcq,mode_id/minor_pentatonic_62_bare_scale,mode_id,audio,mcq,2,stimuli/mode/minor_pentatonic_62_bare_scale.wav,"Identify the mode or scale type of this passage.
+A. minor pentatonic
+B. whole-tone
+C. Mixolydian
+D. harmonic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor pentatonic|whole-tone|Mixolydian|harmonic minor,minor pentatonic,C,Mixolydian,False,,"{""form"": ""bare_scale"", ""mode"": ""minor_pentatonic"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/minor_pentatonic_62_bare_scale::audio::explain,mode_id/minor_pentatonic_62_bare_scale,mode_id,audio,explain,0,stimuli/mode/minor_pentatonic_62_bare_scale.wav,"What scale or mode is this music based on?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor pentatonic,"The music is based on the **D minor scale**.
+
+**Explanation:**
+
+The melody is played on a flute and consists of the following notes:
+
+*   **00:00 - 00:01:** D, E, F, G, A
+*   **00:01 - 00:02:** A, G, F, E, D
+*   **00:02 - 00:03:** D, E, F, G, A
+*   **00:03 - 00:04:** A, G, F, E, D
+
+This sequence of notes (D, E, F, G, A, B♭, C, D) forms the D natural minor scale. The key is established by the final note of the phrase, which is a clear and resolved D, serving as the tonic. The melody uses the characteristic lowered third (F), sixth (B♭), and seventh (C) scale degrees of the natural minor scale, which gives it its distinct melancholic sound.",,,,"{""form"": ""bare_scale"", ""mode"": ""minor_pentatonic"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/minor_pentatonic_62_melody_drone::audio::mcq,mode_id/minor_pentatonic_62_melody_drone,mode_id,audio,mcq,1,stimuli/mode/minor_pentatonic_62_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+A. harmonic minor
+B. Lydian
+C. natural minor
+D. minor pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",harmonic minor|Lydian|natural minor|minor pentatonic,minor pentatonic,A,harmonic minor,False,,"{""form"": ""melody_drone"", ""mode"": ""minor_pentatonic"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_midi"": 62}"
+mode_id/minor_pentatonic_62_melody_drone::audio::open,mode_id/minor_pentatonic_62_melody_drone,mode_id,audio,open,1,stimuli/mode/minor_pentatonic_62_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+Give a short, direct answer.",,minor pentatonic,C minor,C minor,False,,"{""form"": ""melody_drone"", ""mode"": ""minor_pentatonic"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_midi"": 62}"
+mode_id/minor_pentatonic_64_bare_scale::audio::mcq,mode_id/minor_pentatonic_64_bare_scale,mode_id,audio,mcq,1,stimuli/mode/minor_pentatonic_64_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+A. Dorian
+B. minor pentatonic
+C. major
+D. Mixolydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Dorian|minor pentatonic|major|Mixolydian,minor pentatonic,C,major,False,,"{""form"": ""bare_scale"", ""mode"": ""minor_pentatonic"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/minor_pentatonic_64_melody_drone::audio::mcq,mode_id/minor_pentatonic_64_melody_drone,mode_id,audio,mcq,0,stimuli/mode/minor_pentatonic_64_melody_drone.wav,"What scale or mode is this music based on?
+A. harmonic minor
+B. Locrian
+C. melodic minor
+D. minor pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",harmonic minor|Locrian|melodic minor|minor pentatonic,minor pentatonic,D,minor pentatonic,True,,"{""form"": ""melody_drone"", ""mode"": ""minor_pentatonic"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/minor_pentatonic_64_melody_drone::audio::open,mode_id/minor_pentatonic_64_melody_drone,mode_id,audio,open,2,stimuli/mode/minor_pentatonic_64_melody_drone.wav,"Identify the mode or scale type of this passage.
+Give a short, direct answer.",,minor pentatonic,Dorian mode,Dorian mode,False,,"{""form"": ""melody_drone"", ""mode"": ""minor_pentatonic"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/mixolydian_57_bare_scale::audio::mcq,mode_id/mixolydian_57_bare_scale,mode_id,audio,mcq,1,stimuli/mode/mixolydian_57_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+A. major
+B. whole-tone
+C. major pentatonic
+D. Mixolydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|whole-tone|major pentatonic|Mixolydian,Mixolydian,A,major,False,,"{""form"": ""bare_scale"", ""mode"": ""mixolydian"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 57}"
+mode_id/mixolydian_57_melody_drone::audio::mcq,mode_id/mixolydian_57_melody_drone,mode_id,audio,mcq,2,stimuli/mode/mixolydian_57_melody_drone.wav,"Identify the mode or scale type of this passage.
+A. melodic minor
+B. Phrygian
+C. major
+D. Mixolydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",melodic minor|Phrygian|major|Mixolydian,Mixolydian,B,Phrygian,False,,"{""form"": ""melody_drone"", ""mode"": ""mixolydian"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_midi"": 57}"
+mode_id/mixolydian_60_bare_scale::audio::mcq,mode_id/mixolydian_60_bare_scale,mode_id,audio,mcq,2,stimuli/mode/mixolydian_60_bare_scale.wav,"Identify the mode or scale type of this passage.
+A. Dorian
+B. Mixolydian
+C. melodic minor
+D. harmonic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Dorian|Mixolydian|melodic minor|harmonic minor,Mixolydian,D,harmonic minor,False,,"{""form"": ""bare_scale"", ""mode"": ""mixolydian"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/mixolydian_60_bare_scale::audio::explain,mode_id/mixolydian_60_bare_scale,mode_id,audio,explain,2,stimuli/mode/mixolydian_60_bare_scale.wav,"Identify the mode or scale type of this passage.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,Mixolydian,"The mode of this passage is **C major**.
+
+**Explanation:**
+
+The passage consists of a single, ascending and then descending melodic phrase played on a piano. The notes heard are:
+
+*   **00:00 - 00:01:** C, D, E, F
+*   **00:01 - 00:02:** G, A, B, A
+*   **00:02 - 00:03:** G, F, E, D, C
+
+This sequence of notes (C-D-E-F-G-A-B-A-G-F-E-D-C) forms a complete ascending and descending run of the C major scale. The piece begins and ends on the note C, which functions as the tonic or ""home"" note, establishing it as the root of the scale. The scale is major because it contains the characteristic major third interval (E) and the perfect fifth interval (G) above the tonic C, which gives it its bright, resolved sound.",,,,"{""form"": ""bare_scale"", ""mode"": ""mixolydian"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/mixolydian_60_melody_drone::audio::mcq,mode_id/mixolydian_60_melody_drone,mode_id,audio,mcq,1,stimuli/mode/mixolydian_60_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+A. harmonic minor
+B. Locrian
+C. Mixolydian
+D. blues scale
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",harmonic minor|Locrian|Mixolydian|blues scale,Mixolydian,A,harmonic minor,False,,"{""form"": ""melody_drone"", ""mode"": ""mixolydian"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/mixolydian_62_bare_scale::audio::mcq,mode_id/mixolydian_62_bare_scale,mode_id,audio,mcq,1,stimuli/mode/mixolydian_62_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+A. major pentatonic
+B. Phrygian
+C. whole-tone
+D. Mixolydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major pentatonic|Phrygian|whole-tone|Mixolydian,Mixolydian,A,major pentatonic,False,,"{""form"": ""bare_scale"", ""mode"": ""mixolydian"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_midi"": 62}"
+mode_id/mixolydian_62_melody_drone::audio::mcq,mode_id/mixolydian_62_melody_drone,mode_id,audio,mcq,2,stimuli/mode/mixolydian_62_melody_drone.wav,"Identify the mode or scale type of this passage.
+A. whole-tone
+B. Lydian
+C. Mixolydian
+D. harmonic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",whole-tone|Lydian|Mixolydian|harmonic minor,Mixolydian,D,harmonic minor,False,,"{""form"": ""melody_drone"", ""mode"": ""mixolydian"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_midi"": 62}"
+mode_id/mixolydian_64_bare_scale::audio::mcq,mode_id/mixolydian_64_bare_scale,mode_id,audio,mcq,0,stimuli/mode/mixolydian_64_bare_scale.wav,"What scale or mode is this music based on?
+A. major pentatonic
+B. natural minor
+C. Mixolydian
+D. Locrian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major pentatonic|natural minor|Mixolydian|Locrian,Mixolydian,A,major pentatonic,False,,"{""form"": ""bare_scale"", ""mode"": ""mixolydian"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 64}"
+mode_id/mixolydian_64_melody_drone::audio::mcq,mode_id/mixolydian_64_melody_drone,mode_id,audio,mcq,0,stimuli/mode/mixolydian_64_melody_drone.wav,"What scale or mode is this music based on?
+A. harmonic minor
+B. major pentatonic
+C. Lydian
+D. Mixolydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",harmonic minor|major pentatonic|Lydian|Mixolydian,Mixolydian,A,harmonic minor,False,,"{""form"": ""melody_drone"", ""mode"": ""mixolydian"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/natural_minor_57_bare_scale::audio::mcq,mode_id/natural_minor_57_bare_scale,mode_id,audio,mcq,0,stimuli/mode/natural_minor_57_bare_scale.wav,"What scale or mode is this music based on?
+A. Mixolydian
+B. major pentatonic
+C. natural minor
+D. whole-tone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Mixolydian|major pentatonic|natural minor|whole-tone,natural minor,B,major pentatonic,False,,"{""form"": ""bare_scale"", ""mode"": ""natural_minor"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 57}"
+mode_id/natural_minor_57_bare_scale::audio::explain,mode_id/natural_minor_57_bare_scale,mode_id,audio,explain,1,stimuli/mode/natural_minor_57_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,natural minor,"**Answer:** The scale being used is the **C major scale**.
+
+**Explanation:**
+
+The ascending melodic line consists of the following notes:
+
+*   **00:00 - 00:01:** C, D, E, F, G
+*   **00:01 - 00:02:** A, G, F, E, D, C
+
+This sequence of notes (C-D-E-F-G-A-G-F-E-D-C) is a classic ascending and descending run through the C major scale. The scale is confirmed by the absence of any sharps or flats in the melody, and the final note, C, serves as the tonal center or ""home"" note, providing a sense of resolution.",,,,"{""form"": ""bare_scale"", ""mode"": ""natural_minor"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 57}"
+mode_id/natural_minor_57_melody_drone::audio::mcq,mode_id/natural_minor_57_melody_drone,mode_id,audio,mcq,1,stimuli/mode/natural_minor_57_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+A. natural minor
+B. harmonic minor
+C. blues scale
+D. Phrygian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",natural minor|harmonic minor|blues scale|Phrygian,natural minor,B,harmonic minor,False,,"{""form"": ""melody_drone"", ""mode"": ""natural_minor"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_midi"": 57}"
+mode_id/natural_minor_60_bare_scale::audio::mcq,mode_id/natural_minor_60_bare_scale,mode_id,audio,mcq,0,stimuli/mode/natural_minor_60_bare_scale.wav,"What scale or mode is this music based on?
+A. whole-tone
+B. melodic minor
+C. Lydian
+D. natural minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",whole-tone|melodic minor|Lydian|natural minor,natural minor,B,melodic minor,False,,"{""form"": ""bare_scale"", ""mode"": ""natural_minor"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_midi"": 60}"
+mode_id/natural_minor_60_melody_drone::audio::mcq,mode_id/natural_minor_60_melody_drone,mode_id,audio,mcq,1,stimuli/mode/natural_minor_60_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+A. minor pentatonic
+B. Dorian
+C. Phrygian
+D. natural minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor pentatonic|Dorian|Phrygian|natural minor,natural minor,D,natural minor,True,,"{""form"": ""melody_drone"", ""mode"": ""natural_minor"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/natural_minor_62_bare_scale::audio::mcq,mode_id/natural_minor_62_bare_scale,mode_id,audio,mcq,1,stimuli/mode/natural_minor_62_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+A. minor pentatonic
+B. natural minor
+C. major pentatonic
+D. blues scale
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor pentatonic|natural minor|major pentatonic|blues scale,natural minor,A,minor pentatonic,False,,"{""form"": ""bare_scale"", ""mode"": ""natural_minor"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/natural_minor_62_melody_drone::audio::mcq,mode_id/natural_minor_62_melody_drone,mode_id,audio,mcq,2,stimuli/mode/natural_minor_62_melody_drone.wav,"Identify the mode or scale type of this passage.
+A. melodic minor
+B. harmonic minor
+C. whole-tone
+D. natural minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",melodic minor|harmonic minor|whole-tone|natural minor,natural minor,D,natural minor,True,,"{""form"": ""melody_drone"", ""mode"": ""natural_minor"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/natural_minor_64_bare_scale::audio::mcq,mode_id/natural_minor_64_bare_scale,mode_id,audio,mcq,2,stimuli/mode/natural_minor_64_bare_scale.wav,"Identify the mode or scale type of this passage.
+A. natural minor
+B. melodic minor
+C. Phrygian
+D. Lydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",natural minor|melodic minor|Phrygian|Lydian,natural minor,A,natural minor,True,,"{""form"": ""bare_scale"", ""mode"": ""natural_minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/natural_minor_64_melody_drone::audio::mcq,mode_id/natural_minor_64_melody_drone,mode_id,audio,mcq,2,stimuli/mode/natural_minor_64_melody_drone.wav,"Identify the mode or scale type of this passage.
+A. Lydian
+B. natural minor
+C. harmonic minor
+D. Mixolydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Lydian|natural minor|harmonic minor|Mixolydian,natural minor,C,harmonic minor,False,,"{""form"": ""melody_drone"", ""mode"": ""natural_minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/natural_minor_64_melody_drone::audio::explain,mode_id/natural_minor_64_melody_drone,mode_id,audio,explain,2,stimuli/mode/natural_minor_64_melody_drone.wav,"Identify the mode or scale type of this passage.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,natural minor,"The mode of this passage is **C major**.
+
+**Explanation:**
+
+The passage is a short, simple melody played on a piano. The notes heard are:
+
+*   **00:00 - 00:01:** C, E, G (forming a C major chord)
+*   **00:01 - 00:02:** A, G
+*   **00:02 - 00:03:** E, G
+*   **00:03 - 00:04:** A, G
+*   **00:04 - 00:05:** B, A
+*   **00:05 - 00:06:** G, E
+*   **00:06 - 00:07:** D, E
+*   **00:07 - 00:08:** G, F, E
+
+The melody is built around the notes of the C major scale (C, D, E, F, G, A, B). The piece begins and ends on the tonic note, C, and the harmony is centered on the C major chord. The overall sound is bright and resolved, which is characteristic of a major key.",,,,"{""form"": ""melody_drone"", ""mode"": ""natural_minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/phrygian_57_bare_scale::audio::mcq,mode_id/phrygian_57_bare_scale,mode_id,audio,mcq,1,stimuli/mode/phrygian_57_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+A. Lydian
+B. harmonic minor
+C. melodic minor
+D. Phrygian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Lydian|harmonic minor|melodic minor|Phrygian,Phrygian,B,harmonic minor,False,,"{""form"": ""bare_scale"", ""mode"": ""phrygian"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 57}"
+mode_id/phrygian_57_melody_drone::audio::mcq,mode_id/phrygian_57_melody_drone,mode_id,audio,mcq,2,stimuli/mode/phrygian_57_melody_drone.wav,"Identify the mode or scale type of this passage.
+A. Dorian
+B. Mixolydian
+C. Locrian
+D. Phrygian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Dorian|Mixolydian|Locrian|Phrygian,Phrygian,A,Dorian,False,,"{""form"": ""melody_drone"", ""mode"": ""phrygian"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"
+mode_id/phrygian_60_bare_scale::audio::mcq,mode_id/phrygian_60_bare_scale,mode_id,audio,mcq,2,stimuli/mode/phrygian_60_bare_scale.wav,"Identify the mode or scale type of this passage.
+A. Phrygian
+B. Dorian
+C. major pentatonic
+D. Locrian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Phrygian|Dorian|major pentatonic|Locrian,Phrygian,C,major pentatonic,False,,"{""form"": ""bare_scale"", ""mode"": ""phrygian"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_midi"": 60}"
+mode_id/phrygian_60_melody_drone::audio::mcq,mode_id/phrygian_60_melody_drone,mode_id,audio,mcq,0,stimuli/mode/phrygian_60_melody_drone.wav,"What scale or mode is this music based on?
+A. minor pentatonic
+B. melodic minor
+C. Lydian
+D. Phrygian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor pentatonic|melodic minor|Lydian|Phrygian,Phrygian,D,Phrygian,True,,"{""form"": ""melody_drone"", ""mode"": ""phrygian"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 60}"
+mode_id/phrygian_62_bare_scale::audio::mcq,mode_id/phrygian_62_bare_scale,mode_id,audio,mcq,0,stimuli/mode/phrygian_62_bare_scale.wav,"What scale or mode is this music based on?
+A. Dorian
+B. Locrian
+C. Lydian
+D. Phrygian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Dorian|Locrian|Lydian|Phrygian,Phrygian,A,Dorian,False,,"{""form"": ""bare_scale"", ""mode"": ""phrygian"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 62}"
+mode_id/phrygian_62_melody_drone::audio::mcq,mode_id/phrygian_62_melody_drone,mode_id,audio,mcq,0,stimuli/mode/phrygian_62_melody_drone.wav,"What scale or mode is this music based on?
+A. Phrygian
+B. Mixolydian
+C. whole-tone
+D. major pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Phrygian|Mixolydian|whole-tone|major pentatonic,Phrygian,A,Phrygian,True,,"{""form"": ""melody_drone"", ""mode"": ""phrygian"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_midi"": 62}"
+mode_id/phrygian_64_bare_scale::audio::mcq,mode_id/phrygian_64_bare_scale,mode_id,audio,mcq,1,stimuli/mode/phrygian_64_bare_scale.wav,"Listen to the clip. Which scale/mode is being used?
+A. Dorian
+B. blues scale
+C. Phrygian
+D. minor pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Dorian|blues scale|Phrygian|minor pentatonic,Phrygian,D,minor pentatonic,False,,"{""form"": ""bare_scale"", ""mode"": ""phrygian"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/phrygian_64_melody_drone::audio::mcq,mode_id/phrygian_64_melody_drone,mode_id,audio,mcq,2,stimuli/mode/phrygian_64_melody_drone.wav,"Identify the mode or scale type of this passage.
+A. Phrygian
+B. natural minor
+C. Mixolydian
+D. minor pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Phrygian|natural minor|Mixolydian|minor pentatonic,Phrygian,B,natural minor,False,,"{""form"": ""melody_drone"", ""mode"": ""phrygian"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 64}"
+mode_id/phrygian_64_melody_drone::audio::explain,mode_id/phrygian_64_melody_drone,mode_id,audio,explain,1,stimuli/mode/phrygian_64_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,Phrygian,"The scale being used is the **C minor natural scale**.
+
+**Explanation:**
+
+The audio features a descending melodic line played by a string section, which clearly outlines the C minor natural scale.
+
+*   **00:00 - 00:02:** The line begins on **C** and descends through **B♭**, **A**, and **G**.
+*   **00:02 - 00:04:** It continues down to **F**, **E♭**, and **D**.
+*   **00:04 - 00:06:** The line concludes by descending to **C**.
+
+The specific notes heard are C, B♭, A, G, F, E♭, and D. This sequence of notes is the exact descending form of the C minor natural scale. The presence of both B♭ and E♭ (the lowered 3rd and 7th scale degrees) confirms it is the natural minor scale, not the harmonic or melodic minor.",,,,"{""form"": ""melody_drone"", ""mode"": ""phrygian"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 64}"
+mode_id/whole_tone_57_bare_scale::audio::mcq,mode_id/whole_tone_57_bare_scale,mode_id,audio,mcq,2,stimuli/mode/whole_tone_57_bare_scale.wav,"Identify the mode or scale type of this passage.
+A. harmonic minor
+B. whole-tone
+C. Lydian
+D. Dorian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",harmonic minor|whole-tone|Lydian|Dorian,whole-tone,B,whole-tone,True,,"{""form"": ""bare_scale"", ""mode"": ""whole_tone"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"
+mode_id/whole_tone_57_melody_drone::audio::mcq,mode_id/whole_tone_57_melody_drone,mode_id,audio,mcq,2,stimuli/mode/whole_tone_57_melody_drone.wav,"Identify the mode or scale type of this passage.
+A. Locrian
+B. whole-tone
+C. Mixolydian
+D. melodic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Locrian|whole-tone|Mixolydian|melodic minor,whole-tone,C,Mixolydian,False,,"{""form"": ""melody_drone"", ""mode"": ""whole_tone"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_midi"": 57}"
+mode_id/whole_tone_57_melody_drone::audio::open,mode_id/whole_tone_57_melody_drone,mode_id,audio,open,1,stimuli/mode/whole_tone_57_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+Give a short, direct answer.",,whole-tone,Aeolian mode (natural minor),Aeolian mode (natural minor),False,,"{""form"": ""melody_drone"", ""mode"": ""whole_tone"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_midi"": 57}"
+mode_id/whole_tone_60_bare_scale::audio::mcq,mode_id/whole_tone_60_bare_scale,mode_id,audio,mcq,2,stimuli/mode/whole_tone_60_bare_scale.wav,"Identify the mode or scale type of this passage.
+A. melodic minor
+B. Phrygian
+C. whole-tone
+D. Lydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",melodic minor|Phrygian|whole-tone|Lydian,whole-tone,A,melodic minor,False,,"{""form"": ""bare_scale"", ""mode"": ""whole_tone"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 60}"
+mode_id/whole_tone_60_bare_scale::audio::open,mode_id/whole_tone_60_bare_scale,mode_id,audio,open,2,stimuli/mode/whole_tone_60_bare_scale.wav,"Identify the mode or scale type of this passage.
+Give a short, direct answer.",,whole-tone,Major,Major,False,,"{""form"": ""bare_scale"", ""mode"": ""whole_tone"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 60}"
+mode_id/whole_tone_60_melody_drone::audio::mcq,mode_id/whole_tone_60_melody_drone,mode_id,audio,mcq,0,stimuli/mode/whole_tone_60_melody_drone.wav,"What scale or mode is this music based on?
+A. Lydian
+B. melodic minor
+C. major
+D. whole-tone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Lydian|melodic minor|major|whole-tone,whole-tone,C,major,False,,"{""form"": ""melody_drone"", ""mode"": ""whole_tone"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_midi"": 60}"
+mode_id/whole_tone_60_melody_drone::audio::open,mode_id/whole_tone_60_melody_drone,mode_id,audio,open,0,stimuli/mode/whole_tone_60_melody_drone.wav,"What scale or mode is this music based on?
+Give a short, direct answer.",,whole-tone,C minor,C minor,False,,"{""form"": ""melody_drone"", ""mode"": ""whole_tone"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_midi"": 60}"
+mode_id/whole_tone_62_bare_scale::audio::mcq,mode_id/whole_tone_62_bare_scale,mode_id,audio,mcq,0,stimuli/mode/whole_tone_62_bare_scale.wav,"What scale or mode is this music based on?
+A. whole-tone
+B. Locrian
+C. Mixolydian
+D. harmonic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",whole-tone|Locrian|Mixolydian|harmonic minor,whole-tone,D,harmonic minor,False,,"{""form"": ""bare_scale"", ""mode"": ""whole_tone"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/whole_tone_62_bare_scale::audio::explain,mode_id/whole_tone_62_bare_scale,mode_id,audio,explain,2,stimuli/mode/whole_tone_62_bare_scale.wav,"Identify the mode or scale type of this passage.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,whole-tone,"**Answer:** The mode is **C major**.
+
+**Explanation:**
+
+The passage consists of a single, short melodic phrase played on a piano. The notes are:
+
+*   **00:00 - 00:01:** D, E, F#, G, A, B, C, D
+*   **00:01 - 00:02:** C, B, A, G, F#, E, D
+
+This sequence of notes is a descending **C major scale**. The scale is played in a continuous, stepwise manner without any chromatic alterations (like a sharp or flat on the F or B). The final note of the phrase is D, which is the tonic of the D major scale, but the entire melodic content is built exclusively from the notes of the C major scale.",,,,"{""form"": ""bare_scale"", ""mode"": ""whole_tone"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/whole_tone_62_melody_drone::audio::mcq,mode_id/whole_tone_62_melody_drone,mode_id,audio,mcq,1,stimuli/mode/whole_tone_62_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+A. whole-tone
+B. melodic minor
+C. natural minor
+D. major pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",whole-tone|melodic minor|natural minor|major pentatonic,whole-tone,B,melodic minor,False,,"{""form"": ""melody_drone"", ""mode"": ""whole_tone"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_midi"": 62}"
+mode_id/whole_tone_64_bare_scale::audio::mcq,mode_id/whole_tone_64_bare_scale,mode_id,audio,mcq,0,stimuli/mode/whole_tone_64_bare_scale.wav,"What scale or mode is this music based on?
+A. whole-tone
+B. Mixolydian
+C. natural minor
+D. Lydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",whole-tone|Mixolydian|natural minor|Lydian,whole-tone,D,Lydian,False,,"{""form"": ""bare_scale"", ""mode"": ""whole_tone"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/whole_tone_64_melody_drone::audio::mcq,mode_id/whole_tone_64_melody_drone,mode_id,audio,mcq,1,stimuli/mode/whole_tone_64_melody_drone.wav,"Listen to the clip. Which scale/mode is being used?
+A. blues scale
+B. Phrygian
+C. whole-tone
+D. Lydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",blues scale|Phrygian|whole-tone|Lydian,whole-tone,B,Phrygian,False,,"{""form"": ""melody_drone"", ""mode"": ""whole_tone"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/blues_57_melody_drone::no_audio::mcq,mode_id/blues_57_melody_drone,mode_id,no_audio,mcq,1,,"Listen to the clip. Which scale/mode is being used?
+A. Lydian
+B. blues scale
+C. natural minor
+D. Phrygian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Lydian|blues scale|natural minor|Phrygian,blues scale,D,Phrygian,False,,"{""form"": ""melody_drone"", ""mode"": ""blues"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_midi"": 57}"
+mode_id/blues_60_bare_scale::no_audio::mcq,mode_id/blues_60_bare_scale,mode_id,no_audio,mcq,1,,"Listen to the clip. Which scale/mode is being used?
+A. minor pentatonic
+B. blues scale
+C. Phrygian
+D. major pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor pentatonic|blues scale|Phrygian|major pentatonic,blues scale,B,blues scale,True,,"{""form"": ""bare_scale"", ""mode"": ""blues"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/blues_62_melody_drone::no_audio::mcq,mode_id/blues_62_melody_drone,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. Locrian
+B. Mixolydian
+C. major
+D. blues scale
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Locrian|Mixolydian|major|blues scale,blues scale,D,blues scale,True,,"{""form"": ""melody_drone"", ""mode"": ""blues"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/blues_64_bare_scale::no_audio::mcq,mode_id/blues_64_bare_scale,mode_id,no_audio,mcq,1,,"Listen to the clip. Which scale/mode is being used?
+A. harmonic minor
+B. minor pentatonic
+C. major pentatonic
+D. blues scale
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",harmonic minor|minor pentatonic|major pentatonic|blues scale,blues scale,D,blues scale,True,,"{""form"": ""bare_scale"", ""mode"": ""blues"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/blues_64_melody_drone::no_audio::mcq,mode_id/blues_64_melody_drone,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. blues scale
+B. major pentatonic
+C. Mixolydian
+D. Dorian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",blues scale|major pentatonic|Mixolydian|Dorian,blues scale,C,Mixolydian,False,,"{""form"": ""melody_drone"", ""mode"": ""blues"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/dorian_57_bare_scale::no_audio::mcq,mode_id/dorian_57_bare_scale,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. Dorian
+B. Locrian
+C. minor pentatonic
+D. whole-tone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Dorian|Locrian|minor pentatonic|whole-tone,Dorian,C,minor pentatonic,False,,"{""form"": ""bare_scale"", ""mode"": ""dorian"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"
+mode_id/dorian_57_melody_drone::no_audio::mcq,mode_id/dorian_57_melody_drone,mode_id,no_audio,mcq,1,,"Listen to the clip. Which scale/mode is being used?
+A. Phrygian
+B. Dorian
+C. major
+D. Lydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Phrygian|Dorian|major|Lydian,Dorian,A,Phrygian,False,,"{""form"": ""melody_drone"", ""mode"": ""dorian"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"
+mode_id/dorian_60_bare_scale::no_audio::mcq,mode_id/dorian_60_bare_scale,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. natural minor
+B. major pentatonic
+C. Dorian
+D. Lydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",natural minor|major pentatonic|Dorian|Lydian,Dorian,C,Dorian,True,,"{""form"": ""bare_scale"", ""mode"": ""dorian"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/dorian_64_melody_drone::no_audio::mcq,mode_id/dorian_64_melody_drone,mode_id,no_audio,mcq,1,,"Listen to the clip. Which scale/mode is being used?
+A. melodic minor
+B. major
+C. Dorian
+D. blues scale
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",melodic minor|major|Dorian|blues scale,Dorian,C,Dorian,True,,"{""form"": ""melody_drone"", ""mode"": ""dorian"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/harmonic_minor_57_bare_scale::no_audio::mcq,mode_id/harmonic_minor_57_bare_scale,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. harmonic minor
+B. Locrian
+C. blues scale
+D. minor pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",harmonic minor|Locrian|blues scale|minor pentatonic,harmonic minor,D,minor pentatonic,False,,"{""form"": ""bare_scale"", ""mode"": ""harmonic_minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 57}"
+mode_id/harmonic_minor_57_melody_drone::no_audio::mcq,mode_id/harmonic_minor_57_melody_drone,mode_id,no_audio,mcq,1,,"Listen to the clip. Which scale/mode is being used?
+A. Dorian
+B. Phrygian
+C. natural minor
+D. harmonic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Dorian|Phrygian|natural minor|harmonic minor,harmonic minor,A,Dorian,False,,"{""form"": ""melody_drone"", ""mode"": ""harmonic_minor"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 57}"
+mode_id/harmonic_minor_60_bare_scale::no_audio::mcq,mode_id/harmonic_minor_60_bare_scale,mode_id,no_audio,mcq,0,,"What scale or mode is this music based on?
+A. natural minor
+B. major pentatonic
+C. Mixolydian
+D. harmonic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",natural minor|major pentatonic|Mixolydian|harmonic minor,harmonic minor,C,Mixolydian,False,,"{""form"": ""bare_scale"", ""mode"": ""harmonic_minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/harmonic_minor_60_melody_drone::no_audio::mcq,mode_id/harmonic_minor_60_melody_drone,mode_id,no_audio,mcq,0,,"What scale or mode is this music based on?
+A. harmonic minor
+B. major
+C. Lydian
+D. blues scale
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",harmonic minor|major|Lydian|blues scale,harmonic minor,A,harmonic minor,True,,"{""form"": ""melody_drone"", ""mode"": ""harmonic_minor"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/harmonic_minor_62_melody_drone::no_audio::mcq,mode_id/harmonic_minor_62_melody_drone,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. Locrian
+B. minor pentatonic
+C. blues scale
+D. harmonic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Locrian|minor pentatonic|blues scale|harmonic minor,harmonic minor,C,blues scale,False,,"{""form"": ""melody_drone"", ""mode"": ""harmonic_minor"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/locrian_64_melody_drone::no_audio::mcq,mode_id/locrian_64_melody_drone,mode_id,no_audio,mcq,1,,"Listen to the clip. Which scale/mode is being used?
+A. blues scale
+B. Mixolydian
+C. Locrian
+D. Lydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",blues scale|Mixolydian|Locrian|Lydian,Locrian,B,Mixolydian,False,,"{""form"": ""melody_drone"", ""mode"": ""locrian"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/lydian_62_bare_scale::no_audio::mcq,mode_id/lydian_62_bare_scale,mode_id,no_audio,mcq,0,,"What scale or mode is this music based on?
+A. Lydian
+B. melodic minor
+C. natural minor
+D. minor pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Lydian|melodic minor|natural minor|minor pentatonic,Lydian,D,minor pentatonic,False,,"{""form"": ""bare_scale"", ""mode"": ""lydian"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_midi"": 62}"
+mode_id/lydian_64_bare_scale::no_audio::mcq,mode_id/lydian_64_bare_scale,mode_id,no_audio,mcq,1,,"Listen to the clip. Which scale/mode is being used?
+A. Lydian
+B. harmonic minor
+C. major
+D. blues scale
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Lydian|harmonic minor|major|blues scale,Lydian,A,Lydian,True,,"{""form"": ""bare_scale"", ""mode"": ""lydian"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/lydian_64_melody_drone::no_audio::mcq,mode_id/lydian_64_melody_drone,mode_id,no_audio,mcq,1,,"Listen to the clip. Which scale/mode is being used?
+A. melodic minor
+B. blues scale
+C. Phrygian
+D. Lydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",melodic minor|blues scale|Phrygian|Lydian,Lydian,C,Phrygian,False,,"{""form"": ""melody_drone"", ""mode"": ""lydian"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/major_pentatonic_57_bare_scale::no_audio::mcq,mode_id/major_pentatonic_57_bare_scale,mode_id,no_audio,mcq,0,,"What scale or mode is this music based on?
+A. blues scale
+B. major
+C. whole-tone
+D. major pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",blues scale|major|whole-tone|major pentatonic,major pentatonic,A,blues scale,False,,"{""form"": ""bare_scale"", ""mode"": ""major_pentatonic"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 57}"
+mode_id/major_pentatonic_62_melody_drone::no_audio::mcq,mode_id/major_pentatonic_62_melody_drone,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. Dorian
+B. blues scale
+C. major
+D. major pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Dorian|blues scale|major|major pentatonic,major pentatonic,A,Dorian,False,,"{""form"": ""melody_drone"", ""mode"": ""major_pentatonic"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 62}"
+mode_id/melodic_minor_57_melody_drone::no_audio::mcq,mode_id/melodic_minor_57_melody_drone,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. Phrygian
+B. Dorian
+C. minor pentatonic
+D. melodic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Phrygian|Dorian|minor pentatonic|melodic minor,melodic minor,A,Phrygian,False,,"{""form"": ""melody_drone"", ""mode"": ""melodic_minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 57}"
+mode_id/melodic_minor_62_melody_drone::no_audio::mcq,mode_id/melodic_minor_62_melody_drone,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. natural minor
+B. Mixolydian
+C. Phrygian
+D. melodic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",natural minor|Mixolydian|Phrygian|melodic minor,melodic minor,C,Phrygian,False,,"{""form"": ""melody_drone"", ""mode"": ""melodic_minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 62}"
+mode_id/melodic_minor_64_bare_scale::no_audio::mcq,mode_id/melodic_minor_64_bare_scale,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. Dorian
+B. major pentatonic
+C. Mixolydian
+D. melodic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Dorian|major pentatonic|Mixolydian|melodic minor,melodic minor,C,Mixolydian,False,,"{""form"": ""bare_scale"", ""mode"": ""melodic_minor"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 64}"
+mode_id/melodic_minor_64_melody_drone::no_audio::mcq,mode_id/melodic_minor_64_melody_drone,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. Dorian
+B. melodic minor
+C. blues scale
+D. major pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Dorian|melodic minor|blues scale|major pentatonic,melodic minor,C,blues scale,False,,"{""form"": ""melody_drone"", ""mode"": ""melodic_minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/minor_pentatonic_57_bare_scale::no_audio::mcq,mode_id/minor_pentatonic_57_bare_scale,mode_id,no_audio,mcq,0,,"What scale or mode is this music based on?
+A. whole-tone
+B. Lydian
+C. Locrian
+D. minor pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",whole-tone|Lydian|Locrian|minor pentatonic,minor pentatonic,B,Lydian,False,,"{""form"": ""bare_scale"", ""mode"": ""minor_pentatonic"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"
+mode_id/minor_pentatonic_60_bare_scale::no_audio::mcq,mode_id/minor_pentatonic_60_bare_scale,mode_id,no_audio,mcq,0,,"What scale or mode is this music based on?
+A. Lydian
+B. harmonic minor
+C. minor pentatonic
+D. major pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Lydian|harmonic minor|minor pentatonic|major pentatonic,minor pentatonic,C,minor pentatonic,True,,"{""form"": ""bare_scale"", ""mode"": ""minor_pentatonic"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 60}"
+mode_id/minor_pentatonic_62_bare_scale::no_audio::mcq,mode_id/minor_pentatonic_62_bare_scale,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. major
+B. melodic minor
+C. natural minor
+D. minor pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|melodic minor|natural minor|minor pentatonic,minor pentatonic,B,melodic minor,False,,"{""form"": ""bare_scale"", ""mode"": ""minor_pentatonic"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/mixolydian_57_bare_scale::no_audio::mcq,mode_id/mixolydian_57_bare_scale,mode_id,no_audio,mcq,0,,"What scale or mode is this music based on?
+A. major pentatonic
+B. natural minor
+C. Locrian
+D. Mixolydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major pentatonic|natural minor|Locrian|Mixolydian,Mixolydian,D,Mixolydian,True,,"{""form"": ""bare_scale"", ""mode"": ""mixolydian"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 57}"
+mode_id/mixolydian_60_bare_scale::no_audio::mcq,mode_id/mixolydian_60_bare_scale,mode_id,no_audio,mcq,0,,"What scale or mode is this music based on?
+A. Dorian
+B. Phrygian
+C. major
+D. Mixolydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Dorian|Phrygian|major|Mixolydian,Mixolydian,A,Dorian,False,,"{""form"": ""bare_scale"", ""mode"": ""mixolydian"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/mixolydian_62_bare_scale::no_audio::mcq,mode_id/mixolydian_62_bare_scale,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. major pentatonic
+B. natural minor
+C. melodic minor
+D. Mixolydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major pentatonic|natural minor|melodic minor|Mixolydian,Mixolydian,D,Mixolydian,True,,"{""form"": ""bare_scale"", ""mode"": ""mixolydian"", ""program"": ""violin"", ""soundfont"": ""timgm"", ""tonic_midi"": 62}"
+mode_id/natural_minor_57_melody_drone::no_audio::mcq,mode_id/natural_minor_57_melody_drone,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. Lydian
+B. whole-tone
+C. Phrygian
+D. natural minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Lydian|whole-tone|Phrygian|natural minor,natural minor,A,Lydian,False,,"{""form"": ""melody_drone"", ""mode"": ""natural_minor"", ""program"": ""piano"", ""soundfont"": ""timgm"", ""tonic_midi"": 57}"
+mode_id/natural_minor_60_melody_drone::no_audio::mcq,mode_id/natural_minor_60_melody_drone,mode_id,no_audio,mcq,0,,"What scale or mode is this music based on?
+A. natural minor
+B. Phrygian
+C. harmonic minor
+D. whole-tone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",natural minor|Phrygian|harmonic minor|whole-tone,natural minor,B,Phrygian,False,,"{""form"": ""melody_drone"", ""mode"": ""natural_minor"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/natural_minor_62_bare_scale::no_audio::mcq,mode_id/natural_minor_62_bare_scale,mode_id,no_audio,mcq,1,,"Listen to the clip. Which scale/mode is being used?
+A. Dorian
+B. whole-tone
+C. minor pentatonic
+D. natural minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Dorian|whole-tone|minor pentatonic|natural minor,natural minor,A,Dorian,False,,"{""form"": ""bare_scale"", ""mode"": ""natural_minor"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/phrygian_57_bare_scale::no_audio::mcq,mode_id/phrygian_57_bare_scale,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. minor pentatonic
+B. Phrygian
+C. melodic minor
+D. natural minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor pentatonic|Phrygian|melodic minor|natural minor,Phrygian,B,Phrygian,True,,"{""form"": ""bare_scale"", ""mode"": ""phrygian"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 57}"
+mode_id/phrygian_57_melody_drone::no_audio::mcq,mode_id/phrygian_57_melody_drone,mode_id,no_audio,mcq,0,,"What scale or mode is this music based on?
+A. blues scale
+B. major
+C. Phrygian
+D. melodic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",blues scale|major|Phrygian|melodic minor,Phrygian,C,Phrygian,True,,"{""form"": ""melody_drone"", ""mode"": ""phrygian"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"
+mode_id/phrygian_60_melody_drone::no_audio::mcq,mode_id/phrygian_60_melody_drone,mode_id,no_audio,mcq,1,,"Listen to the clip. Which scale/mode is being used?
+A. melodic minor
+B. minor pentatonic
+C. Phrygian
+D. harmonic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",melodic minor|minor pentatonic|Phrygian|harmonic minor,Phrygian,C,Phrygian,True,,"{""form"": ""melody_drone"", ""mode"": ""phrygian"", ""program"": ""piano"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 60}"
+mode_id/phrygian_62_bare_scale::no_audio::mcq,mode_id/phrygian_62_bare_scale,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. melodic minor
+B. harmonic minor
+C. major
+D. Phrygian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",melodic minor|harmonic minor|major|Phrygian,Phrygian,D,Phrygian,True,,"{""form"": ""bare_scale"", ""mode"": ""phrygian"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 62}"
+mode_id/phrygian_62_melody_drone::no_audio::mcq,mode_id/phrygian_62_melody_drone,mode_id,no_audio,mcq,1,,"Listen to the clip. Which scale/mode is being used?
+A. Phrygian
+B. Mixolydian
+C. Lydian
+D. blues scale
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Phrygian|Mixolydian|Lydian|blues scale,Phrygian,A,Phrygian,True,,"{""form"": ""melody_drone"", ""mode"": ""phrygian"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_midi"": 62}"
+mode_id/phrygian_64_bare_scale::no_audio::mcq,mode_id/phrygian_64_bare_scale,mode_id,no_audio,mcq,0,,"What scale or mode is this music based on?
+A. Phrygian
+B. Dorian
+C. major pentatonic
+D. Locrian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Phrygian|Dorian|major pentatonic|Locrian,Phrygian,A,Phrygian,True,,"{""form"": ""bare_scale"", ""mode"": ""phrygian"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/whole_tone_60_bare_scale::no_audio::mcq,mode_id/whole_tone_60_bare_scale,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. Dorian
+B. Mixolydian
+C. minor pentatonic
+D. whole-tone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Dorian|Mixolydian|minor pentatonic|whole-tone,whole-tone,C,minor pentatonic,False,,"{""form"": ""bare_scale"", ""mode"": ""whole_tone"", ""program"": ""violin"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 60}"
+mode_id/whole_tone_64_bare_scale::no_audio::mcq,mode_id/whole_tone_64_bare_scale,mode_id,no_audio,mcq,2,,"Identify the mode or scale type of this passage.
+A. Mixolydian
+B. minor pentatonic
+C. melodic minor
+D. whole-tone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Mixolydian|minor pentatonic|melodic minor|whole-tone,whole-tone,A,Mixolydian,False,,"{""form"": ""bare_scale"", ""mode"": ""whole_tone"", ""program"": ""synth_lead"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/whole_tone_64_melody_drone::no_audio::mcq,mode_id/whole_tone_64_melody_drone,mode_id,no_audio,mcq,0,,"What scale or mode is this music based on?
+A. major
+B. whole-tone
+C. minor pentatonic
+D. major pentatonic
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|whole-tone|minor pentatonic|major pentatonic,whole-tone,C,minor pentatonic,False,,"{""form"": ""melody_drone"", ""mode"": ""whole_tone"", ""program"": ""synth_lead"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/dorian_60_bare_scale::wrong_audio::mcq,mode_id/dorian_60_bare_scale,mode_id,wrong_audio,mcq,2,stimuli/intervals/m6_melodic_desc_57_2.wav,"Identify the mode or scale type of this passage.
+A. blues scale
+B. Dorian
+C. Lydian
+D. Phrygian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",blues scale|Dorian|Lydian|Phrygian,Dorian,C,Lydian,False,,"{""form"": ""bare_scale"", ""mode"": ""dorian"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/dorian_62_bare_scale::wrong_audio::mcq,mode_id/dorian_62_bare_scale,mode_id,wrong_audio,mcq,2,stimuli/mode/dorian_62_melody_drone.wav,"Identify the mode or scale type of this passage.
+A. Lydian
+B. Mixolydian
+C. major
+D. Dorian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Lydian|Mixolydian|major|Dorian,Dorian,C,major,False,,"{""form"": ""bare_scale"", ""mode"": ""dorian"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 62}"
+mode_id/locrian_60_melody_drone::wrong_audio::mcq,mode_id/locrian_60_melody_drone,mode_id,wrong_audio,mcq,0,stimuli/tuning/tune_0059.wav,"What scale or mode is this music based on?
+A. Locrian
+B. melodic minor
+C. whole-tone
+D. harmonic minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Locrian|melodic minor|whole-tone|harmonic minor,Locrian,C,whole-tone,False,,"{""form"": ""melody_drone"", ""mode"": ""locrian"", ""program"": ""violin"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/lydian_60_melody_drone::wrong_audio::mcq,mode_id/lydian_60_melody_drone,mode_id,wrong_audio,mcq,0,stimuli/cents/trial_0029.wav,"What scale or mode is this music based on?
+A. Mixolydian
+B. major
+C. minor pentatonic
+D. Lydian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Mixolydian|major|minor pentatonic|Lydian,Lydian,B,major,False,,"{""form"": ""melody_drone"", ""mode"": ""lydian"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 60}"
+mode_id/major_57_bare_scale::wrong_audio::mcq,mode_id/major_57_bare_scale,mode_id,wrong_audio,mcq,2,stimuli/tuning/tune_0099.wav,"Identify the mode or scale type of this passage.
+A. minor pentatonic
+B. natural minor
+C. Mixolydian
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor pentatonic|natural minor|Mixolydian|major,major,D,major,True,,"{""form"": ""bare_scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"
+mode_id/major_60_bare_scale::wrong_audio::mcq,mode_id/major_60_bare_scale,mode_id,wrong_audio,mcq,0,stimuli/chords/augmented_block_61_1.wav,"What scale or mode is this music based on?
+A. whole-tone
+B. major pentatonic
+C. major
+D. natural minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",whole-tone|major pentatonic|major|natural minor,major,C,major,True,,"{""form"": ""bare_scale"", ""mode"": ""major"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 60}"
+mode_id/major_64_bare_scale::wrong_audio::mcq,mode_id/major_64_bare_scale,mode_id,wrong_audio,mcq,1,stimuli/tuning/tune_0032.wav,"Listen to the clip. Which scale/mode is being used?
+A. Locrian
+B. major
+C. melodic minor
+D. blues scale
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Locrian|major|melodic minor|blues scale,major,C,melodic minor,False,,"{""form"": ""bare_scale"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/major_64_melody_drone::wrong_audio::mcq,mode_id/major_64_melody_drone,mode_id,wrong_audio,mcq,2,stimuli/chords/dominant7_arpeggio_63_2.wav,"Identify the mode or scale type of this passage.
+A. Mixolydian
+B. major
+C. Lydian
+D. natural minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Mixolydian|major|Lydian|natural minor,major,B,major,True,,"{""form"": ""melody_drone"", ""mode"": ""major"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/melodic_minor_64_melody_drone::wrong_audio::mcq,mode_id/melodic_minor_64_melody_drone,mode_id,wrong_audio,mcq,0,stimuli/polyphony/count2_00.wav,"What scale or mode is this music based on?
+A. major pentatonic
+B. melodic minor
+C. minor pentatonic
+D. Locrian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major pentatonic|melodic minor|minor pentatonic|Locrian,melodic minor,C,minor pentatonic,False,,"{""form"": ""melody_drone"", ""mode"": ""melodic_minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/minor_pentatonic_62_bare_scale::wrong_audio::mcq,mode_id/minor_pentatonic_62_bare_scale,mode_id,wrong_audio,mcq,0,stimuli/polyphony/count2_10.wav,"What scale or mode is this music based on?
+A. Locrian
+B. minor pentatonic
+C. Mixolydian
+D. blues scale
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Locrian|minor pentatonic|Mixolydian|blues scale,minor pentatonic,C,Mixolydian,False,,"{""form"": ""bare_scale"", ""mode"": ""minor_pentatonic"", ""program"": ""flute"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 62}"
+mode_id/minor_pentatonic_64_melody_drone::wrong_audio::mcq,mode_id/minor_pentatonic_64_melody_drone,mode_id,wrong_audio,mcq,1,stimuli/key/E_minor_scale_0.wav,"Listen to the clip. Which scale/mode is being used?
+A. melodic minor
+B. Locrian
+C. minor pentatonic
+D. whole-tone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",melodic minor|Locrian|minor pentatonic|whole-tone,minor pentatonic,C,minor pentatonic,True,,"{""form"": ""melody_drone"", ""mode"": ""minor_pentatonic"", ""program"": ""flute"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/natural_minor_64_bare_scale::wrong_audio::mcq,mode_id/natural_minor_64_bare_scale,mode_id,wrong_audio,mcq,2,stimuli/key/As_minor_scale_1.wav,"Identify the mode or scale type of this passage.
+A. Mixolydian
+B. whole-tone
+C. melodic minor
+D. natural minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Mixolydian|whole-tone|melodic minor|natural minor,natural minor,D,natural minor,True,,"{""form"": ""bare_scale"", ""mode"": ""natural_minor"", ""program"": ""flute"", ""soundfont"": ""timgm"", ""tonic_midi"": 64}"
+mode_id/natural_minor_64_melody_drone::wrong_audio::mcq,mode_id/natural_minor_64_melody_drone,mode_id,wrong_audio,mcq,2,stimuli/mode/harmonic_minor_60_melody_drone.wav,"Identify the mode or scale type of this passage.
+A. Phrygian
+B. harmonic minor
+C. melodic minor
+D. natural minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",Phrygian|harmonic minor|melodic minor|natural minor,natural minor,B,harmonic minor,False,,"{""form"": ""melody_drone"", ""mode"": ""natural_minor"", ""program"": ""piano"", ""soundfont"": ""musescore"", ""tonic_midi"": 64}"
+mode_id/whole_tone_57_bare_scale::wrong_audio::mcq,mode_id/whole_tone_57_bare_scale,mode_id,wrong_audio,mcq,1,stimuli/tuning/tune_0065.wav,"Listen to the clip. Which scale/mode is being used?
+A. major pentatonic
+B. whole-tone
+C. minor pentatonic
+D. Dorian
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major pentatonic|whole-tone|minor pentatonic|Dorian,whole-tone,B,whole-tone,True,,"{""form"": ""bare_scale"", ""mode"": ""whole_tone"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3"", ""tonic_midi"": 57}"

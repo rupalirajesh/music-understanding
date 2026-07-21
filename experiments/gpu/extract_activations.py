@@ -61,7 +61,9 @@ def load_whisper_encoder(name: str):
             t = torchaudio.functional.resample(t, sr, 16000)
         feats = proc(t.numpy(), sampling_rate=16000, return_tensors="pt").input_features
         with torch.no_grad():
-            out = enc(feats.cuda(), output_hidden_states=True)
+            # whisper-large-v3 may load in fp16; match the feature dtype to it
+            out = enc(feats.cuda().to(next(enc.parameters()).dtype),
+                      output_hidden_states=True)
         return [h[0].cpu().to(torch.float16).numpy() for h in out.hidden_states]
 
     return forward
@@ -78,7 +80,7 @@ def load_clap(name: str):
         t = torch.tensor(wav, dtype=torch.float32)
         if sr != 48000:
             t = torchaudio.functional.resample(t, sr, 48000)
-        inputs = proc(audios=t.numpy(), sampling_rate=48000, return_tensors="pt")
+        inputs = proc(audio=t.numpy(), sampling_rate=48000, return_tensors="pt")
         with torch.no_grad():
             out = model.audio_model(**{k: v.cuda() for k, v in inputs.items()},
                                     output_hidden_states=True)

@@ -1,0 +1,839 @@
+job_id,stimulus_id,task,condition,format,paraphrase_idx,audio_path,prompt,options,ground_truth,raw_response,parsed,correct,error,factors
+instrument_id/pitch/048_synth_lead_musescore_1::audio::mcq,instrument_id/pitch/048_synth_lead_musescore_1,instrument_id,audio,mcq,2,stimuli/pitch/048_synth_lead_musescore_1.wav,"Identify the instrument that plays the note in this clip.
+A. violin
+B. flute
+C. piano
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|flute|piano|synth lead,synth lead,D,synth lead,True,,"{""midi"": 48, ""note_name"": ""C3"", ""octave"": 3, ""pitch_class"": ""C"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/048_violin_timgm_0::audio::mcq,instrument_id/pitch/048_violin_timgm_0,instrument_id,audio,mcq,1,stimuli/pitch/048_violin_timgm_0.wav,"Listen to this recording. Which instrument do you hear?
+A. piano
+B. flute
+C. synth lead
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|flute|synth lead|violin,violin,C,synth lead,False,,"{""midi"": 48, ""note_name"": ""C3"", ""octave"": 3, ""pitch_class"": ""C"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/048_violin_timgm_0::audio::explain,instrument_id/pitch/048_violin_timgm_0,instrument_id,audio,explain,0,stimuli/pitch/048_violin_timgm_0.wav,"What instrument is playing in this clip?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,violin,"The instrument playing is a **saxophone**.
+
+Here is a detailed explanation of what can be heard in the clip to support this answer:
+
+*   **00:00:** A single note begins and is held. The pitch of the note is A4 (the A above middle C, approximately 440 Hz).
+*   **00:00 - 00:04:** The note is sustained evenly for the entire duration of the clip. The key evidence is in the **timbre**, or the quality of the sound:
+    *   **Reedy and Warm Tone:** The sound has a distinct ""buzzy"" or reedy quality, which is characteristic of single-reed woodwind instruments like the saxophone and clarinet.
+    *   **Full-Bodied Sound:** The tone is very full and resonant, lacking the more ""hollow"" or ""woody"" sound of a clarinet in its middle register or the thin, piercing quality of a double-reed instrument like an oboe. This robust, warm sound is a hallmark of the saxophone.
+    *   **Smooth Attack:** The note starts clearly but without a harsh, percussive edge, which is typical for how a note is articulated on a saxophone.",,,,"{""midi"": 48, ""note_name"": ""C3"", ""octave"": 3, ""pitch_class"": ""C"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/049_piano_timgm_1::audio::mcq,instrument_id/pitch/049_piano_timgm_1,instrument_id,audio,mcq,0,stimuli/pitch/049_piano_timgm_1.wav,"What instrument is playing in this clip?
+A. flute
+B. violin
+C. piano
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|violin|piano|synth lead,piano,C,piano,True,,"{""midi"": 49, ""note_name"": ""C#3"", ""octave"": 3, ""pitch_class"": ""C#"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/049_piano_timgm_1::audio::explain,instrument_id/pitch/049_piano_timgm_1,instrument_id,audio,explain,2,stimuli/pitch/049_piano_timgm_1.wav,"Identify the instrument that plays the note in this clip.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,piano,"The instrument is a **piano**.
+
+Here is a detailed explanation of what can be heard in the clip:
+
+*   **00:00:** A single note, **C3** (the C below Middle C), is struck. The sound has the distinct timbre of a piano: a clear, percussive attack from the hammer hitting the string, followed by a rich, resonant tone with a long sustain.
+*   **00:00 - 00:05:** The note is held and sustains for the entire duration of the clip, gradually and naturally decaying in volume. There are no other notes or chords played.",,,,"{""midi"": 49, ""note_name"": ""C#3"", ""octave"": 3, ""pitch_class"": ""C#"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/049_synth_lead_fluidr3_0::audio::mcq,instrument_id/pitch/049_synth_lead_fluidr3_0,instrument_id,audio,mcq,0,stimuli/pitch/049_synth_lead_fluidr3_0.wav,"What instrument is playing in this clip?
+A. flute
+B. piano
+C. synth lead
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|piano|synth lead|violin,synth lead,C,synth lead,True,,"{""midi"": 49, ""note_name"": ""C#3"", ""octave"": 3, ""pitch_class"": ""C#"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/050_flute_fluidr3_0::audio::mcq,instrument_id/pitch/050_flute_fluidr3_0,instrument_id,audio,mcq,0,stimuli/pitch/050_flute_fluidr3_0.wav,"What instrument is playing in this clip?
+A. synth lead
+B. piano
+C. flute
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|piano|flute|violin,flute,A,synth lead,False,,"{""midi"": 50, ""note_name"": ""D3"", ""octave"": 3, ""pitch_class"": ""D"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/050_flute_fluidr3_0::audio::open,instrument_id/pitch/050_flute_fluidr3_0,instrument_id,audio,open,2,stimuli/pitch/050_flute_fluidr3_0.wav,"Identify the instrument that plays the note in this clip.
+Give a short, direct answer.",,flute,French horn,,,,"{""midi"": 50, ""note_name"": ""D3"", ""octave"": 3, ""pitch_class"": ""D"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/050_flute_fluidr3_1::audio::mcq,instrument_id/pitch/050_flute_fluidr3_1,instrument_id,audio,mcq,0,stimuli/pitch/050_flute_fluidr3_1.wav,"What instrument is playing in this clip?
+A. piano
+B. synth lead
+C. flute
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|synth lead|flute|violin,flute,D,violin,False,,"{""midi"": 50, ""note_name"": ""D3"", ""octave"": 3, ""pitch_class"": ""D"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/051_flute_timgm_0::audio::mcq,instrument_id/pitch/051_flute_timgm_0,instrument_id,audio,mcq,0,stimuli/pitch/051_flute_timgm_0.wav,"What instrument is playing in this clip?
+A. piano
+B. violin
+C. synth lead
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|violin|synth lead|flute,flute,C,synth lead,False,,"{""midi"": 51, ""note_name"": ""D#3"", ""octave"": 3, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/051_flute_timgm_0::audio::open,instrument_id/pitch/051_flute_timgm_0,instrument_id,audio,open,1,stimuli/pitch/051_flute_timgm_0.wav,"Listen to this recording. Which instrument do you hear?
+Give a short, direct answer.",,flute,Trombone.,,,,"{""midi"": 51, ""note_name"": ""D#3"", ""octave"": 3, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/051_piano_fluidr3_1::audio::mcq,instrument_id/pitch/051_piano_fluidr3_1,instrument_id,audio,mcq,1,stimuli/pitch/051_piano_fluidr3_1.wav,"Listen to this recording. Which instrument do you hear?
+A. flute
+B. violin
+C. piano
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|violin|piano|synth lead,piano,D,synth lead,False,,"{""midi"": 51, ""note_name"": ""D#3"", ""octave"": 3, ""pitch_class"": ""D#"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/051_piano_fluidr3_1::audio::explain,instrument_id/pitch/051_piano_fluidr3_1,instrument_id,audio,explain,0,stimuli/pitch/051_piano_fluidr3_1.wav,"What instrument is playing in this clip?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,piano,"**Synthesizer**
+
+Here is a detailed explanation of what can be heard in the clip to support this answer:
+
+The instrument has a distinctly electronic and warm timbre with a long, smooth sustain, which are hallmark characteristics of a synthesizer.
+
+*   **00:00:** A single, low-pitched note, **C**, is played. The sound is full and foundational, typical of a synth bass patch.
+*   **00:00 - 00:04:** This single C note is held steadily for the entire duration of the clip, creating a drone-like effect before it begins to fade out.",,,,"{""midi"": 51, ""note_name"": ""D#3"", ""octave"": 3, ""pitch_class"": ""D#"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/052_violin_fluidr3_0::audio::mcq,instrument_id/pitch/052_violin_fluidr3_0,instrument_id,audio,mcq,0,stimuli/pitch/052_violin_fluidr3_0.wav,"What instrument is playing in this clip?
+A. synth lead
+B. piano
+C. flute
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|piano|flute|violin,violin,D,violin,True,,"{""midi"": 52, ""note_name"": ""E3"", ""octave"": 3, ""pitch_class"": ""E"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/052_violin_musescore_1::audio::mcq,instrument_id/pitch/052_violin_musescore_1,instrument_id,audio,mcq,1,stimuli/pitch/052_violin_musescore_1.wav,"Listen to this recording. Which instrument do you hear?
+A. flute
+B. violin
+C. synth lead
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|violin|synth lead|piano,violin,B,violin,True,,"{""midi"": 52, ""note_name"": ""E3"", ""octave"": 3, ""pitch_class"": ""E"", ""program"": ""violin"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/053_flute_fluidr3_1::audio::mcq,instrument_id/pitch/053_flute_fluidr3_1,instrument_id,audio,mcq,0,stimuli/pitch/053_flute_fluidr3_1.wav,"What instrument is playing in this clip?
+A. flute
+B. piano
+C. violin
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|piano|violin|synth lead,flute,A,flute,True,,"{""midi"": 53, ""note_name"": ""F3"", ""octave"": 3, ""pitch_class"": ""F"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/053_synth_lead_musescore_0::audio::mcq,instrument_id/pitch/053_synth_lead_musescore_0,instrument_id,audio,mcq,0,stimuli/pitch/053_synth_lead_musescore_0.wav,"What instrument is playing in this clip?
+A. violin
+B. piano
+C. synth lead
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|piano|synth lead|flute,synth lead,C,synth lead,True,,"{""midi"": 53, ""note_name"": ""F3"", ""octave"": 3, ""pitch_class"": ""F"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/054_synth_lead_musescore_1::audio::mcq,instrument_id/pitch/054_synth_lead_musescore_1,instrument_id,audio,mcq,2,stimuli/pitch/054_synth_lead_musescore_1.wav,"Identify the instrument that plays the note in this clip.
+A. synth lead
+B. piano
+C. violin
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|piano|violin|flute,synth lead,A,synth lead,True,,"{""midi"": 54, ""note_name"": ""F#3"", ""octave"": 3, ""pitch_class"": ""F#"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/054_synth_lead_timgm_0::audio::mcq,instrument_id/pitch/054_synth_lead_timgm_0,instrument_id,audio,mcq,2,stimuli/pitch/054_synth_lead_timgm_0.wav,"Identify the instrument that plays the note in this clip.
+A. violin
+B. synth lead
+C. piano
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|synth lead|piano|flute,synth lead,B,synth lead,True,,"{""midi"": 54, ""note_name"": ""F#3"", ""octave"": 3, ""pitch_class"": ""F#"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/055_piano_fluidr3_1::audio::mcq,instrument_id/pitch/055_piano_fluidr3_1,instrument_id,audio,mcq,2,stimuli/pitch/055_piano_fluidr3_1.wav,"Identify the instrument that plays the note in this clip.
+A. flute
+B. synth lead
+C. violin
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|synth lead|violin|piano,piano,D,piano,True,,"{""midi"": 55, ""note_name"": ""G3"", ""octave"": 3, ""pitch_class"": ""G"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/055_violin_fluidr3_0::audio::mcq,instrument_id/pitch/055_violin_fluidr3_0,instrument_id,audio,mcq,2,stimuli/pitch/055_violin_fluidr3_0.wav,"Identify the instrument that plays the note in this clip.
+A. flute
+B. violin
+C. synth lead
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|violin|synth lead|piano,violin,B,violin,True,,"{""midi"": 55, ""note_name"": ""G3"", ""octave"": 3, ""pitch_class"": ""G"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/056_flute_timgm_1::audio::mcq,instrument_id/pitch/056_flute_timgm_1,instrument_id,audio,mcq,2,stimuli/pitch/056_flute_timgm_1.wav,"Identify the instrument that plays the note in this clip.
+A. piano
+B. flute
+C. synth lead
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|flute|synth lead|violin,flute,B,flute,True,,"{""midi"": 56, ""note_name"": ""G#3"", ""octave"": 3, ""pitch_class"": ""G#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/056_violin_fluidr3_0::audio::mcq,instrument_id/pitch/056_violin_fluidr3_0,instrument_id,audio,mcq,0,stimuli/pitch/056_violin_fluidr3_0.wav,"What instrument is playing in this clip?
+A. flute
+B. piano
+C. synth lead
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|piano|synth lead|violin,violin,D,violin,True,,"{""midi"": 56, ""note_name"": ""G#3"", ""octave"": 3, ""pitch_class"": ""G#"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/057_piano_musescore_1::audio::mcq,instrument_id/pitch/057_piano_musescore_1,instrument_id,audio,mcq,0,stimuli/pitch/057_piano_musescore_1.wav,"What instrument is playing in this clip?
+A. flute
+B. piano
+C. synth lead
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|piano|synth lead|violin,piano,B,piano,True,,"{""midi"": 57, ""note_name"": ""A3"", ""octave"": 3, ""pitch_class"": ""A"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/057_piano_musescore_1::audio::open,instrument_id/pitch/057_piano_musescore_1,instrument_id,audio,open,2,stimuli/pitch/057_piano_musescore_1.wav,"Identify the instrument that plays the note in this clip.
+Give a short, direct answer.",,piano,Piano,piano,True,,"{""midi"": 57, ""note_name"": ""A3"", ""octave"": 3, ""pitch_class"": ""A"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/057_synth_lead_musescore_0::audio::mcq,instrument_id/pitch/057_synth_lead_musescore_0,instrument_id,audio,mcq,1,stimuli/pitch/057_synth_lead_musescore_0.wav,"Listen to this recording. Which instrument do you hear?
+A. violin
+B. piano
+C. flute
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|piano|flute|synth lead,synth lead,D,synth lead,True,,"{""midi"": 57, ""note_name"": ""A3"", ""octave"": 3, ""pitch_class"": ""A"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/058_piano_musescore_0::audio::mcq,instrument_id/pitch/058_piano_musescore_0,instrument_id,audio,mcq,2,stimuli/pitch/058_piano_musescore_0.wav,"Identify the instrument that plays the note in this clip.
+A. synth lead
+B. flute
+C. violin
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|flute|violin|piano,piano,D,piano,True,,"{""midi"": 58, ""note_name"": ""A#3"", ""octave"": 3, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/058_piano_musescore_0::audio::open,instrument_id/pitch/058_piano_musescore_0,instrument_id,audio,open,0,stimuli/pitch/058_piano_musescore_0.wav,"What instrument is playing in this clip?
+Give a short, direct answer.",,piano,Piano.,piano,True,,"{""midi"": 58, ""note_name"": ""A#3"", ""octave"": 3, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/058_piano_timgm_1::audio::mcq,instrument_id/pitch/058_piano_timgm_1,instrument_id,audio,mcq,0,stimuli/pitch/058_piano_timgm_1.wav,"What instrument is playing in this clip?
+A. synth lead
+B. piano
+C. violin
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|piano|violin|flute,piano,B,piano,True,,"{""midi"": 58, ""note_name"": ""A#3"", ""octave"": 3, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/058_piano_timgm_1::audio::explain,instrument_id/pitch/058_piano_timgm_1,instrument_id,audio,explain,2,stimuli/pitch/058_piano_timgm_1.wav,"Identify the instrument that plays the note in this clip.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,piano,"**Piano**
+
+Here is a detailed explanation of what can be heard in the clip to support this answer:
+
+*   **Timbre and Attack:** The sound has the distinct characteristic of a felt hammer striking a metal string. There is a clear, percussive attack at the very beginning of the clip, followed by a warm, resonant tone rich in overtones.
+*   **Note and Sustain:** A single note, **A3** (the A below middle C), is played at **00:00**. The note sustains with a long, natural decay for the entire 5-second duration of the clip, which is typical of a piano's sound when the sustain pedal is held down.",,,,"{""midi"": 58, ""note_name"": ""A#3"", ""octave"": 3, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/059_synth_lead_timgm_1::audio::mcq,instrument_id/pitch/059_synth_lead_timgm_1,instrument_id,audio,mcq,2,stimuli/pitch/059_synth_lead_timgm_1.wav,"Identify the instrument that plays the note in this clip.
+A. synth lead
+B. flute
+C. piano
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|flute|piano|violin,synth lead,A,synth lead,True,,"{""midi"": 59, ""note_name"": ""B3"", ""octave"": 3, ""pitch_class"": ""B"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/059_synth_lead_timgm_1::audio::explain,instrument_id/pitch/059_synth_lead_timgm_1,instrument_id,audio,explain,0,stimuli/pitch/059_synth_lead_timgm_1.wav,"What instrument is playing in this clip?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,synth lead,"The instrument playing is a **synthesizer**.
+
+Here is the breakdown of what is heard in the clip:
+
+*   **00:00:** A single C major chord is played. The sound is characteristic of a **square wave** or **pulse wave**, a common waveform used in early synthesizers and 8-bit video game music (chiptune). The specific notes played are C, E, G, and another C an octave higher, all struck simultaneously.
+*   **00:00 - 00:02:** The chord is sustained with a steady, electronic tone that lacks the complex overtones of an acoustic instrument.
+*   **00:02 - 00:03:** The chord fades out with a simple release, ending completely around the 3-second mark.",,,,"{""midi"": 59, ""note_name"": ""B3"", ""octave"": 3, ""pitch_class"": ""B"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/059_violin_timgm_0::audio::mcq,instrument_id/pitch/059_violin_timgm_0,instrument_id,audio,mcq,2,stimuli/pitch/059_violin_timgm_0.wav,"Identify the instrument that plays the note in this clip.
+A. violin
+B. flute
+C. synth lead
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|flute|synth lead|piano,violin,C,synth lead,False,,"{""midi"": 59, ""note_name"": ""B3"", ""octave"": 3, ""pitch_class"": ""B"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/059_violin_timgm_0::audio::explain,instrument_id/pitch/059_violin_timgm_0,instrument_id,audio,explain,2,stimuli/pitch/059_violin_timgm_0.wav,"Identify the instrument that plays the note in this clip.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,violin,"**Synthesizer**
+
+Here is a detailed explanation of what can be heard in the audio clip:
+
+The instrument has a distinctly electronic and artificial timbre, characteristic of a synthesizer. The sound is very stable and consistent, lacking the subtle, natural variations in pitch and volume (like vibrato or breath noise) that would be present in an acoustic instrument like a violin or a wind instrument.
+
+*   **0:00 - 0:02:** A single, sustained note is played.
+*   **Note:** The specific note is A4 (the A above middle C, which is the standard tuning pitch of 440 Hz).
+*   **Timbre:** The sound has a bright, slightly buzzy quality, likely generated by a simple waveform like a sawtooth or square wave, which are fundamental building blocks of synthesizer sounds. The note starts instantly and ends abruptly, which is also typical of a synthesized sound.",,,,"{""midi"": 59, ""note_name"": ""B3"", ""octave"": 3, ""pitch_class"": ""B"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/060_piano_timgm_0::audio::mcq,instrument_id/pitch/060_piano_timgm_0,instrument_id,audio,mcq,1,stimuli/pitch/060_piano_timgm_0.wav,"Listen to this recording. Which instrument do you hear?
+A. flute
+B. synth lead
+C. piano
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|synth lead|piano|violin,piano,C,piano,True,,"{""midi"": 60, ""note_name"": ""C4"", ""octave"": 4, ""pitch_class"": ""C"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/060_violin_fluidr3_1::audio::mcq,instrument_id/pitch/060_violin_fluidr3_1,instrument_id,audio,mcq,2,stimuli/pitch/060_violin_fluidr3_1.wav,"Identify the instrument that plays the note in this clip.
+A. piano
+B. flute
+C. violin
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|flute|violin|synth lead,violin,D,synth lead,False,,"{""midi"": 60, ""note_name"": ""C4"", ""octave"": 4, ""pitch_class"": ""C"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/060_violin_fluidr3_1::audio::open,instrument_id/pitch/060_violin_fluidr3_1,instrument_id,audio,open,2,stimuli/pitch/060_violin_fluidr3_1.wav,"Identify the instrument that plays the note in this clip.
+Give a short, direct answer.",,violin,Viola,,,,"{""midi"": 60, ""note_name"": ""C4"", ""octave"": 4, ""pitch_class"": ""C"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/061_flute_timgm_1::audio::mcq,instrument_id/pitch/061_flute_timgm_1,instrument_id,audio,mcq,1,stimuli/pitch/061_flute_timgm_1.wav,"Listen to this recording. Which instrument do you hear?
+A. synth lead
+B. flute
+C. piano
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|flute|piano|violin,flute,B,flute,True,,"{""midi"": 61, ""note_name"": ""C#4"", ""octave"": 4, ""pitch_class"": ""C#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/061_flute_timgm_1::audio::open,instrument_id/pitch/061_flute_timgm_1,instrument_id,audio,open,2,stimuli/pitch/061_flute_timgm_1.wav,"Identify the instrument that plays the note in this clip.
+Give a short, direct answer.",,flute,Oboe,,,,"{""midi"": 61, ""note_name"": ""C#4"", ""octave"": 4, ""pitch_class"": ""C#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/061_synth_lead_fluidr3_0::audio::mcq,instrument_id/pitch/061_synth_lead_fluidr3_0,instrument_id,audio,mcq,2,stimuli/pitch/061_synth_lead_fluidr3_0.wav,"Identify the instrument that plays the note in this clip.
+A. synth lead
+B. flute
+C. piano
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|flute|piano|violin,synth lead,A,synth lead,True,,"{""midi"": 61, ""note_name"": ""C#4"", ""octave"": 4, ""pitch_class"": ""C#"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/061_synth_lead_fluidr3_0::audio::explain,instrument_id/pitch/061_synth_lead_fluidr3_0,instrument_id,audio,explain,1,stimuli/pitch/061_synth_lead_fluidr3_0.wav,"Listen to this recording. Which instrument do you hear?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,synth lead,"The instrument you hear is a **synthesizer**.
+
+Here is a breakdown of what you heard that supports this answer:
+
+*   **00:00:** A C major chord is played as a very fast, repeating **arpeggio**. Instead of hearing the notes C, E, and G all at once, the synthesizer is cycling through them extremely quickly. This creates the characteristic shimmering, ""buzzy"" texture common in 8-bit or ""chiptune"" music from classic video games.
+*   **00:00 - 00:02:** The arpeggiated chord is sustained for approximately two seconds before fading out. The perfectly stable pitch and the electronic, slightly harsh timbre are hallmarks of a simple synthesizer waveform (like a square or pulse wave).",,,,"{""midi"": 61, ""note_name"": ""C#4"", ""octave"": 4, ""pitch_class"": ""C#"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/062_flute_fluidr3_0::audio::mcq,instrument_id/pitch/062_flute_fluidr3_0,instrument_id,audio,mcq,1,stimuli/pitch/062_flute_fluidr3_0.wav,"Listen to this recording. Which instrument do you hear?
+A. synth lead
+B. violin
+C. piano
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|violin|piano|flute,flute,D,flute,True,,"{""midi"": 62, ""note_name"": ""D4"", ""octave"": 4, ""pitch_class"": ""D"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/062_synth_lead_fluidr3_1::audio::mcq,instrument_id/pitch/062_synth_lead_fluidr3_1,instrument_id,audio,mcq,2,stimuli/pitch/062_synth_lead_fluidr3_1.wav,"Identify the instrument that plays the note in this clip.
+A. synth lead
+B. flute
+C. piano
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|flute|piano|violin,synth lead,A,synth lead,True,,"{""midi"": 62, ""note_name"": ""D4"", ""octave"": 4, ""pitch_class"": ""D"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/063_flute_timgm_1::audio::mcq,instrument_id/pitch/063_flute_timgm_1,instrument_id,audio,mcq,0,stimuli/pitch/063_flute_timgm_1.wav,"What instrument is playing in this clip?
+A. piano
+B. synth lead
+C. violin
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|synth lead|violin|flute,flute,D,flute,True,,"{""midi"": 63, ""note_name"": ""D#4"", ""octave"": 4, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/063_flute_timgm_1::audio::open,instrument_id/pitch/063_flute_timgm_1,instrument_id,audio,open,0,stimuli/pitch/063_flute_timgm_1.wav,"What instrument is playing in this clip?
+Give a short, direct answer.",,flute,Flute.,flute,True,,"{""midi"": 63, ""note_name"": ""D#4"", ""octave"": 4, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/063_synth_lead_timgm_0::audio::mcq,instrument_id/pitch/063_synth_lead_timgm_0,instrument_id,audio,mcq,2,stimuli/pitch/063_synth_lead_timgm_0.wav,"Identify the instrument that plays the note in this clip.
+A. violin
+B. piano
+C. synth lead
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|piano|synth lead|flute,synth lead,C,synth lead,True,,"{""midi"": 63, ""note_name"": ""D#4"", ""octave"": 4, ""pitch_class"": ""D#"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/064_flute_timgm_0::audio::mcq,instrument_id/pitch/064_flute_timgm_0,instrument_id,audio,mcq,0,stimuli/pitch/064_flute_timgm_0.wav,"What instrument is playing in this clip?
+A. violin
+B. flute
+C. synth lead
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|flute|synth lead|piano,flute,B,flute,True,,"{""midi"": 64, ""note_name"": ""E4"", ""octave"": 4, ""pitch_class"": ""E"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/064_violin_musescore_1::audio::mcq,instrument_id/pitch/064_violin_musescore_1,instrument_id,audio,mcq,2,stimuli/pitch/064_violin_musescore_1.wav,"Identify the instrument that plays the note in this clip.
+A. violin
+B. piano
+C. flute
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|piano|flute|synth lead,violin,A,violin,True,,"{""midi"": 64, ""note_name"": ""E4"", ""octave"": 4, ""pitch_class"": ""E"", ""program"": ""violin"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/064_violin_musescore_1::audio::explain,instrument_id/pitch/064_violin_musescore_1,instrument_id,audio,explain,0,stimuli/pitch/064_violin_musescore_1.wav,"What instrument is playing in this clip?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,violin,"The instrument playing in this clip is a **violin**.
+
+Here is the explanation of what I heard that supports this answer:
+
+*   **00:00 - 00:04**: The clip consists of a single, sustained note played by a bowed string instrument. The sound begins immediately at 00:00.
+*   **Timbre and Technique**: The tone is bright, clear, and has a singing quality, which is characteristic of a violin, especially in this register. You can clearly hear the expressive and controlled **vibrato** (a rapid, slight variation in pitch) throughout the note, which adds warmth and richness to the sound. This is a hallmark technique of violin playing.
+*   **Pitch**: The specific note being played is an **A** (specifically A4, the A above middle C). This is the open A-string on a violin, one of its most resonant and commonly used notes. While a viola also has an A-string, the overall timbre in the clip lacks the darker, mellower quality of a viola and possesses the brilliance of a violin.",,,,"{""midi"": 64, ""note_name"": ""E4"", ""octave"": 4, ""pitch_class"": ""E"", ""program"": ""violin"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/065_synth_lead_fluidr3_0::audio::mcq,instrument_id/pitch/065_synth_lead_fluidr3_0,instrument_id,audio,mcq,2,stimuli/pitch/065_synth_lead_fluidr3_0.wav,"Identify the instrument that plays the note in this clip.
+A. synth lead
+B. flute
+C. piano
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|flute|piano|violin,synth lead,A,synth lead,True,,"{""midi"": 65, ""note_name"": ""F4"", ""octave"": 4, ""pitch_class"": ""F"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/065_synth_lead_fluidr3_0::audio::open,instrument_id/pitch/065_synth_lead_fluidr3_0,instrument_id,audio,open,2,stimuli/pitch/065_synth_lead_fluidr3_0.wav,"Identify the instrument that plays the note in this clip.
+Give a short, direct answer.",,synth lead,Synthesizer,synth lead,True,,"{""midi"": 65, ""note_name"": ""F4"", ""octave"": 4, ""pitch_class"": ""F"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/065_synth_lead_fluidr3_1::audio::mcq,instrument_id/pitch/065_synth_lead_fluidr3_1,instrument_id,audio,mcq,0,stimuli/pitch/065_synth_lead_fluidr3_1.wav,"What instrument is playing in this clip?
+A. violin
+B. piano
+C. synth lead
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|piano|synth lead|flute,synth lead,C,synth lead,True,,"{""midi"": 65, ""note_name"": ""F4"", ""octave"": 4, ""pitch_class"": ""F"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/065_synth_lead_fluidr3_1::audio::explain,instrument_id/pitch/065_synth_lead_fluidr3_1,instrument_id,audio,explain,0,stimuli/pitch/065_synth_lead_fluidr3_1.wav,"What instrument is playing in this clip?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,synth lead,"The instrument playing is a **synthesizer**.
+
+Here is a detailed explanation of what can be heard in the clip to support this answer:
+
+*   **Timbre:** The sound quality is distinctly electronic and not produced by an acoustic instrument. It has a pure, stable tone with a slightly buzzy or digital character, which is a hallmark of a synthesizer.
+*   **Harmony and Notes:**
+    *   At **0:00**, a single, sustained chord is played.
+    *   The chord is a **G major chord**, consisting of the notes G, B, and D played simultaneously.
+*   **Articulation and Duration:**
+    *   The chord is struck once at the very beginning (**0:00**) and is held, sustaining its sound.
+    *   The main body of the chord's sound lasts for approximately two seconds before it begins to fade out, with the resonance lingering until the end of the clip at **0:04**.",,,,"{""midi"": 65, ""note_name"": ""F4"", ""octave"": 4, ""pitch_class"": ""F"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/066_piano_fluidr3_0::audio::mcq,instrument_id/pitch/066_piano_fluidr3_0,instrument_id,audio,mcq,0,stimuli/pitch/066_piano_fluidr3_0.wav,"What instrument is playing in this clip?
+A. piano
+B. flute
+C. violin
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|flute|violin|synth lead,piano,D,synth lead,False,,"{""midi"": 66, ""note_name"": ""F#4"", ""octave"": 4, ""pitch_class"": ""F#"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/066_piano_fluidr3_0::audio::open,instrument_id/pitch/066_piano_fluidr3_0,instrument_id,audio,open,0,stimuli/pitch/066_piano_fluidr3_0.wav,"What instrument is playing in this clip?
+Give a short, direct answer.",,piano,Piano.,piano,True,,"{""midi"": 66, ""note_name"": ""F#4"", ""octave"": 4, ""pitch_class"": ""F#"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/066_piano_musescore_1::audio::mcq,instrument_id/pitch/066_piano_musescore_1,instrument_id,audio,mcq,1,stimuli/pitch/066_piano_musescore_1.wav,"Listen to this recording. Which instrument do you hear?
+A. violin
+B. piano
+C. flute
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|piano|flute|synth lead,piano,B,piano,True,,"{""midi"": 66, ""note_name"": ""F#4"", ""octave"": 4, ""pitch_class"": ""F#"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/066_piano_musescore_1::audio::open,instrument_id/pitch/066_piano_musescore_1,instrument_id,audio,open,2,stimuli/pitch/066_piano_musescore_1.wav,"Identify the instrument that plays the note in this clip.
+Give a short, direct answer.",,piano,Piano,piano,True,,"{""midi"": 66, ""note_name"": ""F#4"", ""octave"": 4, ""pitch_class"": ""F#"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/066_piano_musescore_1::audio::explain,instrument_id/pitch/066_piano_musescore_1,instrument_id,audio,explain,1,stimuli/pitch/066_piano_musescore_1.wav,"Listen to this recording. Which instrument do you hear?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,piano,"The instrument you hear is a **piano**.
+
+Here is a breakdown of what you heard that supports this answer:
+
+*   **00:00:** A single **G major chord** is struck. The notes are G, B, and D played simultaneously.
+*   The sound has the distinct characteristics of a piano: a clear, percussive attack as the hammers hit the strings, followed by a long, resonant sustain as the notes ring out and slowly fade over the next few seconds.",,,,"{""midi"": 66, ""note_name"": ""F#4"", ""octave"": 4, ""pitch_class"": ""F#"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/067_piano_musescore_0::audio::mcq,instrument_id/pitch/067_piano_musescore_0,instrument_id,audio,mcq,1,stimuli/pitch/067_piano_musescore_0.wav,"Listen to this recording. Which instrument do you hear?
+A. flute
+B. violin
+C. piano
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|violin|piano|synth lead,piano,C,piano,True,,"{""midi"": 67, ""note_name"": ""G4"", ""octave"": 4, ""pitch_class"": ""G"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/067_piano_musescore_0::audio::open,instrument_id/pitch/067_piano_musescore_0,instrument_id,audio,open,0,stimuli/pitch/067_piano_musescore_0.wav,"What instrument is playing in this clip?
+Give a short, direct answer.",,piano,Piano.,piano,True,,"{""midi"": 67, ""note_name"": ""G4"", ""octave"": 4, ""pitch_class"": ""G"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/067_piano_musescore_0::audio::explain,instrument_id/pitch/067_piano_musescore_0,instrument_id,audio,explain,0,stimuli/pitch/067_piano_musescore_0.wav,"What instrument is playing in this clip?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,piano,"The instrument playing is a **piano**.
+
+Here is a detailed explanation of what can be heard in the clip to support this answer:
+
+*   **Timbre and Articulation:** The sound has the rich, resonant, and warm timbre characteristic of an acoustic piano. You can hear the distinct percussive *attack* of a felt hammer striking metal strings at the very beginning, followed by a long, clear sustain as the notes ring out and slowly decay. This combination of a sharp attack and a long, ringing decay is a hallmark of the piano.
+*   **Chord and Notes:** A single chord is played at the very beginning of the clip, around **00:00**. The chord is an **F-sharp minor chord**, consisting of the notes F-sharp, A, and C-sharp, played across different octaves. The notes are held and allowed to resonate for the entire duration of the clip.",,,,"{""midi"": 67, ""note_name"": ""G4"", ""octave"": 4, ""pitch_class"": ""G"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/067_synth_lead_timgm_1::audio::mcq,instrument_id/pitch/067_synth_lead_timgm_1,instrument_id,audio,mcq,2,stimuli/pitch/067_synth_lead_timgm_1.wav,"Identify the instrument that plays the note in this clip.
+A. piano
+B. violin
+C. synth lead
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|violin|synth lead|flute,synth lead,C,synth lead,True,,"{""midi"": 67, ""note_name"": ""G4"", ""octave"": 4, ""pitch_class"": ""G"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/068_flute_musescore_0::audio::mcq,instrument_id/pitch/068_flute_musescore_0,instrument_id,audio,mcq,1,stimuli/pitch/068_flute_musescore_0.wav,"Listen to this recording. Which instrument do you hear?
+A. flute
+B. synth lead
+C. violin
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|synth lead|violin|piano,flute,A,flute,True,,"{""midi"": 68, ""note_name"": ""G#4"", ""octave"": 4, ""pitch_class"": ""G#"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/068_violin_timgm_1::audio::mcq,instrument_id/pitch/068_violin_timgm_1,instrument_id,audio,mcq,0,stimuli/pitch/068_violin_timgm_1.wav,"What instrument is playing in this clip?
+A. synth lead
+B. piano
+C. violin
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|piano|violin|flute,violin,A,synth lead,False,,"{""midi"": 68, ""note_name"": ""G#4"", ""octave"": 4, ""pitch_class"": ""G#"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/069_flute_musescore_1::audio::mcq,instrument_id/pitch/069_flute_musescore_1,instrument_id,audio,mcq,0,stimuli/pitch/069_flute_musescore_1.wav,"What instrument is playing in this clip?
+A. synth lead
+B. flute
+C. piano
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|flute|piano|violin,flute,B,flute,True,,"{""midi"": 69, ""note_name"": ""A4"", ""octave"": 4, ""pitch_class"": ""A"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/069_flute_musescore_1::audio::explain,instrument_id/pitch/069_flute_musescore_1,instrument_id,audio,explain,0,stimuli/pitch/069_flute_musescore_1.wav,"What instrument is playing in this clip?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,flute,"The instrument playing is a **trumpet**.
+
+Here is a breakdown of what can be heard in the clip that supports this answer:
+
+*   **Timbre:** The instrument has a bright, clear, and metallic tone with a powerful projection. This sound is characteristic of a high brass instrument, and the specific brilliance and piercing quality are hallmarks of a trumpet.
+*   **00:00 - 00:02:** The clip begins with a single note, a high C (specifically C6), repeated four times in quick succession. Each note is played distinctly and lasts for about half a second.
+*   **00:02 - 00:04:** Following a very brief pause, the same high C is played again, but this time it is held as a single, sustained note for the rest of the clip. The ability to play with both sharp, staccato-like attacks and a strong, sustained tone in this high register is a classic capability of the trumpet.",,,,"{""midi"": 69, ""note_name"": ""A4"", ""octave"": 4, ""pitch_class"": ""A"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/069_synth_lead_timgm_0::audio::mcq,instrument_id/pitch/069_synth_lead_timgm_0,instrument_id,audio,mcq,0,stimuli/pitch/069_synth_lead_timgm_0.wav,"What instrument is playing in this clip?
+A. synth lead
+B. violin
+C. piano
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|violin|piano|flute,synth lead,A,synth lead,True,,"{""midi"": 69, ""note_name"": ""A4"", ""octave"": 4, ""pitch_class"": ""A"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/070_piano_fluidr3_0::audio::mcq,instrument_id/pitch/070_piano_fluidr3_0,instrument_id,audio,mcq,0,stimuli/pitch/070_piano_fluidr3_0.wav,"What instrument is playing in this clip?
+A. synth lead
+B. flute
+C. piano
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|flute|piano|violin,piano,C,piano,True,,"{""midi"": 70, ""note_name"": ""A#4"", ""octave"": 4, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/070_piano_fluidr3_0::audio::open,instrument_id/pitch/070_piano_fluidr3_0,instrument_id,audio,open,0,stimuli/pitch/070_piano_fluidr3_0.wav,"What instrument is playing in this clip?
+Give a short, direct answer.",,piano,Celesta,,,,"{""midi"": 70, ""note_name"": ""A#4"", ""octave"": 4, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/070_piano_timgm_1::audio::mcq,instrument_id/pitch/070_piano_timgm_1,instrument_id,audio,mcq,2,stimuli/pitch/070_piano_timgm_1.wav,"Identify the instrument that plays the note in this clip.
+A. piano
+B. flute
+C. violin
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|flute|violin|synth lead,piano,A,piano,True,,"{""midi"": 70, ""note_name"": ""A#4"", ""octave"": 4, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/070_piano_timgm_1::audio::explain,instrument_id/pitch/070_piano_timgm_1,instrument_id,audio,explain,0,stimuli/pitch/070_piano_timgm_1.wav,"What instrument is playing in this clip?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,piano,"A **Vibraphone** is playing in this clip.
+
+Here is a detailed explanation of what is heard in the audio that supports this answer:
+
+*   **00:00:** A single C minor chord is struck with a soft attack, suggesting the use of soft mallets. The sound is warm, metallic, and bell-like, which is characteristic of a vibraphone's aluminum bars being struck.
+*   **00:00 - 00:05:** The chord sustains with a very long, clean, and even decay. This long sustain is a hallmark of the vibraphone, which uses resonators and often a sustain pedal (similar to a piano's) to let the notes ring out. The specific notes in the chord are C, E-flat, G, and a C an octave higher.",,,,"{""midi"": 70, ""note_name"": ""A#4"", ""octave"": 4, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/071_flute_fluidr3_0::audio::mcq,instrument_id/pitch/071_flute_fluidr3_0,instrument_id,audio,mcq,2,stimuli/pitch/071_flute_fluidr3_0.wav,"Identify the instrument that plays the note in this clip.
+A. synth lead
+B. piano
+C. violin
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|piano|violin|flute,flute,D,flute,True,,"{""midi"": 71, ""note_name"": ""B4"", ""octave"": 4, ""pitch_class"": ""B"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/071_piano_musescore_1::audio::mcq,instrument_id/pitch/071_piano_musescore_1,instrument_id,audio,mcq,0,stimuli/pitch/071_piano_musescore_1.wav,"What instrument is playing in this clip?
+A. piano
+B. flute
+C. violin
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|flute|violin|synth lead,piano,D,synth lead,False,,"{""midi"": 71, ""note_name"": ""B4"", ""octave"": 4, ""pitch_class"": ""B"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/072_flute_timgm_0::audio::mcq,instrument_id/pitch/072_flute_timgm_0,instrument_id,audio,mcq,0,stimuli/pitch/072_flute_timgm_0.wav,"What instrument is playing in this clip?
+A. synth lead
+B. flute
+C. violin
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|flute|violin|piano,flute,B,flute,True,,"{""midi"": 72, ""note_name"": ""C5"", ""octave"": 5, ""pitch_class"": ""C"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/072_flute_timgm_0::audio::open,instrument_id/pitch/072_flute_timgm_0,instrument_id,audio,open,0,stimuli/pitch/072_flute_timgm_0.wav,"What instrument is playing in this clip?
+Give a short, direct answer.",,flute,Flute.,flute,True,,"{""midi"": 72, ""note_name"": ""C5"", ""octave"": 5, ""pitch_class"": ""C"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/072_flute_timgm_0::audio::explain,instrument_id/pitch/072_flute_timgm_0,instrument_id,audio,explain,2,stimuli/pitch/072_flute_timgm_0.wav,"Identify the instrument that plays the note in this clip.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,flute,"The instrument is a **flute**.
+
+Here is a detailed explanation of what can be heard in the clip to support this identification:
+
+*   **Timbre and Tone Quality:** The most telling characteristic is the instrument's timbre. The sound is very clear, bright, and has a distinct airy or breathy quality, especially at the beginning of the note. This is the classic sound of air being blown across the embouchure hole of a flute, which distinguishes it from reedy woodwinds (like a clarinet or oboe) or brass instruments.
+*   **Note and Pitch:** The clip consists of a single, sustained note. This note is a **B-flat (B♭)** in a high register.
+*   **Articulation and Duration:** The note begins at **00:00** with a clean, smooth attack and is held steadily for approximately two seconds before it begins to fade. This ability to sustain a long, even tone with such a pure quality is a hallmark of the flute.",,,,"{""midi"": 72, ""note_name"": ""C5"", ""octave"": 5, ""pitch_class"": ""C"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/072_violin_musescore_1::audio::mcq,instrument_id/pitch/072_violin_musescore_1,instrument_id,audio,mcq,1,stimuli/pitch/072_violin_musescore_1.wav,"Listen to this recording. Which instrument do you hear?
+A. flute
+B. violin
+C. synth lead
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|violin|synth lead|piano,violin,B,violin,True,,"{""midi"": 72, ""note_name"": ""C5"", ""octave"": 5, ""pitch_class"": ""C"", ""program"": ""violin"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/072_violin_musescore_1::audio::open,instrument_id/pitch/072_violin_musescore_1,instrument_id,audio,open,0,stimuli/pitch/072_violin_musescore_1.wav,"What instrument is playing in this clip?
+Give a short, direct answer.",,violin,Violin.,violin,True,,"{""midi"": 72, ""note_name"": ""C5"", ""octave"": 5, ""pitch_class"": ""C"", ""program"": ""violin"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/073_flute_timgm_0::audio::mcq,instrument_id/pitch/073_flute_timgm_0,instrument_id,audio,mcq,1,stimuli/pitch/073_flute_timgm_0.wav,"Listen to this recording. Which instrument do you hear?
+A. violin
+B. flute
+C. piano
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|flute|piano|synth lead,flute,B,flute,True,,"{""midi"": 73, ""note_name"": ""C#5"", ""octave"": 5, ""pitch_class"": ""C#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/073_synth_lead_timgm_1::audio::mcq,instrument_id/pitch/073_synth_lead_timgm_1,instrument_id,audio,mcq,0,stimuli/pitch/073_synth_lead_timgm_1.wav,"What instrument is playing in this clip?
+A. violin
+B. piano
+C. flute
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|piano|flute|synth lead,synth lead,D,synth lead,True,,"{""midi"": 73, ""note_name"": ""C#5"", ""octave"": 5, ""pitch_class"": ""C#"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/074_flute_musescore_0::audio::mcq,instrument_id/pitch/074_flute_musescore_0,instrument_id,audio,mcq,1,stimuli/pitch/074_flute_musescore_0.wav,"Listen to this recording. Which instrument do you hear?
+A. piano
+B. synth lead
+C. flute
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|synth lead|flute|violin,flute,C,flute,True,,"{""midi"": 74, ""note_name"": ""D5"", ""octave"": 5, ""pitch_class"": ""D"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/074_synth_lead_timgm_1::audio::mcq,instrument_id/pitch/074_synth_lead_timgm_1,instrument_id,audio,mcq,2,stimuli/pitch/074_synth_lead_timgm_1.wav,"Identify the instrument that plays the note in this clip.
+A. violin
+B. synth lead
+C. flute
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|synth lead|flute|piano,synth lead,B,synth lead,True,,"{""midi"": 74, ""note_name"": ""D5"", ""octave"": 5, ""pitch_class"": ""D"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/074_synth_lead_timgm_1::audio::explain,instrument_id/pitch/074_synth_lead_timgm_1,instrument_id,audio,explain,2,stimuli/pitch/074_synth_lead_timgm_1.wav,"Identify the instrument that plays the note in this clip.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,synth lead,"The instrument is a **synthesizer**.
+
+Here is a breakdown of what can be heard in the clip to support this identification:
+
+*   **00:00 - 00:02:** A single, high note (A) is played and sustained. The timbre is very pure and electronic, characteristic of a simple waveform (like a square or pulse wave) often used in synthesizers, particularly those found in early video game consoles (chiptune).
+*   The pitch and volume of the note are perfectly steady, with no natural vibrato or fluctuation in dynamics that you would expect from an acoustic instrument like a flute or a violin.
+*   **~00:02:** The note cuts off abruptly. This sharp, unnatural stop, with no resonance or decay, is a clear indicator of a synthesizer's sound envelope being released.",,,,"{""midi"": 74, ""note_name"": ""D5"", ""octave"": 5, ""pitch_class"": ""D"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/075_flute_musescore_0::audio::mcq,instrument_id/pitch/075_flute_musescore_0,instrument_id,audio,mcq,0,stimuli/pitch/075_flute_musescore_0.wav,"What instrument is playing in this clip?
+A. violin
+B. piano
+C. flute
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|piano|flute|synth lead,flute,C,flute,True,,"{""midi"": 75, ""note_name"": ""D#5"", ""octave"": 5, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/075_piano_musescore_1::audio::mcq,instrument_id/pitch/075_piano_musescore_1,instrument_id,audio,mcq,2,stimuli/pitch/075_piano_musescore_1.wav,"Identify the instrument that plays the note in this clip.
+A. synth lead
+B. flute
+C. violin
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|flute|violin|piano,piano,D,piano,True,,"{""midi"": 75, ""note_name"": ""D#5"", ""octave"": 5, ""pitch_class"": ""D#"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/076_piano_fluidr3_1::audio::mcq,instrument_id/pitch/076_piano_fluidr3_1,instrument_id,audio,mcq,2,stimuli/pitch/076_piano_fluidr3_1.wav,"Identify the instrument that plays the note in this clip.
+A. violin
+B. flute
+C. synth lead
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|flute|synth lead|piano,piano,D,piano,True,,"{""midi"": 76, ""note_name"": ""E5"", ""octave"": 5, ""pitch_class"": ""E"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/076_violin_timgm_0::audio::mcq,instrument_id/pitch/076_violin_timgm_0,instrument_id,audio,mcq,1,stimuli/pitch/076_violin_timgm_0.wav,"Listen to this recording. Which instrument do you hear?
+A. piano
+B. flute
+C. synth lead
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|flute|synth lead|violin,violin,C,synth lead,False,,"{""midi"": 76, ""note_name"": ""E5"", ""octave"": 5, ""pitch_class"": ""E"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/076_violin_timgm_0::audio::explain,instrument_id/pitch/076_violin_timgm_0,instrument_id,audio,explain,2,stimuli/pitch/076_violin_timgm_0.wav,"Identify the instrument that plays the note in this clip.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,violin,"The instrument is a **violin**.
+
+Here is an explanation of what can be heard in the clip that supports this identification:
+
+*   **00:00:** The clip begins with the immediate attack of a single, high-pitched note. The sound is produced by a bow being drawn across a string, creating a clear but not percussive start.
+*   The note played is an **A**, specifically A5 (the A two octaves above middle C). This high register is very common for the violin.
+*   **00:00 - 00:02:** The note is sustained with a bright, clear, and resonant tone. A subtle and natural-sounding vibrato is audible, which gives the note warmth and expressiveness. This technique is a hallmark of string playing.
+*   **00:02 - 00:04:** The note begins to fade out smoothly, which is consistent with the pressure of the bow being released from the string, allowing the sound to decay naturally.",,,,"{""midi"": 76, ""note_name"": ""E5"", ""octave"": 5, ""pitch_class"": ""E"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/077_synth_lead_musescore_0::audio::mcq,instrument_id/pitch/077_synth_lead_musescore_0,instrument_id,audio,mcq,2,stimuli/pitch/077_synth_lead_musescore_0.wav,"Identify the instrument that plays the note in this clip.
+A. synth lead
+B. flute
+C. piano
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|flute|piano|violin,synth lead,B,flute,False,,"{""midi"": 77, ""note_name"": ""F5"", ""octave"": 5, ""pitch_class"": ""F"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/077_violin_fluidr3_1::audio::mcq,instrument_id/pitch/077_violin_fluidr3_1,instrument_id,audio,mcq,0,stimuli/pitch/077_violin_fluidr3_1.wav,"What instrument is playing in this clip?
+A. flute
+B. violin
+C. piano
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|violin|piano|synth lead,violin,B,violin,True,,"{""midi"": 77, ""note_name"": ""F5"", ""octave"": 5, ""pitch_class"": ""F"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/078_flute_fluidr3_0::audio::mcq,instrument_id/pitch/078_flute_fluidr3_0,instrument_id,audio,mcq,2,stimuli/pitch/078_flute_fluidr3_0.wav,"Identify the instrument that plays the note in this clip.
+A. piano
+B. violin
+C. flute
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|violin|flute|synth lead,flute,C,flute,True,,"{""midi"": 78, ""note_name"": ""F#5"", ""octave"": 5, ""pitch_class"": ""F#"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/078_flute_fluidr3_0::audio::open,instrument_id/pitch/078_flute_fluidr3_0,instrument_id,audio,open,2,stimuli/pitch/078_flute_fluidr3_0.wav,"Identify the instrument that plays the note in this clip.
+Give a short, direct answer.",,flute,Flute,flute,True,,"{""midi"": 78, ""note_name"": ""F#5"", ""octave"": 5, ""pitch_class"": ""F#"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/078_flute_musescore_1::audio::mcq,instrument_id/pitch/078_flute_musescore_1,instrument_id,audio,mcq,1,stimuli/pitch/078_flute_musescore_1.wav,"Listen to this recording. Which instrument do you hear?
+A. violin
+B. piano
+C. synth lead
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|piano|synth lead|flute,flute,D,flute,True,,"{""midi"": 78, ""note_name"": ""F#5"", ""octave"": 5, ""pitch_class"": ""F#"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/079_violin_timgm_0::audio::mcq,instrument_id/pitch/079_violin_timgm_0,instrument_id,audio,mcq,2,stimuli/pitch/079_violin_timgm_0.wav,"Identify the instrument that plays the note in this clip.
+A. violin
+B. flute
+C. synth lead
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|flute|synth lead|piano,violin,C,synth lead,False,,"{""midi"": 79, ""note_name"": ""G5"", ""octave"": 5, ""pitch_class"": ""G"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/079_violin_timgm_1::audio::mcq,instrument_id/pitch/079_violin_timgm_1,instrument_id,audio,mcq,1,stimuli/pitch/079_violin_timgm_1.wav,"Listen to this recording. Which instrument do you hear?
+A. synth lead
+B. violin
+C. flute
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|violin|flute|piano,violin,A,synth lead,False,,"{""midi"": 79, ""note_name"": ""G5"", ""octave"": 5, ""pitch_class"": ""G"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/080_synth_lead_fluidr3_1::audio::mcq,instrument_id/pitch/080_synth_lead_fluidr3_1,instrument_id,audio,mcq,1,stimuli/pitch/080_synth_lead_fluidr3_1.wav,"Listen to this recording. Which instrument do you hear?
+A. violin
+B. piano
+C. flute
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|piano|flute|synth lead,synth lead,D,synth lead,True,,"{""midi"": 80, ""note_name"": ""G#5"", ""octave"": 5, ""pitch_class"": ""G#"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/080_synth_lead_musescore_0::audio::mcq,instrument_id/pitch/080_synth_lead_musescore_0,instrument_id,audio,mcq,2,stimuli/pitch/080_synth_lead_musescore_0.wav,"Identify the instrument that plays the note in this clip.
+A. synth lead
+B. piano
+C. violin
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|piano|violin|flute,synth lead,D,flute,False,,"{""midi"": 80, ""note_name"": ""G#5"", ""octave"": 5, ""pitch_class"": ""G#"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/080_synth_lead_musescore_0::audio::open,instrument_id/pitch/080_synth_lead_musescore_0,instrument_id,audio,open,1,stimuli/pitch/080_synth_lead_musescore_0.wav,"Listen to this recording. Which instrument do you hear?
+Give a short, direct answer.",,synth lead,Glass harmonica.,,,,"{""midi"": 80, ""note_name"": ""G#5"", ""octave"": 5, ""pitch_class"": ""G#"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/080_synth_lead_musescore_0::audio::explain,instrument_id/pitch/080_synth_lead_musescore_0,instrument_id,audio,explain,0,stimuli/pitch/080_synth_lead_musescore_0.wav,"What instrument is playing in this clip?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,synth lead,"The instrument playing is a **triangle**.
+
+Here is a breakdown of what can be heard in the clip to support this answer:
+
+*   **00:00:** A single, percussive strike occurs. The attack is very sharp, clear, and metallic, which is characteristic of a metal beater hitting the triangle.
+*   **00:00 - 00:03:** Following the strike, a very high-pitched note sustains with a long, shimmering decay. The fundamental pitch is approximately an A6. The sound is rich with bright, ringing overtones that create the classic ""shimmer"" effect for which the triangle is known. The note fades out slowly over the course of the clip.",,,,"{""midi"": 80, ""note_name"": ""G#5"", ""octave"": 5, ""pitch_class"": ""G#"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/081_piano_timgm_1::audio::mcq,instrument_id/pitch/081_piano_timgm_1,instrument_id,audio,mcq,0,stimuli/pitch/081_piano_timgm_1.wav,"What instrument is playing in this clip?
+A. synth lead
+B. piano
+C. flute
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|piano|flute|violin,piano,B,piano,True,,"{""midi"": 81, ""note_name"": ""A5"", ""octave"": 5, ""pitch_class"": ""A"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/081_piano_timgm_1::audio::open,instrument_id/pitch/081_piano_timgm_1,instrument_id,audio,open,1,stimuli/pitch/081_piano_timgm_1.wav,"Listen to this recording. Which instrument do you hear?
+Give a short, direct answer.",,piano,Piano.,piano,True,,"{""midi"": 81, ""note_name"": ""A5"", ""octave"": 5, ""pitch_class"": ""A"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/081_piano_timgm_1::audio::explain,instrument_id/pitch/081_piano_timgm_1,instrument_id,audio,explain,0,stimuli/pitch/081_piano_timgm_1.wav,"What instrument is playing in this clip?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,piano,"The instrument playing is a **piano**.
+
+Here is the evidence from the audio clip that supports this answer:
+
+*   **At 00:00:** A single chord is struck. The sound has the distinct percussive attack of a felt hammer hitting a string, followed by a long, resonant sustain.
+*   **The chord played is an A major triad**, which consists of the notes A, C#, and E.
+*   **From 00:00 to 00:04:** The chord is held for the entire duration of the clip, slowly and naturally decaying in volume. This long sustain is characteristic of a piano, especially when the sustain (damper) pedal is used to let the strings ring out freely.",,,,"{""midi"": 81, ""note_name"": ""A5"", ""octave"": 5, ""pitch_class"": ""A"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/081_synth_lead_timgm_0::audio::mcq,instrument_id/pitch/081_synth_lead_timgm_0,instrument_id,audio,mcq,1,stimuli/pitch/081_synth_lead_timgm_0.wav,"Listen to this recording. Which instrument do you hear?
+A. piano
+B. synth lead
+C. violin
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|synth lead|violin|flute,synth lead,B,synth lead,True,,"{""midi"": 81, ""note_name"": ""A5"", ""octave"": 5, ""pitch_class"": ""A"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/082_synth_lead_timgm_1::audio::mcq,instrument_id/pitch/082_synth_lead_timgm_1,instrument_id,audio,mcq,1,stimuli/pitch/082_synth_lead_timgm_1.wav,"Listen to this recording. Which instrument do you hear?
+A. violin
+B. flute
+C. synth lead
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|flute|synth lead|piano,synth lead,C,synth lead,True,,"{""midi"": 82, ""note_name"": ""A#5"", ""octave"": 5, ""pitch_class"": ""A#"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/082_violin_timgm_0::audio::mcq,instrument_id/pitch/082_violin_timgm_0,instrument_id,audio,mcq,1,stimuli/pitch/082_violin_timgm_0.wav,"Listen to this recording. Which instrument do you hear?
+A. synth lead
+B. violin
+C. piano
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|violin|piano|flute,violin,A,synth lead,False,,"{""midi"": 82, ""note_name"": ""A#5"", ""octave"": 5, ""pitch_class"": ""A#"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/082_violin_timgm_0::audio::explain,instrument_id/pitch/082_violin_timgm_0,instrument_id,audio,explain,1,stimuli/pitch/082_violin_timgm_0.wav,"Listen to this recording. Which instrument do you hear?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,violin,"The instrument you hear is a **trumpet**.
+
+Here is a detailed explanation of what you can hear in the recording that supports this answer:
+
+*   **00:00:** The sound begins with a very clear, sharp attack on a single, high-pitched note. This bright, metallic, and piercing tone quality (timbre) is the hallmark of a trumpet, especially when played loudly in its upper register.
+*   **00:00 - 00:03:** The instrument sustains a single note, which is a **C6** (the C two octaves above middle C). The note is held with a very steady, unwavering tone and a loud, consistent volume, with no vibrato. This powerful and sustained delivery is characteristic of trumpet playing.",,,,"{""midi"": 82, ""note_name"": ""A#5"", ""octave"": 5, ""pitch_class"": ""A#"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/083_flute_timgm_1::audio::mcq,instrument_id/pitch/083_flute_timgm_1,instrument_id,audio,mcq,1,stimuli/pitch/083_flute_timgm_1.wav,"Listen to this recording. Which instrument do you hear?
+A. piano
+B. flute
+C. violin
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|flute|violin|synth lead,flute,B,flute,True,,"{""midi"": 83, ""note_name"": ""B5"", ""octave"": 5, ""pitch_class"": ""B"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/083_flute_timgm_1::audio::open,instrument_id/pitch/083_flute_timgm_1,instrument_id,audio,open,0,stimuli/pitch/083_flute_timgm_1.wav,"What instrument is playing in this clip?
+Give a short, direct answer.",,flute,An oboe.,,,,"{""midi"": 83, ""note_name"": ""B5"", ""octave"": 5, ""pitch_class"": ""B"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/083_synth_lead_timgm_0::audio::mcq,instrument_id/pitch/083_synth_lead_timgm_0,instrument_id,audio,mcq,0,stimuli/pitch/083_synth_lead_timgm_0.wav,"What instrument is playing in this clip?
+A. piano
+B. violin
+C. synth lead
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|violin|synth lead|flute,synth lead,C,synth lead,True,,"{""midi"": 83, ""note_name"": ""B5"", ""octave"": 5, ""pitch_class"": ""B"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/048_synth_lead_musescore_1::no_audio::mcq,instrument_id/pitch/048_synth_lead_musescore_1,instrument_id,no_audio,mcq,0,,"What instrument is playing in this clip?
+A. synth lead
+B. piano
+C. violin
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|piano|violin|flute,synth lead,"I am sorry, but you have not provided an audio clip. As a text-based AI, I cannot listen to or analyze audio. Please provide the clip, and I will do my best to help.",,,,"{""midi"": 48, ""note_name"": ""C3"", ""octave"": 3, ""pitch_class"": ""C"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/049_synth_lead_fluidr3_0::no_audio::mcq,instrument_id/pitch/049_synth_lead_fluidr3_0,instrument_id,no_audio,mcq,1,,"Listen to this recording. Which instrument do you hear?
+A. violin
+B. flute
+C. synth lead
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|flute|synth lead|piano,synth lead,"I am sorry, but I cannot listen to audio recordings. I am a text-based AI and do not have the ability to process sound. Therefore, I cannot identify the instrument in the recording you are referring to.",,,,"{""midi"": 49, ""note_name"": ""C#3"", ""octave"": 3, ""pitch_class"": ""C#"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/050_flute_fluidr3_0::no_audio::mcq,instrument_id/pitch/050_flute_fluidr3_0,instrument_id,no_audio,mcq,2,,"Identify the instrument that plays the note in this clip.
+A. flute
+B. synth lead
+C. violin
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|synth lead|violin|piano,flute,"I am sorry, but you have not provided an audio clip. I am a text-based AI and cannot listen to or analyze audio. Therefore, I cannot identify the instrument.",,,,"{""midi"": 50, ""note_name"": ""D3"", ""octave"": 3, ""pitch_class"": ""D"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/050_flute_fluidr3_1::no_audio::mcq,instrument_id/pitch/050_flute_fluidr3_1,instrument_id,no_audio,mcq,0,,"What instrument is playing in this clip?
+A. violin
+B. piano
+C. flute
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|piano|flute|synth lead,flute,"I am sorry, but you have not provided an audio clip. I cannot identify the instrument without hearing it.",,,,"{""midi"": 50, ""note_name"": ""D3"", ""octave"": 3, ""pitch_class"": ""D"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/051_flute_timgm_0::no_audio::mcq,instrument_id/pitch/051_flute_timgm_0,instrument_id,no_audio,mcq,1,,"Listen to this recording. Which instrument do you hear?
+A. synth lead
+B. flute
+C. violin
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|flute|violin|piano,flute,D,piano,False,,"{""midi"": 51, ""note_name"": ""D#3"", ""octave"": 3, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/052_violin_fluidr3_0::no_audio::mcq,instrument_id/pitch/052_violin_fluidr3_0,instrument_id,no_audio,mcq,0,,"What instrument is playing in this clip?
+A. violin
+B. synth lead
+C. flute
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|synth lead|flute|piano,violin,"I am sorry, but you have not provided an audio clip. I am a text-based AI and cannot hear or process audio.",,,,"{""midi"": 52, ""note_name"": ""E3"", ""octave"": 3, ""pitch_class"": ""E"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/054_synth_lead_timgm_0::no_audio::mcq,instrument_id/pitch/054_synth_lead_timgm_0,instrument_id,no_audio,mcq,0,,"What instrument is playing in this clip?
+A. flute
+B. violin
+C. piano
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|violin|piano|synth lead,synth lead,"I am sorry, but you have not provided an audio clip. I cannot hear or analyze any audio. Please provide the clip, and I will do my best to help you.",,,,"{""midi"": 54, ""note_name"": ""F#3"", ""octave"": 3, ""pitch_class"": ""F#"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/055_piano_fluidr3_1::no_audio::mcq,instrument_id/pitch/055_piano_fluidr3_1,instrument_id,no_audio,mcq,2,,"Identify the instrument that plays the note in this clip.
+A. piano
+B. flute
+C. violin
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|flute|violin|synth lead,piano,This question cannot be answered as there is no audio clip provided.,,,,"{""midi"": 55, ""note_name"": ""G3"", ""octave"": 3, ""pitch_class"": ""G"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/056_flute_timgm_1::no_audio::mcq,instrument_id/pitch/056_flute_timgm_1,instrument_id,no_audio,mcq,1,,"Listen to this recording. Which instrument do you hear?
+A. flute
+B. synth lead
+C. piano
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|synth lead|piano|violin,flute,C,piano,False,,"{""midi"": 56, ""note_name"": ""G#3"", ""octave"": 3, ""pitch_class"": ""G#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/056_violin_fluidr3_0::no_audio::mcq,instrument_id/pitch/056_violin_fluidr3_0,instrument_id,no_audio,mcq,2,,"Identify the instrument that plays the note in this clip.
+A. piano
+B. violin
+C. synth lead
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|violin|synth lead|flute,violin,"I am sorry, but you have not provided an audio clip. I cannot identify the instrument without hearing the sound.",,,,"{""midi"": 56, ""note_name"": ""G#3"", ""octave"": 3, ""pitch_class"": ""G#"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/058_piano_timgm_1::no_audio::mcq,instrument_id/pitch/058_piano_timgm_1,instrument_id,no_audio,mcq,0,,"What instrument is playing in this clip?
+A. synth lead
+B. violin
+C. piano
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|violin|piano|flute,piano,Please provide the audio clip. I cannot identify the instrument without hearing it.,,,,"{""midi"": 58, ""note_name"": ""A#3"", ""octave"": 3, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/061_synth_lead_fluidr3_0::no_audio::mcq,instrument_id/pitch/061_synth_lead_fluidr3_0,instrument_id,no_audio,mcq,1,,"Listen to this recording. Which instrument do you hear?
+A. flute
+B. violin
+C. piano
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|violin|piano|synth lead,synth lead,"I am sorry, but I cannot access or listen to audio recordings. Therefore, I am unable to identify the instrument in the recording you are referring to.",,,,"{""midi"": 61, ""note_name"": ""C#4"", ""octave"": 4, ""pitch_class"": ""C#"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/063_flute_timgm_1::no_audio::mcq,instrument_id/pitch/063_flute_timgm_1,instrument_id,no_audio,mcq,1,,"Listen to this recording. Which instrument do you hear?
+A. synth lead
+B. violin
+C. piano
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|violin|piano|flute,flute,C,piano,False,,"{""midi"": 63, ""note_name"": ""D#4"", ""octave"": 4, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/063_synth_lead_timgm_0::no_audio::mcq,instrument_id/pitch/063_synth_lead_timgm_0,instrument_id,no_audio,mcq,1,,"Listen to this recording. Which instrument do you hear?
+A. flute
+B. synth lead
+C. piano
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|synth lead|piano|violin,synth lead,"I am sorry, but you have not provided an audio recording for me to listen to. As a text-based AI, I cannot process audio files.",,,,"{""midi"": 63, ""note_name"": ""D#4"", ""octave"": 4, ""pitch_class"": ""D#"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/067_synth_lead_timgm_1::no_audio::mcq,instrument_id/pitch/067_synth_lead_timgm_1,instrument_id,no_audio,mcq,2,,"Identify the instrument that plays the note in this clip.
+A. violin
+B. piano
+C. synth lead
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|piano|synth lead|flute,synth lead,"I am sorry, but you have not provided an audio clip. As a text-based AI, I cannot hear or analyze audio. Please provide the clip, and I will do my best to help.",,,,"{""midi"": 67, ""note_name"": ""G4"", ""octave"": 4, ""pitch_class"": ""G"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/068_flute_musescore_0::no_audio::mcq,instrument_id/pitch/068_flute_musescore_0,instrument_id,no_audio,mcq,1,,"Listen to this recording. Which instrument do you hear?
+A. violin
+B. flute
+C. piano
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|flute|piano|synth lead,flute,"I am sorry, but I cannot listen to audio recordings. As a text-based AI, I am unable to process audio files. Therefore, I cannot identify the instrument in the recording you are referring to.",,,,"{""midi"": 68, ""note_name"": ""G#4"", ""octave"": 4, ""pitch_class"": ""G#"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/069_synth_lead_timgm_0::no_audio::mcq,instrument_id/pitch/069_synth_lead_timgm_0,instrument_id,no_audio,mcq,1,,"Listen to this recording. Which instrument do you hear?
+A. flute
+B. synth lead
+C. violin
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|synth lead|violin|piano,synth lead,D,piano,False,,"{""midi"": 69, ""note_name"": ""A4"", ""octave"": 4, ""pitch_class"": ""A"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/070_piano_timgm_1::no_audio::mcq,instrument_id/pitch/070_piano_timgm_1,instrument_id,no_audio,mcq,0,,"What instrument is playing in this clip?
+A. synth lead
+B. piano
+C. flute
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|piano|flute|violin,piano,"I am sorry, but I cannot answer your question. You have not provided an audio clip for me to listen to. I am a text-based AI and cannot process audio files.",,,,"{""midi"": 70, ""note_name"": ""A#4"", ""octave"": 4, ""pitch_class"": ""A#"", ""program"": ""piano"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/071_piano_musescore_1::no_audio::mcq,instrument_id/pitch/071_piano_musescore_1,instrument_id,no_audio,mcq,2,,"Identify the instrument that plays the note in this clip.
+A. violin
+B. synth lead
+C. piano
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|synth lead|piano|flute,piano,C,piano,True,,"{""midi"": 71, ""note_name"": ""B4"", ""octave"": 4, ""pitch_class"": ""B"", ""program"": ""piano"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/072_flute_timgm_0::no_audio::mcq,instrument_id/pitch/072_flute_timgm_0,instrument_id,no_audio,mcq,2,,"Identify the instrument that plays the note in this clip.
+A. violin
+B. synth lead
+C. flute
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|synth lead|flute|piano,flute,"I am sorry, but I cannot access or process audio clips. Therefore, I cannot identify the instrument in the clip you are referring to.",,,,"{""midi"": 72, ""note_name"": ""C5"", ""octave"": 5, ""pitch_class"": ""C"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/075_flute_musescore_0::no_audio::mcq,instrument_id/pitch/075_flute_musescore_0,instrument_id,no_audio,mcq,1,,"Listen to this recording. Which instrument do you hear?
+A. flute
+B. synth lead
+C. piano
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|synth lead|piano|violin,flute,D,violin,False,,"{""midi"": 75, ""note_name"": ""D#5"", ""octave"": 5, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/078_flute_fluidr3_0::no_audio::mcq,instrument_id/pitch/078_flute_fluidr3_0,instrument_id,no_audio,mcq,0,,"What instrument is playing in this clip?
+A. flute
+B. piano
+C. violin
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|piano|violin|synth lead,flute,"I am sorry, but you have not provided an audio clip. Therefore, I cannot identify the instrument playing in it. Please provide the audio clip, and I will be happy to help.",,,,"{""midi"": 78, ""note_name"": ""F#5"", ""octave"": 5, ""pitch_class"": ""F#"", ""program"": ""flute"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/080_synth_lead_fluidr3_1::no_audio::mcq,instrument_id/pitch/080_synth_lead_fluidr3_1,instrument_id,no_audio,mcq,1,,"Listen to this recording. Which instrument do you hear?
+A. flute
+B. violin
+C. piano
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|violin|piano|synth lead,synth lead,C,piano,False,,"{""midi"": 80, ""note_name"": ""G#5"", ""octave"": 5, ""pitch_class"": ""G#"", ""program"": ""synth_lead"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/080_synth_lead_musescore_0::no_audio::mcq,instrument_id/pitch/080_synth_lead_musescore_0,instrument_id,no_audio,mcq,0,,"What instrument is playing in this clip?
+A. violin
+B. piano
+C. flute
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|piano|flute|synth lead,synth lead,"I am sorry, but you have not provided an audio clip. I need to hear the clip to identify the instrument.",,,,"{""midi"": 80, ""note_name"": ""G#5"", ""octave"": 5, ""pitch_class"": ""G#"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/082_synth_lead_timgm_1::no_audio::mcq,instrument_id/pitch/082_synth_lead_timgm_1,instrument_id,no_audio,mcq,2,,"Identify the instrument that plays the note in this clip.
+A. piano
+B. flute
+C. violin
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|flute|violin|synth lead,synth lead,"I am sorry, but I cannot access or listen to audio clips. Therefore, I cannot identify the instrument in the clip you are referring to.",,,,"{""midi"": 82, ""note_name"": ""A#5"", ""octave"": 5, ""pitch_class"": ""A#"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/082_violin_timgm_0::no_audio::mcq,instrument_id/pitch/082_violin_timgm_0,instrument_id,no_audio,mcq,2,,"Identify the instrument that plays the note in this clip.
+A. synth lead
+B. violin
+C. piano
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|violin|piano|flute,violin,"I am sorry, but you have not provided an audio clip. I cannot identify the instrument without it.",,,,"{""midi"": 82, ""note_name"": ""A#5"", ""octave"": 5, ""pitch_class"": ""A#"", ""program"": ""violin"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/083_flute_timgm_1::no_audio::mcq,instrument_id/pitch/083_flute_timgm_1,instrument_id,no_audio,mcq,2,,"Identify the instrument that plays the note in this clip.
+A. violin
+B. flute
+C. piano
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|flute|piano|synth lead,flute,"I am sorry, but I cannot hear or process audio clips. Therefore, I cannot identify the instrument in the clip you are referring to.",,,,"{""midi"": 83, ""note_name"": ""B5"", ""octave"": 5, ""pitch_class"": ""B"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/083_synth_lead_timgm_0::no_audio::mcq,instrument_id/pitch/083_synth_lead_timgm_0,instrument_id,no_audio,mcq,0,,"What instrument is playing in this clip?
+A. synth lead
+B. violin
+C. piano
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|violin|piano|flute,synth lead,"I am sorry, but you have not provided an audio clip for me to listen to. I am a text-based AI and cannot process audio.",,,,"{""midi"": 83, ""note_name"": ""B5"", ""octave"": 5, ""pitch_class"": ""B"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/053_synth_lead_musescore_0::wrong_audio::mcq,instrument_id/pitch/053_synth_lead_musescore_0,instrument_id,wrong_audio,mcq,2,stimuli/tuning/tune_0003.wav,"Identify the instrument that plays the note in this clip.
+A. flute
+B. violin
+C. piano
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",flute|violin|piano|synth lead,synth lead,D,synth lead,True,,"{""midi"": 53, ""note_name"": ""F3"", ""octave"": 3, ""pitch_class"": ""F"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/054_synth_lead_musescore_1::wrong_audio::mcq,instrument_id/pitch/054_synth_lead_musescore_1,instrument_id,wrong_audio,mcq,1,stimuli/polyphony/count1_11.wav,"Listen to this recording. Which instrument do you hear?
+A. synth lead
+B. violin
+C. flute
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|violin|flute|piano,synth lead,A,synth lead,True,,"{""midi"": 54, ""note_name"": ""F#3"", ""octave"": 3, ""pitch_class"": ""F#"", ""program"": ""synth_lead"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/054_synth_lead_timgm_0::wrong_audio::mcq,instrument_id/pitch/054_synth_lead_timgm_0,instrument_id,wrong_audio,mcq,2,stimuli/pitch/072_violin_musescore_1.wav,"Identify the instrument that plays the note in this clip.
+A. piano
+B. synth lead
+C. violin
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|synth lead|violin|flute,synth lead,C,violin,False,,"{""midi"": 54, ""note_name"": ""F#3"", ""octave"": 3, ""pitch_class"": ""F#"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/055_piano_fluidr3_1::wrong_audio::mcq,instrument_id/pitch/055_piano_fluidr3_1,instrument_id,wrong_audio,mcq,1,stimuli/mode/major_62_melody_drone.wav,"Listen to this recording. Which instrument do you hear?
+A. synth lead
+B. violin
+C. flute
+D. piano
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",synth lead|violin|flute|piano,piano,B,violin,False,,"{""midi"": 55, ""note_name"": ""G3"", ""octave"": 3, ""pitch_class"": ""G"", ""program"": ""piano"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/056_violin_fluidr3_0::wrong_audio::mcq,instrument_id/pitch/056_violin_fluidr3_0,instrument_id,wrong_audio,mcq,0,stimuli/pitch/073_synth_lead_timgm_1.wav,"What instrument is playing in this clip?
+A. piano
+B. flute
+C. synth lead
+D. violin
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|flute|synth lead|violin,violin,C,synth lead,False,,"{""midi"": 56, ""note_name"": ""G#3"", ""octave"": 3, ""pitch_class"": ""G#"", ""program"": ""violin"", ""soundfont"": ""fluidr3""}"
+instrument_id/pitch/064_flute_timgm_0::wrong_audio::mcq,instrument_id/pitch/064_flute_timgm_0,instrument_id,wrong_audio,mcq,0,stimuli/pitch/068_flute_musescore_0.wav,"What instrument is playing in this clip?
+A. piano
+B. synth lead
+C. violin
+D. flute
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|synth lead|violin|flute,flute,D,flute,True,,"{""midi"": 64, ""note_name"": ""E4"", ""octave"": 4, ""pitch_class"": ""E"", ""program"": ""flute"", ""soundfont"": ""timgm""}"
+instrument_id/pitch/075_flute_musescore_0::wrong_audio::mcq,instrument_id/pitch/075_flute_musescore_0,instrument_id,wrong_audio,mcq,1,stimuli/tuning/tune_0100.wav,"Listen to this recording. Which instrument do you hear?
+A. violin
+B. flute
+C. piano
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",violin|flute|piano|synth lead,flute,C,piano,False,,"{""midi"": 75, ""note_name"": ""D#5"", ""octave"": 5, ""pitch_class"": ""D#"", ""program"": ""flute"", ""soundfont"": ""musescore""}"
+instrument_id/pitch/081_synth_lead_timgm_0::wrong_audio::mcq,instrument_id/pitch/081_synth_lead_timgm_0,instrument_id,wrong_audio,mcq,2,stimuli/key/Ds_minor_progression_1.wav,"Identify the instrument that plays the note in this clip.
+A. piano
+B. flute
+C. violin
+D. synth lead
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",piano|flute|violin|synth lead,synth lead,A,piano,False,,"{""midi"": 81, ""note_name"": ""A5"", ""octave"": 5, ""pitch_class"": ""A"", ""program"": ""synth_lead"", ""soundfont"": ""timgm""}"

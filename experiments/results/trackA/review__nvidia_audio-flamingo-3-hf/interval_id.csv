@@ -1,0 +1,1259 @@
+job_id,stimulus_id,task,condition,format,paraphrase_idx,audio_path,prompt,options,ground_truth,raw_response,parsed,correct,error,factors
+interval_id/M2_harmonic_51_0::audio::mcq,interval_id/M2_harmonic_51_0,interval_id,audio,mcq,0,stimuli/intervals/M2_harmonic_51_0.wav,"Two notes are played. What is the musical interval between them?
+A. minor second
+B. major second
+C. minor third
+D. perfect fourth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|major second|minor third|perfect fourth,major second,A,minor second,False,,"{""interval_short"": ""M2"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 51, ""root_name"": ""D#3"", ""semitones"": 2, ""soundfont"": ""musescore""}"
+interval_id/M2_harmonic_51_0::audio::open,interval_id/M2_harmonic_51_0,interval_id,audio,open,1,stimuli/intervals/M2_harmonic_51_0.wav,"Listen to the two pitches. Name the interval they form.
+Give a short, direct answer.",,major second,Octave,Octave,False,,"{""interval_short"": ""M2"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 51, ""root_name"": ""D#3"", ""semitones"": 2, ""soundfont"": ""musescore""}"
+interval_id/M2_harmonic_58_1::audio::mcq,interval_id/M2_harmonic_58_1,interval_id,audio,mcq,1,stimuli/intervals/M2_harmonic_58_1.wav,"Listen to the two pitches. Name the interval they form.
+A. minor third
+B. major second
+C. tritone
+D. minor second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|major second|tritone|minor second,major second,C,tritone,False,,"{""interval_short"": ""M2"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 2, ""soundfont"": ""musescore""}"
+interval_id/M2_harmonic_65_3::audio::mcq,interval_id/M2_harmonic_65_3,interval_id,audio,mcq,1,stimuli/intervals/M2_harmonic_65_3.wav,"Listen to the two pitches. Name the interval they form.
+A. major second
+B. minor third
+C. minor second
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major second|minor third|minor second|minor seventh,major second,C,minor second,False,,"{""interval_short"": ""M2"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 65, ""root_name"": ""F4"", ""semitones"": 2, ""soundfont"": ""fluidr3""}"
+interval_id/M2_harmonic_70_2::audio::mcq,interval_id/M2_harmonic_70_2,interval_id,audio,mcq,1,stimuli/intervals/M2_harmonic_70_2.wav,"Listen to the two pitches. Name the interval they form.
+A. minor second
+B. major third
+C. major second
+D. minor third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|major third|major second|minor third,major second,C,major second,True,,"{""interval_short"": ""M2"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 70, ""root_name"": ""A#4"", ""semitones"": 2, ""soundfont"": ""timgm""}"
+interval_id/M2_melodic_asc_53_3::audio::mcq,interval_id/M2_melodic_asc_53_3,interval_id,audio,mcq,1,stimuli/intervals/M2_melodic_asc_53_3.wav,"Listen to the two pitches. Name the interval they form.
+A. major second
+B. minor second
+C. perfect fifth
+D. minor third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major second|minor second|perfect fifth|minor third,major second,A,major second,True,,"{""interval_short"": ""M2"", ""presentation"": ""melodic_asc"", ""program"": ""piano"", ""root"": 53, ""root_name"": ""F3"", ""semitones"": 2, ""soundfont"": ""fluidr3""}"
+interval_id/M2_melodic_asc_61_0::audio::mcq,interval_id/M2_melodic_asc_61_0,interval_id,audio,mcq,2,stimuli/intervals/M2_melodic_asc_61_0.wav,"What interval do you hear between the notes in this clip?
+A. minor third
+B. major second
+C. major third
+D. minor second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|major second|major third|minor second,major second,A,minor third,False,,"{""interval_short"": ""M2"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 61, ""root_name"": ""C#4"", ""semitones"": 2, ""soundfont"": ""timgm""}"
+interval_id/M2_melodic_asc_62_2::audio::mcq,interval_id/M2_melodic_asc_62_2,interval_id,audio,mcq,1,stimuli/intervals/M2_melodic_asc_62_2.wav,"Listen to the two pitches. Name the interval they form.
+A. major second
+B. perfect fourth
+C. minor second
+D. minor third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major second|perfect fourth|minor second|minor third,major second,A,major second,True,,"{""interval_short"": ""M2"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 62, ""root_name"": ""D4"", ""semitones"": 2, ""soundfont"": ""musescore""}"
+interval_id/M2_melodic_asc_64_1::audio::mcq,interval_id/M2_melodic_asc_64_1,interval_id,audio,mcq,2,stimuli/intervals/M2_melodic_asc_64_1.wav,"What interval do you hear between the notes in this clip?
+A. minor second
+B. major second
+C. minor third
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|major second|minor third|perfect fifth,major second,B,major second,True,,"{""interval_short"": ""M2"", ""presentation"": ""melodic_asc"", ""program"": ""flute"", ""root"": 64, ""root_name"": ""E4"", ""semitones"": 2, ""soundfont"": ""timgm""}"
+interval_id/M2_melodic_desc_49_2::audio::mcq,interval_id/M2_melodic_desc_49_2,interval_id,audio,mcq,0,stimuli/intervals/M2_melodic_desc_49_2.wav,"Two notes are played. What is the musical interval between them?
+A. minor third
+B. minor second
+C. major second
+D. major sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|minor second|major second|major sixth,major second,C,major second,True,,"{""interval_short"": ""M2"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 49, ""root_name"": ""C#3"", ""semitones"": 2, ""soundfont"": ""fluidr3""}"
+interval_id/M2_melodic_desc_56_1::audio::mcq,interval_id/M2_melodic_desc_56_1,interval_id,audio,mcq,1,stimuli/intervals/M2_melodic_desc_56_1.wav,"Listen to the two pitches. Name the interval they form.
+A. major second
+B. minor second
+C. minor third
+D. minor sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major second|minor second|minor third|minor sixth,major second,B,minor second,False,,"{""interval_short"": ""M2"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 56, ""root_name"": ""G#3"", ""semitones"": 2, ""soundfont"": ""musescore""}"
+interval_id/M2_melodic_desc_63_3::audio::mcq,interval_id/M2_melodic_desc_63_3,interval_id,audio,mcq,0,stimuli/intervals/M2_melodic_desc_63_3.wav,"Two notes are played. What is the musical interval between them?
+A. minor seventh
+B. major second
+C. minor third
+D. minor second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|major second|minor third|minor second,major second,D,minor second,False,,"{""interval_short"": ""M2"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 63, ""root_name"": ""D#4"", ""semitones"": 2, ""soundfont"": ""musescore""}"
+interval_id/M2_melodic_desc_68_0::audio::mcq,interval_id/M2_melodic_desc_68_0,interval_id,audio,mcq,1,stimuli/intervals/M2_melodic_desc_68_0.wav,"Listen to the two pitches. Name the interval they form.
+A. minor second
+B. tritone
+C. major second
+D. minor third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|tritone|major second|minor third,major second,A,minor second,False,,"{""interval_short"": ""M2"", ""presentation"": ""melodic_desc"", ""program"": ""violin"", ""root"": 68, ""root_name"": ""G#4"", ""semitones"": 2, ""soundfont"": ""musescore""}"
+interval_id/M3_harmonic_50_1::audio::mcq,interval_id/M3_harmonic_50_1,interval_id,audio,mcq,0,stimuli/intervals/M3_harmonic_50_1.wav,"Two notes are played. What is the musical interval between them?
+A. minor third
+B. minor second
+C. major third
+D. perfect fourth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|minor second|major third|perfect fourth,major third,B,minor second,False,,"{""interval_short"": ""M3"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 50, ""root_name"": ""D3"", ""semitones"": 4, ""soundfont"": ""timgm""}"
+interval_id/M3_harmonic_53_2::audio::mcq,interval_id/M3_harmonic_53_2,interval_id,audio,mcq,2,stimuli/intervals/M3_harmonic_53_2.wav,"What interval do you hear between the notes in this clip?
+A. minor third
+B. minor seventh
+C. major third
+D. perfect fourth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|minor seventh|major third|perfect fourth,major third,A,minor third,False,,"{""interval_short"": ""M3"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 53, ""root_name"": ""F3"", ""semitones"": 4, ""soundfont"": ""musescore""}"
+interval_id/M3_harmonic_53_2::audio::open,interval_id/M3_harmonic_53_2,interval_id,audio,open,2,stimuli/intervals/M3_harmonic_53_2.wav,"What interval do you hear between the notes in this clip?
+Give a short, direct answer.",,major third,The interval between the notes in this clip is a major third.,The interval between the notes in this clip is a major third.,True,,"{""interval_short"": ""M3"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 53, ""root_name"": ""F3"", ""semitones"": 4, ""soundfont"": ""musescore""}"
+interval_id/M3_harmonic_60_0::audio::mcq,interval_id/M3_harmonic_60_0,interval_id,audio,mcq,2,stimuli/intervals/M3_harmonic_60_0.wav,"What interval do you hear between the notes in this clip?
+A. minor third
+B. major third
+C. perfect fourth
+D. major sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|major third|perfect fourth|major sixth,major third,B,major third,True,,"{""interval_short"": ""M3"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 60, ""root_name"": ""C4"", ""semitones"": 4, ""soundfont"": ""fluidr3""}"
+interval_id/M3_harmonic_69_3::audio::mcq,interval_id/M3_harmonic_69_3,interval_id,audio,mcq,1,stimuli/intervals/M3_harmonic_69_3.wav,"Listen to the two pitches. Name the interval they form.
+A. major third
+B. minor third
+C. perfect fourth
+D. minor sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|minor third|perfect fourth|minor sixth,major third,A,major third,True,,"{""interval_short"": ""M3"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 69, ""root_name"": ""A4"", ""semitones"": 4, ""soundfont"": ""fluidr3""}"
+interval_id/M3_melodic_asc_62_2::audio::mcq,interval_id/M3_melodic_asc_62_2,interval_id,audio,mcq,0,stimuli/intervals/M3_melodic_asc_62_2.wav,"Two notes are played. What is the musical interval between them?
+A. major third
+B. perfect fourth
+C. major sixth
+D. minor third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|perfect fourth|major sixth|minor third,major third,A,major third,True,,"{""interval_short"": ""M3"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 62, ""root_name"": ""D4"", ""semitones"": 4, ""soundfont"": ""timgm""}"
+interval_id/M3_melodic_asc_66_1::audio::mcq,interval_id/M3_melodic_asc_66_1,interval_id,audio,mcq,2,stimuli/intervals/M3_melodic_asc_66_1.wav,"What interval do you hear between the notes in this clip?
+A. major third
+B. tritone
+C. minor third
+D. perfect fourth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|tritone|minor third|perfect fourth,major third,A,major third,True,,"{""interval_short"": ""M3"", ""presentation"": ""melodic_asc"", ""program"": ""flute"", ""root"": 66, ""root_name"": ""F#4"", ""semitones"": 4, ""soundfont"": ""timgm""}"
+interval_id/M3_melodic_asc_67_0::audio::mcq,interval_id/M3_melodic_asc_67_0,interval_id,audio,mcq,1,stimuli/intervals/M3_melodic_asc_67_0.wav,"Listen to the two pitches. Name the interval they form.
+A. major third
+B. minor third
+C. octave
+D. perfect fourth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|minor third|octave|perfect fourth,major third,A,major third,True,,"{""interval_short"": ""M3"", ""presentation"": ""melodic_asc"", ""program"": ""violin"", ""root"": 67, ""root_name"": ""G4"", ""semitones"": 4, ""soundfont"": ""timgm""}"
+interval_id/M3_melodic_asc_67_0::audio::open,interval_id/M3_melodic_asc_67_0,interval_id,audio,open,0,stimuli/intervals/M3_melodic_asc_67_0.wav,"Two notes are played. What is the musical interval between them?
+Give a short, direct answer.",,major third,An octave.,An octave.,False,,"{""interval_short"": ""M3"", ""presentation"": ""melodic_asc"", ""program"": ""violin"", ""root"": 67, ""root_name"": ""G4"", ""semitones"": 4, ""soundfont"": ""timgm""}"
+interval_id/M3_melodic_asc_68_3::audio::mcq,interval_id/M3_melodic_asc_68_3,interval_id,audio,mcq,1,stimuli/intervals/M3_melodic_asc_68_3.wav,"Listen to the two pitches. Name the interval they form.
+A. major third
+B. minor third
+C. perfect fifth
+D. perfect fourth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|minor third|perfect fifth|perfect fourth,major third,A,major third,True,,"{""interval_short"": ""M3"", ""presentation"": ""melodic_asc"", ""program"": ""violin"", ""root"": 68, ""root_name"": ""G#4"", ""semitones"": 4, ""soundfont"": ""timgm""}"
+interval_id/M3_melodic_desc_52_0::audio::mcq,interval_id/M3_melodic_desc_52_0,interval_id,audio,mcq,2,stimuli/intervals/M3_melodic_desc_52_0.wav,"What interval do you hear between the notes in this clip?
+A. perfect fifth
+B. perfect fourth
+C. minor third
+D. major third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fifth|perfect fourth|minor third|major third,major third,A,perfect fifth,False,,"{""interval_short"": ""M3"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 52, ""root_name"": ""E3"", ""semitones"": 4, ""soundfont"": ""fluidr3""}"
+interval_id/M3_melodic_desc_52_0::audio::open,interval_id/M3_melodic_desc_52_0,interval_id,audio,open,1,stimuli/intervals/M3_melodic_desc_52_0.wav,"Listen to the two pitches. Name the interval they form.
+Give a short, direct answer.",,major third,Octave,Octave,False,,"{""interval_short"": ""M3"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 52, ""root_name"": ""E3"", ""semitones"": 4, ""soundfont"": ""fluidr3""}"
+interval_id/M3_melodic_desc_54_2::audio::mcq,interval_id/M3_melodic_desc_54_2,interval_id,audio,mcq,2,stimuli/intervals/M3_melodic_desc_54_2.wav,"What interval do you hear between the notes in this clip?
+A. perfect fourth
+B. minor third
+C. major third
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fourth|minor third|major third|major seventh,major third,B,minor third,False,,"{""interval_short"": ""M3"", ""presentation"": ""melodic_desc"", ""program"": ""violin"", ""root"": 54, ""root_name"": ""F#3"", ""semitones"": 4, ""soundfont"": ""fluidr3""}"
+interval_id/M3_melodic_desc_55_1::audio::mcq,interval_id/M3_melodic_desc_55_1,interval_id,audio,mcq,1,stimuli/intervals/M3_melodic_desc_55_1.wav,"Listen to the two pitches. Name the interval they form.
+A. perfect fourth
+B. minor third
+C. minor sixth
+D. major third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fourth|minor third|minor sixth|major third,major third,A,perfect fourth,False,,"{""interval_short"": ""M3"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 55, ""root_name"": ""G3"", ""semitones"": 4, ""soundfont"": ""timgm""}"
+interval_id/M3_melodic_desc_71_3::audio::mcq,interval_id/M3_melodic_desc_71_3,interval_id,audio,mcq,2,stimuli/intervals/M3_melodic_desc_71_3.wav,"What interval do you hear between the notes in this clip?
+A. major third
+B. major second
+C. minor third
+D. perfect fourth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|major second|minor third|perfect fourth,major third,A,major third,True,,"{""interval_short"": ""M3"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 71, ""root_name"": ""B4"", ""semitones"": 4, ""soundfont"": ""timgm""}"
+interval_id/M3_melodic_desc_71_3::audio::open,interval_id/M3_melodic_desc_71_3,interval_id,audio,open,2,stimuli/intervals/M3_melodic_desc_71_3.wav,"What interval do you hear between the notes in this clip?
+Give a short, direct answer.",,major third,The interval between the notes in this clip is a major third.,The interval between the notes in this clip is a major third.,True,,"{""interval_short"": ""M3"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 71, ""root_name"": ""B4"", ""semitones"": 4, ""soundfont"": ""timgm""}"
+interval_id/M6_harmonic_55_0::audio::mcq,interval_id/M6_harmonic_55_0,interval_id,audio,mcq,0,stimuli/intervals/M6_harmonic_55_0.wav,"Two notes are played. What is the musical interval between them?
+A. major sixth
+B. minor seventh
+C. tritone
+D. minor sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|minor seventh|tritone|minor sixth,major sixth,C,tritone,False,,"{""interval_short"": ""M6"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 55, ""root_name"": ""G3"", ""semitones"": 9, ""soundfont"": ""fluidr3""}"
+interval_id/M6_harmonic_55_1::audio::mcq,interval_id/M6_harmonic_55_1,interval_id,audio,mcq,0,stimuli/intervals/M6_harmonic_55_1.wav,"Two notes are played. What is the musical interval between them?
+A. major sixth
+B. minor sixth
+C. minor third
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|minor sixth|minor third|minor seventh,major sixth,C,minor third,False,,"{""interval_short"": ""M6"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 55, ""root_name"": ""G3"", ""semitones"": 9, ""soundfont"": ""musescore""}"
+interval_id/M6_harmonic_61_3::audio::mcq,interval_id/M6_harmonic_61_3,interval_id,audio,mcq,1,stimuli/intervals/M6_harmonic_61_3.wav,"Listen to the two pitches. Name the interval they form.
+A. minor second
+B. minor seventh
+C. minor sixth
+D. major sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|minor seventh|minor sixth|major sixth,major sixth,A,minor second,False,,"{""interval_short"": ""M6"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 61, ""root_name"": ""C#4"", ""semitones"": 9, ""soundfont"": ""fluidr3""}"
+interval_id/M6_harmonic_71_2::audio::mcq,interval_id/M6_harmonic_71_2,interval_id,audio,mcq,2,stimuli/intervals/M6_harmonic_71_2.wav,"What interval do you hear between the notes in this clip?
+A. minor seventh
+B. minor sixth
+C. major sixth
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|minor sixth|major sixth|major seventh,major sixth,B,minor sixth,False,,"{""interval_short"": ""M6"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 71, ""root_name"": ""B4"", ""semitones"": 9, ""soundfont"": ""fluidr3""}"
+interval_id/M6_harmonic_71_2::audio::explain,interval_id/M6_harmonic_71_2,interval_id,audio,explain,1,stimuli/intervals/M6_harmonic_71_2.wav,"Listen to the two pitches. Name the interval they form.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,major sixth,The two pitches form a [interval name]. I heard [specific notes/chords/beats] at [time stamps] that support this.,,,,"{""interval_short"": ""M6"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 71, ""root_name"": ""B4"", ""semitones"": 9, ""soundfont"": ""fluidr3""}"
+interval_id/M6_melodic_asc_49_0::audio::mcq,interval_id/M6_melodic_asc_49_0,interval_id,audio,mcq,1,stimuli/intervals/M6_melodic_asc_49_0.wav,"Listen to the two pitches. Name the interval they form.
+A. major sixth
+B. minor seventh
+C. minor sixth
+D. major second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|minor seventh|minor sixth|major second,major sixth,A,major sixth,True,,"{""interval_short"": ""M6"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 49, ""root_name"": ""C#3"", ""semitones"": 9, ""soundfont"": ""musescore""}"
+interval_id/M6_melodic_asc_63_2::audio::mcq,interval_id/M6_melodic_asc_63_2,interval_id,audio,mcq,1,stimuli/intervals/M6_melodic_asc_63_2.wav,"Listen to the two pitches. Name the interval they form.
+A. major sixth
+B. minor seventh
+C. minor sixth
+D. perfect fourth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|minor seventh|minor sixth|perfect fourth,major sixth,C,minor sixth,False,,"{""interval_short"": ""M6"", ""presentation"": ""melodic_asc"", ""program"": ""flute"", ""root"": 63, ""root_name"": ""D#4"", ""semitones"": 9, ""soundfont"": ""timgm""}"
+interval_id/M6_melodic_asc_68_3::audio::mcq,interval_id/M6_melodic_asc_68_3,interval_id,audio,mcq,2,stimuli/intervals/M6_melodic_asc_68_3.wav,"What interval do you hear between the notes in this clip?
+A. major sixth
+B. major seventh
+C. minor sixth
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|major seventh|minor sixth|minor seventh,major sixth,A,major sixth,True,,"{""interval_short"": ""M6"", ""presentation"": ""melodic_asc"", ""program"": ""piano"", ""root"": 68, ""root_name"": ""G#4"", ""semitones"": 9, ""soundfont"": ""timgm""}"
+interval_id/M6_melodic_asc_70_1::audio::mcq,interval_id/M6_melodic_asc_70_1,interval_id,audio,mcq,1,stimuli/intervals/M6_melodic_asc_70_1.wav,"Listen to the two pitches. Name the interval they form.
+A. minor seventh
+B. tritone
+C. minor sixth
+D. major sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|tritone|minor sixth|major sixth,major sixth,B,tritone,False,,"{""interval_short"": ""M6"", ""presentation"": ""melodic_asc"", ""program"": ""piano"", ""root"": 70, ""root_name"": ""A#4"", ""semitones"": 9, ""soundfont"": ""fluidr3""}"
+interval_id/M6_melodic_asc_70_1::audio::open,interval_id/M6_melodic_asc_70_1,interval_id,audio,open,1,stimuli/intervals/M6_melodic_asc_70_1.wav,"Listen to the two pitches. Name the interval they form.
+Give a short, direct answer.",,major sixth,Octave,Octave,False,,"{""interval_short"": ""M6"", ""presentation"": ""melodic_asc"", ""program"": ""piano"", ""root"": 70, ""root_name"": ""A#4"", ""semitones"": 9, ""soundfont"": ""fluidr3""}"
+interval_id/M6_melodic_desc_60_1::audio::mcq,interval_id/M6_melodic_desc_60_1,interval_id,audio,mcq,0,stimuli/intervals/M6_melodic_desc_60_1.wav,"Two notes are played. What is the musical interval between them?
+A. minor seventh
+B. minor sixth
+C. octave
+D. major sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|minor sixth|octave|major sixth,major sixth,B,minor sixth,False,,"{""interval_short"": ""M6"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 60, ""root_name"": ""C4"", ""semitones"": 9, ""soundfont"": ""musescore""}"
+interval_id/M6_melodic_desc_60_3::audio::mcq,interval_id/M6_melodic_desc_60_3,interval_id,audio,mcq,1,stimuli/intervals/M6_melodic_desc_60_3.wav,"Listen to the two pitches. Name the interval they form.
+A. minor third
+B. minor sixth
+C. major sixth
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|minor sixth|major sixth|minor seventh,major sixth,B,minor sixth,False,,"{""interval_short"": ""M6"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 60, ""root_name"": ""C4"", ""semitones"": 9, ""soundfont"": ""fluidr3""}"
+interval_id/M6_melodic_desc_64_2::audio::mcq,interval_id/M6_melodic_desc_64_2,interval_id,audio,mcq,2,stimuli/intervals/M6_melodic_desc_64_2.wav,"What interval do you hear between the notes in this clip?
+A. major sixth
+B. major second
+C. minor seventh
+D. minor sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|major second|minor seventh|minor sixth,major sixth,A,major sixth,True,,"{""interval_short"": ""M6"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 64, ""root_name"": ""E4"", ""semitones"": 9, ""soundfont"": ""timgm""}"
+interval_id/M6_melodic_desc_67_0::audio::mcq,interval_id/M6_melodic_desc_67_0,interval_id,audio,mcq,1,stimuli/intervals/M6_melodic_desc_67_0.wav,"Listen to the two pitches. Name the interval they form.
+A. minor seventh
+B. major sixth
+C. octave
+D. minor sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|major sixth|octave|minor sixth,major sixth,C,octave,False,,"{""interval_short"": ""M6"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 67, ""root_name"": ""G4"", ""semitones"": 9, ""soundfont"": ""fluidr3""}"
+interval_id/M6_melodic_desc_67_0::audio::open,interval_id/M6_melodic_desc_67_0,interval_id,audio,open,0,stimuli/intervals/M6_melodic_desc_67_0.wav,"Two notes are played. What is the musical interval between them?
+Give a short, direct answer.",,major sixth,A minor third.,A minor third.,False,,"{""interval_short"": ""M6"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 67, ""root_name"": ""G4"", ""semitones"": 9, ""soundfont"": ""fluidr3""}"
+interval_id/M7_harmonic_53_2::audio::mcq,interval_id/M7_harmonic_53_2,interval_id,audio,mcq,1,stimuli/intervals/M7_harmonic_53_2.wav,"Listen to the two pitches. Name the interval they form.
+A. minor seventh
+B. major seventh
+C. minor sixth
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|major seventh|minor sixth|octave,major seventh,D,octave,False,,"{""interval_short"": ""M7"", ""presentation"": ""harmonic"", ""program"": ""violin"", ""root"": 53, ""root_name"": ""F3"", ""semitones"": 11, ""soundfont"": ""musescore""}"
+interval_id/M7_harmonic_53_2::audio::open,interval_id/M7_harmonic_53_2,interval_id,audio,open,2,stimuli/intervals/M7_harmonic_53_2.wav,"What interval do you hear between the notes in this clip?
+Give a short, direct answer.",,major seventh,The interval between the notes in this clip is a minor third.,The interval between the notes in this clip is a minor third.,False,,"{""interval_short"": ""M7"", ""presentation"": ""harmonic"", ""program"": ""violin"", ""root"": 53, ""root_name"": ""F3"", ""semitones"": 11, ""soundfont"": ""musescore""}"
+interval_id/M7_harmonic_57_1::audio::mcq,interval_id/M7_harmonic_57_1,interval_id,audio,mcq,2,stimuli/intervals/M7_harmonic_57_1.wav,"What interval do you hear between the notes in this clip?
+A. major seventh
+B. minor seventh
+C. octave
+D. major second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|minor seventh|octave|major second,major seventh,D,major second,False,,"{""interval_short"": ""M7"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 57, ""root_name"": ""A3"", ""semitones"": 11, ""soundfont"": ""timgm""}"
+interval_id/M7_harmonic_60_3::audio::mcq,interval_id/M7_harmonic_60_3,interval_id,audio,mcq,2,stimuli/intervals/M7_harmonic_60_3.wav,"What interval do you hear between the notes in this clip?
+A. minor seventh
+B. minor sixth
+C. octave
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|minor sixth|octave|major seventh,major seventh,B,minor sixth,False,,"{""interval_short"": ""M7"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 60, ""root_name"": ""C4"", ""semitones"": 11, ""soundfont"": ""timgm""}"
+interval_id/M7_harmonic_64_0::audio::mcq,interval_id/M7_harmonic_64_0,interval_id,audio,mcq,0,stimuli/intervals/M7_harmonic_64_0.wav,"Two notes are played. What is the musical interval between them?
+A. major seventh
+B. octave
+C. minor third
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|octave|minor third|minor seventh,major seventh,C,minor third,False,,"{""interval_short"": ""M7"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 64, ""root_name"": ""E4"", ""semitones"": 11, ""soundfont"": ""timgm""}"
+interval_id/M7_harmonic_64_0::audio::open,interval_id/M7_harmonic_64_0,interval_id,audio,open,0,stimuli/intervals/M7_harmonic_64_0.wav,"Two notes are played. What is the musical interval between them?
+Give a short, direct answer.",,major seventh,octave,octave,False,,"{""interval_short"": ""M7"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 64, ""root_name"": ""E4"", ""semitones"": 11, ""soundfont"": ""timgm""}"
+interval_id/M7_melodic_asc_56_0::audio::mcq,interval_id/M7_melodic_asc_56_0,interval_id,audio,mcq,0,stimuli/intervals/M7_melodic_asc_56_0.wav,"Two notes are played. What is the musical interval between them?
+A. major seventh
+B. tritone
+C. octave
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|tritone|octave|minor seventh,major seventh,B,tritone,False,,"{""interval_short"": ""M7"", ""presentation"": ""melodic_asc"", ""program"": ""flute"", ""root"": 56, ""root_name"": ""G#3"", ""semitones"": 11, ""soundfont"": ""fluidr3""}"
+interval_id/M7_melodic_asc_62_3::audio::mcq,interval_id/M7_melodic_asc_62_3,interval_id,audio,mcq,2,stimuli/intervals/M7_melodic_asc_62_3.wav,"What interval do you hear between the notes in this clip?
+A. octave
+B. major seventh
+C. tritone
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",octave|major seventh|tritone|minor seventh,major seventh,C,tritone,False,,"{""interval_short"": ""M7"", ""presentation"": ""melodic_asc"", ""program"": ""flute"", ""root"": 62, ""root_name"": ""D4"", ""semitones"": 11, ""soundfont"": ""fluidr3""}"
+interval_id/M7_melodic_asc_66_1::audio::mcq,interval_id/M7_melodic_asc_66_1,interval_id,audio,mcq,2,stimuli/intervals/M7_melodic_asc_66_1.wav,"What interval do you hear between the notes in this clip?
+A. major seventh
+B. minor third
+C. octave
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|minor third|octave|minor seventh,major seventh,B,minor third,False,,"{""interval_short"": ""M7"", ""presentation"": ""melodic_asc"", ""program"": ""piano"", ""root"": 66, ""root_name"": ""F#4"", ""semitones"": 11, ""soundfont"": ""timgm""}"
+interval_id/M7_melodic_asc_66_1::audio::open,interval_id/M7_melodic_asc_66_1,interval_id,audio,open,0,stimuli/intervals/M7_melodic_asc_66_1.wav,"Two notes are played. What is the musical interval between them?
+Give a short, direct answer.",,major seventh,A minor third.,A minor third.,False,,"{""interval_short"": ""M7"", ""presentation"": ""melodic_asc"", ""program"": ""piano"", ""root"": 66, ""root_name"": ""F#4"", ""semitones"": 11, ""soundfont"": ""timgm""}"
+interval_id/M7_melodic_asc_66_2::audio::mcq,interval_id/M7_melodic_asc_66_2,interval_id,audio,mcq,1,stimuli/intervals/M7_melodic_asc_66_2.wav,"Listen to the two pitches. Name the interval they form.
+A. octave
+B. major second
+C. major seventh
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",octave|major second|major seventh|minor seventh,major seventh,B,major second,False,,"{""interval_short"": ""M7"", ""presentation"": ""melodic_asc"", ""program"": ""piano"", ""root"": 66, ""root_name"": ""F#4"", ""semitones"": 11, ""soundfont"": ""musescore""}"
+interval_id/M7_melodic_asc_66_2::audio::open,interval_id/M7_melodic_asc_66_2,interval_id,audio,open,1,stimuli/intervals/M7_melodic_asc_66_2.wav,"Listen to the two pitches. Name the interval they form.
+Give a short, direct answer.",,major seventh,A minor third.,A minor third.,False,,"{""interval_short"": ""M7"", ""presentation"": ""melodic_asc"", ""program"": ""piano"", ""root"": 66, ""root_name"": ""F#4"", ""semitones"": 11, ""soundfont"": ""musescore""}"
+interval_id/M7_melodic_desc_48_1::audio::mcq,interval_id/M7_melodic_desc_48_1,interval_id,audio,mcq,1,stimuli/intervals/M7_melodic_desc_48_1.wav,"Listen to the two pitches. Name the interval they form.
+A. major seventh
+B. minor seventh
+C. minor third
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|minor seventh|minor third|octave,major seventh,D,octave,False,,"{""interval_short"": ""M7"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 48, ""root_name"": ""C3"", ""semitones"": 11, ""soundfont"": ""musescore""}"
+interval_id/M7_melodic_desc_53_2::audio::mcq,interval_id/M7_melodic_desc_53_2,interval_id,audio,mcq,1,stimuli/intervals/M7_melodic_desc_53_2.wav,"Listen to the two pitches. Name the interval they form.
+A. minor seventh
+B. major seventh
+C. minor second
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|major seventh|minor second|octave,major seventh,C,minor second,False,,"{""interval_short"": ""M7"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 53, ""root_name"": ""F3"", ""semitones"": 11, ""soundfont"": ""timgm""}"
+interval_id/M7_melodic_desc_63_3::audio::mcq,interval_id/M7_melodic_desc_63_3,interval_id,audio,mcq,2,stimuli/intervals/M7_melodic_desc_63_3.wav,"What interval do you hear between the notes in this clip?
+A. minor seventh
+B. tritone
+C. major seventh
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|tritone|major seventh|octave,major seventh,B,tritone,False,,"{""interval_short"": ""M7"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 63, ""root_name"": ""D#4"", ""semitones"": 11, ""soundfont"": ""timgm""}"
+interval_id/M7_melodic_desc_63_3::audio::open,interval_id/M7_melodic_desc_63_3,interval_id,audio,open,1,stimuli/intervals/M7_melodic_desc_63_3.wav,"Listen to the two pitches. Name the interval they form.
+Give a short, direct answer.",,major seventh,A minor third.,A minor third.,False,,"{""interval_short"": ""M7"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 63, ""root_name"": ""D#4"", ""semitones"": 11, ""soundfont"": ""timgm""}"
+interval_id/M7_melodic_desc_70_0::audio::mcq,interval_id/M7_melodic_desc_70_0,interval_id,audio,mcq,0,stimuli/intervals/M7_melodic_desc_70_0.wav,"Two notes are played. What is the musical interval between them?
+A. minor seventh
+B. major seventh
+C. perfect fourth
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|major seventh|perfect fourth|octave,major seventh,C,perfect fourth,False,,"{""interval_short"": ""M7"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 70, ""root_name"": ""A#4"", ""semitones"": 11, ""soundfont"": ""timgm""}"
+interval_id/P4_harmonic_49_0::audio::mcq,interval_id/P4_harmonic_49_0,interval_id,audio,mcq,0,stimuli/intervals/P4_harmonic_49_0.wav,"Two notes are played. What is the musical interval between them?
+A. major third
+B. perfect fourth
+C. tritone
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|perfect fourth|tritone|minor seventh,perfect fourth,C,tritone,False,,"{""interval_short"": ""P4"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 49, ""root_name"": ""C#3"", ""semitones"": 5, ""soundfont"": ""fluidr3""}"
+interval_id/P4_harmonic_49_0::audio::explain,interval_id/P4_harmonic_49_0,interval_id,audio,explain,0,stimuli/intervals/P4_harmonic_49_0.wav,"Two notes are played. What is the musical interval between them?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,perfect fourth,"The musical interval between the two notes is a major third. This is supported by the fact that the first note is played at 0.0 seconds and the second note is played at 1.0 seconds, and the pitch of the first note is C# and the pitch of the second note is E.",,,,"{""interval_short"": ""P4"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 49, ""root_name"": ""C#3"", ""semitones"": 5, ""soundfont"": ""fluidr3""}"
+interval_id/P4_harmonic_50_3::audio::mcq,interval_id/P4_harmonic_50_3,interval_id,audio,mcq,0,stimuli/intervals/P4_harmonic_50_3.wav,"Two notes are played. What is the musical interval between them?
+A. minor second
+B. perfect fourth
+C. tritone
+D. major third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|perfect fourth|tritone|major third,perfect fourth,C,tritone,False,,"{""interval_short"": ""P4"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 50, ""root_name"": ""D3"", ""semitones"": 5, ""soundfont"": ""musescore""}"
+interval_id/P4_harmonic_59_1::audio::mcq,interval_id/P4_harmonic_59_1,interval_id,audio,mcq,2,stimuli/intervals/P4_harmonic_59_1.wav,"What interval do you hear between the notes in this clip?
+A. major seventh
+B. tritone
+C. perfect fourth
+D. major third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|tritone|perfect fourth|major third,perfect fourth,B,tritone,False,,"{""interval_short"": ""P4"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 59, ""root_name"": ""B3"", ""semitones"": 5, ""soundfont"": ""fluidr3""}"
+interval_id/P4_harmonic_60_2::audio::mcq,interval_id/P4_harmonic_60_2,interval_id,audio,mcq,2,stimuli/intervals/P4_harmonic_60_2.wav,"What interval do you hear between the notes in this clip?
+A. perfect fourth
+B. major third
+C. tritone
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fourth|major third|tritone|minor seventh,perfect fourth,A,perfect fourth,True,,"{""interval_short"": ""P4"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 60, ""root_name"": ""C4"", ""semitones"": 5, ""soundfont"": ""timgm""}"
+interval_id/P4_melodic_asc_50_2::audio::mcq,interval_id/P4_melodic_asc_50_2,interval_id,audio,mcq,1,stimuli/intervals/P4_melodic_asc_50_2.wav,"Listen to the two pitches. Name the interval they form.
+A. minor third
+B. tritone
+C. major third
+D. perfect fourth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|tritone|major third|perfect fourth,perfect fourth,C,major third,False,,"{""interval_short"": ""P4"", ""presentation"": ""melodic_asc"", ""program"": ""piano"", ""root"": 50, ""root_name"": ""D3"", ""semitones"": 5, ""soundfont"": ""musescore""}"
+interval_id/P4_melodic_asc_54_1::audio::mcq,interval_id/P4_melodic_asc_54_1,interval_id,audio,mcq,0,stimuli/intervals/P4_melodic_asc_54_1.wav,"Two notes are played. What is the musical interval between them?
+A. major third
+B. major second
+C. perfect fourth
+D. tritone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|major second|perfect fourth|tritone,perfect fourth,A,major third,False,,"{""interval_short"": ""P4"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 54, ""root_name"": ""F#3"", ""semitones"": 5, ""soundfont"": ""fluidr3""}"
+interval_id/P4_melodic_asc_54_1::audio::explain,interval_id/P4_melodic_asc_54_1,interval_id,audio,explain,0,stimuli/intervals/P4_melodic_asc_54_1.wav,"Two notes are played. What is the musical interval between them?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,perfect fourth,"The musical interval between the two notes is a major third. This is supported by the specific notes/chords I heard: the first note is a C# major chord, and the second note is an E major chord.",,,,"{""interval_short"": ""P4"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 54, ""root_name"": ""F#3"", ""semitones"": 5, ""soundfont"": ""fluidr3""}"
+interval_id/P4_melodic_asc_59_0::audio::mcq,interval_id/P4_melodic_asc_59_0,interval_id,audio,mcq,1,stimuli/intervals/P4_melodic_asc_59_0.wav,"Listen to the two pitches. Name the interval they form.
+A. tritone
+B. minor third
+C. perfect fourth
+D. major third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",tritone|minor third|perfect fourth|major third,perfect fourth,C,perfect fourth,True,,"{""interval_short"": ""P4"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 59, ""root_name"": ""B3"", ""semitones"": 5, ""soundfont"": ""fluidr3""}"
+interval_id/P4_melodic_asc_59_0::audio::open,interval_id/P4_melodic_asc_59_0,interval_id,audio,open,0,stimuli/intervals/P4_melodic_asc_59_0.wav,"Two notes are played. What is the musical interval between them?
+Give a short, direct answer.",,perfect fourth,An octave.,An octave.,False,,"{""interval_short"": ""P4"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 59, ""root_name"": ""B3"", ""semitones"": 5, ""soundfont"": ""fluidr3""}"
+interval_id/P4_melodic_asc_59_3::audio::mcq,interval_id/P4_melodic_asc_59_3,interval_id,audio,mcq,0,stimuli/intervals/P4_melodic_asc_59_3.wav,"Two notes are played. What is the musical interval between them?
+A. octave
+B. major third
+C. tritone
+D. perfect fourth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",octave|major third|tritone|perfect fourth,perfect fourth,C,tritone,False,,"{""interval_short"": ""P4"", ""presentation"": ""melodic_asc"", ""program"": ""violin"", ""root"": 59, ""root_name"": ""B3"", ""semitones"": 5, ""soundfont"": ""musescore""}"
+interval_id/P4_melodic_desc_62_3::audio::mcq,interval_id/P4_melodic_desc_62_3,interval_id,audio,mcq,2,stimuli/intervals/P4_melodic_desc_62_3.wav,"What interval do you hear between the notes in this clip?
+A. major third
+B. perfect fourth
+C. minor sixth
+D. tritone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|perfect fourth|minor sixth|tritone,perfect fourth,B,perfect fourth,True,,"{""interval_short"": ""P4"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 62, ""root_name"": ""D4"", ""semitones"": 5, ""soundfont"": ""musescore""}"
+interval_id/P4_melodic_desc_65_0::audio::mcq,interval_id/P4_melodic_desc_65_0,interval_id,audio,mcq,0,stimuli/intervals/P4_melodic_desc_65_0.wav,"Two notes are played. What is the musical interval between them?
+A. tritone
+B. major sixth
+C. major third
+D. perfect fourth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",tritone|major sixth|major third|perfect fourth,perfect fourth,C,major third,False,,"{""interval_short"": ""P4"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 65, ""root_name"": ""F4"", ""semitones"": 5, ""soundfont"": ""fluidr3""}"
+interval_id/P4_melodic_desc_68_1::audio::mcq,interval_id/P4_melodic_desc_68_1,interval_id,audio,mcq,0,stimuli/intervals/P4_melodic_desc_68_1.wav,"Two notes are played. What is the musical interval between them?
+A. major third
+B. tritone
+C. perfect fourth
+D. major second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|tritone|perfect fourth|major second,perfect fourth,D,major second,False,,"{""interval_short"": ""P4"", ""presentation"": ""melodic_desc"", ""program"": ""violin"", ""root"": 68, ""root_name"": ""G#4"", ""semitones"": 5, ""soundfont"": ""fluidr3""}"
+interval_id/P4_melodic_desc_68_1::audio::explain,interval_id/P4_melodic_desc_68_1,interval_id,audio,explain,1,stimuli/intervals/P4_melodic_desc_68_1.wav,"Listen to the two pitches. Name the interval they form.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,perfect fourth,"The interval is a [interval type], because [explanation of the notes/chords/beats and their timestamps].",,,,"{""interval_short"": ""P4"", ""presentation"": ""melodic_desc"", ""program"": ""violin"", ""root"": 68, ""root_name"": ""G#4"", ""semitones"": 5, ""soundfont"": ""fluidr3""}"
+interval_id/P4_melodic_desc_71_2::audio::mcq,interval_id/P4_melodic_desc_71_2,interval_id,audio,mcq,2,stimuli/intervals/P4_melodic_desc_71_2.wav,"What interval do you hear between the notes in this clip?
+A. perfect fourth
+B. major third
+C. tritone
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fourth|major third|tritone|major seventh,perfect fourth,A,perfect fourth,True,,"{""interval_short"": ""P4"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 71, ""root_name"": ""B4"", ""semitones"": 5, ""soundfont"": ""timgm""}"
+interval_id/P5_harmonic_51_2::audio::mcq,interval_id/P5_harmonic_51_2,interval_id,audio,mcq,1,stimuli/intervals/P5_harmonic_51_2.wav,"Listen to the two pitches. Name the interval they form.
+A. minor sixth
+B. major third
+C. perfect fifth
+D. tritone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|major third|perfect fifth|tritone,perfect fifth,D,tritone,False,,"{""interval_short"": ""P5"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 51, ""root_name"": ""D#3"", ""semitones"": 7, ""soundfont"": ""musescore""}"
+interval_id/P5_harmonic_51_2::audio::open,interval_id/P5_harmonic_51_2,interval_id,audio,open,0,stimuli/intervals/P5_harmonic_51_2.wav,"Two notes are played. What is the musical interval between them?
+Give a short, direct answer.",,perfect fifth,A minor third.,A minor third.,False,,"{""interval_short"": ""P5"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 51, ""root_name"": ""D#3"", ""semitones"": 7, ""soundfont"": ""musescore""}"
+interval_id/P5_harmonic_58_1::audio::mcq,interval_id/P5_harmonic_58_1,interval_id,audio,mcq,2,stimuli/intervals/P5_harmonic_58_1.wav,"What interval do you hear between the notes in this clip?
+A. minor sixth
+B. major sixth
+C. perfect fifth
+D. tritone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|major sixth|perfect fifth|tritone,perfect fifth,B,major sixth,False,,"{""interval_short"": ""P5"", ""presentation"": ""harmonic"", ""program"": ""violin"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 7, ""soundfont"": ""fluidr3""}"
+interval_id/P5_harmonic_58_1::audio::open,interval_id/P5_harmonic_58_1,interval_id,audio,open,2,stimuli/intervals/P5_harmonic_58_1.wav,"What interval do you hear between the notes in this clip?
+Give a short, direct answer.",,perfect fifth,The interval between the notes in this clip is a minor third.,The interval between the notes in this clip is a minor third.,False,,"{""interval_short"": ""P5"", ""presentation"": ""harmonic"", ""program"": ""violin"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 7, ""soundfont"": ""fluidr3""}"
+interval_id/P5_harmonic_60_3::audio::mcq,interval_id/P5_harmonic_60_3,interval_id,audio,mcq,2,stimuli/intervals/P5_harmonic_60_3.wav,"What interval do you hear between the notes in this clip?
+A. minor sixth
+B. minor third
+C. perfect fifth
+D. tritone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|minor third|perfect fifth|tritone,perfect fifth,B,minor third,False,,"{""interval_short"": ""P5"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 60, ""root_name"": ""C4"", ""semitones"": 7, ""soundfont"": ""fluidr3""}"
+interval_id/P5_harmonic_70_0::audio::mcq,interval_id/P5_harmonic_70_0,interval_id,audio,mcq,2,stimuli/intervals/P5_harmonic_70_0.wav,"What interval do you hear between the notes in this clip?
+A. minor seventh
+B. perfect fifth
+C. tritone
+D. minor sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|perfect fifth|tritone|minor sixth,perfect fifth,C,tritone,False,,"{""interval_short"": ""P5"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 70, ""root_name"": ""A#4"", ""semitones"": 7, ""soundfont"": ""musescore""}"
+interval_id/P5_melodic_asc_51_1::audio::mcq,interval_id/P5_melodic_asc_51_1,interval_id,audio,mcq,1,stimuli/intervals/P5_melodic_asc_51_1.wav,"Listen to the two pitches. Name the interval they form.
+A. tritone
+B. minor third
+C. perfect fifth
+D. minor sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",tritone|minor third|perfect fifth|minor sixth,perfect fifth,A,tritone,False,,"{""interval_short"": ""P5"", ""presentation"": ""melodic_asc"", ""program"": ""violin"", ""root"": 51, ""root_name"": ""D#3"", ""semitones"": 7, ""soundfont"": ""timgm""}"
+interval_id/P5_melodic_asc_52_2::audio::mcq,interval_id/P5_melodic_asc_52_2,interval_id,audio,mcq,2,stimuli/intervals/P5_melodic_asc_52_2.wav,"What interval do you hear between the notes in this clip?
+A. minor sixth
+B. octave
+C. tritone
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|octave|tritone|perfect fifth,perfect fifth,C,tritone,False,,"{""interval_short"": ""P5"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 52, ""root_name"": ""E3"", ""semitones"": 7, ""soundfont"": ""fluidr3""}"
+interval_id/P5_melodic_asc_52_2::audio::open,interval_id/P5_melodic_asc_52_2,interval_id,audio,open,1,stimuli/intervals/P5_melodic_asc_52_2.wav,"Listen to the two pitches. Name the interval they form.
+Give a short, direct answer.",,perfect fifth,Octave,Octave,False,,"{""interval_short"": ""P5"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 52, ""root_name"": ""E3"", ""semitones"": 7, ""soundfont"": ""fluidr3""}"
+interval_id/P5_melodic_asc_55_0::audio::mcq,interval_id/P5_melodic_asc_55_0,interval_id,audio,mcq,1,stimuli/intervals/P5_melodic_asc_55_0.wav,"Listen to the two pitches. Name the interval they form.
+A. perfect fifth
+B. minor sixth
+C. tritone
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fifth|minor sixth|tritone|octave,perfect fifth,A,perfect fifth,True,,"{""interval_short"": ""P5"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 55, ""root_name"": ""G3"", ""semitones"": 7, ""soundfont"": ""timgm""}"
+interval_id/P5_melodic_asc_55_0::audio::open,interval_id/P5_melodic_asc_55_0,interval_id,audio,open,1,stimuli/intervals/P5_melodic_asc_55_0.wav,"Listen to the two pitches. Name the interval they form.
+Give a short, direct answer.",,perfect fifth,Octave,Octave,False,,"{""interval_short"": ""P5"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 55, ""root_name"": ""G3"", ""semitones"": 7, ""soundfont"": ""timgm""}"
+interval_id/P5_melodic_asc_68_3::audio::mcq,interval_id/P5_melodic_asc_68_3,interval_id,audio,mcq,1,stimuli/intervals/P5_melodic_asc_68_3.wav,"Listen to the two pitches. Name the interval they form.
+A. perfect fifth
+B. minor sixth
+C. tritone
+D. major sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fifth|minor sixth|tritone|major sixth,perfect fifth,A,perfect fifth,True,,"{""interval_short"": ""P5"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 68, ""root_name"": ""G#4"", ""semitones"": 7, ""soundfont"": ""timgm""}"
+interval_id/P5_melodic_asc_68_3::audio::explain,interval_id/P5_melodic_asc_68_3,interval_id,audio,explain,1,stimuli/intervals/P5_melodic_asc_68_3.wav,"Listen to the two pitches. Name the interval they form.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,perfect fifth,"The interval is a [interval type], because [explanation of the notes/chords/beats and their timestamps].",,,,"{""interval_short"": ""P5"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 68, ""root_name"": ""G#4"", ""semitones"": 7, ""soundfont"": ""timgm""}"
+interval_id/P5_melodic_desc_49_3::audio::mcq,interval_id/P5_melodic_desc_49_3,interval_id,audio,mcq,2,stimuli/intervals/P5_melodic_desc_49_3.wav,"What interval do you hear between the notes in this clip?
+A. minor sixth
+B. major third
+C. tritone
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|major third|tritone|perfect fifth,perfect fifth,C,tritone,False,,"{""interval_short"": ""P5"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 49, ""root_name"": ""C#3"", ""semitones"": 7, ""soundfont"": ""fluidr3""}"
+interval_id/P5_melodic_desc_52_0::audio::mcq,interval_id/P5_melodic_desc_52_0,interval_id,audio,mcq,0,stimuli/intervals/P5_melodic_desc_52_0.wav,"Two notes are played. What is the musical interval between them?
+A. tritone
+B. minor seventh
+C. minor sixth
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",tritone|minor seventh|minor sixth|perfect fifth,perfect fifth,A,tritone,False,,"{""interval_short"": ""P5"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 52, ""root_name"": ""E3"", ""semitones"": 7, ""soundfont"": ""musescore""}"
+interval_id/P5_melodic_desc_53_1::audio::mcq,interval_id/P5_melodic_desc_53_1,interval_id,audio,mcq,0,stimuli/intervals/P5_melodic_desc_53_1.wav,"Two notes are played. What is the musical interval between them?
+A. major sixth
+B. tritone
+C. perfect fifth
+D. minor sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|tritone|perfect fifth|minor sixth,perfect fifth,B,tritone,False,,"{""interval_short"": ""P5"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 53, ""root_name"": ""F3"", ""semitones"": 7, ""soundfont"": ""timgm""}"
+interval_id/P5_melodic_desc_53_1::audio::open,interval_id/P5_melodic_desc_53_1,interval_id,audio,open,0,stimuli/intervals/P5_melodic_desc_53_1.wav,"Two notes are played. What is the musical interval between them?
+Give a short, direct answer.",,perfect fifth,An octave.,An octave.,False,,"{""interval_short"": ""P5"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 53, ""root_name"": ""F3"", ""semitones"": 7, ""soundfont"": ""timgm""}"
+interval_id/P5_melodic_desc_59_2::audio::mcq,interval_id/P5_melodic_desc_59_2,interval_id,audio,mcq,1,stimuli/intervals/P5_melodic_desc_59_2.wav,"Listen to the two pitches. Name the interval they form.
+A. perfect fifth
+B. minor sixth
+C. minor second
+D. tritone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fifth|minor sixth|minor second|tritone,perfect fifth,A,perfect fifth,True,,"{""interval_short"": ""P5"", ""presentation"": ""melodic_desc"", ""program"": ""violin"", ""root"": 59, ""root_name"": ""B3"", ""semitones"": 7, ""soundfont"": ""fluidr3""}"
+interval_id/P8_harmonic_51_0::audio::mcq,interval_id/P8_harmonic_51_0,interval_id,audio,mcq,1,stimuli/intervals/P8_harmonic_51_0.wav,"Listen to the two pitches. Name the interval they form.
+A. octave
+B. perfect fourth
+C. major seventh
+D. minor second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",octave|perfect fourth|major seventh|minor second,octave,A,octave,True,,"{""interval_short"": ""P8"", ""presentation"": ""harmonic"", ""program"": ""violin"", ""root"": 51, ""root_name"": ""D#3"", ""semitones"": 12, ""soundfont"": ""musescore""}"
+interval_id/P8_harmonic_54_3::audio::mcq,interval_id/P8_harmonic_54_3,interval_id,audio,mcq,0,stimuli/intervals/P8_harmonic_54_3.wav,"Two notes are played. What is the musical interval between them?
+A. major seventh
+B. perfect fifth
+C. minor sixth
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|perfect fifth|minor sixth|octave,octave,B,perfect fifth,False,,"{""interval_short"": ""P8"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 54, ""root_name"": ""F#3"", ""semitones"": 12, ""soundfont"": ""musescore""}"
+interval_id/P8_harmonic_58_2::audio::mcq,interval_id/P8_harmonic_58_2,interval_id,audio,mcq,1,stimuli/intervals/P8_harmonic_58_2.wav,"Listen to the two pitches. Name the interval they form.
+A. major seventh
+B. minor second
+C. perfect fifth
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|minor second|perfect fifth|octave,octave,C,perfect fifth,False,,"{""interval_short"": ""P8"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 12, ""soundfont"": ""fluidr3""}"
+interval_id/P8_harmonic_58_2::audio::open,interval_id/P8_harmonic_58_2,interval_id,audio,open,2,stimuli/intervals/P8_harmonic_58_2.wav,"What interval do you hear between the notes in this clip?
+Give a short, direct answer.",,octave,The interval between the notes in this clip is a major third.,The interval between the notes in this clip is a major third.,False,,"{""interval_short"": ""P8"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 12, ""soundfont"": ""fluidr3""}"
+interval_id/P8_harmonic_58_2::audio::explain,interval_id/P8_harmonic_58_2,interval_id,audio,explain,0,stimuli/intervals/P8_harmonic_58_2.wav,"Two notes are played. What is the musical interval between them?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,octave,"The musical interval between the two notes is a [interval type], because [explanation of the notes/chords/beats and their timestamps].",,,,"{""interval_short"": ""P8"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 12, ""soundfont"": ""fluidr3""}"
+interval_id/P8_harmonic_66_1::audio::mcq,interval_id/P8_harmonic_66_1,interval_id,audio,mcq,0,stimuli/intervals/P8_harmonic_66_1.wav,"Two notes are played. What is the musical interval between them?
+A. minor third
+B. major seventh
+C. major third
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|major seventh|major third|octave,octave,C,major third,False,,"{""interval_short"": ""P8"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 66, ""root_name"": ""F#4"", ""semitones"": 12, ""soundfont"": ""timgm""}"
+interval_id/P8_melodic_asc_53_2::audio::mcq,interval_id/P8_melodic_asc_53_2,interval_id,audio,mcq,0,stimuli/intervals/P8_melodic_asc_53_2.wav,"Two notes are played. What is the musical interval between them?
+A. minor sixth
+B. octave
+C. major second
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|octave|major second|major seventh,octave,C,major second,False,,"{""interval_short"": ""P8"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 53, ""root_name"": ""F3"", ""semitones"": 12, ""soundfont"": ""fluidr3""}"
+interval_id/P8_melodic_asc_54_0::audio::mcq,interval_id/P8_melodic_asc_54_0,interval_id,audio,mcq,2,stimuli/intervals/P8_melodic_asc_54_0.wav,"What interval do you hear between the notes in this clip?
+A. major sixth
+B. major seventh
+C. minor sixth
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|major seventh|minor sixth|octave,octave,A,major sixth,False,,"{""interval_short"": ""P8"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 54, ""root_name"": ""F#3"", ""semitones"": 12, ""soundfont"": ""timgm""}"
+interval_id/P8_melodic_asc_59_1::audio::mcq,interval_id/P8_melodic_asc_59_1,interval_id,audio,mcq,1,stimuli/intervals/P8_melodic_asc_59_1.wav,"Listen to the two pitches. Name the interval they form.
+A. perfect fifth
+B. major seventh
+C. major second
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fifth|major seventh|major second|octave,octave,A,perfect fifth,False,,"{""interval_short"": ""P8"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 59, ""root_name"": ""B3"", ""semitones"": 12, ""soundfont"": ""timgm""}"
+interval_id/P8_melodic_asc_65_3::audio::mcq,interval_id/P8_melodic_asc_65_3,interval_id,audio,mcq,0,stimuli/intervals/P8_melodic_asc_65_3.wav,"Two notes are played. What is the musical interval between them?
+A. major seventh
+B. major third
+C. octave
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|major third|octave|perfect fifth,octave,D,perfect fifth,False,,"{""interval_short"": ""P8"", ""presentation"": ""melodic_asc"", ""program"": ""violin"", ""root"": 65, ""root_name"": ""F4"", ""semitones"": 12, ""soundfont"": ""musescore""}"
+interval_id/P8_melodic_desc_51_0::audio::mcq,interval_id/P8_melodic_desc_51_0,interval_id,audio,mcq,2,stimuli/intervals/P8_melodic_desc_51_0.wav,"What interval do you hear between the notes in this clip?
+A. major seventh
+B. minor second
+C. octave
+D. minor third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|minor second|octave|minor third,octave,D,minor third,False,,"{""interval_short"": ""P8"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 51, ""root_name"": ""D#3"", ""semitones"": 12, ""soundfont"": ""fluidr3""}"
+interval_id/P8_melodic_desc_51_0::audio::explain,interval_id/P8_melodic_desc_51_0,interval_id,audio,explain,2,stimuli/intervals/P8_melodic_desc_51_0.wav,"What interval do you hear between the notes in this clip?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,octave,I hear a [insert interval] between the notes in this clip. This is supported by the fact that the notes/chords/beats occur at [insert specific timestamps] and have a [insert specific interval] between them.,,,,"{""interval_short"": ""P8"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 51, ""root_name"": ""D#3"", ""semitones"": 12, ""soundfont"": ""fluidr3""}"
+interval_id/P8_melodic_desc_54_3::audio::mcq,interval_id/P8_melodic_desc_54_3,interval_id,audio,mcq,1,stimuli/intervals/P8_melodic_desc_54_3.wav,"Listen to the two pitches. Name the interval they form.
+A. major seventh
+B. octave
+C. tritone
+D. minor third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|octave|tritone|minor third,octave,C,tritone,False,,"{""interval_short"": ""P8"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 54, ""root_name"": ""F#3"", ""semitones"": 12, ""soundfont"": ""musescore""}"
+interval_id/P8_melodic_desc_54_3::audio::open,interval_id/P8_melodic_desc_54_3,interval_id,audio,open,2,stimuli/intervals/P8_melodic_desc_54_3.wav,"What interval do you hear between the notes in this clip?
+Give a short, direct answer.",,octave,The interval between the notes in this clip is a major third.,The interval between the notes in this clip is a major third.,False,,"{""interval_short"": ""P8"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 54, ""root_name"": ""F#3"", ""semitones"": 12, ""soundfont"": ""musescore""}"
+interval_id/P8_melodic_desc_54_3::audio::explain,interval_id/P8_melodic_desc_54_3,interval_id,audio,explain,0,stimuli/intervals/P8_melodic_desc_54_3.wav,"Two notes are played. What is the musical interval between them?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,octave,"The musical interval between the two notes is a major third. I heard a C# major chord at 0.0 seconds, followed by an E major chord at 0.9 seconds.",,,,"{""interval_short"": ""P8"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 54, ""root_name"": ""F#3"", ""semitones"": 12, ""soundfont"": ""musescore""}"
+interval_id/P8_melodic_desc_56_1::audio::mcq,interval_id/P8_melodic_desc_56_1,interval_id,audio,mcq,2,stimuli/intervals/P8_melodic_desc_56_1.wav,"What interval do you hear between the notes in this clip?
+A. minor second
+B. minor sixth
+C. octave
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|minor sixth|octave|major seventh,octave,A,minor second,False,,"{""interval_short"": ""P8"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 56, ""root_name"": ""G#3"", ""semitones"": 12, ""soundfont"": ""fluidr3""}"
+interval_id/P8_melodic_desc_57_2::audio::mcq,interval_id/P8_melodic_desc_57_2,interval_id,audio,mcq,2,stimuli/intervals/P8_melodic_desc_57_2.wav,"What interval do you hear between the notes in this clip?
+A. tritone
+B. octave
+C. major seventh
+D. minor second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",tritone|octave|major seventh|minor second,octave,A,tritone,False,,"{""interval_short"": ""P8"", ""presentation"": ""melodic_desc"", ""program"": ""violin"", ""root"": 57, ""root_name"": ""A3"", ""semitones"": 12, ""soundfont"": ""timgm""}"
+interval_id/P8_melodic_desc_57_2::audio::open,interval_id/P8_melodic_desc_57_2,interval_id,audio,open,2,stimuli/intervals/P8_melodic_desc_57_2.wav,"What interval do you hear between the notes in this clip?
+Give a short, direct answer.",,octave,The interval between the notes in this clip is a major third.,The interval between the notes in this clip is a major third.,False,,"{""interval_short"": ""P8"", ""presentation"": ""melodic_desc"", ""program"": ""violin"", ""root"": 57, ""root_name"": ""A3"", ""semitones"": 12, ""soundfont"": ""timgm""}"
+interval_id/TT_harmonic_54_3::audio::mcq,interval_id/TT_harmonic_54_3,interval_id,audio,mcq,1,stimuli/intervals/TT_harmonic_54_3.wav,"Listen to the two pitches. Name the interval they form.
+A. minor seventh
+B. perfect fourth
+C. tritone
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|perfect fourth|tritone|perfect fifth,tritone,C,tritone,True,,"{""interval_short"": ""TT"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 54, ""root_name"": ""F#3"", ""semitones"": 6, ""soundfont"": ""fluidr3""}"
+interval_id/TT_harmonic_55_2::audio::mcq,interval_id/TT_harmonic_55_2,interval_id,audio,mcq,2,stimuli/intervals/TT_harmonic_55_2.wav,"What interval do you hear between the notes in this clip?
+A. perfect fourth
+B. minor third
+C. perfect fifth
+D. tritone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fourth|minor third|perfect fifth|tritone,tritone,A,perfect fourth,False,,"{""interval_short"": ""TT"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 55, ""root_name"": ""G3"", ""semitones"": 6, ""soundfont"": ""timgm""}"
+interval_id/TT_harmonic_60_1::audio::mcq,interval_id/TT_harmonic_60_1,interval_id,audio,mcq,2,stimuli/intervals/TT_harmonic_60_1.wav,"What interval do you hear between the notes in this clip?
+A. tritone
+B. perfect fourth
+C. perfect fifth
+D. major third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",tritone|perfect fourth|perfect fifth|major third,tritone,C,perfect fifth,False,,"{""interval_short"": ""TT"", ""presentation"": ""harmonic"", ""program"": ""violin"", ""root"": 60, ""root_name"": ""C4"", ""semitones"": 6, ""soundfont"": ""fluidr3""}"
+interval_id/TT_harmonic_64_0::audio::mcq,interval_id/TT_harmonic_64_0,interval_id,audio,mcq,1,stimuli/intervals/TT_harmonic_64_0.wav,"Listen to the two pitches. Name the interval they form.
+A. tritone
+B. major sixth
+C. perfect fourth
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",tritone|major sixth|perfect fourth|perfect fifth,tritone,A,tritone,True,,"{""interval_short"": ""TT"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 64, ""root_name"": ""E4"", ""semitones"": 6, ""soundfont"": ""musescore""}"
+interval_id/TT_harmonic_64_0::audio::open,interval_id/TT_harmonic_64_0,interval_id,audio,open,0,stimuli/intervals/TT_harmonic_64_0.wav,"Two notes are played. What is the musical interval between them?
+Give a short, direct answer.",,tritone,octave,octave,False,,"{""interval_short"": ""TT"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 64, ""root_name"": ""E4"", ""semitones"": 6, ""soundfont"": ""musescore""}"
+interval_id/TT_melodic_asc_51_0::audio::mcq,interval_id/TT_melodic_asc_51_0,interval_id,audio,mcq,1,stimuli/intervals/TT_melodic_asc_51_0.wav,"Listen to the two pitches. Name the interval they form.
+A. perfect fourth
+B. perfect fifth
+C. minor third
+D. tritone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fourth|perfect fifth|minor third|tritone,tritone,A,perfect fourth,False,,"{""interval_short"": ""TT"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 51, ""root_name"": ""D#3"", ""semitones"": 6, ""soundfont"": ""musescore""}"
+interval_id/TT_melodic_asc_54_3::audio::mcq,interval_id/TT_melodic_asc_54_3,interval_id,audio,mcq,2,stimuli/intervals/TT_melodic_asc_54_3.wav,"What interval do you hear between the notes in this clip?
+A. tritone
+B. perfect fifth
+C. perfect fourth
+D. minor sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",tritone|perfect fifth|perfect fourth|minor sixth,tritone,C,perfect fourth,False,,"{""interval_short"": ""TT"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 54, ""root_name"": ""F#3"", ""semitones"": 6, ""soundfont"": ""fluidr3""}"
+interval_id/TT_melodic_asc_63_1::audio::mcq,interval_id/TT_melodic_asc_63_1,interval_id,audio,mcq,1,stimuli/intervals/TT_melodic_asc_63_1.wav,"Listen to the two pitches. Name the interval they form.
+A. tritone
+B. minor third
+C. perfect fourth
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",tritone|minor third|perfect fourth|perfect fifth,tritone,A,tritone,True,,"{""interval_short"": ""TT"", ""presentation"": ""melodic_asc"", ""program"": ""piano"", ""root"": 63, ""root_name"": ""D#4"", ""semitones"": 6, ""soundfont"": ""fluidr3""}"
+interval_id/TT_melodic_asc_71_2::audio::mcq,interval_id/TT_melodic_asc_71_2,interval_id,audio,mcq,1,stimuli/intervals/TT_melodic_asc_71_2.wav,"Listen to the two pitches. Name the interval they form.
+A. minor second
+B. perfect fourth
+C. tritone
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|perfect fourth|tritone|perfect fifth,tritone,A,minor second,False,,"{""interval_short"": ""TT"", ""presentation"": ""melodic_asc"", ""program"": ""flute"", ""root"": 71, ""root_name"": ""B4"", ""semitones"": 6, ""soundfont"": ""musescore""}"
+interval_id/TT_melodic_desc_51_3::audio::mcq,interval_id/TT_melodic_desc_51_3,interval_id,audio,mcq,1,stimuli/intervals/TT_melodic_desc_51_3.wav,"Listen to the two pitches. Name the interval they form.
+A. perfect fifth
+B. minor seventh
+C. perfect fourth
+D. tritone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fifth|minor seventh|perfect fourth|tritone,tritone,A,perfect fifth,False,,"{""interval_short"": ""TT"", ""presentation"": ""melodic_desc"", ""program"": ""violin"", ""root"": 51, ""root_name"": ""D#3"", ""semitones"": 6, ""soundfont"": ""timgm""}"
+interval_id/TT_melodic_desc_52_1::audio::mcq,interval_id/TT_melodic_desc_52_1,interval_id,audio,mcq,1,stimuli/intervals/TT_melodic_desc_52_1.wav,"Listen to the two pitches. Name the interval they form.
+A. perfect fifth
+B. perfect fourth
+C. minor second
+D. tritone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fifth|perfect fourth|minor second|tritone,tritone,A,perfect fifth,False,,"{""interval_short"": ""TT"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 52, ""root_name"": ""E3"", ""semitones"": 6, ""soundfont"": ""musescore""}"
+interval_id/TT_melodic_desc_52_1::audio::open,interval_id/TT_melodic_desc_52_1,interval_id,audio,open,2,stimuli/intervals/TT_melodic_desc_52_1.wav,"What interval do you hear between the notes in this clip?
+Give a short, direct answer.",,tritone,The interval between the notes in this clip is a major third.,The interval between the notes in this clip is a major third.,False,,"{""interval_short"": ""TT"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 52, ""root_name"": ""E3"", ""semitones"": 6, ""soundfont"": ""musescore""}"
+interval_id/TT_melodic_desc_52_2::audio::mcq,interval_id/TT_melodic_desc_52_2,interval_id,audio,mcq,2,stimuli/intervals/TT_melodic_desc_52_2.wav,"What interval do you hear between the notes in this clip?
+A. perfect fifth
+B. perfect fourth
+C. tritone
+D. major second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fifth|perfect fourth|tritone|major second,tritone,A,perfect fifth,False,,"{""interval_short"": ""TT"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 52, ""root_name"": ""E3"", ""semitones"": 6, ""soundfont"": ""fluidr3""}"
+interval_id/TT_melodic_desc_57_0::audio::mcq,interval_id/TT_melodic_desc_57_0,interval_id,audio,mcq,0,stimuli/intervals/TT_melodic_desc_57_0.wav,"Two notes are played. What is the musical interval between them?
+A. perfect fifth
+B. minor seventh
+C. perfect fourth
+D. tritone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fifth|minor seventh|perfect fourth|tritone,tritone,A,perfect fifth,False,,"{""interval_short"": ""TT"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 57, ""root_name"": ""A3"", ""semitones"": 6, ""soundfont"": ""timgm""}"
+interval_id/TT_melodic_desc_57_0::audio::explain,interval_id/TT_melodic_desc_57_0,interval_id,audio,explain,1,stimuli/intervals/TT_melodic_desc_57_0.wav,"Listen to the two pitches. Name the interval they form.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,tritone,The two pitches form a [interval name]. I heard [specific notes/chords/beats] at [time stamps] that support this.,,,,"{""interval_short"": ""TT"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 57, ""root_name"": ""A3"", ""semitones"": 6, ""soundfont"": ""timgm""}"
+interval_id/m2_harmonic_57_3::audio::mcq,interval_id/m2_harmonic_57_3,interval_id,audio,mcq,0,stimuli/intervals/m2_harmonic_57_3.wav,"Two notes are played. What is the musical interval between them?
+A. major third
+B. minor second
+C. major sixth
+D. major second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|minor second|major sixth|major second,minor second,D,major second,False,,"{""interval_short"": ""m2"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 57, ""root_name"": ""A3"", ""semitones"": 1, ""soundfont"": ""musescore""}"
+interval_id/m2_harmonic_59_1::audio::mcq,interval_id/m2_harmonic_59_1,interval_id,audio,mcq,1,stimuli/intervals/m2_harmonic_59_1.wav,"Listen to the two pitches. Name the interval they form.
+A. minor second
+B. minor third
+C. major second
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|minor third|major second|octave,minor second,A,minor second,True,,"{""interval_short"": ""m2"", ""presentation"": ""harmonic"", ""program"": ""violin"", ""root"": 59, ""root_name"": ""B3"", ""semitones"": 1, ""soundfont"": ""musescore""}"
+interval_id/m2_harmonic_67_2::audio::mcq,interval_id/m2_harmonic_67_2,interval_id,audio,mcq,2,stimuli/intervals/m2_harmonic_67_2.wav,"What interval do you hear between the notes in this clip?
+A. major second
+B. minor third
+C. minor second
+D. major third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major second|minor third|minor second|major third,minor second,A,major second,False,,"{""interval_short"": ""m2"", ""presentation"": ""harmonic"", ""program"": ""violin"", ""root"": 67, ""root_name"": ""G4"", ""semitones"": 1, ""soundfont"": ""timgm""}"
+interval_id/m2_harmonic_69_0::audio::mcq,interval_id/m2_harmonic_69_0,interval_id,audio,mcq,1,stimuli/intervals/m2_harmonic_69_0.wav,"Listen to the two pitches. Name the interval they form.
+A. minor third
+B. major second
+C. minor second
+D. major sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|major second|minor second|major sixth,minor second,C,minor second,True,,"{""interval_short"": ""m2"", ""presentation"": ""harmonic"", ""program"": ""violin"", ""root"": 69, ""root_name"": ""A4"", ""semitones"": 1, ""soundfont"": ""musescore""}"
+interval_id/m2_harmonic_69_0::audio::open,interval_id/m2_harmonic_69_0,interval_id,audio,open,0,stimuli/intervals/m2_harmonic_69_0.wav,"Two notes are played. What is the musical interval between them?
+Give a short, direct answer.",,minor second,A tritone.,A tritone.,False,,"{""interval_short"": ""m2"", ""presentation"": ""harmonic"", ""program"": ""violin"", ""root"": 69, ""root_name"": ""A4"", ""semitones"": 1, ""soundfont"": ""musescore""}"
+interval_id/m2_melodic_asc_54_2::audio::mcq,interval_id/m2_melodic_asc_54_2,interval_id,audio,mcq,0,stimuli/intervals/m2_melodic_asc_54_2.wav,"Two notes are played. What is the musical interval between them?
+A. minor second
+B. major second
+C. perfect fourth
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|major second|perfect fourth|minor seventh,minor second,A,minor second,True,,"{""interval_short"": ""m2"", ""presentation"": ""melodic_asc"", ""program"": ""violin"", ""root"": 54, ""root_name"": ""F#3"", ""semitones"": 1, ""soundfont"": ""musescore""}"
+interval_id/m2_melodic_asc_55_1::audio::mcq,interval_id/m2_melodic_asc_55_1,interval_id,audio,mcq,0,stimuli/intervals/m2_melodic_asc_55_1.wav,"Two notes are played. What is the musical interval between them?
+A. minor second
+B. perfect fourth
+C. major second
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|perfect fourth|major second|minor seventh,minor second,A,minor second,True,,"{""interval_short"": ""m2"", ""presentation"": ""melodic_asc"", ""program"": ""flute"", ""root"": 55, ""root_name"": ""G3"", ""semitones"": 1, ""soundfont"": ""fluidr3""}"
+interval_id/m2_melodic_asc_56_0::audio::mcq,interval_id/m2_melodic_asc_56_0,interval_id,audio,mcq,1,stimuli/intervals/m2_melodic_asc_56_0.wav,"Listen to the two pitches. Name the interval they form.
+A. minor second
+B. major sixth
+C. minor sixth
+D. major second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|major sixth|minor sixth|major second,minor second,D,major second,False,,"{""interval_short"": ""m2"", ""presentation"": ""melodic_asc"", ""program"": ""violin"", ""root"": 56, ""root_name"": ""G#3"", ""semitones"": 1, ""soundfont"": ""timgm""}"
+interval_id/m2_melodic_asc_56_3::audio::mcq,interval_id/m2_melodic_asc_56_3,interval_id,audio,mcq,1,stimuli/intervals/m2_melodic_asc_56_3.wav,"Listen to the two pitches. Name the interval they form.
+A. minor second
+B. major sixth
+C. major seventh
+D. major second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|major sixth|major seventh|major second,minor second,D,major second,False,,"{""interval_short"": ""m2"", ""presentation"": ""melodic_asc"", ""program"": ""flute"", ""root"": 56, ""root_name"": ""G#3"", ""semitones"": 1, ""soundfont"": ""timgm""}"
+interval_id/m2_melodic_desc_52_2::audio::mcq,interval_id/m2_melodic_desc_52_2,interval_id,audio,mcq,1,stimuli/intervals/m2_melodic_desc_52_2.wav,"Listen to the two pitches. Name the interval they form.
+A. octave
+B. minor second
+C. major third
+D. major second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",octave|minor second|major third|major second,minor second,B,minor second,True,,"{""interval_short"": ""m2"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 52, ""root_name"": ""E3"", ""semitones"": 1, ""soundfont"": ""musescore""}"
+interval_id/m2_melodic_desc_54_0::audio::mcq,interval_id/m2_melodic_desc_54_0,interval_id,audio,mcq,0,stimuli/intervals/m2_melodic_desc_54_0.wav,"Two notes are played. What is the musical interval between them?
+A. minor second
+B. major second
+C. perfect fifth
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|major second|perfect fifth|minor seventh,minor second,A,minor second,True,,"{""interval_short"": ""m2"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 54, ""root_name"": ""F#3"", ""semitones"": 1, ""soundfont"": ""fluidr3""}"
+interval_id/m2_melodic_desc_54_0::audio::explain,interval_id/m2_melodic_desc_54_0,interval_id,audio,explain,2,stimuli/intervals/m2_melodic_desc_54_0.wav,"What interval do you hear between the notes in this clip?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor second,I hear a [insert interval] between the notes. This is supported by the fact that the notes/chords/beats occur at [insert specific timestamps] and have a [insert specific interval] between them.,,,,"{""interval_short"": ""m2"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 54, ""root_name"": ""F#3"", ""semitones"": 1, ""soundfont"": ""fluidr3""}"
+interval_id/m2_melodic_desc_55_1::audio::mcq,interval_id/m2_melodic_desc_55_1,interval_id,audio,mcq,1,stimuli/intervals/m2_melodic_desc_55_1.wav,"Listen to the two pitches. Name the interval they form.
+A. minor second
+B. perfect fifth
+C. major second
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|perfect fifth|major second|octave,minor second,A,minor second,True,,"{""interval_short"": ""m2"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 55, ""root_name"": ""G3"", ""semitones"": 1, ""soundfont"": ""musescore""}"
+interval_id/m2_melodic_desc_57_3::audio::mcq,interval_id/m2_melodic_desc_57_3,interval_id,audio,mcq,2,stimuli/intervals/m2_melodic_desc_57_3.wav,"What interval do you hear between the notes in this clip?
+A. major seventh
+B. minor second
+C. major second
+D. tritone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|minor second|major second|tritone,minor second,C,major second,False,,"{""interval_short"": ""m2"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 57, ""root_name"": ""A3"", ""semitones"": 1, ""soundfont"": ""timgm""}"
+interval_id/m2_melodic_desc_57_3::audio::open,interval_id/m2_melodic_desc_57_3,interval_id,audio,open,1,stimuli/intervals/m2_melodic_desc_57_3.wav,"Listen to the two pitches. Name the interval they form.
+Give a short, direct answer.",,minor second,A minor third.,A minor third.,False,,"{""interval_short"": ""m2"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 57, ""root_name"": ""A3"", ""semitones"": 1, ""soundfont"": ""timgm""}"
+interval_id/m3_harmonic_48_3::audio::mcq,interval_id/m3_harmonic_48_3,interval_id,audio,mcq,2,stimuli/intervals/m3_harmonic_48_3.wav,"What interval do you hear between the notes in this clip?
+A. major sixth
+B. minor third
+C. major third
+D. major second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|minor third|major third|major second,minor third,C,major third,False,,"{""interval_short"": ""m3"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 48, ""root_name"": ""C3"", ""semitones"": 3, ""soundfont"": ""fluidr3""}"
+interval_id/m3_harmonic_53_1::audio::mcq,interval_id/m3_harmonic_53_1,interval_id,audio,mcq,0,stimuli/intervals/m3_harmonic_53_1.wav,"Two notes are played. What is the musical interval between them?
+A. minor third
+B. major third
+C. major second
+D. major sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|major third|major second|major sixth,minor third,B,major third,False,,"{""interval_short"": ""m3"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 53, ""root_name"": ""F3"", ""semitones"": 3, ""soundfont"": ""timgm""}"
+interval_id/m3_harmonic_61_0::audio::mcq,interval_id/m3_harmonic_61_0,interval_id,audio,mcq,1,stimuli/intervals/m3_harmonic_61_0.wav,"Listen to the two pitches. Name the interval they form.
+A. major second
+B. major seventh
+C. major third
+D. minor third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major second|major seventh|major third|minor third,minor third,A,major second,False,,"{""interval_short"": ""m3"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 61, ""root_name"": ""C#4"", ""semitones"": 3, ""soundfont"": ""musescore""}"
+interval_id/m3_harmonic_71_2::audio::mcq,interval_id/m3_harmonic_71_2,interval_id,audio,mcq,0,stimuli/intervals/m3_harmonic_71_2.wav,"Two notes are played. What is the musical interval between them?
+A. minor third
+B. major third
+C. octave
+D. major second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|major third|octave|major second,minor third,B,major third,False,,"{""interval_short"": ""m3"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 71, ""root_name"": ""B4"", ""semitones"": 3, ""soundfont"": ""fluidr3""}"
+interval_id/m3_melodic_asc_49_1::audio::mcq,interval_id/m3_melodic_asc_49_1,interval_id,audio,mcq,2,stimuli/intervals/m3_melodic_asc_49_1.wav,"What interval do you hear between the notes in this clip?
+A. minor third
+B. major second
+C. major third
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|major second|major third|octave,minor third,C,major third,False,,"{""interval_short"": ""m3"", ""presentation"": ""melodic_asc"", ""program"": ""piano"", ""root"": 49, ""root_name"": ""C#3"", ""semitones"": 3, ""soundfont"": ""musescore""}"
+interval_id/m3_melodic_asc_49_1::audio::open,interval_id/m3_melodic_asc_49_1,interval_id,audio,open,2,stimuli/intervals/m3_melodic_asc_49_1.wav,"What interval do you hear between the notes in this clip?
+Give a short, direct answer.",,minor third,The interval between the notes is a minor third.,The interval between the notes is a minor third.,True,,"{""interval_short"": ""m3"", ""presentation"": ""melodic_asc"", ""program"": ""piano"", ""root"": 49, ""root_name"": ""C#3"", ""semitones"": 3, ""soundfont"": ""musescore""}"
+interval_id/m3_melodic_asc_49_2::audio::mcq,interval_id/m3_melodic_asc_49_2,interval_id,audio,mcq,1,stimuli/intervals/m3_melodic_asc_49_2.wav,"Listen to the two pitches. Name the interval they form.
+A. major third
+B. minor third
+C. major sixth
+D. major second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|minor third|major sixth|major second,minor third,A,major third,False,,"{""interval_short"": ""m3"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 49, ""root_name"": ""C#3"", ""semitones"": 3, ""soundfont"": ""musescore""}"
+interval_id/m3_melodic_asc_67_0::audio::mcq,interval_id/m3_melodic_asc_67_0,interval_id,audio,mcq,1,stimuli/intervals/m3_melodic_asc_67_0.wav,"Listen to the two pitches. Name the interval they form.
+A. major third
+B. minor third
+C. perfect fourth
+D. major second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|minor third|perfect fourth|major second,minor third,A,major third,False,,"{""interval_short"": ""m3"", ""presentation"": ""melodic_asc"", ""program"": ""violin"", ""root"": 67, ""root_name"": ""G4"", ""semitones"": 3, ""soundfont"": ""timgm""}"
+interval_id/m3_melodic_asc_67_0::audio::explain,interval_id/m3_melodic_asc_67_0,interval_id,audio,explain,2,stimuli/intervals/m3_melodic_asc_67_0.wav,"What interval do you hear between the notes in this clip?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor third,I hear a [interval] between the notes in this clip. This is supported by the fact that the notes/chords/beats occur at [time stamps] and have a [distance] between them.,,,,"{""interval_short"": ""m3"", ""presentation"": ""melodic_asc"", ""program"": ""violin"", ""root"": 67, ""root_name"": ""G4"", ""semitones"": 3, ""soundfont"": ""timgm""}"
+interval_id/m3_melodic_asc_71_3::audio::mcq,interval_id/m3_melodic_asc_71_3,interval_id,audio,mcq,0,stimuli/intervals/m3_melodic_asc_71_3.wav,"Two notes are played. What is the musical interval between them?
+A. minor third
+B. major seventh
+C. major third
+D. major second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|major seventh|major third|major second,minor third,C,major third,False,,"{""interval_short"": ""m3"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 71, ""root_name"": ""B4"", ""semitones"": 3, ""soundfont"": ""fluidr3""}"
+interval_id/m3_melodic_desc_50_2::audio::mcq,interval_id/m3_melodic_desc_50_2,interval_id,audio,mcq,1,stimuli/intervals/m3_melodic_desc_50_2.wav,"Listen to the two pitches. Name the interval they form.
+A. minor third
+B. major third
+C. major sixth
+D. major second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|major third|major sixth|major second,minor third,B,major third,False,,"{""interval_short"": ""m3"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 50, ""root_name"": ""D3"", ""semitones"": 3, ""soundfont"": ""musescore""}"
+interval_id/m3_melodic_desc_53_3::audio::mcq,interval_id/m3_melodic_desc_53_3,interval_id,audio,mcq,2,stimuli/intervals/m3_melodic_desc_53_3.wav,"What interval do you hear between the notes in this clip?
+A. major second
+B. minor third
+C. major third
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major second|minor third|major third|minor seventh,minor third,C,major third,False,,"{""interval_short"": ""m3"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 53, ""root_name"": ""F3"", ""semitones"": 3, ""soundfont"": ""timgm""}"
+interval_id/m3_melodic_desc_53_3::audio::explain,interval_id/m3_melodic_desc_53_3,interval_id,audio,explain,2,stimuli/intervals/m3_melodic_desc_53_3.wav,"What interval do you hear between the notes in this clip?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor third,I hear a [interval] between the notes in this clip. This is supported by the fact that the notes/chords/beats occur at [time stamps] and have a [distance] between them.,,,,"{""interval_short"": ""m3"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 53, ""root_name"": ""F3"", ""semitones"": 3, ""soundfont"": ""timgm""}"
+interval_id/m3_melodic_desc_56_0::audio::mcq,interval_id/m3_melodic_desc_56_0,interval_id,audio,mcq,0,stimuli/intervals/m3_melodic_desc_56_0.wav,"Two notes are played. What is the musical interval between them?
+A. major sixth
+B. major third
+C. minor third
+D. major second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|major third|minor third|major second,minor third,B,major third,False,,"{""interval_short"": ""m3"", ""presentation"": ""melodic_desc"", ""program"": ""violin"", ""root"": 56, ""root_name"": ""G#3"", ""semitones"": 3, ""soundfont"": ""timgm""}"
+interval_id/m3_melodic_desc_67_1::audio::mcq,interval_id/m3_melodic_desc_67_1,interval_id,audio,mcq,0,stimuli/intervals/m3_melodic_desc_67_1.wav,"Two notes are played. What is the musical interval between them?
+A. minor third
+B. major second
+C. major third
+D. tritone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|major second|major third|tritone,minor third,C,major third,False,,"{""interval_short"": ""m3"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 67, ""root_name"": ""G4"", ""semitones"": 3, ""soundfont"": ""timgm""}"
+interval_id/m3_melodic_desc_67_1::audio::open,interval_id/m3_melodic_desc_67_1,interval_id,audio,open,2,stimuli/intervals/m3_melodic_desc_67_1.wav,"What interval do you hear between the notes in this clip?
+Give a short, direct answer.",,minor third,The interval between the notes in this clip is a major third.,The interval between the notes in this clip is a major third.,False,,"{""interval_short"": ""m3"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 67, ""root_name"": ""G4"", ""semitones"": 3, ""soundfont"": ""timgm""}"
+interval_id/m6_harmonic_58_0::audio::mcq,interval_id/m6_harmonic_58_0,interval_id,audio,mcq,1,stimuli/intervals/m6_harmonic_58_0.wav,"Listen to the two pitches. Name the interval they form.
+A. minor sixth
+B. major sixth
+C. perfect fifth
+D. major second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|major sixth|perfect fifth|major second,minor sixth,B,major sixth,False,,"{""interval_short"": ""m6"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 8, ""soundfont"": ""musescore""}"
+interval_id/m6_harmonic_58_0::audio::explain,interval_id/m6_harmonic_58_0,interval_id,audio,explain,0,stimuli/intervals/m6_harmonic_58_0.wav,"Two notes are played. What is the musical interval between them?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor sixth,"The musical interval between the two notes is a perfect fifth. This is supported by the fact that the first note is played at 0.0 seconds and the second note is played at 0.4 seconds, with a duration of 0.4 seconds.",,,,"{""interval_short"": ""m6"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 8, ""soundfont"": ""musescore""}"
+interval_id/m6_harmonic_58_3::audio::mcq,interval_id/m6_harmonic_58_3,interval_id,audio,mcq,1,stimuli/intervals/m6_harmonic_58_3.wav,"Listen to the two pitches. Name the interval they form.
+A. minor sixth
+B. perfect fifth
+C. major sixth
+D. minor second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|perfect fifth|major sixth|minor second,minor sixth,A,minor sixth,True,,"{""interval_short"": ""m6"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 8, ""soundfont"": ""timgm""}"
+interval_id/m6_harmonic_58_3::audio::open,interval_id/m6_harmonic_58_3,interval_id,audio,open,0,stimuli/intervals/m6_harmonic_58_3.wav,"Two notes are played. What is the musical interval between them?
+Give a short, direct answer.",,minor sixth,octave,octave,False,,"{""interval_short"": ""m6"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 8, ""soundfont"": ""timgm""}"
+interval_id/m6_harmonic_61_1::audio::mcq,interval_id/m6_harmonic_61_1,interval_id,audio,mcq,0,stimuli/intervals/m6_harmonic_61_1.wav,"Two notes are played. What is the musical interval between them?
+A. perfect fifth
+B. major second
+C. major sixth
+D. minor sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fifth|major second|major sixth|minor sixth,minor sixth,B,major second,False,,"{""interval_short"": ""m6"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 61, ""root_name"": ""C#4"", ""semitones"": 8, ""soundfont"": ""timgm""}"
+interval_id/m6_harmonic_61_1::audio::open,interval_id/m6_harmonic_61_1,interval_id,audio,open,2,stimuli/intervals/m6_harmonic_61_1.wav,"What interval do you hear between the notes in this clip?
+Give a short, direct answer.",,minor sixth,The interval between the notes in this clip is a major third.,The interval between the notes in this clip is a major third.,False,,"{""interval_short"": ""m6"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 61, ""root_name"": ""C#4"", ""semitones"": 8, ""soundfont"": ""timgm""}"
+interval_id/m6_harmonic_69_2::audio::mcq,interval_id/m6_harmonic_69_2,interval_id,audio,mcq,2,stimuli/intervals/m6_harmonic_69_2.wav,"What interval do you hear between the notes in this clip?
+A. minor sixth
+B. major seventh
+C. perfect fifth
+D. major sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|major seventh|perfect fifth|major sixth,minor sixth,D,major sixth,False,,"{""interval_short"": ""m6"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 69, ""root_name"": ""A4"", ""semitones"": 8, ""soundfont"": ""musescore""}"
+interval_id/m6_harmonic_69_2::audio::explain,interval_id/m6_harmonic_69_2,interval_id,audio,explain,0,stimuli/intervals/m6_harmonic_69_2.wav,"Two notes are played. What is the musical interval between them?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor sixth,"The musical interval between the two notes is a major third. This is supported by the fact that the first note is played at 0.0s and the second note is played at 0.9s, and the notes are played in a sequence that suggests a major third interval.",,,,"{""interval_short"": ""m6"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 69, ""root_name"": ""A4"", ""semitones"": 8, ""soundfont"": ""musescore""}"
+interval_id/m6_melodic_asc_60_1::audio::mcq,interval_id/m6_melodic_asc_60_1,interval_id,audio,mcq,0,stimuli/intervals/m6_melodic_asc_60_1.wav,"Two notes are played. What is the musical interval between them?
+A. major sixth
+B. minor sixth
+C. perfect fifth
+D. major third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|minor sixth|perfect fifth|major third,minor sixth,C,perfect fifth,False,,"{""interval_short"": ""m6"", ""presentation"": ""melodic_asc"", ""program"": ""flute"", ""root"": 60, ""root_name"": ""C4"", ""semitones"": 8, ""soundfont"": ""timgm""}"
+interval_id/m6_melodic_asc_61_0::audio::mcq,interval_id/m6_melodic_asc_61_0,interval_id,audio,mcq,1,stimuli/intervals/m6_melodic_asc_61_0.wav,"Listen to the two pitches. Name the interval they form.
+A. minor sixth
+B. major sixth
+C. major third
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|major sixth|major third|perfect fifth,minor sixth,B,major sixth,False,,"{""interval_short"": ""m6"", ""presentation"": ""melodic_asc"", ""program"": ""piano"", ""root"": 61, ""root_name"": ""C#4"", ""semitones"": 8, ""soundfont"": ""timgm""}"
+interval_id/m6_melodic_asc_61_2::audio::mcq,interval_id/m6_melodic_asc_61_2,interval_id,audio,mcq,0,stimuli/intervals/m6_melodic_asc_61_2.wav,"Two notes are played. What is the musical interval between them?
+A. major sixth
+B. perfect fifth
+C. minor seventh
+D. minor sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|perfect fifth|minor seventh|minor sixth,minor sixth,B,perfect fifth,False,,"{""interval_short"": ""m6"", ""presentation"": ""melodic_asc"", ""program"": ""flute"", ""root"": 61, ""root_name"": ""C#4"", ""semitones"": 8, ""soundfont"": ""timgm""}"
+interval_id/m6_melodic_asc_69_3::audio::mcq,interval_id/m6_melodic_asc_69_3,interval_id,audio,mcq,1,stimuli/intervals/m6_melodic_asc_69_3.wav,"Listen to the two pitches. Name the interval they form.
+A. major sixth
+B. minor seventh
+C. perfect fifth
+D. minor sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|minor seventh|perfect fifth|minor sixth,minor sixth,A,major sixth,False,,"{""interval_short"": ""m6"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 69, ""root_name"": ""A4"", ""semitones"": 8, ""soundfont"": ""fluidr3""}"
+interval_id/m6_melodic_asc_69_3::audio::open,interval_id/m6_melodic_asc_69_3,interval_id,audio,open,0,stimuli/intervals/m6_melodic_asc_69_3.wav,"Two notes are played. What is the musical interval between them?
+Give a short, direct answer.",,minor sixth,A major third.,A major third.,False,,"{""interval_short"": ""m6"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 69, ""root_name"": ""A4"", ""semitones"": 8, ""soundfont"": ""fluidr3""}"
+interval_id/m6_melodic_desc_48_3::audio::mcq,interval_id/m6_melodic_desc_48_3,interval_id,audio,mcq,0,stimuli/intervals/m6_melodic_desc_48_3.wav,"Two notes are played. What is the musical interval between them?
+A. tritone
+B. minor sixth
+C. major sixth
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",tritone|minor sixth|major sixth|perfect fifth,minor sixth,A,tritone,False,,"{""interval_short"": ""m6"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 48, ""root_name"": ""C3"", ""semitones"": 8, ""soundfont"": ""fluidr3""}"
+interval_id/m6_melodic_desc_48_3::audio::open,interval_id/m6_melodic_desc_48_3,interval_id,audio,open,1,stimuli/intervals/m6_melodic_desc_48_3.wav,"Listen to the two pitches. Name the interval they form.
+Give a short, direct answer.",,minor sixth,A minor third.,A minor third.,False,,"{""interval_short"": ""m6"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 48, ""root_name"": ""C3"", ""semitones"": 8, ""soundfont"": ""fluidr3""}"
+interval_id/m6_melodic_desc_57_2::audio::mcq,interval_id/m6_melodic_desc_57_2,interval_id,audio,mcq,0,stimuli/intervals/m6_melodic_desc_57_2.wav,"Two notes are played. What is the musical interval between them?
+A. minor sixth
+B. major second
+C. major sixth
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|major second|major sixth|perfect fifth,minor sixth,C,major sixth,False,,"{""interval_short"": ""m6"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 57, ""root_name"": ""A3"", ""semitones"": 8, ""soundfont"": ""fluidr3""}"
+interval_id/m6_melodic_desc_62_0::audio::mcq,interval_id/m6_melodic_desc_62_0,interval_id,audio,mcq,0,stimuli/intervals/m6_melodic_desc_62_0.wav,"Two notes are played. What is the musical interval between them?
+A. major sixth
+B. minor third
+C. minor sixth
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|minor third|minor sixth|perfect fifth,minor sixth,C,minor sixth,True,,"{""interval_short"": ""m6"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 62, ""root_name"": ""D4"", ""semitones"": 8, ""soundfont"": ""fluidr3""}"
+interval_id/m6_melodic_desc_70_1::audio::mcq,interval_id/m6_melodic_desc_70_1,interval_id,audio,mcq,0,stimuli/intervals/m6_melodic_desc_70_1.wav,"Two notes are played. What is the musical interval between them?
+A. perfect fifth
+B. major sixth
+C. tritone
+D. minor sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fifth|major sixth|tritone|minor sixth,minor sixth,B,major sixth,False,,"{""interval_short"": ""m6"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 70, ""root_name"": ""A#4"", ""semitones"": 8, ""soundfont"": ""timgm""}"
+interval_id/m6_melodic_desc_70_1::audio::open,interval_id/m6_melodic_desc_70_1,interval_id,audio,open,1,stimuli/intervals/m6_melodic_desc_70_1.wav,"Listen to the two pitches. Name the interval they form.
+Give a short, direct answer.",,minor sixth,Octave,Octave,False,,"{""interval_short"": ""m6"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 70, ""root_name"": ""A#4"", ""semitones"": 8, ""soundfont"": ""timgm""}"
+interval_id/m7_harmonic_48_2::audio::mcq,interval_id/m7_harmonic_48_2,interval_id,audio,mcq,0,stimuli/intervals/m7_harmonic_48_2.wav,"Two notes are played. What is the musical interval between them?
+A. major seventh
+B. minor seventh
+C. major second
+D. major sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|minor seventh|major second|major sixth,minor seventh,C,major second,False,,"{""interval_short"": ""m7"", ""presentation"": ""harmonic"", ""program"": ""violin"", ""root"": 48, ""root_name"": ""C3"", ""semitones"": 10, ""soundfont"": ""fluidr3""}"
+interval_id/m7_harmonic_53_3::audio::mcq,interval_id/m7_harmonic_53_3,interval_id,audio,mcq,2,stimuli/intervals/m7_harmonic_53_3.wav,"What interval do you hear between the notes in this clip?
+A. minor seventh
+B. perfect fifth
+C. major sixth
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|perfect fifth|major sixth|major seventh,minor seventh,B,perfect fifth,False,,"{""interval_short"": ""m7"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 53, ""root_name"": ""F3"", ""semitones"": 10, ""soundfont"": ""timgm""}"
+interval_id/m7_harmonic_53_3::audio::open,interval_id/m7_harmonic_53_3,interval_id,audio,open,0,stimuli/intervals/m7_harmonic_53_3.wav,"Two notes are played. What is the musical interval between them?
+Give a short, direct answer.",,minor seventh,A minor third.,A minor third.,False,,"{""interval_short"": ""m7"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 53, ""root_name"": ""F3"", ""semitones"": 10, ""soundfont"": ""timgm""}"
+interval_id/m7_harmonic_57_1::audio::mcq,interval_id/m7_harmonic_57_1,interval_id,audio,mcq,1,stimuli/intervals/m7_harmonic_57_1.wav,"Listen to the two pitches. Name the interval they form.
+A. major third
+B. major sixth
+C. major seventh
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|major sixth|major seventh|minor seventh,minor seventh,A,major third,False,,"{""interval_short"": ""m7"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 57, ""root_name"": ""A3"", ""semitones"": 10, ""soundfont"": ""musescore""}"
+interval_id/m7_harmonic_57_1::audio::explain,interval_id/m7_harmonic_57_1,interval_id,audio,explain,0,stimuli/intervals/m7_harmonic_57_1.wav,"Two notes are played. What is the musical interval between them?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor seventh,"The musical interval between the two notes is a major third. This is supported by the fact that the first note is played at 0.1 seconds and the second note is played at 0.9 seconds, and the pitch difference between them corresponds to a major third interval.",,,,"{""interval_short"": ""m7"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 57, ""root_name"": ""A3"", ""semitones"": 10, ""soundfont"": ""musescore""}"
+interval_id/m7_harmonic_58_0::audio::mcq,interval_id/m7_harmonic_58_0,interval_id,audio,mcq,0,stimuli/intervals/m7_harmonic_58_0.wav,"Two notes are played. What is the musical interval between them?
+A. minor seventh
+B. major sixth
+C. major second
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|major sixth|major second|major seventh,minor seventh,C,major second,False,,"{""interval_short"": ""m7"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 10, ""soundfont"": ""fluidr3""}"
+interval_id/m7_harmonic_58_0::audio::open,interval_id/m7_harmonic_58_0,interval_id,audio,open,0,stimuli/intervals/m7_harmonic_58_0.wav,"Two notes are played. What is the musical interval between them?
+Give a short, direct answer.",,minor seventh,An octave.,An octave.,False,,"{""interval_short"": ""m7"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 10, ""soundfont"": ""fluidr3""}"
+interval_id/m7_melodic_asc_53_1::audio::mcq,interval_id/m7_melodic_asc_53_1,interval_id,audio,mcq,1,stimuli/intervals/m7_melodic_asc_53_1.wav,"Listen to the two pitches. Name the interval they form.
+A. minor sixth
+B. major sixth
+C. minor seventh
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|major sixth|minor seventh|major seventh,minor seventh,B,major sixth,False,,"{""interval_short"": ""m7"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 53, ""root_name"": ""F3"", ""semitones"": 10, ""soundfont"": ""timgm""}"
+interval_id/m7_melodic_asc_58_0::audio::mcq,interval_id/m7_melodic_asc_58_0,interval_id,audio,mcq,0,stimuli/intervals/m7_melodic_asc_58_0.wav,"Two notes are played. What is the musical interval between them?
+A. perfect fourth
+B. major seventh
+C. major sixth
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fourth|major seventh|major sixth|minor seventh,minor seventh,A,perfect fourth,False,,"{""interval_short"": ""m7"", ""presentation"": ""melodic_asc"", ""program"": ""flute"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 10, ""soundfont"": ""fluidr3""}"
+interval_id/m7_melodic_asc_58_0::audio::explain,interval_id/m7_melodic_asc_58_0,interval_id,audio,explain,0,stimuli/intervals/m7_melodic_asc_58_0.wav,"Two notes are played. What is the musical interval between them?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor seventh,The musical interval between the two notes is a major third. The first note is played at 0.0 seconds and the second note is played at 0.9 seconds.,,,,"{""interval_short"": ""m7"", ""presentation"": ""melodic_asc"", ""program"": ""flute"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 10, ""soundfont"": ""fluidr3""}"
+interval_id/m7_melodic_asc_59_2::audio::mcq,interval_id/m7_melodic_asc_59_2,interval_id,audio,mcq,2,stimuli/intervals/m7_melodic_asc_59_2.wav,"What interval do you hear between the notes in this clip?
+A. minor seventh
+B. major seventh
+C. major third
+D. major sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|major seventh|major third|major sixth,minor seventh,C,major third,False,,"{""interval_short"": ""m7"", ""presentation"": ""melodic_asc"", ""program"": ""violin"", ""root"": 59, ""root_name"": ""B3"", ""semitones"": 10, ""soundfont"": ""timgm""}"
+interval_id/m7_melodic_asc_62_3::audio::mcq,interval_id/m7_melodic_asc_62_3,interval_id,audio,mcq,2,stimuli/intervals/m7_melodic_asc_62_3.wav,"What interval do you hear between the notes in this clip?
+A. major seventh
+B. perfect fourth
+C. minor seventh
+D. major sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|perfect fourth|minor seventh|major sixth,minor seventh,B,perfect fourth,False,,"{""interval_short"": ""m7"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 62, ""root_name"": ""D4"", ""semitones"": 10, ""soundfont"": ""timgm""}"
+interval_id/m7_melodic_desc_49_2::audio::mcq,interval_id/m7_melodic_desc_49_2,interval_id,audio,mcq,2,stimuli/intervals/m7_melodic_desc_49_2.wav,"What interval do you hear between the notes in this clip?
+A. minor third
+B. major sixth
+C. major seventh
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|major sixth|major seventh|minor seventh,minor seventh,A,minor third,False,,"{""interval_short"": ""m7"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 49, ""root_name"": ""C#3"", ""semitones"": 10, ""soundfont"": ""timgm""}"
+interval_id/m7_melodic_desc_51_3::audio::mcq,interval_id/m7_melodic_desc_51_3,interval_id,audio,mcq,2,stimuli/intervals/m7_melodic_desc_51_3.wav,"What interval do you hear between the notes in this clip?
+A. major seventh
+B. major sixth
+C. minor seventh
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|major sixth|minor seventh|octave,minor seventh,B,major sixth,False,,"{""interval_short"": ""m7"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 51, ""root_name"": ""D#3"", ""semitones"": 10, ""soundfont"": ""fluidr3""}"
+interval_id/m7_melodic_desc_51_3::audio::explain,interval_id/m7_melodic_desc_51_3,interval_id,audio,explain,1,stimuli/intervals/m7_melodic_desc_51_3.wav,"Listen to the two pitches. Name the interval they form.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor seventh,The two pitches form a [interval name]. I heard [specific notes/chords/beats] at [time stamps] that support this.,,,,"{""interval_short"": ""m7"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 51, ""root_name"": ""D#3"", ""semitones"": 10, ""soundfont"": ""fluidr3""}"
+interval_id/m7_melodic_desc_64_1::audio::mcq,interval_id/m7_melodic_desc_64_1,interval_id,audio,mcq,1,stimuli/intervals/m7_melodic_desc_64_1.wav,"Listen to the two pitches. Name the interval they form.
+A. minor seventh
+B. major second
+C. major sixth
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|major second|major sixth|major seventh,minor seventh,D,major seventh,False,,"{""interval_short"": ""m7"", ""presentation"": ""melodic_desc"", ""program"": ""violin"", ""root"": 64, ""root_name"": ""E4"", ""semitones"": 10, ""soundfont"": ""musescore""}"
+interval_id/m7_melodic_desc_64_1::audio::explain,interval_id/m7_melodic_desc_64_1,interval_id,audio,explain,2,stimuli/intervals/m7_melodic_desc_64_1.wav,"What interval do you hear between the notes in this clip?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor seventh,I hear a [insert interval] between the notes in this clip. This is supported by the specific notes/chords/beats I heard at [insert timestamps in seconds].,,,,"{""interval_short"": ""m7"", ""presentation"": ""melodic_desc"", ""program"": ""violin"", ""root"": 64, ""root_name"": ""E4"", ""semitones"": 10, ""soundfont"": ""musescore""}"
+interval_id/m7_melodic_desc_71_0::audio::mcq,interval_id/m7_melodic_desc_71_0,interval_id,audio,mcq,2,stimuli/intervals/m7_melodic_desc_71_0.wav,"What interval do you hear between the notes in this clip?
+A. major sixth
+B. minor seventh
+C. tritone
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|minor seventh|tritone|major seventh,minor seventh,A,major sixth,False,,"{""interval_short"": ""m7"", ""presentation"": ""melodic_desc"", ""program"": ""violin"", ""root"": 71, ""root_name"": ""B4"", ""semitones"": 10, ""soundfont"": ""musescore""}"
+interval_id/m7_melodic_desc_71_0::audio::explain,interval_id/m7_melodic_desc_71_0,interval_id,audio,explain,1,stimuli/intervals/m7_melodic_desc_71_0.wav,"Listen to the two pitches. Name the interval they form.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor seventh,"The interval is a [interval type], because [explanation of the notes/chords/beats and their timestamps].",,,,"{""interval_short"": ""m7"", ""presentation"": ""melodic_desc"", ""program"": ""violin"", ""root"": 71, ""root_name"": ""B4"", ""semitones"": 10, ""soundfont"": ""musescore""}"
+interval_id/M2_harmonic_58_1::no_audio::mcq,interval_id/M2_harmonic_58_1,interval_id,no_audio,mcq,1,,"Listen to the two pitches. Name the interval they form.
+A. minor second
+B. major second
+C. tritone
+D. minor third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|major second|tritone|minor third,major second,A,minor second,False,,"{""interval_short"": ""M2"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 2, ""soundfont"": ""musescore""}"
+interval_id/M2_melodic_asc_61_0::no_audio::mcq,interval_id/M2_melodic_asc_61_0,interval_id,no_audio,mcq,2,,"What interval do you hear between the notes in this clip?
+A. minor third
+B. tritone
+C. major second
+D. minor second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|tritone|major second|minor second,major second,B,tritone,False,,"{""interval_short"": ""M2"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 61, ""root_name"": ""C#4"", ""semitones"": 2, ""soundfont"": ""timgm""}"
+interval_id/M2_melodic_asc_64_1::no_audio::mcq,interval_id/M2_melodic_asc_64_1,interval_id,no_audio,mcq,1,,"Listen to the two pitches. Name the interval they form.
+A. minor third
+B. major second
+C. minor seventh
+D. minor second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|major second|minor seventh|minor second,major second,D,minor second,False,,"{""interval_short"": ""M2"", ""presentation"": ""melodic_asc"", ""program"": ""flute"", ""root"": 64, ""root_name"": ""E4"", ""semitones"": 2, ""soundfont"": ""timgm""}"
+interval_id/M2_melodic_desc_68_0::no_audio::mcq,interval_id/M2_melodic_desc_68_0,interval_id,no_audio,mcq,0,,"Two notes are played. What is the musical interval between them?
+A. minor seventh
+B. minor third
+C. major second
+D. minor second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|minor third|major second|minor second,major second,D,minor second,False,,"{""interval_short"": ""M2"", ""presentation"": ""melodic_desc"", ""program"": ""violin"", ""root"": 68, ""root_name"": ""G#4"", ""semitones"": 2, ""soundfont"": ""musescore""}"
+interval_id/M3_melodic_desc_52_0::no_audio::mcq,interval_id/M3_melodic_desc_52_0,interval_id,no_audio,mcq,2,,"What interval do you hear between the notes in this clip?
+A. minor third
+B. perfect fourth
+C. major third
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|perfect fourth|major third|minor seventh,major third,A,minor third,False,,"{""interval_short"": ""M3"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 52, ""root_name"": ""E3"", ""semitones"": 4, ""soundfont"": ""fluidr3""}"
+interval_id/M3_melodic_desc_55_1::no_audio::mcq,interval_id/M3_melodic_desc_55_1,interval_id,no_audio,mcq,1,,"Listen to the two pitches. Name the interval they form.
+A. minor third
+B. major third
+C. perfect fourth
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor third|major third|perfect fourth|octave,major third,A,minor third,False,,"{""interval_short"": ""M3"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 55, ""root_name"": ""G3"", ""semitones"": 4, ""soundfont"": ""timgm""}"
+interval_id/M6_melodic_asc_70_1::no_audio::mcq,interval_id/M6_melodic_asc_70_1,interval_id,no_audio,mcq,2,,"What interval do you hear between the notes in this clip?
+A. minor sixth
+B. major third
+C. minor seventh
+D. major sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|major third|minor seventh|major sixth,major sixth,A,minor sixth,False,,"{""interval_short"": ""M6"", ""presentation"": ""melodic_asc"", ""program"": ""piano"", ""root"": 70, ""root_name"": ""A#4"", ""semitones"": 9, ""soundfont"": ""fluidr3""}"
+interval_id/M6_melodic_desc_60_1::no_audio::mcq,interval_id/M6_melodic_desc_60_1,interval_id,no_audio,mcq,1,,"Listen to the two pitches. Name the interval they form.
+A. major sixth
+B. minor second
+C. minor sixth
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|minor second|minor sixth|minor seventh,major sixth,C,minor sixth,False,,"{""interval_short"": ""M6"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 60, ""root_name"": ""C4"", ""semitones"": 9, ""soundfont"": ""musescore""}"
+interval_id/M6_melodic_desc_60_3::no_audio::mcq,interval_id/M6_melodic_desc_60_3,interval_id,no_audio,mcq,2,,"What interval do you hear between the notes in this clip?
+A. minor sixth
+B. minor second
+C. major sixth
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|minor second|major sixth|minor seventh,major sixth,B,minor second,False,,"{""interval_short"": ""M6"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 60, ""root_name"": ""C4"", ""semitones"": 9, ""soundfont"": ""fluidr3""}"
+interval_id/M7_melodic_desc_63_3::no_audio::mcq,interval_id/M7_melodic_desc_63_3,interval_id,no_audio,mcq,1,,"Listen to the two pitches. Name the interval they form.
+A. minor second
+B. major seventh
+C. minor seventh
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|major seventh|minor seventh|octave,major seventh,A,minor second,False,,"{""interval_short"": ""M7"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 63, ""root_name"": ""D#4"", ""semitones"": 11, ""soundfont"": ""timgm""}"
+interval_id/P4_harmonic_59_1::no_audio::mcq,interval_id/P4_harmonic_59_1,interval_id,no_audio,mcq,1,,"Listen to the two pitches. Name the interval they form.
+A. major third
+B. octave
+C. tritone
+D. perfect fourth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|octave|tritone|perfect fourth,perfect fourth,A,major third,False,,"{""interval_short"": ""P4"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 59, ""root_name"": ""B3"", ""semitones"": 5, ""soundfont"": ""fluidr3""}"
+interval_id/P4_harmonic_60_2::no_audio::mcq,interval_id/P4_harmonic_60_2,interval_id,no_audio,mcq,2,,"What interval do you hear between the notes in this clip?
+A. perfect fourth
+B. minor sixth
+C. tritone
+D. major third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fourth|minor sixth|tritone|major third,perfect fourth,C,tritone,False,,"{""interval_short"": ""P4"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 60, ""root_name"": ""C4"", ""semitones"": 5, ""soundfont"": ""timgm""}"
+interval_id/P4_melodic_asc_50_2::no_audio::mcq,interval_id/P4_melodic_asc_50_2,interval_id,no_audio,mcq,1,,"Listen to the two pitches. Name the interval they form.
+A. perfect fourth
+B. minor second
+C. tritone
+D. major third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fourth|minor second|tritone|major third,perfect fourth,A,perfect fourth,True,,"{""interval_short"": ""P4"", ""presentation"": ""melodic_asc"", ""program"": ""piano"", ""root"": 50, ""root_name"": ""D3"", ""semitones"": 5, ""soundfont"": ""musescore""}"
+interval_id/P5_harmonic_58_1::no_audio::mcq,interval_id/P5_harmonic_58_1,interval_id,no_audio,mcq,1,,"Listen to the two pitches. Name the interval they form.
+A. minor sixth
+B. tritone
+C. major third
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|tritone|major third|perfect fifth,perfect fifth,B,tritone,False,,"{""interval_short"": ""P5"", ""presentation"": ""harmonic"", ""program"": ""violin"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 7, ""soundfont"": ""fluidr3""}"
+interval_id/P5_melodic_asc_52_2::no_audio::mcq,interval_id/P5_melodic_asc_52_2,interval_id,no_audio,mcq,1,,"Listen to the two pitches. Name the interval they form.
+A. tritone
+B. perfect fifth
+C. minor sixth
+D. major third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",tritone|perfect fifth|minor sixth|major third,perfect fifth,A,tritone,False,,"{""interval_short"": ""P5"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 52, ""root_name"": ""E3"", ""semitones"": 7, ""soundfont"": ""fluidr3""}"
+interval_id/P5_melodic_asc_55_0::no_audio::mcq,interval_id/P5_melodic_asc_55_0,interval_id,no_audio,mcq,0,,"Two notes are played. What is the musical interval between them?
+A. perfect fifth
+B. minor sixth
+C. tritone
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fifth|minor sixth|tritone|major seventh,perfect fifth,C,tritone,False,,"{""interval_short"": ""P5"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 55, ""root_name"": ""G3"", ""semitones"": 7, ""soundfont"": ""timgm""}"
+interval_id/P5_melodic_desc_49_3::no_audio::mcq,interval_id/P5_melodic_desc_49_3,interval_id,no_audio,mcq,2,,"What interval do you hear between the notes in this clip?
+A. major third
+B. perfect fifth
+C. minor sixth
+D. tritone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|perfect fifth|minor sixth|tritone,perfect fifth,A,major third,False,,"{""interval_short"": ""P5"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 49, ""root_name"": ""C#3"", ""semitones"": 7, ""soundfont"": ""fluidr3""}"
+interval_id/P5_melodic_desc_59_2::no_audio::mcq,interval_id/P5_melodic_desc_59_2,interval_id,no_audio,mcq,2,,"What interval do you hear between the notes in this clip?
+A. minor sixth
+B. perfect fifth
+C. major sixth
+D. tritone
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|perfect fifth|major sixth|tritone,perfect fifth,A,minor sixth,False,,"{""interval_short"": ""P5"", ""presentation"": ""melodic_desc"", ""program"": ""violin"", ""root"": 59, ""root_name"": ""B3"", ""semitones"": 7, ""soundfont"": ""fluidr3""}"
+interval_id/P8_harmonic_54_3::no_audio::mcq,interval_id/P8_harmonic_54_3,interval_id,no_audio,mcq,1,,"Listen to the two pitches. Name the interval they form.
+A. octave
+B. minor seventh
+C. major third
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",octave|minor seventh|major third|major seventh,octave,A,octave,True,,"{""interval_short"": ""P8"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 54, ""root_name"": ""F#3"", ""semitones"": 12, ""soundfont"": ""musescore""}"
+interval_id/P8_harmonic_58_2::no_audio::mcq,interval_id/P8_harmonic_58_2,interval_id,no_audio,mcq,0,,"Two notes are played. What is the musical interval between them?
+A. minor seventh
+B. perfect fifth
+C. major seventh
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|perfect fifth|major seventh|octave,octave,B,perfect fifth,False,,"{""interval_short"": ""P8"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 12, ""soundfont"": ""fluidr3""}"
+interval_id/P8_harmonic_66_1::no_audio::mcq,interval_id/P8_harmonic_66_1,interval_id,no_audio,mcq,2,,"What interval do you hear between the notes in this clip?
+A. tritone
+B. octave
+C. major seventh
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",tritone|octave|major seventh|perfect fifth,octave,A,tritone,False,,"{""interval_short"": ""P8"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 66, ""root_name"": ""F#4"", ""semitones"": 12, ""soundfont"": ""timgm""}"
+interval_id/P8_melodic_asc_59_1::no_audio::mcq,interval_id/P8_melodic_asc_59_1,interval_id,no_audio,mcq,1,,"Listen to the two pitches. Name the interval they form.
+A. perfect fourth
+B. octave
+C. major third
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fourth|octave|major third|major seventh,octave,A,perfect fourth,False,,"{""interval_short"": ""P8"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 59, ""root_name"": ""B3"", ""semitones"": 12, ""soundfont"": ""timgm""}"
+interval_id/P8_melodic_asc_65_3::no_audio::mcq,interval_id/P8_melodic_asc_65_3,interval_id,no_audio,mcq,0,,"Two notes are played. What is the musical interval between them?
+A. octave
+B. minor third
+C. major seventh
+D. major third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",octave|minor third|major seventh|major third,octave,D,major third,False,,"{""interval_short"": ""P8"", ""presentation"": ""melodic_asc"", ""program"": ""violin"", ""root"": 65, ""root_name"": ""F4"", ""semitones"": 12, ""soundfont"": ""musescore""}"
+interval_id/TT_harmonic_64_0::no_audio::mcq,interval_id/TT_harmonic_64_0,interval_id,no_audio,mcq,2,,"What interval do you hear between the notes in this clip?
+A. major seventh
+B. tritone
+C. perfect fifth
+D. perfect fourth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|tritone|perfect fifth|perfect fourth,tritone,B,tritone,True,,"{""interval_short"": ""TT"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 64, ""root_name"": ""E4"", ""semitones"": 6, ""soundfont"": ""musescore""}"
+interval_id/TT_melodic_desc_51_3::no_audio::mcq,interval_id/TT_melodic_desc_51_3,interval_id,no_audio,mcq,0,,"Two notes are played. What is the musical interval between them?
+A. tritone
+B. perfect fourth
+C. perfect fifth
+D. major sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",tritone|perfect fourth|perfect fifth|major sixth,tritone,A,tritone,True,,"{""interval_short"": ""TT"", ""presentation"": ""melodic_desc"", ""program"": ""violin"", ""root"": 51, ""root_name"": ""D#3"", ""semitones"": 6, ""soundfont"": ""timgm""}"
+interval_id/TT_melodic_desc_52_1::no_audio::mcq,interval_id/TT_melodic_desc_52_1,interval_id,no_audio,mcq,1,,"Listen to the two pitches. Name the interval they form.
+A. minor sixth
+B. perfect fourth
+C. tritone
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|perfect fourth|tritone|perfect fifth,tritone,C,tritone,True,,"{""interval_short"": ""TT"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 52, ""root_name"": ""E3"", ""semitones"": 6, ""soundfont"": ""musescore""}"
+interval_id/m2_harmonic_59_1::no_audio::mcq,interval_id/m2_harmonic_59_1,interval_id,no_audio,mcq,2,,"What interval do you hear between the notes in this clip?
+A. minor second
+B. major seventh
+C. major second
+D. major third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor second|major seventh|major second|major third,minor second,C,major second,False,,"{""interval_short"": ""m2"", ""presentation"": ""harmonic"", ""program"": ""violin"", ""root"": 59, ""root_name"": ""B3"", ""semitones"": 1, ""soundfont"": ""musescore""}"
+interval_id/m2_melodic_asc_54_2::no_audio::mcq,interval_id/m2_melodic_asc_54_2,interval_id,no_audio,mcq,1,,"Listen to the two pitches. Name the interval they form.
+A. perfect fifth
+B. octave
+C. major second
+D. minor second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fifth|octave|major second|minor second,minor second,A,perfect fifth,False,,"{""interval_short"": ""m2"", ""presentation"": ""melodic_asc"", ""program"": ""violin"", ""root"": 54, ""root_name"": ""F#3"", ""semitones"": 1, ""soundfont"": ""musescore""}"
+interval_id/m2_melodic_asc_56_3::no_audio::mcq,interval_id/m2_melodic_asc_56_3,interval_id,no_audio,mcq,0,,"Two notes are played. What is the musical interval between them?
+A. major sixth
+B. major second
+C. major seventh
+D. minor second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|major second|major seventh|minor second,minor second,B,major second,False,,"{""interval_short"": ""m2"", ""presentation"": ""melodic_asc"", ""program"": ""flute"", ""root"": 56, ""root_name"": ""G#3"", ""semitones"": 1, ""soundfont"": ""timgm""}"
+interval_id/m3_harmonic_61_0::no_audio::mcq,interval_id/m3_harmonic_61_0,interval_id,no_audio,mcq,1,,"Listen to the two pitches. Name the interval they form.
+A. major sixth
+B. major second
+C. minor third
+D. major third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|major second|minor third|major third,minor third,D,major third,False,,"{""interval_short"": ""m3"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 61, ""root_name"": ""C#4"", ""semitones"": 3, ""soundfont"": ""musescore""}"
+interval_id/m3_melodic_desc_67_1::no_audio::mcq,interval_id/m3_melodic_desc_67_1,interval_id,no_audio,mcq,1,,"Listen to the two pitches. Name the interval they form.
+A. major third
+B. major second
+C. minor third
+D. octave
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|major second|minor third|octave,minor third,A,major third,False,,"{""interval_short"": ""m3"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 67, ""root_name"": ""G4"", ""semitones"": 3, ""soundfont"": ""timgm""}"
+interval_id/m6_harmonic_58_0::no_audio::mcq,interval_id/m6_harmonic_58_0,interval_id,no_audio,mcq,2,,"What interval do you hear between the notes in this clip?
+A. minor sixth
+B. major sixth
+C. perfect fifth
+D. minor second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor sixth|major sixth|perfect fifth|minor second,minor sixth,A,minor sixth,True,,"{""interval_short"": ""m6"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 58, ""root_name"": ""A#3"", ""semitones"": 8, ""soundfont"": ""musescore""}"
+interval_id/m6_harmonic_61_1::no_audio::mcq,interval_id/m6_harmonic_61_1,interval_id,no_audio,mcq,1,,"Listen to the two pitches. Name the interval they form.
+A. major sixth
+B. minor sixth
+C. minor seventh
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|minor sixth|minor seventh|perfect fifth,minor sixth,A,major sixth,False,,"{""interval_short"": ""m6"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 61, ""root_name"": ""C#4"", ""semitones"": 8, ""soundfont"": ""timgm""}"
+interval_id/m6_harmonic_69_2::no_audio::mcq,interval_id/m6_harmonic_69_2,interval_id,no_audio,mcq,2,,"What interval do you hear between the notes in this clip?
+A. perfect fifth
+B. minor seventh
+C. minor sixth
+D. major sixth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fifth|minor seventh|minor sixth|major sixth,minor sixth,A,perfect fifth,False,,"{""interval_short"": ""m6"", ""presentation"": ""harmonic"", ""program"": ""piano"", ""root"": 69, ""root_name"": ""A4"", ""semitones"": 8, ""soundfont"": ""musescore""}"
+interval_id/m6_melodic_desc_70_1::no_audio::mcq,interval_id/m6_melodic_desc_70_1,interval_id,no_audio,mcq,2,,"What interval do you hear between the notes in this clip?
+A. minor seventh
+B. major sixth
+C. minor sixth
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|major sixth|minor sixth|perfect fifth,minor sixth,D,perfect fifth,False,,"{""interval_short"": ""m6"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 70, ""root_name"": ""A#4"", ""semitones"": 8, ""soundfont"": ""timgm""}"
+interval_id/m7_melodic_asc_53_1::no_audio::mcq,interval_id/m7_melodic_asc_53_1,interval_id,no_audio,mcq,0,,"Two notes are played. What is the musical interval between them?
+A. major seventh
+B. major sixth
+C. tritone
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|major sixth|tritone|minor seventh,minor seventh,C,tritone,False,,"{""interval_short"": ""m7"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 53, ""root_name"": ""F3"", ""semitones"": 10, ""soundfont"": ""timgm""}"
+interval_id/M2_melodic_desc_49_2::wrong_audio::mcq,interval_id/M2_melodic_desc_49_2,interval_id,wrong_audio,mcq,1,stimuli/cents/trial_0110.wav,"Listen to the two pitches. Name the interval they form.
+A. perfect fifth
+B. major second
+C. minor second
+D. minor third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fifth|major second|minor second|minor third,major second,B,major second,True,,"{""interval_short"": ""M2"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 49, ""root_name"": ""C#3"", ""semitones"": 2, ""soundfont"": ""fluidr3""}"
+interval_id/M3_melodic_desc_71_3::wrong_audio::mcq,interval_id/M3_melodic_desc_71_3,interval_id,wrong_audio,mcq,1,stimuli/cents/trial_0138.wav,"Listen to the two pitches. Name the interval they form.
+A. major third
+B. perfect fourth
+C. minor third
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|perfect fourth|minor third|perfect fifth,major third,B,perfect fourth,False,,"{""interval_short"": ""M3"", ""presentation"": ""melodic_desc"", ""program"": ""flute"", ""root"": 71, ""root_name"": ""B4"", ""semitones"": 4, ""soundfont"": ""timgm""}"
+interval_id/M7_melodic_desc_63_3::wrong_audio::mcq,interval_id/M7_melodic_desc_63_3,interval_id,wrong_audio,mcq,2,stimuli/key/As_major_scale_0.wav,"What interval do you hear between the notes in this clip?
+A. octave
+B. major seventh
+C. perfect fifth
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",octave|major seventh|perfect fifth|minor seventh,major seventh,C,perfect fifth,False,,"{""interval_short"": ""M7"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 63, ""root_name"": ""D#4"", ""semitones"": 11, ""soundfont"": ""timgm""}"
+interval_id/P4_harmonic_49_0::wrong_audio::mcq,interval_id/P4_harmonic_49_0,interval_id,wrong_audio,mcq,1,stimuli/chords/sus4_block_49_2.wav,"Listen to the two pitches. Name the interval they form.
+A. tritone
+B. perfect fourth
+C. major second
+D. major third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",tritone|perfect fourth|major second|major third,perfect fourth,C,major second,False,,"{""interval_short"": ""P4"", ""presentation"": ""harmonic"", ""program"": ""flute"", ""root"": 49, ""root_name"": ""C#3"", ""semitones"": 5, ""soundfont"": ""fluidr3""}"
+interval_id/P4_melodic_desc_65_0::wrong_audio::mcq,interval_id/P4_melodic_desc_65_0,interval_id,wrong_audio,mcq,1,stimuli/tempo/tempo_041.wav,"Listen to the two pitches. Name the interval they form.
+A. major third
+B. tritone
+C. minor seventh
+D. perfect fourth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major third|tritone|minor seventh|perfect fourth,perfect fourth,A,major third,False,,"{""interval_short"": ""P4"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 65, ""root_name"": ""F4"", ""semitones"": 5, ""soundfont"": ""fluidr3""}"
+interval_id/P5_melodic_asc_52_2::wrong_audio::mcq,interval_id/P5_melodic_asc_52_2,interval_id,wrong_audio,mcq,0,stimuli/key/G_major_progression_1.wav,"Two notes are played. What is the musical interval between them?
+A. major sixth
+B. minor sixth
+C. tritone
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|minor sixth|tritone|perfect fifth,perfect fifth,C,tritone,False,,"{""interval_short"": ""P5"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 52, ""root_name"": ""E3"", ""semitones"": 7, ""soundfont"": ""fluidr3""}"
+interval_id/TT_melodic_asc_54_3::wrong_audio::mcq,interval_id/TT_melodic_asc_54_3,interval_id,wrong_audio,mcq,1,stimuli/intervals/M2_melodic_asc_64_1.wav,"Listen to the two pitches. Name the interval they form.
+A. perfect fourth
+B. minor second
+C. tritone
+D. perfect fifth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",perfect fourth|minor second|tritone|perfect fifth,tritone,A,perfect fourth,False,,"{""interval_short"": ""TT"", ""presentation"": ""melodic_asc"", ""program"": ""synth_lead"", ""root"": 54, ""root_name"": ""F#3"", ""semitones"": 6, ""soundfont"": ""fluidr3""}"
+interval_id/m2_melodic_asc_56_0::wrong_audio::mcq,interval_id/m2_melodic_asc_56_0,interval_id,wrong_audio,mcq,2,stimuli/cents/trial_0023.wav,"What interval do you hear between the notes in this clip?
+A. major second
+B. minor second
+C. perfect fifth
+D. minor third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major second|minor second|perfect fifth|minor third,minor second,A,major second,False,,"{""interval_short"": ""m2"", ""presentation"": ""melodic_asc"", ""program"": ""violin"", ""root"": 56, ""root_name"": ""G#3"", ""semitones"": 1, ""soundfont"": ""timgm""}"
+interval_id/m2_melodic_desc_57_3::wrong_audio::mcq,interval_id/m2_melodic_desc_57_3,interval_id,wrong_audio,mcq,2,stimuli/meter/meter_3-4_05.wav,"What interval do you hear between the notes in this clip?
+A. major seventh
+B. major second
+C. minor second
+D. perfect fourth
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|major second|minor second|perfect fourth,minor second,B,major second,False,,"{""interval_short"": ""m2"", ""presentation"": ""melodic_desc"", ""program"": ""piano"", ""root"": 57, ""root_name"": ""A3"", ""semitones"": 1, ""soundfont"": ""timgm""}"
+interval_id/m3_harmonic_48_3::wrong_audio::mcq,interval_id/m3_harmonic_48_3,interval_id,wrong_audio,mcq,2,stimuli/cents/trial_0090.wav,"What interval do you hear between the notes in this clip?
+A. major sixth
+B. major second
+C. major third
+D. minor third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|major second|major third|minor third,minor third,C,major third,False,,"{""interval_short"": ""m3"", ""presentation"": ""harmonic"", ""program"": ""synth_lead"", ""root"": 48, ""root_name"": ""C3"", ""semitones"": 3, ""soundfont"": ""fluidr3""}"
+interval_id/m3_melodic_asc_49_1::wrong_audio::mcq,interval_id/m3_melodic_asc_49_1,interval_id,wrong_audio,mcq,2,stimuli/cents/trial_0134.wav,"What interval do you hear between the notes in this clip?
+A. major second
+B. major third
+C. perfect fifth
+D. minor third
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major second|major third|perfect fifth|minor third,minor third,B,major third,False,,"{""interval_short"": ""m3"", ""presentation"": ""melodic_asc"", ""program"": ""piano"", ""root"": 49, ""root_name"": ""C#3"", ""semitones"": 3, ""soundfont"": ""musescore""}"
+interval_id/m6_melodic_desc_70_1::wrong_audio::mcq,interval_id/m6_melodic_desc_70_1,interval_id,wrong_audio,mcq,1,stimuli/tuning/tune_0028.wav,"Listen to the two pitches. Name the interval they form.
+A. major sixth
+B. minor sixth
+C. perfect fifth
+D. major second
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major sixth|minor sixth|perfect fifth|major second,minor sixth,A,major sixth,False,,"{""interval_short"": ""m6"", ""presentation"": ""melodic_desc"", ""program"": ""synth_lead"", ""root"": 70, ""root_name"": ""A#4"", ""semitones"": 8, ""soundfont"": ""timgm""}"

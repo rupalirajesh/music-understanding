@@ -1,0 +1,183 @@
+job_id,stimulus_id,task,condition,format,paraphrase_idx,audio_path,prompt,options,ground_truth,raw_response,parsed,correct,error,factors
+tempo_bpm/tempo_000::audio::open,tempo_bpm/tempo_000,tempo_bpm,audio,open,2,stimuli/tempo/tempo_000.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,134.1,100,100,False,,"{""bpm"": 134.1, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_001::audio::open,tempo_bpm/tempo_001,tempo_bpm,audio,open,2,stimuli/tempo/tempo_001.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,143.0,144,144,True,,"{""bpm"": 143.0, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_002::audio::open,tempo_bpm/tempo_002,tempo_bpm,audio,open,0,stimuli/tempo/tempo_002.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,150.2,150,150,True,,"{""bpm"": 150.2, ""meter"": ""4/4"", ""n_bars"": 7}"
+tempo_bpm/tempo_003::audio::open,tempo_bpm/tempo_003,tempo_bpm,audio,open,0,stimuli/tempo/tempo_003.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,179.5,90,90,False,,"{""bpm"": 179.5, ""meter"": ""4/4"", ""n_bars"": 8}"
+tempo_bpm/tempo_004::audio::open,tempo_bpm/tempo_004,tempo_bpm,audio,open,1,stimuli/tempo/tempo_004.wav,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,100.3,80,80,False,,"{""bpm"": 100.3, ""meter"": ""4/4"", ""n_bars"": 5}"
+tempo_bpm/tempo_005::audio::open,tempo_bpm/tempo_005,tempo_bpm,audio,open,1,stimuli/tempo/tempo_005.wav,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,173.4,174,174,True,,"{""bpm"": 173.4, ""meter"": ""4/4"", ""n_bars"": 8}"
+tempo_bpm/tempo_006::audio::open,tempo_bpm/tempo_006,tempo_bpm,audio,open,1,stimuli/tempo/tempo_006.wav,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,70.0,140,140,False,,"{""bpm"": 70.0, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_007::audio::open,tempo_bpm/tempo_007,tempo_bpm,audio,open,1,stimuli/tempo/tempo_007.wav,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,142.2,144,144,True,,"{""bpm"": 142.2, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_008::audio::open,tempo_bpm/tempo_008,tempo_bpm,audio,open,2,stimuli/tempo/tempo_008.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,75.5,150,150,False,,"{""bpm"": 75.5, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_009::audio::open,tempo_bpm/tempo_009,tempo_bpm,audio,open,2,stimuli/tempo/tempo_009.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,99.0,80,80,False,,"{""bpm"": 99.0, ""meter"": ""4/4"", ""n_bars"": 5}"
+tempo_bpm/tempo_010::audio::open,tempo_bpm/tempo_010,tempo_bpm,audio,open,0,stimuli/tempo/tempo_010.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,79.4,80,80,True,,"{""bpm"": 79.4, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_010::audio::explain,tempo_bpm/tempo_010,tempo_bpm,audio,explain,2,stimuli/tempo/tempo_010.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,79.4,80,,,,"{""bpm"": 79.4, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_011::audio::open,tempo_bpm/tempo_011,tempo_bpm,audio,open,0,stimuli/tempo/tempo_011.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,82.7,80,80,True,,"{""bpm"": 82.7, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_012::audio::open,tempo_bpm/tempo_012,tempo_bpm,audio,open,2,stimuli/tempo/tempo_012.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,85.5,85,85,True,,"{""bpm"": 85.5, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_013::audio::open,tempo_bpm/tempo_013,tempo_bpm,audio,open,2,stimuli/tempo/tempo_013.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,133.3,135,135,True,,"{""bpm"": 133.3, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_014::audio::open,tempo_bpm/tempo_014,tempo_bpm,audio,open,0,stimuli/tempo/tempo_014.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,75.0,150,150,False,,"{""bpm"": 75.0, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_015::audio::open,tempo_bpm/tempo_015,tempo_bpm,audio,open,1,stimuli/tempo/tempo_015.wav,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,149.8,90,90,False,,"{""bpm"": 149.8, ""meter"": ""4/4"", ""n_bars"": 7}"
+tempo_bpm/tempo_016::audio::open,tempo_bpm/tempo_016,tempo_bpm,audio,open,0,stimuli/tempo/tempo_016.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,120.8,120,120,True,,"{""bpm"": 120.8, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_017::audio::open,tempo_bpm/tempo_017,tempo_bpm,audio,open,0,stimuli/tempo/tempo_017.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,64.7,130,130,False,,"{""bpm"": 64.7, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_018::audio::open,tempo_bpm/tempo_018,tempo_bpm,audio,open,1,stimuli/tempo/tempo_018.wav,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,56.6,115,115,False,,"{""bpm"": 56.6, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_018::audio::explain,tempo_bpm/tempo_018,tempo_bpm,audio,explain,1,stimuli/tempo/tempo_018.wav,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,56.6,115,,,,"{""bpm"": 56.6, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_019::audio::open,tempo_bpm/tempo_019,tempo_bpm,audio,open,0,stimuli/tempo/tempo_019.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,85.3,85,85,True,,"{""bpm"": 85.3, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_020::audio::open,tempo_bpm/tempo_020,tempo_bpm,audio,open,2,stimuli/tempo/tempo_020.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,133.2,100,100,False,,"{""bpm"": 133.2, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_021::audio::open,tempo_bpm/tempo_021,tempo_bpm,audio,open,2,stimuli/tempo/tempo_021.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,156.4,90,90,False,,"{""bpm"": 156.4, ""meter"": ""4/4"", ""n_bars"": 7}"
+tempo_bpm/tempo_022::audio::open,tempo_bpm/tempo_022,tempo_bpm,audio,open,1,stimuli/tempo/tempo_022.wav,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,121.7,120,120,True,,"{""bpm"": 121.7, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_023::audio::open,tempo_bpm/tempo_023,tempo_bpm,audio,open,0,stimuli/tempo/tempo_023.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,90.6,90,90,True,,"{""bpm"": 90.6, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_024::audio::open,tempo_bpm/tempo_024,tempo_bpm,audio,open,2,stimuli/tempo/tempo_024.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,126.0,126,126,True,,"{""bpm"": 126.0, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_025::audio::open,tempo_bpm/tempo_025,tempo_bpm,audio,open,2,stimuli/tempo/tempo_025.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,140.4,140,140,True,,"{""bpm"": 140.4, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_026::audio::open,tempo_bpm/tempo_026,tempo_bpm,audio,open,0,stimuli/tempo/tempo_026.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,92.8,90,90,True,,"{""bpm"": 92.8, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_027::audio::open,tempo_bpm/tempo_027,tempo_bpm,audio,open,1,stimuli/tempo/tempo_027.wav,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,168.0,100,100,False,,"{""bpm"": 168.0, ""meter"": ""4/4"", ""n_bars"": 7}"
+tempo_bpm/tempo_027::audio::explain,tempo_bpm/tempo_027,tempo_bpm,audio,explain,1,stimuli/tempo/tempo_027.wav,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,168.0,"120
+
+The audio consists of a single, high-pitched, electronic beep that repeats at a steady tempo. The beeps occur at the following approximate timestamps: 0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5, 8.0, 8.5, 9.0, and 9.5 seconds. This creates a consistent pattern of one beep every half-second (a sixteenth note at 120 BPM).",,,,"{""bpm"": 168.0, ""meter"": ""4/4"", ""n_bars"": 7}"
+tempo_bpm/tempo_028::audio::open,tempo_bpm/tempo_028,tempo_bpm,audio,open,0,stimuli/tempo/tempo_028.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,169.7,85,85,False,,"{""bpm"": 169.7, ""meter"": ""4/4"", ""n_bars"": 8}"
+tempo_bpm/tempo_029::audio::open,tempo_bpm/tempo_029,tempo_bpm,audio,open,2,stimuli/tempo/tempo_029.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,78.0,80,80,True,,"{""bpm"": 78.0, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_030::audio::open,tempo_bpm/tempo_030,tempo_bpm,audio,open,1,stimuli/tempo/tempo_030.wav,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,141.1,140,140,True,,"{""bpm"": 141.1, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_031::audio::open,tempo_bpm/tempo_031,tempo_bpm,audio,open,0,stimuli/tempo/tempo_031.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,81.9,80,80,True,,"{""bpm"": 81.9, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_032::audio::open,tempo_bpm/tempo_032,tempo_bpm,audio,open,1,stimuli/tempo/tempo_032.wav,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,183.0,90,90,False,,"{""bpm"": 183.0, ""meter"": ""4/4"", ""n_bars"": 8}"
+tempo_bpm/tempo_033::audio::open,tempo_bpm/tempo_033,tempo_bpm,audio,open,2,stimuli/tempo/tempo_033.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,145.2,160,160,False,,"{""bpm"": 145.2, ""meter"": ""4/4"", ""n_bars"": 7}"
+tempo_bpm/tempo_034::audio::open,tempo_bpm/tempo_034,tempo_bpm,audio,open,1,stimuli/tempo/tempo_034.wav,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,78.2,80,80,True,,"{""bpm"": 78.2, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_034::audio::explain,tempo_bpm/tempo_034,tempo_bpm,audio,explain,0,stimuli/tempo/tempo_034.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,78.2,120,,,,"{""bpm"": 78.2, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_035::audio::open,tempo_bpm/tempo_035,tempo_bpm,audio,open,2,stimuli/tempo/tempo_035.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,163.3,80,80,False,,"{""bpm"": 163.3, ""meter"": ""4/4"", ""n_bars"": 7}"
+tempo_bpm/tempo_036::audio::open,tempo_bpm/tempo_036,tempo_bpm,audio,open,0,stimuli/tempo/tempo_036.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,141.9,144,144,True,,"{""bpm"": 141.9, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_037::audio::open,tempo_bpm/tempo_037,tempo_bpm,audio,open,0,stimuli/tempo/tempo_037.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,155.4,95,95,False,,"{""bpm"": 155.4, ""meter"": ""4/4"", ""n_bars"": 7}"
+tempo_bpm/tempo_037::audio::explain,tempo_bpm/tempo_037,tempo_bpm,audio,explain,0,stimuli/tempo/tempo_037.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,155.4,120,,,,"{""bpm"": 155.4, ""meter"": ""4/4"", ""n_bars"": 7}"
+tempo_bpm/tempo_038::audio::open,tempo_bpm/tempo_038,tempo_bpm,audio,open,1,stimuli/tempo/tempo_038.wav,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,141.8,144,144,True,,"{""bpm"": 141.8, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_039::audio::open,tempo_bpm/tempo_039,tempo_bpm,audio,open,0,stimuli/tempo/tempo_039.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,66.3,132,132,False,,"{""bpm"": 66.3, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_040::audio::open,tempo_bpm/tempo_040,tempo_bpm,audio,open,0,stimuli/tempo/tempo_040.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,63.3,128,128,False,,"{""bpm"": 63.3, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_041::audio::open,tempo_bpm/tempo_041,tempo_bpm,audio,open,2,stimuli/tempo/tempo_041.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,167.8,115,115,False,,"{""bpm"": 167.8, ""meter"": ""4/4"", ""n_bars"": 7}"
+tempo_bpm/tempo_042::audio::open,tempo_bpm/tempo_042,tempo_bpm,audio,open,2,stimuli/tempo/tempo_042.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,67.6,135,135,False,,"{""bpm"": 67.6, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_043::audio::open,tempo_bpm/tempo_043,tempo_bpm,audio,open,2,stimuli/tempo/tempo_043.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,97.0,128,128,False,,"{""bpm"": 97.0, ""meter"": ""4/4"", ""n_bars"": 5}"
+tempo_bpm/tempo_043::audio::explain,tempo_bpm/tempo_043,tempo_bpm,audio,explain,0,stimuli/tempo/tempo_043.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,97.0,128,,,,"{""bpm"": 97.0, ""meter"": ""4/4"", ""n_bars"": 5}"
+tempo_bpm/tempo_044::audio::open,tempo_bpm/tempo_044,tempo_bpm,audio,open,2,stimuli/tempo/tempo_044.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,115.9,90,90,False,,"{""bpm"": 115.9, ""meter"": ""4/4"", ""n_bars"": 5}"
+tempo_bpm/tempo_045::audio::open,tempo_bpm/tempo_045,tempo_bpm,audio,open,2,stimuli/tempo/tempo_045.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,183.4,90,90,False,,"{""bpm"": 183.4, ""meter"": ""4/4"", ""n_bars"": 8}"
+tempo_bpm/tempo_046::audio::open,tempo_bpm/tempo_046,tempo_bpm,audio,open,2,stimuli/tempo/tempo_046.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,156.4,90,90,False,,"{""bpm"": 156.4, ""meter"": ""4/4"", ""n_bars"": 7}"
+tempo_bpm/tempo_047::audio::open,tempo_bpm/tempo_047,tempo_bpm,audio,open,2,stimuli/tempo/tempo_047.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,107.5,90,90,False,,"{""bpm"": 107.5, ""meter"": ""4/4"", ""n_bars"": 5}"
+tempo_bpm/tempo_048::audio::open,tempo_bpm/tempo_048,tempo_bpm,audio,open,1,stimuli/tempo/tempo_048.wav,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,166.3,100,100,False,,"{""bpm"": 166.3, ""meter"": ""4/4"", ""n_bars"": 7}"
+tempo_bpm/tempo_049::audio::open,tempo_bpm/tempo_049,tempo_bpm,audio,open,2,stimuli/tempo/tempo_049.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,183.8,92,92,False,,"{""bpm"": 183.8, ""meter"": ""4/4"", ""n_bars"": 8}"
+tempo_bpm/tempo_050::audio::open,tempo_bpm/tempo_050,tempo_bpm,audio,open,2,stimuli/tempo/tempo_050.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,106.7,80,80,False,,"{""bpm"": 106.7, ""meter"": ""4/4"", ""n_bars"": 5}"
+tempo_bpm/tempo_051::audio::open,tempo_bpm/tempo_051,tempo_bpm,audio,open,2,stimuli/tempo/tempo_051.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,183.5,90,90,False,,"{""bpm"": 183.5, ""meter"": ""4/4"", ""n_bars"": 8}"
+tempo_bpm/tempo_051::audio::explain,tempo_bpm/tempo_051,tempo_bpm,audio,explain,1,stimuli/tempo/tempo_051.wav,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,183.5,"90
+
+The audio consists of a single, high-pitched, electronic beep that repeats at a steady tempo. The beeps occur at the following approximate timestamps: 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, and 9.0 seconds. This creates a consistent one-beat-per-second rhythm, which corresponds to a tempo of 60 beats per minute (BPM). However, the rhythm feels more like a steady pulse with a slight swing, and the perceived tempo is more in line with a common 4/4 time signature where each beat is a quarter note. Counting the beeps as quarter notes, there are 10 beats in 9 seconds, which calculates to approximately 66.7 BPM. But the most common interpretation of a steady one-beat-per-second rhythm is 60 BPM. Re-evaluating the timing, the beeps are spaced at exactly 1-second intervals, which is the definition of 60 BPM.",,,,"{""bpm"": 183.5, ""meter"": ""4/4"", ""n_bars"": 8}"
+tempo_bpm/tempo_052::audio::open,tempo_bpm/tempo_052,tempo_bpm,audio,open,2,stimuli/tempo/tempo_052.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,71.4,140,140,False,,"{""bpm"": 71.4, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_053::audio::open,tempo_bpm/tempo_053,tempo_bpm,audio,open,0,stimuli/tempo/tempo_053.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,75.0,150,150,False,,"{""bpm"": 75.0, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_054::audio::open,tempo_bpm/tempo_054,tempo_bpm,audio,open,2,stimuli/tempo/tempo_054.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,78.3,80,80,True,,"{""bpm"": 78.3, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_055::audio::open,tempo_bpm/tempo_055,tempo_bpm,audio,open,2,stimuli/tempo/tempo_055.wav,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,138.0,90,90,False,,"{""bpm"": 138.0, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_056::audio::open,tempo_bpm/tempo_056,tempo_bpm,audio,open,0,stimuli/tempo/tempo_056.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,77.6,80,80,True,,"{""bpm"": 77.6, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_057::audio::open,tempo_bpm/tempo_057,tempo_bpm,audio,open,0,stimuli/tempo/tempo_057.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,129.5,130,130,True,,"{""bpm"": 129.5, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_058::audio::open,tempo_bpm/tempo_058,tempo_bpm,audio,open,0,stimuli/tempo/tempo_058.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,152.4,90,90,False,,"{""bpm"": 152.4, ""meter"": ""4/4"", ""n_bars"": 7}"
+tempo_bpm/tempo_059::audio::open,tempo_bpm/tempo_059,tempo_bpm,audio,open,0,stimuli/tempo/tempo_059.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,99.4,100,100,True,,"{""bpm"": 99.4, ""meter"": ""4/4"", ""n_bars"": 5}"
+tempo_bpm/tempo_004::no_audio::open,tempo_bpm/tempo_004,tempo_bpm,no_audio,open,1,,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,100.3,120,120,False,,"{""bpm"": 100.3, ""meter"": ""4/4"", ""n_bars"": 5}"
+tempo_bpm/tempo_006::no_audio::open,tempo_bpm/tempo_006,tempo_bpm,no_audio,open,2,,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,70.0,120,120,False,,"{""bpm"": 70.0, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_014::no_audio::open,tempo_bpm/tempo_014,tempo_bpm,no_audio,open,1,,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,75.0,120,120,False,,"{""bpm"": 75.0, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_016::no_audio::open,tempo_bpm/tempo_016,tempo_bpm,no_audio,open,2,,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,120.8,120,120,True,,"{""bpm"": 120.8, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_019::no_audio::open,tempo_bpm/tempo_019,tempo_bpm,no_audio,open,2,,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,85.3,120,120,False,,"{""bpm"": 85.3, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_022::no_audio::open,tempo_bpm/tempo_022,tempo_bpm,no_audio,open,0,,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,121.7,120,120,True,,"{""bpm"": 121.7, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_023::no_audio::open,tempo_bpm/tempo_023,tempo_bpm,no_audio,open,1,,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,90.6,120,120,False,,"{""bpm"": 90.6, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_024::no_audio::open,tempo_bpm/tempo_024,tempo_bpm,no_audio,open,2,,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,126.0,120,120,True,,"{""bpm"": 126.0, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_028::no_audio::open,tempo_bpm/tempo_028,tempo_bpm,no_audio,open,1,,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,169.7,120,120,False,,"{""bpm"": 169.7, ""meter"": ""4/4"", ""n_bars"": 8}"
+tempo_bpm/tempo_031::no_audio::open,tempo_bpm/tempo_031,tempo_bpm,no_audio,open,0,,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,81.9,120,120,False,,"{""bpm"": 81.9, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_032::no_audio::open,tempo_bpm/tempo_032,tempo_bpm,no_audio,open,2,,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,183.0,120,120,False,,"{""bpm"": 183.0, ""meter"": ""4/4"", ""n_bars"": 8}"
+tempo_bpm/tempo_033::no_audio::open,tempo_bpm/tempo_033,tempo_bpm,no_audio,open,2,,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,145.2,120,120,False,,"{""bpm"": 145.2, ""meter"": ""4/4"", ""n_bars"": 7}"
+tempo_bpm/tempo_035::no_audio::open,tempo_bpm/tempo_035,tempo_bpm,no_audio,open,0,,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,163.3,120,120,False,,"{""bpm"": 163.3, ""meter"": ""4/4"", ""n_bars"": 7}"
+tempo_bpm/tempo_038::no_audio::open,tempo_bpm/tempo_038,tempo_bpm,no_audio,open,1,,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,141.8,120,120,False,,"{""bpm"": 141.8, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_041::no_audio::open,tempo_bpm/tempo_041,tempo_bpm,no_audio,open,2,,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,167.8,120,120,False,,"{""bpm"": 167.8, ""meter"": ""4/4"", ""n_bars"": 7}"
+tempo_bpm/tempo_047::no_audio::open,tempo_bpm/tempo_047,tempo_bpm,no_audio,open,2,,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,107.5,120,120,False,,"{""bpm"": 107.5, ""meter"": ""4/4"", ""n_bars"": 5}"
+tempo_bpm/tempo_049::no_audio::open,tempo_bpm/tempo_049,tempo_bpm,no_audio,open,2,,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,183.8,120,120,False,,"{""bpm"": 183.8, ""meter"": ""4/4"", ""n_bars"": 8}"
+tempo_bpm/tempo_053::no_audio::open,tempo_bpm/tempo_053,tempo_bpm,no_audio,open,2,,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,75.0,120,120,False,,"{""bpm"": 75.0, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_054::no_audio::open,tempo_bpm/tempo_054,tempo_bpm,no_audio,open,2,,"How fast is this clip in beats per minute? Give only a numeric answer.
+Give a short, direct answer.",,78.3,120,120,False,,"{""bpm"": 78.3, ""meter"": ""4/4"", ""n_bars"": 4}"
+tempo_bpm/tempo_058::no_audio::open,tempo_bpm/tempo_058,tempo_bpm,no_audio,open,1,,"Estimate the BPM (beats per minute) of this rhythm. Reply with just the number.
+Give a short, direct answer.",,152.4,120,120,False,,"{""bpm"": 152.4, ""meter"": ""4/4"", ""n_bars"": 7}"
+tempo_bpm/tempo_001::wrong_audio::open,tempo_bpm/tempo_001,tempo_bpm,wrong_audio,open,0,stimuli/tempo/tempo_017.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,143.0,130,130,False,,"{""bpm"": 143.0, ""meter"": ""4/4"", ""n_bars"": 6}"
+tempo_bpm/tempo_051::wrong_audio::open,tempo_bpm/tempo_051,tempo_bpm,wrong_audio,open,0,stimuli/chords/major7_block_60_3.wav,"What is the tempo of this clip, in beats per minute? Answer with a number only.
+Give a short, direct answer.",,183.5,120,120,False,,"{""bpm"": 183.5, ""meter"": ""4/4"", ""n_bars"": 8}"

@@ -1,0 +1,879 @@
+job_id,stimulus_id,task,condition,format,paraphrase_idx,audio_path,prompt,options,ground_truth,raw_response,parsed,correct,error,factors
+chord_quality/augmented_arpeggio_53_2::audio::mcq,chord_quality/augmented_arpeggio_53_2,chord_quality,audio,mcq,2,stimuli/chords/augmented_arpeggio_53_2.wav,"Listen to this chord. What kind of chord is it?
+A. dominant seventh
+B. minor seventh
+C. augmented
+D. diminished
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|minor seventh|augmented|diminished,augmented,A,dominant seventh,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""augmented"", ""root"": 53, ""root_name"": ""F"", ""soundfont"": ""fluidr3""}"
+chord_quality/augmented_arpeggio_54_1::audio::mcq,chord_quality/augmented_arpeggio_54_1,chord_quality,audio,mcq,1,stimuli/chords/augmented_arpeggio_54_1.wav,"Identify the type of the chord you hear.
+A. augmented
+B. major
+C. diminished
+D. minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|major|diminished|minor,augmented,B,major,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""augmented"", ""root"": 54, ""root_name"": ""F#"", ""soundfont"": ""timgm""}"
+chord_quality/augmented_arpeggio_59_4::audio::mcq,chord_quality/augmented_arpeggio_59_4,chord_quality,audio,mcq,0,stimuli/chords/augmented_arpeggio_59_4.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. major seventh
+B. diminished
+C. augmented
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|diminished|augmented|suspended fourth (sus4),augmented,A,major seventh,False,,"{""inversion"": 1, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""augmented"", ""root"": 59, ""root_name"": ""B"", ""soundfont"": ""timgm""}"
+chord_quality/augmented_arpeggio_60_3::audio::mcq,chord_quality/augmented_arpeggio_60_3,chord_quality,audio,mcq,0,stimuli/chords/augmented_arpeggio_60_3.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. diminished
+B. major seventh
+C. augmented
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|major seventh|augmented|major,augmented,D,major,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""augmented"", ""root"": 60, ""root_name"": ""C"", ""soundfont"": ""fluidr3""}"
+chord_quality/augmented_arpeggio_60_3::audio::open,chord_quality/augmented_arpeggio_60_3,chord_quality,audio,open,2,stimuli/chords/augmented_arpeggio_60_3.wav,"Listen to this chord. What kind of chord is it?
+Give a short, direct answer.",,augmented,It is a major chord.,It is a major chord.,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""augmented"", ""root"": 60, ""root_name"": ""C"", ""soundfont"": ""fluidr3""}"
+chord_quality/augmented_arpeggio_63_0::audio::mcq,chord_quality/augmented_arpeggio_63_0,chord_quality,audio,mcq,2,stimuli/chords/augmented_arpeggio_63_0.wav,"Listen to this chord. What kind of chord is it?
+A. suspended fourth (sus4)
+B. major seventh
+C. diminished
+D. augmented
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",suspended fourth (sus4)|major seventh|diminished|augmented,augmented,A,suspended fourth (sus4),False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""augmented"", ""root"": 63, ""root_name"": ""D#"", ""soundfont"": ""timgm""}"
+chord_quality/augmented_arpeggio_63_5::audio::mcq,chord_quality/augmented_arpeggio_63_5,chord_quality,audio,mcq,2,stimuli/chords/augmented_arpeggio_63_5.wav,"Listen to this chord. What kind of chord is it?
+A. diminished
+B. augmented
+C. minor seventh
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|augmented|minor seventh|major,augmented,D,major,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""augmented"", ""root"": 63, ""root_name"": ""D#"", ""soundfont"": ""timgm""}"
+chord_quality/augmented_arpeggio_63_5::audio::explain,chord_quality/augmented_arpeggio_63_5,chord_quality,audio,explain,2,stimuli/chords/augmented_arpeggio_63_5.wav,"Listen to this chord. What kind of chord is it?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,augmented,"The chord is a C major chord. I heard the notes C, E, and G played together, with the C note being the most prominent.",,,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""augmented"", ""root"": 63, ""root_name"": ""D#"", ""soundfont"": ""timgm""}"
+chord_quality/augmented_block_50_5::audio::mcq,chord_quality/augmented_block_50_5,chord_quality,audio,mcq,1,stimuli/chords/augmented_block_50_5.wav,"Identify the type of the chord you hear.
+A. minor seventh
+B. suspended fourth (sus4)
+C. dominant seventh
+D. augmented
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|suspended fourth (sus4)|dominant seventh|augmented,augmented,C,dominant seventh,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""augmented"", ""root"": 50, ""root_name"": ""D"", ""soundfont"": ""musescore""}"
+chord_quality/augmented_block_55_2::audio::mcq,chord_quality/augmented_block_55_2,chord_quality,audio,mcq,2,stimuli/chords/augmented_block_55_2.wav,"Listen to this chord. What kind of chord is it?
+A. augmented
+B. minor seventh
+C. dominant seventh
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|minor seventh|dominant seventh|major,augmented,D,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""augmented"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""musescore""}"
+chord_quality/augmented_block_56_0::audio::mcq,chord_quality/augmented_block_56_0,chord_quality,audio,mcq,2,stimuli/chords/augmented_block_56_0.wav,"Listen to this chord. What kind of chord is it?
+A. augmented
+B. minor seventh
+C. diminished
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|minor seventh|diminished|major seventh,augmented,D,major seventh,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""augmented"", ""root"": 56, ""root_name"": ""G#"", ""soundfont"": ""fluidr3""}"
+chord_quality/augmented_block_56_0::audio::explain,chord_quality/augmented_block_56_0,chord_quality,audio,explain,0,stimuli/chords/augmented_block_56_0.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,augmented,"The chord is a major chord. I can tell because the notes played are [insert notes here], which are characteristic of a major chord.",,,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""augmented"", ""root"": 56, ""root_name"": ""G#"", ""soundfont"": ""fluidr3""}"
+chord_quality/augmented_block_61_1::audio::mcq,chord_quality/augmented_block_61_1,chord_quality,audio,mcq,1,stimuli/chords/augmented_block_61_1.wav,"Identify the type of the chord you hear.
+A. minor
+B. diminished
+C. augmented
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor|diminished|augmented|major seventh,augmented,A,minor,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""augmented"", ""root"": 61, ""root_name"": ""C#"", ""soundfont"": ""musescore""}"
+chord_quality/augmented_block_62_3::audio::mcq,chord_quality/augmented_block_62_3,chord_quality,audio,mcq,1,stimuli/chords/augmented_block_62_3.wav,"Identify the type of the chord you hear.
+A. minor seventh
+B. augmented
+C. dominant seventh
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|augmented|dominant seventh|suspended fourth (sus4),augmented,A,minor seventh,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""augmented"", ""root"": 62, ""root_name"": ""D"", ""soundfont"": ""fluidr3""}"
+chord_quality/augmented_block_62_3::audio::open,chord_quality/augmented_block_62_3,chord_quality,audio,open,2,stimuli/chords/augmented_block_62_3.wav,"Listen to this chord. What kind of chord is it?
+Give a short, direct answer.",,augmented,It is a minor chord.,It is a minor chord.,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""augmented"", ""root"": 62, ""root_name"": ""D"", ""soundfont"": ""fluidr3""}"
+chord_quality/augmented_block_62_4::audio::mcq,chord_quality/augmented_block_62_4,chord_quality,audio,mcq,2,stimuli/chords/augmented_block_62_4.wav,"Listen to this chord. What kind of chord is it?
+A. major
+B. dominant seventh
+C. augmented
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|dominant seventh|augmented|minor seventh,augmented,A,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""augmented"", ""root"": 62, ""root_name"": ""D"", ""soundfont"": ""fluidr3""}"
+chord_quality/diminished_arpeggio_48_1::audio::mcq,chord_quality/diminished_arpeggio_48_1,chord_quality,audio,mcq,2,stimuli/chords/diminished_arpeggio_48_1.wav,"Listen to this chord. What kind of chord is it?
+A. minor
+B. major
+C. suspended fourth (sus4)
+D. diminished
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor|major|suspended fourth (sus4)|diminished,diminished,A,minor,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""diminished"", ""root"": 48, ""root_name"": ""C"", ""soundfont"": ""musescore""}"
+chord_quality/diminished_arpeggio_48_2::audio::mcq,chord_quality/diminished_arpeggio_48_2,chord_quality,audio,mcq,2,stimuli/chords/diminished_arpeggio_48_2.wav,"Listen to this chord. What kind of chord is it?
+A. diminished
+B. minor seventh
+C. major
+D. minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|minor seventh|major|minor,diminished,D,minor,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""diminished"", ""root"": 48, ""root_name"": ""C"", ""soundfont"": ""fluidr3""}"
+chord_quality/diminished_arpeggio_48_3::audio::mcq,chord_quality/diminished_arpeggio_48_3,chord_quality,audio,mcq,1,stimuli/chords/diminished_arpeggio_48_3.wav,"Identify the type of the chord you hear.
+A. diminished
+B. major
+C. dominant seventh
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|major|dominant seventh|minor seventh,diminished,B,major,False,,"{""inversion"": 2, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""diminished"", ""root"": 48, ""root_name"": ""C"", ""soundfont"": ""timgm""}"
+chord_quality/diminished_arpeggio_48_3::audio::open,chord_quality/diminished_arpeggio_48_3,chord_quality,audio,open,0,stimuli/chords/diminished_arpeggio_48_3.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+Give a short, direct answer.",,diminished,The chord is played in a minor quality.,The chord is played in a minor quality.,False,,"{""inversion"": 2, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""diminished"", ""root"": 48, ""root_name"": ""C"", ""soundfont"": ""timgm""}"
+chord_quality/diminished_arpeggio_51_0::audio::mcq,chord_quality/diminished_arpeggio_51_0,chord_quality,audio,mcq,2,stimuli/chords/diminished_arpeggio_51_0.wav,"Listen to this chord. What kind of chord is it?
+A. diminished
+B. minor seventh
+C. suspended fourth (sus4)
+D. augmented
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|minor seventh|suspended fourth (sus4)|augmented,diminished,C,suspended fourth (sus4),False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""diminished"", ""root"": 51, ""root_name"": ""D#"", ""soundfont"": ""fluidr3""}"
+chord_quality/diminished_arpeggio_51_0::audio::open,chord_quality/diminished_arpeggio_51_0,chord_quality,audio,open,2,stimuli/chords/diminished_arpeggio_51_0.wav,"Listen to this chord. What kind of chord is it?
+Give a short, direct answer.",,diminished,It is a minor chord.,It is a minor chord.,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""diminished"", ""root"": 51, ""root_name"": ""D#"", ""soundfont"": ""fluidr3""}"
+chord_quality/diminished_arpeggio_54_5::audio::mcq,chord_quality/diminished_arpeggio_54_5,chord_quality,audio,mcq,0,stimuli/chords/diminished_arpeggio_54_5.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. diminished
+B. minor
+C. major
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|minor|major|minor seventh,diminished,C,major,False,,"{""inversion"": 2, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""diminished"", ""root"": 54, ""root_name"": ""F#"", ""soundfont"": ""musescore""}"
+chord_quality/diminished_arpeggio_55_4::audio::mcq,chord_quality/diminished_arpeggio_55_4,chord_quality,audio,mcq,0,stimuli/chords/diminished_arpeggio_55_4.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. suspended fourth (sus4)
+B. diminished
+C. major
+D. dominant seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",suspended fourth (sus4)|diminished|major|dominant seventh,diminished,C,major,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""diminished"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""musescore""}"
+chord_quality/diminished_arpeggio_55_4::audio::open,chord_quality/diminished_arpeggio_55_4,chord_quality,audio,open,2,stimuli/chords/diminished_arpeggio_55_4.wav,"Listen to this chord. What kind of chord is it?
+Give a short, direct answer.",,diminished,It is a major chord.,It is a major chord.,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""diminished"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""musescore""}"
+chord_quality/diminished_block_49_0::audio::mcq,chord_quality/diminished_block_49_0,chord_quality,audio,mcq,2,stimuli/chords/diminished_block_49_0.wav,"Listen to this chord. What kind of chord is it?
+A. diminished
+B. augmented
+C. minor seventh
+D. dominant seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|augmented|minor seventh|dominant seventh,diminished,D,dominant seventh,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""diminished"", ""root"": 49, ""root_name"": ""C#"", ""soundfont"": ""musescore""}"
+chord_quality/diminished_block_49_0::audio::open,chord_quality/diminished_block_49_0,chord_quality,audio,open,2,stimuli/chords/diminished_block_49_0.wav,"Listen to this chord. What kind of chord is it?
+Give a short, direct answer.",,diminished,It is a major chord.,It is a major chord.,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""diminished"", ""root"": 49, ""root_name"": ""C#"", ""soundfont"": ""musescore""}"
+chord_quality/diminished_block_54_2::audio::mcq,chord_quality/diminished_block_54_2,chord_quality,audio,mcq,0,stimuli/chords/diminished_block_54_2.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. dominant seventh
+B. diminished
+C. minor seventh
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|diminished|minor seventh|suspended fourth (sus4),diminished,A,dominant seventh,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""diminished"", ""root"": 54, ""root_name"": ""F#"", ""soundfont"": ""timgm""}"
+chord_quality/diminished_block_54_3::audio::mcq,chord_quality/diminished_block_54_3,chord_quality,audio,mcq,2,stimuli/chords/diminished_block_54_3.wav,"Listen to this chord. What kind of chord is it?
+A. dominant seventh
+B. suspended fourth (sus4)
+C. minor seventh
+D. diminished
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|suspended fourth (sus4)|minor seventh|diminished,diminished,A,dominant seventh,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""diminished"", ""root"": 54, ""root_name"": ""F#"", ""soundfont"": ""musescore""}"
+chord_quality/diminished_block_55_1::audio::mcq,chord_quality/diminished_block_55_1,chord_quality,audio,mcq,0,stimuli/chords/diminished_block_55_1.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. suspended fourth (sus4)
+B. major seventh
+C. diminished
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",suspended fourth (sus4)|major seventh|diminished|minor seventh,diminished,A,suspended fourth (sus4),False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""diminished"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""musescore""}"
+chord_quality/diminished_block_57_4::audio::mcq,chord_quality/diminished_block_57_4,chord_quality,audio,mcq,0,stimuli/chords/diminished_block_57_4.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. minor seventh
+B. diminished
+C. minor
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|diminished|minor|major seventh,diminished,C,minor,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""diminished"", ""root"": 57, ""root_name"": ""A"", ""soundfont"": ""fluidr3""}"
+chord_quality/diminished_block_57_4::audio::explain,chord_quality/diminished_block_57_4,chord_quality,audio,explain,0,stimuli/chords/diminished_block_57_4.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,diminished,"The chord is A major. This is supported by the presence of the A major chord at 0.0s-0.9s, which is the only chord played in the clip.",,,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""diminished"", ""root"": 57, ""root_name"": ""A"", ""soundfont"": ""fluidr3""}"
+chord_quality/diminished_block_61_5::audio::mcq,chord_quality/diminished_block_61_5,chord_quality,audio,mcq,1,stimuli/chords/diminished_block_61_5.wav,"Identify the type of the chord you hear.
+A. dominant seventh
+B. suspended fourth (sus4)
+C. augmented
+D. diminished
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|suspended fourth (sus4)|augmented|diminished,diminished,A,dominant seventh,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""diminished"", ""root"": 61, ""root_name"": ""C#"", ""soundfont"": ""timgm""}"
+chord_quality/dominant7_arpeggio_48_3::audio::mcq,chord_quality/dominant7_arpeggio_48_3,chord_quality,audio,mcq,0,stimuli/chords/dominant7_arpeggio_48_3.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. major
+B. minor seventh
+C. suspended fourth (sus4)
+D. dominant seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|minor seventh|suspended fourth (sus4)|dominant seventh,dominant seventh,A,major,False,,"{""inversion"": 3, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""dominant7"", ""root"": 48, ""root_name"": ""C"", ""soundfont"": ""fluidr3""}"
+chord_quality/dominant7_arpeggio_48_3::audio::explain,chord_quality/dominant7_arpeggio_48_3,chord_quality,audio,explain,2,stimuli/chords/dominant7_arpeggio_48_3.wav,"Listen to this chord. What kind of chord is it?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,dominant seventh,"The chord is a C major chord. I heard the notes C, E, and G played together. The C note starts at 0.0 seconds and ends at 1.0 seconds, the E note starts at 1.0 seconds and ends at 1.8 seconds, and the G note starts at 1.8 seconds and ends at 2.6 seconds.",,,,"{""inversion"": 3, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""dominant7"", ""root"": 48, ""root_name"": ""C"", ""soundfont"": ""fluidr3""}"
+chord_quality/dominant7_arpeggio_51_5::audio::mcq,chord_quality/dominant7_arpeggio_51_5,chord_quality,audio,mcq,0,stimuli/chords/dominant7_arpeggio_51_5.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. diminished
+B. dominant seventh
+C. minor
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|dominant seventh|minor|suspended fourth (sus4),dominant seventh,C,minor,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""dominant7"", ""root"": 51, ""root_name"": ""D#"", ""soundfont"": ""fluidr3""}"
+chord_quality/dominant7_arpeggio_58_4::audio::mcq,chord_quality/dominant7_arpeggio_58_4,chord_quality,audio,mcq,2,stimuli/chords/dominant7_arpeggio_58_4.wav,"Listen to this chord. What kind of chord is it?
+A. dominant seventh
+B. minor
+C. suspended fourth (sus4)
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|minor|suspended fourth (sus4)|major seventh,dominant seventh,C,suspended fourth (sus4),False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""dominant7"", ""root"": 58, ""root_name"": ""A#"", ""soundfont"": ""timgm""}"
+chord_quality/dominant7_arpeggio_62_0::audio::mcq,chord_quality/dominant7_arpeggio_62_0,chord_quality,audio,mcq,2,stimuli/chords/dominant7_arpeggio_62_0.wav,"Listen to this chord. What kind of chord is it?
+A. major seventh
+B. dominant seventh
+C. diminished
+D. augmented
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|dominant seventh|diminished|augmented,dominant seventh,A,major seventh,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""dominant7"", ""root"": 62, ""root_name"": ""D"", ""soundfont"": ""fluidr3""}"
+chord_quality/dominant7_arpeggio_62_0::audio::explain,chord_quality/dominant7_arpeggio_62_0,chord_quality,audio,explain,0,stimuli/chords/dominant7_arpeggio_62_0.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,dominant seventh,"The chord is a D major chord. This is supported by the presence of the notes D, F#, and A, which are the notes of a D major chord.",,,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""dominant7"", ""root"": 62, ""root_name"": ""D"", ""soundfont"": ""fluidr3""}"
+chord_quality/dominant7_arpeggio_62_1::audio::mcq,chord_quality/dominant7_arpeggio_62_1,chord_quality,audio,mcq,1,stimuli/chords/dominant7_arpeggio_62_1.wav,"Identify the type of the chord you hear.
+A. suspended fourth (sus4)
+B. dominant seventh
+C. major seventh
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",suspended fourth (sus4)|dominant seventh|major seventh|minor seventh,dominant seventh,A,suspended fourth (sus4),False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""dominant7"", ""root"": 62, ""root_name"": ""D"", ""soundfont"": ""fluidr3""}"
+chord_quality/dominant7_arpeggio_63_2::audio::mcq,chord_quality/dominant7_arpeggio_63_2,chord_quality,audio,mcq,0,stimuli/chords/dominant7_arpeggio_63_2.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. dominant seventh
+B. suspended fourth (sus4)
+C. diminished
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|suspended fourth (sus4)|diminished|minor seventh,dominant seventh,A,dominant seventh,True,,"{""inversion"": 3, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""dominant7"", ""root"": 63, ""root_name"": ""D#"", ""soundfont"": ""fluidr3""}"
+chord_quality/dominant7_arpeggio_63_2::audio::open,chord_quality/dominant7_arpeggio_63_2,chord_quality,audio,open,1,stimuli/chords/dominant7_arpeggio_63_2.wav,"Identify the type of the chord you hear.
+Give a short, direct answer.",,dominant seventh,A minor chord.,A minor chord.,False,,"{""inversion"": 3, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""dominant7"", ""root"": 63, ""root_name"": ""D#"", ""soundfont"": ""fluidr3""}"
+chord_quality/dominant7_arpeggio_63_2::audio::explain,chord_quality/dominant7_arpeggio_63_2,chord_quality,audio,explain,0,stimuli/chords/dominant7_arpeggio_63_2.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,dominant seventh,"The chord is a major chord. This is supported by the presence of a C# major chord at 0.0 seconds, a D# major chord at 0.3 seconds, and an F# major chord at 0.6 seconds.",,,,"{""inversion"": 3, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""dominant7"", ""root"": 63, ""root_name"": ""D#"", ""soundfont"": ""fluidr3""}"
+chord_quality/dominant7_block_49_0::audio::mcq,chord_quality/dominant7_block_49_0,chord_quality,audio,mcq,2,stimuli/chords/dominant7_block_49_0.wav,"Listen to this chord. What kind of chord is it?
+A. dominant seventh
+B. minor
+C. major
+D. augmented
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|minor|major|augmented,dominant seventh,C,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""dominant7"", ""root"": 49, ""root_name"": ""C#"", ""soundfont"": ""timgm""}"
+chord_quality/dominant7_block_55_4::audio::mcq,chord_quality/dominant7_block_55_4,chord_quality,audio,mcq,0,stimuli/chords/dominant7_block_55_4.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. minor
+B. major seventh
+C. minor seventh
+D. dominant seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor|major seventh|minor seventh|dominant seventh,dominant seventh,A,minor,False,,"{""inversion"": 3, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""dominant7"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""musescore""}"
+chord_quality/dominant7_block_56_5::audio::mcq,chord_quality/dominant7_block_56_5,chord_quality,audio,mcq,1,stimuli/chords/dominant7_block_56_5.wav,"Identify the type of the chord you hear.
+A. dominant seventh
+B. augmented
+C. major seventh
+D. minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|augmented|major seventh|minor,dominant seventh,D,minor,False,,"{""inversion"": 1, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""dominant7"", ""root"": 56, ""root_name"": ""G#"", ""soundfont"": ""fluidr3""}"
+chord_quality/dominant7_block_56_5::audio::open,chord_quality/dominant7_block_56_5,chord_quality,audio,open,0,stimuli/chords/dominant7_block_56_5.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+Give a short, direct answer.",,dominant seventh,diminished,diminished,False,,"{""inversion"": 1, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""dominant7"", ""root"": 56, ""root_name"": ""G#"", ""soundfont"": ""fluidr3""}"
+chord_quality/dominant7_block_58_3::audio::mcq,chord_quality/dominant7_block_58_3,chord_quality,audio,mcq,2,stimuli/chords/dominant7_block_58_3.wav,"Listen to this chord. What kind of chord is it?
+A. minor
+B. minor seventh
+C. suspended fourth (sus4)
+D. dominant seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor|minor seventh|suspended fourth (sus4)|dominant seventh,dominant seventh,A,minor,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""dominant7"", ""root"": 58, ""root_name"": ""A#"", ""soundfont"": ""fluidr3""}"
+chord_quality/dominant7_block_59_1::audio::mcq,chord_quality/dominant7_block_59_1,chord_quality,audio,mcq,2,stimuli/chords/dominant7_block_59_1.wav,"Listen to this chord. What kind of chord is it?
+A. augmented
+B. minor seventh
+C. dominant seventh
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|minor seventh|dominant seventh|suspended fourth (sus4),dominant seventh,A,augmented,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""dominant7"", ""root"": 59, ""root_name"": ""B"", ""soundfont"": ""musescore""}"
+chord_quality/dominant7_block_61_2::audio::mcq,chord_quality/dominant7_block_61_2,chord_quality,audio,mcq,2,stimuli/chords/dominant7_block_61_2.wav,"Listen to this chord. What kind of chord is it?
+A. dominant seventh
+B. major seventh
+C. major
+D. minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|major seventh|major|minor,dominant seventh,C,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""dominant7"", ""root"": 61, ""root_name"": ""C#"", ""soundfont"": ""timgm""}"
+chord_quality/major7_arpeggio_49_2::audio::mcq,chord_quality/major7_arpeggio_49_2,chord_quality,audio,mcq,1,stimuli/chords/major7_arpeggio_49_2.wav,"Identify the type of the chord you hear.
+A. major
+B. minor seventh
+C. major seventh
+D. augmented
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|minor seventh|major seventh|augmented,major seventh,A,major,False,,"{""inversion"": 2, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""major7"", ""root"": 49, ""root_name"": ""C#"", ""soundfont"": ""musescore""}"
+chord_quality/major7_arpeggio_50_1::audio::mcq,chord_quality/major7_arpeggio_50_1,chord_quality,audio,mcq,0,stimuli/chords/major7_arpeggio_50_1.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. dominant seventh
+B. minor
+C. suspended fourth (sus4)
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|minor|suspended fourth (sus4)|major seventh,major seventh,B,minor,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""major7"", ""root"": 50, ""root_name"": ""D"", ""soundfont"": ""timgm""}"
+chord_quality/major7_arpeggio_54_4::audio::mcq,chord_quality/major7_arpeggio_54_4,chord_quality,audio,mcq,1,stimuli/chords/major7_arpeggio_54_4.wav,"Identify the type of the chord you hear.
+A. major seventh
+B. minor seventh
+C. suspended fourth (sus4)
+D. augmented
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|minor seventh|suspended fourth (sus4)|augmented,major seventh,A,major seventh,True,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""major7"", ""root"": 54, ""root_name"": ""F#"", ""soundfont"": ""fluidr3""}"
+chord_quality/major7_arpeggio_55_0::audio::mcq,chord_quality/major7_arpeggio_55_0,chord_quality,audio,mcq,0,stimuli/chords/major7_arpeggio_55_0.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. diminished
+B. suspended fourth (sus4)
+C. major seventh
+D. augmented
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|suspended fourth (sus4)|major seventh|augmented,major seventh,C,major seventh,True,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""major7"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""fluidr3""}"
+chord_quality/major7_arpeggio_55_0::audio::open,chord_quality/major7_arpeggio_55_0,chord_quality,audio,open,0,stimuli/chords/major7_arpeggio_55_0.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+Give a short, direct answer.",,major seventh,The chord is a G major chord.,The chord is a G major chord.,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""major7"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""fluidr3""}"
+chord_quality/major7_arpeggio_59_3::audio::mcq,chord_quality/major7_arpeggio_59_3,chord_quality,audio,mcq,2,stimuli/chords/major7_arpeggio_59_3.wav,"Listen to this chord. What kind of chord is it?
+A. dominant seventh
+B. major seventh
+C. diminished
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|major seventh|diminished|minor seventh,major seventh,A,dominant seventh,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""major7"", ""root"": 59, ""root_name"": ""B"", ""soundfont"": ""musescore""}"
+chord_quality/major7_arpeggio_61_5::audio::mcq,chord_quality/major7_arpeggio_61_5,chord_quality,audio,mcq,1,stimuli/chords/major7_arpeggio_61_5.wav,"Identify the type of the chord you hear.
+A. suspended fourth (sus4)
+B. major seventh
+C. minor
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",suspended fourth (sus4)|major seventh|minor|minor seventh,major seventh,C,minor,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""major7"", ""root"": 61, ""root_name"": ""C#"", ""soundfont"": ""fluidr3""}"
+chord_quality/major7_block_48_0::audio::mcq,chord_quality/major7_block_48_0,chord_quality,audio,mcq,1,stimuli/chords/major7_block_48_0.wav,"Identify the type of the chord you hear.
+A. augmented
+B. minor
+C. major
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|minor|major|major seventh,major seventh,C,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""major7"", ""root"": 48, ""root_name"": ""C"", ""soundfont"": ""fluidr3""}"
+chord_quality/major7_block_52_4::audio::mcq,chord_quality/major7_block_52_4,chord_quality,audio,mcq,0,stimuli/chords/major7_block_52_4.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. major
+B. major seventh
+C. augmented
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|major seventh|augmented|minor seventh,major seventh,A,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""major7"", ""root"": 52, ""root_name"": ""E"", ""soundfont"": ""musescore""}"
+chord_quality/major7_block_60_3::audio::mcq,chord_quality/major7_block_60_3,chord_quality,audio,mcq,2,stimuli/chords/major7_block_60_3.wav,"Listen to this chord. What kind of chord is it?
+A. suspended fourth (sus4)
+B. dominant seventh
+C. major
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",suspended fourth (sus4)|dominant seventh|major|major seventh,major seventh,C,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""major7"", ""root"": 60, ""root_name"": ""C"", ""soundfont"": ""fluidr3""}"
+chord_quality/major7_block_61_2::audio::mcq,chord_quality/major7_block_61_2,chord_quality,audio,mcq,1,stimuli/chords/major7_block_61_2.wav,"Identify the type of the chord you hear.
+A. diminished
+B. augmented
+C. major seventh
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|augmented|major seventh|suspended fourth (sus4),major seventh,A,diminished,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""major7"", ""root"": 61, ""root_name"": ""C#"", ""soundfont"": ""timgm""}"
+chord_quality/major7_block_61_5::audio::mcq,chord_quality/major7_block_61_5,chord_quality,audio,mcq,2,stimuli/chords/major7_block_61_5.wav,"Listen to this chord. What kind of chord is it?
+A. diminished
+B. dominant seventh
+C. major seventh
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|dominant seventh|major seventh|minor seventh,major seventh,A,diminished,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""major7"", ""root"": 61, ""root_name"": ""C#"", ""soundfont"": ""musescore""}"
+chord_quality/major7_block_64_1::audio::mcq,chord_quality/major7_block_64_1,chord_quality,audio,mcq,1,stimuli/chords/major7_block_64_1.wav,"Identify the type of the chord you hear.
+A. major seventh
+B. minor
+C. major
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|minor|major|minor seventh,major seventh,C,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""major7"", ""root"": 64, ""root_name"": ""E"", ""soundfont"": ""fluidr3""}"
+chord_quality/major7_block_64_1::audio::explain,chord_quality/major7_block_64_1,chord_quality,audio,explain,2,stimuli/chords/major7_block_64_1.wav,"Listen to this chord. What kind of chord is it?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,major seventh,"The chord is a C major chord. I can identify it by the specific notes I hear: C, E, and G. The C note is played from 0.0 to 0.6 seconds, the E note is played from 0.6 to 1.2 seconds, and the G note is played from 1.2 to 1.8 seconds.",,,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""major7"", ""root"": 64, ""root_name"": ""E"", ""soundfont"": ""fluidr3""}"
+chord_quality/major_arpeggio_51_1::audio::mcq,chord_quality/major_arpeggio_51_1,chord_quality,audio,mcq,0,stimuli/chords/major_arpeggio_51_1.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. augmented
+B. major seventh
+C. minor
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|major seventh|minor|major,major,D,major,True,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""major"", ""root"": 51, ""root_name"": ""D#"", ""soundfont"": ""musescore""}"
+chord_quality/major_arpeggio_51_1::audio::open,chord_quality/major_arpeggio_51_1,chord_quality,audio,open,1,stimuli/chords/major_arpeggio_51_1.wav,"Identify the type of the chord you hear.
+Give a short, direct answer.",,major,A major chord.,A major chord.,True,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""major"", ""root"": 51, ""root_name"": ""D#"", ""soundfont"": ""musescore""}"
+chord_quality/major_arpeggio_51_5::audio::mcq,chord_quality/major_arpeggio_51_5,chord_quality,audio,mcq,2,stimuli/chords/major_arpeggio_51_5.wav,"Listen to this chord. What kind of chord is it?
+A. suspended fourth (sus4)
+B. minor seventh
+C. major
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",suspended fourth (sus4)|minor seventh|major|major seventh,major,C,major,True,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""major"", ""root"": 51, ""root_name"": ""D#"", ""soundfont"": ""fluidr3""}"
+chord_quality/major_arpeggio_51_5::audio::open,chord_quality/major_arpeggio_51_5,chord_quality,audio,open,0,stimuli/chords/major_arpeggio_51_5.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+Give a short, direct answer.",,major,The chord is a major chord.,The chord is a major chord.,True,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""major"", ""root"": 51, ""root_name"": ""D#"", ""soundfont"": ""fluidr3""}"
+chord_quality/major_arpeggio_53_0::audio::mcq,chord_quality/major_arpeggio_53_0,chord_quality,audio,mcq,2,stimuli/chords/major_arpeggio_53_0.wav,"Listen to this chord. What kind of chord is it?
+A. diminished
+B. major
+C. augmented
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|major|augmented|suspended fourth (sus4),major,B,major,True,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""major"", ""root"": 53, ""root_name"": ""F"", ""soundfont"": ""timgm""}"
+chord_quality/major_arpeggio_53_0::audio::explain,chord_quality/major_arpeggio_53_0,chord_quality,audio,explain,0,stimuli/chords/major_arpeggio_53_0.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,major,"The chord is a major chord. I heard the notes C, E, and G played together, with the C being the root note. The C note was played from 0.0s to 0.9s, the E note from 0.9s to 1.8s, and the G note from 1.8s to 2.7s.",,,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""major"", ""root"": 53, ""root_name"": ""F"", ""soundfont"": ""timgm""}"
+chord_quality/major_arpeggio_53_2::audio::mcq,chord_quality/major_arpeggio_53_2,chord_quality,audio,mcq,0,stimuli/chords/major_arpeggio_53_2.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. augmented
+B. major
+C. major seventh
+D. minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|major|major seventh|minor,major,B,major,True,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""major"", ""root"": 53, ""root_name"": ""F"", ""soundfont"": ""timgm""}"
+chord_quality/major_arpeggio_53_2::audio::explain,chord_quality/major_arpeggio_53_2,chord_quality,audio,explain,1,stimuli/chords/major_arpeggio_53_2.wav,"Identify the type of the chord you hear.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,major,"The chord being played is F major. This is supported by the presence of the notes F, A, and C, which are the notes of an F major chord. The F note is played from 0.5 seconds to 1.5 seconds, the A note is played from 1.5 seconds to 2.5 seconds, and the C note is played from 2.5 seconds to 3.5 seconds.",,,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""major"", ""root"": 53, ""root_name"": ""F"", ""soundfont"": ""timgm""}"
+chord_quality/major_arpeggio_57_3::audio::mcq,chord_quality/major_arpeggio_57_3,chord_quality,audio,mcq,0,stimuli/chords/major_arpeggio_57_3.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. diminished
+B. minor seventh
+C. major
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|minor seventh|major|suspended fourth (sus4),major,C,major,True,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""major"", ""root"": 57, ""root_name"": ""A"", ""soundfont"": ""fluidr3""}"
+chord_quality/major_arpeggio_57_3::audio::open,chord_quality/major_arpeggio_57_3,chord_quality,audio,open,1,stimuli/chords/major_arpeggio_57_3.wav,"Identify the type of the chord you hear.
+Give a short, direct answer.",,major,A major chord.,A major chord.,True,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""major"", ""root"": 57, ""root_name"": ""A"", ""soundfont"": ""fluidr3""}"
+chord_quality/major_arpeggio_60_4::audio::mcq,chord_quality/major_arpeggio_60_4,chord_quality,audio,mcq,0,stimuli/chords/major_arpeggio_60_4.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. diminished
+B. major
+C. minor seventh
+D. dominant seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|major|minor seventh|dominant seventh,major,B,major,True,,"{""inversion"": 2, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""major"", ""root"": 60, ""root_name"": ""C"", ""soundfont"": ""musescore""}"
+chord_quality/major_arpeggio_60_4::audio::open,chord_quality/major_arpeggio_60_4,chord_quality,audio,open,1,stimuli/chords/major_arpeggio_60_4.wav,"Identify the type of the chord you hear.
+Give a short, direct answer.",,major,The chord is a G major chord.,The chord is a G major chord.,True,,"{""inversion"": 2, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""major"", ""root"": 60, ""root_name"": ""C"", ""soundfont"": ""musescore""}"
+chord_quality/major_arpeggio_60_4::audio::explain,chord_quality/major_arpeggio_60_4,chord_quality,audio,explain,1,stimuli/chords/major_arpeggio_60_4.wav,"Identify the type of the chord you hear.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,major,"The chord is a G major chord. This is supported by the presence of the notes G, B, and D, which are the notes of a G major chord. The G note is heard at 0.5 seconds, the B note at 1.1 seconds, and the D note at 1.7 seconds.",,,,"{""inversion"": 2, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""major"", ""root"": 60, ""root_name"": ""C"", ""soundfont"": ""musescore""}"
+chord_quality/major_block_58_3::audio::mcq,chord_quality/major_block_58_3,chord_quality,audio,mcq,0,stimuli/chords/major_block_58_3.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. minor seventh
+B. major seventh
+C. major
+D. augmented
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|major seventh|major|augmented,major,A,minor seventh,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""major"", ""root"": 58, ""root_name"": ""A#"", ""soundfont"": ""musescore""}"
+chord_quality/major_block_61_5::audio::mcq,chord_quality/major_block_61_5,chord_quality,audio,mcq,2,stimuli/chords/major_block_61_5.wav,"Listen to this chord. What kind of chord is it?
+A. suspended fourth (sus4)
+B. augmented
+C. dominant seventh
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",suspended fourth (sus4)|augmented|dominant seventh|major,major,D,major,True,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""major"", ""root"": 61, ""root_name"": ""C#"", ""soundfont"": ""fluidr3""}"
+chord_quality/major_block_61_5::audio::open,chord_quality/major_block_61_5,chord_quality,audio,open,1,stimuli/chords/major_block_61_5.wav,"Identify the type of the chord you hear.
+Give a short, direct answer.",,major,A major chord.,A major chord.,True,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""major"", ""root"": 61, ""root_name"": ""C#"", ""soundfont"": ""fluidr3""}"
+chord_quality/major_block_62_0::audio::mcq,chord_quality/major_block_62_0,chord_quality,audio,mcq,0,stimuli/chords/major_block_62_0.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. suspended fourth (sus4)
+B. augmented
+C. major seventh
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",suspended fourth (sus4)|augmented|major seventh|major,major,D,major,True,,"{""inversion"": 2, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""major"", ""root"": 62, ""root_name"": ""D"", ""soundfont"": ""musescore""}"
+chord_quality/major_block_62_0::audio::open,chord_quality/major_block_62_0,chord_quality,audio,open,0,stimuli/chords/major_block_62_0.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+Give a short, direct answer.",,major,The chord is played.,The chord is played.,False,,"{""inversion"": 2, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""major"", ""root"": 62, ""root_name"": ""D"", ""soundfont"": ""musescore""}"
+chord_quality/major_block_62_4::audio::mcq,chord_quality/major_block_62_4,chord_quality,audio,mcq,1,stimuli/chords/major_block_62_4.wav,"Identify the type of the chord you hear.
+A. diminished
+B. minor
+C. major
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|minor|major|minor seventh,major,C,major,True,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""major"", ""root"": 62, ""root_name"": ""D"", ""soundfont"": ""musescore""}"
+chord_quality/major_block_63_1::audio::mcq,chord_quality/major_block_63_1,chord_quality,audio,mcq,1,stimuli/chords/major_block_63_1.wav,"Identify the type of the chord you hear.
+A. dominant seventh
+B. minor
+C. major
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|minor|major|major seventh,major,C,major,True,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""major"", ""root"": 63, ""root_name"": ""D#"", ""soundfont"": ""fluidr3""}"
+chord_quality/major_block_64_2::audio::mcq,chord_quality/major_block_64_2,chord_quality,audio,mcq,1,stimuli/chords/major_block_64_2.wav,"Identify the type of the chord you hear.
+A. major seventh
+B. diminished
+C. major
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|diminished|major|minor seventh,major,C,major,True,,"{""inversion"": 2, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""major"", ""root"": 64, ""root_name"": ""E"", ""soundfont"": ""musescore""}"
+chord_quality/major_block_64_2::audio::explain,chord_quality/major_block_64_2,chord_quality,audio,explain,2,stimuli/chords/major_block_64_2.wav,"Listen to this chord. What kind of chord is it?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,major,"The chord is a C major chord. I can tell because the notes C, E, and G are being played together.",,,,"{""inversion"": 2, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""major"", ""root"": 64, ""root_name"": ""E"", ""soundfont"": ""musescore""}"
+chord_quality/minor7_arpeggio_54_2::audio::mcq,chord_quality/minor7_arpeggio_54_2,chord_quality,audio,mcq,2,stimuli/chords/minor7_arpeggio_54_2.wav,"Listen to this chord. What kind of chord is it?
+A. minor seventh
+B. major seventh
+C. dominant seventh
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|major seventh|dominant seventh|major,minor seventh,D,major,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""minor7"", ""root"": 54, ""root_name"": ""F#"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor7_arpeggio_54_2::audio::explain,chord_quality/minor7_arpeggio_54_2,chord_quality,audio,explain,2,stimuli/chords/minor7_arpeggio_54_2.wav,"Listen to this chord. What kind of chord is it?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor seventh,"The chord is a C major chord. I heard the notes C, E, and G played together, with the C note being the most prominent.",,,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""minor7"", ""root"": 54, ""root_name"": ""F#"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor7_arpeggio_55_1::audio::mcq,chord_quality/minor7_arpeggio_55_1,chord_quality,audio,mcq,0,stimuli/chords/minor7_arpeggio_55_1.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. dominant seventh
+B. suspended fourth (sus4)
+C. minor seventh
+D. diminished
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|suspended fourth (sus4)|minor seventh|diminished,minor seventh,A,dominant seventh,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""minor7"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor7_arpeggio_55_3::audio::mcq,chord_quality/minor7_arpeggio_55_3,chord_quality,audio,mcq,2,stimuli/chords/minor7_arpeggio_55_3.wav,"Listen to this chord. What kind of chord is it?
+A. minor seventh
+B. minor
+C. major seventh
+D. augmented
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|minor|major seventh|augmented,minor seventh,B,minor,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""minor7"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""timgm""}"
+chord_quality/minor7_arpeggio_55_4::audio::mcq,chord_quality/minor7_arpeggio_55_4,chord_quality,audio,mcq,0,stimuli/chords/minor7_arpeggio_55_4.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. minor seventh
+B. dominant seventh
+C. major
+D. augmented
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|dominant seventh|major|augmented,minor seventh,C,major,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""minor7"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor7_arpeggio_60_0::audio::mcq,chord_quality/minor7_arpeggio_60_0,chord_quality,audio,mcq,0,stimuli/chords/minor7_arpeggio_60_0.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. minor seventh
+B. minor
+C. augmented
+D. dominant seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|minor|augmented|dominant seventh,minor seventh,B,minor,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""minor7"", ""root"": 60, ""root_name"": ""C"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor7_arpeggio_62_5::audio::mcq,chord_quality/minor7_arpeggio_62_5,chord_quality,audio,mcq,1,stimuli/chords/minor7_arpeggio_62_5.wav,"Identify the type of the chord you hear.
+A. major seventh
+B. dominant seventh
+C. minor seventh
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|dominant seventh|minor seventh|major,minor seventh,D,major,False,,"{""inversion"": 2, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""minor7"", ""root"": 62, ""root_name"": ""D"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor7_arpeggio_62_5::audio::explain,chord_quality/minor7_arpeggio_62_5,chord_quality,audio,explain,2,stimuli/chords/minor7_arpeggio_62_5.wav,"Listen to this chord. What kind of chord is it?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor seventh,"The chord is a D major chord. I heard the notes D, F#, and A played together, with the D note being the most prominent.",,,,"{""inversion"": 2, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""minor7"", ""root"": 62, ""root_name"": ""D"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor7_block_50_3::audio::mcq,chord_quality/minor7_block_50_3,chord_quality,audio,mcq,1,stimuli/chords/minor7_block_50_3.wav,"Identify the type of the chord you hear.
+A. dominant seventh
+B. minor
+C. minor seventh
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|minor|minor seventh|suspended fourth (sus4),minor seventh,A,dominant seventh,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""minor7"", ""root"": 50, ""root_name"": ""D"", ""soundfont"": ""timgm""}"
+chord_quality/minor7_block_54_5::audio::mcq,chord_quality/minor7_block_54_5,chord_quality,audio,mcq,1,stimuli/chords/minor7_block_54_5.wav,"Identify the type of the chord you hear.
+A. major
+B. diminished
+C. minor
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|diminished|minor|minor seventh,minor seventh,A,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""minor7"", ""root"": 54, ""root_name"": ""F#"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor7_block_54_5::audio::explain,chord_quality/minor7_block_54_5,chord_quality,audio,explain,1,stimuli/chords/minor7_block_54_5.wav,"Identify the type of the chord you hear.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor seventh,"The chord is a C major chord. This is supported by the presence of the notes C, E, and G, which are the notes of a C major chord. The C note is played from 0.2 seconds to 0.9 seconds, the E note is played from 0.9 seconds to 1.6 seconds, and the G note is played from 1.6 seconds to 2.3 seconds.",,,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""minor7"", ""root"": 54, ""root_name"": ""F#"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor7_block_55_1::audio::mcq,chord_quality/minor7_block_55_1,chord_quality,audio,mcq,1,stimuli/chords/minor7_block_55_1.wav,"Identify the type of the chord you hear.
+A. augmented
+B. suspended fourth (sus4)
+C. minor seventh
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|suspended fourth (sus4)|minor seventh|major seventh,minor seventh,A,augmented,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""minor7"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor7_block_56_0::audio::mcq,chord_quality/minor7_block_56_0,chord_quality,audio,mcq,2,stimuli/chords/minor7_block_56_0.wav,"Listen to this chord. What kind of chord is it?
+A. augmented
+B. minor seventh
+C. dominant seventh
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|minor seventh|dominant seventh|major,minor seventh,D,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""minor7"", ""root"": 56, ""root_name"": ""G#"", ""soundfont"": ""timgm""}"
+chord_quality/minor7_block_56_0::audio::explain,chord_quality/minor7_block_56_0,chord_quality,audio,explain,0,stimuli/chords/minor7_block_56_0.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor seventh,"The chord is a major chord. I can tell because the notes played are F# major, which are F#, A#, and C#.",,,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""minor7"", ""root"": 56, ""root_name"": ""G#"", ""soundfont"": ""timgm""}"
+chord_quality/minor7_block_59_2::audio::mcq,chord_quality/minor7_block_59_2,chord_quality,audio,mcq,1,stimuli/chords/minor7_block_59_2.wav,"Identify the type of the chord you hear.
+A. major seventh
+B. augmented
+C. minor seventh
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|augmented|minor seventh|major,minor seventh,D,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""minor7"", ""root"": 59, ""root_name"": ""B"", ""soundfont"": ""timgm""}"
+chord_quality/minor7_block_60_4::audio::mcq,chord_quality/minor7_block_60_4,chord_quality,audio,mcq,1,stimuli/chords/minor7_block_60_4.wav,"Identify the type of the chord you hear.
+A. major
+B. minor seventh
+C. dominant seventh
+D. diminished
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|minor seventh|dominant seventh|diminished,minor seventh,A,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""minor7"", ""root"": 60, ""root_name"": ""C"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor7_block_60_4::audio::open,chord_quality/minor7_block_60_4,chord_quality,audio,open,1,stimuli/chords/minor7_block_60_4.wav,"Identify the type of the chord you hear.
+Give a short, direct answer.",,minor seventh,A single chord.,A single chord.,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""minor7"", ""root"": 60, ""root_name"": ""C"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor7_block_60_4::audio::explain,chord_quality/minor7_block_60_4,chord_quality,audio,explain,1,stimuli/chords/minor7_block_60_4.wav,"Identify the type of the chord you hear.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor seventh,"The chord I hear is a C major chord. This is supported by the presence of the notes C, E, and G, which are the notes that make up a C major chord. The C note is heard at 0.2 seconds, the E note at 0.5 seconds, and the G note at 0.8 seconds.",,,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""minor7"", ""root"": 60, ""root_name"": ""C"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor_arpeggio_48_5::audio::mcq,chord_quality/minor_arpeggio_48_5,chord_quality,audio,mcq,0,stimuli/chords/minor_arpeggio_48_5.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. minor
+B. augmented
+C. major seventh
+D. dominant seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor|augmented|major seventh|dominant seventh,minor,A,minor,True,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""minor"", ""root"": 48, ""root_name"": ""C"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor_arpeggio_49_1::audio::mcq,chord_quality/minor_arpeggio_49_1,chord_quality,audio,mcq,0,stimuli/chords/minor_arpeggio_49_1.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. minor
+B. minor seventh
+C. major seventh
+D. augmented
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor|minor seventh|major seventh|augmented,minor,A,minor,True,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""minor"", ""root"": 49, ""root_name"": ""C#"", ""soundfont"": ""timgm""}"
+chord_quality/minor_arpeggio_49_1::audio::open,chord_quality/minor_arpeggio_49_1,chord_quality,audio,open,2,stimuli/chords/minor_arpeggio_49_1.wav,"Listen to this chord. What kind of chord is it?
+Give a short, direct answer.",,minor,It is a major chord.,It is a major chord.,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""minor"", ""root"": 49, ""root_name"": ""C#"", ""soundfont"": ""timgm""}"
+chord_quality/minor_arpeggio_55_4::audio::mcq,chord_quality/minor_arpeggio_55_4,chord_quality,audio,mcq,1,stimuli/chords/minor_arpeggio_55_4.wav,"Identify the type of the chord you hear.
+A. major
+B. minor
+C. major seventh
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|minor|major seventh|suspended fourth (sus4),minor,B,minor,True,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""minor"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""musescore""}"
+chord_quality/minor_arpeggio_55_4::audio::explain,chord_quality/minor_arpeggio_55_4,chord_quality,audio,explain,1,stimuli/chords/minor_arpeggio_55_4.wav,"Identify the type of the chord you hear.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor,"The chord being played is a G major chord. This is supported by the presence of the notes G, B, and D, which are the notes that make up a G major chord. The G note is played from 0.2 seconds to 1.1 seconds, the B note is played from 1.1 seconds to 1.9 seconds, and the D note is played from 1.9 seconds to 2.8 seconds.",,,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""minor"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""musescore""}"
+chord_quality/minor_arpeggio_56_3::audio::mcq,chord_quality/minor_arpeggio_56_3,chord_quality,audio,mcq,1,stimuli/chords/minor_arpeggio_56_3.wav,"Identify the type of the chord you hear.
+A. minor
+B. minor seventh
+C. major seventh
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor|minor seventh|major seventh|major,minor,D,major,False,,"{""inversion"": 2, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""minor"", ""root"": 56, ""root_name"": ""G#"", ""soundfont"": ""timgm""}"
+chord_quality/minor_arpeggio_63_2::audio::mcq,chord_quality/minor_arpeggio_63_2,chord_quality,audio,mcq,0,stimuli/chords/minor_arpeggio_63_2.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. suspended fourth (sus4)
+B. diminished
+C. minor
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",suspended fourth (sus4)|diminished|minor|minor seventh,minor,A,suspended fourth (sus4),False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""minor"", ""root"": 63, ""root_name"": ""D#"", ""soundfont"": ""musescore""}"
+chord_quality/minor_arpeggio_64_0::audio::mcq,chord_quality/minor_arpeggio_64_0,chord_quality,audio,mcq,2,stimuli/chords/minor_arpeggio_64_0.wav,"Listen to this chord. What kind of chord is it?
+A. diminished
+B. minor seventh
+C. augmented
+D. minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|minor seventh|augmented|minor,minor,D,minor,True,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""minor"", ""root"": 64, ""root_name"": ""E"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor_arpeggio_64_0::audio::open,chord_quality/minor_arpeggio_64_0,chord_quality,audio,open,1,stimuli/chords/minor_arpeggio_64_0.wav,"Identify the type of the chord you hear.
+Give a short, direct answer.",,minor,A major chord.,A major chord.,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""minor"", ""root"": 64, ""root_name"": ""E"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor_block_48_3::audio::mcq,chord_quality/minor_block_48_3,chord_quality,audio,mcq,1,stimuli/chords/minor_block_48_3.wav,"Identify the type of the chord you hear.
+A. dominant seventh
+B. suspended fourth (sus4)
+C. minor
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|suspended fourth (sus4)|minor|major seventh,minor,C,minor,True,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""minor"", ""root"": 48, ""root_name"": ""C"", ""soundfont"": ""musescore""}"
+chord_quality/minor_block_49_4::audio::mcq,chord_quality/minor_block_49_4,chord_quality,audio,mcq,1,stimuli/chords/minor_block_49_4.wav,"Identify the type of the chord you hear.
+A. augmented
+B. diminished
+C. major
+D. minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|diminished|major|minor,minor,C,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""minor"", ""root"": 49, ""root_name"": ""C#"", ""soundfont"": ""musescore""}"
+chord_quality/minor_block_51_1::audio::mcq,chord_quality/minor_block_51_1,chord_quality,audio,mcq,2,stimuli/chords/minor_block_51_1.wav,"Listen to this chord. What kind of chord is it?
+A. dominant seventh
+B. minor
+C. minor seventh
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|minor|minor seventh|suspended fourth (sus4),minor,B,minor,True,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""minor"", ""root"": 51, ""root_name"": ""D#"", ""soundfont"": ""musescore""}"
+chord_quality/minor_block_54_0::audio::mcq,chord_quality/minor_block_54_0,chord_quality,audio,mcq,2,stimuli/chords/minor_block_54_0.wav,"Listen to this chord. What kind of chord is it?
+A. dominant seventh
+B. suspended fourth (sus4)
+C. major seventh
+D. minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|suspended fourth (sus4)|major seventh|minor,minor,A,dominant seventh,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""minor"", ""root"": 54, ""root_name"": ""F#"", ""soundfont"": ""timgm""}"
+chord_quality/minor_block_54_0::audio::open,chord_quality/minor_block_54_0,chord_quality,audio,open,1,stimuli/chords/minor_block_54_0.wav,"Identify the type of the chord you hear.
+Give a short, direct answer.",,minor,A major chord.,A major chord.,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""minor"", ""root"": 54, ""root_name"": ""F#"", ""soundfont"": ""timgm""}"
+chord_quality/minor_block_58_5::audio::mcq,chord_quality/minor_block_58_5,chord_quality,audio,mcq,2,stimuli/chords/minor_block_58_5.wav,"Listen to this chord. What kind of chord is it?
+A. dominant seventh
+B. major
+C. diminished
+D. minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|major|diminished|minor,minor,B,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""minor"", ""root"": 58, ""root_name"": ""A#"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor_block_58_5::audio::explain,chord_quality/minor_block_58_5,chord_quality,audio,explain,2,stimuli/chords/minor_block_58_5.wav,"Listen to this chord. What kind of chord is it?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,minor,"The chord is a C major chord. I heard the notes C, E, and G played together, with the C note being the root note. The C note was played from 0.0s to 0.7s, the E note was played from 0.7s to 1.3s, and the G note was played from 1.3s to 2.0s.",,,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""minor"", ""root"": 58, ""root_name"": ""A#"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor_block_64_2::audio::mcq,chord_quality/minor_block_64_2,chord_quality,audio,mcq,1,stimuli/chords/minor_block_64_2.wav,"Identify the type of the chord you hear.
+A. dominant seventh
+B. suspended fourth (sus4)
+C. augmented
+D. minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|suspended fourth (sus4)|augmented|minor,minor,D,minor,True,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""minor"", ""root"": 64, ""root_name"": ""E"", ""soundfont"": ""fluidr3""}"
+chord_quality/sus4_arpeggio_48_0::audio::mcq,chord_quality/sus4_arpeggio_48_0,chord_quality,audio,mcq,0,stimuli/chords/sus4_arpeggio_48_0.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. minor seventh
+B. suspended fourth (sus4)
+C. minor
+D. diminished
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|suspended fourth (sus4)|minor|diminished,suspended fourth (sus4),C,minor,False,,"{""inversion"": 1, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""sus4"", ""root"": 48, ""root_name"": ""C"", ""soundfont"": ""musescore""}"
+chord_quality/sus4_arpeggio_49_4::audio::mcq,chord_quality/sus4_arpeggio_49_4,chord_quality,audio,mcq,0,stimuli/chords/sus4_arpeggio_49_4.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. major
+B. dominant seventh
+C. augmented
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|dominant seventh|augmented|suspended fourth (sus4),suspended fourth (sus4),A,major,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""sus4"", ""root"": 49, ""root_name"": ""C#"", ""soundfont"": ""fluidr3""}"
+chord_quality/sus4_arpeggio_51_5::audio::mcq,chord_quality/sus4_arpeggio_51_5,chord_quality,audio,mcq,0,stimuli/chords/sus4_arpeggio_51_5.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. augmented
+B. minor seventh
+C. suspended fourth (sus4)
+D. diminished
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|minor seventh|suspended fourth (sus4)|diminished,suspended fourth (sus4),A,augmented,False,,"{""inversion"": 1, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""sus4"", ""root"": 51, ""root_name"": ""D#"", ""soundfont"": ""fluidr3""}"
+chord_quality/sus4_arpeggio_51_5::audio::explain,chord_quality/sus4_arpeggio_51_5,chord_quality,audio,explain,1,stimuli/chords/sus4_arpeggio_51_5.wav,"Identify the type of the chord you hear.
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,suspended fourth (sus4),"The chord I hear is a D# major chord. This is supported by the presence of the notes D#, F#, and A# at approximately 0.2s-0.6s, 0.6s-1.0s, and 1.0s-1.4s respectively.",,,,"{""inversion"": 1, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""sus4"", ""root"": 51, ""root_name"": ""D#"", ""soundfont"": ""fluidr3""}"
+chord_quality/sus4_arpeggio_55_2::audio::mcq,chord_quality/sus4_arpeggio_55_2,chord_quality,audio,mcq,1,stimuli/chords/sus4_arpeggio_55_2.wav,"Identify the type of the chord you hear.
+A. dominant seventh
+B. major
+C. suspended fourth (sus4)
+D. minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|major|suspended fourth (sus4)|minor,suspended fourth (sus4),B,major,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""sus4"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""fluidr3""}"
+chord_quality/sus4_arpeggio_55_3::audio::mcq,chord_quality/sus4_arpeggio_55_3,chord_quality,audio,mcq,1,stimuli/chords/sus4_arpeggio_55_3.wav,"Identify the type of the chord you hear.
+A. augmented
+B. diminished
+C. suspended fourth (sus4)
+D. minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|diminished|suspended fourth (sus4)|minor,suspended fourth (sus4),D,minor,False,,"{""inversion"": 2, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""sus4"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""musescore""}"
+chord_quality/sus4_arpeggio_61_1::audio::mcq,chord_quality/sus4_arpeggio_61_1,chord_quality,audio,mcq,1,stimuli/chords/sus4_arpeggio_61_1.wav,"Identify the type of the chord you hear.
+A. suspended fourth (sus4)
+B. minor seventh
+C. major
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",suspended fourth (sus4)|minor seventh|major|major seventh,suspended fourth (sus4),C,major,False,,"{""inversion"": 1, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""sus4"", ""root"": 61, ""root_name"": ""C#"", ""soundfont"": ""timgm""}"
+chord_quality/sus4_arpeggio_61_1::audio::open,chord_quality/sus4_arpeggio_61_1,chord_quality,audio,open,1,stimuli/chords/sus4_arpeggio_61_1.wav,"Identify the type of the chord you hear.
+Give a short, direct answer.",,suspended fourth (sus4),The chord is a B major chord.,The chord is a B major chord.,False,,"{""inversion"": 1, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""sus4"", ""root"": 61, ""root_name"": ""C#"", ""soundfont"": ""timgm""}"
+chord_quality/sus4_block_49_2::audio::mcq,chord_quality/sus4_block_49_2,chord_quality,audio,mcq,1,stimuli/chords/sus4_block_49_2.wav,"Identify the type of the chord you hear.
+A. augmented
+B. major seventh
+C. suspended fourth (sus4)
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|major seventh|suspended fourth (sus4)|minor seventh,suspended fourth (sus4),A,augmented,False,,"{""inversion"": 2, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""sus4"", ""root"": 49, ""root_name"": ""C#"", ""soundfont"": ""fluidr3""}"
+chord_quality/sus4_block_52_3::audio::mcq,chord_quality/sus4_block_52_3,chord_quality,audio,mcq,2,stimuli/chords/sus4_block_52_3.wav,"Listen to this chord. What kind of chord is it?
+A. augmented
+B. diminished
+C. suspended fourth (sus4)
+D. minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|diminished|suspended fourth (sus4)|minor,suspended fourth (sus4),D,minor,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""sus4"", ""root"": 52, ""root_name"": ""E"", ""soundfont"": ""timgm""}"
+chord_quality/sus4_block_54_1::audio::mcq,chord_quality/sus4_block_54_1,chord_quality,audio,mcq,1,stimuli/chords/sus4_block_54_1.wav,"Identify the type of the chord you hear.
+A. minor
+B. minor seventh
+C. augmented
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor|minor seventh|augmented|suspended fourth (sus4),suspended fourth (sus4),A,minor,False,,"{""inversion"": 2, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""sus4"", ""root"": 54, ""root_name"": ""F#"", ""soundfont"": ""musescore""}"
+chord_quality/sus4_block_59_0::audio::mcq,chord_quality/sus4_block_59_0,chord_quality,audio,mcq,2,stimuli/chords/sus4_block_59_0.wav,"Listen to this chord. What kind of chord is it?
+A. diminished
+B. major
+C. suspended fourth (sus4)
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|major|suspended fourth (sus4)|minor seventh,suspended fourth (sus4),B,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""sus4"", ""root"": 59, ""root_name"": ""B"", ""soundfont"": ""musescore""}"
+chord_quality/sus4_block_61_4::audio::mcq,chord_quality/sus4_block_61_4,chord_quality,audio,mcq,2,stimuli/chords/sus4_block_61_4.wav,"Listen to this chord. What kind of chord is it?
+A. minor seventh
+B. diminished
+C. suspended fourth (sus4)
+D. dominant seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|diminished|suspended fourth (sus4)|dominant seventh,suspended fourth (sus4),C,suspended fourth (sus4),True,,"{""inversion"": 2, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""sus4"", ""root"": 61, ""root_name"": ""C#"", ""soundfont"": ""timgm""}"
+chord_quality/sus4_block_61_4::audio::open,chord_quality/sus4_block_61_4,chord_quality,audio,open,1,stimuli/chords/sus4_block_61_4.wav,"Identify the type of the chord you hear.
+Give a short, direct answer.",,suspended fourth (sus4),A major chord.,A major chord.,False,,"{""inversion"": 2, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""sus4"", ""root"": 61, ""root_name"": ""C#"", ""soundfont"": ""timgm""}"
+chord_quality/sus4_block_63_5::audio::mcq,chord_quality/sus4_block_63_5,chord_quality,audio,mcq,2,stimuli/chords/sus4_block_63_5.wav,"Listen to this chord. What kind of chord is it?
+A. augmented
+B. suspended fourth (sus4)
+C. major
+D. diminished
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|suspended fourth (sus4)|major|diminished,suspended fourth (sus4),C,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""sus4"", ""root"": 63, ""root_name"": ""D#"", ""soundfont"": ""fluidr3""}"
+chord_quality/augmented_arpeggio_59_4::no_audio::mcq,chord_quality/augmented_arpeggio_59_4,chord_quality,no_audio,mcq,0,,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. augmented
+B. minor seventh
+C. dominant seventh
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|minor seventh|dominant seventh|major seventh,augmented,A,augmented,True,,"{""inversion"": 1, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""augmented"", ""root"": 59, ""root_name"": ""B"", ""soundfont"": ""timgm""}"
+chord_quality/augmented_arpeggio_60_3::no_audio::mcq,chord_quality/augmented_arpeggio_60_3,chord_quality,no_audio,mcq,1,,"Identify the type of the chord you hear.
+A. minor seventh
+B. augmented
+C. diminished
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|augmented|diminished|major,augmented,A,minor seventh,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""augmented"", ""root"": 60, ""root_name"": ""C"", ""soundfont"": ""fluidr3""}"
+chord_quality/augmented_block_61_1::no_audio::mcq,chord_quality/augmented_block_61_1,chord_quality,no_audio,mcq,2,,"Listen to this chord. What kind of chord is it?
+A. minor seventh
+B. augmented
+C. major seventh
+D. dominant seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|augmented|major seventh|dominant seventh,augmented,A,minor seventh,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""augmented"", ""root"": 61, ""root_name"": ""C#"", ""soundfont"": ""musescore""}"
+chord_quality/augmented_block_62_3::no_audio::mcq,chord_quality/augmented_block_62_3,chord_quality,no_audio,mcq,1,,"Identify the type of the chord you hear.
+A. diminished
+B. minor
+C. augmented
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|minor|augmented|suspended fourth (sus4),augmented,B,minor,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""augmented"", ""root"": 62, ""root_name"": ""D"", ""soundfont"": ""fluidr3""}"
+chord_quality/diminished_arpeggio_48_1::no_audio::mcq,chord_quality/diminished_arpeggio_48_1,chord_quality,no_audio,mcq,1,,"Identify the type of the chord you hear.
+A. augmented
+B. diminished
+C. dominant seventh
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|diminished|dominant seventh|suspended fourth (sus4),diminished,D,suspended fourth (sus4),False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""diminished"", ""root"": 48, ""root_name"": ""C"", ""soundfont"": ""musescore""}"
+chord_quality/diminished_arpeggio_48_2::no_audio::mcq,chord_quality/diminished_arpeggio_48_2,chord_quality,no_audio,mcq,2,,"Listen to this chord. What kind of chord is it?
+A. major seventh
+B. major
+C. diminished
+D. dominant seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|major|diminished|dominant seventh,diminished,B,major,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""diminished"", ""root"": 48, ""root_name"": ""C"", ""soundfont"": ""fluidr3""}"
+chord_quality/diminished_block_54_2::no_audio::mcq,chord_quality/diminished_block_54_2,chord_quality,no_audio,mcq,0,,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. minor seventh
+B. suspended fourth (sus4)
+C. dominant seventh
+D. diminished
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|suspended fourth (sus4)|dominant seventh|diminished,diminished,A,minor seventh,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""diminished"", ""root"": 54, ""root_name"": ""F#"", ""soundfont"": ""timgm""}"
+chord_quality/dominant7_arpeggio_51_5::no_audio::mcq,chord_quality/dominant7_arpeggio_51_5,chord_quality,no_audio,mcq,1,,"Identify the type of the chord you hear.
+A. dominant seventh
+B. suspended fourth (sus4)
+C. minor seventh
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|suspended fourth (sus4)|minor seventh|major,dominant seventh,D,major,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""dominant7"", ""root"": 51, ""root_name"": ""D#"", ""soundfont"": ""fluidr3""}"
+chord_quality/dominant7_block_55_4::no_audio::mcq,chord_quality/dominant7_block_55_4,chord_quality,no_audio,mcq,2,,"Listen to this chord. What kind of chord is it?
+A. diminished
+B. suspended fourth (sus4)
+C. dominant seventh
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|suspended fourth (sus4)|dominant seventh|major seventh,dominant seventh,A,diminished,False,,"{""inversion"": 3, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""dominant7"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""musescore""}"
+chord_quality/dominant7_block_56_5::no_audio::mcq,chord_quality/dominant7_block_56_5,chord_quality,no_audio,mcq,1,,"Identify the type of the chord you hear.
+A. minor seventh
+B. major
+C. diminished
+D. dominant seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|major|diminished|dominant seventh,dominant seventh,A,minor seventh,False,,"{""inversion"": 1, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""dominant7"", ""root"": 56, ""root_name"": ""G#"", ""soundfont"": ""fluidr3""}"
+chord_quality/dominant7_block_58_3::no_audio::mcq,chord_quality/dominant7_block_58_3,chord_quality,no_audio,mcq,1,,"Identify the type of the chord you hear.
+A. minor seventh
+B. minor
+C. dominant seventh
+D. diminished
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|minor|dominant seventh|diminished,dominant seventh,B,minor,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""dominant7"", ""root"": 58, ""root_name"": ""A#"", ""soundfont"": ""fluidr3""}"
+chord_quality/major7_arpeggio_61_5::no_audio::mcq,chord_quality/major7_arpeggio_61_5,chord_quality,no_audio,mcq,0,,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. dominant seventh
+B. augmented
+C. major
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|augmented|major|major seventh,major seventh,A,dominant seventh,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""major7"", ""root"": 61, ""root_name"": ""C#"", ""soundfont"": ""fluidr3""}"
+chord_quality/major_arpeggio_53_2::no_audio::mcq,chord_quality/major_arpeggio_53_2,chord_quality,no_audio,mcq,1,,"Identify the type of the chord you hear.
+A. minor
+B. dominant seventh
+C. suspended fourth (sus4)
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor|dominant seventh|suspended fourth (sus4)|major,major,A,minor,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""major"", ""root"": 53, ""root_name"": ""F"", ""soundfont"": ""timgm""}"
+chord_quality/major_arpeggio_60_4::no_audio::mcq,chord_quality/major_arpeggio_60_4,chord_quality,no_audio,mcq,1,,"Identify the type of the chord you hear.
+A. augmented
+B. minor seventh
+C. minor
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|minor seventh|minor|major,major,C,minor,False,,"{""inversion"": 2, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""major"", ""root"": 60, ""root_name"": ""C"", ""soundfont"": ""musescore""}"
+chord_quality/minor7_arpeggio_54_2::no_audio::mcq,chord_quality/minor7_arpeggio_54_2,chord_quality,no_audio,mcq,1,,"Identify the type of the chord you hear.
+A. dominant seventh
+B. augmented
+C. minor seventh
+D. diminished
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|augmented|minor seventh|diminished,minor seventh,A,dominant seventh,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""minor7"", ""root"": 54, ""root_name"": ""F#"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor7_arpeggio_55_1::no_audio::mcq,chord_quality/minor7_arpeggio_55_1,chord_quality,no_audio,mcq,2,,"Listen to this chord. What kind of chord is it?
+A. diminished
+B. major seventh
+C. augmented
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|major seventh|augmented|minor seventh,minor seventh,A,diminished,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""minor7"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor7_arpeggio_55_4::no_audio::mcq,chord_quality/minor7_arpeggio_55_4,chord_quality,no_audio,mcq,0,,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. dominant seventh
+B. major
+C. minor seventh
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|major|minor seventh|major seventh,minor seventh,A,dominant seventh,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""minor7"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor7_block_50_3::no_audio::mcq,chord_quality/minor7_block_50_3,chord_quality,no_audio,mcq,2,,"Listen to this chord. What kind of chord is it?
+A. major seventh
+B. minor seventh
+C. dominant seventh
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|minor seventh|dominant seventh|suspended fourth (sus4),minor seventh,A,major seventh,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""minor7"", ""root"": 50, ""root_name"": ""D"", ""soundfont"": ""timgm""}"
+chord_quality/minor7_block_56_0::no_audio::mcq,chord_quality/minor7_block_56_0,chord_quality,no_audio,mcq,1,,"Identify the type of the chord you hear.
+A. major
+B. dominant seventh
+C. augmented
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major|dominant seventh|augmented|minor seventh,minor seventh,A,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""minor7"", ""root"": 56, ""root_name"": ""G#"", ""soundfont"": ""timgm""}"
+chord_quality/minor7_block_60_4::no_audio::mcq,chord_quality/minor7_block_60_4,chord_quality,no_audio,mcq,1,,"Identify the type of the chord you hear.
+A. major seventh
+B. minor seventh
+C. major
+D. dominant seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|minor seventh|major|dominant seventh,minor seventh,C,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""minor7"", ""root"": 60, ""root_name"": ""C"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor_arpeggio_49_1::no_audio::mcq,chord_quality/minor_arpeggio_49_1,chord_quality,no_audio,mcq,2,,"Listen to this chord. What kind of chord is it?
+A. suspended fourth (sus4)
+B. diminished
+C. dominant seventh
+D. minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",suspended fourth (sus4)|diminished|dominant seventh|minor,minor,A,suspended fourth (sus4),False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""piano"", ""quality"": ""minor"", ""root"": 49, ""root_name"": ""C#"", ""soundfont"": ""timgm""}"
+chord_quality/sus4_arpeggio_49_4::no_audio::mcq,chord_quality/sus4_arpeggio_49_4,chord_quality,no_audio,mcq,1,,"Identify the type of the chord you hear.
+A. minor
+B. dominant seventh
+C. minor seventh
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor|dominant seventh|minor seventh|suspended fourth (sus4),suspended fourth (sus4),A,minor,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""sus4"", ""root"": 49, ""root_name"": ""C#"", ""soundfont"": ""fluidr3""}"
+chord_quality/sus4_block_52_3::no_audio::mcq,chord_quality/sus4_block_52_3,chord_quality,no_audio,mcq,0,,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. minor seventh
+B. suspended fourth (sus4)
+C. major
+D. diminished
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|suspended fourth (sus4)|major|diminished,suspended fourth (sus4),A,minor seventh,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""sus4"", ""root"": 52, ""root_name"": ""E"", ""soundfont"": ""timgm""}"
+chord_quality/sus4_block_63_5::no_audio::mcq,chord_quality/sus4_block_63_5,chord_quality,no_audio,mcq,0,,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. dominant seventh
+B. diminished
+C. suspended fourth (sus4)
+D. minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|diminished|suspended fourth (sus4)|minor,suspended fourth (sus4),D,minor,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""sus4"", ""root"": 63, ""root_name"": ""D#"", ""soundfont"": ""fluidr3""}"
+chord_quality/augmented_arpeggio_53_2::wrong_audio::mcq,chord_quality/augmented_arpeggio_53_2,chord_quality,wrong_audio,mcq,2,stimuli/mode/major_57_bare_scale.wav,"Listen to this chord. What kind of chord is it?
+A. diminished
+B. minor
+C. augmented
+D. dominant seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|minor|augmented|dominant seventh,augmented,B,minor,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""violin"", ""quality"": ""augmented"", ""root"": 53, ""root_name"": ""F"", ""soundfont"": ""fluidr3""}"
+chord_quality/augmented_block_50_5::wrong_audio::mcq,chord_quality/augmented_block_50_5,chord_quality,wrong_audio,mcq,0,stimuli/tempo/tempo_017.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. diminished
+B. suspended fourth (sus4)
+C. major seventh
+D. augmented
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|suspended fourth (sus4)|major seventh|augmented,augmented,C,major seventh,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""augmented"", ""root"": 50, ""root_name"": ""D"", ""soundfont"": ""musescore""}"
+chord_quality/augmented_block_62_3::wrong_audio::mcq,chord_quality/augmented_block_62_3,chord_quality,wrong_audio,mcq,2,stimuli/intervals/M6_melodic_asc_68_3.wav,"Listen to this chord. What kind of chord is it?
+A. diminished
+B. augmented
+C. dominant seventh
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",diminished|augmented|dominant seventh|major,augmented,D,major,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""augmented"", ""root"": 62, ""root_name"": ""D"", ""soundfont"": ""fluidr3""}"
+chord_quality/diminished_arpeggio_48_2::wrong_audio::mcq,chord_quality/diminished_arpeggio_48_2,chord_quality,wrong_audio,mcq,1,stimuli/mode/phrygian_57_melody_drone.wav,"Identify the type of the chord you hear.
+A. suspended fourth (sus4)
+B. diminished
+C. major seventh
+D. minor
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",suspended fourth (sus4)|diminished|major seventh|minor,diminished,D,minor,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""diminished"", ""root"": 48, ""root_name"": ""C"", ""soundfont"": ""fluidr3""}"
+chord_quality/dominant7_block_56_5::wrong_audio::mcq,chord_quality/dominant7_block_56_5,chord_quality,wrong_audio,mcq,0,stimuli/key/F_minor_scale_0.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. dominant seventh
+B. suspended fourth (sus4)
+C. diminished
+D. major seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|suspended fourth (sus4)|diminished|major seventh,dominant seventh,A,dominant seventh,True,,"{""inversion"": 1, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""dominant7"", ""root"": 56, ""root_name"": ""G#"", ""soundfont"": ""fluidr3""}"
+chord_quality/major7_arpeggio_49_2::wrong_audio::mcq,chord_quality/major7_arpeggio_49_2,chord_quality,wrong_audio,mcq,1,stimuli/cents/trial_0040.wav,"Identify the type of the chord you hear.
+A. minor
+B. major
+C. major seventh
+D. augmented
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor|major|major seventh|augmented,major seventh,A,minor,False,,"{""inversion"": 2, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""major7"", ""root"": 49, ""root_name"": ""C#"", ""soundfont"": ""musescore""}"
+chord_quality/major7_arpeggio_55_0::wrong_audio::mcq,chord_quality/major7_arpeggio_55_0,chord_quality,wrong_audio,mcq,0,stimuli/pitch/049_synth_lead_fluidr3_0.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. major seventh
+B. dominant seventh
+C. minor seventh
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",major seventh|dominant seventh|minor seventh|major,major seventh,D,major,False,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""flute"", ""quality"": ""major7"", ""root"": 55, ""root_name"": ""G"", ""soundfont"": ""fluidr3""}"
+chord_quality/major_arpeggio_51_1::wrong_audio::mcq,chord_quality/major_arpeggio_51_1,chord_quality,wrong_audio,mcq,1,stimuli/polyphony/count3_08.wav,"Identify the type of the chord you hear.
+A. dominant seventh
+B. suspended fourth (sus4)
+C. diminished
+D. major
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",dominant seventh|suspended fourth (sus4)|diminished|major,major,D,major,True,,"{""inversion"": 0, ""presentation"": ""arpeggio"", ""program"": ""synth_lead"", ""quality"": ""major"", ""root"": 51, ""root_name"": ""D#"", ""soundfont"": ""musescore""}"
+chord_quality/minor7_block_54_5::wrong_audio::mcq,chord_quality/minor7_block_54_5,chord_quality,wrong_audio,mcq,0,stimuli/cents/trial_0033.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. suspended fourth (sus4)
+B. major
+C. augmented
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",suspended fourth (sus4)|major|augmented|minor seventh,minor seventh,A,suspended fourth (sus4),False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""synth_lead"", ""quality"": ""minor7"", ""root"": 54, ""root_name"": ""F#"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor7_block_60_4::wrong_audio::mcq,chord_quality/minor7_block_60_4,chord_quality,wrong_audio,mcq,1,stimuli/pitch/070_piano_timgm_1.wav,"Identify the type of the chord you hear.
+A. minor seventh
+B. minor
+C. diminished
+D. augmented
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|minor|diminished|augmented,minor seventh,B,minor,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""piano"", ""quality"": ""minor7"", ""root"": 60, ""root_name"": ""C"", ""soundfont"": ""fluidr3""}"
+chord_quality/minor_block_49_4::wrong_audio::mcq,chord_quality/minor_block_49_4,chord_quality,wrong_audio,mcq,0,stimuli/cents/trial_0129.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. augmented
+B. minor
+C. major seventh
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",augmented|minor|major seventh|suspended fourth (sus4),minor,C,major seventh,False,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""minor"", ""root"": 49, ""root_name"": ""C#"", ""soundfont"": ""musescore""}"
+chord_quality/minor_block_51_1::wrong_audio::mcq,chord_quality/minor_block_51_1,chord_quality,wrong_audio,mcq,1,stimuli/chords/minor_block_48_3.wav,"Identify the type of the chord you hear.
+A. minor seventh
+B. dominant seventh
+C. minor
+D. suspended fourth (sus4)
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",minor seventh|dominant seventh|minor|suspended fourth (sus4),minor,C,minor,True,,"{""inversion"": 0, ""presentation"": ""block"", ""program"": ""flute"", ""quality"": ""minor"", ""root"": 51, ""root_name"": ""D#"", ""soundfont"": ""musescore""}"
+chord_quality/sus4_block_49_2::wrong_audio::mcq,chord_quality/sus4_block_49_2,chord_quality,wrong_audio,mcq,0,stimuli/cents/trial_0013.wav,"A chord is played. What is its quality (e.g. major, minor, diminished)?
+A. suspended fourth (sus4)
+B. augmented
+C. dominant seventh
+D. minor seventh
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",suspended fourth (sus4)|augmented|dominant seventh|minor seventh,suspended fourth (sus4),A,suspended fourth (sus4),True,,"{""inversion"": 2, ""presentation"": ""block"", ""program"": ""violin"", ""quality"": ""sus4"", ""root"": 49, ""root_name"": ""C#"", ""soundfont"": ""fluidr3""}"

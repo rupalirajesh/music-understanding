@@ -100,6 +100,12 @@ def load_qwen_omni(model_name: str):
                                              tokenize=False)
         inputs = processor(text=text, audio=audios, sampling_rate=target_sr,
                            return_tensors="pt", padding=True).to(model.device)
+        # bf16 models (Qwen3-Omni-30B) emit float32 audio features -> cast the
+        # floating tensors to the model dtype IN PLACE (keep the BatchFeature so
+        # inputs.input_ids still works; no-op when model is fp32/auto)
+        for k in list(inputs.keys()):
+            if torch.is_floating_point(inputs[k]):
+                inputs[k] = inputs[k].to(model.dtype)
         with torch.no_grad():
             out = model.generate(**inputs, max_new_tokens=max_new_tokens,
                                  do_sample=False, return_audio=False)
@@ -125,7 +131,9 @@ def load_audio_flamingo(model_name: str):
         from transformers import AudioFlamingo3ForConditionalGeneration as Cls
 
     processor = AutoProcessor.from_pretrained(model_name)
-    model = Cls.from_pretrained(model_name, torch_dtype=torch.bfloat16,
+    # AF3 family has mixed-precision internals (audio tower wants float32); load
+    # the whole model in float32 so every path matches (fits on an 80GB+ GPU).
+    model = Cls.from_pretrained(model_name, torch_dtype=torch.float32,
                                 device_map="cuda").eval()
 
     def generate(prompt: str, audio_path: str | None, max_new_tokens: int) -> str:

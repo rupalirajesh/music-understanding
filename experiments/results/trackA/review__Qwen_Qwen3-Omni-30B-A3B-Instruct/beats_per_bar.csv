@@ -1,0 +1,1149 @@
+job_id,stimulus_id,task,condition,format,paraphrase_idx,audio_path,prompt,options,ground_truth,raw_response,parsed,correct,error,factors
+beats_per_bar/meter_3-4_00::audio::mcq,beats_per_bar/meter_3-4_00,beats_per_bar,audio,mcq,2,stimuli/meter/meter_3-4_00.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 7
+B. 4
+C. 5
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|4|5|3,3,C,5,False,,"{""beats"": 3, ""bpm"": 111.7, ""meter"": ""3/4"", ""n_bars"": 7}"
+beats_per_bar/meter_3-4_00::audio::open,beats_per_bar/meter_3-4_00,beats_per_bar,audio,open,1,stimuli/meter/meter_3-4_00.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+Give a short, direct answer.",,3,8,8,False,,"{""beats"": 3, ""bpm"": 111.7, ""meter"": ""3/4"", ""n_bars"": 7}"
+beats_per_bar/meter_3-4_01::audio::mcq,beats_per_bar/meter_3-4_01,beats_per_bar,audio,mcq,1,stimuli/meter/meter_3-4_01.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 6
+B. 3
+C. 5
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|3|5|4,3,C,5,False,,"{""beats"": 3, ""bpm"": 136.6, ""meter"": ""3/4"", ""n_bars"": 8}"
+beats_per_bar/meter_3-4_02::audio::mcq,beats_per_bar/meter_3-4_02,beats_per_bar,audio,mcq,2,stimuli/meter/meter_3-4_02.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 4
+B. 3
+C. 6
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|3|6|7,3,A,4,False,,"{""beats"": 3, ""bpm"": 110.9, ""meter"": ""3/4"", ""n_bars"": 7}"
+beats_per_bar/meter_3-4_03::audio::mcq,beats_per_bar/meter_3-4_03,beats_per_bar,audio,mcq,0,stimuli/meter/meter_3-4_03.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 3
+B. 4
+C. 6
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|4|6|5,3,D,5,False,,"{""beats"": 3, ""bpm"": 134.7, ""meter"": ""3/4"", ""n_bars"": 8}"
+beats_per_bar/meter_3-4_04::audio::mcq,beats_per_bar/meter_3-4_04,beats_per_bar,audio,mcq,0,stimuli/meter/meter_3-4_04.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 4
+B. 3
+C. 5
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|3|5|6,3,C,5,False,,"{""beats"": 3, ""bpm"": 90.7, ""meter"": ""3/4"", ""n_bars"": 6}"
+beats_per_bar/meter_3-4_04::audio::explain,beats_per_bar/meter_3-4_04,beats_per_bar,audio,explain,1,stimuli/meter/meter_3-4_04.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,3,"6
+
+The cycle consists of six beats in total. The first beat is a strong, low-pitched ""thump"" at 0:00. This is followed by five higher-pitched, quicker ""clicks"" at approximately 0:01, 0:02, 0:03, 0:04, and 0:05. The cycle then repeats with the strong ""thump"" at 0:06, followed by the five ""clicks"" at 0:07, 0:08, 0:09, 0:10, and 0:11.",,,,"{""beats"": 3, ""bpm"": 90.7, ""meter"": ""3/4"", ""n_bars"": 6}"
+beats_per_bar/meter_3-4_05::audio::mcq,beats_per_bar/meter_3-4_05,beats_per_bar,audio,mcq,2,stimuli/meter/meter_3-4_05.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 3
+B. 5
+C. 4
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|5|4|6,3,C,4,False,,"{""beats"": 3, ""bpm"": 106.7, ""meter"": ""3/4"", ""n_bars"": 6}"
+beats_per_bar/meter_3-4_05::audio::open,beats_per_bar/meter_3-4_05,beats_per_bar,audio,open,0,stimuli/meter/meter_3-4_05.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+Give a short, direct answer.",,3,4,4,False,,"{""beats"": 3, ""bpm"": 106.7, ""meter"": ""3/4"", ""n_bars"": 6}"
+beats_per_bar/meter_3-4_06::audio::mcq,beats_per_bar/meter_3-4_06,beats_per_bar,audio,mcq,1,stimuli/meter/meter_3-4_06.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 3
+B. 7
+C. 5
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|7|5|6,3,D,6,False,,"{""beats"": 3, ""bpm"": 120.8, ""meter"": ""3/4"", ""n_bars"": 7}"
+beats_per_bar/meter_3-4_07::audio::mcq,beats_per_bar/meter_3-4_07,beats_per_bar,audio,mcq,0,stimuli/meter/meter_3-4_07.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 6
+B. 3
+C. 5
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|3|5|7,3,C,5,False,,"{""beats"": 3, ""bpm"": 119.6, ""meter"": ""3/4"", ""n_bars"": 7}"
+beats_per_bar/meter_3-4_07::audio::open,beats_per_bar/meter_3-4_07,beats_per_bar,audio,open,0,stimuli/meter/meter_3-4_07.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+Give a short, direct answer.",,3,4,4,False,,"{""beats"": 3, ""bpm"": 119.6, ""meter"": ""3/4"", ""n_bars"": 7}"
+beats_per_bar/meter_3-4_08::audio::mcq,beats_per_bar/meter_3-4_08,beats_per_bar,audio,mcq,2,stimuli/meter/meter_3-4_08.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 5
+B. 6
+C. 4
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|6|4|3,3,A,5,False,,"{""beats"": 3, ""bpm"": 130.4, ""meter"": ""3/4"", ""n_bars"": 8}"
+beats_per_bar/meter_3-4_09::audio::mcq,beats_per_bar/meter_3-4_09,beats_per_bar,audio,mcq,2,stimuli/meter/meter_3-4_09.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 4
+B. 6
+C. 5
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|6|5|3,3,A,4,False,,"{""beats"": 3, ""bpm"": 149.8, ""meter"": ""3/4"", ""n_bars"": 9}"
+beats_per_bar/meter_3-4_10::audio::mcq,beats_per_bar/meter_3-4_10,beats_per_bar,audio,mcq,0,stimuli/meter/meter_3-4_10.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 5
+B. 3
+C. 7
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|3|7|4,3,D,4,False,,"{""beats"": 3, ""bpm"": 138.4, ""meter"": ""3/4"", ""n_bars"": 8}"
+beats_per_bar/meter_3-4_11::audio::mcq,beats_per_bar/meter_3-4_11,beats_per_bar,audio,mcq,2,stimuli/meter/meter_3-4_11.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 3
+B. 4
+C. 6
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|4|6|5,3,B,4,False,,"{""beats"": 3, ""bpm"": 92.3, ""meter"": ""3/4"", ""n_bars"": 6}"
+beats_per_bar/meter_3-4_11::audio::open,beats_per_bar/meter_3-4_11,beats_per_bar,audio,open,0,stimuli/meter/meter_3-4_11.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+Give a short, direct answer.",,3,4,4,False,,"{""beats"": 3, ""bpm"": 92.3, ""meter"": ""3/4"", ""n_bars"": 6}"
+beats_per_bar/meter_3-4_11::audio::explain,beats_per_bar/meter_3-4_11,beats_per_bar,audio,explain,2,stimuli/meter/meter_3-4_11.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,3,"The rhythm has 4 beats per measure.
+
+**Explanation:**
+
+The audio consists of a steady, repeating pattern of a single high-pitched beep. The beeps occur at regular intervals of approximately one second. This consistent, repeating cycle of four beeps forms a complete measure.
+
+The specific beeps and their approximate timestamps are:
+*   **Beat 1:** 00:00.0
+*   **Beat 2:** 00:01.0
+*   **Beat 3:** 00:02.0
+*   **Beat 4:** 00:03.0
+
+This four-beat pattern then repeats for the next measure (00:04.0, 00:05.0, 00:06.0, 00:07.0) and the final measure (00:08.0, 00:09.0, 00:10.0, 00:11.0). The regularity of the pattern clearly establishes a 4/4 time signature.",,,,"{""beats"": 3, ""bpm"": 92.3, ""meter"": ""3/4"", ""n_bars"": 6}"
+beats_per_bar/meter_3-4_12::audio::mcq,beats_per_bar/meter_3-4_12,beats_per_bar,audio,mcq,1,stimuli/meter/meter_3-4_12.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 7
+B. 5
+C. 6
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|5|6|3,3,C,6,False,,"{""beats"": 3, ""bpm"": 137.3, ""meter"": ""3/4"", ""n_bars"": 8}"
+beats_per_bar/meter_3-4_12::audio::open,beats_per_bar/meter_3-4_12,beats_per_bar,audio,open,2,stimuli/meter/meter_3-4_12.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+Give a short, direct answer.",,3,4,4,False,,"{""beats"": 3, ""bpm"": 137.3, ""meter"": ""3/4"", ""n_bars"": 8}"
+beats_per_bar/meter_3-4_13::audio::mcq,beats_per_bar/meter_3-4_13,beats_per_bar,audio,mcq,0,stimuli/meter/meter_3-4_13.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 5
+B. 4
+C. 6
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|4|6|3,3,A,5,False,,"{""beats"": 3, ""bpm"": 104.6, ""meter"": ""3/4"", ""n_bars"": 6}"
+beats_per_bar/meter_3-4_14::audio::mcq,beats_per_bar/meter_3-4_14,beats_per_bar,audio,mcq,1,stimuli/meter/meter_3-4_14.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 7
+B. 6
+C. 3
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|6|3|5,3,A,7,False,,"{""beats"": 3, ""bpm"": 92.3, ""meter"": ""3/4"", ""n_bars"": 6}"
+beats_per_bar/meter_3-4_15::audio::mcq,beats_per_bar/meter_3-4_15,beats_per_bar,audio,mcq,2,stimuli/meter/meter_3-4_15.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 4
+B. 5
+C. 7
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|5|7|3,3,B,5,False,,"{""beats"": 3, ""bpm"": 131.5, ""meter"": ""3/4"", ""n_bars"": 8}"
+beats_per_bar/meter_3-4_16::audio::mcq,beats_per_bar/meter_3-4_16,beats_per_bar,audio,mcq,1,stimuli/meter/meter_3-4_16.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 6
+B. 5
+C. 3
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|5|3|4,3,A,6,False,,"{""beats"": 3, ""bpm"": 138.5, ""meter"": ""3/4"", ""n_bars"": 8}"
+beats_per_bar/meter_3-4_16::audio::explain,beats_per_bar/meter_3-4_16,beats_per_bar,audio,explain,2,stimuli/meter/meter_3-4_16.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,3,"There are 4 beats per measure.
+
+**Explanation:**
+
+The rhythm consists of a steady, repeating pattern of a single high-pitched beep. The beeps occur at regular intervals of approximately one second. This consistent, evenly spaced pulse is the fundamental beat of the rhythm.
+
+The pattern is as follows:
+*   **Beat 1:** A beep occurs at approximately 00:00.
+*   **Beat 2:** A beep occurs at approximately 00:01.
+*   **Beat 3:** A beep occurs at approximately 00:02.
+*   **Beat 4:** A beep occurs at approximately 00:03.
+
+This four-beat pattern repeats seamlessly throughout the audio clip. The even spacing and repetition of the beeps create a clear and stable pulse, which is characteristic of a 4/4 time signature.",,,,"{""beats"": 3, ""bpm"": 138.5, ""meter"": ""3/4"", ""n_bars"": 8}"
+beats_per_bar/meter_3-4_17::audio::mcq,beats_per_bar/meter_3-4_17,beats_per_bar,audio,mcq,1,stimuli/meter/meter_3-4_17.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 7
+B. 6
+C. 5
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|6|5|3,3,A,7,False,,"{""beats"": 3, ""bpm"": 113.8, ""meter"": ""3/4"", ""n_bars"": 7}"
+beats_per_bar/meter_3-4_18::audio::mcq,beats_per_bar/meter_3-4_18,beats_per_bar,audio,mcq,0,stimuli/meter/meter_3-4_18.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 7
+B. 5
+C. 6
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|5|6|3,3,B,5,False,,"{""beats"": 3, ""bpm"": 111.1, ""meter"": ""3/4"", ""n_bars"": 7}"
+beats_per_bar/meter_3-4_18::audio::open,beats_per_bar/meter_3-4_18,beats_per_bar,audio,open,0,stimuli/meter/meter_3-4_18.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+Give a short, direct answer.",,3,4,4,False,,"{""beats"": 3, ""bpm"": 111.1, ""meter"": ""3/4"", ""n_bars"": 7}"
+beats_per_bar/meter_3-4_19::audio::mcq,beats_per_bar/meter_3-4_19,beats_per_bar,audio,mcq,0,stimuli/meter/meter_3-4_19.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 4
+B. 7
+C. 6
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|7|6|3,3,C,6,False,,"{""beats"": 3, ""bpm"": 103.0, ""meter"": ""3/4"", ""n_bars"": 6}"
+beats_per_bar/meter_3-4_19::audio::open,beats_per_bar/meter_3-4_19,beats_per_bar,audio,open,2,stimuli/meter/meter_3-4_19.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+Give a short, direct answer.",,3,4,4,False,,"{""beats"": 3, ""bpm"": 103.0, ""meter"": ""3/4"", ""n_bars"": 6}"
+beats_per_bar/meter_4-4_00::audio::mcq,beats_per_bar/meter_4-4_00,beats_per_bar,audio,mcq,2,stimuli/meter/meter_4-4_00.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 4
+B. 5
+C. 6
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|5|6|3,4,B,5,False,,"{""beats"": 4, ""bpm"": 112.8, ""meter"": ""4/4"", ""n_bars"": 5}"
+beats_per_bar/meter_4-4_01::audio::mcq,beats_per_bar/meter_4-4_01,beats_per_bar,audio,mcq,2,stimuli/meter/meter_4-4_01.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 7
+B. 3
+C. 4
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|3|4|5,4,C,4,True,,"{""beats"": 4, ""bpm"": 147.2, ""meter"": ""4/4"", ""n_bars"": 7}"
+beats_per_bar/meter_4-4_01::audio::explain,beats_per_bar/meter_4-4_01,beats_per_bar,audio,explain,2,stimuli/meter/meter_4-4_01.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,4,"The rhythm has 4 beats per measure.
+
+**Explanation:**
+
+The audio features a steady, repeating rhythmic pattern of a single high-pitched beep. The pattern is a simple, consistent pulse that repeats every second.
+
+*   **Beat 1:** 00:00.000
+*   **Beat 2:** 00:01.000
+*   **Beat 3:** 00:02.000
+*   **Beat 4:** 00:03.000
+*   **Beat 1 (repeat):** 00:04.000
+*   **Beat 2 (repeat):** 00:05.000
+*   **Beat 3 (repeat):** 00:06.000
+*   **Beat 4 (repeat):** 00:07.000
+*   **Beat 1 (repeat):** 00:08.000
+*   **Beat 2 (repeat):** 00:09.000
+*   **Beat 3 (repeat):** 00:10.000
+*   **Beat 4 (repeat):** 00:11.000
+
+The pattern is a simple ""one-two-three-four"" count, with a beep occurring at the start of each of the four beats in a measure. This establishes a clear 4/4 time signature.",,,,"{""beats"": 4, ""bpm"": 147.2, ""meter"": ""4/4"", ""n_bars"": 7}"
+beats_per_bar/meter_4-4_02::audio::mcq,beats_per_bar/meter_4-4_02,beats_per_bar,audio,mcq,1,stimuli/meter/meter_4-4_02.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 3
+B. 7
+C. 5
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|7|5|4,4,B,7,False,,"{""beats"": 4, ""bpm"": 97.9, ""meter"": ""4/4"", ""n_bars"": 5}"
+beats_per_bar/meter_4-4_03::audio::mcq,beats_per_bar/meter_4-4_03,beats_per_bar,audio,mcq,0,stimuli/meter/meter_4-4_03.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 6
+B. 7
+C. 4
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|7|4|3,4,B,7,False,,"{""beats"": 4, ""bpm"": 134.6, ""meter"": ""4/4"", ""n_bars"": 6}"
+beats_per_bar/meter_4-4_04::audio::mcq,beats_per_bar/meter_4-4_04,beats_per_bar,audio,mcq,2,stimuli/meter/meter_4-4_04.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 4
+B. 6
+C. 5
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|6|5|3,4,C,5,False,,"{""beats"": 4, ""bpm"": 105.1, ""meter"": ""4/4"", ""n_bars"": 5}"
+beats_per_bar/meter_4-4_05::audio::mcq,beats_per_bar/meter_4-4_05,beats_per_bar,audio,mcq,1,stimuli/meter/meter_4-4_05.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 6
+B. 3
+C. 5
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|3|5|4,4,C,5,False,,"{""beats"": 4, ""bpm"": 90.0, ""meter"": ""4/4"", ""n_bars"": 4}"
+beats_per_bar/meter_4-4_05::audio::open,beats_per_bar/meter_4-4_05,beats_per_bar,audio,open,2,stimuli/meter/meter_4-4_05.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+Give a short, direct answer.",,4,4 beats per measure,4 beats per measure,True,,"{""beats"": 4, ""bpm"": 90.0, ""meter"": ""4/4"", ""n_bars"": 4}"
+beats_per_bar/meter_4-4_06::audio::mcq,beats_per_bar/meter_4-4_06,beats_per_bar,audio,mcq,1,stimuli/meter/meter_4-4_06.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 4
+B. 7
+C. 6
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|7|6|5,4,B,7,False,,"{""beats"": 4, ""bpm"": 91.0, ""meter"": ""4/4"", ""n_bars"": 4}"
+beats_per_bar/meter_4-4_07::audio::mcq,beats_per_bar/meter_4-4_07,beats_per_bar,audio,mcq,0,stimuli/meter/meter_4-4_07.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 5
+B. 7
+C. 6
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|7|6|4,4,C,6,False,,"{""beats"": 4, ""bpm"": 143.7, ""meter"": ""4/4"", ""n_bars"": 6}"
+beats_per_bar/meter_4-4_08::audio::mcq,beats_per_bar/meter_4-4_08,beats_per_bar,audio,mcq,0,stimuli/meter/meter_4-4_08.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 4
+B. 5
+C. 6
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|5|6|7,4,B,5,False,,"{""beats"": 4, ""bpm"": 141.2, ""meter"": ""4/4"", ""n_bars"": 6}"
+beats_per_bar/meter_4-4_08::audio::open,beats_per_bar/meter_4-4_08,beats_per_bar,audio,open,1,stimuli/meter/meter_4-4_08.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+Give a short, direct answer.",,4,8,8,False,,"{""beats"": 4, ""bpm"": 141.2, ""meter"": ""4/4"", ""n_bars"": 6}"
+beats_per_bar/meter_4-4_09::audio::mcq,beats_per_bar/meter_4-4_09,beats_per_bar,audio,mcq,1,stimuli/meter/meter_4-4_09.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 3
+B. 7
+C. 4
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|7|4|6,4,D,6,False,,"{""beats"": 4, ""bpm"": 127.5, ""meter"": ""4/4"", ""n_bars"": 6}"
+beats_per_bar/meter_4-4_09::audio::open,beats_per_bar/meter_4-4_09,beats_per_bar,audio,open,2,stimuli/meter/meter_4-4_09.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+Give a short, direct answer.",,4,4 beats per measure,4 beats per measure,True,,"{""beats"": 4, ""bpm"": 127.5, ""meter"": ""4/4"", ""n_bars"": 6}"
+beats_per_bar/meter_4-4_10::audio::mcq,beats_per_bar/meter_4-4_10,beats_per_bar,audio,mcq,2,stimuli/meter/meter_4-4_10.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 4
+B. 3
+C. 6
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|3|6|7,4,A,4,True,,"{""beats"": 4, ""bpm"": 102.9, ""meter"": ""4/4"", ""n_bars"": 5}"
+beats_per_bar/meter_4-4_10::audio::explain,beats_per_bar/meter_4-4_10,beats_per_bar,audio,explain,1,stimuli/meter/meter_4-4_10.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,4,"6
+
+The rhythm consists of a repeating pattern of six distinct beeps. The cycle starts with a stronger, slightly lower-pitched beep at 0:00, followed by five higher-pitched beeps at 0:01, 0:02, 0:03, 0:04, and 0:05. The pattern then repeats with another strong beep at 0:06, confirming a 6-beat cycle.",,,,"{""beats"": 4, ""bpm"": 102.9, ""meter"": ""4/4"", ""n_bars"": 5}"
+beats_per_bar/meter_4-4_11::audio::mcq,beats_per_bar/meter_4-4_11,beats_per_bar,audio,mcq,1,stimuli/meter/meter_4-4_11.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 3
+B. 5
+C. 7
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|5|7|4,4,C,7,False,,"{""beats"": 4, ""bpm"": 122.5, ""meter"": ""4/4"", ""n_bars"": 6}"
+beats_per_bar/meter_4-4_12::audio::mcq,beats_per_bar/meter_4-4_12,beats_per_bar,audio,mcq,0,stimuli/meter/meter_4-4_12.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 7
+B. 6
+C. 4
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|6|4|5,4,D,5,False,,"{""beats"": 4, ""bpm"": 149.9, ""meter"": ""4/4"", ""n_bars"": 7}"
+beats_per_bar/meter_4-4_12::audio::open,beats_per_bar/meter_4-4_12,beats_per_bar,audio,open,1,stimuli/meter/meter_4-4_12.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+Give a short, direct answer.",,4,8,8,False,,"{""beats"": 4, ""bpm"": 149.9, ""meter"": ""4/4"", ""n_bars"": 7}"
+beats_per_bar/meter_4-4_13::audio::mcq,beats_per_bar/meter_4-4_13,beats_per_bar,audio,mcq,2,stimuli/meter/meter_4-4_13.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 3
+B. 6
+C. 4
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|6|4|7,4,C,4,True,,"{""beats"": 4, ""bpm"": 129.5, ""meter"": ""4/4"", ""n_bars"": 6}"
+beats_per_bar/meter_4-4_14::audio::mcq,beats_per_bar/meter_4-4_14,beats_per_bar,audio,mcq,0,stimuli/meter/meter_4-4_14.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 4
+B. 5
+C. 7
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|5|7|6,4,B,5,False,,"{""beats"": 4, ""bpm"": 124.6, ""meter"": ""4/4"", ""n_bars"": 6}"
+beats_per_bar/meter_4-4_15::audio::mcq,beats_per_bar/meter_4-4_15,beats_per_bar,audio,mcq,1,stimuli/meter/meter_4-4_15.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 5
+B. 4
+C. 7
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|4|7|6,4,D,6,False,,"{""beats"": 4, ""bpm"": 146.9, ""meter"": ""4/4"", ""n_bars"": 7}"
+beats_per_bar/meter_4-4_16::audio::mcq,beats_per_bar/meter_4-4_16,beats_per_bar,audio,mcq,0,stimuli/meter/meter_4-4_16.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 3
+B. 7
+C. 6
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|7|6|4,4,D,4,True,,"{""beats"": 4, ""bpm"": 109.2, ""meter"": ""4/4"", ""n_bars"": 5}"
+beats_per_bar/meter_4-4_16::audio::explain,beats_per_bar/meter_4-4_16,beats_per_bar,audio,explain,0,stimuli/meter/meter_4-4_16.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,4,"4
+
+The rhythm consists of a repeating pattern of four distinct beeps. The first beep in each group is consistently louder and more prominent than the following three, which are identical in volume and pitch. This creates a clear four-beat cycle where the first beat is accented.
+
+Specifically:
+*   **Beat 1 (Accented):** A loud beep at approximately 00:00.0.
+*   **Beat 2:** A softer beep at approximately 00:00.5.
+*   **Beat 3:** A softer beep at approximately 00:00.9.
+*   **Beat 4:** A softer beep at approximately 00:01.3.
+
+This four-beat pattern repeats consistently throughout the audio clip, with the accent on the first beat of each bar.",,,,"{""beats"": 4, ""bpm"": 109.2, ""meter"": ""4/4"", ""n_bars"": 5}"
+beats_per_bar/meter_4-4_17::audio::mcq,beats_per_bar/meter_4-4_17,beats_per_bar,audio,mcq,2,stimuli/meter/meter_4-4_17.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 4
+B. 6
+C. 5
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|6|5|7,4,C,5,False,,"{""beats"": 4, ""bpm"": 90.2, ""meter"": ""4/4"", ""n_bars"": 4}"
+beats_per_bar/meter_4-4_18::audio::mcq,beats_per_bar/meter_4-4_18,beats_per_bar,audio,mcq,1,stimuli/meter/meter_4-4_18.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 4
+B. 6
+C. 5
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|6|5|7,4,B,6,False,,"{""beats"": 4, ""bpm"": 97.0, ""meter"": ""4/4"", ""n_bars"": 5}"
+beats_per_bar/meter_4-4_19::audio::mcq,beats_per_bar/meter_4-4_19,beats_per_bar,audio,mcq,2,stimuli/meter/meter_4-4_19.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 7
+B. 6
+C. 4
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|6|4|3,4,A,7,False,,"{""beats"": 4, ""bpm"": 90.7, ""meter"": ""4/4"", ""n_bars"": 4}"
+beats_per_bar/meter_4-4_19::audio::open,beats_per_bar/meter_4-4_19,beats_per_bar,audio,open,0,stimuli/meter/meter_4-4_19.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+Give a short, direct answer.",,4,4,4,True,,"{""beats"": 4, ""bpm"": 90.7, ""meter"": ""4/4"", ""n_bars"": 4}"
+beats_per_bar/meter_4-4_19::audio::explain,beats_per_bar/meter_4-4_19,beats_per_bar,audio,explain,1,stimuli/meter/meter_4-4_19.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,4,"6
+
+The cycle consists of 6 beats. The first beat at 00:00 is the strongest and marks the beginning of the cycle. The cycle then continues with five more beats at approximately 00:01, 00:02, 00:03, 00:04, and 00:05. The pattern of a strong initial beat followed by five subsequent beats repeats throughout the audio clip.",,,,"{""beats"": 4, ""bpm"": 90.7, ""meter"": ""4/4"", ""n_bars"": 4}"
+beats_per_bar/meter_5-4_00::audio::mcq,beats_per_bar/meter_5-4_00,beats_per_bar,audio,mcq,2,stimuli/meter/meter_5-4_00.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 7
+B. 5
+C. 6
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|5|6|3,5,C,6,False,,"{""beats"": 5, ""bpm"": 139.7, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_00::audio::explain,beats_per_bar/meter_5-4_00,beats_per_bar,audio,explain,2,stimuli/meter/meter_5-4_00.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,5,"There are 4 beats per measure.
+
+**Explanation:**
+
+The rhythm consists of a steady pulse with a strong accent on the first beat of each group. The pattern is as follows:
+
+*   **Beat 1 (Strong Accent):** A low, percussive ""thump"" occurs at 00:00.000.
+*   **Beat 2:** A higher-pitched ""click"" occurs at 00:00.500.
+*   **Beat 3:** A low, percussive ""thump"" occurs at 00:01.000.
+*   **Beat 4:** A higher-pitched ""click"" occurs at 00:01.500.
+
+This four-beat pattern repeats consistently throughout the audio clip. The strong accents on the first and third beats create a clear 4/4 time signature.",,,,"{""beats"": 5, ""bpm"": 139.7, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_01::audio::mcq,beats_per_bar/meter_5-4_01,beats_per_bar,audio,mcq,1,stimuli/meter/meter_5-4_01.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 6
+B. 4
+C. 3
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|4|3|5,5,D,5,True,,"{""beats"": 5, ""bpm"": 116.3, ""meter"": ""5/4"", ""n_bars"": 4}"
+beats_per_bar/meter_5-4_02::audio::mcq,beats_per_bar/meter_5-4_02,beats_per_bar,audio,mcq,1,stimuli/meter/meter_5-4_02.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 7
+B. 3
+C. 5
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|3|5|4,5,C,5,True,,"{""beats"": 5, ""bpm"": 139.5, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_03::audio::mcq,beats_per_bar/meter_5-4_03,beats_per_bar,audio,mcq,1,stimuli/meter/meter_5-4_03.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 4
+B. 7
+C. 3
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|7|3|5,5,B,7,False,,"{""beats"": 5, ""bpm"": 139.8, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_03::audio::explain,beats_per_bar/meter_5-4_03,beats_per_bar,audio,explain,1,stimuli/meter/meter_5-4_03.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,5,"8
+
+The rhythm consists of a repeating pattern of 8 beats. The cycle starts with a stronger, lower-pitched ""thump"" at the beginning of each group, followed by a series of higher-pitched ""clicks"" or ""pings"".
+
+Here is the breakdown of the beats in one cycle:
+
+*   **00:00:** A strong, low-pitched ""thump"" (Beat 1).
+*   **00:01:** A high-pitched ""click"" (Beat 2).
+*   **00:02:** A high-pitched ""click"" (Beat 3).
+*   **00:03:** A high-pitched ""click"" (Beat 4).
+*   **00:04:** A strong, low-pitched ""thump"" (Beat 5).
+*   **00:05:** A high-pitched ""click"" (Beat 6).
+*   **00:06:** A high-pitched ""click"" (Beat 7).
+*   **00:07:** A high-pitched ""click"" (Beat 8).
+
+The cycle then repeats with another strong ""thump"" at 00:08.",,,,"{""beats"": 5, ""bpm"": 139.8, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_04::audio::mcq,beats_per_bar/meter_5-4_04,beats_per_bar,audio,mcq,1,stimuli/meter/meter_5-4_04.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 4
+B. 3
+C. 5
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|3|5|6,5,C,5,True,,"{""beats"": 5, ""bpm"": 115.8, ""meter"": ""5/4"", ""n_bars"": 4}"
+beats_per_bar/meter_5-4_05::audio::mcq,beats_per_bar/meter_5-4_05,beats_per_bar,audio,mcq,0,stimuli/meter/meter_5-4_05.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 3
+B. 5
+C. 4
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|5|4|7,5,C,4,False,,"{""beats"": 5, ""bpm"": 128.9, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_06::audio::mcq,beats_per_bar/meter_5-4_06,beats_per_bar,audio,mcq,1,stimuli/meter/meter_5-4_06.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 4
+B. 5
+C. 7
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|5|7|6,5,D,6,False,,"{""beats"": 5, ""bpm"": 136.0, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_07::audio::mcq,beats_per_bar/meter_5-4_07,beats_per_bar,audio,mcq,1,stimuli/meter/meter_5-4_07.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 4
+B. 3
+C. 6
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|3|6|5,5,D,5,True,,"{""beats"": 5, ""bpm"": 142.4, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_08::audio::mcq,beats_per_bar/meter_5-4_08,beats_per_bar,audio,mcq,2,stimuli/meter/meter_5-4_08.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 7
+B. 3
+C. 5
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|3|5|4,5,D,4,False,,"{""beats"": 5, ""bpm"": 112.6, ""meter"": ""5/4"", ""n_bars"": 4}"
+beats_per_bar/meter_5-4_09::audio::mcq,beats_per_bar/meter_5-4_09,beats_per_bar,audio,mcq,0,stimuli/meter/meter_5-4_09.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 3
+B. 4
+C. 6
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|4|6|5,5,D,5,True,,"{""beats"": 5, ""bpm"": 99.5, ""meter"": ""5/4"", ""n_bars"": 4}"
+beats_per_bar/meter_5-4_10::audio::mcq,beats_per_bar/meter_5-4_10,beats_per_bar,audio,mcq,2,stimuli/meter/meter_5-4_10.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 7
+B. 5
+C. 4
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|5|4|6,5,D,6,False,,"{""beats"": 5, ""bpm"": 137.0, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_11::audio::mcq,beats_per_bar/meter_5-4_11,beats_per_bar,audio,mcq,0,stimuli/meter/meter_5-4_11.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 5
+B. 3
+C. 4
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|3|4|7,5,C,4,False,,"{""beats"": 5, ""bpm"": 112.9, ""meter"": ""5/4"", ""n_bars"": 4}"
+beats_per_bar/meter_5-4_12::audio::mcq,beats_per_bar/meter_5-4_12,beats_per_bar,audio,mcq,0,stimuli/meter/meter_5-4_12.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 4
+B. 6
+C. 3
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|6|3|5,5,D,5,True,,"{""beats"": 5, ""bpm"": 120.8, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_12::audio::explain,beats_per_bar/meter_5-4_12,beats_per_bar,audio,explain,0,stimuli/meter/meter_5-4_12.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,5,"4
+
+The rhythm consists of a repeating pattern of four beats. The accented beat, which marks the beginning of each bar, occurs at the start of each group of four. The specific beats that are accented are:
+
+*   **00:00.000**: The first beep of the sequence.
+*   **00:04.000**: The first beep of the second group.
+*   **00:08.000**: The first beep of the third group.
+
+The pattern is a simple four-beat cycle: one accented beat followed by three unaccented beats.",,,,"{""beats"": 5, ""bpm"": 120.8, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_13::audio::mcq,beats_per_bar/meter_5-4_13,beats_per_bar,audio,mcq,2,stimuli/meter/meter_5-4_13.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 4
+B. 5
+C. 3
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|5|3|6,5,B,5,True,,"{""beats"": 5, ""bpm"": 95.3, ""meter"": ""5/4"", ""n_bars"": 4}"
+beats_per_bar/meter_5-4_13::audio::open,beats_per_bar/meter_5-4_13,beats_per_bar,audio,open,1,stimuli/meter/meter_5-4_13.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+Give a short, direct answer.",,5,8,8,False,,"{""beats"": 5, ""bpm"": 95.3, ""meter"": ""5/4"", ""n_bars"": 4}"
+beats_per_bar/meter_5-4_14::audio::mcq,beats_per_bar/meter_5-4_14,beats_per_bar,audio,mcq,2,stimuli/meter/meter_5-4_14.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 6
+B. 7
+C. 5
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|7|5|4,5,A,6,False,,"{""beats"": 5, ""bpm"": 135.0, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_15::audio::mcq,beats_per_bar/meter_5-4_15,beats_per_bar,audio,mcq,1,stimuli/meter/meter_5-4_15.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 5
+B. 7
+C. 6
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|7|6|3,5,C,6,False,,"{""beats"": 5, ""bpm"": 110.3, ""meter"": ""5/4"", ""n_bars"": 4}"
+beats_per_bar/meter_5-4_15::audio::open,beats_per_bar/meter_5-4_15,beats_per_bar,audio,open,2,stimuli/meter/meter_5-4_15.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+Give a short, direct answer.",,5,4,4,False,,"{""beats"": 5, ""bpm"": 110.3, ""meter"": ""5/4"", ""n_bars"": 4}"
+beats_per_bar/meter_5-4_16::audio::mcq,beats_per_bar/meter_5-4_16,beats_per_bar,audio,mcq,1,stimuli/meter/meter_5-4_16.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 3
+B. 6
+C. 4
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|6|4|5,5,D,5,True,,"{""beats"": 5, ""bpm"": 135.4, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_17::audio::mcq,beats_per_bar/meter_5-4_17,beats_per_bar,audio,mcq,2,stimuli/meter/meter_5-4_17.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 4
+B. 5
+C. 3
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|5|3|7,5,B,5,True,,"{""beats"": 5, ""bpm"": 138.7, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_17::audio::open,beats_per_bar/meter_5-4_17,beats_per_bar,audio,open,0,stimuli/meter/meter_5-4_17.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+Give a short, direct answer.",,5,4,4,False,,"{""beats"": 5, ""bpm"": 138.7, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_18::audio::mcq,beats_per_bar/meter_5-4_18,beats_per_bar,audio,mcq,2,stimuli/meter/meter_5-4_18.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 7
+B. 6
+C. 3
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|6|3|5,5,D,5,True,,"{""beats"": 5, ""bpm"": 123.0, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_18::audio::open,beats_per_bar/meter_5-4_18,beats_per_bar,audio,open,2,stimuli/meter/meter_5-4_18.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+Give a short, direct answer.",,5,4 beats per measure,4 beats per measure,False,,"{""beats"": 5, ""bpm"": 123.0, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_19::audio::mcq,beats_per_bar/meter_5-4_19,beats_per_bar,audio,mcq,1,stimuli/meter/meter_5-4_19.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 5
+B. 4
+C. 7
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|4|7|6,5,D,6,False,,"{""beats"": 5, ""bpm"": 90.2, ""meter"": ""5/4"", ""n_bars"": 4}"
+beats_per_bar/meter_5-4_19::audio::open,beats_per_bar/meter_5-4_19,beats_per_bar,audio,open,0,stimuli/meter/meter_5-4_19.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+Give a short, direct answer.",,5,4,4,False,,"{""beats"": 5, ""bpm"": 90.2, ""meter"": ""5/4"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_00::audio::mcq,beats_per_bar/meter_6-8_00,beats_per_bar,audio,mcq,2,stimuli/meter/meter_6-8_00.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 4
+B. 3
+C. 7
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|3|7|6,6,A,4,False,,"{""beats"": 6, ""bpm"": 120.0, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_00::audio::open,beats_per_bar/meter_6-8_00,beats_per_bar,audio,open,0,stimuli/meter/meter_6-8_00.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+Give a short, direct answer.",,6,4,4,False,,"{""beats"": 6, ""bpm"": 120.0, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_01::audio::mcq,beats_per_bar/meter_6-8_01,beats_per_bar,audio,mcq,1,stimuli/meter/meter_6-8_01.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 5
+B. 3
+C. 7
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|3|7|6,6,D,6,True,,"{""beats"": 6, ""bpm"": 105.1, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_02::audio::mcq,beats_per_bar/meter_6-8_02,beats_per_bar,audio,mcq,2,stimuli/meter/meter_6-8_02.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 7
+B. 6
+C. 5
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|6|5|4,6,C,5,False,,"{""beats"": 6, ""bpm"": 105.1, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_03::audio::mcq,beats_per_bar/meter_6-8_03,beats_per_bar,audio,mcq,0,stimuli/meter/meter_6-8_03.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 4
+B. 3
+C. 6
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|3|6|5,6,D,5,False,,"{""beats"": 6, ""bpm"": 112.0, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_04::audio::mcq,beats_per_bar/meter_6-8_04,beats_per_bar,audio,mcq,2,stimuli/meter/meter_6-8_04.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 6
+B. 7
+C. 4
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|7|4|5,6,D,5,False,,"{""beats"": 6, ""bpm"": 106.1, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_04::audio::explain,beats_per_bar/meter_6-8_04,beats_per_bar,audio,explain,1,stimuli/meter/meter_6-8_04.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,6,"8
+
+The rhythm consists of a repeating pattern of 8 beats. The cycle starts with a stronger, lower-pitched ""thump"" at the beginning of each group, followed by a series of higher-pitched ""clicks"" or ""pops"".
+
+Here is the breakdown of the beats in one cycle:
+
+*   **Beat 1 (Strong):** A low-pitched, resonant ""thump"" at approximately 00:00.
+*   **Beat 2:** A high-pitched ""click"" at approximately 00:01.
+*   **Beat 3:** A high-pitched ""click"" at approximately 00:02.
+*   **Beat 4:** A high-pitched ""click"" at approximately 00:03.
+*   **Beat 5 (Strong):** A low-pitched, resonant ""thump"" at approximately 00:04.
+*   **Beat 6:** A high-pitched ""click"" at approximately 00:05.
+*   **Beat 7:** A high-pitched ""click"" at approximately 00:06.
+*   **Beat 8:** A high-pitched ""click"" at approximately 00:07.
+
+This 8-beat pattern then repeats. The strong ""thump"" at beat 1 and beat 5 marks the beginning of each new cycle.",,,,"{""beats"": 6, ""bpm"": 106.1, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_05::audio::mcq,beats_per_bar/meter_6-8_05,beats_per_bar,audio,mcq,0,stimuli/meter/meter_6-8_05.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 7
+B. 4
+C. 6
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|4|6|5,6,D,5,False,,"{""beats"": 6, ""bpm"": 91.6, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_06::audio::mcq,beats_per_bar/meter_6-8_06,beats_per_bar,audio,mcq,1,stimuli/meter/meter_6-8_06.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 6
+B. 5
+C. 7
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|5|7|4,6,A,6,True,,"{""beats"": 6, ""bpm"": 91.2, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_06::audio::explain,beats_per_bar/meter_6-8_06,beats_per_bar,audio,explain,2,stimuli/meter/meter_6-8_06.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,6,"The rhythm has 4 beats per measure.
+
+**Explanation:**
+
+The audio features a steady, repeating rhythmic pattern of a single, high-pitched, percussive sound, similar to a woodblock or clave.
+
+*   **Beat 1:** 00:00.000
+*   **Beat 2:** 00:01.000
+*   **Beat 3:** 00:02.000
+*   **Beat 4:** 00:03.000
+*   **Beat 1:** 00:04.000
+*   **Beat 2:** 00:05.000
+*   **Beat 3:** 00:06.000
+*   **Beat 4:** 00:07.000
+*   **Beat 1:** 00:08.000
+*   **Beat 2:** 00:09.000
+*   **Beat 3:** 00:10.000
+*   **Beat 4:** 00:11.000
+*   **Beat 1:** 00:12.000
+*   **Beat 2:** 00:13.000
+*   **Beat 3:** 00:14.000
+*   **Beat 4:** 00:15.000
+
+The pattern is a simple, consistent ""one-two-three-four"" count, with a new beat occurring every second. This establishes a clear 4/4 time signature, meaning there are 4 beats in every measure.",,,,"{""beats"": 6, ""bpm"": 91.2, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_07::audio::mcq,beats_per_bar/meter_6-8_07,beats_per_bar,audio,mcq,2,stimuli/meter/meter_6-8_07.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 3
+B. 4
+C. 6
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|4|6|5,6,B,4,False,,"{""beats"": 6, ""bpm"": 106.4, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_08::audio::mcq,beats_per_bar/meter_6-8_08,beats_per_bar,audio,mcq,2,stimuli/meter/meter_6-8_08.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 7
+B. 5
+C. 3
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|5|3|6,6,D,6,True,,"{""beats"": 6, ""bpm"": 107.9, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_08::audio::open,beats_per_bar/meter_6-8_08,beats_per_bar,audio,open,0,stimuli/meter/meter_6-8_08.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+Give a short, direct answer.",,6,4,4,False,,"{""beats"": 6, ""bpm"": 107.9, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_09::audio::mcq,beats_per_bar/meter_6-8_09,beats_per_bar,audio,mcq,0,stimuli/meter/meter_6-8_09.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 3
+B. 6
+C. 5
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|6|5|7,6,C,5,False,,"{""beats"": 6, ""bpm"": 117.6, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_10::audio::mcq,beats_per_bar/meter_6-8_10,beats_per_bar,audio,mcq,1,stimuli/meter/meter_6-8_10.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 3
+B. 6
+C. 7
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|6|7|5,6,C,7,False,,"{""beats"": 6, ""bpm"": 111.9, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_11::audio::mcq,beats_per_bar/meter_6-8_11,beats_per_bar,audio,mcq,0,stimuli/meter/meter_6-8_11.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 7
+B. 5
+C. 6
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|5|6|4,6,C,6,True,,"{""beats"": 6, ""bpm"": 143.5, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_12::audio::mcq,beats_per_bar/meter_6-8_12,beats_per_bar,audio,mcq,1,stimuli/meter/meter_6-8_12.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 4
+B. 5
+C. 7
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|5|7|6,6,D,6,True,,"{""beats"": 6, ""bpm"": 93.9, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_13::audio::mcq,beats_per_bar/meter_6-8_13,beats_per_bar,audio,mcq,1,stimuli/meter/meter_6-8_13.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 4
+B. 6
+C. 3
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|6|3|5,6,D,5,False,,"{""beats"": 6, ""bpm"": 135.1, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_14::audio::mcq,beats_per_bar/meter_6-8_14,beats_per_bar,audio,mcq,0,stimuli/meter/meter_6-8_14.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 3
+B. 5
+C. 6
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|5|6|4,6,D,4,False,,"{""beats"": 6, ""bpm"": 140.8, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_14::audio::open,beats_per_bar/meter_6-8_14,beats_per_bar,audio,open,1,stimuli/meter/meter_6-8_14.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+Give a short, direct answer.",,6,8,8,False,,"{""beats"": 6, ""bpm"": 140.8, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_15::audio::mcq,beats_per_bar/meter_6-8_15,beats_per_bar,audio,mcq,2,stimuli/meter/meter_6-8_15.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 5
+B. 7
+C. 4
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|7|4|6,6,D,6,True,,"{""beats"": 6, ""bpm"": 107.2, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_15::audio::explain,beats_per_bar/meter_6-8_15,beats_per_bar,audio,explain,2,stimuli/meter/meter_6-8_15.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,6,"The rhythm has 4 beats per measure.
+
+**Explanation:**
+
+The audio contains a steady, repeating rhythmic pattern of a high-pitched, electronic beep. The pattern is as follows:
+
+*   **Beat 1:** A beep occurs at approximately **00:00.00**.
+*   **Beat 2:** A beep occurs at approximately **00:00.50**.
+*   **Beat 3:** A beep occurs at approximately **00:01.00**.
+*   **Beat 4:** A beep occurs at approximately **00:01.50**.
+
+This four-beat pattern repeats consistently throughout the entire clip. The regularity of the pattern, with a clear and consistent interval of half a second between each beep, establishes a steady pulse. This four-beat cycle forms the musical measure.",,,,"{""beats"": 6, ""bpm"": 107.2, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_16::audio::mcq,beats_per_bar/meter_6-8_16,beats_per_bar,audio,mcq,0,stimuli/meter/meter_6-8_16.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 3
+B. 7
+C. 5
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|7|5|6,6,C,5,False,,"{""beats"": 6, ""bpm"": 124.5, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_17::audio::mcq,beats_per_bar/meter_6-8_17,beats_per_bar,audio,mcq,2,stimuli/meter/meter_6-8_17.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 3
+B. 6
+C. 5
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|6|5|4,6,D,4,False,,"{""beats"": 6, ""bpm"": 104.2, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_18::audio::mcq,beats_per_bar/meter_6-8_18,beats_per_bar,audio,mcq,0,stimuli/meter/meter_6-8_18.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 6
+B. 7
+C. 5
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|7|5|3,6,C,5,False,,"{""beats"": 6, ""bpm"": 146.9, ""meter"": ""6/8"", ""n_bars"": 5}"
+beats_per_bar/meter_6-8_18::audio::explain,beats_per_bar/meter_6-8_18,beats_per_bar,audio,explain,2,stimuli/meter/meter_6-8_18.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,6,"The rhythm has 4 beats per measure.
+
+**Explanation:**
+
+The audio contains a steady, repeating rhythmic pattern of a single high-pitched beep. The pattern is as follows:
+
+*   **Beat 1 (Strong Accent):** 00:00.000
+*   **Beat 2:** 00:00.250
+*   **Beat 3:** 00:00.500
+*   **Beat 4 (Strong Accent):** 00:00.750
+*   **Beat 1 (Strong Accent):** 00:01.000
+*   **Beat 2:** 00:01.250
+*   **Beat 3:** 00:01.500
+*   **Beat 4 (Strong Accent):** 00:01.750
+
+This pattern of four beats, with the first and third beats being the strongest, repeats consistently throughout the clip. The strong accents occur at the beginning of each two-beat group (e.g., 00:00.000, 00:01.000, 00:02.000), which is characteristic of a 4/4 time signature.",,,,"{""beats"": 6, ""bpm"": 146.9, ""meter"": ""6/8"", ""n_bars"": 5}"
+beats_per_bar/meter_6-8_19::audio::mcq,beats_per_bar/meter_6-8_19,beats_per_bar,audio,mcq,2,stimuli/meter/meter_6-8_19.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 5
+B. 6
+C. 4
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|6|4|3,6,A,5,False,,"{""beats"": 6, ""bpm"": 133.3, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_19::audio::explain,beats_per_bar/meter_6-8_19,beats_per_bar,audio,explain,1,stimuli/meter/meter_6-8_19.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,6,"6
+
+The rhythm consists of a repeating pattern of six distinct beeps. The cycle starts with a slightly longer, stronger-sounding beep at the beginning of each cycle, followed by five shorter, more regular beeps.
+
+The specific beeps and their approximate timestamps are:
+*   **Beat 1 (stronger):** 00:00.0
+*   **Beat 2:** 00:00.5
+*   **Beat 3:** 00:01.0
+*   **Beat 4:** 00:01.5
+*   **Beat 5:** 00:02.0
+*   **Beat 6:** 00:02.5
+
+This six-beat pattern then repeats.",,,,"{""beats"": 6, ""bpm"": 133.3, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_00::audio::mcq,beats_per_bar/meter_7-8_00,beats_per_bar,audio,mcq,0,stimuli/meter/meter_7-8_00.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 4
+B. 6
+C. 5
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|6|5|7,7,C,5,False,,"{""beats"": 7, ""bpm"": 106.1, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_01::audio::mcq,beats_per_bar/meter_7-8_01,beats_per_bar,audio,mcq,2,stimuli/meter/meter_7-8_01.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 4
+B. 7
+C. 5
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|7|5|6,7,C,5,False,,"{""beats"": 7, ""bpm"": 135.1, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_02::audio::mcq,beats_per_bar/meter_7-8_02,beats_per_bar,audio,mcq,2,stimuli/meter/meter_7-8_02.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 7
+B. 5
+C. 4
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|5|4|3,7,C,4,False,,"{""beats"": 7, ""bpm"": 117.8, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_02::audio::open,beats_per_bar/meter_7-8_02,beats_per_bar,audio,open,0,stimuli/meter/meter_7-8_02.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+Give a short, direct answer.",,7,4,4,False,,"{""beats"": 7, ""bpm"": 117.8, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_03::audio::mcq,beats_per_bar/meter_7-8_03,beats_per_bar,audio,mcq,2,stimuli/meter/meter_7-8_03.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 7
+B. 4
+C. 3
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|4|3|6,7,D,6,False,,"{""beats"": 7, ""bpm"": 124.3, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_03::audio::explain,beats_per_bar/meter_7-8_03,beats_per_bar,audio,explain,1,stimuli/meter/meter_7-8_03.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,7,"6
+
+The rhythm consists of a repeating pattern of six beats. The cycle starts with a stronger, lower-pitched ""thump"" at the beginning of each group, followed by five higher-pitched ""pings"" or ""beeps"".
+
+The specific beats in each cycle are:
+*   **00:00.000:** A strong, low-pitched ""thump"" (the start of the cycle).
+*   **00:00.500:** A high-pitched ""ping"".
+*   **00:01.000:** A high-pitched ""ping"".
+*   **00:01.500:** A high-pitched ""ping"".
+*   **00:02.000:** A high-pitched ""ping"".
+*   **00:02.500:** A high-pitched ""ping"".
+
+This six-beat pattern repeats at the following timestamps:
+*   **00:03.000:** A strong, low-pitched ""thump"" (start of the second cycle).
+*   **00:03.500:** A high-pitched ""ping"".
+*   **00:04.000:** A high-pitched ""ping"".
+*   **00:04.500:** A high-pitched ""ping"".
+*   **00:05.000:** A high-pitched ""ping"".
+*   **00:05.500:** A high-pitched ""ping"".
+
+The cycle repeats a third time starting at **00:06.000**.",,,,"{""beats"": 7, ""bpm"": 124.3, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_04::audio::mcq,beats_per_bar/meter_7-8_04,beats_per_bar,audio,mcq,2,stimuli/meter/meter_7-8_04.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 3
+B. 6
+C. 4
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|6|4|7,7,C,4,False,,"{""beats"": 7, ""bpm"": 112.1, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_04::audio::open,beats_per_bar/meter_7-8_04,beats_per_bar,audio,open,0,stimuli/meter/meter_7-8_04.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+Give a short, direct answer.",,7,4,4,False,,"{""beats"": 7, ""bpm"": 112.1, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_04::audio::explain,beats_per_bar/meter_7-8_04,beats_per_bar,audio,explain,0,stimuli/meter/meter_7-8_04.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,7,"4
+
+The rhythm consists of a steady pulse with a clear, repeating pattern of four beats per bar. The accented beat, which marks the beginning of each bar, occurs at the start of every group of four beats.
+
+Here is the breakdown of the accented beats and their approximate timestamps:
+
+*   **Beat 1 (Accented):** 00:00.00
+*   **Beat 2:** 00:01.00
+*   **Beat 3:** 00:02.00
+*   **Beat 4 (Accented):** 00:03.00
+*   **Beat 1 (Accented):** 00:04.00
+*   **Beat 2:** 00:05.00
+*   **Beat 3:** 00:06.00
+*   **Beat 4 (Accented):** 00:07.00
+*   **Beat 1 (Accented):** 00:08.00
+*   **Beat 2:** 00:09.00
+*   **Beat 3:** 00:10.00
+*   **Beat 4 (Accented):** 00:11.00
+*   **Beat 1 (Accented):** 00:12.00
+*   **Beat 2:** 00:13.00
+*   **Beat 3:** 00:14.00
+*   **Beat 4 (Accented):** 00:15.00
+
+The pattern is a simple, steady pulse where the first beat of each group of four is slightly more prominent, establishing a clear 4/4 time signature.",,,,"{""beats"": 7, ""bpm"": 112.1, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_05::audio::mcq,beats_per_bar/meter_7-8_05,beats_per_bar,audio,mcq,0,stimuli/meter/meter_7-8_05.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 7
+B. 4
+C. 3
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|4|3|6,7,D,6,False,,"{""beats"": 7, ""bpm"": 141.8, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_06::audio::mcq,beats_per_bar/meter_7-8_06,beats_per_bar,audio,mcq,2,stimuli/meter/meter_7-8_06.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 6
+B. 7
+C. 5
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|7|5|4,7,A,6,False,,"{""beats"": 7, ""bpm"": 113.8, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_07::audio::mcq,beats_per_bar/meter_7-8_07,beats_per_bar,audio,mcq,0,stimuli/meter/meter_7-8_07.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 7
+B. 3
+C. 4
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|3|4|6,7,D,6,False,,"{""beats"": 7, ""bpm"": 126.5, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_07::audio::open,beats_per_bar/meter_7-8_07,beats_per_bar,audio,open,0,stimuli/meter/meter_7-8_07.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+Give a short, direct answer.",,7,4,4,False,,"{""beats"": 7, ""bpm"": 126.5, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_08::audio::mcq,beats_per_bar/meter_7-8_08,beats_per_bar,audio,mcq,1,stimuli/meter/meter_7-8_08.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 4
+B. 5
+C. 3
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|5|3|7,7,B,5,False,,"{""beats"": 7, ""bpm"": 103.8, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_08::audio::explain,beats_per_bar/meter_7-8_08,beats_per_bar,audio,explain,1,stimuli/meter/meter_7-8_08.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+First give your answer. Then explain exactly what you heard that supports it: name the specific notes/chords/beats and their approximate timestamps in seconds.",,7,"6
+
+The rhythm consists of a repeating pattern of six distinct beeps. The cycle starts with a slightly longer, stronger-sounding beep at 0:00, followed by five shorter, identical beeps at approximately 0:01, 0:02, 0:03, 0:04, and 0:05. This six-beat pattern then repeats.",,,,"{""beats"": 7, ""bpm"": 103.8, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_09::audio::mcq,beats_per_bar/meter_7-8_09,beats_per_bar,audio,mcq,2,stimuli/meter/meter_7-8_09.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 6
+B. 5
+C. 7
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|5|7|3,7,A,6,False,,"{""beats"": 7, ""bpm"": 113.9, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_10::audio::mcq,beats_per_bar/meter_7-8_10,beats_per_bar,audio,mcq,1,stimuli/meter/meter_7-8_10.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 5
+B. 6
+C. 7
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|6|7|4,7,B,6,False,,"{""beats"": 7, ""bpm"": 102.3, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_10::audio::open,beats_per_bar/meter_7-8_10,beats_per_bar,audio,open,1,stimuli/meter/meter_7-8_10.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+Give a short, direct answer.",,7,8,8,False,,"{""beats"": 7, ""bpm"": 102.3, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_11::audio::mcq,beats_per_bar/meter_7-8_11,beats_per_bar,audio,mcq,1,stimuli/meter/meter_7-8_11.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 7
+B. 5
+C. 4
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|5|4|3,7,A,7,True,,"{""beats"": 7, ""bpm"": 119.1, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_12::audio::mcq,beats_per_bar/meter_7-8_12,beats_per_bar,audio,mcq,0,stimuli/meter/meter_7-8_12.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 4
+B. 7
+C. 5
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|7|5|3,7,C,5,False,,"{""beats"": 7, ""bpm"": 90.8, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_13::audio::mcq,beats_per_bar/meter_7-8_13,beats_per_bar,audio,mcq,2,stimuli/meter/meter_7-8_13.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 4
+B. 7
+C. 5
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|7|5|6,7,D,6,False,,"{""beats"": 7, ""bpm"": 119.4, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_14::audio::mcq,beats_per_bar/meter_7-8_14,beats_per_bar,audio,mcq,2,stimuli/meter/meter_7-8_14.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 5
+B. 4
+C. 7
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|4|7|3,7,A,5,False,,"{""beats"": 7, ""bpm"": 147.4, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_15::audio::mcq,beats_per_bar/meter_7-8_15,beats_per_bar,audio,mcq,1,stimuli/meter/meter_7-8_15.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 3
+B. 7
+C. 4
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|7|4|5,7,B,7,True,,"{""beats"": 7, ""bpm"": 98.7, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_15::audio::open,beats_per_bar/meter_7-8_15,beats_per_bar,audio,open,0,stimuli/meter/meter_7-8_15.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+Give a short, direct answer.",,7,4,4,False,,"{""beats"": 7, ""bpm"": 98.7, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_16::audio::mcq,beats_per_bar/meter_7-8_16,beats_per_bar,audio,mcq,2,stimuli/meter/meter_7-8_16.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 6
+B. 3
+C. 7
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|3|7|4,7,D,4,False,,"{""beats"": 7, ""bpm"": 118.0, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_17::audio::mcq,beats_per_bar/meter_7-8_17,beats_per_bar,audio,mcq,2,stimuli/meter/meter_7-8_17.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 7
+B. 6
+C. 3
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|6|3|5,7,D,5,False,,"{""beats"": 7, ""bpm"": 119.7, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_17::audio::open,beats_per_bar/meter_7-8_17,beats_per_bar,audio,open,2,stimuli/meter/meter_7-8_17.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+Give a short, direct answer.",,7,There are 4 beats between the strong accents. This rhythm has 4 beats per measure.,There are 4 beats between the strong accents. This rhythm has 4 beats per measure.,False,,"{""beats"": 7, ""bpm"": 119.7, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_18::audio::mcq,beats_per_bar/meter_7-8_18,beats_per_bar,audio,mcq,2,stimuli/meter/meter_7-8_18.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 3
+B. 6
+C. 7
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|6|7|4,7,C,7,True,,"{""beats"": 7, ""bpm"": 143.2, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_19::audio::mcq,beats_per_bar/meter_7-8_19,beats_per_bar,audio,mcq,1,stimuli/meter/meter_7-8_19.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 4
+B. 6
+C. 7
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|6|7|5,7,B,6,False,,"{""beats"": 7, ""bpm"": 105.8, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_3-4_03::no_audio::mcq,beats_per_bar/meter_3-4_03,beats_per_bar,no_audio,mcq,1,,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 3
+B. 7
+C. 5
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|7|5|4,3,B,7,False,,"{""beats"": 3, ""bpm"": 134.7, ""meter"": ""3/4"", ""n_bars"": 8}"
+beats_per_bar/meter_3-4_06::no_audio::mcq,beats_per_bar/meter_3-4_06,beats_per_bar,no_audio,mcq,0,,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 5
+B. 6
+C. 3
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|6|3|4,3,D,4,False,,"{""beats"": 3, ""bpm"": 120.8, ""meter"": ""3/4"", ""n_bars"": 7}"
+beats_per_bar/meter_3-4_11::no_audio::mcq,beats_per_bar/meter_3-4_11,beats_per_bar,no_audio,mcq,1,,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 6
+B. 4
+C. 3
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|4|3|7,3,A,6,False,,"{""beats"": 3, ""bpm"": 92.3, ""meter"": ""3/4"", ""n_bars"": 6}"
+beats_per_bar/meter_4-4_02::no_audio::mcq,beats_per_bar/meter_4-4_02,beats_per_bar,no_audio,mcq,1,,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 6
+B. 3
+C. 4
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|3|4|7,4,C,4,True,,"{""beats"": 4, ""bpm"": 97.9, ""meter"": ""4/4"", ""n_bars"": 5}"
+beats_per_bar/meter_4-4_06::no_audio::mcq,beats_per_bar/meter_4-4_06,beats_per_bar,no_audio,mcq,1,,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 7
+B. 3
+C. 4
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|3|4|6,4,C,4,True,,"{""beats"": 4, ""bpm"": 91.0, ""meter"": ""4/4"", ""n_bars"": 4}"
+beats_per_bar/meter_4-4_09::no_audio::mcq,beats_per_bar/meter_4-4_09,beats_per_bar,no_audio,mcq,0,,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 7
+B. 4
+C. 6
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|4|6|3,4,B,4,True,,"{""beats"": 4, ""bpm"": 127.5, ""meter"": ""4/4"", ""n_bars"": 6}"
+beats_per_bar/meter_4-4_10::no_audio::mcq,beats_per_bar/meter_4-4_10,beats_per_bar,no_audio,mcq,0,,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 7
+B. 4
+C. 6
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|4|6|3,4,B,4,True,,"{""beats"": 4, ""bpm"": 102.9, ""meter"": ""4/4"", ""n_bars"": 5}"
+beats_per_bar/meter_4-4_11::no_audio::mcq,beats_per_bar/meter_4-4_11,beats_per_bar,no_audio,mcq,1,,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 5
+B. 7
+C. 4
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|7|4|6,4,A,5,False,,"{""beats"": 4, ""bpm"": 122.5, ""meter"": ""4/4"", ""n_bars"": 6}"
+beats_per_bar/meter_4-4_14::no_audio::mcq,beats_per_bar/meter_4-4_14,beats_per_bar,no_audio,mcq,0,,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 3
+B. 4
+C. 6
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|4|6|7,4,B,4,True,,"{""beats"": 4, ""bpm"": 124.6, ""meter"": ""4/4"", ""n_bars"": 6}"
+beats_per_bar/meter_4-4_16::no_audio::mcq,beats_per_bar/meter_4-4_16,beats_per_bar,no_audio,mcq,2,,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 5
+B. 4
+C. 7
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|4|7|3,4,A,5,False,,"{""beats"": 4, ""bpm"": 109.2, ""meter"": ""4/4"", ""n_bars"": 5}"
+beats_per_bar/meter_4-4_17::no_audio::mcq,beats_per_bar/meter_4-4_17,beats_per_bar,no_audio,mcq,1,,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 6
+B. 3
+C. 5
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|3|5|4,4,D,4,True,,"{""beats"": 4, ""bpm"": 90.2, ""meter"": ""4/4"", ""n_bars"": 4}"
+beats_per_bar/meter_4-4_18::no_audio::mcq,beats_per_bar/meter_4-4_18,beats_per_bar,no_audio,mcq,0,,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 5
+B. 3
+C. 4
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|3|4|6,4,C,4,True,,"{""beats"": 4, ""bpm"": 97.0, ""meter"": ""4/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_01::no_audio::mcq,beats_per_bar/meter_5-4_01,beats_per_bar,no_audio,mcq,0,,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 7
+B. 3
+C. 4
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|3|4|5,5,C,4,False,,"{""beats"": 5, ""bpm"": 116.3, ""meter"": ""5/4"", ""n_bars"": 4}"
+beats_per_bar/meter_5-4_09::no_audio::mcq,beats_per_bar/meter_5-4_09,beats_per_bar,no_audio,mcq,1,,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 7
+B. 5
+C. 4
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|5|4|6,5,D,6,False,,"{""beats"": 5, ""bpm"": 99.5, ""meter"": ""5/4"", ""n_bars"": 4}"
+beats_per_bar/meter_5-4_12::no_audio::mcq,beats_per_bar/meter_5-4_12,beats_per_bar,no_audio,mcq,0,,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 4
+B. 3
+C. 5
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|3|5|6,5,A,4,False,,"{""beats"": 5, ""bpm"": 120.8, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_14::no_audio::mcq,beats_per_bar/meter_5-4_14,beats_per_bar,no_audio,mcq,1,,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 6
+B. 3
+C. 5
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|3|5|4,5,D,4,False,,"{""beats"": 5, ""bpm"": 135.0, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_5-4_17::no_audio::mcq,beats_per_bar/meter_5-4_17,beats_per_bar,no_audio,mcq,1,,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 5
+B. 6
+C. 4
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|6|4|3,5,A,5,True,,"{""beats"": 5, ""bpm"": 138.7, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_6-8_01::no_audio::mcq,beats_per_bar/meter_6-8_01,beats_per_bar,no_audio,mcq,0,,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 3
+B. 4
+C. 7
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|4|7|6,6,B,4,False,,"{""beats"": 6, ""bpm"": 105.1, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_04::no_audio::mcq,beats_per_bar/meter_6-8_04,beats_per_bar,no_audio,mcq,1,,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 5
+B. 4
+C. 6
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|4|6|7,6,A,5,False,,"{""beats"": 6, ""bpm"": 106.1, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_05::no_audio::mcq,beats_per_bar/meter_6-8_05,beats_per_bar,no_audio,mcq,2,,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 7
+B. 3
+C. 4
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|3|4|6,6,C,4,False,,"{""beats"": 6, ""bpm"": 91.6, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_06::no_audio::mcq,beats_per_bar/meter_6-8_06,beats_per_bar,no_audio,mcq,1,,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 3
+B. 6
+C. 5
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|6|5|7,6,B,6,True,,"{""beats"": 6, ""bpm"": 91.2, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_07::no_audio::mcq,beats_per_bar/meter_6-8_07,beats_per_bar,no_audio,mcq,2,,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 7
+B. 6
+C. 4
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|6|4|5,6,D,5,False,,"{""beats"": 6, ""bpm"": 106.4, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_09::no_audio::mcq,beats_per_bar/meter_6-8_09,beats_per_bar,no_audio,mcq,1,,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 6
+B. 4
+C. 3
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|4|3|7,6,A,6,True,,"{""beats"": 6, ""bpm"": 117.6, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_16::no_audio::mcq,beats_per_bar/meter_6-8_16,beats_per_bar,no_audio,mcq,0,,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 6
+B. 7
+C. 4
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|7|4|5,6,C,4,False,,"{""beats"": 6, ""bpm"": 124.5, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_00::no_audio::mcq,beats_per_bar/meter_7-8_00,beats_per_bar,no_audio,mcq,2,,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 3
+B. 4
+C. 5
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|4|5|7,7,B,4,False,,"{""beats"": 7, ""bpm"": 106.1, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_01::no_audio::mcq,beats_per_bar/meter_7-8_01,beats_per_bar,no_audio,mcq,2,,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 4
+B. 5
+C. 3
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|5|3|7,7,A,4,False,,"{""beats"": 7, ""bpm"": 135.1, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_10::no_audio::mcq,beats_per_bar/meter_7-8_10,beats_per_bar,no_audio,mcq,1,,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 6
+B. 7
+C. 3
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|7|3|5,7,D,5,False,,"{""beats"": 7, ""bpm"": 102.3, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_3-4_06::wrong_audio::mcq,beats_per_bar/meter_3-4_06,beats_per_bar,wrong_audio,mcq,0,stimuli/tuning/tune_0048.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 3
+B. 7
+C. 6
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|7|6|4,3,D,4,False,,"{""beats"": 3, ""bpm"": 120.8, ""meter"": ""3/4"", ""n_bars"": 7}"
+beats_per_bar/meter_3-4_19::wrong_audio::mcq,beats_per_bar/meter_3-4_19,beats_per_bar,wrong_audio,mcq,2,stimuli/meter/meter_4-4_07.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 6
+B. 7
+C. 5
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|7|5|3,3,A,6,False,,"{""beats"": 3, ""bpm"": 103.0, ""meter"": ""3/4"", ""n_bars"": 6}"
+beats_per_bar/meter_4-4_00::wrong_audio::mcq,beats_per_bar/meter_4-4_00,beats_per_bar,wrong_audio,mcq,0,stimuli/pitch/050_flute_fluidr3_1.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 5
+B. 3
+C. 6
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|3|6|4,4,B,3,False,,"{""beats"": 4, ""bpm"": 112.8, ""meter"": ""4/4"", ""n_bars"": 5}"
+beats_per_bar/meter_4-4_07::wrong_audio::mcq,beats_per_bar/meter_4-4_07,beats_per_bar,wrong_audio,mcq,2,stimuli/polyphony/count3_04.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 5
+B. 3
+C. 4
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|3|4|6,4,B,3,False,,"{""beats"": 4, ""bpm"": 143.7, ""meter"": ""4/4"", ""n_bars"": 6}"
+beats_per_bar/meter_4-4_08::wrong_audio::mcq,beats_per_bar/meter_4-4_08,beats_per_bar,wrong_audio,mcq,0,stimuli/key/C_minor_scale_1.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 3
+B. 7
+C. 4
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|7|4|6,4,C,4,True,,"{""beats"": 4, ""bpm"": 141.2, ""meter"": ""4/4"", ""n_bars"": 6}"
+beats_per_bar/meter_4-4_19::wrong_audio::mcq,beats_per_bar/meter_4-4_19,beats_per_bar,wrong_audio,mcq,1,stimuli/key/C_major_scale_1.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 4
+B. 6
+C. 3
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|6|3|7,4,A,4,True,,"{""beats"": 4, ""bpm"": 90.7, ""meter"": ""4/4"", ""n_bars"": 4}"
+beats_per_bar/meter_5-4_14::wrong_audio::mcq,beats_per_bar/meter_5-4_14,beats_per_bar,wrong_audio,mcq,0,stimuli/tempo/tempo_009.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 3
+B. 7
+C. 4
+D. 5
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|7|4|5,5,D,5,True,,"{""beats"": 5, ""bpm"": 135.0, ""meter"": ""5/4"", ""n_bars"": 5}"
+beats_per_bar/meter_6-8_02::wrong_audio::mcq,beats_per_bar/meter_6-8_02,beats_per_bar,wrong_audio,mcq,2,stimuli/progressions/ii-V-I_64_3.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 4
+B. 6
+C. 7
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",4|6|7|3,6,D,3,False,,"{""beats"": 6, ""bpm"": 105.1, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_09::wrong_audio::mcq,beats_per_bar/meter_6-8_09,beats_per_bar,wrong_audio,mcq,1,stimuli/pitch/063_flute_timgm_1.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 3
+B. 6
+C. 5
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|6|5|7,6,B,6,True,,"{""beats"": 6, ""bpm"": 117.6, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_12::wrong_audio::mcq,beats_per_bar/meter_6-8_12,beats_per_bar,wrong_audio,mcq,0,stimuli/meter/meter_6-8_16.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 5
+B. 6
+C. 3
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|6|3|7,6,A,5,False,,"{""beats"": 6, ""bpm"": 93.9, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_17::wrong_audio::mcq,beats_per_bar/meter_6-8_17,beats_per_bar,wrong_audio,mcq,1,stimuli/cents/trial_0009.wav,"This rhythm repeats in cycles, each starting with a stronger beat. How many beats long is each cycle?
+A. 7
+B. 3
+C. 5
+D. 6
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",7|3|5|6,6,C,5,False,,"{""beats"": 6, ""bpm"": 104.2, ""meter"": ""6/8"", ""n_bars"": 4}"
+beats_per_bar/meter_6-8_18::wrong_audio::mcq,beats_per_bar/meter_6-8_18,beats_per_bar,wrong_audio,mcq,0,stimuli/tempo/tempo_053.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 5
+B. 7
+C. 6
+D. 3
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",5|7|6|3,6,C,6,True,,"{""beats"": 6, ""bpm"": 146.9, ""meter"": ""6/8"", ""n_bars"": 5}"
+beats_per_bar/meter_7-8_09::wrong_audio::mcq,beats_per_bar/meter_7-8_09,beats_per_bar,wrong_audio,mcq,0,stimuli/mode/dorian_60_bare_scale.wav,"Listen to the accent pattern of this rhythm. How many beats are there per bar (one accented beat starts each bar)?
+A. 6
+B. 4
+C. 5
+D. 7
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",6|4|5|7,7,B,4,False,,"{""beats"": 7, ""bpm"": 113.9, ""meter"": ""7/8"", ""n_bars"": 4}"
+beats_per_bar/meter_7-8_12::wrong_audio::mcq,beats_per_bar/meter_7-8_12,beats_per_bar,wrong_audio,mcq,2,stimuli/polyphony/count3_15.wav,"Count the beats between the strong accents. How many beats per measure does this rhythm have?
+A. 3
+B. 7
+C. 6
+D. 4
+Answer with the letter of the correct option only (A, B, C, or D). Do not explain.",3|7|6|4,7,D,4,False,,"{""beats"": 7, ""bpm"": 90.8, ""meter"": ""7/8"", ""n_bars"": 4}"
