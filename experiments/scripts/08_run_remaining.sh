@@ -86,8 +86,37 @@ for enc in mert330 whisper clap; do
   done
 done
 
+step "Track B: each LALM's OWN encoder, re-probed on key_id/mode_id/chord_quality/interval_id"
+# PROFESSOR_UPDATE.md open question #2: generic MERT/Whisper/CLAP above are
+# NOT necessarily representative of what these models actually hear through
+# (Music Flamingo/AF3 use AF-Whisper; Qwen-Omni uses its own AuT-derived
+# tower) — extract_activations.py --own-encoder taps the real one.
+# UNVERIFIED loaders (see gpu/extract_activations.py docstring) — smoke-check
+# the printed "using submodule at '...'" line on first run before trusting it.
+declare -A OWN_ENC=(
+  [Qwen/Qwen2.5-Omni-7B]=qwen25omni_own
+  [Qwen/Qwen3-Omni-30B-A3B-Instruct]=qwen3omni_own
+  [nvidia/audio-flamingo-3-hf]=af3_own
+  [nvidia/music-flamingo-2601-hf]=musicflamingo_own
+)
+OWN_PROBES="key_id:ground_truth mode_id:ground_truth chord_quality:quality interval_id:ground_truth"
+for M in "${!OWN_ENC[@]}"; do
+  enc="${OWN_ENC[$M]}"
+  try $PY gpu/extract_activations.py --model "$M" --own-encoder --out "acts/$enc"
+  for p in $OWN_PROBES; do
+    try $PY gpu/probe.py --acts "acts/$enc" --task "${p%%:*}" --target "${p##*:}"
+  done
+done
+
 step "Track B: audio-token attention diagnostic (results/trackB/attention/)"
+# Qwen2-Audio already done; smoke-test each new model with --per-task 1
+# before the full --per-task 6 pass (UNVERIFIED loaders, see attention_audio.py).
 try $PY gpu/attention_audio.py --model Qwen/Qwen2-Audio-7B-Instruct
+for M in Qwen/Qwen2.5-Omni-7B Qwen/Qwen3-Omni-30B-A3B-Instruct \
+         nvidia/audio-flamingo-3-hf nvidia/music-flamingo-2601-hf; do
+  try $PY gpu/attention_audio.py --model "$M" --per-task 1
+  try $PY gpu/attention_audio.py --model "$M"
+done
 
 # ---------- Generation battery ---------------------------------------------
 step "Genmodel: MusicGen constraint-adherence battery"

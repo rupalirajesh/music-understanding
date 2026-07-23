@@ -1,6 +1,6 @@
 # PROJECT STATE — the everything doc (pick-up-where-we-left-off)
 
-Last updated: 2026-07-18. Update this whenever anything changes hands.
+Last updated: 2026-07-22. Update this whenever anything changes hands.
 
 ## Machines & workflow
 - **Laptop** (no GPU): stimulus synthesis, API evals, scoring/analysis,
@@ -31,16 +31,19 @@ Last updated: 2026-07-18. Update this whenever anything changes hands.
 - Docs workflow: a local read-this inbox file (not in git, cleared
   iteratively), `PAPER.md` (results skeleton), this file (state).
 
-## Status of runs
+## Status of runs (updated 2026-07-22)
 | What | Where | Status |
 |---|---|---|
-| Qwen2-Audio-7B full battery | H100 box | done EXCEPT ~350 no-audio jobs (NaN bug, fixed 70fd14f) — needs pull + rerun to backfill |
-| Gemini battery | H100 box | was stuck (timeout added in fix), rerunning |
-| GPT-4o-audio | — | not started |
-| MERT/Whisper/CLAP extraction + probes | H100 box | not started |
-| MusicGen battery | H100 box | not started |
-| AF3 / Music Flamingo loaders | code | TODO (needs NVIDIA repo code) |
-| Qwen2-Audio published-number replication | — | TODO; pick exact benchmark subset first |
+| Qwen2-Audio-7B full battery | H100 box | done |
+| Qwen2.5-Omni-7B, Qwen3-Omni-30B, AF3, Music-Flamingo full battery | H100 box | done (landed commit 4aa5dcf) |
+| Gemini-2.5-Pro battery (via Portkey) | H100/laptop → API | done |
+| GPT-4o-audio | — | **only thing left** — Sethu running it next |
+| MERT/Whisper/CLAP extraction + probes | H100 box | done — all 3 encoders × 11 tasks |
+| Attention diagnostic (`gpu/attention_audio.py`) | H100 box | done for Qwen2-Audio-7B only — NOT yet run on Qwen2.5-Omni, Qwen3-Omni, AF3, Music-Flamingo (see next actions) |
+| MusicGen battery | H100 box | done — tempo/key/register scored; meter/mode deliberately left for manual scoring |
+| AF3 / Music Flamingo loaders | code | done, verified working |
+| Qwen2-Audio published-number replication | — | still TODO; pick exact benchmark subset first |
+| Analysis pass on all of the above | laptop | first pass done 2026-07-22 — see PAPER.md Results; dashboard + plots in `experiments/results/trackB/analysis/` |
 
 ## Decisions made (and why) — chronological
 1. Only fine-tuning is feasible (no pretraining budget); the study's job is
@@ -66,19 +69,43 @@ Last updated: 2026-07-18. Update this whenever anything changes hands.
     genre-universal incl. continuous pitch (staff notation fails #5; that's
     the Carnatic module's future role as stress test).
 
-## Next actions (ordered)
-1. GPU box: pull, `scripts/05_selftest.py`, rerun Qwen (backfills no-audio),
-   restart Gemini, `--limit 20` pilot before any new full run, export
-   review CSVs, push results/.
-2. Local/by-ear: audit mode stimuli; when results land, explanations.csv
-   analysis + spot-check review CSVs against audio.
-3. Next build: ladder arm (battery v2) — L1 features into prompts at
-   one-abstraction-below-answer, features-only + few-shot variants; keep
-   v1 job_ids untouched.
-4. Then: scoring notebook/report generator for the capability heatmap and
-   psychometric plots once ≥2 models have results.
-5. Then: MERT extraction + probes (first L2/L3 dissociation), Qwen2-Audio
-   replication number, MusicGen battery.
+## Next actions (ordered, updated 2026-07-22)
+1. **GPT-4o-audio run** (Sethu, H100/API) — the one remaining Track A cell.
+2. **Attention diagnostic on the other 4 open models** — code written 2026-07-24
+   (`gpu/attention_audio.py`: `prepare_qwen_omni`, `prepare_audio_flamingo` +
+   dispatch), pushed, **not yet run** — needs the H100 box, no GPU on the laptop.
+   `scripts/08_run_remaining.sh` now smoke-tests each with `--per-task 1` before the
+   full `--per-task 6` pass. UNVERIFIED on hardware — the audio_token_id
+   auto-detection may need adjusting per checkpoint if the assert fires; see the
+   docstring in each `prepare_*` function.
+   Priority: Qwen2-Audio's own attention curve was nearly identical across all 10 tasks,
+   which may mean the diagnostic isn't task-sensitive for that model specifically —
+   need a second model to know if that's a Qwen2-Audio quirk or the diagnostic itself.
+3. **Sanity-check `beats_per_bar` and `mode_id` by hand** before trusting any model
+   comparison on them — 4/6 models show negative audio_gain and `beats_per_bar` shows an
+   *inverted* wrong-audio-control result (worse with correct audio than swapped audio).
+   Read ~20 raw responses per model in `results/trackA/review__<model>/beats_per_bar.csv`
+   and `mode_id.csv` to rule out a scoring/parsing bug before concluding it's a real
+   model failure or task-design flaw.
+4. **Re-probe each LALM's OWN encoder** (AF-Whisper for Music-Flamingo/AF3, the
+   AuT-derived tower for Qwen-Omni) on `key_id`, `mode_id`, `chord_quality`,
+   `interval_id` — code written 2026-07-24 (`gpu/extract_activations.py
+   --own-encoder`, via `_find_audio_tower`'s best-guess submodule path + fallback
+   scan), pushed, **not yet run**. These are the tasks where behavioral (L3)
+   accuracy beat the generic-encoder probe (L2), and the generic encoders aren't
+   necessarily a fair proxy for what these models' own ears actually contain.
+   UNVERIFIED — check the printed "using submodule at '...'" line on first run;
+   if `_find_audio_tower`'s fallback had to kick in, confirm it found the right
+   thing before trusting the probe numbers.
+5. Run the L1 DSP floor (`musicprobe.l1_baselines`, or essentia/madmom for a stronger
+   key/beat detector) on the same stimuli so every task sits on the full L1→L2→L3 ladder.
+6. Qwen2-Audio published-number replication (harness validation) — still not done.
+7. Ladder arm (battery v2) — L1 features into prompts at one-abstraction-below-answer,
+   features-only + few-shot variants; keep v1 job_ids untouched. Deferred behind 1–6.
+8. Lock the 3–5 Track C intervention candidates once 2–3 above resolve. Current shortlist
+   from the L2/L3 dissociation table: `octave_id`, `tuning_judgment`,
+   `cents_discrimination`, `note_count` (solid alignment-gap pattern); `beats_per_bar` is
+   provisionally excluded pending item 3.
 
 ## Known gaps / honesty list
 - L1 key detection weak on minor progressions (naive Krumhansl) — use
@@ -90,3 +117,24 @@ Last updated: 2026-07-18. Update this whenever anything changes hands.
 - Explain-format responses can be confabulated — evidence, not proof.
 - progression_id has only 32 stimuli (small N — hypothesis-generating only).
 - Contamination: synthetic stimuli are safe, but Tier 3 datasets are public.
+- **key_id MCQ distractors are circle-of-fifths neighbors + the relative key by design**
+  (`musicprobe/prompts.py`) — MCQ confusion matrices for this task will always look
+  "musically structured" regardless of whether the model is really listening. Only the
+  open-format subset is a valid listening-structure signal, and n=20/model there is small.
+- MCQ vs open-format accuracy gaps are large and inconsistent across models/tasks (not just
+  a minor scoring nuance) — e.g. Gemini scores 0/20 open-format on `key_id` despite ~42%
+  MCQ; `progression_id` is 0% open-format for 4/6 models. Any task/model accuracy number
+  should be read alongside its MCQ-vs-open split before being quoted, not just the pooled
+  accuracy.
+- `beats_per_bar`'s audio_gain is negative for 4/6 models AND its wrong-audio-control delta
+  is negative on average (models do *better* with swapped-in wrong audio than the correct
+  clip) — the only task where this happens. Treat this as a task-validity flag, not a
+  capability finding, until it's manually audited (next action #3).
+- The Track B attention diagnostic exists only for Qwen2-Audio-7B, and its shape is
+  nearly identical across all 10 tasks tested — don't generalize "the model attends to
+  audio at layer X for task Y" claims from this one model/run.
+- No-audio "refusal" behavior is not comparable across models as a single number: Gemini
+  refuses explicitly (57%), Qwen2-Audio refuses some (13%), but AF3/Music-Flamingo/
+  Qwen2.5-Omni/Qwen3-Omni never refuse (0%) — they answer confidently and wrong instead,
+  which is a worse failure mode than refusing, not a better one, even though 0% refusal
+  reads as "more helpful" at a glance.

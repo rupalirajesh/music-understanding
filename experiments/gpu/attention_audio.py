@@ -19,8 +19,17 @@ Writes results/trackB/attention/:
   attn__<model>.parquet       long format: job_id, task, step, layer, fracs
   attn_summary__<model>.csv   per task: mean frac by layer + by step (decay curve)
 
-Open-weights models only (APIs don't expose attention). Qwen2-Audio works with
-the loader below; add a prepare() per additional model family.
+Open-weights models only (APIs don't expose attention). Model roster and
+loader status (mirrors musicprobe/runners/run_local.py's roster comment):
+  Qwen/Qwen2-Audio-7B-Instruct       done (Qwen2-Audio only run so far)
+  Qwen/Qwen2.5-Omni-7B               loader below — UNVERIFIED on hardware:
+                                      smoke-test with --per-task 1 first
+  Qwen/Qwen3-Omni-30B-A3B-Instruct   same loader — UNVERIFIED, smoke-test
+  nvidia/audio-flamingo-3-hf         loader below — UNVERIFIED, smoke-test
+  nvidia/music-flamingo-2601-hf      same loader (AF3 family) — UNVERIFIED
+All four new loaders need eager attention + output_attentions=True, same as
+the Qwen2-Audio loader; that's the main thing to double check first if a
+smoke test errors (some transformers versions silently fall back to sdpa).
 """
 import argparse
 import sys
@@ -70,10 +79,102 @@ def prepare_qwen2_audio(model_name: str):
     return model, processor, encode
 
 
+def prepare_qwen_omni(model_name: str):
+    """Qwen2.5-Omni / Qwen3-Omni, thinker-only (talker disabled). UNVERIFIED —
+    same audio_token_id auto-detection as Qwen2-Audio; if that assert fires,
+    print(model.config) and look for whichever field holds it on this
+    checkpoint (naming has moved around across Qwen-Omni releases)."""
+    import torch
+    import soundfile as sf
+    import librosa
+    from transformers import AutoProcessor
+    if "qwen3" in model_name.lower():
+        from transformers import Qwen3OmniMoeForConditionalGeneration as Cls
+    else:
+        from transformers import Qwen2_5OmniForConditionalGeneration as Cls
+
+    processor = AutoProcessor.from_pretrained(model_name)
+    model = Cls.from_pretrained(model_name, torch_dtype="auto", device_map="auto",
+                                attn_implementation="eager").eval()
+    if hasattr(model, "disable_talker"):
+        model.disable_talker()
+    target_sr = 16000
+    audio_token_id = getattr(model.config, "audio_token_index",
+                             getattr(model.config, "audio_token_id", None))
+    assert audio_token_id is not None, "can't find audio token id in config"
+
+    def encode(prompt: str, audio_path: str):
+        y, sr = sf.read(EXP_ROOT / audio_path)
+        y = librosa.resample(y, orig_sr=sr, target_sr=target_sr)
+        conversation = [{"role": "user", "content": [
+            {"type": "audio", "audio": "stimulus.wav"},
+            {"type": "text", "text": prompt}]}]
+        text = processor.apply_chat_template(conversation,
+                                             add_generation_prompt=True,
+                                             tokenize=False)
+        inputs = processor(text=text, audio=[y], sampling_rate=target_sr,
+                           return_tensors="pt", padding=True).to(model.device)
+        for k in list(inputs.keys()):
+            if torch.is_floating_point(inputs[k]):
+                inputs[k] = inputs[k].to(model.dtype)
+        return inputs, audio_token_id
+
+    return model, processor, encode
+
+
+def prepare_audio_flamingo(model_name: str):
+    """Audio Flamingo 3 / Music Flamingo, transformers-native "-hf" checkpoints.
+    UNVERIFIED — audio_token_index name guessed from the Qwen2-Audio/Omni
+    convention; if the assert fires, inspect model.config for the real field."""
+    import torch
+    from transformers import AutoProcessor
+    if "music-flamingo" in model_name.lower():
+        from transformers import MusicFlamingoForConditionalGeneration as Cls
+    else:
+        from transformers import AudioFlamingo3ForConditionalGeneration as Cls
+
+    processor = AutoProcessor.from_pretrained(model_name)
+    model = Cls.from_pretrained(model_name, torch_dtype=torch.float32,
+                                device_map="cuda",
+                                attn_implementation="eager").eval()
+    audio_token_id = getattr(model.config, "audio_token_index",
+                             getattr(model.config, "audio_token_id", None))
+    assert audio_token_id is not None, "can't find audio token id in config"
+
+    def encode(prompt: str, audio_path: str):
+        content = [{"type": "audio", "path": str(EXP_ROOT / audio_path)},
+                   {"type": "text", "text": prompt}]
+        conversation = [{"role": "user", "content": content}]
+        inputs = processor.apply_chat_template(
+            conversation, add_generation_prompt=True, tokenize=True,
+            return_dict=True, return_tensors="pt").to(model.device)
+        return inputs, audio_token_id
+
+    return model, processor, encode
+
+
+PREPARERS = {
+    "qwen2-audio": prepare_qwen2_audio,
+    "qwen-omni": prepare_qwen_omni,
+    "flamingo": prepare_audio_flamingo,
+}
+
+
+def pick_preparer(model_name: str):
+    low = model_name.lower()
+    if "qwen2-audio" in low:
+        return PREPARERS["qwen2-audio"]
+    if "omni" in low:
+        return PREPARERS["qwen-omni"]
+    if "flamingo" in low:
+        return PREPARERS["flamingo"]
+    raise ValueError(f"no attention-diagnostic loader for {model_name} — add one above")
+
+
 def main(model_name: str, per_task: int, seed: int = 0):
     import torch
 
-    model, processor, encode = prepare_qwen2_audio(model_name)
+    model, processor, encode = pick_preparer(model_name)(model_name)
     jobs = pd.read_parquet(JOBS_PATH)
     jobs = jobs[(jobs["condition"] == "audio") & (jobs["format"] == "mcq")]
     # pandas 3.0's groupby.apply drops the grouping column; iterate groups instead

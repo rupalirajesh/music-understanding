@@ -12,8 +12,21 @@ Those three runs ARE the encoder-family comparison (music-SSL vs ASR vs
 contrastive): same stimuli, same probe suite (probe.py), three pretraining
 objectives — the sharpest architectural evidence in the study, since it
 directly answers "which encoder should our fine-tune be built on."
-Full LALMs (Audio Flamingo 3 / Qwen2.5-Omni) need model-specific loading —
-add a loader per model below; the loop and storage format stay identical.
+
+For re-probing key_id/mode_id/chord_quality/interval_id against each LALM's
+OWN audio encoder (not vanilla Whisper/MERT/CLAP — see PROFESSOR_UPDATE.md
+open question #2: Music Flamingo/AF3 use AF-Whisper, a continued-pretrained
+variant, and Qwen-Omni uses its own AuT-derived tower), pass --own-encoder:
+
+  python gpu/extract_activations.py --model Qwen/Qwen2.5-Omni-7B --own-encoder --out acts/qwen25omni_own
+  python gpu/extract_activations.py --model Qwen/Qwen3-Omni-30B-A3B-Instruct --own-encoder --out acts/qwen3omni_own
+  python gpu/extract_activations.py --model nvidia/audio-flamingo-3-hf --own-encoder --out acts/af3_own
+  python gpu/extract_activations.py --model nvidia/music-flamingo-2601-hf --own-encoder --out acts/musicflamingo_own
+
+UNVERIFIED on hardware: the audio-tower submodule path is a best guess (see
+_find_audio_tower's docstring) — its fallback will find *something* whose
+class name looks like an audio encoder even if the guessed path is wrong,
+but double check the printed path against the real architecture on first run.
 
 Output: one .npz per stimulus: arrays "layer_00".."layer_NN", each
 (n_frames, dim) fp16, mean-pooled over time to (dim,) additionally stored as
@@ -90,18 +103,129 @@ def load_clap(name: str):
     return forward
 
 
-LOADERS = {"mert": load_mert, "whisper": load_whisper_encoder, "clap": load_clap}
-# TODO(Phase 3): add "af3" (Audio Flamingo 3: tap AF-Whisper encoder layers,
-# post-projector, and LLM decoder layers at audio token positions) and
-# "qwen-omni" loaders. Same storage format.
+def _find_audio_tower(model, candidate_paths):
+    """Walk a few likely attribute paths for the audio-encoder submodule
+    (naming isn't standardized across model families / transformers versions);
+    fall back to scanning named_modules() for a class name that looks like an
+    audio encoder. UNVERIFIED — if this raises, run
+    `for n, _ in model.named_modules(): print(n)` on the actual checkpoint and
+    add the real path to candidate_paths above the fallback."""
+    for path in candidate_paths:
+        obj = model
+        try:
+            for attr in path.split("."):
+                obj = getattr(obj, attr)
+            return obj, path
+        except AttributeError:
+            continue
+    hints = ("AudioTower", "AudioEncoder", "AuT", "WhisperEncoder")
+    for name, mod in model.named_modules():
+        if any(h in type(mod).__name__ for h in hints):
+            return mod, name
+    raise AttributeError(
+        f"couldn't find an audio encoder submodule; tried {candidate_paths}. "
+        "Run `for n,_ in model.named_modules(): print(n, type(_))` and add "
+        "the real path to candidate_paths.")
+
+
+def load_own_encoder_qwen_omni(model_name: str):
+    """Extract Qwen2.5-Omni / Qwen3-Omni's OWN audio tower (not vanilla
+    Whisper) — this is what the PROFESSOR_UPDATE open question #2 needs:
+    re-probing key_id/mode_id/chord_quality/interval_id against the encoder
+    each model actually hears through, not a generic standalone one.
+    UNVERIFIED on hardware — the audio_tower path is a best guess from the
+    Thinker-Talker architecture description; if _find_audio_tower's fallback
+    has to kick in, note which path it found and hardcode it here."""
+    import torchaudio
+    import torch
+    from transformers import AutoProcessor
+    if "qwen3" in model_name.lower():
+        from transformers import Qwen3OmniMoeForConditionalGeneration as Cls
+    else:
+        from transformers import Qwen2_5OmniForConditionalGeneration as Cls
+
+    processor = AutoProcessor.from_pretrained(model_name)
+    model = Cls.from_pretrained(model_name, torch_dtype="auto",
+                                device_map="cuda").eval()
+    tower, found_path = _find_audio_tower(
+        model, ["thinker.audio_tower", "audio_tower", "thinker.model.audio_tower"])
+    print(f"[load_own_encoder_qwen_omni] using submodule at '{found_path}'")
+    fe = processor.feature_extractor if hasattr(processor, "feature_extractor") \
+        else processor.audio_processor
+    target_sr = getattr(fe, "sampling_rate", 16000)
+
+    def forward(wav: np.ndarray, sr: int):
+        t = torch.tensor(wav, dtype=torch.float32)
+        if sr != target_sr:
+            t = torchaudio.functional.resample(t, sr, target_sr)
+        inputs = fe(t.numpy(), sampling_rate=target_sr, return_tensors="pt")
+        inputs = {k: v.to(tower.device if hasattr(tower, "device") else "cuda")
+                  for k, v in inputs.items()}
+        with torch.no_grad():
+            out = tower(**inputs, output_hidden_states=True)
+        return [h[0].cpu().to(torch.float16).numpy() for h in out.hidden_states]
+
+    return forward
+
+
+def load_own_encoder_flamingo(model_name: str):
+    """Extract Audio Flamingo 3 / Music Flamingo's OWN encoder (AF-Whisper —
+    Whisper-large-v3 continued-pretrained on audio/music, NOT vanilla
+    whisper-large-v3). Same purpose as load_own_encoder_qwen_omni above.
+    UNVERIFIED — audio_tower path guessed from the transformers-native "-hf"
+    port's likely naming convention (matches vision_tower convention used
+    elsewhere in transformers multimodal models)."""
+    import torchaudio
+    import torch
+    from transformers import AutoProcessor
+    if "music-flamingo" in model_name.lower():
+        from transformers import MusicFlamingoForConditionalGeneration as Cls
+    else:
+        from transformers import AudioFlamingo3ForConditionalGeneration as Cls
+
+    processor = AutoProcessor.from_pretrained(model_name)
+    model = Cls.from_pretrained(model_name, torch_dtype=torch.float32,
+                                device_map="cuda").eval()
+    tower, found_path = _find_audio_tower(model, ["audio_tower", "model.audio_tower"])
+    print(f"[load_own_encoder_flamingo] using submodule at '{found_path}'")
+    fe = processor.feature_extractor if hasattr(processor, "feature_extractor") \
+        else processor.audio_processor
+    target_sr = getattr(fe, "sampling_rate", 16000)
+
+    def forward(wav: np.ndarray, sr: int):
+        t = torch.tensor(wav, dtype=torch.float32)
+        if sr != target_sr:
+            t = torchaudio.functional.resample(t, sr, target_sr)
+        inputs = fe(t.numpy(), sampling_rate=target_sr, return_tensors="pt")
+        inputs = {k: v.to("cuda").to(torch.float32) if v.is_floating_point() else v.to("cuda")
+                  for k, v in inputs.items()}
+        with torch.no_grad():
+            out = tower(**inputs, output_hidden_states=True)
+        return [h[0].cpu().to(torch.float16).numpy() for h in out.hidden_states]
+
+    return forward
+
+
+LOADERS = {
+    "mert": load_mert,
+    "whisper": load_whisper_encoder,
+    "clap": load_clap,
+    "qwen-omni-own": load_own_encoder_qwen_omni,
+    "flamingo-own": load_own_encoder_flamingo,
+}
 
 
 def main(model_name: str, out_dir: str, manifest="manifests/stimuli.parquet",
-         stimuli_root="."):
+         stimuli_root=".", own_encoder: bool = False):
     low = model_name.lower()
-    kind = ("mert" if "mert" in low else
-            "whisper" if "whisper" in low else
-            "clap" if "clap" in low else None)
+    if own_encoder:
+        kind = ("qwen-omni-own" if "omni" in low else
+                "flamingo-own" if "flamingo" in low else None)
+        assert kind, f"--own-encoder not supported for {model_name} (only Qwen-Omni/Flamingo families)"
+    else:
+        kind = ("mert" if "mert" in low else
+                "whisper" if "whisper" in low else
+                "clap" if "clap" in low else None)
     assert kind, f"no loader for {model_name} yet — add one to LOADERS"
     forward = LOADERS[kind](model_name)
     out = Path(out_dir); out.mkdir(parents=True, exist_ok=True)
@@ -128,5 +252,8 @@ if __name__ == "__main__":
     ap.add_argument("--out", required=True)
     ap.add_argument("--manifest", default="manifests/stimuli.parquet")
     ap.add_argument("--stimuli-root", default=".")
+    ap.add_argument("--own-encoder", action="store_true",
+                    help="extract this LALM's own audio tower (Qwen-Omni/Flamingo "
+                         "families) instead of a generic standalone encoder")
     args = ap.parse_args()
-    main(args.model, args.out, args.manifest, args.stimuli_root)
+    main(args.model, args.out, args.manifest, args.stimuli_root, args.own_encoder)
