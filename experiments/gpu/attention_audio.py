@@ -99,8 +99,18 @@ def prepare_qwen_omni(model_name: str):
     if hasattr(model, "disable_talker"):
         model.disable_talker()
     target_sr = 16000
-    audio_token_id = getattr(model.config, "audio_token_index",
-                             getattr(model.config, "audio_token_id", None))
+    # Qwen-Omni nests it in thinker_config, and the field name differs by version:
+    # 2.5-Omni -> thinker_config.audio_token_index; 3-Omni -> thinker_config.audio_token_id
+    def _atk(cfg):
+        for f in ("audio_token_id", "audio_token_index"):
+            v = getattr(cfg, f, None)
+            if v is not None:
+                return v
+        return None
+    tc = getattr(model.config, "thinker_config", None)
+    audio_token_id = (_atk(tc) if tc is not None else None)
+    if audio_token_id is None:
+        audio_token_id = _atk(model.config)
     assert audio_token_id is not None, "can't find audio token id in config"
 
     def encode(prompt: str, audio_path: str):
@@ -193,10 +203,12 @@ def main(model_name: str, per_task: int, seed: int = 0):
         n_audio = int(audio_mask.sum())
         if n_audio == 0:
             continue
+        gen_kwargs = dict(max_new_tokens=MAX_NEW_TOKENS, do_sample=False,
+                          output_attentions=True, return_dict_in_generate=True)
+        if "omni" in model_name.lower():   # Qwen-Omni: never synthesise speech
+            gen_kwargs["return_audio"] = False
         with torch.no_grad():
-            out = model.generate(**inputs, max_new_tokens=MAX_NEW_TOKENS,
-                                 do_sample=False, output_attentions=True,
-                                 return_dict_in_generate=True)
+            out = model.generate(**inputs, **gen_kwargs)
         answer = processor.batch_decode(
             out.sequences[:, inputs.input_ids.shape[1]:],
             skip_special_tokens=True)[0]
