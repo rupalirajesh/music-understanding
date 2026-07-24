@@ -6,6 +6,7 @@ experiments/genmodel/outputs/*.wav
 experiments/listening.html
 experiments/.venv/
 experiments/acts/
+experiments/gpu/track_c_checkpoints/
 
 __pycache__/
 *.pyc

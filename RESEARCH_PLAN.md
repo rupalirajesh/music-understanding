@@ -4,7 +4,7 @@ A deep-dive study of how audio-language models represent, process, and reason ab
 across all genres — with the goal of building the knowledge base to train a music
 understanding model.
 
-Last updated: 2026-07-15
+Last updated: 2026-07-24 (added Track D, §12)
 
 ---
 
@@ -867,17 +867,196 @@ the harness + instruction sets are releasable artifacts.
 
 ## 11. Hypotheses (stated up front)
 
+*Status column added 2026-07-22 after Track A (6/7 models) + Track B (probes, partial
+attention) landed. Full evidence in PAPER.md § Results; this is a one-line pointer per
+hypothesis, not the analysis.*
+
 - **H1**: Description ≫ perception — genre/mood/instrumentation strong; key, chord quality,
   interval naming weak, across all models (predicted by §1.4's caption-grained supervision).
+  — **Untested**: Tier 3 (genre/description) battery not run yet; only Tier 1–2 exists.
+  Key/chord/interval weakness on the perception side is already confirmed on open-format
+  responses (near-floor for most models), so half the comparison is in.
 - **H2**: Cents-discrimination thresholds coarse (≥50 cents) for LALMs; MERT probes will
   beat LALM behavior on fine pitch (predicted by ASR encoders + token rate, §1.5).
+  — **Partially supported**: MERT beats Whisper-enc on `pitch_note_id` (74% vs 45%,
+  chance 8%) and `key_id` (21% vs 12%, chance 4%), consistent with its CQT-reconstruction
+  pretraining target. Formal cents psychometric curve (threshold in cents) not plotted yet.
 - **H3**: Genre classification substantially survives no-audio and lyric shortcuts but
   degrades sharply under MIDI re-render → genre skill is largely production-texture +
   prior-driven, not compositional.
+  — **Untested**: Tier 3 not run.
 - **H4**: Key/mode/chord info decodable from mid encoder layers (L2 high) while behavior
   fails (L3 low) → alignment gap → Track C arm (i) recovers most of it.
+  — **Mixed**: the pattern shows up clearly, but not on key/mode/chord — it's
+  `beats_per_bar`, `octave_id`, `tuning_judgment`, `cents_discrimination`, `note_count`
+  that are L2-high/L3-low. Key/mode/chord instead show L3 > generic-encoder L2, which is
+  the *inverse* of H4 and needs re-probing the LALMs' own encoders before drawing a
+  conclusion either way (see PROJECT_STATE next actions). `beats_per_bar` additionally
+  fails a wrong-audio control, so it may not be a real alignment gap at all — see PAPER.md.
 - **H5**: Fast-ornament and technique detail unrecoverable even by probes at 12.5 Hz token
   rates but partially recoverable at MERT's 75 Hz → architectural bottleneck class.
+  — **Untested**: no ornament/technique tasks in the battery yet (Tier 2 items 11–13,
+  VocalSet/GuitarSet, not implemented); AuT (12.5 Hz) not yet extracted/probed.
 - **H6**: Music Flamingo > AF3 > Qwen-Omni on music behavior, but encoder probes (L2) will
   be far more similar than behavior (L3) across models — most variance lives in alignment
   and instruction data, not perception.
+  — **Supported on the ordering, untested on the L2-similarity claim**: Music-Flamingo
+  does lead on `key_id` (75%) and shows the strongest wrong-audio-control drop (+10.8pp,
+  best evidence of real listening among the 6). The L2 side of this hypothesis compares
+  standalone generic encoders (MERT/Whisper/CLAP), not each model's own encoder, so it
+  can't yet be checked directly — same re-probing gap as H4.
+- **H7** (added 2026-07-24, Track D): a second input modality carrying the same information
+  at the same abstraction level as audio (a spectrogram rendered as an image) will measure
+  differently than a second modality that pre-computes the answer (rendered sheet music) —
+  the former is a fair test of whether vision-pretrained pathways extract musical structure
+  better than audio-pretrained ones; the latter is answer leakage, not a perception test.
+  Prediction: fine-tuned audio+spectrogram-image beats audio-only on the L2-high/L3-low
+  shortlist tasks, *and* the wrong-image control shows a real drop (not near-zero, the way
+  `beats_per_bar`'s wrong-audio delta was) — if the control is flat, the model learned to
+  read the image and ignore the audio, which is a null result dressed as a positive one.
+  — **Untested**: Track D not started; this hypothesis is why its hygiene layer
+  (`image`/`no_image`/`wrong_image`) is non-negotiable, same reasoning as §0.6/§4.
+
+---
+
+# PART III — TRACK D (planned, added 2026-07-24)
+
+## 12. Track D — Multimodal representation exploration
+
+**Where this comes from.** Decision 11 (§ PROJECT_STATE.md) reframed the end goal from "close
+individual task gaps" to "find a candidate *universal* music representation" — one usable as
+a training target for our own model. Five requirements were set for any candidate:
+
+1. inferable from audio,
+2. compact in tokens,
+3. sufficient for the battery tasks (§3),
+4. human-readable,
+5. **genre-universal, including continuous pitch** (gamakas, blues bends, maqam) — staff
+   notation and standard MIDI both fail this (pitch-bend is a hack), which is why the
+   deferred Carnatic module (§8) is this requirement's eventual stress test, not an
+   afterthought.
+
+Track D asks a question the ladder idea (§0.7 rung 2, Part 0) didn't cover: not just *which
+text features* to hand the model, but *which additional input modality* — and, separately,
+whether a second modality is more useful as a training-time signal that shapes a better
+internal representation than as a test-time crutch. It reuses Track A's stimulus/hygiene
+infrastructure and Track B's probing infrastructure rather than building new ones.
+
+### 12.1 Model-support audit (done 2026-07-24 — gates everything else)
+
+Before building anything, checked which models can even take audio + image in one turn.
+This cuts the candidate list hard:
+
+| Model | Audio + image, same turn? | Source |
+|---|---|---|
+| Qwen2.5-Omni-7B | **Yes** — omni-modal by design (Thinker processes text/image/audio/video jointly) | [Qwen2.5-Omni](https://github.com/QwenLM/Qwen2.5-Omni), [HF model card](https://huggingface.co/Qwen/Qwen2.5-Omni-7B) |
+| Qwen3-Omni-30B-A3B | **Yes** — "understanding text, audio, images, and video" | [Qwen3-Omni](https://github.com/QwenLM/Qwen3-Omni), [technical report](https://arxiv.org/abs/2509.17765) |
+| Gemini-2.5-Pro | **Yes** — single `generateContent` call accepts a mixed parts array (text/image/audio/video) | [Gemini API models](https://ai.google.dev/gemini-api/docs/models) |
+| Qwen2-Audio-7B-Instruct | **No** — audio + text only | [HF model card](https://huggingface.co/Qwen/Qwen2-Audio-7B-Instruct) |
+| Audio-Flamingo-3 | **No** — AF-Whisper encoder + Qwen2.5-7B LLM, audio + text only, no vision tower | [HF model card](https://huggingface.co/nvidia/audio-flamingo-3-hf) |
+| Music-Flamingo | **No** — explicitly audio (WAV/MP3/FLAC) + text only | [HF model card](https://huggingface.co/nvidia/music-flamingo-2601-hf) |
+
+**Consequence that changes the plan**: AF3 and Music-Flamingo — the two best-documented,
+most music-capable open models, and Track C's target — **cannot run Track D at all**. The
+only open-weights candidate with full Track B/C infrastructure already built and at
+manageable size is **Qwen2.5-Omni-7B**. Qwen3-Omni-30B-A3B stays a stretch goal for the same
+reason it already was one in §3.5 (30B MoE, heavier to fine-tune/probe). Gemini-2.5-Pro can
+run the Phase 1 accuracy question (black-box, no fine-tuning, no probing) as a ceiling
+reference, same role it plays in Track A.
+
+### 12.2 Phase 1 — does a spectrogram image, properly controlled, change accuracy?
+
+**The trap to avoid.** Rendering *sheet music* from the same MIDI used to generate the audio
+and feeding it as an input image is not a perception test — it's answer leakage. A rendered
+score's key signature *is* `key_id`'s answer; its time signature *is* `beats_per_bar`'s;
+notehead position *is* `pitch_note_id`/`octave_id`'s. This is the exact violation
+`RUPALI_READ_THIS.md` rule 1 already warns about ("features must sit one abstraction level
+below the answer") — sheet music sits *at* the answer. **Do not build this as a test-time
+input.** (It comes back in Phase 2, as a training-time target only — see 12.3.)
+
+**What's sound instead**: a **spectrogram rendered as an image**. Same abstraction level as
+the audio itself (a re-rendering of the signal, not a symbolic answer), so it doesn't leak.
+The hypothesis worth testing: these models' *audio* encoders were pretrained on
+speech/music-specific objectives that never had to be good at reading 2D structure, while
+their *vision* encoders were separately pretrained on huge general image data that's very
+good at exactly that — edges, periodic textures, horizontal/vertical bands. A spectrogram
+turns "hear the pitch" into "read a horizontal line's height," which the vision pathway may
+simply be better at.
+
+**Design:**
+1. **Stimuli**: render one spectrogram PNG per existing manifest stimulus (deterministic,
+   reuses `audio_path` — no new audio needed). Log-mel, matching what these models already
+   compute internally as their own audio front-end (§0.2), so the image isn't handing the
+   model a *different* transform, just the same one in a different modality.
+2. **Hygiene layer, mirroring `jobs.py`'s existing pattern exactly**: add `image` /
+   `no_image` / `wrong_image` conditions, with audio held at `audio` (correct) throughout —
+   this experiment is specifically about what the image *adds*, not re-testing audio. Wire
+   `wrong_image` the same way `wrong_audio` already works (`jobs.py:67-68`): drawn uniformly
+   from the whole battery's spectrogram set, not filtered to the same task, scored against
+   the *original* question's ground truth. Without this control, a positive result is
+   uninterpretable — it could mean "the model is genuinely fusing image+audio" or "the model
+   learned to just read the image and stopped using audio at all," and only the wrong-image
+   condition tells them apart (same logic as H7 above and the existing wrong-audio
+   discussion in the 2026-07-24 report correction).
+3. **Zero-shot first, but don't trust a null result from it.** Prompting an off-the-shelf
+   model with an audio+spectrogram-image pair it never saw paired in training is a weak test
+   — a null could mean "doesn't help" or "doesn't know how to combine these." Plan for a
+   LoRA fine-tune arm on Qwen2.5-Omni-7B (reusing Track C's training stack) from the start:
+   train on (audio, spectrogram-image, question, answer) tuples from a training split, eval
+   on held-out stimuli, same held-out-instrument/soundfont discipline as Track C (§6.3).
+4. **Probe before and after** (Track B infrastructure, `extract_activations.py
+   --own-encoder`): does joint training change what the *audio* encoder itself represents,
+   or does the model route around it (learns to lean on the image pathway, audio
+   representation unchanged or degraded)? This is the "internally" half of the user's
+   question — accuracy alone can't answer it.
+5. **Target tasks**: start with the tasks where behavior already trails a high L2 probe
+   score (the existing alignment-fixable shortlist: `octave_id`, `tuning_judgment`,
+   `cents_discrimination`, `note_count`) — if a spectrogram image doesn't move the needle
+   there, where the information is already known to be extractable from *audio alone*, it's
+   unlikely to be the fix. `key_id`/`mode_id`/`chord_quality`/`interval_id` are a secondary,
+   noisier target given the own-encoder re-probe's read that behavioral success there is
+   more likely priors than perception (2026-07-24 report).
+
+### 12.3 Phase 2 — auxiliary transcription objective, for the universal-representation question
+
+Rather than feeding notation at test time (the leakage trap above), use it as a **training
+signal only**: train the model to produce a transcription *from* audio as an auxiliary
+objective, then discard that output head at test time and re-run the existing battery + L2
+probes on the resulting audio encoder. This can't leak the answer, because the transcription
+is never present at inference — it tests whether the *pressure* to transcribe accurately
+during training reshapes the encoder into something more decodable, not whether the model
+can read an answer off a rendered score.
+
+**Open question this phase is gated on** (already parked, unresolved, in
+`RUPALI_READ_THIS.md` §5 — now load-bearing rather than hypothetical): what transcription
+*format* to target. It has to satisfy requirement 5 above, which rules out plain staff
+notation/MIDI outright (no continuous pitch). Candidates to evaluate before committing:
+JSON-ish event lists, prose description, a compact onset/pitch-contour grid, or a
+pitch-bend-inclusive symbolic format. This format choice is itself a small experiment (which
+one is learnable, compact, and human-readable) before Phase 2's main run — don't skip it and
+default to MIDI-as-text out of convenience, since that silently reintroduces requirement 5's
+failure mode.
+
+**Design**: multi-task LoRA fine-tune on Qwen2.5-Omni-7B — objective (a) unchanged, answer
+the existing battery; objective (b) new, transcribe what's playing, in the chosen format.
+Compare L2 probe accuracy (same battery of properties, same layers) before vs. after, on the
+same leakage-safe splits as Track B. A win here is a stronger result than Phase 1's: it
+would mean the *representation itself* got better, portably, not just that one more input
+channel helped one model answer one battery.
+
+### 12.4 What this is not
+
+Video was considered and set aside for now: the current stimuli are synthesized from MIDI,
+so there is no performance footage to film. It becomes relevant later specifically for the
+deferred Carnatic module (§8), where a video of ornamented, continuous-pitch performance
+(visible pitch bends, finger/vocal movement) could carry information audio alone doesn't —
+not a fit for the current synthetic battery.
+
+### 12.5 Sequencing
+
+Phase 1 before Phase 2 — Phase 2 reuses Phase 1's fine-tuning stack, and Phase 1's result
+tells us whether extra-modality-as-test-time-input is worth pursuing further before
+investing in the harder auxiliary-objective design. Both phases target Qwen2.5-Omni-7B
+first (the only open model with full Track B/C infrastructure that also accepts image
+input); AF3/Music-Flamingo are excluded per §12.1 unless a future AF-Next release adds
+vision support (check on release, same as the existing AF-Next action item in §3.5).

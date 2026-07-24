@@ -21,15 +21,22 @@ Writes results/trackB/attention/:
 
 Open-weights models only (APIs don't expose attention). Model roster and
 loader status (mirrors musicprobe/runners/run_local.py's roster comment):
-  Qwen/Qwen2-Audio-7B-Instruct       done (Qwen2-Audio only run so far)
-  Qwen/Qwen2.5-Omni-7B               loader below — UNVERIFIED on hardware:
-                                      smoke-test with --per-task 1 first
-  Qwen/Qwen3-Omni-30B-A3B-Instruct   same loader — UNVERIFIED, smoke-test
-  nvidia/audio-flamingo-3-hf         loader below — UNVERIFIED, smoke-test
-  nvidia/music-flamingo-2601-hf      same loader (AF3 family) — UNVERIFIED
-All four new loaders need eager attention + output_attentions=True, same as
-the Qwen2-Audio loader; that's the main thing to double check first if a
-smoke test errors (some transformers versions silently fall back to sdpa).
+  Qwen/Qwen2-Audio-7B-Instruct       done, trusted (ran before the eager-
+                                      attention check below existed, but its
+                                      numbers look structurally sane: real
+                                      per-layer/per-task variation, not flat)
+  Qwen/Qwen2.5-Omni-7B               ran 2026-07-24, but WITHOUT the eager-
+  Qwen/Qwen3-Omni-30B-A3B-Instruct   attention check below (added after the
+  nvidia/audio-flamingo-3-hf         fact) -- some transformers versions
+  nvidia/music-flamingo-2601-hf      silently fall back to sdpa, which would
+                                      make output_attentions wrong/absent
+                                      without erroring. Results for these four
+                                      showed suspiciously flat, near-identical-
+                                      shaped low attention across very
+                                      different architectures -- re-run ALL
+                                      FOUR before trusting attn_summary again;
+                                      assert_eager_attention() now hard-fails
+                                      immediately if this happens again.
 """
 import argparse
 import sys
@@ -170,6 +177,42 @@ PREPARERS = {
 }
 
 
+def _resolved_attn_impls(model) -> dict[str, str | None]:
+    """Every place a resolved attn_implementation could live: top-level config,
+    and any nested sub-configs (Qwen-Omni nests it under thinker_config /
+    audio_config / text_config depending on version). HF sets this on
+    `_attn_implementation` at each level that actually has its own attention
+    modules — if any of them didn't land on 'eager', output_attentions for
+    those layers is silently wrong or absent, which is exactly the failure
+    mode this whole diagnostic is vulnerable to (see module docstring)."""
+    found = {}
+    cfg = model.config
+    found["top"] = getattr(cfg, "_attn_implementation", None)
+    for sub in ("thinker_config", "text_config", "audio_config",
+                "language_model_config", "talker_config"):
+        sub_cfg = getattr(cfg, sub, None)
+        if sub_cfg is not None:
+            found[sub] = getattr(sub_cfg, "_attn_implementation", None)
+    return found
+
+
+def assert_eager_attention(model, model_name: str) -> None:
+    """Hard-fail if eager attention didn't actually take effect anywhere in
+    the model. Silently proceeding here is how the previous run produced
+    attn_summary numbers nobody could actually trust (see 2026-07-24 report
+    correction) -- do not soften this back to a warning."""
+    impls = _resolved_attn_impls(model)
+    bad = {k: v for k, v in impls.items() if v is not None and v != "eager"}
+    print(f"[attn] {model_name}: resolved attn_implementation = {impls}")
+    assert not bad, (
+        f"{model_name}: attn_implementation did NOT resolve to 'eager' for "
+        f"{bad} -- output_attentions will be missing/wrong for those modules, "
+        "and any attn_summary produced from this run is not trustworthy. "
+        "Check the installed transformers version and this model's modeling "
+        "code for eager-attention support before rerunning."
+    )
+
+
 def pick_preparer(model_name: str):
     low = model_name.lower()
     if "qwen2-audio" in low:
@@ -185,6 +228,7 @@ def main(model_name: str, per_task: int, seed: int = 0):
     import torch
 
     model, processor, encode = pick_preparer(model_name)(model_name)
+    assert_eager_attention(model, model_name)
     jobs = pd.read_parquet(JOBS_PATH)
     jobs = jobs[(jobs["condition"] == "audio") & (jobs["format"] == "mcq")]
     # pandas 3.0's groupby.apply drops the grouping column; iterate groups instead
