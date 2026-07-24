@@ -153,17 +153,36 @@ def load_own_encoder_qwen_omni(model_name: str):
     fe = processor.feature_extractor if hasattr(processor, "feature_extractor") \
         else processor.audio_processor
     target_sr = getattr(fe, "sampling_rate", 16000)
+    # The Qwen-Omni audio tower forward is not a plain encoder: it needs
+    # feature_lens + aftercnn_lens and the packed (masked) input_features, exactly
+    # as the model's own forward prepares them (modeling_qwen2_5_omni ~L1801-1812).
+    # Use the full processor to get the frame-level feature_attention_mask (the raw
+    # feature_extractor's attention_mask is sample-level and wrong here).
+    _conv = [{"role": "user", "content": [{"type": "audio", "audio": "x.wav"},
+                                          {"type": "text", "text": "."}]}]
+    _text = processor.apply_chat_template(_conv, add_generation_prompt=True,
+                                          tokenize=False)
+    dev = model.device
+    tdtype = next(tower.parameters()).dtype
 
     def forward(wav: np.ndarray, sr: int):
         t = torch.tensor(wav, dtype=torch.float32)
         if sr != target_sr:
             t = torchaudio.functional.resample(t, sr, target_sr)
-        inputs = fe(t.numpy(), sampling_rate=target_sr, return_tensors="pt")
-        inputs = {k: v.to(tower.device if hasattr(tower, "device") else "cuda")
-                  for k, v in inputs.items()}
+        pi = processor(text=_text, audio=[t.numpy()], sampling_rate=target_sr,
+                       return_tensors="pt")
+        feat = pi["input_features"].to(dev)
+        fam = pi["feature_attention_mask"].to(dev)
+        flens = fam.sum(-1)                                   # (B,) valid frames
+        feat = feat.permute(0, 2, 1)[fam.bool()].permute(1, 0).to(tdtype)  # (mel, frames)
+        tkw = dict(feature_lens=flens, output_hidden_states=True, return_dict=True)
+        # 2.5-Omni's tower also needs aftercnn_lens; 3-Omni's does not (no such method)
+        if hasattr(tower, "_get_feat_extract_output_lengths"):
+            tkw["aftercnn_lens"] = tower._get_feat_extract_output_lengths(flens)[0]
         with torch.no_grad():
-            out = tower(**inputs, output_hidden_states=True)
-        return [h[0].cpu().to(torch.float16).numpy() for h in out.hidden_states]
+            out = tower(feat, **tkw)
+        return [h.reshape(-1, h.shape[-1]).cpu().to(torch.float16).numpy()
+                for h in out.hidden_states]
 
     return forward
 
@@ -191,17 +210,27 @@ def load_own_encoder_flamingo(model_name: str):
     fe = processor.feature_extractor if hasattr(processor, "feature_extractor") \
         else processor.audio_processor
     target_sr = getattr(fe, "sampling_rate", 16000)
+    # AudioFlamingo3Encoder.forward(input_features, input_features_mask=...): it
+    # needs the frame-level mask (the model calls it as a kwarg, not attention_mask).
+    tdtype = next(tower.parameters()).dtype
 
     def forward(wav: np.ndarray, sr: int):
         t = torch.tensor(wav, dtype=torch.float32)
         if sr != target_sr:
             t = torchaudio.functional.resample(t, sr, target_sr)
-        inputs = fe(t.numpy(), sampling_rate=target_sr, return_tensors="pt")
-        inputs = {k: v.to("cuda").to(torch.float32) if v.is_floating_point() else v.to("cuda")
-                  for k, v in inputs.items()}
+        feat = fe(t.numpy(), sampling_rate=target_sr, return_tensors="pt",
+                  return_attention_mask=True)
+        input_features = feat["input_features"].to("cuda", tdtype)
+        mask = feat.get("attention_mask")
+        if mask is None:
+            mask = torch.ones(input_features.shape[0], input_features.shape[-1],
+                              dtype=torch.long)
+        mask = mask.to("cuda")
         with torch.no_grad():
-            out = tower(**inputs, output_hidden_states=True)
-        return [h[0].cpu().to(torch.float16).numpy() for h in out.hidden_states]
+            out = tower(input_features, input_features_mask=mask,
+                        output_hidden_states=True, return_dict=True)
+        return [h.reshape(-1, h.shape[-1]).cpu().to(torch.float16).numpy()
+                for h in out.hidden_states]
 
     return forward
 
