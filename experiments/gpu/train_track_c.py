@@ -68,10 +68,20 @@ UNVERIFIED on hardware, same honesty as every other gpu/ script:
 """
 import argparse
 import json
+import sys
 import time
 from pathlib import Path
 
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from musicprobe.config import EXP_ROOT, RESULTS_DIR, MANIFEST_PATH  # noqa: E402
+from musicprobe.jobs import JOBS_PATH  # noqa: E402
+
+GPU_DIR = Path(__file__).resolve().parent  # for checkpoint dirs: robust regardless of cwd,
+# same reasoning as musicprobe.config's EXP_ROOT-based absolute paths -- a bare relative
+# "gpu/track_c_checkpoints/..." only works if invoked with experiments/ as cwd, which every
+# other gpu/ script avoids by importing absolute paths from musicprobe.config instead.
 
 MODEL_NAME = "nvidia/audio-flamingo-3-hf"
 SHORTLIST_TASKS = ["octave_id", "tuning_judgment", "cents_discrimination", "note_count"]
@@ -251,7 +261,7 @@ def train(arm: str, smoke_test: bool, exp_root: Path, jobs_path: str, manifest_p
     model.train()
 
     ds = TrackCDataset(train_rows.head(8) if smoke_test else train_rows, processor, exp_root)
-    out_dir = Path(f"gpu/track_c_checkpoints/{arm}")
+    out_dir = GPU_DIR / "track_c_checkpoints" / arm
     args = TrainingArguments(
         output_dir=str(out_dir),
         per_device_train_batch_size=1,
@@ -302,7 +312,7 @@ def evaluate(arm: str, model, processor, held_out_rows, exp_root: Path):
         results.append({"job_id": row.job_id, "model": f"af3-lora-{arm}",
                         "raw_response": raw, "error": None, "ts": time.time()})
 
-    out_path = Path(f"results/trackA/responses__af3-lora-{arm}.parquet")
+    out_path = RESULTS_DIR / f"responses__af3-lora-{arm}.parquet"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(results).to_parquet(out_path, index=False)
     print(f"[train_track_c] arm={arm}: {len(results)} held-out responses -> {out_path}\n"
@@ -315,7 +325,7 @@ def load_adapter_for_eval(arm: str):
     from peft import PeftModel
 
     base, processor, _, _ = load_af3_for_training()
-    adapter_dir = f"gpu/track_c_checkpoints/{arm}"
+    adapter_dir = str(GPU_DIR / "track_c_checkpoints" / arm)
     model = PeftModel.from_pretrained(base, adapter_dir)
     return model, processor
 
@@ -326,9 +336,9 @@ if __name__ == "__main__":
     ap.add_argument("--smoke-test", action="store_true")
     ap.add_argument("--eval-only", action="store_true",
                     help="skip training, load a previously-saved adapter and re-eval")
-    ap.add_argument("--exp-root", default=".")
-    ap.add_argument("--jobs", default="manifests/jobs.parquet")
-    ap.add_argument("--manifest", default="manifests/stimuli.parquet")
+    ap.add_argument("--exp-root", default=str(EXP_ROOT))
+    ap.add_argument("--jobs", default=str(JOBS_PATH))
+    ap.add_argument("--manifest", default=str(MANIFEST_PATH))
     args = ap.parse_args()
 
     exp_root = Path(args.exp_root)

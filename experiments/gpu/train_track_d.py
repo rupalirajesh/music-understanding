@@ -52,10 +52,13 @@ from pathlib import Path
 
 import pandas as pd
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+GPU_DIR = Path(__file__).resolve().parent  # for checkpoint dirs: robust regardless of
+# cwd, same reasoning as musicprobe.config's EXP_ROOT-based absolute paths.
+sys.path.insert(0, str(GPU_DIR))
 from train_track_c import _find_submodule, assert_lora_applied, _held_out_mask  # noqa: E402
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(GPU_DIR.parent))
+from musicprobe.config import EXP_ROOT, RESULTS_DIR, MANIFEST_PATH  # noqa: E402
 from musicprobe.scoring import parse_response, is_correct  # noqa: E402
 from musicprobe.image_jobs import IMAGE_JOBS_PATH, DEFAULT_TASKS, build_image_jobs  # noqa: E402
 
@@ -93,7 +96,7 @@ def _load_train_and_heldout(exp_root: Path):
     if not IMAGE_JOBS_PATH.exists():
         build_image_jobs()  # image_jobs.py already asserts renders exist first
     jobs = pd.read_parquet(IMAGE_JOBS_PATH)
-    man = pd.read_parquet("manifests/stimuli.parquet")[["stimulus_id", "factors"]]
+    man = pd.read_parquet(MANIFEST_PATH)[["stimulus_id", "factors"]]
     with_factors = jobs.merge(man, on="stimulus_id", how="left")
     held_out_mask = _held_out_mask(with_factors)
 
@@ -165,7 +168,7 @@ def train(smoke_test: bool, exp_root: Path):
     model.train()
 
     ds = TrackDDataset(train_rows.head(8) if smoke_test else train_rows, processor, exp_root)
-    out_dir = Path("gpu/track_d_checkpoints/image")
+    out_dir = GPU_DIR / "track_d_checkpoints" / "image"
     args = TrainingArguments(
         output_dir=str(out_dir),
         per_device_train_batch_size=1,
@@ -220,7 +223,7 @@ def evaluate(model, processor, held_out_rows: pd.DataFrame, exp_root: Path):
         results.append({"job_id": row.job_id, "model": "qwen25omni-lora-image",
                         "raw_response": raw, "error": None, "ts": time.time()})
 
-    out_path = Path("results/trackA/responses__qwen25omni-lora-image.parquet")
+    out_path = RESULTS_DIR / "responses__qwen25omni-lora-image.parquet"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(results).to_parquet(out_path, index=False)
     print(f"[train_track_d] {len(results)} held-out responses -> {out_path}")
@@ -243,7 +246,7 @@ def score_image_jobs(responses_path: Path, held_out_rows: pd.DataFrame) -> pd.Da
     # convention, scoring.py:107-108 -- .eq(True), not .mean(skipna=True))
     summary = (df.groupby(["task", "image_condition"])["correct"]
                  .apply(lambda s: s.eq(True).mean()).reset_index())
-    out_path = Path("results/trackA/trackd_image_summary.csv")
+    out_path = RESULTS_DIR / "trackd_image_summary.csv"
     summary.to_csv(out_path, index=False)
     print(f"[train_track_d] accuracy by task x image_condition -> {out_path}")
     print(summary.pivot(index="task", columns="image_condition", values="correct").round(3))
@@ -254,7 +257,7 @@ def load_adapter_for_eval():
     from peft import PeftModel
 
     base, processor, _ = load_qwen_omni_for_training()
-    model = PeftModel.from_pretrained(base, "gpu/track_d_checkpoints/image")
+    model = PeftModel.from_pretrained(base, str(GPU_DIR / "track_d_checkpoints" / "image"))
     return model, processor
 
 
@@ -263,7 +266,7 @@ if __name__ == "__main__":
     ap.add_argument("--smoke-test", action="store_true")
     ap.add_argument("--eval-only", action="store_true",
                     help="skip training, load a previously-saved adapter and re-eval")
-    ap.add_argument("--exp-root", default=".")
+    ap.add_argument("--exp-root", default=str(EXP_ROOT))
     args = ap.parse_args()
 
     exp_root = Path(args.exp_root)

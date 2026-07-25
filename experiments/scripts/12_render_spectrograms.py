@@ -38,6 +38,7 @@ import numpy as np
 import pandas as pd
 import soundfile as sf
 
+from musicprobe.config import EXP_ROOT, MANIFEST_PATH
 from musicprobe.spectrograms import spectrogram_path
 
 N_MELS = 128
@@ -95,8 +96,8 @@ def main(manifest: str, exp_root: str, force: bool, limit: int | None = None):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--manifest", default="manifests/stimuli.parquet")
-    ap.add_argument("--exp-root", default=".")
+    ap.add_argument("--manifest", default=str(MANIFEST_PATH))
+    ap.add_argument("--exp-root", default=str(EXP_ROOT))
     ap.add_argument("--force", action="store_true", help="re-render even if PNG exists")
     ap.add_argument("--limit", type=int, default=None)
     args = ap.parse_args()
