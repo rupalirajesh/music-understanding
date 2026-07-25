@@ -15,7 +15,7 @@
 # if that's ever needed again. This script is scoped so it doesn't burn
 # GPU hours re-doing finished work.
 #
-#   bash scripts/09_run_track_c.sh
+#   bash scripts/11_run_track_c.sh
 #
 # Every step is smoke-tested first and logged to results/runlogs/ (tracked
 # in git) — if anything crashes, read the log, fix, rerun; earlier steps are

@@ -13,9 +13,10 @@
 #   bash scripts/00_download_soundfonts.sh
 #   python scripts/01_generate_stimuli.py          # regenerate WAVs (~12 min) if not present
 #   export PORTKEY_API_KEY=...   # REQUIRED (Gemini instrument_id top-up)
-#   export OPENAI_API_KEY=...    # REQUIRED (GPT-4o-audio full battery)
 # All five local models run on plain transformers (>=5.14, auto-installed
 # below) with checkpoint ids verified on the HF hub — no vendor forks.
+# GPT-4o-audio is OUT OF SCOPE (no OpenAI API access) — removed from this
+# runbook 2026-07-25, see PROJECT_STATE.md.
 
 cd "$(dirname "$0")/.."
 PY=${PY:-python}
@@ -30,8 +31,6 @@ step "Preflight: API keys (hard requirement — nothing gets silently skipped)"
 missing=0
 [ -z "${PORTKEY_API_KEY:-}" ] \
   && { echo "PORTKEY_API_KEY not set — needed for the Gemini instrument_id top-up"; missing=1; }
-[ -z "${OPENAI_API_KEY:-}" ] \
-  && { echo "OPENAI_API_KEY not set — needed for the GPT-4o-audio battery"; missing=1; }
 if [ "$missing" -eq 1 ]; then
   echo "STOPPING: export the key(s) above, then rerun this script."
   exit 1
@@ -58,8 +57,7 @@ done
 step "Track A / API: Gemini instrument_id top-up"
 try $PY -m musicprobe.runners.run_api --model portkey-gemini-2.5-pro
 
-step "Track A / API: GPT-4o-audio full battery"
-try $PY -m musicprobe.runners.run_api --model gpt-4o-audio-preview
+# GPT-4o-audio: OUT OF SCOPE (no OpenAI API access) — removed 2026-07-25.
 
 step "Track A: score + review-export every model that has responses"
 for f in results/trackA/responses__*.parquet; do

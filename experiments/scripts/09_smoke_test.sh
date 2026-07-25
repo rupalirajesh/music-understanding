@@ -64,8 +64,8 @@ print('  [ok] ' + torch.cuda.get_device_name(0))" 2>/dev/null \
 echo "6. API keys (REQUIRED — the runbook refuses to start without them)"
 [ -n "${PORTKEY_API_KEY:-}" ] && ok "PORTKEY_API_KEY set (Gemini top-up)" \
   || bad "PORTKEY_API_KEY not set — export it before running 08"
-[ -n "${OPENAI_API_KEY:-}" ] && ok "OPENAI_API_KEY set (GPT-4o-audio)" \
-  || bad "OPENAI_API_KEY not set — export it before running 08"
+# GPT-4o-audio: OUT OF SCOPE (no OpenAI API access) — removed 2026-07-25,
+# no longer checked here or run by 08_run_remaining.sh.
 
 echo
 if [ "$fail" -eq 0 ]; then

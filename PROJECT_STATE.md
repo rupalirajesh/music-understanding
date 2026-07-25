@@ -37,14 +37,14 @@ Last updated: 2026-07-22. Update this whenever anything changes hands.
 | Qwen2-Audio-7B full battery | H100 box | done |
 | Qwen2.5-Omni-7B, Qwen3-Omni-30B, AF3, Music-Flamingo full battery | H100 box | done (landed commit 4aa5dcf) |
 | Gemini-2.5-Pro battery (via Portkey) | H100/laptop → API | done |
-| GPT-4o-audio | — | still not run — **the one remaining Track A cell** |
+| GPT-4o-audio | — | **out of scope — no OpenAI API access** (removed from the plan 2026-07-25) |
 | MOSS-Music-8B-Instruct (new, added 2026-07-25, Sethu's initiative) | H100 box | full Track A battery done |
 | MERT/Whisper/CLAP extraction + probes | H100 box | done — all 3 encoders × 11 tasks |
 | Own-encoder re-probe (key_id/mode_id/chord_quality/interval_id) | H100 box | done 2026-07-24, commit 83c722c |
 | Attention diagnostic (`gpu/attention_audio.py`) | H100 box | **DONE CORRECTLY 2026-07-25** (commit c348ea6, eager-attention verified, all 5 models, `--per-task 6`) — supersedes the 2026-07-24 retracted run. See Known gaps for the corrected finding. |
 | Microtone probe (relative-pitch direction + absolute detune, new task, Sethu's initiative) | H100 box | done 2026-07-25, commit b0dec99 |
-| Track C (3-arm LoRA on AF3) | H100 box | **set up, not yet run** — `scripts/09_run_track_c.sh` |
-| Track D Phase 1 (Qwen2.5-Omni-7B + spectrogram-image) | H100 box | **set up, not yet run** — `scripts/11_run_track_d.sh` |
+| Track C (3-arm LoRA on AF3) | H100 box | **set up, not yet run** — `scripts/11_run_track_c.sh` |
+| Track D Phase 1 (Qwen2.5-Omni-7B + spectrogram-image) | H100 box | **set up, not yet run** — `scripts/13_run_track_d.sh` |
 | MusicGen battery | H100 box | done — tempo/key/register scored; meter/mode deliberately left for manual scoring |
 | AF3 / Music Flamingo loaders | code | done, verified working |
 | Qwen2-Audio published-number replication | — | still TODO; pick exact benchmark subset first |
@@ -75,41 +75,43 @@ Last updated: 2026-07-22. Update this whenever anything changes hands.
     the Carnatic module's future role as stress test).
 
 ## Next actions (ordered, updated 2026-07-25)
-1. **GPT-4o-audio run** (Sethu, H100/API) — the one remaining Track A cell. Still not done —
-   oldest item on this list, keeps getting passed over for other work.
-2. ~~Re-run the attention diagnostic on the 4 newer open models~~ **DONE 2026-07-25**
+GPT-4o-audio removed from this list entirely 2026-07-25 — no OpenAI API access, out of
+scope. 6 models (Qwen2-Audio, Qwen2.5-Omni, Qwen3-Omni-30B, AF3, Music-Flamingo,
+Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
+
+1. ~~Re-run the attention diagnostic on the 4 newer open models~~ **DONE 2026-07-25**
    (commit c348ea6, eager-verified). See Known gaps above for the corrected findings.
-3. **Sanity-check `beats_per_bar` and `mode_id` by hand** before trusting any model
+2. **Sanity-check `beats_per_bar` and `mode_id` by hand** before trusting any model
    comparison on them — 4/6 models show negative audio_gain and `beats_per_bar` shows an
    *inverted* wrong-audio-control result (worse with correct audio than swapped audio).
    Read ~20 raw responses per model in `results/trackA/review__<model>/beats_per_bar.csv`
    and `mode_id.csv` to rule out a scoring/parsing bug before concluding it's a real
    model failure or task-design flaw. **Last remaining blocker on the Track C shortlist**
-   (item 6) — everything else it depends on is now resolved. Still not done — this one is
+   (item 5) — everything else it depends on is now resolved. Still not done — this one is
    manual (read raw responses by hand), not a script Sethu can just run.
-4. ~~Re-probe each LALM's OWN encoder~~ **DONE 2026-07-24** (commit 83c722c,
+3. ~~Re-probe each LALM's OWN encoder~~ **DONE 2026-07-24** (commit 83c722c,
    `gpu/extract_activations.py --own-encoder`, submodule paths verified:
    `thinker.audio_tower` for Qwen-Omni, `model.audio_tower` for Flamingo). Result: own-encoder
    probe accuracy on `key_id`/`mode_id`/`chord_quality`/`interval_id` stays modest —
    comparable to, not clearly beating, the generic MERT/Whisper/CLAP baselines. Reading
    unchanged from before the re-probe: behavioral success on these 4 tasks is more likely
    priors than a richer internal representation. No further action.
-5. Run the L1 DSP floor (`musicprobe.l1_baselines`, or essentia/madmom for a stronger
+4. Run the L1 DSP floor (`musicprobe.l1_baselines`, or essentia/madmom for a stronger
    key/beat detector) on the same stimuli so every task sits on the full L1→L2→L3 ladder.
-6. Qwen2-Audio published-number replication (harness validation) — still not done.
-7. Ladder arm (battery v2) — L1 features into prompts at one-abstraction-below-answer,
-   features-only + few-shot variants; keep v1 job_ids untouched. Deferred behind 1–6.
-8. **Track C is set up, not yet run** (2026-07-24, `experiments/scripts/09_run_track_c.sh` +
+5. Qwen2-Audio published-number replication (harness validation) — still not done.
+6. Ladder arm (battery v2) — L1 features into prompts at one-abstraction-below-answer,
+   features-only + few-shot variants; keep v1 job_ids untouched. Deferred behind 1–5.
+7. **Track C is set up, not yet run** (2026-07-24, `experiments/scripts/11_run_track_c.sh` +
    `experiments/gpu/train_track_c.py`) — 3-arm LoRA fine-tune on AF3, shortlist
    `octave_id`/`tuning_judgment`/`cents_discrimination`/`note_count` (`beats_per_bar`
-   provisionally excluded pending item 3, doesn't block starting on the other four). Sethu:
-   pull and run `bash scripts/09_run_track_c.sh` — smoke-tests each arm first.
-9. **Track D Phase 1 is set up, not yet run** — full design in
+   provisionally excluded pending item 2, doesn't block starting on the other four). Sethu:
+   pull and run `bash scripts/11_run_track_c.sh` — smoke-tests each arm first.
+8. **Track D Phase 1 is set up, not yet run** — full design in
    RESEARCH_PLAN.md §12. Targets **Qwen2.5-Omni-7B only** — model-support audit (§12.1)
    found AF3 and Music-Flamingo don't accept image input at all, so Track C's target model
    can't run this.
    - Groundwork done + verified locally 2026-07-24/25 (no GPU needed): spectrograms rendered
-     for all 1,101 available stimuli (`scripts/10_render_spectrograms.py`), image hygiene
+     for all 1,101 available stimuli (`scripts/12_render_spectrograms.py`), image hygiene
      layer built and checked by hand (`musicprobe/image_jobs.py` →
      `manifests/image_jobs.parquet`, 1,416 jobs, 4-task shortlist).
    - Training + eval script written 2026-07-25 (`gpu/train_track_d.py`) — single LoRA arm
@@ -129,7 +131,7 @@ Last updated: 2026-07-22. Update this whenever anything changes hands.
      not automated in `train_track_d.py` yet.
    - Sequenced behind Track C's own-encoder work only in the sense that they reuse the same
      LoRA stack; not actually blocked on Track C finishing.
-   - Sethu: pull and run `bash scripts/11_run_track_d.sh` — smoke-tests first, renders any
+   - Sethu: pull and run `bash scripts/13_run_track_d.sh` — smoke-tests first, renders any
      missing spectrograms before training (idempotent, skips existing PNGs).
 
 ## Known gaps / honesty list

@@ -1,5 +1,5 @@
 """Single source of truth for where a stimulus's spectrogram image lives.
-Both scripts/10_render_spectrograms.py (writes them) and image_jobs.py
+Both scripts/12_render_spectrograms.py (writes them) and image_jobs.py
 (reads them) import this — don't reimplement the path derivation elsewhere.
 """
 from pathlib import Path

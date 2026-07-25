@@ -428,8 +428,10 @@ which level (L1/L2/L3) the failure should show up.
 - **Qwen2-Audio-7B**: older, widely benchmarked; cheap comparison anchor.
 - Standalone encoders for L2 work: **MERT-330M**, CLAP, Whisper-enc, AF-Whisper, AuT.
 
-**Closed (behavioral ceilings via API):** Gemini 2.x (native audio), GPT-4o-audio family.
-(Claude takes no raw audio — but is useful for the symbolic-music text contrast: ABC/MIDI-as-text.)
+**Closed (behavioral ceilings via API):** Gemini 2.x (native audio). GPT-4o-audio is out of
+scope (no OpenAI API access, decided 2026-07-25) — Gemini is the study's only closed-model
+ceiling. (Claude takes no raw audio — but is useful for the symbolic-music text contrast:
+ABC/MIDI-as-text.)
 
 **Benchmark state:**
 - **MMAU** (ICLR'25) and **MMAU-Pro** (Aug'25, 5.3K expert instances, 49 skills): humans
@@ -586,7 +588,7 @@ and where/how it physically runs. (Tracks are defined in §4–6; task numbers r
 | Qwen2.5-Omni-7B | open weights | Tier 1–2 anchor | full layer-wise | — | Colab A100, bf16 |
 | Qwen2-Audio-7B | open weights | battery (anchor) | — | — | Colab L4/A100 |
 | Gemini 2.x | API only | full battery + long-context | — | — | local harness → API |
-| GPT-4o-audio | API only | full battery | — | — | local harness → API |
+| ~~GPT-4o-audio~~ | ~~API only~~ | **out of scope — no OpenAI API access (2026-07-25)** | — | — | — |
 | Claude | API, no audio in | symbolic contrast only | — | — | local harness → API |
 | MERT-330M (+95M) | open encoder | — | full probe suite | — | Colab L4 |
 | CLAP (LAION/MS) | open encoder | zero-shot classification | probe suite | — | Colab L4 |
@@ -644,7 +646,8 @@ downstream of Whisper's biases?"
 
 ### Black-box API models (behavioral ceilings)
 
-**Gemini 2.x (native audio)** and **GPT-4o-audio.**
+**Gemini 2.x (native audio).** (GPT-4o-audio dropped 2026-07-25 — no OpenAI API access;
+Gemini is the study's only closed-model ceiling.)
 - *Track A only:* full battery through the same harness (audio + prompt via API,
   temperature 0, everything logged). Gemini additionally gets the long-audio structure
   tasks (task 17) since its context window permits >5 min clips. Caveats: API audio-length
@@ -698,8 +701,8 @@ cheapest, highest-value part of Track B (all run on a modest Colab GPU in hours)
 
 - **Phase 0**: Qwen2-Audio-7B (harness validation); AF3 or Music Flamingo running on
   Colab; AF-Next availability check.
-- **Phase 1** (synthetic Tier 1–2, Track A): Music Flamingo, AF3, Qwen3-Omni + Gemini,
-  GPT-4o-audio; Claude symbolic arm.
+- **Phase 1** (synthetic Tier 1–2, Track A): Music Flamingo, AF3, Qwen3-Omni + Gemini;
+  Claude symbolic arm. (GPT-4o-audio dropped 2026-07-25 — no OpenAI API access.)
 - **Phase 2** (real-music Tier 3 + contrasts): same roster.
 - **Phase 3** (Track B): encoder set (MERT, CLAP, Whisper-enc, AF-Whisper, AuT) +
   layer-wise probes on AF3 or Music Flamingo + Qwen2.5-Omni-7B.

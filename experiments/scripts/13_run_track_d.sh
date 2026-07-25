@@ -5,14 +5,14 @@
 # result can't just mean "the model learned to read the image and ignore
 # audio."
 #
-#   bash scripts/11_run_track_d.sh
+#   bash scripts/13_run_track_d.sh
 #
 # Steps 1-2 (spectrogram render + image-jobs build) need NO GPU and were
 # already run + verified locally 2026-07-24/25 -- they're idempotent
 # (render skips existing PNGs, image_jobs rebuild is deterministic) so
 # rerunning here is cheap and just confirms nothing's missing before the
 # GPU steps. Steps 3-4 need the H100 box and are UNVERIFIED on hardware —
-# smoke-test first, same discipline as scripts/09_run_track_c.sh.
+# smoke-test first, same discipline as scripts/11_run_track_c.sh.
 
 cd "$(dirname "$0")/.."
 PY=${PY:-python}
@@ -27,7 +27,7 @@ $PY -c "import peft" 2>/dev/null || $PY -m pip install -q -U peft
 
 # ---------- Part 1: groundwork (CPU, idempotent) ----------------------------
 step "Render spectrograms (skips PNGs that already exist)"
-$PY scripts/10_render_spectrograms.py
+$PY scripts/12_render_spectrograms.py
 
 step "Build the image hygiene layer (image/no_image/wrong_image jobs)"
 $PY -m musicprobe.image_jobs

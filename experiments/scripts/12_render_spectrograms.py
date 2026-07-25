@@ -5,7 +5,7 @@ audio+spectrogram-image experiment.
 Runs on the laptop, no GPU needed (same category as 01_generate_stimuli.py:
 local, deterministic, CPU-only). Local run confirmed working 2026-07-24.
 
-  python scripts/10_render_spectrograms.py
+  python scripts/12_render_spectrograms.py
 
 Deliberately uses the SAME log-mel parameters as Whisper's front end (§0.2 /
 §1.1: 128 mel channels, 25ms window, 10ms hop) rather than inventing new

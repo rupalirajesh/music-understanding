@@ -63,7 +63,7 @@ cd experiments
 # 4. L1 floor: is ground truth recoverable from our own audio?
 .venv/bin/python -m musicprobe.l1_baselines
 
-# 5. real models (needs GEMINI_API_KEY / OPENAI_API_KEY)
+# 5. real models (needs GEMINI_API_KEY)
 .venv/bin/python -m musicprobe.runners.run_api --model gemini-2.5-flash --limit 100
 .venv/bin/python -m musicprobe.scoring --model gemini-2.5-flash
 
@@ -84,11 +84,12 @@ work is skipped), logs to results/runlogs/. It covers: instrument_id top-ups
 for Qwen2-Audio + Gemini, the remaining Track-A models, scoring + review +
 workbook exports, all three Track-B encoder extractions + the full probe
 suite + the attention diagnostic, the MusicGen battery, and the final
-results/ commit+push. One-time prereqs are in the script header; both
-PORTKEY_API_KEY and OPENAI_API_KEY are REQUIRED (the runbook stops rather
-than silently skipping API work). All five local models run on plain
-transformers with hub-verified checkpoint ids — nothing to install by hand
-beyond the pip line.
+results/ commit+push. One-time prereqs are in the script header; PORTKEY_API_KEY
+is REQUIRED (the runbook stops rather than silently skipping API work). All
+five local models run on plain transformers with hub-verified checkpoint ids
+— nothing to install by hand beyond the pip line. (GPT-4o-audio dropped
+2026-07-25 — no OpenAI API access; OPENAI_API_KEY is no longer checked or
+used anywhere in this runbook.)
 
 ### On the H100 box — quickstart
 
@@ -139,7 +140,7 @@ run into per-task CSVs (full prompts + full raw responses + audio paths) plus
 
 | Model | How | What |
 |---|---|---|
-| Gemini 2.x, GPT-4o-audio | `run_api.py` (laptop) | full battery — behavioral ceilings |
+| Gemini 2.x | `run_api.py` (laptop) | full battery — behavioral ceiling (GPT-4o-audio out of scope, no OpenAI API access) |
 | Qwen2-Audio-7B | `run_local.py` (H100) | full battery — harness-validation anchor (replicate its published MMAU-music score first) |
 | AF3-hf, Music Flamingo-2601-hf, Qwen2.5/3-Omni | `run_local.py` (loaders written, unverified) | full battery + Track B layer-wise probes |
 | MERT / Whisper-enc / CLAP | `gpu/extract_activations.py` | Track B only — encoder-family comparison |

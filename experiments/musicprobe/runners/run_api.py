@@ -3,9 +3,10 @@
 Usage (from experiments/):
   .venv/bin/python -m musicprobe.runners.run_api --model dry
   .venv/bin/python -m musicprobe.runners.run_api --model gemini-2.5-flash --limit 50
-  .venv/bin/python -m musicprobe.runners.run_api --model gpt-4o-audio-preview
 
-Keys: GEMINI_API_KEY / OPENAI_API_KEY env vars.
+Keys: GEMINI_API_KEY env var. (gpt-4o-audio-preview support below is DORMANT — no OpenAI
+API access as of 2026-07-25, out of scope for this study; the code path is left in case
+that changes, but nothing in the current plan calls it.)
 Resumable: already-answered job_ids are skipped, results appended to
 results/responses__<model>.parquet after every batch. Temperature 0 always.
 """

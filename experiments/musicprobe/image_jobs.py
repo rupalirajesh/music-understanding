@@ -26,7 +26,7 @@ Default task scope is the alignment-fixable shortlist (RESEARCH_PLAN.md §12.2
 point 5: start where the audio-only probe already says the information is
 there, not on the noisier key/mode/chord/interval group).
 
-Renders (scripts/10_render_spectrograms.py) must be run first — this module
+Renders (scripts/12_render_spectrograms.py) must be run first — this module
 reads image paths, it doesn't create them, and will raise clearly if a
 required PNG is missing rather than silently building a broken job.
 """
@@ -52,7 +52,7 @@ def _require_rendered(image_path: str) -> None:
     if not (EXP_ROOT / image_path).exists():
         raise FileNotFoundError(
             f"{image_path} doesn't exist — run "
-            "scripts/10_render_spectrograms.py before building image jobs.")
+            "scripts/12_render_spectrograms.py before building image jobs.")
 
 
 def build_image_jobs(tasks: tuple[str, ...] = DEFAULT_TASKS) -> pd.DataFrame:
