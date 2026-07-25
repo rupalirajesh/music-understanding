@@ -103,11 +103,31 @@ Last updated: 2026-07-22. Update this whenever anything changes hands.
    `octave_id`/`tuning_judgment`/`cents_discrimination`/`note_count` (`beats_per_bar`
    provisionally excluded pending item 3, doesn't block starting on the other four). Sethu:
    pull and run alongside item 2, they're independent.
-9. **Track D (multimodal representation) planned** — full design in RESEARCH_PLAN.md §12.
-   Phase 1 (spectrogram-image + audio, properly controlled, LoRA fine-tune + before/after L2
-   probes) targets **Qwen2.5-Omni-7B only** — model-support audit (§12.1) found AF3 and
-   Music-Flamingo don't accept image input at all, so Track C's target model can't run this.
-   Not started; sequenced behind Track C since it reuses the same LoRA training stack.
+9. **Track D Phase 1 (multimodal representation) ready to run** — full design in
+   RESEARCH_PLAN.md §12. Targets **Qwen2.5-Omni-7B only** — model-support audit (§12.1)
+   found AF3 and Music-Flamingo don't accept image input at all, so Track C's target model
+   can't run this.
+   - Groundwork done + verified locally 2026-07-24/25 (no GPU needed): spectrograms rendered
+     for all 1,101 available stimuli (`scripts/10_render_spectrograms.py`), image hygiene
+     layer built and checked by hand (`musicprobe/image_jobs.py` →
+     `manifests/image_jobs.parquet`, 1,416 jobs, 4-task shortlist).
+   - Training + eval script written 2026-07-25 (`gpu/train_track_d.py`) — single LoRA arm
+     (Thinker language-model decoder only) trained on the `image` condition, evaluated on
+     held-out stimuli across all three image_conditions, scored via a small wrapper around
+     `musicprobe.scoring.parse_response/is_correct` (image_condition isn't part of the
+     existing scoring pipeline's condition grouping). Data-pipeline half tested locally
+     (held-out split, scoring aggregation — caught and fixed a real bug where unparseable
+     answers were being dropped from the denominator instead of scored incorrect, same
+     class of issue `scoring.py:107-108` already documents). **GPU-bound half (model
+     loading, LoRA application, actual training) is UNVERIFIED on hardware** — smoke-test
+     first (`--smoke-test`), same discipline as Track C; see the script's docstring for the
+     one thing most likely to need a hardcoded fix (the Thinker's language-model submodule
+     path).
+   - Before/after L2 probes (does joint training change the audio encoder itself) not yet
+     wired up — reuse `extract_activations.py --own-encoder` after a successful full run,
+     not automated in `train_track_d.py` yet.
+   - Sequenced behind Track C's own-encoder work only in the sense that they reuse the same
+     LoRA stack; not actually blocked on Track C finishing.
 
 ## Known gaps / honesty list
 - L1 key detection weak on minor progressions (naive Krumhansl) — use
