@@ -71,7 +71,29 @@ cd experiments
 .venv/bin/python scripts/04_export_for_review.py --model gemini-2.5-flash
 ```
 
-### Running everything that's left (collaborator: this one)
+### Running everything that's left (collaborator: this one) — updated 2026-07-25
+
+The full-battery runbook (`08_run_remaining.sh` below) already ran — Track A
+(6 models + MOSS-Music-8B), Track B baseline probes, the own-encoder
+re-probe, the attention diagnostic (re-verified correctly 2026-07-25,
+commit c348ea6), the microtone probe, and the MusicGen battery are all done
+and committed. **What's actually left is Track C and Track D**, both set up
+and ready, neither needs any API key (pure local GPU work):
+
+```bash
+bash scripts/11_run_track_c.sh   # Track C: 3-arm LoRA fine-tune on AF3
+bash scripts/13_run_track_d.sh   # Track D Phase 1: Qwen2.5-Omni-7B + spectrogram-image
+```
+
+Both are self-contained (smoke-test every arm/run first, then the full pass,
+then score, then commit+push) — see PROJECT_STATE.md's Known gaps / Next
+actions sections for the full context on each, and each script's own header
+comment for what it does and doesn't do. `09_smoke_test.sh` below is only
+relevant if you're also running the legacy full-battery script; it's not a
+prerequisite for Track C/D.
+
+<details>
+<summary>Legacy: the original full-battery runbook (mostly superseded, kept for reference)</summary>
 
 ```bash
 bash scripts/09_smoke_test.sh     # preflight (~2 min, no GPU/API cost): fix
@@ -89,7 +111,13 @@ is REQUIRED (the runbook stops rather than silently skipping API work). All
 five local models run on plain transformers with hub-verified checkpoint ids
 — nothing to install by hand beyond the pip line. (GPT-4o-audio dropped
 2026-07-25 — no OpenAI API access; OPENAI_API_KEY is no longer checked or
-used anywhere in this runbook.)
+used anywhere in this runbook.) **Rerunning this now would redo already-
+committed work** (it's resumable so it won't corrupt anything, but it will
+burn GPU/API time re-verifying finished steps, including re-running the
+attention diagnostic loop inside this script, which is otherwise done) — only
+use it if you specifically need to redo the full battery from scratch.
+
+</details>
 
 ### On the H100 box — quickstart
 
@@ -179,7 +207,17 @@ same stimuli.
   Qwen3-Omni, AF3, Music Flamingo; gpu/attention_audio.py (audio-token
   attention mass + decay); scripts/08_run_remaining.sh = the one-shot H100
   runbook for everything below.
-- 📋 Next (all inside scripts/08): remaining Track-A models, MERT/Whisper/CLAP
-  extraction + probe suite, attention diagnostic, MusicGen battery; Qwen2-Audio
-  MMAU-music replication (harness validation) still pending.
+- ✅ 2026-07-22 to 07-24: remaining Track-A models + MOSS-Music-8B landed;
+  Track B baseline probes (MERT/Whisper/CLAP) + own-encoder re-probe landed;
+  MusicGen battery landed; Track C (3-arm LoRA on AF3) and Track D Phase 1
+  (Qwen2.5-Omni-7B + spectrogram-image, RESEARCH_PLAN.md §12) built and
+  ready to run.
+- ✅ 2026-07-25: attention diagnostic re-verified correctly on all 5 open
+  models (commit c348ea6, eager-attention-verified — the 2026-07-24 run was
+  retracted, see PROJECT_STATE.md Known gaps); microtone probe (relative
+  pitch direction vs. absolute tuning, `gpu/probe_microtone.py`) landed;
+  GPT-4o-audio dropped from the plan entirely (no API access).
+- 📋 Next: Track C and Track D Phase 1 — see "Running everything that's left"
+  above. Qwen2-Audio MMAU-music replication (harness validation) still
+  pending, lower priority.
 - 📋 Tier 3 (VocalSet/GuitarSet/Jamendo): specced, not implemented.

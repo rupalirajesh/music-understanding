@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
-# Preflight smoke test — run this BEFORE scripts/08_run_remaining.sh.
+# Preflight smoke test — run this before scripts/08_run_remaining.sh (the
+# full-battery runbook, needs PORTKEY_API_KEY). NOT required before
+# scripts/11_run_track_c.sh or scripts/13_run_track_d.sh (2026-07-25) — those
+# are pure local GPU work, no API keys involved; go straight to those if
+# that's what you're running. Sections 1-5 below (deps, GPU, pipeline
+# integrity) are still worth checking either way.
 #
 #   bash scripts/09_smoke_test.sh
 #
@@ -61,15 +66,20 @@ $PY -c "import torch; assert torch.cuda.is_available(); \
 print('  [ok] ' + torch.cuda.get_device_name(0))" 2>/dev/null \
   || warn "no CUDA GPU visible — local models + Track B will not run here"
 
-echo "6. API keys (REQUIRED — the runbook refuses to start without them)"
+echo "6. API keys (only needed for scripts/08_run_remaining.sh — NOT for Track C/D)"
 [ -n "${PORTKEY_API_KEY:-}" ] && ok "PORTKEY_API_KEY set (Gemini top-up)" \
-  || bad "PORTKEY_API_KEY not set — export it before running 08"
+  || warn "PORTKEY_API_KEY not set — fine if you're only running Track C/D" \
+          "(scripts/11_run_track_c.sh, scripts/13_run_track_d.sh); export it" \
+          "first if you're running scripts/08_run_remaining.sh"
 # GPT-4o-audio: OUT OF SCOPE (no OpenAI API access) — removed 2026-07-25,
 # no longer checked here or run by 08_run_remaining.sh.
 
 echo
 if [ "$fail" -eq 0 ]; then
-  echo "SMOKE TEST PASSED — now run:  bash scripts/08_run_remaining.sh"
+  echo "SMOKE TEST PASSED. Pending work, pick what you're running:"
+  echo "  bash scripts/11_run_track_c.sh   # Track C: 3-arm LoRA on AF3 (no API key needed)"
+  echo "  bash scripts/13_run_track_d.sh   # Track D Phase 1: Qwen2.5-Omni-7B + spectrogram-image (no API key needed)"
+  echo "  bash scripts/08_run_remaining.sh # full-battery runbook (needs PORTKEY_API_KEY) — only if that's what you mean to run"
 else
   echo "SMOKE TEST FAILED — fix the [FAIL] lines above and rerun"
 fi
