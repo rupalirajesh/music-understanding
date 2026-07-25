@@ -154,15 +154,61 @@ def load_audio_flamingo(model_name: str):
     return generate
 
 
+def load_moss_music(model_name: str):
+    """MOSS-Music-8B-Instruct: audio-understanding LALM (Qwen3-8B backbone +
+    MOSS-Audio-Encoder). Modeling is bundled in the HF repo (trust_remote_code);
+    API mirrors MOSS-Audio: processor(text, audios=[raw]) + an explicit
+    audio_input_mask, audio_data cast to model dtype. Pinned to transformers
+    4.57.1 -> run in the `moss` env."""
+    import os
+    import sys
+    import torch
+    # AutoModel doesn't dispatch to MossMusicModel; import the classes from the
+    # repo's src (as hf_inference.py does). Clone: github.com/OpenMOSS/MOSS-Music
+    repo = os.environ.get("MOSS_MUSIC_REPO", "/scratch/sethu/MOSS-Music")
+    if repo not in sys.path:
+        sys.path.insert(0, repo)
+    from src.audio_io import load_audio
+    from src.modeling_moss_music import MossMusicModel
+    from src.processing_moss_music import MossMusicProcessor
+
+    model = MossMusicModel.from_pretrained(
+        model_name, trust_remote_code=True, torch_dtype=torch.bfloat16,
+        device_map="cuda").eval()
+    processor = MossMusicProcessor.from_pretrained(model_name, trust_remote_code=True)
+    mel_sr = processor.config.mel_sr
+
+    def generate(prompt: str, audio_path: str | None, max_new_tokens: int) -> str:
+        if isinstance(audio_path, str) and audio_path:
+            raw = load_audio(str(EXP_ROOT / audio_path), sample_rate=mel_sr)
+            inputs = processor(text=prompt, audios=[raw], return_tensors="pt")
+        else:
+            inputs = processor(text=prompt, return_tensors="pt")
+        inputs = inputs.to(model.device)
+        if inputs.get("audio_data") is not None:
+            inputs["audio_data"] = inputs["audio_data"].to(model.dtype)
+        inputs["audio_input_mask"] = inputs["input_ids"] == processor.audio_token_id
+        with torch.no_grad():
+            out = model.generate(**inputs, max_new_tokens=max_new_tokens,
+                                 do_sample=False, use_cache=True)
+        out = out[:, inputs["input_ids"].shape[1]:]
+        return processor.decode(out[0], skip_special_tokens=True)
+
+    return generate
+
+
 LOADERS = {
     "qwen2-audio": load_qwen2_audio,
     "qwen-omni": load_qwen_omni,
     "flamingo": load_audio_flamingo,
+    "moss-music": load_moss_music,
 }
 
 
 def pick_loader(model_name: str):
     low = model_name.lower()
+    if "moss-music" in low:
+        return LOADERS["moss-music"]
     if "qwen2-audio" in low:
         return LOADERS["qwen2-audio"]
     if "omni" in low:
