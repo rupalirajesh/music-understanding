@@ -13,6 +13,11 @@
 # rerunning here is cheap and just confirms nothing's missing before the
 # GPU steps. Steps 3-4 need the H100 box and are UNVERIFIED on hardware —
 # smoke-test first, same discipline as scripts/11_run_track_c.sh.
+#
+# Prereqs on the box (one-time; already satisfied if Track A/B/C have run
+# here before -- same deps): pip install -r requirements.txt torch
+# accelerate soundfile pandas pyarrow librosa matplotlib openpyxl
+# scikit-learn torchaudio peft
 
 cd "$(dirname "$0")/.."
 PY=${PY:-python}
