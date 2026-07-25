@@ -49,7 +49,7 @@ echo "  (same 'is it actually using this input' logic as the wrong_audio control
 
 # ---------- Ship it ----------------------------------------------------------
 step "Commit + push results (gpu/track_d_checkpoints/ is gitignored — only responses/summary go up)"
-git add results/ experiments/results/ manifests/image_jobs.parquet 2>/dev/null
+git add results/ manifests/image_jobs.parquet
 git commit -m "Track D Phase 1: Qwen2.5-Omni-7B + spectrogram-image LoRA run" \
   && git push || echo "nothing to commit or push failed — check manually"
 step "DONE — check the log above for '!! step failed' lines"

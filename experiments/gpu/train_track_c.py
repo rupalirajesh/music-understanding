@@ -263,6 +263,10 @@ def train(arm: str, smoke_test: bool, exp_root: Path, jobs_path: str, manifest_p
         logging_steps=1 if smoke_test else 10,
         save_strategy="no" if smoke_test else "epoch",
         report_to=[],
+        remove_unused_columns=False,  # TrackCDataset isn't a datasets.Dataset;
+        # Trainer's column-pruning inspects .column_names, which this plain
+        # class doesn't have. Usually a safe no-op either way, but disabling
+        # it outright removes the failure mode instead of hoping it no-ops.
     )
     trainer = Trainer(model=model, args=args, train_dataset=ds,
                       data_collator=lambda batch: batch[0])

@@ -177,6 +177,9 @@ def train(smoke_test: bool, exp_root: Path):
         logging_steps=1 if smoke_test else 10,
         save_strategy="no" if smoke_test else "epoch",
         report_to=[],
+        remove_unused_columns=False,  # same reasoning as train_track_c.py —
+        # TrackDDataset isn't a datasets.Dataset, disable column-pruning
+        # outright rather than rely on it no-oping.
     )
     trainer = Trainer(model=model, args=args, train_dataset=ds,
                       data_collator=lambda batch: batch[0])
