@@ -37,13 +37,18 @@ Last updated: 2026-07-22. Update this whenever anything changes hands.
 | Qwen2-Audio-7B full battery | H100 box | done |
 | Qwen2.5-Omni-7B, Qwen3-Omni-30B, AF3, Music-Flamingo full battery | H100 box | done (landed commit 4aa5dcf) |
 | Gemini-2.5-Pro battery (via Portkey) | H100/laptop → API | done |
-| GPT-4o-audio | — | **only thing left** — Sethu running it next |
+| GPT-4o-audio | — | still not run — **the one remaining Track A cell** |
+| MOSS-Music-8B-Instruct (new, added 2026-07-25, Sethu's initiative) | H100 box | full Track A battery done |
 | MERT/Whisper/CLAP extraction + probes | H100 box | done — all 3 encoders × 11 tasks |
-| Attention diagnostic (`gpu/attention_audio.py`) | H100 box | done for Qwen2-Audio-7B only — NOT yet run on Qwen2.5-Omni, Qwen3-Omni, AF3, Music-Flamingo (see next actions) |
+| Own-encoder re-probe (key_id/mode_id/chord_quality/interval_id) | H100 box | done 2026-07-24, commit 83c722c |
+| Attention diagnostic (`gpu/attention_audio.py`) | H100 box | **DONE CORRECTLY 2026-07-25** (commit c348ea6, eager-attention verified, all 5 models, `--per-task 6`) — supersedes the 2026-07-24 retracted run. See Known gaps for the corrected finding. |
+| Microtone probe (relative-pitch direction + absolute detune, new task, Sethu's initiative) | H100 box | done 2026-07-25, commit b0dec99 |
+| Track C (3-arm LoRA on AF3) | H100 box | **set up, not yet run** — `scripts/09_run_track_c.sh` |
+| Track D Phase 1 (Qwen2.5-Omni-7B + spectrogram-image) | H100 box | **set up, not yet run** — `scripts/11_run_track_d.sh` |
 | MusicGen battery | H100 box | done — tempo/key/register scored; meter/mode deliberately left for manual scoring |
 | AF3 / Music Flamingo loaders | code | done, verified working |
 | Qwen2-Audio published-number replication | — | still TODO; pick exact benchmark subset first |
-| Analysis pass on all of the above | laptop | first pass done 2026-07-22 — see PAPER.md Results; dashboard + plots in `experiments/results/trackB/analysis/` |
+| Analysis pass on all of the above | laptop | first pass done 2026-07-22 — see PAPER.md Results; dashboard + plots in `experiments/results/trackB/analysis/`; attention + microtone graphs in `experiments/results/trackB/attention/attention_graph.png` and `.../probes/microtone_probe_graph.png` (2026-07-25) |
 
 ## Decisions made (and why) — chronological
 1. Only fine-tuning is feasible (no pretraining budget); the study's job is
@@ -69,23 +74,19 @@ Last updated: 2026-07-22. Update this whenever anything changes hands.
     genre-universal incl. continuous pitch (staff notation fails #5; that's
     the Carnatic module's future role as stress test).
 
-## Next actions (ordered, updated 2026-07-24)
-1. **GPT-4o-audio run** (Sethu, H100/API) — the one remaining Track A cell.
-2. **Re-run the attention diagnostic on the 4 newer open models** (Qwen2.5-Omni, Qwen3-Omni,
-   AF3, Music-Flamingo) — the 2026-07-24 run is RETRACTED (see Known gaps above), not just
-   pending. `assert_eager_attention()` added to `gpu/attention_audio.py` 2026-07-24; it now
-   hard-fails immediately if eager attention doesn't actually take effect, instead of
-   silently producing numbers nobody can trust. `scripts/08_run_remaining.sh` wires the
-   smoke-test-first (`--per-task 1`) then full (`--per-task 6`) pass — Sethu should pull and
-   run this before anything downstream cites attention numbers again. Qwen2-Audio's original
-   run does not need rerunning (see Known gaps).
+## Next actions (ordered, updated 2026-07-25)
+1. **GPT-4o-audio run** (Sethu, H100/API) — the one remaining Track A cell. Still not done —
+   oldest item on this list, keeps getting passed over for other work.
+2. ~~Re-run the attention diagnostic on the 4 newer open models~~ **DONE 2026-07-25**
+   (commit c348ea6, eager-verified). See Known gaps above for the corrected findings.
 3. **Sanity-check `beats_per_bar` and `mode_id` by hand** before trusting any model
    comparison on them — 4/6 models show negative audio_gain and `beats_per_bar` shows an
    *inverted* wrong-audio-control result (worse with correct audio than swapped audio).
    Read ~20 raw responses per model in `results/trackA/review__<model>/beats_per_bar.csv`
    and `mode_id.csv` to rule out a scoring/parsing bug before concluding it's a real
    model failure or task-design flaw. **Last remaining blocker on the Track C shortlist**
-   (item 8) — everything else it depends on is now resolved.
+   (item 6) — everything else it depends on is now resolved. Still not done — this one is
+   manual (read raw responses by hand), not a script Sethu can just run.
 4. ~~Re-probe each LALM's OWN encoder~~ **DONE 2026-07-24** (commit 83c722c,
    `gpu/extract_activations.py --own-encoder`, submodule paths verified:
    `thinker.audio_tower` for Qwen-Omni, `model.audio_tower` for Flamingo). Result: own-encoder
@@ -98,12 +99,12 @@ Last updated: 2026-07-22. Update this whenever anything changes hands.
 6. Qwen2-Audio published-number replication (harness validation) — still not done.
 7. Ladder arm (battery v2) — L1 features into prompts at one-abstraction-below-answer,
    features-only + few-shot variants; keep v1 job_ids untouched. Deferred behind 1–6.
-8. **Track C setup is ready to run** (2026-07-24, `experiments/scripts/09_run_track_c.sh` +
+8. **Track C is set up, not yet run** (2026-07-24, `experiments/scripts/09_run_track_c.sh` +
    `experiments/gpu/train_track_c.py`) — 3-arm LoRA fine-tune on AF3, shortlist
    `octave_id`/`tuning_judgment`/`cents_discrimination`/`note_count` (`beats_per_bar`
    provisionally excluded pending item 3, doesn't block starting on the other four). Sethu:
-   pull and run alongside item 2, they're independent.
-9. **Track D Phase 1 (multimodal representation) ready to run** — full design in
+   pull and run `bash scripts/09_run_track_c.sh` — smoke-tests each arm first.
+9. **Track D Phase 1 is set up, not yet run** — full design in
    RESEARCH_PLAN.md §12. Targets **Qwen2.5-Omni-7B only** — model-support audit (§12.1)
    found AF3 and Music-Flamingo don't accept image input at all, so Track C's target model
    can't run this.
@@ -128,6 +129,8 @@ Last updated: 2026-07-22. Update this whenever anything changes hands.
      not automated in `train_track_d.py` yet.
    - Sequenced behind Track C's own-encoder work only in the sense that they reuse the same
      LoRA stack; not actually blocked on Track C finishing.
+   - Sethu: pull and run `bash scripts/11_run_track_d.sh` — smoke-tests first, renders any
+     missing spectrograms before training (idempotent, skips existing PNGs).
 
 ## Known gaps / honesty list
 - L1 key detection weak on minor progressions (naive Krumhansl) — use
@@ -152,21 +155,21 @@ Last updated: 2026-07-22. Update this whenever anything changes hands.
   is negative on average (models do *better* with swapped-in wrong audio than the correct
   clip) — the only task where this happens. Treat this as a task-validity flag, not a
   capability finding, until it's manually audited (next action #3).
-- **The Track B attention diagnostic on the 4 newer models (Qwen2.5-Omni, Qwen3-Omni, AF3,
-  Music-Flamingo) is RETRACTED, not just caveated — do not cite or re-plot it.** Run
-  2026-07-24 (commit f684fcb) without ever checking whether eager attention actually took
-  effect per model, which the module's own docstring already flagged as the main risk
-  ("some transformers versions silently fall back to sdpa"). The result looked suspicious
-  on inspection (all four flat/near-identical-shaped and 5-15x below their own uniform
-  baseline, unlike anything architecturally-similar reasoning would predict) — see the
-  2026-07-24 report-correction thread for the full check (numbers aren't literally
-  duplicated, n_audio_tokens matches Qwen2-Audio's for 3 of 4, so it's not a token-ID bug,
-  but the eager-attention risk was never ruled out and Sethu's own commit message called it
-  "early signal," not confirmed). `gpu/attention_audio.py` now has `assert_eager_attention()`
-  which hard-fails immediately if this happens again — **rerun all four** (smoke-test
-  `--per-task 1` first, per the updated docstring) before trusting attn_summary again.
-  Qwen2-Audio's original run predates the fix but is treated as trustworthy (real
-  per-layer/per-task variation, not flat) — no need to rerun it.
+- ~~The Track B attention diagnostic on the 4 newer models is RETRACTED~~ **RESOLVED
+  2026-07-25** (commit c348ea6): re-run with `assert_eager_attention()` passing for every
+  model (top-level + every sub-config resolved to `'eager'` — the 2026-07-24 sdpa-fallback
+  risk did not recur). Corrected findings, which **supersede** the retracted run and are now
+  safe to cite:
+  - No decay across generation steps — the retracted run's "listens first, then coasts" was
+    itself an artifact of the unverified run, not a real pattern.
+  - Every model attends to audio tokens *below* the uniform baseline (audio is ~55–67% of
+    context; actual attention is 0.03–0.31) — all models systematically under-weight audio
+    relative to its share of the input, to very different degrees.
+  - Real cross-architecture variation, confirmed this time: Qwen2-Audio highest (~0.31,
+    structured peak in early-mid layers), Music-Flamingo/AF3 ~0.08, Qwen2.5-Omni ~0.045,
+    Qwen3-Omni-30B lowest (~0.03). Qualitatively similar ordering to the retracted run, but
+    now trustworthy — graph at
+    `results/trackB/attention/attention_graph.png` (`gpu/plot_attention.py`).
 - No-audio "refusal" behavior is not comparable across models as a single number: Gemini
   refuses explicitly (57%), Qwen2-Audio refuses some (13%), but AF3/Music-Flamingo/
   Qwen2.5-Omni/Qwen3-Omni never refuse (0%) — they answer confidently and wrong instead,
