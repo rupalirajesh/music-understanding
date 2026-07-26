@@ -63,7 +63,11 @@ from musicprobe.scoring import parse_response, is_correct  # noqa: E402
 from musicprobe.image_jobs import IMAGE_JOBS_PATH, DEFAULT_TASKS, build_image_jobs  # noqa: E402
 
 MODEL_NAME = "Qwen/Qwen2.5-Omni-7B"
-LM_PATH_CANDIDATES = ["thinker.model", "thinker.language_model"]
+# The top-level Qwen2_5OmniForConditionalGeneration has NO training forward (it
+# only implements generate) -> LoRA + Trainer must operate on the `thinker`
+# submodule (the multimodal encoder+LM, which DOES implement forward). These
+# candidates are therefore RELATIVE TO model.thinker, and LoRA wraps thinker.
+LM_PATH_REL_CANDIDATES = ["model", "language_model"]
 LORA_TARGET_SUFFIXES = ("q_proj", "k_proj", "v_proj", "o_proj")
 
 
@@ -76,9 +80,11 @@ def load_qwen_omni_for_training():
         MODEL_NAME, torch_dtype="auto", device_map="cuda")
     if hasattr(model, "disable_talker"):
         model.disable_talker()  # text out only, saves ~10GB — same as run_local.py
-    lm_path, _ = _find_submodule(model, LM_PATH_CANDIDATES,
+    assert hasattr(model, "thinker"), "expected model.thinker on Qwen2.5-Omni"
+    # path is relative to thinker (LoRA wraps thinker, not the full model)
+    lm_path, _ = _find_submodule(model.thinker, LM_PATH_REL_CANDIDATES,
                                  ("Qwen2Model", "Qwen2_5OmniThinkerTextModel", "CausalLM"))
-    print(f"[train_track_d] language model at '{lm_path}'")
+    print(f"[train_track_d] thinker language model at 'thinker.{lm_path}'")
     return model, processor, lm_path
 
 
@@ -163,9 +169,11 @@ def train(smoke_test: bool, exp_root: Path):
 
     model, processor, lm_path = load_qwen_omni_for_training()
     cfg = build_lora_config(lm_path)
-    model = get_peft_model(model, cfg)
-    assert_lora_applied(model, "image")
-    model.train()
+    # wrap the THINKER (has a real forward); the full model keeps its generate()
+    # path for eval and now routes through the LoRA-adapted thinker.
+    model.thinker = get_peft_model(model.thinker, cfg)
+    assert_lora_applied(model.thinker, "image")
+    model.thinker.train()
 
     ds = TrackDDataset(train_rows.head(8) if smoke_test else train_rows, processor, exp_root)
     out_dir = GPU_DIR / "track_d_checkpoints" / "image"
@@ -184,7 +192,8 @@ def train(smoke_test: bool, exp_root: Path):
         # TrackDDataset isn't a datasets.Dataset, disable column-pruning
         # outright rather than rely on it no-oping.
     )
-    trainer = Trainer(model=model, args=args, train_dataset=ds,
+    # train the LoRA-wrapped thinker directly (the full model has no forward)
+    trainer = Trainer(model=model.thinker, args=args, train_dataset=ds,
                       data_collator=lambda batch: batch[0])
     trainer.train()
 
@@ -193,7 +202,7 @@ def train(smoke_test: bool, exp_root: Path):
               "rerun WITHOUT --smoke-test for the full run.")
         return None
     out_dir.mkdir(parents=True, exist_ok=True)
-    model.save_pretrained(str(out_dir))
+    model.thinker.save_pretrained(str(out_dir))
     print(f"[train_track_d] adapter saved to {out_dir}")
     return model, processor, held_out_rows
 
@@ -257,8 +266,11 @@ def load_adapter_for_eval():
     from peft import PeftModel
 
     base, processor, _ = load_qwen_omni_for_training()
-    model = PeftModel.from_pretrained(base, str(GPU_DIR / "track_d_checkpoints" / "image"))
-    return model, processor
+    # adapter was trained on the thinker -> load it onto base.thinker, keep the
+    # full model for generate()
+    base.thinker = PeftModel.from_pretrained(
+        base.thinker, str(GPU_DIR / "track_d_checkpoints" / "image"))
+    return base, processor
 
 
 if __name__ == "__main__":

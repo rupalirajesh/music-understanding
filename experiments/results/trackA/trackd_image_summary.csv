@@ -1,0 +1,13 @@
+task,image_condition,correct
+cents_discrimination,image,0.7692307692307693
+cents_discrimination,no_image,0.6666666666666666
+cents_discrimination,wrong_image,0.6153846153846154
+note_count,image,0.8571428571428571
+note_count,no_image,0.8571428571428571
+note_count,wrong_image,0.8928571428571429
+octave_id,image,0.8333333333333334
+octave_id,no_image,0.8333333333333334
+octave_id,wrong_image,0.9
+tuning_judgment,image,0.4444444444444444
+tuning_judgment,no_image,0.5185185185185185
+tuning_judgment,wrong_image,0.25925925925925924

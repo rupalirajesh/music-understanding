@@ -115,15 +115,18 @@ def _find_submodule(model, candidate_paths, class_name_hints):
 
 
 def load_af3_for_training():
-    """AF3 in bf16 (training, not the attention diagnostic — no eager/
-    output_attentions requirement here, default attention impl is fine and
-    faster)."""
+    """AF3 in float32. bf16 trains fine but CRASHES at generation/eval with
+    'Input type (float) and bias type (c10::BFloat16) should be the same' — the
+    AF3 audio tower has mixed-precision internals that emit float32 during
+    generate() (same reason run_local.py loads AF3 float32). float32 makes the
+    train + eval path consistent AND matches the AF3 Track-A baseline this is
+    compared against; fits easily on an 80GB+ GPU."""
     import torch
     from transformers import AudioFlamingo3ForConditionalGeneration, AutoProcessor
 
     processor = AutoProcessor.from_pretrained(MODEL_NAME)
     model = AudioFlamingo3ForConditionalGeneration.from_pretrained(
-        MODEL_NAME, torch_dtype=torch.bfloat16, device_map="cuda")
+        MODEL_NAME, torch_dtype=torch.float32, device_map="cuda")
     lm_path, _ = _find_submodule(model, LM_PATH_CANDIDATES,
                                  ("Qwen2ForCausalLM", "Qwen2Model", "CausalLM"))
     audio_path, _ = _find_submodule(model, AUDIO_PATH_CANDIDATES,
