@@ -45,7 +45,13 @@ IMAGE_JOBS_PATH = MANIFEST_DIR / "image_jobs.parquet"
 
 FIXED_CHOICE_TASKS = ("tempo_bpm", "cents_discrimination", "tuning_judgment")
 DEFAULT_TASKS = ("octave_id", "tuning_judgment", "cents_discrimination", "note_count")
-IMAGE_CONDITIONS = ("image", "no_image", "wrong_image")
+# image / no_image / wrong_image are the original three (audio always correct).
+# image_wrong_audio (correct spectrogram + WRONG audio) is the substitute-vs-
+# complement control for the conclusive Track-D run: if the model still scores
+# high here, the image is SUBSTITUTING for audio (reading the chart); if it
+# collapses, the image genuinely COMPLEMENTS correct audio. Scored against the
+# ORIGINAL (correct-audio) question's ground truth, same logic as wrong_image.
+IMAGE_CONDITIONS = ("image", "no_image", "wrong_image", "image_wrong_audio")
 
 
 def _require_rendered(image_path: str) -> None:
@@ -57,7 +63,8 @@ def _require_rendered(image_path: str) -> None:
 
 def build_image_jobs(tasks: tuple[str, ...] = DEFAULT_TASKS) -> pd.DataFrame:
     man = load_manifest(list(tasks))
-    all_paths = load_manifest()["audio_path"].tolist()   # wrong-image partners: full battery
+    full = load_manifest()                                # partners: full battery
+    all_paths = full["audio_path"].tolist()
     all_images = [spectrogram_path(p) for p in all_paths]
 
     rows = []
@@ -77,22 +84,30 @@ def build_image_jobs(tasks: tuple[str, ...] = DEFAULT_TASKS) -> pd.DataFrame:
                 options, answer_letter = None, None
             prompt = build_prompt(row.task, paraphrase_idx, fmt, options)
 
+            audio_path = row.audio_path                    # correct audio by default
             if image_condition == "image":
                 image_path = correct_image
             elif image_condition == "no_image":
                 image_path = None
-            else:  # wrong_image
+            elif image_condition == "wrong_image":         # correct audio + wrong image
                 image_path = all_images[int(r.integers(len(all_images)))]
-                if image_path == correct_image:  # re-draw once on an unlucky match
+                if image_path == correct_image:            # re-draw once on unlucky match
                     image_path = all_images[int(r.integers(len(all_images)))]
                 _require_rendered(image_path)
+            else:                                          # image_wrong_audio: correct image + WRONG audio
+                image_path = correct_image
+                j = int(r.integers(len(all_paths)))
+                if all_paths[j] == row.audio_path:         # re-draw once on unlucky match
+                    j = int(r.integers(len(all_paths)))
+                audio_path = all_paths[j]
 
             rows.append({
                 "job_id": f"{row.stimulus_id}::image_{image_condition}::{fmt}",
                 "stimulus_id": row.stimulus_id,
                 "task": row.task,
                 "tier": row.tier,
-                "condition": "audio",          # audio held correct throughout — see module docstring
+                # audio correct except in the image_wrong_audio substitute control
+                "condition": "wrong_audio" if image_condition == "image_wrong_audio" else "audio",
                 "image_condition": image_condition,
                 "format": fmt,
                 "paraphrase_idx": paraphrase_idx,
@@ -100,7 +115,7 @@ def build_image_jobs(tasks: tuple[str, ...] = DEFAULT_TASKS) -> pd.DataFrame:
                 "options": "|".join(options) if options else None,
                 "answer_letter": answer_letter,
                 "ground_truth": row.ground_truth,
-                "audio_path": row.audio_path,
+                "audio_path": audio_path,
                 "image_path": image_path,
             })
     return pd.DataFrame(rows)
