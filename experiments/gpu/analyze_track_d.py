@@ -36,9 +36,9 @@ TASK_ORDER = ["cents_discrimination", "tuning_judgment", "octave_id", "note_coun
 RNG = np.random.default_rng(0)
 
 
-def _score_all():
+def _score_all(pattern="responses__qwen25omni-lora-mix-s*.parquet"):
     jobs = pd.read_parquet(IMAGE_JOBS_PATH)
-    seeds = sorted(RESULTS_DIR.glob("responses__qwen25omni-lora-mix-s*.parquet"))
+    seeds = sorted(RESULTS_DIR.glob(pattern))
     frames = []
     for f in seeds:
         r = pd.read_parquet(f)[["job_id", "seed", "raw_response"]]
@@ -91,8 +91,9 @@ def _acc(df, task, cond):
     return vals.mean(), np.percentile(boots, 2.5), np.percentile(boots, 97.5)
 
 
-def main():
-    df = _score_all()
+def main(tag="mix"):
+    pattern = f"responses__qwen25omni-{'lora-mix' if tag=='mix' else tag}-s*.parquet"
+    df = _score_all(pattern)
     n_seeds = df.seed.nunique()
     tasks = [t for t in TASK_ORDER if t in df.task.unique()]
     print(f"seeds={n_seeds}  tasks={tasks}\n")
@@ -114,27 +115,41 @@ def main():
         err = np.array([accs - np.array(los), np.array(his) - accs])
         ax.bar(x + (i - 1.5) * w, accs, w, label=CLABEL[c], color=CCOLOR[c],
                yerr=err, capsize=3, error_kw=dict(lw=1, alpha=.6))
-    # McNemar significance star over the image bar
+    # two annotations per task:
+    #  (green) does image HELP accuracy?         image vs no_image
+    #  (orange) does the model USE the image?     wrong_image vs no_image (a
+    #           significant drop = the model reads image content)
     pmap = {r.task: r.mcnemar_p for r in prim.itertuples()}
     dmap = {r.task: r.dacc for r in prim.itertuples()}
+    uses = {r["task"]: r for r in (_paired(df, t, "no_image", "wrong_image") for t in tasks) if r}
     for j, t in enumerate(tasks):
         p = pmap.get(t, 1.0)
         star = "***" if p < .001 else "**" if p < .01 else "*" if p < .05 else "ns"
-        ax.text(x[j] - 0.5 * w, 1.02, f"Δ={dmap[t]:+.2f}\n{star}", ha="center",
-                fontsize=9, fontweight="bold",
+        ax.text(x[j] - 0.5 * w, 1.02, f"help Δ={dmap[t]:+.2f} {star}", ha="center",
+                fontsize=8.5, fontweight="bold",
                 color="#0a5c2e" if (p < .05 and dmap[t] > 0) else "#555")
+        u = uses.get(t)
+        if u:
+            up = u["mcnemar_p"]; us = "***" if up < .001 else "**" if up < .01 else "*" if up < .05 else "ns"
+            ax.text(x[j] - 0.5 * w, 1.09, f"uses img? {us} (wrong Δ={u['dacc']:+.2f})",
+                    ha="center", fontsize=8,
+                    color="#b35900" if up < .05 else "#999")
     ax.axhline(0.5, ls=":", c="gray", alpha=.6)
     ax.set_xticks(x); ax.set_xticklabels([t.replace("_", "\n") for t in tasks])
     ax.set_ylabel("accuracy (bootstrap 95% CI)"); ax.set_ylim(0, 1.15)
-    ax.set_title(f"Track D (conclusive): does a spectrogram image genuinely help?\n"
+    imgname = "F0-contour + modality-dropout" if tag == "force" else "spectrogram, mixed-condition"
+    ax.set_title(f"Track D ({tag}): does the image genuinely help?  [{imgname}]\n"
                  f"within-model paired eval, {n_seeds} seeds, McNemar on image-vs-audio-only",
                  fontsize=13, fontweight="bold")
     ax.legend(fontsize=9, ncol=2, loc="upper right"); ax.grid(alpha=.2, axis="y")
-    out = RESULTS_DIR / "trackd_conclusive_graph.png"
+    out = RESULTS_DIR / f"trackd_{tag}_graph.png"
     fig.tight_layout(); fig.savefig(out, dpi=150, bbox_inches="tight")
-    prim.to_csv(RESULTS_DIR / "trackd_conclusive_summary.csv", index=False)
-    print(f"\nwrote {out}\nwrote {RESULTS_DIR/'trackd_conclusive_summary.csv'}")
+    prim.to_csv(RESULTS_DIR / f"trackd_{tag}_summary.csv", index=False)
+    print(f"\nwrote {out}\nwrote {RESULTS_DIR/f'trackd_{tag}_summary.csv'}")
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--tag", default="mix", help="mix (conclusive) | force (F0+dropout)")
+    main(ap.parse_args().tag)
