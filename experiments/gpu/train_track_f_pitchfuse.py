@@ -32,20 +32,25 @@ sys.path.insert(0, str(GPU_DIR)); sys.path.insert(0, str(GPU_DIR.parent))
 from train_track_d import load_qwen_omni_for_training, build_lora_config  # noqa: E402
 from train_track_c import assert_lora_applied  # noqa: E402
 from train_track_d_force import _split  # noqa: E402
-from musicprobe.config import EXP_ROOT, RESULTS_DIR, MANIFEST_PATH  # noqa: E402
+from musicprobe.config import EXP_ROOT, RESULTS_DIR, MANIFEST_PATH, MANIFEST_DIR  # noqa: E402
 from musicprobe.pitch_feats import load_map, K as PITCH_K  # noqa: E402
 
 PITCH_ID = 151650          # <|quad_start|> — unused in our prompts, no modality merge
 PITCH_TOK = "<|quad_start|>"
 HIDDEN = 3584
 MODE_P = {"both": 0.5, "pitch_only": 0.25, "audio_only": 0.25}
+AUG_JOBS_PATH = MANIFEST_DIR / "aug_train_jobs.parquet"
+AUG_PITCH_PATH = MANIFEST_DIR / "aug_pitch_feats.npz"
 PMAP = None; SID2AUDIO = None; PKEYS = None
+USE_AUG = False
 
 
 def _init():
     global PMAP, SID2AUDIO, PKEYS
     if PMAP is None:
         PMAP = load_map()
+        if USE_AUG and AUG_PITCH_PATH.exists():
+            PMAP.update(load_map(AUG_PITCH_PATH))       # merge aug pitch features
         man = pd.read_parquet(MANIFEST_PATH)
         SID2AUDIO = dict(zip(man.stimulus_id, man.audio_path))
         PKEYS = sorted(PMAP)
@@ -135,7 +140,7 @@ class DropoutDataset:
 
 
 def tag(seed):
-    return f"qwen25omni-pitchfuse-s{seed}"
+    return f"qwen25omni-pitchfuse{'aug' if USE_AUG else ''}-s{seed}"
 
 
 def _make(seed):
@@ -153,9 +158,13 @@ def train(seed, smoke, exp_root):
     torch.manual_seed(seed)
     model, processor = _make(seed)
     train_rows, held = _split(exp_root)
+    cols = ["stimulus_id", "task", "prompt", "ground_truth", "audio_path"]
+    if USE_AUG and AUG_JOBS_PATH.exists():
+        aug = pd.read_parquet(AUG_JOBS_PATH)
+        train_rows = pd.concat([train_rows[cols], aug[cols]], ignore_index=True)
     n_proj = sum(p.numel() for p in model.thinker.pitch_projector.parameters())
-    print(f"[pitchfuse] seed={seed}: {len(train_rows)} rows / {len(held)} held-out; "
-          f"projector params={n_proj}")
+    print(f"[pitchfuse] seed={seed}: {len(train_rows)} train rows (aug={USE_AUG}) / "
+          f"{len(held)} held-out; projector params={n_proj}")
     model.thinker.train()
     ds = DropoutDataset(train_rows.head(8) if smoke else train_rows, processor, exp_root, seed)
     out_dir = GPU_DIR / "track_f_ckpt" / tag(seed)
@@ -241,8 +250,10 @@ if __name__ == "__main__":
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--smoke-test", action="store_true")
     ap.add_argument("--eval-only", action="store_true")
+    ap.add_argument("--aug", action="store_true", help="add the large aug training set")
     ap.add_argument("--exp-root", default=str(EXP_ROOT))
     a = ap.parse_args()
+    USE_AUG = a.aug
     exp_root = Path(a.exp_root)
     if a.eval_only:
         m, p, h = load_for_eval(a.seed); evaluate(a.seed, m, p, h, exp_root)

@@ -7,6 +7,8 @@ a fixed (K, 2) array: [normalised log-pitch, voiced flag] over K time bins.
 
 Cached to manifests/pitch_feats.npz so training/eval don't re-run pyin.
 """
+from pathlib import Path
+
 import numpy as np
 import soundfile as sf
 import librosa
@@ -42,29 +44,35 @@ def pitch_feature(wav_path) -> np.ndarray:
     return out
 
 
-def build_map(tasks=DEFAULT_TASKS) -> dict:
+def build_map(tasks=DEFAULT_TASKS, manifest_path=MANIFEST_PATH, out_path=PITCH_FEATS_PATH) -> dict:
     import pandas as pd
-    man = pd.read_parquet(MANIFEST_PATH)
-    man = man[man.task.isin(tasks)]
+    man = pd.read_parquet(manifest_path)
+    if "task" in man:
+        man = man[man.task.isin(tasks)]
     out = {}
     for i, r in enumerate(man.itertuples(), 1):
         try:
             out[r.audio_path] = pitch_feature(EXP_ROOT / r.audio_path)
         except Exception:
             out[r.audio_path] = np.zeros((K, 2), np.float32)
-        if i % 100 == 0:
+        if i % 200 == 0:
             print(f"  pitch_feats {i}/{len(man)}")
-    np.savez_compressed(PITCH_FEATS_PATH, **{k.replace("/", "__"): v for k, v in out.items()})
-    print(f"[pitch_feats] wrote {PITCH_FEATS_PATH} ({len(out)} stimuli, K={K})")
+    np.savez_compressed(out_path, **{k.replace("/", "__"): v for k, v in out.items()})
+    print(f"[pitch_feats] wrote {out_path} ({len(out)} stimuli, K={K})")
     return out
 
 
-def load_map() -> dict:
-    if not PITCH_FEATS_PATH.exists():
-        return build_map()
-    z = np.load(PITCH_FEATS_PATH)
+def load_map(path=PITCH_FEATS_PATH) -> dict:
+    if not Path(path).exists():
+        return build_map(out_path=path)
+    z = np.load(path)
     return {k.replace("__", "/"): z[k] for k in z.files}
 
 
 if __name__ == "__main__":
-    build_map()
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--manifest", default=str(MANIFEST_PATH))
+    ap.add_argument("--out", default=str(PITCH_FEATS_PATH))
+    a = ap.parse_args()
+    build_map(manifest_path=a.manifest, out_path=a.out)
