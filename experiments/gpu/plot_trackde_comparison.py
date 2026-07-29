@@ -49,10 +49,11 @@ def paired(df, task):
 
 def main():
     methods = [("f0text", "+ F0 numbers (text)", "#e8710a"),
-               ("zoom", "+ zoomed pitch image", "#0a9648")]
+               ("zoom", "+ zoomed pitch image", "#0a9648"),
+               ("pitchfuse", "+ learned pitch stream (fused)", "#7d3ac1")]
     data = {tag: load(tag) for tag, _, _ in methods}
-    fig, ax = plt.subplots(figsize=(13, 6))
-    x = np.arange(len(TASKS)); w = 0.26
+    fig, ax = plt.subplots(figsize=(14, 6))
+    x = np.arange(len(TASKS)); w = 0.2
     # audio-only baseline (avg of the two methods' no-image, they pair separately)
     base = [np.mean([paired(data[t], task)[0] for t, _, _ in methods]) for task in TASKS]
     ax.bar(x - w, base, w, label="audio only", color="#9aa0a6")
@@ -68,9 +69,10 @@ def main():
     ax.axhline(0.5, ls=":", c="gray", alpha=.5)
     ax.set_xticks(x + w * 0.5); ax.set_xticklabels([t.replace("_", "\n") for t in TASKS])
     ax.set_ylabel("accuracy"); ax.set_ylim(0, 1.05)
-    ax.set_title("Injecting the pitch the model can't hear: text numbers vs a zoomed image\n"
-                 "(Qwen2.5-Omni, 3 seeds, paired McNemar vs each method's own audio-only)",
-                 fontsize=13, fontweight="bold")
+    ax.set_title("Injecting the pitch the model can't hear: text numbers vs zoomed image vs fused stream\n"
+                 "(Qwen2.5-Omni, 3 seeds, paired McNemar vs each method's own audio-only). "
+                 "Reusing a pretrained pathway (text/chart) beats a learned fused feature.",
+                 fontsize=12, fontweight="bold")
     ax.legend(fontsize=10, loc="lower right"); ax.grid(alpha=.2, axis="y")
     out = RESULTS_DIR / "trackde_injection_comparison.png"
     fig.tight_layout(); fig.savefig(out, dpi=150, bbox_inches="tight")
