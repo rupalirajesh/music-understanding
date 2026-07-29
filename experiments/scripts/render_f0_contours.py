@@ -26,11 +26,65 @@ import soundfile as sf
 import pandas as pd
 
 from musicprobe.config import EXP_ROOT, MANIFEST_PATH
-from musicprobe.f0_contour import f0_contour_path
+from musicprobe.f0_contour import f0_contour_path, f0_zoom_path
 
 TARGET_SR = 16000
 FMIN, FMAX = 100.0, 1200.0        # covers our E3..E5 stimuli with headroom
 YLIM = (90.0, 1300.0)             # fixed axis -> absolute pitch is comparable across images
+# per-task half-window (cents) for the ZOOMED image; tuning also gets a bold
+# in-tune reference line at the nearest semitone.
+ZOOM_SPAN = {"tuning_judgment": 90.0, "cents_discrimination": 160.0}
+ZOOM_DEFAULT_SPAN = 450.0
+
+
+def _extract_f0(wav_path: Path):
+    y, sr = sf.read(wav_path)
+    if y.ndim > 1:
+        y = y.mean(axis=1)
+    y = librosa.resample(y.astype(np.float32), orig_sr=sr, target_sr=TARGET_SR)
+    f0, _, _ = librosa.pyin(y, sr=TARGET_SR, fmin=FMIN, fmax=FMAX,
+                            frame_length=2048, hop_length=160)
+    t = librosa.times_like(f0, sr=TARGET_SR, hop_length=160)
+    return f0, t
+
+
+def render_zoom(wav_path: Path, out_path: Path, task: str) -> None:
+    """Cents-scale pitch chart, auto-centred so fine differences are visible.
+    Centre + reference are set from the pyin-ESTIMATED pitch (not ground truth)."""
+    f0, t = _extract_f0(wav_path)
+    vf = f0[np.isfinite(f0)]
+    span = ZOOM_SPAN.get(task, ZOOM_DEFAULT_SPAN)
+    refline = None
+    if len(vf) == 0:
+        # no trackable pitch (e.g. polyphonic note_count) -> still emit a valid,
+        # empty chart so downstream image loading never breaks (note_count is the
+        # negative control anyway; its image content is irrelevant).
+        center = 220.0
+        cents = np.full_like(f0, np.nan)
+    elif task == "tuning_judgment":
+        midi = round(float(librosa.hz_to_midi(np.median(vf))))  # nearest 12-TET note
+        center = float(librosa.midi_to_hz(midi))
+        refline = 0.0                                           # in-tune = 0 cents
+        cents = 1200.0 * np.log2(f0 / center)
+    else:
+        center = float(np.median(vf))                          # auto-centre on the pitch
+        cents = 1200.0 * np.log2(f0 / center)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig, ax = plt.subplots(figsize=(6, 3), dpi=150)
+    for c in range(int(-span), int(span) + 1, 25):             # light 25-cent grid
+        ax.axhline(c, color="0.9", lw=0.5, zorder=0)
+    if refline is not None:
+        ax.axhline(refline, color="#c0392b", lw=1.8, zorder=1)
+        ax.text(0.01, refline, " in tune", color="#c0392b", fontsize=9, va="bottom")
+    ax.plot(t, cents, color="#0a4fd6", lw=2.6, solid_capstyle="round", zorder=3)
+    ax.set_ylim(-span, span)
+    ax.set_xlim(0, t[-1] if len(t) else 1)
+    ax.set_ylabel("pitch (cents from reference)")
+    ax.set_xlabel("time (s)")
+    fig.tight_layout()
+    fig.savefig(out_path)
+    plt.close(fig)
 
 
 def render_one(wav_path: Path, out_path: Path) -> None:
@@ -62,21 +116,25 @@ def render_one(wav_path: Path, out_path: Path) -> None:
     plt.close(fig)
 
 
-def main(manifest, exp_root, force, limit, tasks):
+def main(manifest, exp_root, force, limit, tasks, zoom=False):
     root = Path(exp_root)
     man = pd.read_parquet(manifest)
     if tasks:
         man = man[man.task.isin(tasks)]
     if limit:
         man = man.head(limit)
+    path_fn = f0_zoom_path if zoom else f0_contour_path
     done = skipped = failed = 0
     for i, row in enumerate(man.itertuples(), 1):
-        out_path = root / f0_contour_path(row.audio_path)
+        out_path = root / path_fn(row.audio_path)
         if out_path.exists() and not force:
             skipped += 1
             continue
         try:
-            render_one(root / row.audio_path, out_path)
+            if zoom:
+                render_zoom(root / row.audio_path, out_path, row.task)
+            else:
+                render_one(root / row.audio_path, out_path)
             done += 1
         except Exception as e:
             failed += 1
@@ -94,5 +152,7 @@ if __name__ == "__main__":
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--tasks", nargs="*",
                     default=["octave_id", "tuning_judgment", "cents_discrimination", "note_count"])
+    ap.add_argument("--zoom", action="store_true",
+                    help="render the ZOOMED cents-scale image (f0zoom/) instead of f0contours/")
     args = ap.parse_args()
-    main(args.manifest, args.exp_root, args.force, args.limit, args.tasks)
+    main(args.manifest, args.exp_root, args.force, args.limit, args.tasks, args.zoom)

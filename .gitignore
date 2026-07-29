@@ -20,3 +20,8 @@ __pycache__/
 
 # personal working notes stay local
 RUPALI_READ_THIS.md
+
+# Track D/E LoRA checkpoints (regenerable)
+experiments/gpu/track_d_conc_checkpoints/
+experiments/gpu/track_d_force_ckpt/
+experiments/gpu/track_e_ckpt/

@@ -36,14 +36,20 @@ from train_track_d import load_qwen_omni_for_training, build_lora_config  # noqa
 from train_track_c import assert_lora_applied, _held_out_mask  # noqa: E402
 from musicprobe.config import EXP_ROOT, RESULTS_DIR, MANIFEST_PATH  # noqa: E402
 from musicprobe.image_jobs import IMAGE_JOBS_PATH, DEFAULT_TASKS, build_image_jobs  # noqa: E402
-from musicprobe.f0_contour import f0_contour_path  # noqa: E402
+from musicprobe.f0_contour import f0_contour_path, f0_zoom_path  # noqa: E402
 
 # training-example modality mix (per step): both / image-only / audio-only
 MODE_P = {"both": 0.5, "image_only": 0.25, "audio_only": 0.25}
 
+# image kind is set in __main__: "f0contour" (fixed axis) or "f0zoom" (cents-scale)
+IMAGE_KIND = "f0contour"
+_PATH_FN = {"f0contour": f0_contour_path, "f0zoom": f0_zoom_path}
+_DIRNAME = {"f0contour": "f0contours", "f0zoom": "f0zoom"}
+_RUN = {"f0contour": "force", "f0zoom": "zoom"}
+
 
 def _f0_for(audio_path):
-    return f0_contour_path(audio_path)
+    return _PATH_FN[IMAGE_KIND](audio_path)
 
 
 def _build_example(processor, exp_root, prompt, audio_path, image_path, answer,
@@ -105,7 +111,7 @@ def _split(exp_root):
 
 
 def tag(seed):
-    return f"qwen25omni-force-s{seed}"
+    return f"qwen25omni-{_RUN[IMAGE_KIND]}-s{seed}"
 
 
 def train(seed, smoke, exp_root):
@@ -156,7 +162,7 @@ def evaluate(seed, model, processor, held, exp_root):
     import torch
     model.eval()
     # existing F0 pngs (only the shortlist was rendered) -> wrong_image fallback
-    f0_root = exp_root / "stimuli" / "f0contours"
+    f0_root = exp_root / "stimuli" / _DIRNAME[IMAGE_KIND]
     existing = {str(p.relative_to(exp_root)) for p in f0_root.rglob("*.png")}
 
     def f0_img(image_path, job_id):
@@ -200,8 +206,10 @@ if __name__ == "__main__":
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--smoke-test", action="store_true")
     ap.add_argument("--eval-only", action="store_true")
+    ap.add_argument("--image-kind", choices=["f0contour", "f0zoom"], default="f0contour")
     ap.add_argument("--exp-root", default=str(EXP_ROOT))
     a = ap.parse_args()
+    IMAGE_KIND = a.image_kind
     exp_root = Path(a.exp_root)
     if a.eval_only:
         m, p, h = load_for_eval(a.seed); evaluate(a.seed, m, p, h, exp_root)

@@ -14,3 +14,14 @@ def f0_contour_path(audio_path: str) -> str:
     p = Path(audio_path)
     assert p.parts[0] == "stimuli", f"unexpected audio_path shape: {audio_path}"
     return str(Path("stimuli") / "f0contours" / Path(*p.parts[1:]).with_suffix(".png"))
+
+
+def f0_zoom_path(audio_path: str) -> str:
+    """ZOOMED, cents-scale pitch image: y-axis blown up around the actual pitch
+    (auto-centred on the pyin median) so a 5-cent difference is ~6 px instead of
+    ~0.4 px, with a reference line at the in-tune semitone for tuning. The chart
+    that actually EXPOSES fine/absolute microtonal pitch — unlike the fixed-axis
+    f0contour, whose resolution the capacity probe showed is too coarse."""
+    p = Path(audio_path)
+    assert p.parts[0] == "stimuli", f"unexpected audio_path shape: {audio_path}"
+    return str(Path("stimuli") / "f0zoom" / Path(*p.parts[1:]).with_suffix(".png"))
