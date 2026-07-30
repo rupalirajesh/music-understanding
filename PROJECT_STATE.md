@@ -1,6 +1,6 @@
 # PROJECT STATE — the everything doc (pick-up-where-we-left-off)
 
-Last updated: 2026-07-22. Update this whenever anything changes hands.
+Last updated: 2026-07-29. Update this whenever anything changes hands.
 
 ## Machines & workflow
 - **Laptop** (no GPU): stimulus synthesis, API evals, scoring/analysis,
@@ -43,8 +43,13 @@ Last updated: 2026-07-22. Update this whenever anything changes hands.
 | Own-encoder re-probe (key_id/mode_id/chord_quality/interval_id) | H100 box | done 2026-07-24, commit 83c722c |
 | Attention diagnostic (`gpu/attention_audio.py`) | H100 box | **DONE CORRECTLY 2026-07-25** (commit c348ea6, eager-attention verified, all 5 models, `--per-task 6`) — supersedes the 2026-07-24 retracted run. See Known gaps for the corrected finding. |
 | Microtone probe (relative-pitch direction + absolute detune, new task, Sethu's initiative) | H100 box | done 2026-07-25, commit b0dec99 |
-| Track C (3-arm LoRA on AF3) | H100 box | **set up, not yet run** — `scripts/11_run_track_c.sh` |
-| Track D Phase 1 (Qwen2.5-Omni-7B + spectrogram-image) | H100 box | **set up, not yet run** — `scripts/13_run_track_d.sh` |
+| Track C (3-arm LoRA on AF3: llm_only / llm_encoder / control) | H100 box | **done 2026-07-26** (commit `a37cc8a`) — `octave_id`/`note_count` alignment-fixable (+0.50/+0.59 and +0.43/+0.40 over baseline); `tuning_judgment`/`cents_discrimination` resist fine-tuning even with the encoder also tuned |
+| Track D Phase 1 (Qwen2.5-Omni-7B + spectrogram image, single LoRA arm) | H100 box | done 2026-07-26 (commit `a37cc8a`) — first-pass "image helps cents" (0.67→0.77) turned out to be an OOD training confound; see conclusive rerun below |
+| Track D conclusive (mixed-condition training, paired 3-seed McNemar) | H100 box | done 2026-07-28 (commit `d7d4c3f`) — precise null: spectrogram adds nothing on any task (Δacc 95%CI includes 0 everywhere); mechanism controls confirm the model ignores it |
+| Track D force (same spectrogram + modality-dropout training) | H100 box | done 2026-07-28 (commit `841da35`) — forces the model to actually use the image (wrong-image now craters perf, p=.003/.016) but accuracy still doesn't improve; spectrogram lacks fine cents-level detail |
+| Track D zoom (zoomed F0-contour image + in-tune reference line) | H100 box | done 2026-07-29 (commit `03c7bde`) — cents 0.55→0.94 (p<1e-4), tuning 0.53→0.89 (p<1e-4); first method that fixes absolute tuning |
+| Track E (pitch-tracker output as text in the prompt, audio-only) | H100 box | done 2026-07-29 (commit `03c7bde`) — cents 0.62→0.92 (p<1e-4), scalable/deployable (no image needed); tuning ns (text has no reference point) |
+| Track F (learned pitch-stream fusion: trainable projector injects F0 features into embedding space) | H100 box | done 2026-07-29 (commit `2418e80`) — null; injection verified to reach the model (logit shift scales with pitch value) but behaviorally ignored — likely a data-size limit (~348 training examples to learn a new modality interface from scratch) |
 | MusicGen battery | H100 box | done — tempo/key/register scored; meter/mode deliberately left for manual scoring |
 | AF3 / Music Flamingo loaders | code | done, verified working |
 | Qwen2-Audio published-number replication | — | still TODO; pick exact benchmark subset first |
@@ -73,8 +78,20 @@ Last updated: 2026-07-22. Update this whenever anything changes hands.
     from audio / token-compact / sufficient for battery / human-readable /
     genre-universal incl. continuous pitch (staff notation fails #5; that's
     the Carnatic module's future role as stress test).
+12. Tracks C–F (2026-07-26 to 07-29): the alignment-gap hypothesis (H4) is only half
+    right for pitch. LoRA on the existing audio→LM pathway (Track C) fixes readout-level
+    gaps (`octave_id`, `note_count`) but not microtone perception, even with the encoder
+    also tuned. Microtone perception turned out to be fixable, but only by routing it
+    through a representation the model already knows how to read — pitch-tracker output
+    as **text** (Track E: fixes relative pitch, no image needed, cheap/deployable) or a
+    **zoomed chart with an explicit reference line** (Track D-zoom: the only method that
+    also fixes absolute tuning). An end-to-end learned fusion into embedding space
+    (Track F) was a clean null at this data scale (~348 examples) — bolting on a raw
+    feature and hoping a small adapter learns to use it does not work; reusing an
+    existing, pretrained interface (numbers, images) does. Treat this as the working
+    default for any future modality-injection experiment, not just pitch.
 
-## Next actions (ordered, updated 2026-07-25)
+## Next actions (ordered, updated 2026-07-29)
 GPT-4o-audio removed from this list entirely 2026-07-25 — no OpenAI API access, out of
 scope. 6 models (Qwen2-Audio, Qwen2.5-Omni, Qwen3-Omni-30B, AF3, Music-Flamingo,
 Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
@@ -86,9 +103,10 @@ Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
    *inverted* wrong-audio-control result (worse with correct audio than swapped audio).
    Read ~20 raw responses per model in `results/trackA/review__<model>/beats_per_bar.csv`
    and `mode_id.csv` to rule out a scoring/parsing bug before concluding it's a real
-   model failure or task-design flaw. **Last remaining blocker on the Track C shortlist**
-   (item 5) — everything else it depends on is now resolved. Still not done — this one is
-   manual (read raw responses by hand), not a script Sethu can just run.
+   model failure or task-design flaw. Track C ran without `beats_per_bar` (provisionally
+   excluded, see item 7) so this no longer blocks Track C — but it's still open before
+   `beats_per_bar` can be trusted in any cross-model comparison or a future LoRA arm.
+   Still not done — this one is manual (read raw responses by hand), not a script.
 3. ~~Re-probe each LALM's OWN encoder~~ **DONE 2026-07-24** (commit 83c722c,
    `gpu/extract_activations.py --own-encoder`, submodule paths verified:
    `thinker.audio_tower` for Qwen-Omni, `model.audio_tower` for Flamingo). Result: own-encoder
@@ -101,38 +119,31 @@ Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
 5. Qwen2-Audio published-number replication (harness validation) — still not done.
 6. Ladder arm (battery v2) — L1 features into prompts at one-abstraction-below-answer,
    features-only + few-shot variants; keep v1 job_ids untouched. Deferred behind 1–5.
-7. **Track C is set up, not yet run** (2026-07-24, `experiments/scripts/11_run_track_c.sh` +
-   `experiments/gpu/train_track_c.py`) — 3-arm LoRA fine-tune on AF3, shortlist
-   `octave_id`/`tuning_judgment`/`cents_discrimination`/`note_count` (`beats_per_bar`
-   provisionally excluded pending item 2, doesn't block starting on the other four). Sethu:
-   pull and run `bash scripts/11_run_track_c.sh` — smoke-tests each arm first.
-8. **Track D Phase 1 is set up, not yet run** — full design in
-   RESEARCH_PLAN.md §12. Targets **Qwen2.5-Omni-7B only** — model-support audit (§12.1)
-   found AF3 and Music-Flamingo don't accept image input at all, so Track C's target model
-   can't run this.
-   - Groundwork done + verified locally 2026-07-24/25 (no GPU needed): spectrograms rendered
-     for all 1,101 available stimuli (`scripts/12_render_spectrograms.py`), image hygiene
-     layer built and checked by hand (`musicprobe/image_jobs.py` →
-     `manifests/image_jobs.parquet`, 1,416 jobs, 4-task shortlist).
-   - Training + eval script written 2026-07-25 (`gpu/train_track_d.py`) — single LoRA arm
-     (Thinker language-model decoder only) trained on the `image` condition, evaluated on
-     held-out stimuli across all three image_conditions, scored via a small wrapper around
-     `musicprobe.scoring.parse_response/is_correct` (image_condition isn't part of the
-     existing scoring pipeline's condition grouping). Data-pipeline half tested locally
-     (held-out split, scoring aggregation — caught and fixed a real bug where unparseable
-     answers were being dropped from the denominator instead of scored incorrect, same
-     class of issue `scoring.py:107-108` already documents). **GPU-bound half (model
-     loading, LoRA application, actual training) is UNVERIFIED on hardware** — smoke-test
-     first (`--smoke-test`), same discipline as Track C; see the script's docstring for the
-     one thing most likely to need a hardcoded fix (the Thinker's language-model submodule
-     path).
-   - Before/after L2 probes (does joint training change the audio encoder itself) not yet
-     wired up — reuse `extract_activations.py --own-encoder` after a successful full run,
-     not automated in `train_track_d.py` yet.
-   - Sequenced behind Track C's own-encoder work only in the sense that they reuse the same
-     LoRA stack; not actually blocked on Track C finishing.
-   - Sethu: pull and run `bash scripts/13_run_track_d.sh` — smoke-tests first, renders any
-     missing spectrograms before training (idempotent, skips existing PNGs).
+   Note (2026-07-29): Tracks D-zoom/E are effectively a one-task preview of this arm
+   (in-context F0 feature, text and image forms) — worth reusing their harness rather
+   than rebuilding from scratch when this starts.
+7. ~~Track C is set up, not yet run~~ **DONE 2026-07-26** (commit `a37cc8a`) — see Status
+   table. `octave_id`/`note_count` alignment-fixable; `tuning_judgment`/`cents_discrimination`
+   resist LoRA even with the encoder tuned — carried forward into Track D/E/F below.
+8. ~~Track D Phase 1 is set up, not yet run~~ **DONE, then superseded 3x, 2026-07-26 to
+   07-29** — Phase 1's apparent win was an OOD confound (commit `d7d4c3f` conclusive
+   rerun: true null). Forcing image use didn't help either (commit `841da35`: mechanism
+   works, accuracy doesn't). A zoomed F0-contour + reference-line image finally fixed
+   both cents and absolute tuning (commit `03c7bde`, Track D-zoom). Parallel text-only
+   front-end (Track E, same commit) fixes cents without an image but not tuning. An
+   end-to-end learned fusion alternative (Track F, commit `2418e80`) was a null — the
+   model ignores a raw feature injected into embedding space, likely too little data
+   (~348 examples) to learn a new modality interface from scratch. See Status table and
+   PAPER.md Results for full numbers.
+9. **New, opened by Track C–F**: wire up before/after L2 probes on the Track D-zoom / E
+   checkpoints (does the fine-tuned model's own encoder change, or is the front-end
+   purely a prompt/input-side fix?) — not done, `train_track_d_force.py` /
+   `train_track_e_f0text.py` don't call `extract_activations.py --own-encoder` yet.
+10. **New, opened by Track C–F**: decide + write up the pitch-representation recommendation
+    for "our own model" (F0-as-text front-end for relative pitch, zoomed-reference-image
+    or equivalent for absolute tuning; raw learned embedding fusion not recommended at
+    this data scale) — numbers exist (commits `03c7bde`, `2418e80`), synthesis into
+    RESEARCH_PLAN.md's representation-requirements section (decision 11) still TODO.
 
 ## Known gaps / honesty list
 - L1 key detection weak on minor progressions (naive Krumhansl) — use
