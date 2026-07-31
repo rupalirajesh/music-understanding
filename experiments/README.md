@@ -71,26 +71,31 @@ cd experiments
 .venv/bin/python scripts/04_export_for_review.py --model gemini-2.5-flash
 ```
 
-### Running everything that's left (collaborator: this one) — updated 2026-07-25
+### Running everything that's left (collaborator: this one) — updated 2026-07-31
 
-The full-battery runbook (`08_run_remaining.sh` below) already ran — Track A
-(6 models + MOSS-Music-8B), Track B baseline probes, the own-encoder
-re-probe, the attention diagnostic (re-verified correctly 2026-07-25,
-commit c348ea6), the microtone probe, and the MusicGen battery are all done
-and committed. **What's actually left is Track C and Track D**, both set up
-and ready, neither needs any API key (pure local GPU work):
+Track A/B, Track C (3-arm LoRA on AF3), and Track D/E/F (all four pitch
+front-end iterations — mix/force/zoom/f0text/pitchfuse) are done and
+committed. **What's actually left** is one ready-to-run GPU step plus two
+items that need new work before they're runnable — see PROJECT_STATE.md
+"Next actions" #4/#5/#11 for full context:
 
 ```bash
-bash scripts/11_run_track_c.sh   # Track C: 3-arm LoRA fine-tune on AF3
-bash scripts/13_run_track_d.sh   # Track D Phase 1: Qwen2.5-Omni-7B + spectrogram-image
+bash scripts/14_run_remaining_2.sh   # Track F aug rerun (leakage bug fixed
+                                      # 2026-07-31) — the only step that's
+                                      # actually ready to run unattended.
+                                      # The other two open items (a stronger
+                                      # L1 DSP floor via essentia, and the
+                                      # Qwen2-Audio/MuChoMusic harness
+                                      # validation) are documented in the
+                                      # script's comments but NOT scripted —
+                                      # they need real implementation work
+                                      # this box is better suited for than
+                                      # the laptop (essentia has no wheel
+                                      # for the laptop's Python/platform).
 ```
 
-Both are self-contained (smoke-test every arm/run first, then the full pass,
-then score, then commit+push) — see PROJECT_STATE.md's Known gaps / Next
-actions sections for the full context on each, and each script's own header
-comment for what it does and doesn't do. `09_smoke_test.sh` below is only
-relevant if you're also running the legacy full-battery script; it's not a
-prerequisite for Track C/D.
+`11_run_track_c.sh` / `13_run_track_d.sh` below are now historical — kept
+for reference, not something you need to run again.
 
 <details>
 <summary>Legacy: the original full-battery runbook (mostly superseded, kept for reference)</summary>

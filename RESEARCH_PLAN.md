@@ -1063,3 +1063,61 @@ investing in the harder auxiliary-objective design. Both phases target Qwen2.5-O
 first (the only open model with full Track B/C infrastructure that also accepts image
 input); AF3/Music-Flamingo are excluded per §12.1 unless a future AF-Next release adds
 vision support (check on release, same as the existing AF-Next action item in §3.5).
+
+### 12.6 What actually happened (2026-07-26 to 07-30) — resolving decision 11's 5 requirements
+
+Phase 1 ran, hit an OOD-training confound, and was superseded three times before landing on
+a real answer (Tracks C–F, full numbers in PAPER.md). Net result against the 5 requirements
+above, pitch only:
+
+- **Requirement 1 (inferable from audio)**: yes for relative pitch (an external tracker
+  reads it off the audio fine — Track E); absolute tuning needs a reference point alongside
+  the value, which a tracker can supply (Track D-zoom) but which is not recoverable from
+  audio alone via LoRA on the existing pathway (Track C's `llm_encoder` arm, encoder tuned,
+  still null on both microtone tasks).
+- **Requirement 2 (compact in tokens)**: text wins outright here — Track E's pitch-as-text
+  front-end is a few tokens, no rendering pipeline, and fixes cents (0.62→0.92). The image
+  route (Track D-zoom) needs a rendered chart with an explicit in-tune reference line to fix
+  tuning (0.53→0.89) — bulkier, but it's the only method that closes that gap at all.
+- **Requirement 3 (sufficient for the battery)**: confirmed only for the two microtone
+  tasks so far (this was the shortlist Track B flagged as L2≫L3). `octave_id`/`note_count`
+  turned out to be a *different* kind of gap — not perception-missing but
+  readout-misaligned — and LoRA on the existing pathway alone fixes those (Track C,
+  +0.50/+0.59 and +0.43/+0.40) with no new representation needed. So the ladder's answer is
+  task-dependent: some gaps are alignment-fixable as-is, some need an explicit front-end.
+- **Requirement 4 (human-readable)**: both surviving methods qualify — plain text
+  ("current pitch: F#4 +12 cents") and a labeled chart are both legible to a person, unlike
+  the rejected raw-embedding-fusion route (Track F): a trainable projector injecting a raw
+  F0 feature into embedding space is demonstrably NOT human-readable and, separately, didn't
+  work behaviorally even at 9x training data (Track F aug, `0aed136` — with a leakage
+  caveat on the aug run's absolute audio-only numbers, not on the fusion-null verdict itself).
+- **Requirement 5 (genre-universal, continuous pitch)**: both surviving front-ends
+  (F0-as-text, F0-contour-plus-reference-line) are continuous-valued by construction — cents
+  offsets and a contour line have no fixed-grid assumption, unlike staff notation/MIDI. This
+  is the first concrete evidence the requirement is satisfiable for at least one property
+  (pitch); genre-universality itself is still untested (all stimuli so far are Western
+  12-TET-adjacent synths) and remains the Carnatic module's eventual stress test per §8.
+
+**Practical recommendation for a model we fine-tune or design ourselves** (pitch only,
+provisional pending non-pitch tasks and the deferred ladder arm, §6.6/next action #6 in
+PROJECT_STATE.md): expose relative pitch via a compact in-context text feature (cheap, no
+rendering); expose absolute tuning via a reference-anchored representation, not just the raw
+value — a scale-anchored feature, not a sharper image, was the actual missing ingredient
+(Track D force → zoom transition). Do not invest in learned raw-feature fusion into embedding
+space at this project's data scale (~348 examples) — reuse a pretrained interface (numbers,
+labeled charts) instead; Track F suggests this generalizes as a rule for any future
+modality-injection experiment, not just pitch.
+
+**§12.2 point 4 (own-encoder probe before/after) — resolved analytically, no GPU run
+needed**: Tracks D/E/F's LoRA config (`train_track_d.py:build_lora_config`, reused by
+`train_track_d_force.py`/`train_track_e_f0text.py`/`train_track_f_pitchfuse.py`) targets
+`target_modules` matched only against `thinker.<lm_path>` (the LLM decoder found by
+`_find_submodule`) — the regex never matches anything under `audio_tower` or the vision
+tower. Those towers therefore receive zero gradient updates in every Track D/E/F run; their
+forward computation on a given input is bit-identical before and after fine-tuning. So the
+audio encoder's own representation provably does not change — the entire effect in Tracks
+D/E/F is on the LLM-decoder / read side, exactly consistent with the wrong-audio /
+wrong-feature substitution-not-hearing mechanism check already reported (feature+wrong_audio
+≈ feature+correct_audio). Re-running `extract_activations.py --own-encoder` against these
+checkpoints would reproduce Track B's existing own-encoder numbers exactly and add no new
+information — skip it.

@@ -98,15 +98,17 @@ Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
 
 1. ~~Re-run the attention diagnostic on the 4 newer open models~~ **DONE 2026-07-25**
    (commit c348ea6, eager-verified). See Known gaps above for the corrected findings.
-2. **Sanity-check `beats_per_bar` and `mode_id` by hand** before trusting any model
-   comparison on them — 4/6 models show negative audio_gain and `beats_per_bar` shows an
-   *inverted* wrong-audio-control result (worse with correct audio than swapped audio).
-   Read ~20 raw responses per model in `results/trackA/review__<model>/beats_per_bar.csv`
-   and `mode_id.csv` to rule out a scoring/parsing bug before concluding it's a real
-   model failure or task-design flaw. Track C ran without `beats_per_bar` (provisionally
-   excluded, see item 7) so this no longer blocks Track C — but it's still open before
-   `beats_per_bar` can be trusted in any cross-model comparison or a future LoRA arm.
-   Still not done — this one is manual (read raw responses by hand), not a script.
+2. ~~Sanity-check `beats_per_bar` and `mode_id` by hand~~ **DONE 2026-07-31** — no scoring/
+   parsing bug (both use the same generic open-format substring match and the same 10%
+   `WRONG_AUDIO_FRACTION` design as every other task, verified against `jobs.py`). Re-derived
+   the wrong-audio deltas directly from `scored__*.parquet`: beats_per_bar's "inversion" is
+   real in direction (mean +0.156 across 7 models, 5/7 positive) but its control is only
+   n=14/model (std 0.141) — about 1 SE, not the clean signal PAPER.md previously implied.
+   mode_id is weaker still (+0.070, std 0.169) — within noise, no action needed. Revised
+   PAPER.md language to "low-confidence, directionally suggestive," not "structurally
+   broken." Before any future LoRA arm on beats_per_bar, enlarge the wrong-audio sample
+   first (bump `WRONG_AUDIO_FRACTION` for this task or pool paraphrases) — n=14 isn't
+   enough to certify or refute the task.
 3. ~~Re-probe each LALM's OWN encoder~~ **DONE 2026-07-24** (commit 83c722c,
    `gpu/extract_activations.py --own-encoder`, submodule paths verified:
    `thinker.audio_tower` for Qwen-Omni, `model.audio_tower` for Flamingo). Result: own-encoder
@@ -116,7 +118,33 @@ Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
    priors than a richer internal representation. No further action.
 4. Run the L1 DSP floor (`musicprobe.l1_baselines`, or essentia/madmom for a stronger
    key/beat detector) on the same stimuli so every task sits on the full L1→L2→L3 ladder.
-5. Qwen2-Audio published-number replication (harness validation) — still not done.
+   **Scoped precisely 2026-07-31**: `l1_baselines.run()` currently only covers 4/13 tasks
+   (`pitch_note_id`, `cents_discrimination`, `tempo_bpm`, `key_id`) — `beats_per_bar`,
+   `note_count`, `octave_id`, `tuning_judgment`, `instrument_id`, `interval_id`,
+   `chord_quality`, `mode_id`, `progression_id` have **no L1 baseline at all** yet, not just
+   a weak one. Notably `beats_per_bar` (the task flagged in item 2 above) has never had an
+   L1 check — an essentia `RhythmExtractor2013` beat-tracking floor on the same stimuli
+   would directly test whether the ground-truth beat/meter labels are even DSP-recoverable,
+   which would settle whether the wrong-audio anomaly is a task-difficulty issue or a label
+   issue. Tried `pip install essentia` in the laptop venv (2026-07-31): **fails to build**
+   (no prebuilt wheel for this Python/platform combo, source build errors in setuptools) —
+   confirms the existing plan's call to do this on the H100/Linux box, not the laptop.
+   Did not attempt writing essentia-based key/beat/chord detectors blind (9 tasks, no local
+   way to verify correctness) — this is real DSP-implementation work best done iteratively
+   where essentia actually installs, not guessed from the laptop.
+5. Qwen2-Audio published-number replication (harness validation). **Benchmark decision made
+   2026-07-31**: use MuChoMusic (ISMIR'24, arxiv 2408.01337, 1.1K validated MCQs), not
+   MMAU-music — MuChoMusic is a single well-defined public set (vs MMAU-music being one
+   subscore inside the larger multi-domain MMAU benchmark, arxiv 2410.19168, with less
+   clarity on exact subset reconstruction), and it's the benchmark this project's own
+   text-prior/no-audio-control methodology is explicitly modeled after (RESEARCH_PLAN.md
+   §0.6), making it the more meaningful fidelity check. Could NOT confirm Qwen2-Audio's
+   exact published MuChoMusic number via web search with confidence — search results
+   surfaced a 51.4% figure for Qwen-**Audio** (the v1 predecessor), not Qwen2-Audio, and a
+   0.692 MMAU-Music figure for Qwen2.5-**Omni**, neither the right model. Pull the real
+   number directly from the MuChoMusic paper's model-comparison table (arxiv 2408.01337) or
+   the Qwen2-Audio technical report (arxiv 2407.10759) before running the replication —
+   don't trust a secondhand number. Still needs the actual eval run (H100/API).
 6. Ladder arm (battery v2) — L1 features into prompts at one-abstraction-below-answer,
    features-only + few-shot variants; keep v1 job_ids untouched. Deferred behind 1–5.
    Note (2026-07-29): Tracks D-zoom/E are effectively a one-task preview of this arm
@@ -135,15 +163,32 @@ Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
    model ignores a raw feature injected into embedding space, likely too little data
    (~348 examples) to learn a new modality interface from scratch. See Status table and
    PAPER.md Results for full numbers.
-9. **New, opened by Track C–F**: wire up before/after L2 probes on the Track D-zoom / E
-   checkpoints (does the fine-tuned model's own encoder change, or is the front-end
-   purely a prompt/input-side fix?) — not done, `train_track_d_force.py` /
-   `train_track_e_f0text.py` don't call `extract_activations.py --own-encoder` yet.
-10. **New, opened by Track C–F**: decide + write up the pitch-representation recommendation
-    for "our own model" (F0-as-text front-end for relative pitch, zoomed-reference-image
-    or equivalent for absolute tuning; raw learned embedding fusion not recommended at
-    this data scale) — numbers exist (commits `03c7bde`, `2418e80`), synthesis into
-    RESEARCH_PLAN.md's representation-requirements section (decision 11) still TODO.
+9. ~~Wire up before/after L2 probes on the Track D-zoom / E checkpoints~~ **RESOLVED
+    ANALYTICALLY 2026-07-31, no GPU run needed** — `build_lora_config()` (shared by
+    train_track_d/_force/_conclusive, train_track_e_f0text, train_track_f_pitchfuse) only
+    matches `target_modules` under `thinker.<lm_path>` (the LLM decoder); the regex never
+    reaches `audio_tower` or the vision tower, so those receive zero gradient in every
+    Track D/E/F run — the encoder's own representation is provably unchanged (bit-identical
+    forward pass pre/post fine-tune). Re-running `extract_activations.py --own-encoder`
+    against these checkpoints would just reproduce Track B's existing numbers. Confirms the
+    fix is entirely LLM-decoder/read-side, consistent with the substitution-not-hearing
+    mechanism check. Written up in RESEARCH_PLAN.md §12.6.
+10. ~~Decide + write up the pitch-representation recommendation~~ **DONE 2026-07-31** —
+    RESEARCH_PLAN.md §12.6 (new section) walks decision 11's 5 requirements against the
+    actual Track C–F results and states the recommendation (F0-as-text for relative pitch,
+    reference-anchored image for absolute tuning, no raw learned fusion at this data scale).
+11. **New (2026-07-31)**: Track F aug's leakage bug is now fixed in code — `generate_aug.py`
+    was sampling `base_midi` from the same 52–76 range as the frozen battery, which overlaps
+    the held-out eval band (base_midi ≥ ~71.13, per `train_track_c.py`'s quantile split); it
+    now caps training pitches at `MAX_TRAIN_MIDI = 70` (a 1-semitone margin below the
+    threshold, since cents stimuli detune up to 100¢). Regenerated locally on the laptop
+    (`scripts/generate_aug.py` + `musicprobe.pitch_feats --manifest aug_train_jobs.parquet` —
+    both pure CPU/numpy/librosa, no GPU needed) and both committed. **Still needs a GPU
+    rerun**: `python gpu/train_track_f_pitchfuse.py --aug` (3 seeds) to get a clean,
+    unconfounded read on whether the audio-only baseline's jump (cents 0.62→0.89 in the
+    leaky run) survives once training pitches can no longer leak into the held-out band.
+    The fusion-null verdict itself doesn't need re-running — it was a same-model paired
+    comparison, unaffected by this bug.
 
 ## Known gaps / honesty list
 - L1 key detection weak on minor progressions (naive Krumhansl) — use

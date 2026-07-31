@@ -28,6 +28,17 @@ CENTS_DELTAS = [5, 10, 25, 50, 100]
 TUNE_DETUNES = [0, 5, 10, 20, 35, 50]
 AUG_JOBS_PATH = MANIFEST_DIR / "aug_train_jobs.parquet"
 
+# The frozen v1 battery holds out the top pitch quintile (base_midi >= ~71.13,
+# see train_track_c.py's _held_out_mask) for cents_discrimination/tuning_judgment
+# eval. The original aug run (2026-07-30, commit 0aed136) sampled base_midi from
+# the SAME 52-76 range used at generation time, which overlaps that held-out
+# band -- eval-band pitches leaked into training. Capping aug sampling below the
+# threshold keeps this run's training pitches disjoint from held-out eval pitches.
+HELD_OUT_MIDI_THRESHOLD = 71.0  # generation-time margin below the measured 71.127 quantile
+MAX_TRAIN_MIDI = HELD_OUT_MIDI_THRESHOLD - 1.0  # extra margin: cents/tuning stimuli detune by
+# up to +/-1 semitone around base_midi, so a training example must sit at least
+# that far below the threshold to avoid ever synthesizing into the held-out band
+
 
 def _row(sid, task, audio_rel, truth, rng):
     return {"stimulus_id": sid, "task": task,
@@ -40,7 +51,7 @@ def gen_cents(per_cell, same_n, rng):
     rows = []
     cells = [(d, s) for d in CENTS_DELTAS for s in (+1, -1)] * per_cell + [(0, 0)] * same_n
     for i, (delta, sign) in enumerate(cells):
-        base_midi = rng.uniform(52, 76)
+        base_midi = rng.uniform(52, MAX_TRAIN_MIDI)
         f1 = midi_to_freq(base_midi)
         f2 = f1 * 2 ** (sign * delta / 1200)
         sid = f"cents_discrimination/augc_{i:05d}"
@@ -57,7 +68,7 @@ def gen_tuning(per_cell, rng):
     for detune in TUNE_DETUNES:
         n = per_cell * 3 if detune == 0 else per_cell     # keep 2AFC balanced
         for _ in range(n):
-            base = int(rng.integers(52, 77))
+            base = int(rng.integers(52, int(MAX_TRAIN_MIDI) + 1))
             sign = 1 if rng.random() < 0.5 else -1
             midi_exact = base + sign * detune / 100
             sid = f"tuning_judgment/augt_{i:05d}"

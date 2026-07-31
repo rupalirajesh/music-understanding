@@ -49,11 +49,29 @@ OpenAI API access) — 6 models is the final Track A roster unless that changes.
   letter with no audio present at all (e.g. AF3/Music-Flamingo pick "4 beats" on essentially
   every no-audio beats_per_bar item). This is hallucination, not graceful degradation, and
   it means their no-audio accuracy numbers reflect pure text-prior guessing.
-- **`beats_per_bar` looks structurally broken, not just hard**: 4 of 6 models show *negative*
-  audio_gain (worse with audio than without); the wrong-audio control (swap in an unrelated
-  clip) makes accuracy **better** on average across models than the correct clip (−15pp
-  drop from correct→wrong, i.e. inverted) — the only task where this happens. Do not trust
-  cross-model comparisons on this task until the MCQ distractor set / scoring is re-audited.
+- **`beats_per_bar` audit (2026-07-31, next action #2 closed)**: manually checked for a
+  scoring/parsing bug across all 6 models — there isn't one. `parse_response`/`is_correct`
+  apply the same generic open-ended substring match used by every other open-format task
+  (no beats_per_bar-specific code path to be broken), and the wrong-audio control follows
+  the same fixed 10% sampling fraction (`WRONG_AUDIO_FRACTION` in `jobs.py`) as all 13
+  tasks — beats_per_bar isn't singled out by the harness. What IS true: the wrong-audio
+  control for this task has only **n=14** items (10% of 126, same design fraction used
+  everywhere), and re-deriving the per-model deltas directly from `scored__*.parquet` shows
+  beats_per_bar's mean inversion (+0.156 across 7 models, i.e. wrong-audio scores 15.6pp
+  *higher* than correct-audio on average) sits at roughly 1 standard deviation of its own
+  noise (std 0.141, n=14/model) — directionally consistent (5/7 models positive) but not
+  the clean, distinctly-worse-than-every-other-task signal the original framing implied.
+  For comparison, `tempo_bpm`'s wrong-audio control (n=2/model) has std 0.35 — much noisier,
+  same design. **Revised verdict**: treat beats_per_bar as a *low-confidence, directionally
+  suggestive* flag (probably not a genuinely useful audio signal for most models — accuracy
+  never clears ~35% in any condition either) rather than "structurally broken" — that
+  phrase overclaimed what an n=14 control can support. Don't run a Track-C-style LoRA arm
+  on this task without first enlarging the wrong-audio sample (e.g. bump
+  `WRONG_AUDIO_FRACTION` for this task alone, or pool multiple paraphrases per stimulus)
+  to get a control precise enough to trust.
+- **`mode_id` audit (2026-07-31, same pass)**: same check, weaker signal — mean wrong-audio
+  delta +0.070 (std 0.169, n=14/model), well within noise, no action needed. No evidence of
+  a scoring bug here either.
 - **`progression_id` (chord progression naming): 0% open-ended accuracy in 4 of 6 models**
   (Gemini, AF3, Qwen3-Omni, Qwen2-Audio) — MCQ scores on this task are propped up entirely
   by 4-way multiple choice; treat only the open-format number as real.
