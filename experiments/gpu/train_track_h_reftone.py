@@ -83,10 +83,24 @@ class DropoutDataset:
         return _build_example(self.processor, self.exp_root, r.prompt, r.audio_path, r.ground_truth)
 
 
+def _assert_files_exist(jobs: pd.DataFrame, exp_root: Path):
+    """reftone_jobs.parquet is committed to git, but the WAV files it points at
+    are NOT (stimuli/ is gitignored). Loading an already-committed parquet
+    skips the _save() rebuild below, so without this check a missing-render
+    mistake fails deep inside a training or eval loop instead of immediately."""
+    missing = [p for p in jobs["audio_path"].dropna().unique() if not (exp_root / p).exists()]
+    if missing:
+        raise FileNotFoundError(
+            f"{len(missing)} reftone audio file(s) referenced by reftone_jobs.parquet "
+            f"don't exist on this box (e.g. {missing[0]}) — run "
+            "`python scripts/render_reftones.py` before training.")
+
+
 def _split(exp_root):
     if not REFTONE_JOBS_PATH.exists():
         _save(build_reftone_jobs())
     jobs = pd.read_parquet(REFTONE_JOBS_PATH)
+    _assert_files_exist(jobs, exp_root)
     man = pd.read_parquet(MANIFEST_PATH)[["stimulus_id", "factors"]]
     wf = jobs.merge(man, on="stimulus_id", how="left")
     ho = _held_out_mask(wf).values

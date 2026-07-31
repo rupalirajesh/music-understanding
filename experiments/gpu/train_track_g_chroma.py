@@ -93,12 +93,30 @@ class DropoutDataset:
                               use_audio=use_audio, use_image=use_image)
 
 
+def _assert_files_exist(jobs: pd.DataFrame, exp_root: Path):
+    """The jobs parquet is committed to git, but the WAV/PNG files it points at
+    are NOT (stimuli/ is gitignored, deliberately regenerable). Loading an
+    already-committed chroma_jobs.parquet skips the _save() rebuild below, so
+    without this check a missing-render mistake fails deep inside a training
+    or eval loop instead of immediately and clearly."""
+    missing = []
+    for col in ("audio_path", "image_path"):
+        paths = jobs[col].dropna().unique()
+        missing += [p for p in paths if not (exp_root / p).exists()]
+    if missing:
+        raise FileNotFoundError(
+            f"{len(missing)} chromagram file(s) referenced by chroma_jobs.parquet "
+            f"don't exist on this box (e.g. {missing[0]}) — run "
+            "`python scripts/render_chromagrams.py --tasks` before training.")
+
+
 def _split(exp_root):
     if not CHROMA_JOBS_PATH.exists():
         from musicprobe.image_jobs import _save
         _save(build_image_jobs(tasks=CHROMA_TASKS, image_path_fn=chromagram_path),
               out_path=CHROMA_JOBS_PATH)
     jobs = pd.read_parquet(CHROMA_JOBS_PATH)
+    _assert_files_exist(jobs, exp_root)
     man = pd.read_parquet(MANIFEST_PATH)[["stimulus_id", "factors"]]
     wf = jobs.merge(man, on="stimulus_id", how="left")
     ho = _held_out_mask(wf).values
