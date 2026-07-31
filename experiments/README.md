@@ -92,6 +92,24 @@ bash scripts/14_run_remaining_2.sh   # Track F aug rerun (leakage bug fixed
                                       # this box is better suited for than
                                       # the laptop (essentia has no wheel
                                       # for the laptop's Python/platform).
+
+bash scripts/15_run_track_g.sh       # NEW: Track G — chromagram front-end for
+                                      # the harmonic cluster (key_id/mode_id/
+                                      # chord_quality/interval_id), the first
+                                      # causal test on this cluster (Tracks
+                                      # C-F only ever targeted pitch/tuning).
+                                      # CPU groundwork (render + jobs) already
+                                      # run + committed; ready for the GPU
+                                      # steps (smoke-test first).
+
+bash scripts/16_run_track_h.sh       # NEW: Track H — in-audio reference tone
+                                      # for tuning_judgment: does mixing a
+                                      # reference pitch into the AUDIO itself
+                                      # (no image, no external tool) fix
+                                      # absolute tuning the way Track D-zoom's
+                                      # reference-line image did? CPU
+                                      # groundwork already run + committed;
+                                      # ready for the GPU steps.
 ```
 
 `11_run_track_c.sh` / `13_run_track_d.sh` below are now historical — kept

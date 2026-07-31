@@ -61,16 +61,22 @@ def _require_rendered(image_path: str) -> None:
             "scripts/12_render_spectrograms.py before building image jobs.")
 
 
-def build_image_jobs(tasks: tuple[str, ...] = DEFAULT_TASKS) -> pd.DataFrame:
+def build_image_jobs(tasks: tuple[str, ...] = DEFAULT_TASKS,
+                      image_path_fn=spectrogram_path,
+                      fixed_choice_tasks: tuple[str, ...] = FIXED_CHOICE_TASKS) -> pd.DataFrame:
+    """image_path_fn generalizes this beyond the spectrogram (Track D Phase 1):
+    any function audio_path -> image_path works (see chromagram.chromagram_path
+    for Track G's harmonic-task front-end) as long as its images are already
+    rendered (this module reads paths, it never renders)."""
     man = load_manifest(list(tasks))
     full = load_manifest()                                # partners: full battery
     all_paths = full["audio_path"].tolist()
-    all_images = [spectrogram_path(p) for p in all_paths]
+    all_images = [image_path_fn(p) for p in all_paths]
 
     rows = []
     for row in man.itertuples():
-        fmt = "open" if row.task in FIXED_CHOICE_TASKS else "mcq"
-        correct_image = spectrogram_path(row.audio_path)
+        fmt = "open" if row.task in fixed_choice_tasks else "mcq"
+        correct_image = image_path_fn(row.audio_path)
         _require_rendered(correct_image)
 
         for image_condition in IMAGE_CONDITIONS:
@@ -121,10 +127,10 @@ def build_image_jobs(tasks: tuple[str, ...] = DEFAULT_TASKS) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def _save(df: pd.DataFrame) -> pd.DataFrame:
-    IMAGE_JOBS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    df.to_parquet(IMAGE_JOBS_PATH, index=False)
-    print(f"[image_jobs] {len(df)} jobs across {df['task'].nunique()} tasks "
+def _save(df: pd.DataFrame, out_path: Path = IMAGE_JOBS_PATH) -> pd.DataFrame:
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    df.to_parquet(out_path, index=False)
+    print(f"[image_jobs] {len(df)} jobs across {df['task'].nunique()} tasks -> {out_path} "
           f"({(df.image_condition == 'image').sum()} image, "
           f"{(df.image_condition == 'no_image').sum()} no-image, "
           f"{(df.image_condition == 'wrong_image').sum()} wrong-image)")
@@ -132,4 +138,27 @@ def _save(df: pd.DataFrame) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    _save(build_image_jobs())
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--kind", default="spectrogram", choices=["spectrogram", "chromagram"],
+                    help="which image_path_fn to build jobs against")
+    ap.add_argument("--tasks", nargs="*", default=None,
+                    help="defaults to DEFAULT_TASKS for spectrogram, the harmonic "
+                         "cluster (key_id/mode_id/chord_quality/interval_id) for chromagram")
+    ap.add_argument("--out", default=None, help="defaults to manifests/{kind}_jobs.parquet")
+    args = ap.parse_args()
+
+    if args.kind == "chromagram":
+        from .chromagram import chromagram_path
+        path_fn = chromagram_path
+        tasks = tuple(args.tasks) if args.tasks else \
+            ("key_id", "mode_id", "chord_quality", "interval_id")
+        # these 4 tasks are MCQ-primary by design (not in FIXED_CHOICE_TASKS) --
+        # no change needed to fixed_choice_tasks for this kind.
+        out = Path(args.out) if args.out else MANIFEST_DIR / "chroma_jobs.parquet"
+    else:
+        path_fn = spectrogram_path
+        tasks = tuple(args.tasks) if args.tasks else DEFAULT_TASKS
+        out = Path(args.out) if args.out else IMAGE_JOBS_PATH
+
+    _save(build_image_jobs(tasks=tasks, image_path_fn=path_fn), out_path=out)

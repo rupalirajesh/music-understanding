@@ -162,6 +162,14 @@ predicted these four tasks were alignment-fixable — info decodable from the en
 reaching the readout. Tracks C–F test that causally, focused on the two hardest cells
 (the microtone pair). Full numbers: `experiments/results/trackA/track{c,d,e,f}*`.
 
+**Set up, not yet run (2026-07-31)**: Tracks G (chromagram front-end for the harmonic
+cluster — `key_id`/`mode_id`/`chord_quality`/`interval_id`, never targeted by C–F) and H
+(in-audio reference tone for `tuning_judgment` — tests whether Track D-zoom's "needs an
+explicit reference" finding for absolute tuning survives when delivered in-audio instead
+of switching to vision). CPU-side groundwork done and verified; GPU steps pending —
+`scripts/15_run_track_g.sh` / `scripts/16_run_track_h.sh`. Numbers below don't include
+these yet.
+
 - **Track C — AF3, 3-arm LoRA (`llm_only` / `llm_encoder` / `control`), matched-baseline
   delta**: `octave_id` (+0.50 / +0.59) and `note_count` (+0.43 / +0.40) confirm the
   prediction — real, causally-recovered readout-alignment gaps. `tuning_judgment`

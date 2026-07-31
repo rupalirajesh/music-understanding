@@ -51,6 +51,8 @@ Last updated: 2026-07-29. Update this whenever anything changes hands.
 | Track E (pitch-tracker output as text in the prompt, audio-only) | H100 box | done 2026-07-29 (commit `03c7bde`) — cents 0.62→0.92 (p<1e-4), scalable/deployable (no image needed); tuning ns (text has no reference point) |
 | Track F (learned pitch-stream fusion: trainable projector injects F0 features into embedding space) | H100 box | done 2026-07-29 (commit `2418e80`) — null; injection verified to reach the model (logit shift scales with pitch value) but behaviorally ignored — likely a data-size limit (~348 training examples to learn a new modality interface from scratch) |
 | MusicGen battery | H100 box | done — tempo/key/register scored; meter/mode deliberately left for manual scoring |
+| Track G (chromagram front-end for key_id/mode_id/chord_quality/interval_id — first causal test on the harmonic cluster; Tracks C-F only ever targeted pitch/tuning) | H100 box | **set up 2026-07-31, not yet run.** CPU groundwork done + committed: 664 chromagram PNGs rendered (whole battery, for a valid wrong-image draw pool), `manifests/chroma_jobs.parquet` built (1760 rows), held-out split sanity-checked (287 train / 612 held-out job rows, non-empty for all 4 tasks). `scripts/15_run_track_g.sh` — smoke-test first. |
+| Track H (in-audio reference tone for tuning_judgment — tests whether Track D-zoom's "needs an explicit reference" finding works delivered in-AUDIO instead of switching modality) | H100 box | **set up 2026-07-31, not yet run.** CPU groundwork done + committed: 120 stimuli x 2 new WAV variants (reftone/wrong_reftone) rendered, `manifests/reftone_jobs.parquet` built (360 rows), held-out split sanity-checked (93 train / 27 held-out stimuli, no overlap). `scripts/16_run_track_h.sh` — smoke-test first. |
 | AF3 / Music Flamingo loaders | code | done, verified working |
 | Qwen2-Audio published-number replication | — | still TODO; pick exact benchmark subset first |
 | Analysis pass on all of the above | laptop | first pass done 2026-07-22 — see PAPER.md Results; dashboard + plots in `experiments/results/trackB/analysis/`; attention + microtone graphs in `experiments/results/trackB/attention/attention_graph.png` and `.../probes/microtone_probe_graph.png` (2026-07-25) |
@@ -90,8 +92,20 @@ Last updated: 2026-07-29. Update this whenever anything changes hands.
     feature and hoping a small adapter learns to use it does not work; reusing an
     existing, pretrained interface (numbers, images) does. Treat this as the working
     default for any future modality-injection experiment, not just pitch.
+13. Tracks G/H (2026-07-31, set up, not yet run): two more front-end candidates in the
+    same spirit as C-F, chosen to extend into a cluster and a delivery mechanism neither
+    C-F touched. Track G asks whether the "give it a rendered chart" idea (Track D)
+    generalizes past pitch to the harmonic cluster (`key_id`/`mode_id`/`chord_quality`/
+    `interval_id`) via a chromagram (12 pitch-class rows x time — the harmonic analogue of
+    the F0-contour). Track H asks whether Track D-zoom's "needs an explicit reference"
+    finding for absolute tuning can be delivered in-AUDIO (mix a reference tone into the
+    clip itself) rather than switching modality to vision at all — cheaper than rendering
+    an image if it works, and a genuinely different test of the same underlying claim.
+    Both reuse the established discipline from the start (dropout-style training so eval
+    conditions stay in-distribution, wrong-condition mechanism controls, held-out splits,
+    paired McNemar over 3 seeds) rather than repeating Track D Phase 1's single-arm mistake.
 
-## Next actions (ordered, updated 2026-07-29)
+## Next actions (ordered, updated 2026-07-31)
 GPT-4o-audio removed from this list entirely 2026-07-25 — no OpenAI API access, out of
 scope. 6 models (Qwen2-Audio, Qwen2.5-Omni, Qwen3-Omni-30B, AF3, Music-Flamingo,
 Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
@@ -189,6 +203,18 @@ Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
     leaky run) survives once training pitches can no longer leak into the held-out band.
     The fusion-null verdict itself doesn't need re-running — it was a same-model paired
     comparison, unaffected by this bug.
+12. **New (2026-07-31)**: Tracks G (chromagram, harmonic cluster) and H (in-audio
+    reference tone, tuning_judgment) are set up and ready for the H100 GPU steps —
+    `scripts/15_run_track_g.sh` / `scripts/16_run_track_h.sh`. CPU-side groundwork (stimulus/
+    image rendering, job-hygiene layers, held-out splits) is done, committed, and verified
+    locally: Track G's 1760-row `chroma_jobs.parquet` gives 287 train / 612 held-out job
+    rows (non-empty across all 4 tasks); Track H's 360-row `reftone_jobs.parquet` gives 93
+    train / 27 held-out stimuli with zero train/held overlap. Both scripts smoke-test first,
+    same discipline as every other `gpu/` LoRA script — the model-loading/PEFT paths are
+    reused verbatim from Track D/C (`load_qwen_omni_for_training`, `build_lora_config`,
+    `_held_out_mask`), so they inherit those scripts' hardware verification, but the new
+    dataset-construction code (chromagram rendering, reftone synthesis, job hygiene) is
+    unverified beyond the CPU-side checks already run.
 
 ## Known gaps / honesty list
 - L1 key detection weak on minor progressions (naive Krumhansl) — use
