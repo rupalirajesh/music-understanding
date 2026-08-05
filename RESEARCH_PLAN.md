@@ -4,7 +4,7 @@ A deep-dive study of how audio-language models represent, process, and reason ab
 across all genres — with the goal of building the knowledge base to train a music
 understanding model.
 
-Last updated: 2026-07-24 (added Track D, §12)
+Last updated: 2026-08-05 (Tracks G/H results — chromagram + in-audio reference tone, both null; H7 resolved, §12)
 
 ---
 
@@ -917,8 +917,28 @@ hypothesis, not the analysis.*
   shortlist tasks, *and* the wrong-image control shows a real drop (not near-zero, the way
   `beats_per_bar`'s wrong-audio delta was) — if the control is flat, the model learned to
   read the image and ignore the audio, which is a null result dressed as a positive one.
-  — **Untested**: Track D not started; this hypothesis is why its hygiene layer
-  (`image`/`no_image`/`wrong_image`) is non-negotiable, same reasoning as §0.6/§4.
+  — **Resolved, mixed (Tracks D/G, 2026-07-26 to 08-05)**: a plain spectrogram (same
+  abstraction level as audio) was a precise null on the pitch/tuning shortlist — the
+  model ignored it even when forced to rely on it (Track D conclusive/force). What
+  worked was neither a same-level spectrogram nor answer-leaking sheet music, but a
+  *zoomed, reference-annotated* chart (Track D-zoom: cents 0.55→0.94, tuning 0.53→0.89)
+  — a third category H7 didn't anticipate: same-level information, but rendered with an
+  explicit, non-leaking annotation the model can read a position off of. Track G tested
+  only the *first* of Track D's stages on the harmonic cluster — a flat, unzoomed,
+  unannotated chromagram, force-trained (modality dropout, same as `train_track_d_force.py`)
+  — and it was a clean null on `key_id`/`mode_id`/`chord_quality`/`interval_id` (all 95%
+  CIs include 0), with the mechanism check showing the dropout training didn't even force
+  reliance the way Track D's force stage did (wrong-chromagram ≈ no-chromagram on 3 of 4
+  tasks, unlike Track D force's wrong-image-craters-performance result). **The zoom/
+  annotation step that actually rescued pitch has NOT been tried on harmony** — don't read
+  Track G as ruling out charts for this cluster the way the full D→D-zoom arc ruled things
+  in for pitch; it only rules out the crude version. It's also a genuinely harder design
+  problem here: D-zoom's reference line marked a task-*independent* value (the 12-TET
+  in-tune grid), not the answer; the harmonic-cluster analogue (e.g. marking the tonic
+  pitch-class row for `key_id`) risks marking the answer itself — the same leakage trap
+  §12.2 already flagged for rendered sheet music. See PROJECT_STATE next action 13 for the
+  ordered follow-up plan (zoom first, since it's leakage-safe; annotation only where a
+  non-leaking design exists).
 
 ---
 
@@ -1089,8 +1109,11 @@ above, pitch only:
   ("current pitch: F#4 +12 cents") and a labeled chart are both legible to a person, unlike
   the rejected raw-embedding-fusion route (Track F): a trainable projector injecting a raw
   F0 feature into embedding space is demonstrably NOT human-readable and, separately, didn't
-  work behaviorally even at 9x training data (Track F aug, `0aed136` — with a leakage
-  caveat on the aug run's absolute audio-only numbers, not on the fusion-null verdict itself).
+  work behaviorally even at 9x training data (Track F aug — the original run, `0aed136`, had
+  a leakage bug in training-pitch sampling; fixed and rerun 2026-08-05, commits `8050378`/
+  `b54c4bf`. Corrected audio-only-on-held-out: cents 0.62→0.74 clean (real but smaller gain
+  than the leaky 0.89), tuning 0.51→0.62 clean, near the 2AFC majority rate — not evidence
+  of learned absolute-tuning perception. Fusion-null verdict itself unaffected either way).
 - **Requirement 5 (genre-universal, continuous pitch)**: both surviving front-ends
   (F0-as-text, F0-contour-plus-reference-line) are continuous-valued by construction — cents
   offsets and a contour line have no fixed-grid assumption, unlike staff notation/MIDI. This
@@ -1107,6 +1130,81 @@ value — a scale-anchored feature, not a sharper image, was the actual missing 
 space at this project's data scale (~348 examples) — reuse a pretrained interface (numbers,
 labeled charts) instead; Track F suggests this generalizes as a rule for any future
 modality-injection experiment, not just pitch.
+
+### 12.7 Tracks G/H (2026-08-05) — does the reference-line fix generalize?
+
+Two follow-on tests of how far the D-zoom finding travels, run with the same paired
+3-seed McNemar + wrong-condition mechanism-control discipline as C–F (no single-arm
+Phase-1-style mistakes).
+
+- **Track G — chromagram front-end for the harmonic cluster** (`key_id`/`mode_id`/
+  `chord_quality`/`interval_id`, the one task group Tracks C–F never touched): a 12
+  pitch-class × time chromagram is the harmonic analogue of the F0-contour that worked
+  for pitch. **Clean null on all 4 tasks** — every 95% CI includes 0 (key_id Δ=−0.07,
+  mode_id Δ=+0.04, chord_quality Δ=+0.13 n=72, interval_id Δ=+0.03; p≥.11 throughout).
+  Mechanism controls: a wrong chromagram behaves like no chromagram on every task (the
+  rare nudge isn't content-driven); wrong audio + correct chromagram only hurts `key_id`
+  (p=.02) — the other three tasks show no evidence either way of leaning on audio vs image.
+- **Track H — in-audio reference tone for `tuning_judgment`**: mixes a second tone into
+  the clip instead of switching to a visual chart, testing whether D-zoom's fix is about
+  "having a reference" in general or specifically about *reading an annotated position*.
+  **Flat null** — reftone vs plain Δ=+0.01 (p=1.0); and the mechanism control is the
+  decisive part: a *wrong* reftone (mistuned ±1–4 semitones) doesn't mislead the model any
+  more than a correct one does (Δ=+0.02 vs plain, p=.82) — both ≈0.53, indistinguishable
+  from no reference. The model isn't attempting a target-vs-reference comparison in audio
+  at all.
+
+**Updated reading**: the D-zoom fix is narrower than H7 originally framed it, on what's
+been tested so far. It isn't "any same-level second modality" (ruled out by D conclusive/
+force) and it isn't "any explicit reference, any channel" (ruled out by Track H, which
+tested an audio reference tone specifically). Track G rules out one more thing — a flat,
+unzoomed, unannotated chromagram — but **not** "any rendered chart in general": the zoom
+and annotation ingredients that were both necessary for D-zoom (Track D force alone, zoom's
+resolution-only precursor, didn't fix pitch either — see §12.6) were never combined and
+tried on the harmonic cluster. So the honest current scope is: same-level-flat-image is
+ruled out for both clusters; zoomed/annotated is confirmed necessary+sufficient for pitch
+and simply untested for harmony. The harmonic cluster (`key_id`/`mode_id`/`chord_quality`/
+`interval_id`) is the largest task group with zero *working* causal fix, but it also isn't
+a clean "perception is entirely missing" case — the existing L2 own-encoder probe
+(2026-07-24, already run, see PROJECT_STATE next action 13 for the numbers) finds modest
+above-chance signal for 3 of the 4 tasks (`key_id` ~5x chance, `chord_quality`/`interval_id`
+~2x chance) and only `mode_id` sits at essentially pure chance — and the L1 DSP floor
+(2026-08-05, `l1_baselines.py`, pure signal processing, no learning at all) now agrees:
+`mode_id` is the weakest of the six newly-covered tasks at only 25% (vs ~8% chance),
+while `chord_quality`/`interval_id`/`key_id` all sit well above chance (54–80%). Three
+independent methods (L1 DSP, L2 probe, L3 behavioral) now converge on `mode_id` being the
+hardest task in the battery — worth weighting expectations accordingly across the sequence
+below, and worth revisiting the known-gap note that mode melodies are random diatonic
+walks rather than musician-composed (a stimulus-quality confound, not just a model one).
+
+PROJECT_STATE next action 13 lays out the current follow-up plan, a fixed sequential
+pipeline (Rupali's ordering, 2026-08-05, superseding the earlier I/J/K sketch): peak-picked
+chroma → zoomed peak-picked chroma → line graph (multi-pitch trajectory, generalizing the
+F0-contour that worked for pitch to polyphonic audio-derived content) → zoomed line graph →
+piano-roll (Tracks L/M/N/O/P) — train and analyze each in order, stop at the first real
+win. A text-based hint and an MCQ-template-image were both considered and explicitly ruled
+out this round: the text hint would just repeat Track E's already-diagnosed
+substitution-not-hearing pattern on a reference-giving idea already null'd once in-audio
+(Track H); the MCQ-image assumes a question format the project doesn't want to depend on
+long-term (the goal is open-ended, non-MCQ questions eventually).
+
+**Two directions flagged as worth pursuing separately from the front-end sequence above**
+(2026-08-05): (1) a **tonal-centroid / Tonnetz representation** — `librosa.feature.tonnetz`
+(already in the venv) projects chroma onto a 6-D space (Harte, Sandler & Gasser 2006,
+"Detecting Harmonic Change in Musical Audio") where harmonically-close relations (fifths,
+thirds) map to small Euclidean distances; prototyped on a real `chord_quality` stimulus
+2026-08-05 and confirmed it computes cleanly from audio (no leakage — same `chroma_cqt`
+input as Track G, just a different linear projection). A genuinely different geometry from
+anything tried so far, not just a resized/thresholded chromagram, though a quick n=3
+sanity check on raw per-chord vectors didn't show obvious quality separation by eye — that's
+expected from an unweighted single-frame average, not evidence against it; the real test is
+whether training lets the model use the trajectory, same bar as everything else. (2) the
+**auxiliary self-transcription training objective already specced in §12.3** but never run
+(blocked on the transcription-format open question, `RUPALI_READ_THIS.md` §5) — this is the
+one intervention in the whole project that asks the model to *generate* its own intermediate
+representation during training rather than being handed one externally, which is the
+long-run goal every front-end track here is really scaffolding toward. Resolving the format
+question is the actual unblock, not more front-end iterations.
 
 **§12.2 point 4 (own-encoder probe before/after) — resolved analytically, no GPU run
 needed**: Tracks D/E/F's LoRA config (`train_track_d.py:build_lora_config`, reused by

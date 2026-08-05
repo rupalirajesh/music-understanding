@@ -1,6 +1,6 @@
 # PROJECT STATE — the everything doc (pick-up-where-we-left-off)
 
-Last updated: 2026-07-29. Update this whenever anything changes hands.
+Last updated: 2026-08-05. Update this whenever anything changes hands.
 
 ## Machines & workflow
 - **Laptop** (no GPU): stimulus synthesis, API evals, scoring/analysis,
@@ -51,8 +51,9 @@ Last updated: 2026-07-29. Update this whenever anything changes hands.
 | Track E (pitch-tracker output as text in the prompt, audio-only) | H100 box | done 2026-07-29 (commit `03c7bde`) — cents 0.62→0.92 (p<1e-4), scalable/deployable (no image needed); tuning ns (text has no reference point) |
 | Track F (learned pitch-stream fusion: trainable projector injects F0 features into embedding space) | H100 box | done 2026-07-29 (commit `2418e80`) — null; injection verified to reach the model (logit shift scales with pitch value) but behaviorally ignored — likely a data-size limit (~348 training examples to learn a new modality interface from scratch) |
 | MusicGen battery | H100 box | done — tempo/key/register scored; meter/mode deliberately left for manual scoring |
-| Track G (chromagram front-end for key_id/mode_id/chord_quality/interval_id — first causal test on the harmonic cluster; Tracks C-F only ever targeted pitch/tuning) | H100 box | **set up 2026-07-31, not yet run.** CPU groundwork done + committed: 664 chromagram PNGs rendered (whole battery, for a valid wrong-image draw pool), `manifests/chroma_jobs.parquet` built (1760 rows), held-out split sanity-checked (287 train / 612 held-out job rows, non-empty for all 4 tasks). `scripts/15_run_track_g.sh` — smoke-test first. |
-| Track H (in-audio reference tone for tuning_judgment — tests whether Track D-zoom's "needs an explicit reference" finding works delivered in-AUDIO instead of switching modality) | H100 box | **set up 2026-07-31, not yet run.** CPU groundwork done + committed: 120 stimuli x 2 new WAV variants (reftone/wrong_reftone) rendered, `manifests/reftone_jobs.parquet` built (360 rows), held-out split sanity-checked (93 train / 27 held-out stimuli, no overlap). `scripts/16_run_track_h.sh` — smoke-test first. |
+| Track G (chromagram front-end for key_id/mode_id/chord_quality/interval_id — first causal test on the harmonic cluster; Tracks C-F only ever targeted pitch/tuning) | H100 box | **done 2026-08-05** (commit `8050378`, Sethu) — null on all 4 tasks (3-seed paired McNemar): key_id Δ=−0.07 (p=.26), mode_id Δ=+0.04 (p=.57), chord_quality Δ=+0.13 (p=.11, n=72), interval_id Δ=+0.03 (p=.64); all CIs include 0. Mechanism controls: wrong-chromagram ≈ no-chromagram everywhere (content not read); wrong-audio+chromagram only craters key_id (p=.02). Note: this tested ONE variant — a force-style-trained but flat, unannotated, unzoomed chromagram — the analogue of Track D's early "conclusive/force" stage, not the full iteration that eventually found D-zoom. The zoomed/annotated step that actually rescued pitch has not been tried for harmony yet; see next action 13. |
+| Track H (in-audio reference tone for tuning_judgment — tests whether Track D-zoom's "needs an explicit reference" finding works delivered in-AUDIO instead of switching modality) | H100 box | **done 2026-08-05** (commit `8050378`, Sethu) — flat null: reftone vs plain Δ=+0.01 (p=1.0); wrong_reftone vs plain Δ=+0.02 (p=.82) — a WRONG reference doesn't mislead any more than a correct one, so the model isn't comparing target-to-reference in audio at all. D-zoom's reference fix is visual-channel-specific, not a general "give it a reference" effect. |
+| Track F-aug leakage fix (rerun of the 9x-data pitch-fusion aug run) | H100 box | **done 2026-08-05** (commits `8050378`+`b54c4bf`, Sethu) — `generate_aug.py` was sampling training pitches into the held-out eval band; capped at `MAX_TRAIN_MIDI=70` and reran. Corrected audio-only-on-held-out: cents 0.62→0.78→**0.74** (clean, vs 0.89 leaky) — about half the leaky jump was real. tuning 0.51→0.68→**0.62** (clean, vs 0.83 leaky) — nearly halved, now ≈ 2AFC majority rate, NOT evidence of learned absolute-tuning perception. Fusion-null verdict unchanged (model still ignores the fused stream). |
 | AF3 / Music Flamingo loaders | code | done, verified working |
 | Qwen2-Audio published-number replication | — | still TODO; pick exact benchmark subset first |
 | Analysis pass on all of the above | laptop | first pass done 2026-07-22 — see PAPER.md Results; dashboard + plots in `experiments/results/trackB/analysis/`; attention + microtone graphs in `experiments/results/trackB/attention/attention_graph.png` and `.../probes/microtone_probe_graph.png` (2026-07-25) |
@@ -92,20 +93,23 @@ Last updated: 2026-07-29. Update this whenever anything changes hands.
     feature and hoping a small adapter learns to use it does not work; reusing an
     existing, pretrained interface (numbers, images) does. Treat this as the working
     default for any future modality-injection experiment, not just pitch.
-13. Tracks G/H (2026-07-31, set up, not yet run): two more front-end candidates in the
-    same spirit as C-F, chosen to extend into a cluster and a delivery mechanism neither
-    C-F touched. Track G asks whether the "give it a rendered chart" idea (Track D)
+13. Tracks G/H (2026-08-05, run and landed): two more front-end candidates in the same
+    spirit as C-F, chosen to extend into a cluster and a delivery mechanism neither C-F
+    touched. Track G asked whether the "give it a rendered chart" idea (Track D)
     generalizes past pitch to the harmonic cluster (`key_id`/`mode_id`/`chord_quality`/
     `interval_id`) via a chromagram (12 pitch-class rows x time — the harmonic analogue of
-    the F0-contour). Track H asks whether Track D-zoom's "needs an explicit reference"
+    the F0-contour). Track H asked whether Track D-zoom's "needs an explicit reference"
     finding for absolute tuning can be delivered in-AUDIO (mix a reference tone into the
-    clip itself) rather than switching modality to vision at all — cheaper than rendering
-    an image if it works, and a genuinely different test of the same underlying claim.
-    Both reuse the established discipline from the start (dropout-style training so eval
-    conditions stay in-distribution, wrong-condition mechanism controls, held-out splits,
-    paired McNemar over 3 seeds) rather than repeating Track D Phase 1's single-arm mistake.
+    clip itself) rather than switching modality to vision. **Both came back null** — see
+    Status table for numbers. Reading: the D-zoom reference-line fix does not generalize
+    into "any chart helps" or "any reference helps" — it's specific to an annotated visual
+    position for pitch. Harmony (key/mode/chord/interval) remains an open gap with no
+    working front-end tried yet. Both runs reused the established discipline (dropout-style
+    training so eval conditions stay in-distribution, wrong-condition mechanism controls,
+    held-out splits, paired McNemar over 3 seeds) rather than repeating Track D Phase 1's
+    single-arm mistake, so the null results are trustworthy, not a methodology artifact.
 
-## Next actions (ordered, updated 2026-07-31)
+## Next actions (ordered, updated 2026-08-05)
 GPT-4o-audio removed from this list entirely 2026-07-25 — no OpenAI API access, out of
 scope. 6 models (Qwen2-Audio, Qwen2.5-Omni, Qwen3-Omni-30B, AF3, Music-Flamingo,
 Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
@@ -130,35 +134,51 @@ Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
    comparable to, not clearly beating, the generic MERT/Whisper/CLAP baselines. Reading
    unchanged from before the re-probe: behavioral success on these 4 tasks is more likely
    priors than a richer internal representation. No further action.
-4. Run the L1 DSP floor (`musicprobe.l1_baselines`, or essentia/madmom for a stronger
-   key/beat detector) on the same stimuli so every task sits on the full L1→L2→L3 ladder.
-   **Scoped precisely 2026-07-31**: `l1_baselines.run()` currently only covers 4/13 tasks
-   (`pitch_note_id`, `cents_discrimination`, `tempo_bpm`, `key_id`) — `beats_per_bar`,
-   `note_count`, `octave_id`, `tuning_judgment`, `instrument_id`, `interval_id`,
-   `chord_quality`, `mode_id`, `progression_id` have **no L1 baseline at all** yet, not just
-   a weak one. Notably `beats_per_bar` (the task flagged in item 2 above) has never had an
-   L1 check — an essentia `RhythmExtractor2013` beat-tracking floor on the same stimuli
-   would directly test whether the ground-truth beat/meter labels are even DSP-recoverable,
-   which would settle whether the wrong-audio anomaly is a task-difficulty issue or a label
-   issue. Tried `pip install essentia` in the laptop venv (2026-07-31): **fails to build**
-   (no prebuilt wheel for this Python/platform combo, source build errors in setuptools) —
-   confirms the existing plan's call to do this on the H100/Linux box, not the laptop.
-   Did not attempt writing essentia-based key/beat/chord detectors blind (9 tasks, no local
-   way to verify correctness) — this is real DSP-implementation work best done iteratively
-   where essentia actually installs, not guessed from the laptop.
-5. Qwen2-Audio published-number replication (harness validation). **Benchmark decision made
-   2026-07-31**: use MuChoMusic (ISMIR'24, arxiv 2408.01337, 1.1K validated MCQs), not
-   MMAU-music — MuChoMusic is a single well-defined public set (vs MMAU-music being one
-   subscore inside the larger multi-domain MMAU benchmark, arxiv 2410.19168, with less
-   clarity on exact subset reconstruction), and it's the benchmark this project's own
-   text-prior/no-audio-control methodology is explicitly modeled after (RESEARCH_PLAN.md
-   §0.6), making it the more meaningful fidelity check. Could NOT confirm Qwen2-Audio's
-   exact published MuChoMusic number via web search with confidence — search results
-   surfaced a 51.4% figure for Qwen-**Audio** (the v1 predecessor), not Qwen2-Audio, and a
-   0.692 MMAU-Music figure for Qwen2.5-**Omni**, neither the right model. Pull the real
-   number directly from the MuChoMusic paper's model-comparison table (arxiv 2408.01337) or
-   the Qwen2-Audio technical report (arxiv 2407.10759) before running the replication —
-   don't trust a secondhand number. Still needs the actual eval run (H100/API).
+4. ~~Run the L1 DSP floor~~ **PARTIALLY DONE 2026-08-05** (laptop, pure numpy/scipy, no
+   essentia needed — `musicprobe/l1_baselines.py`) — extended from 4/13 to 10/13 tasks.
+   New estimators: `octave_estimate` (reuses `f0_autocorr`), `tuning_estimate` (nearest-
+   12-TET-grid distance, 25¢ threshold), `note_count_estimate`/`interval_estimate`
+   (FFT peak-picking with greedy harmonic-series rejection), `chord_quality_estimate`/
+   `mode_estimate` (extend `key_estimate`'s Krumhansl-correlation method to CHORDS'/MODES'
+   binary templates x 12 roots/tonics). Actual run, `python -m musicprobe.l1_baselines`:
+   | task | L1 acc | n | chance | note |
+   |---|---|---|---|---|
+   | octave_id | **1.00** | 72 | — | trivial from audio; matches Track C's LoRA-fixable verdict |
+   | cents_discrimination | 1.00 | 180 | — | (existing) |
+   | pitch_note_id | 1.00 | 72 | — | (existing) |
+   | tempo_bpm | 0.82 | 60 | — | (existing) |
+   | key_id | 0.80 | 96 | ~4% (24-way) | (existing) |
+   | chord_quality | 0.60 | 96 | 12.5% (8-way) | strong recoverable signal |
+   | tuning_judgment | 0.63 | 120 | 50% | above chance but noisy — naive threshold, not tuned |
+   | interval_id | 0.54 | 144 | ~8% (12-way) | recoverable, well above chance |
+   | note_count | 0.40 | 100 | ~20-30%ish | noisy heuristic, real headroom, not a hard ceiling |
+   | mode_id | **0.25** | 104 | ~8% (13-way) | weakest of the six — barely 3x chance, and this now lines up with L2 (own-encoder probe also barely-above-chance for mode_id) AND L3 (behavioral ~chance) — three independent methods agree mode_id is the hardest task in the battery. Corroborates the existing known-gap note that mode melodies are random diatonic walks, not musician-composed — may be a stimulus-quality issue as much as a model one. |
+   Still not covered: `beats_per_bar`, `progression_id` (need real beat/chord-sequence
+   tracking, autocorrelation-only isn't trustworthy as a floor), `instrument_id` (already
+   near-ceiling behaviorally, L1 floor isn't the interesting question there) — still
+   genuinely blocked on essentia/madmom on the H100/Linux box (confirmed 2026-07-31:
+   `pip install essentia` has no wheel for the laptop's Python/platform).
+5. ~~Qwen2-Audio published-number replication~~ **RESOLVED 2026-08-05, still needs the GPU
+   run**: confirmed via primary source (fetched the actual MuChoMusic paper, arxiv
+   2408.01337, Table 3 — not a secondhand summary) that it evaluates **Qwen-Audio v1**
+   (arxiv 2311.07919) at 51.4% overall / 51.1% knowledge / 51.0% reasoning / 89.7% IFR.
+   **It does not evaluate Qwen2-Audio at all** — checked a 2025 follow-up (arxiv 2504.00369)
+   that references Qwen2-Audio too; it only cites v1's number secondhand, no standalone v2
+   result anywhere. So there is no published Qwen2-Audio MuChoMusic number to replicate —
+   the original next-action framing was chasing a number that doesn't exist. Correct fix:
+   point the harness at **Qwen-Audio v1** (`Qwen/Qwen-Audio-Chat` on HF) instead, since
+   that's the only model with a citable ground truth for this benchmark; this is a one-off
+   harness sanity check, not a Track A roster change (Qwen2-Audio stays as-is in Track A).
+   Scaffold written: `gpu/eval_muchomusic.py` (dataset `mulab-mir/muchomusic` via HF
+   `datasets`). **Unverified** — `datasets`/`huggingface_hub` aren't in the laptop venv, so
+   this hasn't executed end to end; field names are a best guess from the dataset card, not
+   confirmed against the real schema.
+   **Deprioritized 2026-08-05 (Rupali's call)**: not worth running as originally scoped.
+   The only way this buys real harness-validation value is against Qwen-Audio v1
+   specifically (the one model with a citable number) — running it against Qwen2-Audio,
+   Qwen3-Omni, or any other roster model would produce a number with nothing to check it
+   against, i.e. not actually a validation. Script is left in place in case a v1 run is
+   ever wanted as a cheap one-off sanity check; not queued as active work.
 6. Ladder arm (battery v2) — L1 features into prompts at one-abstraction-below-answer,
    features-only + few-shot variants; keep v1 job_ids untouched. Deferred behind 1–5.
    Note (2026-07-29): Tracks D-zoom/E are effectively a one-task preview of this arm
@@ -191,30 +211,166 @@ Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
     RESEARCH_PLAN.md §12.6 (new section) walks decision 11's 5 requirements against the
     actual Track C–F results and states the recommendation (F0-as-text for relative pitch,
     reference-anchored image for absolute tuning, no raw learned fusion at this data scale).
-11. **New (2026-07-31)**: Track F aug's leakage bug is now fixed in code — `generate_aug.py`
-    was sampling `base_midi` from the same 52–76 range as the frozen battery, which overlaps
-    the held-out eval band (base_midi ≥ ~71.13, per `train_track_c.py`'s quantile split); it
-    now caps training pitches at `MAX_TRAIN_MIDI = 70` (a 1-semitone margin below the
-    threshold, since cents stimuli detune up to 100¢). Regenerated locally on the laptop
-    (`scripts/generate_aug.py` + `musicprobe.pitch_feats --manifest aug_train_jobs.parquet` —
-    both pure CPU/numpy/librosa, no GPU needed) and both committed. **Still needs a GPU
-    rerun**: `python gpu/train_track_f_pitchfuse.py --aug` (3 seeds) to get a clean,
-    unconfounded read on whether the audio-only baseline's jump (cents 0.62→0.89 in the
-    leaky run) survives once training pitches can no longer leak into the held-out band.
-    The fusion-null verdict itself doesn't need re-running — it was a same-model paired
-    comparison, unaffected by this bug.
-12. **New (2026-07-31)**: Tracks G (chromagram, harmonic cluster) and H (in-audio
-    reference tone, tuning_judgment) are set up and ready for the H100 GPU steps —
-    `scripts/15_run_track_g.sh` / `scripts/16_run_track_h.sh`. CPU-side groundwork (stimulus/
-    image rendering, job-hygiene layers, held-out splits) is done, committed, and verified
-    locally: Track G's 1760-row `chroma_jobs.parquet` gives 287 train / 612 held-out job
-    rows (non-empty across all 4 tasks); Track H's 360-row `reftone_jobs.parquet` gives 93
-    train / 27 held-out stimuli with zero train/held overlap. Both scripts smoke-test first,
-    same discipline as every other `gpu/` LoRA script — the model-loading/PEFT paths are
-    reused verbatim from Track D/C (`load_qwen_omni_for_training`, `build_lora_config`,
-    `_held_out_mask`), so they inherit those scripts' hardware verification, but the new
-    dataset-construction code (chromagram rendering, reftone synthesis, job hygiene) is
-    unverified beyond the CPU-side checks already run.
+11. ~~Track F aug's leakage bug~~ **DONE 2026-08-05** (commits `8050378`+`b54c4bf`, Sethu) —
+    `generate_aug.py` now caps training pitches at `MAX_TRAIN_MIDI = 70`, reran 3 clean
+    seeds. Corrected audio-only-on-held-out: cents 0.74 (clean, was 0.89 leaky), tuning
+    0.62 (clean, was 0.83 leaky) — see Status table. First commit (`8050378`) still had a
+    stale leaky seed-2 response file (analyzed before that seed's clean eval finished);
+    `b54c4bf` fixed it. Fusion-null verdict unchanged.
+12. ~~Tracks G/H set up, not yet run~~ **DONE 2026-08-05** (commit `8050378`, Sethu) — both
+    null. See Status table for numbers and PAPER.md Results/Conclusions for the full
+    writeup. Narrows the D-zoom reference-line finding to "visual + pitch-specific,"
+    not a general reference-giving or chart-giving principle.
+13. **Corrected 2026-08-05 (was wrong in the first pass of this entry)**: the L2 own-encoder
+    re-probe for `key_id`/`mode_id`/`chord_quality`/`interval_id` was already done on
+    2026-07-24 (next action 3, `results/trackB/probes/probe__*_own__{task}__*.csv`) — no
+    need to re-run it. Reading the actual numbers (best layer, full label-space, not the
+    4-way MCQ subset): `key_id` best 0.17–0.23 vs chance 0.042 (~5x, the strongest signal
+    of the four); `chord_quality` best 0.18–0.31 vs chance 0.125 (~2x); `interval_id` best
+    0.16–0.18 vs chance 0.083 (~2x); `mode_id` best 0.04–0.12 vs chance 0.077 (barely above
+    chance across every encoder — the weakest signal, closest to a true floor case). So
+    3 of the 4 tasks have modest-but-real recoverable signal (not near-ceiling like
+    `instrument_id`'s 94/91%, but not absent either) — `mode_id` is the one where a
+    front-end may genuinely have nothing to work with.
+    **Superseded 2026-08-05** — replaced with a fixed sequential pipeline (Rupali's call):
+    peak-picked chroma → zoomed peak-picked chroma → line graph → zoomed line graph →
+    piano-roll → tonal centroid, same discipline as C–F throughout (dropout training,
+    wrong-condition mechanism controls, held-out splits, 3-seed paired McNemar). **Policy
+    updated 2026-08-05 (second call)**: run the FULL sequence rather than stopping at the
+    first win — the goal now includes "what works best / creates the richest internal
+    representation," a comparison question the stop-early rule can't answer. Train each in
+    order (still sequential so later steps can build on what earlier ones show), analyze
+    all six once landed. Tracked as tasks (see task list, Tracks L/M/N/O/P/Q):
+    - **Track L — peak-picked (binarized) chroma**: threshold Track G's `chroma_cqt` output
+      (top-K active bins per frame → bright block, rest dark) instead of the raw continuous
+      energy heatmap. Cheapest fix: overtones/timbre bleed energy into neighboring bins in
+      the raw chroma, making it genuinely blurry even for clean notes; this removes that
+      noise without needing full note transcription.
+    - **Track M — zoomed peak-picked chroma**: same binarized chroma, higher resolution /
+      stretched time axis — isolates the "zoom" half of D-zoom that Track G's flat chroma
+      never tested (Track G already covered the "force" half; see corrected note above).
+    - **Track N — line graph (multi-pitch trajectory)**: generalizes the F0-contour that
+      worked for pitch to polyphonic content — audio-derived (not MIDI-derived) pitch
+      trajectories per detected note, multiple simultaneous lines during a chord. Needs a
+      feasibility check first: block-chord stimuli (near-simultaneous onsets) may not suit
+      a "trajectory" framing as well as more sequential content (mode/interval melodic
+      forms) — may need per-task handling.
+    - **Track O — zoomed line graph**: same representation, zoomed, mirroring D-zoom's
+      exact recipe generalized to multiple lines.
+    - **Track P — piano-roll**: absolute pitch height × time, one block per detected note
+      (duration included, audio-derived onset+pitch detection). Directly targets the
+      simultaneity bottleneck TASKS.md already flagged for `chord_quality`/`interval_id`
+      (arpeggiated-succeeds/block-fails) — chords show as vertically-stacked blocks at one
+      time-coordinate, which neither chroma (sums into 12 bins) nor a single line can show.
+      Last step in the sequence; if this is also null, the input-representation search for
+      harmony is exhausted for now — the next lever is the auxiliary self-transcription
+      training objective (§12.3), not another front-end.
+    Explicitly ruled out this round (Rupali's calls, not just mine): a text-based reference
+    hint (would repeat Track E's already-diagnosed substitution-not-hearing pattern without
+    teaching the model to listen better, and the "give it a reference" idea already failed
+    once in-audio via Track H); resynthesizing the input audio to remove complexity (not a
+    deployable fix — users' music can't be simplified before asking the question); an
+    MCQ-template-glyph image (assumes MCQ framing, which conflicts with the longer-term goal
+    of open-ended, non-MCQ questions).
+    CPU-side groundwork (rendering, manifests, held-out splits) can be done on the laptop,
+    same as Track G/H; GPU training/eval steps still need the H100 box.
+14. **New (2026-08-05)**: analogous representation sequence for the RHYTHM cluster
+    (`tempo_bpm`, `beats_per_bar` — the two rhythm tasks in the frozen v1 battery;
+    `grouping_3v6`, TASKS.md 2.7, is speced but not yet built). Unlike harmony, this
+    cluster has had **zero** causal fine-tuning of any kind before now — no LoRA-only arm,
+    no front-end. Same six-step ladder, mapped onto the rhythm-appropriate DSP analogues,
+    same discipline as C–P (dropout training, wrong-condition mechanism controls, held-out
+    splits, 3-seed paired McNemar), run in full (not stop-early, same policy as harmony's
+    second call above). Tracked as tasks (Tracks R/S/T/U/V/W):
+    - **Track R — tempogram** (chroma equivalent): `librosa.feature.tempogram` /
+      `fourier_tempogram`, a periodicity-vs-time heatmap, same non-leakage rule as chroma
+      (fixed BPM/lag axis, not tied to this stimulus's actual tempo/meter label).
+    - **Track S — peak-picked tempogram**: threshold to the top-K periodicity peaks per
+      frame, same fix as Track L applied to Track R.
+    - **Track T — onset-strength line graph** (F0-contour equivalent): a single onset-
+      envelope curve over time (`librosa.onset.onset_strength`) — literally the rhythm
+      analogue of the pitch-contour line graph that worked for pitch.
+    - **Track U — zoomed onset-strength line graph**: same, higher temporal resolution.
+    - **Track V — beat/onset grid ("rhythm-roll", piano-roll equivalent)**: onset markers
+      plotted against a metrical grid inferred from the audio's own detected tempo
+      (subdivision lines from the SAME estimate the model would have access to, not from
+      the ground-truth beats-per-bar label) — shows precisely when onsets land relative to
+      a pulse grid without pre-supposing how many beats divide it.
+    - **Track W — rhythm necklace / circular polygon** (tonal-centroid equivalent):
+      audio-derived onset times folded modulo one estimated cycle length, plotted as dots
+      on a circle (Toussaint, *The Geometry of Musical Rhythm* — "rhythm necklace"
+      representations; onset patterns as convex polygons on a circle reveal evenness/
+      symmetry properties). **Leakage care needed**: the circle's circumference must come
+      from a detected periodicity (audio-derived), not from the ground-truth beats-per-bar
+      count, or the number of dots the model sees would hand over the answer directly —
+      same discipline as Track V's grid.
+    CPU-side groundwork can start on the laptop now (all of librosa's tempogram/onset/
+    onset_strength functions are already available in the venv, same as the tonnetz
+    prototype above); GPU steps need the H100 box.
+    **Built + tested 2026-08-05**: all 6 renderers written (`scripts/render_rhythm_repr.py`),
+    verified on real stimuli, 3 real bugs caught and fixed during testing — `_reject_harmonics`-
+    equivalent issue N/A here, but (1) the necklace's cycle-length scorer originally used
+    unweighted onset timing, which can't distinguish n=3 from n=6 on a perfectly regular
+    click train (a uniform train folded mod ANY integer multiple looks equally concentrated)
+    — fixed by weighting the circular-concentration statistic by onset strength, so real
+    accents (not just regular clicks) determine the cycle length; (2) the period estimator
+    (envelope autocorrelation) regularly locked onto a 2x/3x sub-harmonic of the true click
+    rate — replaced with the median inter-onset interval from librosa's own onset detector,
+    which is far more direct and doesn't have the sub-harmonic failure mode; (3) a
+    `numpy.ptp()` API break (removed from ndarray in this numpy version). Verified 12/15
+    (80%) correct cycle-length detection across all 5 beats_per_bar categories (3/4/5/6/7)
+    after the fixes. **Known limitation** (found by independent leakage-review pass,
+    2026-08-05): Tracks V/W's `wrong_image` mechanism control draws from the whole battery
+    (`image_jobs.py`'s uniform-draw design), and ~28% of a random battery sample (56/200)
+    produce a near-blank rhythm-roll/necklace image (fewer than 2 onsets detected — mostly
+    single sustained-tone stimuli from unrelated tasks, not click-based). This does **not**
+    affect the primary image-vs-no_image analysis (verified: 0/160 of the rhythm cluster's
+    OWN stimuli are sparse, they're all click tracks) — only dilutes the wrong_image
+    control's statistical power for these two tracks specifically. Not fixed; flagging so
+    Track V/W's wrong-image numbers get read with that caveat, not trusted at face value.
+15a. **CRITICAL BUG found + fixed 2026-08-05, before ever reaching the GPU box** (independent
+    correctness-review pass, confirmed separately by a direct local run of `split()` against
+    the real rhythm-task jobs): `gpu/image_track_common.py` originally reused
+    `train_track_c._held_out_mask` unchanged for every track's held-out split, same as
+    Track G did. That function's fallback chain is soundfont -> top-quintile-`base_midi`;
+    `tempo_bpm`/`beats_per_bar`'s factors are `{bpm, meter, n_bars[, beats]}` -- **neither**
+    key present, so the fallback's `base_midi >= quantile(0.8)` comparison is `NaN >= NaN`,
+    False for every row. Result: `_held_out_mask` silently returned all-False for Tracks
+    R-W -- 0 rows held out, meaning training would have run on 100% of the rhythm data and
+    `evaluate()` would write a 0-row `responses__*.parquet`, which `analyze_track_repr.py`
+    would then crash reading back (`KeyError` on missing columns). This would only have
+    surfaced AFTER a full remote GPU training run for all 6 rhythm tracks -- an expensive
+    way to discover a data-splitting bug. Confirmed via direct test: `split()` on the real
+    jobs returned `held=0` for every one of R/S/T/U/V/W before the fix.
+    **Fix**: added a third fallback tier in `gpu/image_track_common._held_out_mask` (NOT
+    modifying `train_track_c._held_out_mask` itself -- that function is already used by
+    Track C/D/G/H's already-run results; changing it risks changing their behavior on any
+    rerun) -- rows with neither soundfont nor base_midi now fall back to a held-out
+    top-quintile-BPM split, same "hold out the tail of a continuous factor" discipline as
+    the base_midi tier, guarding against tempo-memorization instead of pitch-memorization.
+    Re-verified after the fix: all 12 tracks (L-Q AND R-W) now produce non-empty,
+    non-overlapping train/held splits with every target task represented in both (L-O:
+    287 train / 612 held, matching Track G's already-published split exactly; R-W: 127
+    train / 132 held).
+15b. **Second bug found + fixed 2026-08-05** (same independent review): `_peak_pick`
+    (Tracks L/M, `scripts/render_harmony_repr.py`) and the tempogram-picking logic (Track S,
+    `scripts/render_rhythm_repr.py`) used plain `argsort`-based top-k selection with no
+    energy floor -- confirmed via testing that a fully silent frame (all-zero chroma/
+    tempogram) still gets exactly k bins marked "on" (argsort of an all-zero/tied array
+    still returns k indices). Any stimulus with lead-in/trailing silence or a rest gap would
+    get fabricated "active pitch class"/"active periodicity" markings on frames with no real
+    content. Fixed: both now gate on frame energy (silent/near-silent frames, <2% of the
+    stimulus's peak frame energy, are left fully off) before picking top-k on the rest.
+15c. **New (2026-08-05)**: auxiliary self-transcription training objective (RESEARCH_PLAN.md
+    §12.3, specced since before Track D but never run) — extend to run across **all three**
+    clusters (pitch, harmony, rhythm), not harmony alone. Blocked on one open question
+    first: the transcription format (`RUPALI_READ_THIS.md` §5) — plain MIDI-as-text is
+    ruled out (fails requirement 5, no continuous pitch/microtiming), candidates are a
+    JSON-ish event list, prose description, or a compact onset/pitch-contour grid. Resolving
+    this is the actual unblock; it hasn't been picked yet. This is the one intervention in
+    the whole project where the model generates its own intermediate representation during
+    training rather than reading an externally-injected one — the framing every front-end
+    track above is really scaffolding toward, not a replacement for Tracks L–W.
 
 ## Known gaps / honesty list
 - L1 key detection weak on minor progressions (naive Krumhansl) — use

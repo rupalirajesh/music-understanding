@@ -27,7 +27,7 @@ Alignment, and Reasoning Failures in Audio Language Models*
 - Generation battery: single-constraint prompts scored by DSP, minus
   unconstrained base rate; vocabulary-vs-theory prompt pairs.
 
-## Results (as of 2026-07-29 — 6 Track A models + Track B probes + Track C–F causal fine-tuning landed; GPT-4o-audio out of scope, no API access)
+## Results (as of 2026-08-05 — 6 Track A models + Track B probes + Track C–H causal fine-tuning landed; GPT-4o-audio out of scope, no API access)
 
 Full per-model/per-task numbers live in `experiments/results/trackA/analysis_workbook.xlsx`
 (sheets `audio`/`no_audio`/`wrong_audio` for summary stats, `data__<model>` for every raw
@@ -156,19 +156,89 @@ Not started — battery v2 (§ PROJECT_STATE decision 11).
   before drawing any conclusion about attention-to-audio being task-sensitive.
 - 12-TET scalloping in probe error: not yet analyzed.
 
+### L1 DSP floor — is the information even recoverable without a model at all?
+`musicprobe/l1_baselines.py`, pure numpy/scipy, no learning, no essentia needed for these
+10 tasks (extended from 4/13 to 10/13, 2026-08-05). Proves whether the ground-truth label
+is physically recoverable from the rendered audio at all — if L1 succeeds and a model
+fails, the failure is in the model, not the stimulus.
+
+| task | L1 acc | n | chance | 
+|---|---|---|---|
+| octave_id | 1.00 | 72 | — |
+| cents_discrimination | 1.00 | 180 | — |
+| pitch_note_id | 1.00 | 72 | — |
+| tempo_bpm | 0.82 | 60 | — |
+| key_id | 0.80 | 96 | ~4% (24-way) |
+| chord_quality | 0.60 | 96 | 12.5% (8-way) |
+| tuning_judgment | 0.63 | 120 | 50% |
+| interval_id | 0.54 | 144 | ~8% (12-way) |
+| note_count | 0.40 | 100 | ~20–30%ish |
+| mode_id | **0.25** | 104 | ~8% (13-way) |
+
+- `octave_id` at a clean 100% is the sharpest confirmation yet that its Track C fix
+  (LoRA, +0.50/+0.59) was recovering a real, trivially-present signal — the info was never
+  the bottleneck, only the readout was.
+- `mode_id` is the weakest signal here (barely 3x chance) — and this now agrees with **two
+  other independent methods**: the L2 own-encoder probe (barely above chance for `mode_id`
+  specifically, see next section) and L3 behavioral accuracy (~chance, 21–25% on a 4-way
+  MCQ). Three methods converging on the same task being the hardest in the battery is a
+  much stronger claim than any one of them alone — and it lines up with an existing known
+  gap: mode melodies are random diatonic walks, not musician-composed, which may be
+  confounding stimulus difficulty with genuine model difficulty.
+- `chord_quality`/`interval_id`/`key_id` all sit well above chance (54–80%) despite the
+  harmonic cluster showing weak behavioral gains from any front-end tried so far (Track G) —
+  this is exactly the "info is there, front-end hasn't found the right shape yet" case, not
+  a "nothing to recover" case.
+- Not yet covered: `beats_per_bar`, `progression_id` (need real beat/chord-sequence
+  tracking — autocorrelation-only isn't trustworthy as a floor claim), `instrument_id`
+  (already near-ceiling behaviorally, 94%/91%, so the L1 question isn't the interesting one
+  there). Genuinely blocked on essentia/madmom, which won't build on the laptop — needs the
+  H100/Linux box.
+
 ### Causal fine-tuning (Tracks C–F) — testing the alignment-gap hypothesis (H4)
 Track B's L2≫L3 shortlist (`octave_id`, `note_count`, `tuning_judgment`, `cents_discrimination`)
 predicted these four tasks were alignment-fixable — info decodable from the encoder but not
 reaching the readout. Tracks C–F test that causally, focused on the two hardest cells
 (the microtone pair). Full numbers: `experiments/results/trackA/track{c,d,e,f}*`.
 
-**Set up, not yet run (2026-07-31)**: Tracks G (chromagram front-end for the harmonic
-cluster — `key_id`/`mode_id`/`chord_quality`/`interval_id`, never targeted by C–F) and H
-(in-audio reference tone for `tuning_judgment` — tests whether Track D-zoom's "needs an
-explicit reference" finding for absolute tuning survives when delivered in-audio instead
-of switching to vision). CPU-side groundwork done and verified; GPU steps pending —
-`scripts/15_run_track_g.sh` / `scripts/16_run_track_h.sh`. Numbers below don't include
-these yet.
+- **Track G — chromagram front-end for the harmonic cluster (2026-08-05, both nulls)**:
+  tests whether Track D-zoom's "give it a rendered chart" fix generalizes past pitch to
+  `key_id`/`mode_id`/`chord_quality`/`interval_id` (never targeted by C–F), via a 12
+  pitch-class × time chromagram (the harmonic analogue of the F0-contour). Same paired
+  discipline as D/E (mixed-condition training, 3-seed McNemar, wrong-image/wrong-audio
+  mechanism controls). Result: **null on every task** — `key_id` Δ=−0.07 (p=.26),
+  `mode_id` Δ=+0.04 (p=.57), `chord_quality` Δ=+0.13 (p=.11, largest point estimate but
+  n=72, smallest cell), `interval_id` Δ=+0.03 (p=.64); all 95% CIs include 0. Mechanism
+  checks: wrong-chromagram ≈ no-chromagram on all 4 tasks (content isn't being read even
+  on the rare significant nudge); wrong-audio+correct-chromagram only crashes `key_id`
+  (Δ=−0.14, p=.02, so that one task still leans on audio) — the other three are
+  inconclusive either way. Unlike pitch, the harmonic cluster doesn't respond to an
+  explicit-chart front-end; two of the four tasks (`mode_id`, `chord_quality`) are also
+  sitting near chance already, so floor effects may be part of the story.
+- **Track H — in-audio reference tone for `tuning_judgment` (2026-08-05, null)**: tests
+  whether Track D-zoom's reference-line fix for absolute tuning survives being delivered
+  in-AUDIO (a second tone mixed into the clip) instead of switching to a visual chart.
+  Result: flat null — `reftone` vs `plain` Δ=+0.01 (p=1.0); critically, `wrong_reftone`
+  (reference mistuned ±1–4 semitones) doesn't mislead the model any more than a *correct*
+  reference does (Δ=+0.02 vs plain, p=.82) — both land at ~0.53, statistically
+  indistinguishable from no reference at all. The model isn't comparing target-to-reference
+  in audio; it's simply not reacting to a second tone being present, right or wrong. Confirms
+  the D-zoom reference-line effect is specifically a *visual* trick (reading an annotated
+  position on a chart), not a general "give it something to compare against" principle —
+  reinforces the project's running "can't hear microtones" finding via a channel where
+  comparison should in principle be easiest.
+- **Track F-aug, leakage bug fixed (2026-08-05)**: the original aug run (`0aed136`) sampled
+  training pitches from a range overlapping the held-out eval band; `generate_aug.py` now
+  caps training pitches (`MAX_TRAIN_MIDI = 70`, a 1-semitone margin). Corrected audio-only
+  accuracy on held-out (never-trained) pitches: cents 0.62 (small data) → 0.78 (first clean
+  pass) → **0.74** (final clean, all 3 seeds) vs 0.89 in the leaky run — about half the
+  leaky jump was real; more clean augmented data does genuinely raise relative-pitch
+  discrimination. Tuning: 0.51 → 0.68 → **0.62** vs 0.83 leaky — nearly halved once the
+  leak was fixed, now sitting close to the 2-way forced-choice majority rate, i.e. **not**
+  convincing evidence of learned absolute-tuning perception (consistent with Track H
+  above — absolute tuning stays unlearnable via this pathway). The fusion-null verdict
+  itself is unchanged: Δ still ns, `image+wrong_audio` still craters, model still ignores
+  the fused stream and relies on audio.
 
 - **Track C — AF3, 3-arm LoRA (`llm_only` / `llm_encoder` / `control`), matched-baseline
   delta**: `octave_id` (+0.50 / +0.59) and `note_count` (+0.43 / +0.40) confirm the
@@ -234,7 +304,7 @@ these yet.
   tracking / manual verification, by design, not a bug). WAVs are gitignored; need
   Drive/scp from the H100 box to listen.
 
-## Conclusions (partial — Tracks C–F causal fine-tuning now landed 2026-07-26 to 07-29; GPT-4o-audio out of scope)
+## Conclusions (partial — Tracks C–H causal fine-tuning now landed 2026-07-26 to 08-05; GPT-4o-audio out of scope)
 - **Per-skill verdict so far**:
   - *Alignment-fixable, causally confirmed (Track C)*: `octave_id` (+0.50/+0.59 over
     baseline), `note_count` (+0.43/+0.40) — LoRA on the existing audio→LM pathway recovers
@@ -249,6 +319,16 @@ these yet.
     spectrogram, raw learned fusion) recovered it. Mechanistically this is substitution
     (external tracker perceives, LM reads/reasons), not the model learning to hear
     microtones — a real fix for a deployed system, not evidence of a closed perception gap.
+  - *Reference-line fix does NOT generalize past pitch, and does NOT survive a channel
+    switch (Tracks G/H)*: a chromagram front-end for the harmonic cluster
+    (`key_id`/`mode_id`/`chord_quality`/`interval_id`) is a clean null on all four tasks —
+    the explicit-chart trick that rescued pitch doesn't transfer to harmony. Delivering the
+    same "reference to compare against" idea in-audio instead of visually (Track H,
+    `tuning_judgment`) is also a clean null, and the mechanism control shows the model
+    isn't even attempting a target-vs-reference comparison in audio (wrong reference ≈
+    correct reference). Together these narrow the D-zoom finding to something quite
+    specific: an *annotated visual position*, for *pitch specifically* — not a general
+    "give the model a reference" or "give the model a chart" principle.
   - *Learned end-to-end fusion does not work at this data scale (Track F)*: injecting a raw
     F0 feature into embedding space via a trainable adapter is verifiably ignored
     behaviorally (~348 examples isn't enough to learn a new modality interface from

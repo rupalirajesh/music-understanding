@@ -15,7 +15,7 @@ from scipy.signal import find_peaks
 
 from .config import RESULTS_ROOT
 from .manifest import load_manifest, audio_abspath
-from .theory import NOTE_NAMES, MODES
+from .theory import NOTE_NAMES, MODES, MODE_SPOKEN, CHORDS, CHORD_SPOKEN, INTERVALS
 
 
 def f0_autocorr(y: np.ndarray, sr: int, fmin=60, fmax=1500) -> float | None:
@@ -97,9 +97,122 @@ def key_estimate(y: np.ndarray, sr: int) -> str:
     return best
 
 
+def octave_estimate(y: np.ndarray, sr: int) -> str | None:
+    f0 = f0_autocorr(y, sr)
+    if not f0:
+        return None
+    return str(int(round(f0_to_midi(f0))) // 12 - 1)  # MIDI 60 -> C4
+
+
+def tuning_estimate(y: np.ndarray, sr: int, cents_threshold: float = 25.0) -> str | None:
+    """Nearest-12-TET-grid distance. Threshold is the midpoint of the stimulus
+    design range (tones detuned 0-50c off-grid, per TASKS.md 1.8) -- not fit
+    to the data, just the natural decision boundary."""
+    f0 = f0_autocorr(y, sr)
+    if not f0:
+        return None
+    nearest_midi = round(f0_to_midi(f0))
+    ref_f0 = 440 * 2 ** ((nearest_midi - 69) / 12)
+    cents_off = 1200 * np.log2(f0 / ref_f0)
+    return "in tune" if abs(cents_off) < cents_threshold else "out of tune"
+
+
+def _fundamentals_in_window(seg: np.ndarray, sr: int, height_frac: float = 0.08,
+                            harmonic_tol: float = 0.03) -> list[float]:
+    """Peak-pick a single FFT window and greedily keep peaks that aren't a
+    near-integer multiple of an already-accepted (lower) fundamental --
+    crude harmonic-series rejection, good enough for clean synth tones."""
+    n = min(8192, len(seg))
+    w = seg[:n] * np.hanning(n)
+    spec = np.abs(np.fft.rfft(w))
+    freqs = np.fft.rfftfreq(n, 1 / sr)
+    idx, _ = find_peaks(spec, height=spec.max() * height_frac)
+    cand = sorted(f for f in freqs[idx] if 55 < f < 1500)
+    funds: list[float] = []
+    for f in cand:
+        if not any(abs(f / g - round(f / g)) < harmonic_tol and round(f / g) >= 1
+                   for g in funds):
+            funds.append(f)
+    return funds
+
+
+def note_count_estimate(y: np.ndarray, sr: int) -> str | None:
+    seg = y[len(y) // 4: len(y) // 4 + sr]
+    if len(seg) < sr // 4 or np.max(np.abs(seg)) < 1e-4:
+        return None
+    funds = _fundamentals_in_window(seg, sr)
+    return str(len(funds)) if funds else None
+
+
+def interval_estimate(y: np.ndarray, sr: int) -> str | None:
+    """Try melodic (two time-segments, like cents_discrimination) first;
+    fall back to harmonic (two simultaneous peaks in one window) if the
+    segments don't look like two distinct pitches."""
+    half = len(y) // 2
+    fa = f0_autocorr(y[:half], sr) if half > sr // 4 else None
+    fb = f0_autocorr(y[half:], sr) if len(y) - half > sr // 4 else None
+    semi = None
+    if fa and fb and abs(1200 * np.log2(fb / fa)) > 50:
+        semi = round(abs(12 * np.log2(fb / fa)))
+    else:
+        seg = y[len(y) // 4: len(y) // 4 + sr]
+        if len(seg) >= sr // 4 and np.max(np.abs(seg)) > 1e-4:
+            funds = _fundamentals_in_window(seg, sr, height_frac=0.15)
+            if len(funds) >= 2:
+                semi = round(abs(12 * np.log2(funds[1] / funds[0])))
+    if semi is None or semi == 0:
+        return None
+    semi = ((semi - 1) % 12) + 1  # fold into the 1..12 range INTERVALS covers
+    return INTERVALS.get(semi, (None, None))[1]
+
+
+def chord_quality_estimate(y: np.ndarray, sr: int) -> str | None:
+    """Template correlation, same method as key_estimate, extended from the
+    2 (major/minor) Krumhansl profiles to CHORDS' 8 binary chord-tone
+    templates x 12 roots. Root is a nuisance parameter here -- only the
+    best-fit quality is reported, matching chord_quality's ground truth."""
+    c = chroma(y, sr)
+    best, best_r = None, -2
+    for root in range(12):
+        for name, semis in CHORDS.items():
+            template = np.zeros(12)
+            for s in semis:
+                template[(root + s) % 12] = 1.0
+            r = np.corrcoef(template, c)[0, 1]
+            if r > best_r:
+                best_r, best = r, name
+    return CHORD_SPOKEN.get(best)
+
+
+def mode_estimate(y: np.ndarray, sr: int) -> str | None:
+    """Same template-correlation extension as chord_quality_estimate, but
+    over MODES' 13 scale-degree templates x 12 tonics."""
+    c = chroma(y, sr)
+    best, best_r = None, -2
+    for tonic in range(12):
+        for name, degrees in MODES.items():
+            template = np.zeros(12)
+            for d in degrees:
+                template[(tonic + d) % 12] = 1.0
+            r = np.corrcoef(template, c)[0, 1]
+            if r > best_r:
+                best_r, best = r, name
+    return MODE_SPOKEN.get(best)
+
+
+TASKS_WITH_L1 = ["pitch_note_id", "cents_discrimination", "tempo_bpm", "key_id",
+                 "octave_id", "tuning_judgment", "note_count", "interval_id",
+                 "chord_quality", "mode_id"]
+# Not covered: beats_per_bar (needs real beat/downbeat tracking, e.g. essentia
+# RhythmExtractor2013 -- autocorrelation-only meter detection isn't reliable
+# enough to trust as a floor), progression_id (needs a chord-sequence
+# transcription pipeline, not just one estimate per stimulus), instrument_id
+# (already near-ceiling behaviorally -- L1 floor isn't the interesting
+# question there). All three still need the H100/Linux essentia install.
+
+
 def run() -> pd.DataFrame:
-    man = load_manifest(["pitch_note_id", "cents_discrimination",
-                         "tempo_bpm", "key_id"])
+    man = load_manifest(TASKS_WITH_L1)
     rows = []
     for r in man.itertuples():
         y, sr = sf.read(audio_abspath(r.audio_path))
@@ -127,6 +240,24 @@ def run() -> pd.DataFrame:
                 est = round(bpm, 1)
         elif task == "key_id":
             est = key_estimate(y, sr)
+            correct = est == r.ground_truth
+        elif task == "octave_id":
+            est = octave_estimate(y, sr)
+            correct = est == r.ground_truth
+        elif task == "tuning_judgment":
+            est = tuning_estimate(y, sr)
+            correct = est == r.ground_truth
+        elif task == "note_count":
+            est = note_count_estimate(y, sr)
+            correct = est == r.ground_truth
+        elif task == "interval_id":
+            est = interval_estimate(y, sr)
+            correct = est == r.ground_truth
+        elif task == "chord_quality":
+            est = chord_quality_estimate(y, sr)
+            correct = est == r.ground_truth
+        elif task == "mode_id":
+            est = mode_estimate(y, sr)
             correct = est == r.ground_truth
         rows.append({"stimulus_id": r.stimulus_id, "task": task,
                      "l1_estimate": str(est), "l1_correct": correct})
