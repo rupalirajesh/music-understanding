@@ -290,6 +290,54 @@ reaching the readout. Tracks C–F test that causally, focused on the two hardes
   ~348 examples does not — this reads as a data-scale limit on the learned-fusion
   approach, not evidence the information is unusable in principle.
 
+**Tracks L–Q / R–W (harmony + rhythm representation-comparison sweep, done 2026-08-06,
+commit `6eef62a`)**: six representations each for two task clusters with no prior
+working front-end fix — harmony (`key_id`/`mode_id`/`chord_quality`/`interval_id`:
+peak-picked chroma, zoomed peak-picked chroma, multi-pitch line graph, zoomed line
+graph, piano-roll, tonal centroid/Tonnetz) and rhythm (`tempo_bpm`/`beats_per_bar`,
+first causal fine-tuning of any kind on this cluster: tempogram, peak-picked
+tempogram, onset-strength line graph, zoomed line graph, rhythm-roll, rhythm
+necklace). Policy: run the full six-representation sequence per cluster and compare,
+not stop at the first win — see `PROJECT_STATE.md` next actions 13/14 and
+`experiments/scripts/RUNBOOK_tracks_lq_rw.md`.
+
+Clean null, and worse than null on two tasks:
+- **`key_id` is significantly HURT by every one of the 6 harmony representations**
+  (Δacc −0.075 to −0.117; tonnetz worst, p=.016; harmony-line p=.043; peak-chroma
+  p=.029). Audio-only baseline was already a respectable 0.60–0.62 — every image
+  pulled it down, not up.
+- **`chord_quality` trends positive across all 6** (+0.08 to +0.17, piano-roll best:
+  0.167→0.333, p=.043) but is underpowered at n=72 — suggestive, not confirmed.
+- `mode_id`/`interval_id`: null on every representation.
+- **`tempo_bpm` is significantly HURT by 4/6 rhythm representations** (tempogram
+  0.348→0.167 p=.002; peak-tempogram 0.364→0.212 p=.006; onset-line p=.039;
+  rhythm-roll p=.039) and trending negative on the other 2. No representation
+  improves it.
+- `beats_per_bar`: null everywhere (n=33, underpowered).
+- Mechanism: `wrong_image ≈ no_image` on both clusters (the model mostly ignores the
+  image and falls back to audio) — but `image + wrong_audio` still hurts `key_id`
+  (p=.02), so it isn't fully inert either.
+
+Headline: the D-zoom trick (zoomed chart + explicit reference line) that fixed pitch
+does not transfer to harmony or rhythm as tested here — no representation across all
+12 yields a significant positive, and two of the six target tasks are actively made
+worse by adding any chart at all.
+
+**Tracks X/Y (set up 2026-08-06, GPU run pending)**: reviewing *why* pitch succeeded
+surfaced a gap in the L–Q/R–W sweep. D-zoom wasn't "zoom" alone (Track D force —
+resolution/forced-attention without a reference line — was null) and wasn't
+"reference" alone (Track H — an in-audio reference tone without zoom — was null); it
+was the *combination*. L–Q/R–W tested zoom (M/O/U) and an explicit reference/richness
+ingredient (P/V) as six separate items, never combined. Track X (zoomed peak-picked
+chroma + an estimated-tonic reference row, tonic estimated from the stimulus's own
+chroma via Krumhansl correlation — same non-leaking method as the L1 baseline's
+`key_estimate`) and Track Y (zoomed rhythm-roll — Track V's detected-pulse-grid chart
+at Track U's finer time resolution) fill that specific missing cell rather than adding
+two more independent guesses. CPU-side groundwork (renderers, full-battery render —
+1248/1248, 0 errors — held-out splits verified to exactly match their parent ladder)
+done 2026-08-06; GPU training/eval needs the H100 box, not yet run. See
+`experiments/scripts/RUNBOOK_tracks_xy.md`.
+
 ### Generation models (MusicGen-medium, 342 clips, 6 constraint families)
 - **Tempo** (96 clips): exact-BPM match only 40%; loosened to "half/double tempo also
   counts" (octave-equivalent), 69%. Model systematically drifts toward its own preferred

@@ -24,7 +24,8 @@ import pandas as pd
 
 from musicprobe.config import EXP_ROOT, MANIFEST_PATH
 from musicprobe.rhythm_repr import (tempogram_path, tempogram_picked_path, onset_line_path,
-                                     onset_line_zoom_path, rhythm_roll_path, rhythm_necklace_path)
+                                     onset_line_zoom_path, rhythm_roll_path, rhythm_necklace_path,
+                                     rhythm_roll_zoom_path)
 
 TARGET_SR = 22050
 HOP = 512
@@ -93,7 +94,7 @@ def render_onset_line(wav_path: Path, out_path: Path, hop: int) -> None:
     fig.tight_layout(); fig.savefig(out_path, bbox_inches="tight"); plt.close(fig)
 
 
-def _detect_click_period(y, sr, hop=HOP):
+def _detect_click_period(y, sr, hop: int = HOP):
     """Median inter-onset interval from librosa's own onset detector.
     Tried onset-envelope autocorrelation first (same method as
     musicprobe.l1_baselines.tempo_estimate) plus an octave-error guard, but
@@ -111,21 +112,22 @@ def _detect_click_period(y, sr, hop=HOP):
     return float(np.median(np.diff(onsets)))
 
 
-def render_rhythm_roll(wav_path: Path, out_path: Path) -> None:
+def render_rhythm_roll(wav_path: Path, out_path: Path, hop: int = HOP) -> None:
     y = _load(wav_path)
-    onset_frames = librosa.onset.onset_detect(y=y, sr=TARGET_SR, hop_length=HOP)
-    onset_times = librosa.frames_to_time(onset_frames, sr=TARGET_SR, hop_length=HOP)
-    period = _detect_click_period(y, TARGET_SR)
+    onset_frames = librosa.onset.onset_detect(y=y, sr=TARGET_SR, hop_length=hop)
+    onset_times = librosa.frames_to_time(onset_frames, sr=TARGET_SR, hop_length=hop)
+    period = _detect_click_period(y, TARGET_SR, hop=hop)
     duration = len(y) / TARGET_SR
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    fig, ax = plt.subplots(figsize=(6, 2.5), dpi=150)
+    fig, ax = plt.subplots(figsize=(9, 2.5) if hop == HOP_ZOOM else (6, 2.5), dpi=150)
     if len(onset_times):
         ax.vlines(onset_times, 0, 1, color="#1a5276", lw=1.5)
     if period and period > 0:
         grid = np.arange(onset_times[0] if len(onset_times) else 0, duration, period)
         ax.vlines(grid, 0, 1, color="#c0392b", lw=0.5, alpha=0.4, linestyle="--")
     ax.set_xlabel("time (s)"); ax.set_yticks([])
-    ax.set_title("rhythm-roll (onsets vs. detected pulse grid)", fontsize=9)
+    ax.set_title("rhythm-roll (onsets vs. detected pulse grid)" + (" -- zoomed" if hop == HOP_ZOOM else ""),
+                fontsize=9)
     fig.tight_layout(); fig.savefig(out_path, bbox_inches="tight"); plt.close(fig)
 
 
@@ -174,11 +176,13 @@ RENDERERS = {
     "onset_line_zoom": lambda w, o: render_onset_line(w, o, HOP_ZOOM),
     "rhythm_roll": render_rhythm_roll,
     "rhythm_necklace": render_rhythm_necklace,
+    "rhythm_roll_zoom": lambda w, o: render_rhythm_roll(w, o, hop=HOP_ZOOM),
 }
 PATH_FNS = {
     "tempogram": tempogram_path, "tempogram_picked": tempogram_picked_path,
     "onset_line": onset_line_path, "onset_line_zoom": onset_line_zoom_path,
     "rhythm_roll": rhythm_roll_path, "rhythm_necklace": rhythm_necklace_path,
+    "rhythm_roll_zoom": rhythm_roll_zoom_path,
 }
 RHYTHM_TASKS = ("tempo_bpm", "beats_per_bar")
 

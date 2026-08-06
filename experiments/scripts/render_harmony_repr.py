@@ -25,7 +25,8 @@ import pandas as pd
 from musicprobe.config import EXP_ROOT, MANIFEST_PATH
 from musicprobe.harmony_repr import (chroma_picked_path, chroma_picked_zoom_path,
                                       harmony_line_path, harmony_line_zoom_path,
-                                      piano_roll_path, tonnetz_path)
+                                      piano_roll_path, tonnetz_path, chroma_zoom_ref_path)
+from musicprobe.l1_baselines import KRUMHANSL_MAJ, KRUMHANSL_MIN
 
 TARGET_SR = 22050
 HOP = 512          # Track L / Q -- same hop as Track G's chroma_cqt, for comparability
@@ -185,6 +186,49 @@ def render_tonnetz(wav_path: Path, out_path: Path) -> None:
     fig.tight_layout(); fig.savefig(out_path, bbox_inches="tight"); plt.close(fig)
 
 
+def _estimate_tonic_pc(chroma: np.ndarray) -> int:
+    """Krumhansl-profile correlation, same method as
+    musicprobe.l1_baselines.key_estimate, restricted to just the tonic
+    pitch-class (mode is a nuisance parameter here). Computed from THIS
+    stimulus's own chroma -- audio-derived, not ground truth, same
+    non-leakage discipline as f0_contour.py's pyin-estimated reference
+    pitch for Track D-zoom."""
+    profile_sum = chroma.sum(axis=1)
+    profile_sum = profile_sum / (profile_sum.sum() + 1e-9)
+    best_pc, best_r = 0, -2.0
+    for tonic in range(12):
+        for profile in (KRUMHANSL_MAJ, KRUMHANSL_MIN):
+            r = np.corrcoef(np.roll(profile, tonic), profile_sum)[0, 1]
+            if r > best_r:
+                best_r, best_pc = r, tonic
+    return best_pc
+
+
+def render_chroma_zoom_ref(wav_path: Path, out_path: Path) -> None:
+    """Track X: Track M's zoomed peak-picked chroma, plus the estimated-
+    tonic row highlighted and labeled -- the missing zoom+reference
+    combination (see musicprobe.harmony_repr.chroma_zoom_ref_path)."""
+    y = _load(wav_path)
+    chroma = _chroma(y, TARGET_SR, HOP_ZOOM)
+    picked = _peak_pick(chroma)
+    tonic_pc = _estimate_tonic_pc(chroma)
+    t = librosa.times_like(chroma, sr=TARGET_SR, hop_length=HOP_ZOOM)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig, ax = plt.subplots(figsize=(9, 3), dpi=150)
+    ax.imshow(picked, aspect="auto", origin="lower", cmap="gray_r",
+              extent=[t[0] if len(t) else 0, t[-1] if len(t) else 1, 0, 12],
+              vmin=0, vmax=1)
+    ax.axhspan(tonic_pc, tonic_pc + 1, color="#c0392b", alpha=0.18, zorder=1)
+    ax.axhline(tonic_pc, color="#c0392b", lw=1.5, zorder=2)
+    ax.axhline(tonic_pc + 1, color="#c0392b", lw=1.5, zorder=2)
+    ax.text((t[-1] if len(t) else 1) * 0.99, tonic_pc + 0.5, f" est. tonic: {PC_NAMES[tonic_pc]}",
+           color="#c0392b", fontsize=8, va="center", ha="right", zorder=3)
+    ax.set_yticks(np.arange(12) + 0.5); ax.set_yticklabels(PC_NAMES, fontsize=7)
+    ax.set_xlabel("time (s)"); ax.set_title("zoomed peak-picked chroma + estimated-tonic reference",
+                                            fontsize=9)
+    fig.tight_layout(); fig.savefig(out_path, bbox_inches="tight"); plt.close(fig)
+
+
 RENDERERS = {
     "chroma_picked": lambda w, o: render_chroma_picked(w, o, HOP),
     "chroma_picked_zoom": lambda w, o: render_chroma_picked(w, o, HOP_ZOOM),
@@ -192,11 +236,13 @@ RENDERERS = {
     "harmony_line_zoom": lambda w, o: render_harmony_line(w, o, zoom=True),
     "piano_roll": render_piano_roll,
     "tonnetz": render_tonnetz,
+    "chroma_zoom_ref": render_chroma_zoom_ref,
 }
 PATH_FNS = {
     "chroma_picked": chroma_picked_path, "chroma_picked_zoom": chroma_picked_zoom_path,
     "harmony_line": harmony_line_path, "harmony_line_zoom": harmony_line_zoom_path,
     "piano_roll": piano_roll_path, "tonnetz": tonnetz_path,
+    "chroma_zoom_ref": chroma_zoom_ref_path,
 }
 # harmonic cluster only -- these tasks are what Tracks L-Q target
 HARMONY_TASKS = ("key_id", "mode_id", "chord_quality", "interval_id")

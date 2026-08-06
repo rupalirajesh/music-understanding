@@ -54,8 +54,12 @@ Last updated: 2026-08-05. Update this whenever anything changes hands.
 | Track G (chromagram front-end for key_id/mode_id/chord_quality/interval_id — first causal test on the harmonic cluster; Tracks C-F only ever targeted pitch/tuning) | H100 box | **done 2026-08-05** (commit `8050378`, Sethu) — null on all 4 tasks (3-seed paired McNemar): key_id Δ=−0.07 (p=.26), mode_id Δ=+0.04 (p=.57), chord_quality Δ=+0.13 (p=.11, n=72), interval_id Δ=+0.03 (p=.64); all CIs include 0. Mechanism controls: wrong-chromagram ≈ no-chromagram everywhere (content not read); wrong-audio+chromagram only craters key_id (p=.02). Note: this tested ONE variant — a force-style-trained but flat, unannotated, unzoomed chromagram — the analogue of Track D's early "conclusive/force" stage, not the full iteration that eventually found D-zoom. The zoomed/annotated step that actually rescued pitch has not been tried for harmony yet; see next action 13. |
 | Track H (in-audio reference tone for tuning_judgment — tests whether Track D-zoom's "needs an explicit reference" finding works delivered in-AUDIO instead of switching modality) | H100 box | **done 2026-08-05** (commit `8050378`, Sethu) — flat null: reftone vs plain Δ=+0.01 (p=1.0); wrong_reftone vs plain Δ=+0.02 (p=.82) — a WRONG reference doesn't mislead any more than a correct one, so the model isn't comparing target-to-reference in audio at all. D-zoom's reference fix is visual-channel-specific, not a general "give it a reference" effect. |
 | Track F-aug leakage fix (rerun of the 9x-data pitch-fusion aug run) | H100 box | **done 2026-08-05** (commits `8050378`+`b54c4bf`, Sethu) — `generate_aug.py` was sampling training pitches into the held-out eval band; capped at `MAX_TRAIN_MIDI=70` and reran. Corrected audio-only-on-held-out: cents 0.62→0.78→**0.74** (clean, vs 0.89 leaky) — about half the leaky jump was real. tuning 0.51→0.68→**0.62** (clean, vs 0.83 leaky) — nearly halved, now ≈ 2AFC majority rate, NOT evidence of learned absolute-tuning perception. Fusion-null verdict unchanged (model still ignores the fused stream). |
+| L1 DSP floor extension (10/13 tasks, up from 4/13) | laptop | **done 2026-08-05** — octave_id 1.00, cents/pitch_note_id 1.00 (existing), tempo_bpm 0.82 (existing), key_id 0.80 (existing), chord_quality 0.60, tuning_judgment 0.63, interval_id 0.54, note_count 0.40, **mode_id 0.25** (weakest — now confirmed hardest task in the battery by 3 independent methods: L1/L2/L3). `beats_per_bar`/`progression_id`/`instrument_id` still need essentia, H100/Linux box only. |
+| Tracks L-Q (harmony representation ladder: peak-picked chroma → zoomed peak-picked chroma → multi-pitch line graph → zoomed line graph → piano-roll → tonal centroid, key_id/mode_id/chord_quality/interval_id) | H100 box | **done 2026-08-06** (commits `bf83b07` seed-0, `6eef62a` full 3-seed, Sethu) — clean null on `mode_id`/`interval_id` across all 6 representations; **`key_id` significantly HURT by every representation** (Δ −0.075 to −0.117, worst tonnetz p=.016, N p=.043, L p=.029); `chord_quality` trends positive on all 6 (+0.08 to +0.17, piano-roll best) but underpowered (p=.043 only for piano-roll, n=72). Mechanism: wrong_image≈no_image (model mostly ignores the image), but image+wrong_audio hurts key_id (p=.02) — not fully inert. Headline: the D-zoom trick does not transfer to harmony as tested. See decision 16 — L-Q tested zoom and reference/richness as *separate* ingredients; the combination (Track X) was still untried as of this run. |
+| Tracks R-W (rhythm representation ladder: tempogram → peak-picked tempogram → onset-strength line graph → zoomed line graph → rhythm-roll → rhythm necklace, tempo_bpm/beats_per_bar) | H100 box | **done 2026-08-06** (commits `bf83b07` seed-0, `6eef62a` full 3-seed, Sethu) — first causal fine-tuning of any kind on this cluster. **`tempo_bpm` significantly HURT by 4/6 representations** (tempogram p=.002, peak-tempogram p=.006, onset-line p=.039, rhythm-roll p=.039; zoom-onset/necklace ns but still negative in direction, no representation reverses it); `beats_per_bar` null everywhere (n=33, underpowered). Same headline as L-Q: no representation helps, several hurt. See decision 16 — same "ingredients tested separately" gap; Track Y is the untried combination. |
+| Tracks X/Y (the missing zoom+explicit-reference combination for harmony/rhythm: X = zoomed peak-picked chroma + estimated-tonic reference row; Y = zoomed rhythm-roll) | H100 box | **CPU-side groundwork done + verified 2026-08-06, GPU steps not yet run.** Both renderers built, run against the full 1248-stimulus battery (0 errors each). Held-out splits verified to exactly match their parent ladder (X: 287/612 = Track G/L-Q's split; Y: 127/132 = Track R-W's split), 0 overlap, all tasks present both sides. Registered in `gpu/train_track_repr.py`'s `TRACKS` dict (`X`, `Y`), `gpu/analyze_track_repr.py` picks them up automatically (registry-driven, no changes needed there). `scripts/19_run_tracks_xy.sh` + `scripts/RUNBOOK_tracks_xy.md` — smoke-test first. |
 | AF3 / Music Flamingo loaders | code | done, verified working |
-| Qwen2-Audio published-number replication | — | still TODO; pick exact benchmark subset first |
+| Qwen2-Audio / MuChoMusic replication | — | **resolved 2026-08-05, deprioritized** — confirmed via primary source the MuChoMusic paper only evaluates Qwen-Audio v1, never Qwen2-Audio, so there's no published number to replicate against for the actual Track A roster model. Scaffold at `gpu/eval_muchomusic.py`, not queued as active work. |
 | Analysis pass on all of the above | laptop | first pass done 2026-07-22 — see PAPER.md Results; dashboard + plots in `experiments/results/trackB/analysis/`; attention + microtone graphs in `experiments/results/trackB/attention/attention_graph.png` and `.../probes/microtone_probe_graph.png` (2026-07-25) |
 
 ## Decisions made (and why) — chronological
@@ -361,7 +365,26 @@ Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
     get fabricated "active pitch class"/"active periodicity" markings on frames with no real
     content. Fixed: both now gate on frame energy (silent/near-silent frames, <2% of the
     stimulus's peak frame energy, are left fully off) before picking top-k on the rest.
-15c. **New (2026-08-05)**: auxiliary self-transcription training objective (RESEARCH_PLAN.md
+16. **Tracks L-Q/R-W full 3-seed results landed (2026-08-06, commit `6eef62a`, Sethu)
+    + Tracks X/Y set up in response**: the 12-representation sweep is a clean null —
+    `mode_id`/`interval_id`/`beats_per_bar` null throughout, `key_id` and `tempo_bpm`
+    actively HURT by every/most representations, `chord_quality` suggestive but
+    underpowered. On reviewing why pitch (Track D-zoom) succeeded where this ladder
+    didn't: D-zoom wasn't just "zoom" (Track D force = resolution/forced-attention
+    alone, null) and wasn't just "add a reference" (Track H = in-audio reference
+    alone, null) — it was zoom AND an explicit annotated reference position
+    *together*; neither ingredient alone fixed pitch either, across 3 earlier
+    attempts. L-Q/R-W tested zoom (M/O/U) and reference/richness (P/V) as *separate*
+    items on a 6-item list, the same way D-force and Track H each isolated one
+    ingredient — nobody had tried the combination on harmony/rhythm. Built Tracks
+    X (zoomed peak-picked chroma + estimated-tonic reference row, tonic estimated
+    via Krumhansl correlation on the stimulus's own chroma — same non-leakage
+    discipline as D-zoom's pyin-estimated reference) and Y (zoomed rhythm-roll —
+    Track V's detected-pulse-grid chart at Track U's finer time resolution) to fill
+    that specific gap, not as two more independent guesses. CPU-side groundwork done
+    + verified (see Status table); GPU run not yet done (no GPU on the laptop).
+    `scripts/19_run_tracks_xy.sh` + `scripts/RUNBOOK_tracks_xy.md`.
+17. **New (2026-08-05)**: auxiliary self-transcription training objective (RESEARCH_PLAN.md
     §12.3, specced since before Track D but never run) — extend to run across **all three**
     clusters (pitch, harmony, rhythm), not harmony alone. Blocked on one open question
     first: the transcription format (`RUPALI_READ_THIS.md` §5) — plain MIDI-as-text is

@@ -59,3 +59,17 @@ def tonnetz_path(audio_path: str) -> str:
     close pitch relations (fifths, thirds) map to small distances (Harte,
     Sandler & Gasser 2006)."""
     return _repr_path(audio_path, "tonnetz")
+
+
+def chroma_zoom_ref_path(audio_path: str) -> str:
+    """Track X (2026-08-06): Track M's zoomed peak-picked chroma PLUS an
+    explicit reference annotation -- the estimated-tonic row is highlighted
+    and labeled, the harmonic analogue of Track D-zoom's "in tune" reference
+    line. Tracks L-Q tested zoom (M/O) and richness (N/P/Q) separately but
+    never combined zoom with an explicit annotated reference the way D-zoom
+    did for pitch -- this is that missing combination, not a 7th independent
+    idea. Tonic is estimated from THIS audio via Krumhansl-profile
+    correlation (musicprobe.l1_baselines.key_estimate's method) -- same
+    non-leakage discipline as D-zoom's pyin-estimated (not ground-truth)
+    reference pitch."""
+    return _repr_path(audio_path, "chroma_zoom_ref")

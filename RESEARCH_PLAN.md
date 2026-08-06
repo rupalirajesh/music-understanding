@@ -1219,3 +1219,83 @@ wrong-feature substitution-not-hearing mechanism check already reported (feature
 ≈ feature+correct_audio). Re-running `extract_activations.py --own-encoder` against these
 checkpoints would reproduce Track B's existing own-encoder numbers exactly and add no new
 information — skip it.
+
+### 12.8 Status update (2026-08-05, results landed 2026-08-06) — L-Q/R-W: clean null
+
+The plan in §12.7 is now built: all 6 harmony representations (L-Q) and their rhythm
+analogues (R-W, mapped onto `tempo_bpm`/`beats_per_bar` — see PROJECT_STATE.md next
+action 14 for the mapping table) have working renderers, verified against the full
+1248-stimulus battery, and job manifests with sane held-out splits. Policy changed from
+the original stop-early framing to running the full sequence per cluster and comparing
+(Rupali's call, 2026-08-05) — the research question now explicitly includes "which
+representation creates the richest usable signal," not just "does anything work."
+
+Two additions beyond the original §12.7 plan, both from the same conversation: a tonal-
+centroid/Tonnetz representation (Track Q) — `librosa.feature.tonnetz`, a 6-D projection
+where harmonically-close pitches map to nearby points (Harte, Sandler & Gasser 2006) —
+and its rhythm analogue, a "rhythm necklace" (Track W, Toussaint's circular rhythm
+geometry, onset patterns as polygons on a circle). Both are real, audio-derived, non-
+leaking representations, not resized/thresholded variants of something already tried.
+
+GPU training/eval is the remaining step (`experiments/scripts/17_run_tracks_lq.sh` /
+`18_run_tracks_rw.sh`, full context in `experiments/scripts/RUNBOOK_tracks_lq_rw.md`).
+Not run yet as of this update.
+
+**Results (2026-08-06, commit `6eef62a`, full 3-seed sweep)**: a clean null, worse
+than null on two tasks. `key_id` is significantly HURT by every one of the 6 harmony
+representations (Δacc −0.075 to −0.117, tonnetz p=.016) despite a solid 0.60-0.62
+audio-only baseline — the image pulls a working signal down, not up. `chord_quality`
+trends positive on all 6 (+0.08 to +0.17, piano-roll best, p=.043) but is
+underpowered at n=72. `mode_id`/`interval_id` null throughout. On rhythm, `tempo_bpm`
+is significantly hurt by 4/6 representations (p=.002 to .039) and trending negative
+on the remaining 2 — no representation improves it. `beats_per_bar` null (n=33).
+Mechanism: `wrong_image ≈ no_image` on both clusters (the image is mostly ignored),
+but `image + wrong_audio` still hurts `key_id` (p=.02) — not fully inert. Net: the
+D-zoom trick does not transfer to harmony or rhythm as tested — see §12.9 for why
+this doesn't settle the question yet.
+
+### 12.9 Tracks X/Y (2026-08-06) — the zoom+reference combination, not two more guesses
+
+Re-examining why D-zoom worked for pitch, but nothing in §12.8 worked for harmony or
+rhythm, surfaces a structural gap rather than a settled negative. D-zoom was not "zoom
+alone" — Track D force (a sharper/forced-attention image, same information, no
+reference line) was a clean null, mechanism-verified: the model demonstrably used the
+image and accuracy still didn't move. It was not "reference alone" either — Track H
+(an in-audio reference tone, no visual zoom) was a flat null, and the wrong-reference
+control showed the model wasn't even attempting a comparison. Only **zoom and an
+explicit annotated reference position together** fixed cents and absolute tuning.
+
+Tracks L-Q and R-W tested those two ingredients as *separate* items on a six-step
+list — zoom shows up alone in M/O/U, reference/structural richness shows up alone in
+P/V — mirroring D-force's and Track H's single-ingredient tests, never D-zoom's
+combination. So §12.8's null answers "does resolution alone help" and "does giving
+the model more structure alone help" for harmony/rhythm — not yet "does the actual
+D-zoom recipe, combined, help."
+
+Two new tracks fill that specific cell:
+- **Track X — zoomed peak-picked chroma + estimated-tonic reference.** Base: Track
+  M's finer-hop chroma. Added: the tonic pitch class, estimated from the stimulus's
+  own chroma via Krumhansl-profile correlation (the same method as the L1 baseline's
+  `key_estimate`, restricted to just the tonic — mode is a nuisance parameter here),
+  highlighted as a shaded reference band + text label, the harmonic analogue of
+  D-zoom's red "in tune" line.
+- **Track Y — zoomed rhythm-roll.** Base: Track V's onset-vs-detected-pulse-grid
+  chart (the grid already comes from a detected periodicity, not the ground-truth
+  beats-per-bar count — same leakage rule as before), rendered at Track U's finer
+  time resolution instead of the default hop.
+
+Both estimates remain strictly audio-derived — no manifest answer column is read by
+either renderer, same discipline as every track since Track G's leakage audit.
+CPU-side groundwork done and verified 2026-08-06 (both renderers run 1248/1248, 0
+errors; held-out splits confirmed to exactly match their parent ladder — Track X
+287/612 = Track G/L-Q's split, Track Y 127/132 = Track R-W's split, 0 overlap).
+GPU training/eval pending (`experiments/scripts/19_run_tracks_xy.sh`,
+`experiments/scripts/RUNBOOK_tracks_xy.md`).
+
+If X/Y come back positive where L-Q/R-W didn't, that confirms D-zoom's fix is a real
+combination effect generalizable beyond pitch, not a pitch-specific accident. If X/Y
+are *also* null, that's a stronger and more interesting negative than §12.8's: it
+would mean the ingredient that rescued pitch depends on pitch being a single
+continuous scalar mappable onto one chart position — a property key/chord/tempo/meter
+(categorical or multi-note aggregate judgments) don't share — rather than on nobody
+having combined the right two ingredients yet.

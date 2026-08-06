@@ -53,3 +53,16 @@ def rhythm_necklace_path(audio_path: str) -> str:
     """Track W: onsets folded modulo one detected cycle length, plotted as
     a circular "necklace" (Toussaint, The Geometry of Musical Rhythm)."""
     return _repr_path(audio_path, "rhythm_necklace")
+
+
+def rhythm_roll_zoom_path(audio_path: str) -> str:
+    """Track Y (2026-08-06): Track V's onset-vs-detected-pulse-grid rhythm
+    roll, rendered at Track U's finer time resolution (HOP_ZOOM) instead of
+    the default hop. Tracks R-W tested zoom (T/U) and an explicit detected-
+    pulse reference (V) separately but never combined them -- this is that
+    missing combination, the rhythm analogue of Track X above and of what
+    actually fixed pitch (Track D-zoom = zoom + reference, not either alone).
+    Grid spacing still comes from _detect_click_period (audio-derived median
+    inter-onset interval), never from the ground-truth beats-per-bar count --
+    same leakage rule as Track V."""
+    return _repr_path(audio_path, "rhythm_roll_zoom")
