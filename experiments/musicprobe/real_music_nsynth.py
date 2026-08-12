@@ -208,6 +208,72 @@ def build_manifest(n: int = 60, seed: int = 0, exp_root: Path = EXP_ROOT):
     return man, jobs
 
 
+IMAGE_CONDITIONS = ("image", "no_image", "wrong_image", "image_wrong_audio")
+DZOOM_TASKS = ("cents_discrimination", "tuning_judgment")  # the only two tasks Track
+                                                           # D-zoom ever targeted --
+                                                           # pitch_note_id gets no image
+
+
+def build_dzoom_image_jobs(manifest_path: Path = MANIFEST_PATH, seed: int = 0,
+                           exp_root: Path = EXP_ROOT) -> pd.DataFrame:
+    """Renders Track D-zoom's actual image (scripts/render_f0_contours.render_zoom,
+    unmodified -- confirmed generic 2026-08-12) for every cents_discrimination/
+    tuning_judgment stimulus in this manifest, then builds the same 4-condition
+    (image/no_image/wrong_image/image_wrong_audio) jobs table
+    musicprobe.image_jobs.build_image_jobs uses for the synthetic battery -- so
+    the trained checkpoint's evaluate() loop (gpu/train_track_d_force.py,
+    --image-kind f0zoom) can be pointed at this real-timbre jobs table with NO
+    changes to that already-verified eval code, only a different `held` source.
+
+    Writes manifests/real_nsynth_dzoom_jobs.parquet.
+    """
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    from render_f0_contours import render_zoom  # noqa: E402
+    from musicprobe.f0_contour import f0_zoom_path  # noqa: E402
+
+    man = pd.read_parquet(manifest_path)
+    sub = man[man.task.isin(DZOOM_TASKS)].reset_index(drop=True)
+    rng = np.random.default_rng(seed)
+
+    img_paths = {}
+    for r in sub.itertuples():
+        img_path = f0_zoom_path(r.audio_path)
+        out = exp_root / img_path
+        if not out.exists():
+            render_zoom(exp_root / r.audio_path, out, r.task)
+        img_paths[r.stimulus_id] = img_path
+
+    all_images = list(img_paths.values())
+    rows = []
+    for r in sub.itertuples():
+        for cond in IMAGE_CONDITIONS:
+            audio_path = r.audio_path
+            if cond == "image_wrong_audio":
+                others = sub[sub.stimulus_id != r.stimulus_id]
+                audio_path = others.sample(1, random_state=seed + hash(r.stimulus_id) % 10_000
+                                           ).iloc[0].audio_path
+            image_path = None
+            if cond == "image" or cond == "image_wrong_audio":
+                image_path = img_paths[r.stimulus_id]
+            elif cond == "wrong_image":
+                pool = [p for p in all_images if p != img_paths[r.stimulus_id]]
+                image_path = pool[int(rng.integers(len(pool)))]
+            for pi in range(3):
+                prompt = build_prompt(r.task, pi, "open", None)
+                rows.append({"job_id": f"{r.stimulus_id}::{cond}::open::p{pi}",
+                            "stimulus_id": r.stimulus_id, "task": r.task,
+                            "image_condition": cond, "format": "open", "paraphrase_idx": pi,
+                            "prompt": prompt, "ground_truth": r.ground_truth,
+                            "audio_path": audio_path, "image_path": image_path})
+    jobs = pd.DataFrame(rows)
+    out_path = MANIFEST_DIR / "real_nsynth_dzoom_jobs.parquet"
+    jobs.to_parquet(out_path, index=False)
+    print(f"[real_nsynth] {len(jobs)} D-zoom jobs -> {out_path} "
+          f"({jobs.image_condition.value_counts().to_dict()})")
+    return jobs
+
+
 def l1_accuracy(manifest_path: Path = MANIFEST_PATH, exp_root: Path = EXP_ROOT) -> pd.DataFrame:
     """L1's own DSP estimators (l1_baselines.f0_autocorr/tuning_estimate,
     UNCHANGED) run against these hybrid real+shifted stimuli -- the same
@@ -264,9 +330,15 @@ if __name__ == "__main__":
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--l1-only", action="store_true",
                     help="skip fetching, just re-run L1 accuracy against an existing manifest")
+    ap.add_argument("--dzoom-jobs", action="store_true",
+                    help="render Track D-zoom images + build the 4-condition jobs table "
+                         "(needs an existing manifest -- run a plain build first)")
     a = ap.parse_args()
     if a.l1_only:
         l1_accuracy()
+    elif a.dzoom_jobs:
+        build_dzoom_image_jobs(seed=a.seed)
     else:
         build_manifest(a.n, a.seed)
         l1_accuracy()
+        build_dzoom_image_jobs(seed=a.seed)
