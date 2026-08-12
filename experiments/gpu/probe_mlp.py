@@ -77,14 +77,14 @@ def probe_layer_mlp(X, y, groups, seed=0) -> float:
 
 def main(acts_dir: str, task: str, target: str,
          manifest="manifests/stimuli.parquet", max_layers=40, seed=0,
-         out_dir="results/trackB/probes"):
+         out_dir="results/trackB/probes", group_key: str = "soundfont"):
     man = pd.read_parquet(manifest)
     man = man[man["task"] == task].reset_index(drop=True)
     acts = Path(acts_dir)
     print(f"[mlp] {task} / target={target}: {len(man)} stimuli")
     results = []
     for layer in range(max_layers):
-        X, y, g = load_xy(acts, man, target, layer)
+        X, y, g = load_xy(acts, man, target, layer, group_key)
         if X is None or len(X) == 0:
             break
         lin_acc = None  # not recomputed here -- cross-reference the existing
@@ -110,5 +110,9 @@ if __name__ == "__main__":
     ap.add_argument("--manifest", default="manifests/stimuli.parquet")
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--out", default="results/trackB/probes")
+    ap.add_argument("--group-key", default="soundfont",
+                    help="factors.* key to hold out on -- 'track_id' for real_music_medleydb, "
+                         "'instrument_family' for real_music_nsynth (next action 25)")
     args = ap.parse_args()
-    main(args.acts, args.task, args.target, args.manifest, seed=args.seed, out_dir=args.out)
+    main(args.acts, args.task, args.target, args.manifest, seed=args.seed, out_dir=args.out,
+        group_key=args.group_key)

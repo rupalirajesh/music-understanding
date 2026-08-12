@@ -688,6 +688,48 @@ Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
     against `manifests/real_nsynth_jobs.parquet` — same status as next action 23, needs the
     H100 box, not built yet (low priority to build blind before the data's usefulness is
     confirmed by a first real run).
+25. **New (2026-08-12, Rupali relaying the professor's framing)**: for any near-floor task
+    (`mode_id`, `key_id`, `interval_id`, next action 13), is the information (a) genuinely
+    absent from the encoder at every depth, or (b) present in early/mid layers but discarded
+    by the final layers the existing probes all read from — the "late-layer loss" question,
+    where the fix would be reading an earlier layer instead of the last one? Next action 19
+    (nonlinear decoder) adds a third possibility this framing leaves out: (c) present at some
+    layer but linearly inseparable, fixable with a smarter reader, not a different layer.
+    Explicitly asked to check this **per task, on real music**, not assume one answer covers
+    every task ("maybe it varies test to test").
+    **Built 2026-08-12**:
+    - `gpu/probe.py` and `gpu/probe_mlp.py` both gained a `--group-key` flag (default
+      `soundfont`, unchanged — every already-run/verified probe call keeps its exact original
+      behavior). Real-music manifests have no soundfont; `real_music_medleydb.py` and
+      `real_music_nsynth.py` now both emit a `factors` column with the right substitute —
+      `track_id` for MedleyDB (never split one real song's notes across train/held), 
+      `instrument_family` for NSynth (parsed from NSynth's own filename convention, e.g.
+      `organ_electronic`) — same leakage-guard role as soundfont, re-verified against both the
+      MedleyDB selftest/fake-mock and a live NSynth regeneration after the change; nothing
+      broke.
+    - `gpu/classify_layer_pattern.py` — takes a linear (`probe.py`) and nonlinear
+      (`probe_mlp.py`) per-layer CSV for the same task/encoder/manifest and returns one of
+      five verdicts: `NEVER_CAPTURED` (neither clears chance anywhere — genuine absence),
+      `LATE_LAYER_LOSS` (linear clears chance early/mid, drops to chance in the final layers —
+      the professor's option (a), read off an earlier layer), `PRESENT_THROUGHOUT` (no late
+      decline — representation isn't the bottleneck), `NONLINEAR_ONLY` (linear never clears
+      chance, nonlinear does — present but linearly inseparable, next action 19's case), or
+      `MIXED` (doesn't fit cleanly, reported as such rather than forced into a bucket). "Clears
+      chance" = accuracy ≥ chance + 0.08, an absolute margin chosen to reproduce this project's
+      own existing judgment call on a real number (mode_id's 0.04–0.12 vs chance 0.077 stays
+      below this margin, matching the "barely above chance" language already used for it in
+      next action 13 — not a threshold invented from nothing). **Verified against 5
+      constructed synthetic curves, one per verdict shape — all 5 classify correctly**
+      (`--selftest`).
+    - `extract_activations.py` needed **no changes** — it already takes `--manifest`, so it's
+      already compatible with `real_music_medleydb.parquet`/`real_nsynth_manifest.parquet` as
+      soon as either has real audio behind it (checked directly, not assumed).
+    **Still blocked**: this whole diagnostic needs real per-layer activations from the actual
+    trained model's own audio encoder on real audio — `extract_activations.py --own-encoder`
+    against MedleyDB (once Zenodo access lands) or NSynth (ready now), then `probe.py`/
+    `probe_mlp.py --group-key ...` per task, then `classify_layer_pattern.py` per result pair.
+    Every piece up to that point is built and verified; the GPU run itself is the one
+    remaining step, same H100-box blocker as next actions 17/19/21/22/23/24.
 
 ## Known gaps / honesty list
 - L1 key detection weak on minor progressions (naive Krumhansl) — use

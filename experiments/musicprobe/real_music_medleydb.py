@@ -190,6 +190,13 @@ def build_manifest(data_home: str, n_pitch=60, n_interval=60, seed=0,
                          "title": r.title, "artist": r.artist, "genre": r.genre})
 
     manifest = pd.DataFrame(man_rows)
+    # `factors` column (PROJECT_STATE next action 25, added 2026-08-12): held-out-group
+    # key for gpu/probe.py's leakage-guard folds, same shape as the synthetic battery's
+    # `factors.soundfont` -- grouped by TRACK here (never split one real song's notes
+    # across train/held, or a probe would partly be reading that recording's specific
+    # acoustic fingerprint, not the musical property).
+    import json as _json
+    manifest["factors"] = manifest.apply(lambda r: _json.dumps({"track_id": r.track_id}), axis=1)
     # wrong_audio control (Rupali's call, 2026-08-12): reuse this project's
     # existing contamination check rather than inventing a new one -- pair
     # every row with a mismatched real clip from a DIFFERENT track, asked

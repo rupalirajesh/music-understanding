@@ -157,7 +157,22 @@ def build_pool_and_stimuli(n: int, seed: int, exp_root: Path = EXP_ROOT) -> pd.D
                                   "docstring)"),
                     "base_file": note["path"], "cents_shift": cents})
 
-    return pd.DataFrame(rows)
+    manifest = pd.DataFrame(rows)
+    # `factors` column (PROJECT_STATE next action 25, added 2026-08-12): held-out-group
+    # key for gpu/probe.py's leakage-guard folds, same role as the synthetic battery's
+    # factors.soundfont -- grouped by INSTRUMENT FAMILY (NSynth's own path convention,
+    # e.g. "organ_electronic", parsed as everything before the first "<3-digit>-<pitch>-
+    # <velocity>" segment) so a probe never sees the same instrument in both train and
+    # held folds -- guards against timbre-fingerprint leakage exactly like soundfont does.
+    import json as _json
+    import re as _re
+
+    def _family(base_file):
+        m = _re.match(r"^(.*?)_\d+-\d+-\d+", base_file)
+        return m.group(1) if m else base_file
+    manifest["factors"] = manifest["base_file"].apply(
+        lambda f: _json.dumps({"instrument_family": _family(f)}))
+    return manifest
 
 
 def build_jobs(manifest: pd.DataFrame, seed: int = 0) -> pd.DataFrame:
