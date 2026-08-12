@@ -616,6 +616,32 @@ Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
     still needs a small eval-only entry point pointed at
     `manifests/real_music_medleydb_jobs.parquet` instead of the synthetic jobs table (not
     built yet — low priority until the data itself is in hand).
+    **Interim real-recordings set, built + tested 2026-08-12 (while MedleyDB access is
+    pending)**: 7 real classical recordings pulled from Wikimedia Commons (free-licensed,
+    no login/API gate — unlike GiantSteps/MedleyDB), a mix by design: 4 "famous" pieces
+    where key is well-documented but a model could plausibly recall it from text alone
+    (Beethoven Moonlight Sonata 1st mvt, Beethoven Für Elise, Pachelbel Canon in D, Chopin
+    Nocturne Op.9 No.2) and 3 "obscure" pieces with equally solid documented ground truth but
+    far lower text-memorization risk (2 Scarlatti keyboard sonatas identified only by
+    Kirkpatrick catalog number, a Clementi pedagogical sonatina). Stored at
+    `stimuli/real_recordings/` + `manifests/real_recordings_manifest.{csv,parquet}` (title,
+    composer, key, key source/citation, fame tier, contamination-risk note, source URL,
+    license — every field traceable, no guessed ground truth). All 7 verified playable
+    (one, the Chopin file, needed re-encoding from a skeleton-multiplexed Ogg Vorbis stream
+    libsndfile couldn't parse to a plain wav via librosa's audioread fallback — noted in case
+    it recurs with other Commons files).
+    **Ran the same L1-key-estimate + note-segmentation pipeline test as the Bach/Debussy pass
+    (2026-08-12) against all 7**: key_estimate matched the documented key on 4/7 (Moonlight
+    Sonata, Für Elise, Canon in D, Scarlatti K.87) and missed on 3/7 — Chopin Nocturne
+    (documented E♭ major, guessed G minor), Scarlatti K.466 (documented F minor, guessed C
+    major), Clementi Sonatina (documented C major, guessed G major — the dominant, a classic
+    naive-key-detector confusion, most explainable of the three misses). No fame-tier pattern
+    in the misses (2 famous, 1 obscure) — this is L1's *own* algorithm generalizing
+    imperfectly to real (non-monophonic-synthetic) audio, not yet a statement about the
+    trained LALM, which still hasn't been run against any of this (no GPU here). All 7 produce
+    7–37 clean monophonic note-segments in their first 30s via the same segmenter used for
+    MedleyDB, so note/interval snippets (same recipe as the Bach bass-line test) can be pulled
+    from any of them on request.
 
 ## Known gaps / honesty list
 - L1 key detection weak on minor progressions (naive Krumhansl) — use
