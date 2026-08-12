@@ -113,7 +113,7 @@ Last updated: 2026-08-05. Update this whenever anything changes hands.
     held-out splits, paired McNemar over 3 seeds) rather than repeating Track D Phase 1's
     single-arm mistake, so the null results are trustworthy, not a methodology artifact.
 
-## Next actions (ordered, updated 2026-08-05)
+## Next actions (ordered, updated 2026-08-12)
 GPT-4o-audio removed from this list entirely 2026-07-25 — no OpenAI API access, out of
 scope. 6 models (Qwen2-Audio, Qwen2.5-Omni, Qwen3-Omni-30B, AF3, Music-Flamingo,
 Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
@@ -386,14 +386,183 @@ Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
     `scripts/19_run_tracks_xy.sh` + `scripts/RUNBOOK_tracks_xy.md`.
 17. **New (2026-08-05)**: auxiliary self-transcription training objective (RESEARCH_PLAN.md
     §12.3, specced since before Track D but never run) — extend to run across **all three**
-    clusters (pitch, harmony, rhythm), not harmony alone. Blocked on one open question
-    first: the transcription format (`RUPALI_READ_THIS.md` §5) — plain MIDI-as-text is
-    ruled out (fails requirement 5, no continuous pitch/microtiming), candidates are a
-    JSON-ish event list, prose description, or a compact onset/pitch-contour grid. Resolving
-    this is the actual unblock; it hasn't been picked yet. This is the one intervention in
+    clusters (pitch, harmony, rhythm), not harmony alone. This is the one intervention in
     the whole project where the model generates its own intermediate representation during
     training rather than reading an externally-injected one — the framing every front-end
-    track above is really scaffolding toward, not a replacement for Tracks L–W.
+    track above is really scaffolding toward, not a replacement for Tracks L–Y.
+    **Format blocker resolved 2026-08-12**: JSON event list of audio-derived
+    `(onset, dur, hz)` triples — see RESEARCH_PLAN.md §12.3 for the full decision and why
+    MIDI-as-text/prose/pitch-bend formats were rejected. CPU-side groundwork done + verified
+    (laptop): `musicprobe/transcription_target.py` (reuses Track P's onset+piptrack detection
+    chain, duplicated not imported, so Track P's landed results can't be affected), run
+    against the full 1248-stimulus battery, 0 errors, cached to
+    `manifests/transcription_target.json` (1104 unique audio_paths, median target 197 chars,
+    dense-rhythm tail up to ~4.1k chars — flag for capping if that's too long once training
+    starts). **Multi-task LoRA trainer built 2026-08-12** — `gpu/train_track_z_transcribe.py`
+    (Track Z), mirrors `train_track_e_f0text.py`'s dropout-dataset pattern: each training step
+    is randomly `answer` (weight 0.6, the normal battery question) or `transcribe` (weight 0.4,
+    a fixed prompt against the JSON target above), same audio clip either way. At eval time
+    only `answer` is used (per §12.3 — the transcribe head is discarded, only its effect on the
+    shared encoder is being tested). Runs across all 13 tasks, reusing
+    `image_track_common._held_out_mask`'s 3-tier fallback (the only held-out function in this
+    codebase confirmed to generalize past harmony/rhythm). **CPU-side verified 2026-08-12**:
+    `split()` produces non-empty train/held rows for every one of the 13 tasks (1170 train /
+    517 held total; per-task train/held ranges from `progression_id` 30/16 to `beats_per_bar`
+    126/18); every training row's `audio_path` has a transcription-target entry (0 missing,
+    checked directly). **GPU steps unverified** (no GPU on the laptop, same status as every
+    other track before its first real run) — `train()`/`evaluate()` are written and
+    syntax-checked, not executed. **Still needed after a checkpoint exists**: the before/after
+    L2 probe comparison itself isn't automated — re-run `gpu/extract_activations.py
+    --own-encoder` against the Track Z checkpoint, then `gpu/probe.py` (and/or
+    `gpu/probe_mlp.py`, next action 19) against the pre-fine-tune baseline;
+    `evaluate()` prints this reminder at the end of its own run.
+18. **New (2026-08-12)**: check what Qwen2-Audio/Qwen2.5-Omni were actually trained and
+    evaluated on for music, before reading any more nulls as purely a representation-choice
+    finding — **done as desk research 2026-08-12**. Qwen2-Audio's own published benchmark
+    roster (Qwen team blog + technical report, arxiv 2407.10759): LibriSpeech/Common
+    Voice/Fleurs/Aishell2 (ASR), CoVoST2 (speech translation), Meld (speech emotion),
+    Vocalsound (non-speech human vocalizations — cough/laugh/sneeze), and AIR-Bench (a
+    GPT-4-graded chat benchmark with 4 dimensions: speech/sound/music/mixed). Music is **not**
+    a first-party target anywhere in that roster — it's one of four sub-dimensions inside one
+    broader benchmark, not a dedicated eval. Qwen2.5-Omni's roster (Qwen team blog): Common
+    Voice (ASR), CoVoST2 (translation), MMAU (audio understanding), OmniBench, Seed-tts-eval
+    — again no dedicated music benchmark; music enters only via MMAU, a **third-party**
+    benchmark (arxiv 2410.19168) spanning Speech/Sound/Music domains, on which Qwen2-Audio
+    scores 55.4% overall (same "third-party, not the model's own claimed number" status as
+    MuChoMusic's Qwen-Audio-v1 number in next action 5). **Reading**: neither model's own
+    training/eval pipeline treats music as a first-class target — it rides along inside
+    broader "audio understanding" benchmarks. This doesn't mean music is absent from
+    pretraining data (no technical report gives a data-mix breakdown by content type; PDF
+    table extraction failed locally, not re-attempted), but it does mean the L-Q/R-W nulls
+    and actively-negative results on `key_id`/`tempo_bpm` are consistent with "this model was
+    never optimized to be good at this," not only "we haven't found the right front-end yet"
+    — worth stating explicitly in PAPER.md's limitations/interpretation, not just here.
+    **Not done**: pulling exact AIR-Bench music-dimension numbers (image/table-only in the
+    PDF, couldn't extract without `poppler`/OCR tooling not installed on the laptop) — if a
+    precise number matters later, install `poppler` (`brew install poppler`) and re-run
+    `Read` with `pages` on the cached PDF, or source the number from a paper that quotes it
+    in text (same "primary source over secondhand summary" discipline as next action 5).
+19. **New (2026-08-12)**: train a nonlinear decoder (small MLP, not `LogisticRegression`) at
+    each encoder layer, reusing activations already extracted for Track B (MERT/Whisper/CLAP
+    + each LALM's own encoder) — every existing probe in `gpu/probe.py`/`probe_microtone.py`/
+    `probe_vision_pitch.py` is linear-only. Motivation: the near-floor tasks (`mode_id` best
+    0.04–0.12 vs chance 0.077, `interval_id`/`chord_quality` modest-but-real per next action
+    13) were certified "weak signal" by a linear probe specifically — a nonlinear decoder
+    could recover structure a hyperplane can't separate, which would change the read on
+    whether these tasks are genuinely information-poor at the encoder or just
+    linearly-inseparable. No new data collection (activations already on the H100 box from
+    Track B); this is a new analysis script, `sklearn.neural_network.MLPClassifier` or a
+    small torch head, same train/held split discipline as `probe.py`. Cheap relative to any
+    LoRA track — CPU-feasible if the saved activation `.npy`/`.parquet` files are small
+    enough to pull to the laptop, otherwise a quick H100 job.
+    **Built 2026-08-12**: `gpu/probe_mlp.py`, drop-in second pass over the same `--acts`
+    directory `probe.py` reads (identical `load_xy`, reused not copied), `MLPClassifier`
+    (one hidden layer, 32 units, `early_stopping=True` — deliberately small given ~100-200
+    examples/fold, so it catches simple nonlinear separability without just memorizing).
+    Output lands in the same `results/trackB/probes/` dir as `probe__*.csv`, named
+    `probe_mlp__*.csv` for a direct diff. **Smoke-tested against synthetic fake activations**
+    (no real `.npz` files exist on the laptop — `musicprobe/config.py`: "activations stay on
+    the GPU box"): built a fake encoder dir with a deliberately-nonlinear (XOR-like) toy
+    target, ran end-to-end, 0 crashes, MLP scored 0.433 vs 0.333 chance — confirms the
+    plumbing (load → fold-split → fit → score → write) works, but this is NOT a real result;
+    run against an actual `--acts` directory on the H100 box before trusting any number.
+20. **New (2026-08-12)**: mel-spectrogram classifier baseline — a small supervised classifier
+    trained directly on mel-spectrogram features (not a rendered image, not routed through an
+    LALM) for each battery task, as a new baseline sitting alongside the existing L1 DSP floor
+    (next action 4) and the L2 encoder probes. Where L1 uses hand-picked DSP estimators
+    (autocorrelation, Krumhansl correlation, FFT peak-picking) and L2 probes a pretrained
+    encoder's representation, this baseline asks "how much is recoverable from the raw
+    time-frequency representation with no hand-designed features and no pretrained encoder at
+    all" — a third, complementary floor. Unlike L1, this needs no essentia/beat-tracking
+    library, so it's the first floor to cover ALL 13 tasks, including the 3 L1 can't
+    (`beats_per_bar`, `progression_id`, `instrument_id`).
+    **Built + RUN for real 2026-08-12** (laptop, CPU-only, `musicprobe/mel_baseline.py`):
+    log-mel (64 bins), mean+std time-pooled to a fixed 128-dim vector, `LogisticRegression`,
+    held out via the same 3-tier split as every LoRA track (`_held_out_mask`, duplicated from
+    `image_track_common` to stay torch-free — a first version used a naive random-split
+    fallback when no soundfont factor existed, which silently gave `beats_per_bar` a
+    non-generalizing split; caught and fixed before trusting the number, same discipline as
+    next action 15a). Results, `results/mel_baseline.parquet`:
+    | task | acc | chance | split | note |
+    |---|---|---|---|---|
+    | octave_id | 0.667 | 0.333 | soundfont | |
+    | tuning_judgment | 0.741 | 0.500 | base_midi | |
+    | instrument_id | 0.667 | 0.250 | soundfont | |
+    | beats_per_bar | **1.000** | 0.200 | bpm (genuine held-out-tempo split) | suspiciously
+    perfect even under a real tempo-generalization split — checked for a confound directly:
+    mean clip duration rises monotonically with beats-per-bar (3-beat ≈11.0s → 7-beat ≈14.6s,
+    n=20/class), so this may be reading duration/bar-count structure rather than genuine
+    meter perception. Flag as a **task-validity question, not a capability finding**, same
+    treatment as the existing beats_per_bar wrong-audio-control oddity (Known gaps) — needs a
+    duration-controlled follow-up before citing. |
+    | progression_id | 0.417 | 0.250 | soundfont | n=32, hypothesis-generating only |
+    | cents_discrimination | 0.389 | 0.333 | base_midi | |
+    | note_count | 0.286 | 0.200 | soundfont | |
+    | pitch_note_id | 0.367 | 0.083 | soundfont | |
+    | chord_quality | 0.167 | 0.125 | soundfont | |
+    | interval_id | 0.113 | 0.083 | soundfont | |
+    | key_id | 0.075 | 0.042 | soundfont | |
+    | mode_id | 0.028 | 0.077 | soundfont | below chance |
+    | tempo_bpm | **0.000** | 0.017 | bpm | below chance, and contradicts L1's 0.82 on the
+    same audio — **feature-design artifact, not a real finding**: mean/std time-pooling
+    destroys periodicity by construction (averaging washes out the very temporal pattern tempo
+    lives in), so this baseline is structurally blind to tempo, not evidence tempo is
+    unrecoverable from mel features. A time-aware feature (e.g. an onset-strength
+    autocorrelation, closer to what L1's own `tempo_estimate` already does) would be needed to
+    make this comparison fairly. |
+    Reading: consistent with L1/L2 on the near-floor tasks (`mode_id`, `key_id`, `interval_id`
+    all weak here too) — three independent "no pretrained encoder / no LALM" methods now agree
+    those are genuinely hard, not a probing-method artifact. `beats_per_bar` and `tempo_bpm`
+    both need a second look before either number is cited (opposite problems: one may be a
+    confound inflating it, the other is a known feature-design blind spot deflating it).
+21. **New (2026-08-12)**: run additional music-specific LALMs — MU-LLaMA
+    (`github.com/shansongliu/MU-LLaMA`), MusiLingo, and M2UGen (now folded into
+    `github.com/shansongliu/MuMu-LLaMA`) — all confirmed to have open weights (checked
+    2026-08-12; LLark does not and stays out of scope, same status as GPT-4o-audio). **Caveat
+    before committing real setup time**: all three are adapter+LLM heads on top of **frozen
+    MERT embeddings** — the same encoder already in this project's Track B roster. Running
+    them doesn't open a new encoder axis, it tests whether a different decoder/adapter/LLM
+    extracts more from MERT features than the current probes do, which makes this
+    conceptually the same question as next action 19 (nonlinear decoder), just answered by
+    three full 7B-scale LLMs instead of an MLP head — much more setup cost (three separate
+    repos/envs on the H100 box) for a question next action 19 answers more cheaply first.
+    Sequence after 19, not before — if a small nonlinear decoder already closes the gap on
+    MERT's near-floor tasks, these three add less than they'd otherwise appear to.
+    **Harness scaffold built 2026-08-12**: `gpu/eval_music_lalms.py` reuses the exact
+    `responses__<tag>.parquet` schema every other Track A model already writes to (same
+    `musicprobe.jobs.JOBS_PATH` frozen battery, same resumable-run pattern as
+    `musicprobe/runners/run_local.py`) — so once wired up, these three land in the same
+    scoring/analysis pipeline with no separate code path. **The three per-model loaders are
+    intentionally left as `NotImplementedError` stubs**, not guessed-at inference code — unlike
+    Qwen2.5-Omni (already integrated, loading code this project owns and has run), these are
+    three third-party repos never loaded here before, and fabricating plausible-looking load
+    calls without the actual repos in hand risks silently-wrong inference that looks done but
+    isn't (same trap `eval_muchomusic.py`'s BLOCKER section already flags for its own external
+    dependency). Whoever runs this on the H100 box: fill in one `_load_*` function per model
+    from that repo's own example/demo script — everything else (job iteration, response
+    writing, resumability) is ready. Repo URLs and the MERT-overlap caveat are in the file's
+    docstring.
+22. **New (2026-08-12)**: mechanistic follow-up on why Tracks L-Q/R-W's images actively HURT
+    `key_id`/`tempo_bpm` rather than just failing to help — the existing attention diagnostic
+    (`gpu/attention_audio.py`, `gpu/plot_attention.py`, already verified eager-attention-safe
+    2026-07-25) has never been pointed at these tracks' checkpoints. Question: does attention
+    to image tokens spike in a way that correlates with the accuracy drop (a genuine
+    "distraction" mechanism, image pulling weight away from audio) or does it stay low like
+    the wrong_image≈no_image mechanism control already suggests (model mostly ignores the
+    image, and the harm comes from somewhere else — e.g. the modality-dropout training itself
+    perturbing the audio-only pathway)? Turns "several representations hurt performance" from
+    a bare finding into a mechanistic explanation.
+    **Extended 2026-08-12**: `gpu/attention_audio.py` now takes `--lora-checkpoint PATH`
+    (+ optional `--tag`) to wrap the qwen-omni preparer's `.thinker` with a saved PEFT adapter
+    before running the diagnostic — same wrapping pattern `image_track_common.load_for_eval`
+    already uses, additive-only (existing base-model behavior is unchanged when the flag is
+    omitted; the preparer functions themselves weren't touched). Syntax-checked, not run — no
+    GPU here to test against a real checkpoint.
+    **Dependency to verify first, still open**: whether Track L-Q/R-W's per-seed checkpoints
+    (`gpu/train_track_repr.py`'s `ckpt_subdir`) are still on the H100 box or were cleared after
+    eval — if cleared, this needs a rerun of at least one seed before the diagnostic can attach.
+    Whoever has H100 access should check this before scoping further; not resolvable from the
+    laptop.
 
 ## Known gaps / honesty list
 - L1 key detection weak on minor progressions (naive Krumhansl) — use

@@ -224,10 +224,30 @@ def pick_preparer(model_name: str):
     raise ValueError(f"no attention-diagnostic loader for {model_name} — add one above")
 
 
-def main(model_name: str, per_task: int, seed: int = 0):
+def main(model_name: str, per_task: int, seed: int = 0, lora_checkpoint: str = None,
+        tag_override: str = None):
+    """lora_checkpoint (PROJECT_STATE.md next action 22, added 2026-08-12,
+    UNVERIFIED -- no GPU on the laptop to test against a real checkpoint):
+    point the diagnostic at a Track L-Y-style fine-tuned adapter instead of a
+    base model, to check whether images that HURT accuracy (key_id/tempo_bpm
+    in Tracks L-Q/R-W) do so because attention is drawn toward the image
+    tokens at audio's expense, or whether audio attention stays flat like the
+    existing wrong_image~=no_image mechanism control already suggests. Only
+    wired for the qwen-omni preparer (the only architecture any LoRA track in
+    this project fine-tunes) -- wraps .thinker with the saved adapter the
+    same way gpu/image_track_common.load_for_eval does, since that's the
+    submodule Track C/D/../Z's build_lora_config actually targets."""
     import torch
 
     model, processor, encode = pick_preparer(model_name)(model_name)
+    if lora_checkpoint is not None:
+        if "omni" not in model_name.lower():
+            raise ValueError("--lora-checkpoint is only wired for qwen-omni preparers "
+                             "(the only architecture any LoRA track fine-tunes) -- "
+                             f"got --model {model_name}")
+        from peft import PeftModel
+        model.thinker = PeftModel.from_pretrained(model.thinker, lora_checkpoint)
+        print(f"[attn] wrapped .thinker with adapter from {lora_checkpoint}")
     assert_eager_attention(model, model_name)
     jobs = pd.read_parquet(JOBS_PATH)
     jobs = jobs[(jobs["condition"] == "audio") & (jobs["format"] == "mcq")]
@@ -284,7 +304,7 @@ def main(model_name: str, per_task: int, seed: int = 0):
     df = pd.DataFrame(rows)
     out_dir = TRACKB_DIR / "attention"
     out_dir.mkdir(parents=True, exist_ok=True)
-    tag = model_name.replace("/", "_")
+    tag = tag_override or model_name.replace("/", "_")
     df.to_parquet(out_dir / f"attn__{tag}.parquet", index=False)
 
     by_layer = (df.groupby(["task", "layer"])[["attn_audio_frac", "uniform_frac"]]
@@ -302,5 +322,11 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", default="Qwen/Qwen2-Audio-7B-Instruct")
     ap.add_argument("--per-task", type=int, default=PER_TASK)
+    ap.add_argument("--lora-checkpoint", default=None,
+                    help="path to a Track L-Y/Z-style saved adapter dir (next action 22); "
+                         "only valid with --model pointing at a qwen-omni base checkpoint")
+    ap.add_argument("--tag", default=None,
+                    help="output filename tag override, e.g. 'track-l-chroma-picked-s0' "
+                         "-- defaults to --model with / replaced by _")
     args = ap.parse_args()
-    main(args.model, args.per_task)
+    main(args.model, args.per_task, lora_checkpoint=args.lora_checkpoint, tag_override=args.tag)

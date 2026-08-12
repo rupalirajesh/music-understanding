@@ -1050,15 +1050,38 @@ is never present at inference — it tests whether the *pressure* to transcribe 
 during training reshapes the encoder into something more decodable, not whether the model
 can read an answer off a rendered score.
 
-**Open question this phase is gated on** (already parked, unresolved, in
-`RUPALI_READ_THIS.md` §5 — now load-bearing rather than hypothetical): what transcription
-*format* to target. It has to satisfy requirement 5 above, which rules out plain staff
-notation/MIDI outright (no continuous pitch). Candidates to evaluate before committing:
-JSON-ish event lists, prose description, a compact onset/pitch-contour grid, or a
-pitch-bend-inclusive symbolic format. This format choice is itself a small experiment (which
-one is learnable, compact, and human-readable) before Phase 2's main run — don't skip it and
-default to MIDI-as-text out of convenience, since that silently reintroduces requirement 5's
-failure mode.
+**Format decision, resolved 2026-08-12** (was parked, unresolved, in `RUPALI_READ_THIS.md` §5):
+a compact JSON event list of audio-derived `(onset, dur, hz)` triples per detected note, e.g.
+`[{"onset":0.23,"dur":0.95,"hz":261.6},...]`. Chosen over plain MIDI-as-text because pitch is
+continuous Hz, not a quantized note number — satisfies requirement 5 (no continuous pitch was
+the specific failure mode MIDI-as-text was ruled out for) while staying compact and
+human-readable (requirements 2/4). Detection reuses the exact onset-detect + per-segment
+piptrack + harmonic-rejection chain Track P (`render_piano_roll`) already verified for the
+piano-roll image, just serialized as JSON text instead of plotted — implemented standalone in
+`musicprobe/transcription_target.py` (duplicated, not imported, from
+`scripts/render_harmony_repr.py`'s helpers, so this new consumer can never change Track P's
+already-landed behavior). Built + run against the full 1248-stimulus battery 2026-08-12: 0
+errors, 1104 unique audio_paths cached to `manifests/transcription_target.json` (median
+target length 197 chars; a dense-rhythm tail runs up to ~4.1k chars — click-track-style
+`tempo_bpm`/`beats_per_bar` stimuli generate many short notes — worth capping event count if
+that proves too long a target once the multi-task trainer is built). This is a **training
+target only**, generated from audio the same way Track P's image is, and never shown to the
+model as input — the leakage risk that applies to every front-end track (D–Y) does not apply
+here.
+
+Unlike Track E's `f0_text` (pitch tasks only), this map is built over the **whole manifest**
+by default (`build_map(tasks=None)`), since Phase 2 is meant to run across all three clusters
+per PROJECT_STATE.md next action 17 — Rejected candidates from the original shortlist: prose
+description (harder to make precisely comparable across seeds/checkpoints than a fixed
+schema) and a pitch-bend-inclusive symbolic format (no existing audio-derived pitch-bend
+estimator in this codebase to generate it from — would be new infrastructure, not a format
+choice).
+
+**Still open / not yet built**: the multi-task LoRA trainer itself (objective (a) unchanged +
+objective (b) transcribe, per Design below) — CPU-side target generation is done, but nothing
+GPU-side has been written or run. This is a bigger lift than Tracks L–Y's front-end injection
+scripts (needs a multi-task loss/dataset-mixing design, not just a new prompt condition) —
+see PROJECT_STATE.md next action 17 for scoping.
 
 **Design**: multi-task LoRA fine-tune on Qwen2.5-Omni-7B — objective (a) unchanged, answer
 the existing battery; objective (b) new, transcribe what's playing, in the chosen format.
