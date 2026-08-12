@@ -71,46 +71,201 @@ cd experiments
 .venv/bin/python scripts/04_export_for_review.py --model gemini-2.5-flash
 ```
 
-### Running everything that's left (collaborator: this one) — updated 2026-07-31
+### Running everything that's left (handover for Sethu — updated 2026-08-12)
 
-Track A/B, Track C (3-arm LoRA on AF3), and Track D/E/F (all four pitch
-front-end iterations — mix/force/zoom/f0text/pitchfuse) are done and
-committed. **What's actually left** is one ready-to-run GPU step plus two
-items that need new work before they're runnable — see PROJECT_STATE.md
-"Next actions" #4/#5/#11 for full context:
+Everything through Tracks A–H, the L–Q/R–W 12-representation ladder, and the
+mel-spectrogram/desk-research next actions is done and committed (full
+detail: PROJECT_STATE.md "Next actions" 1–20). **What's actually queued now**
+is below, in the order it's worth doing it — items 1–3 have no external
+blocker and can start immediately; items 4–6 need a quick disk-availability
+check first; item 7 is blocked on a Zenodo access request Rupali submitted
+2026-08-12 (unknown turnaround — check back, don't wait idle); item 8 needs
+manual per-repo integration work before it's runnable at all.
+
+Full scientific rationale for every item lives in PROJECT_STATE.md's
+next-actions 17–25 — this section is deliberately just "what to type," not
+"why." If you hit something ambiguous, that file (and the docstring at the
+top of whichever script you're running) is where the reasoning lives.
+
+**1. Real-timbre D-zoom eval (next action 24) — ready now, closes an open
+question in `PAPER.md`'s new "is D-zoom test-time scalable" section:**
 
 ```bash
-bash scripts/14_run_remaining_2.sh   # Track F aug rerun (leakage bug fixed
-                                      # 2026-07-31) — the only step that's
-                                      # actually ready to run unattended.
-                                      # The other two open items (a stronger
-                                      # L1 DSP floor via essentia, and the
-                                      # Qwen2-Audio/MuChoMusic harness
-                                      # validation) are documented in the
-                                      # script's comments but NOT scripted —
-                                      # they need real implementation work
-                                      # this box is better suited for than
-                                      # the laptop (essentia has no wheel
-                                      # for the laptop's Python/platform).
+pip install datasets   # only new dependency beyond the usual GPU stack
 
-bash scripts/15_run_track_g.sh       # NEW: Track G — chromagram front-end for
-                                      # the harmonic cluster (key_id/mode_id/
-                                      # chord_quality/interval_id), the first
-                                      # causal test on this cluster (Tracks
-                                      # C-F only ever targeted pitch/tuning).
-                                      # CPU groundwork (render + jobs) already
-                                      # run + committed; ready for the GPU
-                                      # steps (smoke-test first).
+# audio + images are gitignored (stimuli/ policy, same as the whole synthetic
+# battery) -- regenerate on THIS box, don't expect the committed .parquet
+# files to line up with audio you don't have yet:
+python -m musicprobe.real_music_nsynth --n 60 --seed 0        # ~2-5 min, streams from HF
+python -m musicprobe.real_music_nsynth --dzoom-jobs --seed 0  # renders 120 PNGs, ~1 min, CPU
 
-bash scripts/16_run_track_h.sh       # NEW: Track H — in-audio reference tone
-                                      # for tuning_judgment: does mixing a
-                                      # reference pitch into the AUDIO itself
-                                      # (no image, no external tool) fix
-                                      # absolute tuning the way Track D-zoom's
-                                      # reference-line image did? CPU
-                                      # groundwork already run + committed;
-                                      # ready for the GPU steps.
+python gpu/eval_track_dzoom_real.py --seed 0 --limit 40  # smoke test first
+python gpu/eval_track_dzoom_real.py --seed 0              # full run, 1440 jobs
 ```
+
+GOTCHA: NSynth's streaming fetch is NOT perfectly reproducible run-to-run —
+confirmed by running it twice on the laptop with the identical seed and
+getting two different draws of notes (HF's streaming order isn't fully
+stable). The `manifests/real_nsynth*.parquet` files already in git reference
+audio filenames from *my* laptop run, which won't exist here — the two
+commands above will overwrite them with *your* own equally-valid 180 notes.
+That's expected, not a bug; just don't try to make local audio match the
+committed manifest, regenerate both together.
+
+Checkpoint: `gpu/track_d_force_ckpt/qwen25omni-zoom-s0/` (Track D-zoom is
+`train_track_d_force.py --image-kind f0zoom`, not a separate file) — should
+already exist from the original 2026-07-29 run. If it's missing, the eval
+script fails with a clear message telling you to retrain first
+(`python gpu/train_track_d_force.py --seed 0 --image-kind f0zoom`) — do NOT
+evaluate an untrained checkpoint, it'll look like a real null and isn't one.
+
+Score the output (`musicprobe.scoring` or `gpu/analyze_track_d.py`, same as
+any other track) and compare against `results/trackA/trackd_zoom_summary.csv`
+(the original synthetic numbers: cents 0.55→0.94, tuning 0.53→0.89). This
+number is the actual answer to "does D-zoom generalize past clean synthetic
+tones" — the whole reason this next action exists.
+
+**2. Tracks X/Y — zoom+reference combo for harmony/rhythm:**
+
+```bash
+bash scripts/19_run_tracks_xy.sh   # or step through manually, see RUNBOOK_tracks_xy.md
+```
+CPU groundwork (renderers, full battery render, held-out splits) already
+verified — smoke-test each track before the full run, same as every prior
+one.
+
+**3. Track Z — self-transcription training objective:**
+
+```bash
+python gpu/train_track_z_transcribe.py --seed 0 --smoke-test
+python gpu/train_track_z_transcribe.py --seed 0
+```
+The biggest lift on this list (a real multi-task loss, not just a new
+prompt condition — PROJECT_STATE next action 17 has the full design). The
+battery score after training is NOT the deliverable by itself — rerun
+`gpu/extract_activations.py --own-encoder` against this checkpoint and
+compare L2 probe accuracy (`gpu/probe.py`) to the pre-fine-tune baseline;
+`evaluate()` prints this reminder itself at the end of its own run.
+
+**4. Next action 19 — nonlinear decoder per encoder layer:**
+
+```bash
+python gpu/probe_mlp.py --acts acts/<existing_dir> --task <task> --target ground_truth
+```
+Only tested against synthetic fake activations on the laptop — this is its
+first real run, watch it. **Check first** that the raw `.npz` files from the
+earlier Track B extraction (`acts/mert330`, `acts/whisper`, `acts/clap`,
+`acts/qwen25omni_own`, etc.) are still on this box — if cleared, rerun
+`extract_activations.py` first (commands in the quickstart section below).
+
+**5. Next action 22 — attention audit (why do L–Q/R–W images HURT
+`key_id`/`tempo_bpm`?):**
+
+```bash
+python gpu/attention_audio.py --model Qwen/Qwen2.5-Omni-7B \
+  --lora-checkpoint gpu/track_l_chroma_picked_ckpt/qwen25omni-chroma-picked-s0 \
+  --tag track-l-s0
+```
+**Check first**: are the L–Q/R–W checkpoints (`gpu/track_<l/m/.../w>_..._ckpt/`)
+still on disk? If cleared, this needs at least one seed retrained before the
+diagnostic can attach (`gpu/train_track_repr.py --track L --seed 0`) —
+retraining just for this diagnostic is real cost, check first.
+
+**6. Next action 25 — late-layer-loss vs. never-captured vs. nonlinear-only
+diagnostic** (this is the direct answer to "is it a late-layer issue or is
+it never captured" — built 2026-08-12):
+
+```bash
+# extract_activations.py needed no changes -- already takes --manifest:
+python gpu/extract_activations.py --model Qwen/Qwen2.5-Omni-7B --own-encoder \
+  --manifest manifests/real_nsynth_manifest.parquet --out acts/qwen25omni_own_real_nsynth
+
+python gpu/probe.py --acts acts/qwen25omni_own_real_nsynth --task pitch_note_id \
+  --target ground_truth --group-key instrument_family
+python gpu/probe_mlp.py --acts acts/qwen25omni_own_real_nsynth --task pitch_note_id \
+  --target ground_truth --group-key instrument_family
+
+python gpu/classify_layer_pattern.py \
+  --linear results/trackB/probes/probe__acts_qwen25omni_own_real_nsynth__pitch_note_id__ground_truth.csv \
+  --nonlinear results/trackB/probes/probe_mlp__acts_qwen25omni_own_real_nsynth__pitch_note_id__ground_truth.csv
+```
+Run per task (`key_id`, `mode_id`, `interval_id`, `chord_quality`, etc.) —
+the verdict may genuinely differ task to task, that's expected and is the
+actual point (Rupali's framing: "maybe it varies test to test") — report
+every task's verdict, don't average into one number. Five possible verdicts,
+explained in the script's own docstring: `NEVER_CAPTURED`, `LATE_LAYER_LOSS`,
+`PRESENT_THROUGHOUT`, `NONLINEAR_ONLY`, `MIXED`.
+
+**7. Next action 23 — MedleyDB (blocked on Zenodo access):**
+
+Rupali requested access 2026-08-12 (zenodo.org/record/2628782) — unknown
+turnaround, check back. **When it lands**: download `MedleyDB-Melody.zip`,
+unzip anywhere, then:
+```bash
+python -m musicprobe.real_music_medleydb --data-home /path/to/MedleyDB-Melody
+```
+builds the manifest + jobs (segmentation, ground truth, `wrong_audio`
+contamination control, `factors.track_id` for probing — all already built
+and verified against a synthetic stand-in). **No eval-only script exists for
+this yet** (unlike NSynth above) — build one following
+`gpu/eval_track_dzoom_real.py`'s exact pattern (same checkpoint, same image
+rendering call, just point `held`/jobs at this module's output instead).
+Also worth doing once real audio is in hand: mirdata's `melody3` annotation
+(ALL simultaneous melodic lines, not just the predominant one) is the right
+ground truth for actually testing PAPER.md's new "D-zoom is monophonic-only"
+claim properly, rather than the one anecdotal real-recording test it's
+currently based on — `melody1` (what's used now) matches D-zoom's own
+monophonic `pyin` front-end, but can't test polyphonic content at all. Not
+built; flag to Rupali if you get this far and want to scope it.
+
+**8. Next action 21 — MU-LLaMA / MusiLingo / M2UGen (lowest priority):**
+
+`gpu/eval_music_lalms.py` has the harness (job iteration, resumable, same
+output schema as everything else) but the three `_load_*` functions are
+`NotImplementedError` stubs on purpose, not an oversight — port each from
+that repo's own demo script (URLs in the file's docstring) rather than
+guessing at their API. These three all sit on frozen MERT, so this answers
+roughly the same question as next action 19 at much higher setup cost — do
+19 first; if it already closes the gap on MERT's near-floor tasks, this adds
+less than it looks like it would.
+
+**Consolidated gotchas (things that already bit someone once, so you don't
+have to rediscover them):**
+- **Eager attention is required.** `attention_audio.py` hard-fails via
+  `assert_eager_attention()` if a model silently falls back to `sdpa` — a
+  2026-07-24 run without this check produced numbers that had to be
+  retracted. Don't bypass it.
+- **`extract_activations.py --own-encoder`'s submodule path is a best
+  guess** — it prints the path it found; double-check against the real
+  architecture the first time you use it for a given model family.
+- **LoRA never touches `audio_tower`, on purpose.** Every Track C/D/E/F/Z
+  `target_modules` regex only matches under `thinker.<lm_path>` — confirmed,
+  not a bug, and it's WHY D-zoom/E are "substitution, not hearing" rather
+  than improved perception.
+- **`_held_out_mask` has three tiers for a reason** (soundfont → base_midi →
+  bpm-quantile). Tasks with neither of the first two silently got a 0-row
+  held-out split before the third tier existed — if you ever add a new task
+  cluster, verify the split produces nonzero train/held before spending GPU
+  time on it.
+- **Real-music manifests have no `soundfont`.** Pass `--group-key track_id`
+  (MedleyDB) or `--group-key instrument_family` (NSynth) to
+  `probe.py`/`probe_mlp.py` — without it, every real-music row collapses
+  into one group and you silently get a meaningless random split instead of
+  a real held-out fold.
+- **`jobs.parquet` is frozen** — `musicprobe.jobs.build_jobs` refuses to
+  rebuild it on purpose (would orphan every existing result). Use
+  `append_jobs()` if a new task is ever added to the v1 battery.
+
+**Reporting back:**
+```bash
+git add results/ manifests/*.parquet
+git commit -m "H100 run: <what you ran>"
+git push
+```
+Then update the relevant next-action entry in PROJECT_STATE.md with what
+happened (status, numbers, any new gotcha) — that file is the single source
+of truth for "what's been tried," per its own header instruction to update
+it every time something changes hands.
 
 `11_run_track_c.sh` / `13_run_track_d.sh` below are now historical — kept
 for reference, not something you need to run again.
