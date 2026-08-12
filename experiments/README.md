@@ -87,8 +87,83 @@ next-actions 17–25 — this section is deliberately just "what to type," not
 "why." If you hit something ambiguous, that file (and the docstring at the
 top of whichever script you're running) is where the reasoning lives.
 
+#### What every track is testing (one line each, for orientation)
+
+**Foundation (done):** Track A = behavioral battery, 7 models, capability
+heatmap. Track B = MERT/Whisper/CLAP + each model's own encoder, linear
+probes layer by layer — what's actually in the representation. L1 baseline =
+hand-built DSP estimators — is the answer even recoverable from the audio at
+all, no model involved. Attention diagnostic = does the LM actually attend
+to audio tokens. Microtone probe = relative-pitch direction vs. absolute
+detune, isolated.
+
+**Pitch cluster, Tracks C–F (done):** C = 3-arm LoRA on AF3 — alignment gap
+or perception gap? D phase1→conclusive→force→**zoom** = the iteration that
+found the fix — a zoomed pitch chart + an "in tune" reference line fixes
+cents/tuning (0.55→0.94, 0.53→0.89). E = the same fix delivered as plain
+text instead of an image — cheaper, fixes cents, not tuning (no reference
+point in text). F/F-aug = learned raw-feature fusion into embedding space —
+null, model ignores it regardless of data scale.
+
+**Harmony cluster, Tracks G/L–Q/X:** G = chromagram front-end — null on all
+4 harmony tasks (done). L–Q = 6-representation ladder (chroma→...→tonnetz) —
+clean null, `key_id` actively hurt by every one (done). X = the zoom+
+reference COMBINATION L–Q never tried — built, not run (item 2 below).
+
+**Rhythm cluster, Tracks H/R–W/Y:** H = in-audio reference tone — null
+(done). R–W = 6-representation ladder for tempo/meter — null,
+`tempo_bpm` actively hurt by most (done). Y = zoom+reference combination —
+built, not run (item 2 below).
+
+**Novel directions, next actions 17–25 (this + last session):** Z =
+auxiliary self-transcription training objective — the one experiment that
+tries to reshape the model's actual listening during training instead of
+injecting a representation at test time; built, not run (item 3). #18 =
+desk research — neither Qwen2-Audio nor Qwen2.5-Omni treats music as a
+first-party training/eval target (done). #19 = nonlinear (not linear)
+decoder per encoder layer — is a "weak" task genuinely weak or just
+linearly inseparable (item 4). #20 = mel-spectrogram classifier, a third
+DSP-free floor alongside L1/L2 (done). #21 = MU-LLaMA/MusiLingo/M2UGen
+harness — scaffold only, loader stubs (item 8, lowest priority). #22 =
+attention audit — does attention shift toward the image when it HURTS
+accuracy, or stay flat (item 5). #25 = classifies each task as
+never-captured / late-layer-loss / present-throughout / nonlinear-only from
+a linear+nonlinear probe pair (item 6).
+
+**Real-music extension, next actions 23–24 (this session):** #23 = real
+pitch/interval from MedleyDB (blocked on Zenodo access) + 7 classical
+recordings (famous + obscure, key test only, L1-DSP-tested) + the original
+Bach/Debussy pair. #24 = real instrument timbre (NSynth) + a controlled
+pitch-shift for cents/tuning (since "N cents flat" has no ground truth on
+an unmodified recording) — **now has a real eval path, item 1 below.**
+
+**Generation models (done):** MusicGen-medium, 342 clips, 6 constraint
+families — tempo/key/register adherence, not comprehension.
+
 **1. Real-timbre D-zoom eval (next action 24) — ready now, closes an open
 question in `PAPER.md`'s new "is D-zoom test-time scalable" section:**
+
+Before running this, know what it can and can't tell you. D-zoom is NOT an
+end-to-end model capability — it depends on an external preprocessing chain
+(`pyin` extracts pitch-over-time, matplotlib renders it as a zoomed chart
+with a reference line, THEN that image + the audio go to the model). Two
+consequences worth having in mind while reading results:
+- **External pipeline dependency**: shipping this means shipping and
+  maintaining that whole rendering chain alongside the model, on every
+  inference call — its own failure modes (silence, no detectable pitch, a
+  rendering bug) are new ways the system breaks that have nothing to do with
+  the model itself.
+- **Monophonic-only**: `pyin` reports exactly one dominant pitch at a time —
+  it can't represent "two notes at once." On any real audio with more than
+  one note sounding simultaneously (a chord, harmony under a melody), it
+  collapses to an effectively arbitrary guess. Confirmed directly: testing a
+  real Clair de Lune recording, `pyin` and a plain autocorrelation detector
+  landed on two different notes of the same chord, a fourth apart, on the
+  identical window. NSynth's stimuli below are single isolated notes
+  (monophonic by construction), so this particular eval won't surface that
+  failure mode — it's testing the "does real TIMBRE break it" question, not
+  the "does real POLYPHONY break it" question. The polyphony question needs
+  MedleyDB (item 7) — specifically its `melody3` annotation, not `melody1`.
 
 ```bash
 pip install datasets   # only new dependency beyond the usual GPU stack
