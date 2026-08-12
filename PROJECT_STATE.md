@@ -732,6 +732,22 @@ Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
     remaining step, same H100-box blocker as next actions 17/19/21/22/23/24.
 
 ## Known gaps / honesty list
+- **Methodological stance on wrong_image/wrong_audio/image_wrong_audio, decided 2026-08-12
+  (Rupali's call)**: keep collecting these conditions in every future track — cheap, already
+  built into the job schema, no reason to stop — but stop treating "wrong_X ≈ no_X" alone as
+  proof the model "ignores" or "doesn't read" that modality. The test can't distinguish never-
+  processed from processed-then-discounted (a model could recognize a mismatched image and
+  learn to disregard it, producing the identical wrong_image≈no_image signature as never
+  looking at all) — both explanations are behaviorally indistinguishable from this control by
+  itself. Going forward: (1) prefer "the image/audio doesn't measurably change accuracy" over
+  "the model ignores/doesn't read it" in write-ups — the first is what the test actually
+  supports, the second overclaims a specific mechanism; (2) treat wrong_X results as one
+  signal to corroborate with others (L2 probes, the nonlinear-decoder/layer-pattern
+  diagnostic from next action 25, replication across seeds/tasks), not the sole basis for a
+  mechanism claim. Retroactive note, not a retraction: existing findings that lean on this
+  (Track D-force's "forces image use," D-zoom/E's "substitution not hearing," Track H's
+  "not comparing in audio") were reasonable calls under the discipline used at the time and
+  aren't being walked back — this changes the bar for *new* claims from here on.
 - L1 key detection weak on minor progressions (naive Krumhansl) — use
   essentia on GPU box before making L1 claims about cadence-form stimuli.
 - Mode melodies are random diatonic walks — musician-composed melodies
