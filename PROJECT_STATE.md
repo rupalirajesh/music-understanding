@@ -642,6 +642,52 @@ Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
     7–37 clean monophonic note-segments in their first 30s via the same segmenter used for
     MedleyDB, so note/interval snippets (same recipe as the Bach bass-line test) can be pulled
     from any of them on request.
+24. **New (2026-08-12)**: does the D-zoom/E fix specifically (the front-end that took
+    `cents_discrimination` 0.55→0.94 and `tuning_judgment` 0.53→0.89 on synthetic tones,
+    PAPER.md) hold up when the base tone is REAL recorded timbre? Ground-truth reality check
+    first: "is this note 37 cents flat" has no naturally-occurring answer outside a controlled
+    synthesis — that's *why* the original battery generated these two tasks from scratch
+    rather than using recordings for anything. Design (Rupali's call, stated plainly in every
+    stimulus's own `provenance` field, not hidden): real recorded note as the base timbre +
+    the SAME kind of exact controlled digital pitch-shift the synthetic stimuli always
+    needed. Real timbre, still-exact ground truth — this tests the front-end's generalization
+    to real timbre specifically, not a claim that the whole stimulus is unmodified real audio.
+    **Source**: NSynth ('pitch' config, `confit/nsynth-parquet` on HuggingFace, confirmed live
+    2026-08-12 per next action 23's dataset hunt) — pulled via `datasets.Audio(decode=False)`
+    + manual `soundfile` decode, deliberately avoiding `torchcodec`/`torch` so this laptop
+    stays GPU-stack-free like every other CPU-side module here.
+    **Built + run for real 2026-08-12**: `musicprobe/real_music_nsynth.py` — 180 stimuli (60
+    each `pitch_note_id`/`cents_discrimination`/`tuning_judgment`) across real acoustic,
+    electronic, and synthetic-synth instrument families (organ, keyboard, bass, brass, guitar,
+    etc.), 1080 jobs with the same `audio`/`wrong_audio` split as every other track. Applied
+    the SAME psychometric ladder as the original battery (5/10/25/50/100-cent deltas,
+    TASKS.md 1.8) and the same 25-cent in-tune/out-of-tune threshold as
+    `l1_baselines.tuning_estimate`, called unmodified.
+    **L1 comparison (same estimators, same code, run against this hybrid audio instead of
+    pure synthetic)**:
+    | task | L1 acc on real+shifted | L1 acc on original synthetic battery | |
+    |---|---|---|---|
+    | `pitch_note_id` | 0.733 (n=60) | 1.00 | degrades on real timbre — autocorrelation is
+    noisier against real harmonic/inharmonic overtone structure than a clean synthesized tone |
+    | `cents_discrimination` | 0.800 (n=60) | 1.00 | also degrades, smaller drop |
+    | `tuning_judgment` | 0.633 (n=60) | 0.63 (next action 4's table) | **no real-vs-synthetic
+    gap at all** — matches the original doc's own read of this number ("noisy, naive
+    threshold, not tuned"); this task's L1 estimator is equally imprecise on both, so this
+    specific task's difficulty isn't a real-audio-generalization story |
+    One real bug caught during this run, not silently patched around: `l1_baselines.f0_autocorr`
+    can return a non-finite/negative value on some real (non-clean-synthetic) inputs at its
+    lag-boundary edge cases — never triggered by the synthetic-only battery, so never guarded
+    against. Fixed with a local validity check in `real_music_nsynth.l1_accuracy`, NOT by
+    editing `l1_baselines.py` itself (same "don't change already-verified code under
+    already-reported numbers" discipline as every prior track).
+    **Front-end confirmed rendering correctly on this hybrid audio** (not just L1): Track
+    D-zoom's `render_zoom` and Track E's `f0_text` both ran unmodified against the real+shifted
+    clips — `f0_text` on a `cents_discrimination` "lower" example read `232.4, 228.4` Hz for
+    tone1/tone2, correctly reflecting the intended downward shift.
+    **Still needed**: the actual GPU eval-only pass with the trained D-zoom/E checkpoints
+    against `manifests/real_nsynth_jobs.parquet` — same status as next action 23, needs the
+    H100 box, not built yet (low priority to build blind before the data's usefulness is
+    confirmed by a first real run).
 
 ## Known gaps / honesty list
 - L1 key detection weak on minor progressions (naive Krumhansl) — use
