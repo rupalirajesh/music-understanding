@@ -396,6 +396,38 @@ done 2026-08-06; GPU training/eval needs the H100 box, not yet run. See
     internal representation. No Track-C-style causal test run on this group yet.
   - *Data-fixable / genuinely weak across the board*: `progression_id`, `mode_id`,
     `interval_id`, `chord_quality` (all near floor on open-format).
+- **Is D-zoom test-time scalable, and what should the paper actually claim (2026-08-12)?**
+  Two concrete limits, not hypothetical ones — one directly evidenced by this project's own
+  real-music tests:
+  - **Monophonic-only.** D-zoom's `pyin` pitch tracker needs a single dominant pitch to zoom
+    in on and draw a reference line against. On real polyphonic audio this breaks before the
+    model is even involved: testing a real Clair de Lune recording (2026-08-12), `pyin`
+    (this front-end's own tracker) and a plain autocorrelation detector disagreed by roughly a
+    fourth on the same window — two different pitch estimators locking onto two different
+    notes of a chord. The clean monophonic battery this trick was built and validated on
+    never surfaces this failure mode; most real music will.
+  - **Doesn't generalize past this one task shape.** Tracks L–Q/R–W tested the same two
+    ingredients (zoom, an explicit reference) across the harmony and rhythm clusters and got a
+    clean null — several tasks were actively hurt by adding a chart at all. So this isn't "give
+    the model a chart" in general; it's specific to a continuous scalar with a natural visual
+    reading (pitch height vs. a marked line).
+  Mechanistically (Track D-force: zoom alone doesn't help; Track H: a reference alone doesn't
+  help; Track C's `llm_encoder` arm: tuning the encoder itself doesn't help either — and the
+  LoRA `target_modules` regex in every D/E/F run provably never reaches `audio_tower`, so the
+  encoder's own representation is bit-identical before and after fine-tuning) D-zoom works by
+  **routing the question around the audio pathway entirely**, converting "perceive absolute
+  pitch from sound" into "is this line above or below that line" — a task a vision-pretrained
+  pathway is already good at. It is not evidence the model learned to hear microtones better.
+  **The more defensible paper claim** is therefore not "we fixed pitch perception," but that
+  this project characterized *where* the boundary of visual-scaffold substitution sits: it
+  covers a single continuous scalar with an anchor, and stops at categorical/aggregate
+  judgments (key, chord quality, tempo, meter) and, per the real-recording tests above, likely
+  at polyphonic content generally. Whether it holds up on real timbre at all (monophonic real
+  recordings, not just real polyphony) is itself still an open, not yet GPU-tested, question —
+  PROJECT_STATE.md next action 24 built the real-timbre test battery (NSynth, real instrument
+  notes + a controlled pitch-shift, since "N cents flat" has no naturally-occurring ground
+  truth to test against otherwise); the L1 DSP floor alone already degrades on it (cents
+  1.00→0.80, pitch 1.00→0.73) even before the model's own generalization is tested.
 - **Representation recommendation (first concrete data point, pitch only)**: for a model
   we fine-tune or design ourselves, relative pitch should be exposed via a compact
   in-context symbolic/text feature (cheap, no rendering needed, Track E); absolute tuning
