@@ -563,6 +563,59 @@ Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
     eval — if cleared, this needs a rerun of at least one seed before the diagnostic can attach.
     Whoever has H100 access should check this before scoping further; not resolvable from the
     laptop.
+23. **New (2026-08-12)**: does the D-zoom/E fix (which worked on clean synthetic tones) hold up
+    on REAL recordings — real instruments/vocals/mixes, not MIDI+soundfont? Every task in this
+    project so far uses synthesized stimuli specifically because they give free perfect ground
+    truth (RESEARCH_PLAN.md Sec3, Tier 1). This asks the generalization question directly:
+    same front-end (Track D-zoom's zoomed+referenced image, Track E's pitch-as-text), same
+    trained checkpoint, fed real audio it never saw a rendering of during training.
+    **Dataset hunt (2026-08-12) — 3 of 4 candidates dead/gated, tested directly, not assumed**:
+    - GiantSteps Key dataset (real EDM tracks, expert key labels): its documented Beatport CDN
+      download mechanism was tested against 5 different track IDs — 404 on all of them, audio
+      hosting has rotted since 2015. Its HuggingFace re-upload (`m-a-p/GS`) was checked too —
+      mirrors only the same annotations + the same broken script, no actual audio either.
+      **No real-music key_id source currently available** — this closes off next action 21's
+      "both" scope from the earlier discussion down to pitch/interval only, for now.
+    - MAESTRO (real piano performances + aligned MIDI): metadata catalog (1276 tracks) is live,
+      but individual audio file URLs tested 404 — audio may only ship inside a ~100GB bundle,
+      not practical here.
+    - NSynth (real individually-recorded instrument notes): confirmed LIVE via HuggingFace
+      `datasets` (`confit/nsynth-parquet`) — reached the actual audio-decode step before
+      hitting a missing (fixable) library. Real audio, but isolated 4-second notes, not full
+      pieces — set aside since it doesn't test the actual generalization question (Rupali's
+      call: prioritize real full-piece audio over this).
+    - **MedleyDB (real multitrack songs, expert melody F0 annotation)**: audio requires a
+      manual Zenodo access request — **Rupali is requesting access directly**; this next
+      action builds everything else now so it's instant to run once access lands.
+    **Built 2026-08-12**: `musicprobe/real_music_medleydb.py` — segments MedleyDB's continuous
+    melody F0 curve into sustained-note events (groups frames within 35 cents of a running
+    median, unlike a plain voiced/unvoiced split, since a real melody's pitch wanders
+    continuously), builds `pitch_note_id` stimuli from single segments and `interval_id`
+    stimuli from adjacent segment pairs (same `INTERVALS` vocabulary as the synthetic battery,
+    so ground truth is directly comparable), reuses `build_prompt` for identical prompt
+    phrasing. **No key ground truth** — MedleyDB's own metadata has no key label, and this
+    module deliberately does not guess one from track titles (that would be exactly the kind
+    of unverified ground truth the L1/L2/L3 discipline exists to avoid).
+    **Contamination control (Rupali's call)**: reuses this project's existing `wrong_audio`
+    mechanism rather than a new design — every real-music job is paired with the identical
+    question against a mismatched real clip, scored against the original ground truth. If a
+    model answers a famous-song question right on the wrong clip, that's text-prior recall,
+    not listening — same logic already applied to every synthetic task.
+    **Verified WITHOUT real MedleyDB data** (none exists on this laptop yet), two ways:
+    (1) `--selftest`: synthetic 3-note melody (C4→E4→G4, major third then minor third, with
+    vibrato) — confirms segmentation recovers exactly 3 segments and the correct interval
+    labels, and that Track D-zoom's `render_zoom`/Track E's `f0_text` run unmodified against
+    non-battery audio. (2) a fake `mirdata`-shaped mock dataset (2 fake tracks) exercised
+    `build_manifest()` itself end to end — correct per-track segmentation, snippet audio
+    actually written to disk, correct interval labels (major third / minor third), and a
+    48-job table with a clean 24/24 audio/wrong_audio split. Both pass. **Still needed once
+    real data lands**: run `build_manifest(data_home=...)` for real, render Track D-zoom/E's
+    front-ends against the resulting snippets (both functions are already generic, no changes
+    needed), and run the ALREADY-TRAINED Qwen2.5-Omni D-zoom/E checkpoints against them in
+    eval-only mode — this is inference on an existing checkpoint, not a new training run, but
+    still needs a small eval-only entry point pointed at
+    `manifests/real_music_medleydb_jobs.parquet` instead of the synthetic jobs table (not
+    built yet — low priority until the data itself is in hand).
 
 ## Known gaps / honesty list
 - L1 key detection weak on minor progressions (naive Krumhansl) — use

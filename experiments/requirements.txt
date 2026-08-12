@@ -8,6 +8,8 @@ soundfile
 mido
 pretty_midi
 matplotlib
+mirdata       # real-music ground truth (next action 23, MedleyDB melody annotations)
 # API runners (install when needed):
 # openai
 # google-genai
+# datasets     # only if pulling real-audio datasets via HuggingFace (e.g. NSynth)
