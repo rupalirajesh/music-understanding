@@ -1,0 +1,5 @@
+encoder,type,task,n,small_acc,large_acc,peak_layer,chance,perm_p
+mert330,music,mode_id,1248,0.088,0.278,6,0.077,0.02
+mert330,music,key_id,576,0.21,0.913,2,0.042,0.02
+whisper,speech,mode_id,1248,~chance,0.248,2,0.077,0.02
+whisper,speech,key_id,576,~chance,0.788,0,0.042,0.02

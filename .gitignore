@@ -28,3 +28,4 @@ experiments/gpu/track_e_ckpt/
 experiments/gpu/track_f_ckpt/
 experiments/gpu/track_g_chroma_ckpt/
 experiments/gpu/track_h_reftone_ckpt/
+experiments/acts_keymode/
