@@ -442,6 +442,24 @@ Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
     precise number matters later, install `poppler` (`brew install poppler`) and re-run
     `Read` with `pages` on the cached PDF, or source the number from a paper that quotes it
     in text (same "primary source over secondhand summary" discipline as next action 5).
+    **Superseded/expanded 2026-08-13**: full comprehensive version now in
+    `BENCHMARK_LANDSCAPE.md` §3 (per prof's explicit request for comprehensiveness) —
+    extends this same desk-research discipline across the whole model roster (Music
+    Flamingo, Audio Flamingo 3, Qwen3-Omni, Qwen3.5-Omni, SALMONN, Gemini native audio,
+    MU-LLaMA/MusiLingo/M2UGen), each claim cited to an arXiv ID (8 spot-checked against
+    `export.arxiv.org`, all resolved correctly). Headline: general-purpose LALMs (Qwen
+    family, Gemini) name zero music-specific training datasets anywhere — music enters only
+    as an eval target; only Music Flamingo/AF3 and the frozen-MERT music specialists
+    (MU-LLaMA/MusiLingo/M2UGen) have legible music-specific training data. Qwen2-Audio's
+    Figure 3 data-mix chart is confirmed still unresolved (image-only, retried and failed
+    again) — a genuine dead end short of manually reading the PDF visually. Also found a
+    newer Qwen3.5-Omni report (arXiv 2604.15804, ~Apr 2026) that explicitly states it does
+    NOT disclose a music/speech/sound content-type breakdown — useful as a citable
+    "the field doesn't report this," not a continuing unknown to chase further.
+    `BENCHMARK_LANDSCAPE.md` §1-2 also separately answers "what datasets exist to test on"
+    and "how do published models score on them" (30+ datasets/benchmarks surveyed,
+    per-model published scores with own-paper vs. third-party provenance flagged), and §4
+    is the benchmark-desiderata analysis (why none of these substitute for our own battery).
 19. **New (2026-08-12)**: train a nonlinear decoder (small MLP, not `LogisticRegression`) at
     each encoder layer, reusing activations already extracted for Track B (MERT/Whisper/CLAP
     + each LALM's own encoder) — every existing probe in `gpu/probe.py`/`probe_microtone.py`/

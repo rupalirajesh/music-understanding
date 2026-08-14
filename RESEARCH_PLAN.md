@@ -433,16 +433,28 @@ scope (no OpenAI API access, decided 2026-07-25) — Gemini is the study's only 
 ceiling. (Claude takes no raw audio — but is useful for the symbolic-music text contrast:
 ABC/MIDI-as-text.)
 
-**Benchmark state:**
+**Benchmark state:** see `BENCHMARK_LANDSCAPE.md` for the full survey (30+ datasets,
+published per-model scores, comprehensive per-model training-data breakdown, and the
+benchmark-desiderata analysis of why none of these substitute for our own battery). Summary:
 - **MMAU** (ICLR'25) and **MMAU-Pro** (Aug'25, 5.3K expert instances, 49 skills): humans
-  77.9%, **no model above ~60%** on Pro. Music is consistently the weakest domain.
-- **MuChoMusic** (ISMIR'24): the text-prior exposé; 1.1K validated MCQs.
+  77.9%, **no model above ~60%** on Pro. Music is consistently the weakest domain (MMAU-Pro's
+  own human baseline for music, 70.5%, is the lowest of any domain — the difficulty is
+  partly in task design, not only model capability).
+- **MuChoMusic** (ISMIR'24): the text-prior exposé; 1.1K validated MCQs. Independently
+  replicated by "Are you really listening?" (2504.00369, RU-MuChoMusic): text-only LLMs hit
+  up to 56.4% with zero audio.
 - **CMI-Bench** (2025): music instruction-following with proper MIR metrics; LALMs far below
-  supervised MIR baselines on key/beat/melody.
-- **MARBLE**: encoder-level MIR benchmark suite (the L2 reference).
-- Recent probing-flavored evals: "core music perception" batteries (2025) and automated
-  perception testing on arbitrary music ("Music I Care About," 2026) — closest neighbors to
-  our Track A; read before building the harness to avoid duplication and to steal design.
+  supervised MIR baselines on key/beat/melody, and **explicitly documents training-data
+  contamination** as the cause of Qwen2-Audio's inflated genre/tagging scores — the sharpest
+  named contamination finding in the literature survey, not just a general worry.
+- **MARBLE**: encoder-level MIR benchmark suite (the L2 reference) — never paired with
+  chat-level behavioral accuracy on the same stimuli, which is exactly the alignment-gap
+  question (L2 probe high, behavior low) this project's design is built to catch.
+- **PitchBench** (2605.26176) and **MUSE Benchmark** (2510.19055): closest published
+  neighbors to our Track A design (controlled pitch psychophysics; beginner/advanced tiers
+  with a human baseline) — read before building the harness to avoid duplication and to
+  steal design. Neither pairs its behavioral tier with a matched L2 probe, which is our
+  actual differentiator.
 
 **The headline picture**: models are good at *describing* music (genre, mood,
 instrumentation, captions) and bad at *hearing* music precisely (key, intervals, chord
