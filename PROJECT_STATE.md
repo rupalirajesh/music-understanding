@@ -1,6 +1,6 @@
 # PROJECT STATE — the everything doc (pick-up-where-we-left-off)
 
-Last updated: 2026-08-05. Update this whenever anything changes hands.
+Last updated: 2026-08-19. Update this whenever anything changes hands.
 
 ## Machines & workflow
 - **Laptop** (no GPU): stimulus synthesis, API evals, scoring/analysis,
@@ -748,6 +748,94 @@ Gemini-2.5-Pro) + MOSS-Music-8B is the Track A roster unless that changes.
     `probe_mlp.py --group-key ...` per task, then `classify_layer_pattern.py` per result pair.
     Every piece up to that point is built and verified; the GPU run itself is the one
     remaining step, same H100-box blocker as next actions 17/19/21/22/23/24.
+
+26. **New (2026-08-19, mentor's framing relayed by Rupali)**: before trusting "run our
+    fine-tuned model across a benchmark suite" as a contribution, check whether Qwen2.5-Omni
+    (the Track C-Z LoRA base) already does well on the benchmarks in the BENCHMARK_LANDSCAPE.md
+    §5 portfolio — a suite eval is only evidence of anything if the answer is broadly no.
+    **MUSE Benchmark checked 2026-08-19, no GPU run needed**: MUSE's own GitHub repo ships full
+    per-question logs for Qwen2.5-Omni-7B already (`Gemini_Qwen_AF_logs/`, their run, not ours).
+    `experiments/gpu/parse_musebench_qwen.py` parses these directly (chance level verified per
+    task from each log's own `expected=` field, not assumed) — result in BENCHMARK_LANDSCAPE.md
+    §6 and `experiments/results/external_benchmarks/muse_qwen25omni.csv`: **all 5 advanced
+    (theory/relational) tasks land within a few points of chance**; only instrument ID (near
+    ceiling) and oddball detection (0.72 vs 0.50) clear chance among the 5 beginner tasks. Same
+    shape as this project's own battery (near-floor mode_id/key_id/interval_id, near-ceiling
+    instrument_id/octave_id) — independent confirmation, independent authors, independent
+    stimuli. Bonus finding: several MUSE logs show Qwen2.5-Omni emitting near-identical
+    templated reasoning text across genuinely different audio files (same fabricated chord
+    progression asserted for every question in a log) — independent third-party evidence of
+    the same low-audio-attention mechanism this project's own `attention_audio.py` already
+    quantified, not a new claim, but a second data point for it.
+    **CMI-Bench, PitchBench, BASS — harnesses built + schema-verified 2026-08-19, GPU runs not
+    yet executed (no GPU on the laptop, same status as every other track before its first real
+    run)**. Full detail + exact commands in `experiments/scripts/RUNBOOK_external_benchmarks.md`;
+    summary:
+    - **CMI-Bench** (`nicolaus625/CMI-bench`, real repo cloned + read directly, not guessed):
+      `gpu/eval_cmibench.py` — reads their own `data/*/CMI_*.jsonl` task files + their own
+      `data_loader.load_audio` for start/end cropping (their crop logic, reused not
+      re-derived), calls this project's already-verified Qwen2.5-Omni chat-template pattern,
+      writes output in their exact expected format (**a JSON array via `json.dump`, despite the
+      `.jsonl` extension** — verified by reading `evaluate.py`'s `json.load(f)` and
+      `model/infer.py`'s `results.append({"question", "response", "correct_answer", "audioid",
+      "other"})` directly; this was a real trap — the obvious JSONL-per-line assumption would
+      have silently produced a file their own scorer can't read). Defaults to a 7-task priority
+      subset (GS_key, Nsynth_pitch, VocalSet_tech, Guzheng_Tech, gtzan_beat, ballroom_beat,
+      MedleyDB) covering pitch/key/melody/beat/vocal-technique; `--task-glob 'CMI_*.jsonl'` runs
+      all 21. VocalSet is already inside CMI-Bench as one of its own sub-tasks — no separate
+      VocalSet run needed. Side finding: CMI-Bench's audio zip bundles real GiantSteps-key audio
+      directly (`data/GS-key/giantsteps_clips/wav/`) — worth checking as a live mirror before
+      writing off GiantSteps entirely (next action 23's original Beatport-CDN path was confirmed
+      dead).
+    - **PitchBench** (`pitchbench-authors/PitchBench` on HF, CC BY 4.0, confirmed live via HF's
+      `datasets-server` API directly — 30 configs, all "test" split, no GitHub repo found despite
+      the paper claiming a package release): `gpu/eval_pitchbench.py` — streams audio straight
+      from HF (no vendor/download step needed unlike CMI-Bench/MUSE), uses each row's
+      `prompt_midi`/`gt_midi` fields (verified schema only for category A directly; other 29
+      configs share the field names in the harness but weren't individually schema-checked —
+      script raises `KeyError` rather than silently mis-scoring a config that turns out to
+      differ). 6 models were in PitchBench's own paper (Gemini 3.1 Pro/3 Flash, GPT-4o audio,
+      Qwen-3.5 Omni Plus/Flash, AF Next) — Qwen2.5-Omni was NOT one of them, so unlike MUSE this
+      needs a real run, not a log-parse. Their own headline ("pitch hearing remains highly
+      unreliable" even for Qwen3.5-Omni, a newer/larger model than ours) is itself worth citing
+      as corroborating evidence regardless of our own run's outcome.
+    **Baseline-vs-fine-tuned comparison added same day (Rupali's ask: check real improvement,
+    not just baseline capability)**: `eval_cmibench.py`/`eval_pitchbench.py`/`eval_bass.py` all
+    gained `--lora-checkpoint` (same `.thinker`-only PEFT wrap as `image_track_common.py`) --
+    correct for Track C's plain-LoRA checkpoint (same audio-in/text-out shape as these
+    benchmarks' own prompts); NOT correct for Track E/D-zoom, whose mechanism needs a special
+    front-end (f0-as-text or a rendered image) these plain harnesses don't build. For Track
+    D-zoom specifically, `eval_track_dzoom_real.py` (real-NSynth timbre, F0-extraction+render
+    pipeline reused unmodified) gained `--no-lora` so it now produces a real controlled
+    baseline-vs-fine-tuned delta on identical real-audio jobs -- previously it only had the
+    fine-tuned half, and comparing that against the original synthetic-battery numbers wasn't
+    controlled (timbre and checkpoint both differed). For MUSE, `gpu/patch_musebench_lora.py`
+    generates LoRA-wrapped copies of MUSE's own 10 runner scripts (regex-patches exactly the
+    model-loading block + log filename, verified end-to-end against the real cloned repo --
+    dry-run, then a real patch, then `py_compile` on all 10 outputs, all pass; two real bugs
+    caught and fixed in this process: an indentation-loss bug and a malformed generated
+    f-string) -- `gpu/parse_musebench_qwen.py` gained `--log-dir`/`--model-suffix` to parse the
+    fine-tuned run's logs the same way it parsed the baseline (regression-checked: baseline
+    output is byte-identical after the change). Full priority order and exact commands in
+    `experiments/scripts/RUNBOOK_external_benchmarks.md` Sec3.5.
+    - **BASS** (`oreva/bass_music_benchmark` on HF + `minjang10/bass_music_benchmark` on GitHub):
+      `gpu/eval_bass.py` — real dataset schema confirmed (4 configs, all "test" split), model call
+      code is real and complete, but **blocked on audio resolution**: each row's `audio` field is
+      a bare filename, not a resolvable path or embedded bytes, and the obvious fallback
+      (`youtube_url`) is the same fragile/lossy path already deprioritized once for MuChoMusic's
+      MusicCaps subset. `--build-manifest` works now (pulls the real dataset, no audio needed);
+      the actual run needs `--audio-dir` pointed at wherever the real wavs get resolved from —
+      not solved here, flagged honestly (same category of open blocker as
+      `eval_muchomusic.py`'s), lower priority since BASS is supplementary not anchor.
+    **Framing note for the mentor conversation** (BENCHMARK_LANDSCAPE.md §6, stated explicitly
+    there too): the chance-level evidence answers "does the model do well on these benchmarks"
+    (no) but doesn't by itself answer the mentor's second, harder worry — that fine-tuning to
+    close this gap on these exact task formats would be a capability result, not a music-
+    understanding-research contribution. What makes this project's own findings a research
+    contribution is the *explanation* (Tracks C-Z: which representations fix which failure
+    clusters and why, the frozen-encoder mechanism, wrong-condition controls separating
+    perception from readout) — the benchmark-gap numbers motivate the study, they don't replace
+    the mechanistic argument as the thing being contributed.
 
 ## Known gaps / honesty list
 - **Methodological stance on wrong_image/wrong_audio/image_wrong_audio, decided 2026-08-12

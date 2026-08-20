@@ -48,11 +48,21 @@ CKPT_DIR = GPU_DIR / "track_d_force_ckpt"
 JOBS_PATH = MANIFEST_DIR / "real_nsynth_dzoom_jobs.parquet"
 
 
-def tag(seed):
-    return f"qwen25omni-zoom-real_nsynth-s{seed}"
+def tag(seed, no_lora=False):
+    return f"qwen25omni-{'base' if no_lora else 'zoom'}-real_nsynth-s{seed}"
 
 
-def load_checkpoint(seed):
+def load_checkpoint(seed, no_lora=False):
+    """no_lora=True loads the plain base model (no adapter) against the SAME
+    real-NSynth jobs table -- added 2026-08-19 so a real baseline-vs-fine-tuned
+    delta can be computed on identical real-timbre stimuli, rather than only
+    comparing this checkpoint's real-audio accuracy against the ORIGINAL
+    synthetic-battery numbers (a different confound: timbre and checkpoint both
+    differ there, not just checkpoint). See BENCHMARK_LANDSCAPE.md Sec6 /
+    PROJECT_STATE.md next action 26."""
+    base, processor, _ = load_qwen_omni_for_training()
+    if no_lora:
+        return base, processor
     from peft import PeftModel
     ckpt_path = CKPT_DIR / f"qwen25omni-zoom-s{seed}"
     if not ckpt_path.exists():
@@ -62,12 +72,11 @@ def load_checkpoint(seed):
             f"--seed {seed} --image-kind f0zoom (then rerun this script -- do NOT skip "
             "straight to evaluating, an untrained/base model will look like a null result "
             "that isn't real).")
-    base, processor, _ = load_qwen_omni_for_training()
     base.thinker = PeftModel.from_pretrained(base.thinker, str(ckpt_path))
     return base, processor
 
 
-def evaluate(seed, model, processor, jobs, exp_root, limit=None):
+def evaluate(seed, model, processor, jobs, exp_root, limit=None, no_lora=False):
     import torch
     model.eval()
     if limit:
@@ -92,19 +101,26 @@ def evaluate(seed, model, processor, jobs, exp_root, limit=None):
         raw = processor.batch_decode(out, skip_special_tokens=True)[0]
         results.append({"job_id": row.job_id, "stimulus_id": row.stimulus_id,
                         "task": row.task, "image_condition": row.image_condition,
-                        "model": tag(seed), "seed": seed, "raw_response": raw,
+                        "model": tag(seed, no_lora), "seed": seed, "raw_response": raw,
                         "error": None, "ts": time.time()})
         if n % 50 == 0:
             print(f"  {n}/{len(jobs)}")
-    out_path = RESULTS_DIR / f"responses__{tag(seed)}.parquet"
+    out_path = RESULTS_DIR / f"responses__{tag(seed, no_lora)}.parquet"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(results).to_parquet(out_path, index=False)
-    print(f"[eval-dzoom-real] seed={seed}: {len(results)} responses -> {out_path}")
-    print("[eval-dzoom-real] compare acc by (task, image_condition) against "
-          "results/trackA/trackd_zoom_summary.csv's acc_audio/acc_image (the original "
-          "synthetic-battery numbers, cents 0.55->0.94, tuning 0.53->0.89) -- a real result "
-          "here either confirms or breaks the 'D-zoom generalizes to real timbre' claim in "
-          "PAPER.md's 2026-08-12 scalability section.")
+    print(f"[eval-dzoom-real] seed={seed} no_lora={no_lora}: {len(results)} responses -> {out_path}")
+    if no_lora:
+        print("[eval-dzoom-real] this is the BASELINE half -- run without --no-lora too (same "
+              "seed, same jobs) and diff acc by (task, image_condition) against this file for "
+              "the real controlled delta. Don't compare this alone against "
+              "trackd_zoom_summary.csv's synthetic-battery numbers -- that's a different "
+              "stimulus set, not a controlled comparison.")
+    else:
+        print("[eval-dzoom-real] this is the FINE-TUNED half -- also run with --no-lora (same "
+              "seed, same jobs) for the real baseline-vs-fine-tuned delta on real timbre. "
+              "trackd_zoom_summary.csv's acc_audio/acc_image (cents 0.55->0.94, tuning "
+              "0.53->0.89) are the ORIGINAL synthetic-battery numbers for reference only -- "
+              "not a substitute for the --no-lora run on these same real-NSynth jobs.")
 
 
 if __name__ == "__main__":
@@ -114,11 +130,15 @@ if __name__ == "__main__":
                     help="cap total jobs, roughly balanced across the 4 image_conditions -- "
                          "use this for a smoke test before the full 1440-job run")
     ap.add_argument("--exp-root", default=str(EXP_ROOT))
+    ap.add_argument("--no-lora", action="store_true",
+                    help="run the plain base model (no D-zoom adapter) against these same "
+                         "real-NSynth jobs -- run both with and without this flag (same --seed) "
+                         "to get the real controlled baseline-vs-fine-tuned delta on real timbre")
     a = ap.parse_args()
     if not JOBS_PATH.exists():
         raise SystemExit(f"{JOBS_PATH} missing -- run "
                          "`python -m musicprobe.real_music_nsynth --dzoom-jobs` first "
                          "(laptop, CPU-only, already committed if you pulled latest).")
     jobs = pd.read_parquet(JOBS_PATH)
-    model, processor = load_checkpoint(a.seed)
-    evaluate(a.seed, model, processor, jobs, Path(a.exp_root), limit=a.limit)
+    model, processor = load_checkpoint(a.seed, no_lora=a.no_lora)
+    evaluate(a.seed, model, processor, jobs, Path(a.exp_root), limit=a.limit, no_lora=a.no_lora)

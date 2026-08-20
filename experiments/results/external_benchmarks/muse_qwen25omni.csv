@@ -1,0 +1,11 @@
+task,tier,correct,n,acc,chance,at_or_below_chance
+chord_progression_matching,advanced,66,120,0.55,0.5,True
+chord_quality,advanced,60,120,0.5,0.5,True
+key_modulation,advanced,66,120,0.55,0.5,True
+meter_identification,advanced,41,120,0.3416666666666667,0.33,True
+syncopation,advanced,60,120,0.5,0.5,True
+contourID,beginner,25,120,0.20833333333333334,0.25,True
+instrumentID,beginner,118,120,0.9833333333333333,,
+oddballs,beginner,86,120,0.7166666666666667,0.5,False
+rhythm_matching,beginner,64,120,0.5333333333333333,0.5,True
+transposition,beginner,66,120,0.55,0.5,True

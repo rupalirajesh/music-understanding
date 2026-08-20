@@ -1,0 +1,88 @@
+{
+  "tier": "2",
+  "tier_name": "Live — live recordings of Tier-1 songs, ground truth reused only where a published source explicitly documents whether a Tier-1 fact held or changed",
+  "generated": "2026-08-16",
+  "sourcing_rule": "A Tier-1 fact is NOT auto-reused for a live recording. It becomes a Tier-2 item only if a published source explicitly documents that specific live performance/recording (not a vague generalization about 'the artist's live shows'). No listening-based re-verification was performed. Algorithmic key/BPM detectors run against 'Live' tagged tracks (Tunebat etc.) were NOT accepted as sourcing on their own, same caution as Tier 1, since they cannot distinguish a genuine transposition from a detection error.",
+  "headline_finding": "This tier is dramatically sparser than Tier 1, exactly as predicted during the design discussion. Across three well-known, heavily-toured songs (Billie Jean, Take Five, Clocks), a real research pass produced only 2 citable Tier-2 items. Most of what's written about live performances is qualitative ('electrifying', 'the crowd went wild') or fan-forum speculation, not the kind of specific, verifiable musical fact (key, tempo, instrumentation, structure) this tier needs. This is a real methodological result, not a shortfall in effort -- see attempted_but_insufficient below for what was tried and why it didn't clear the bar.",
+  "songs": [
+    {
+      "song_id": "take_five",
+      "title": "Take Five",
+      "artist": "The Dave Brubeck Quartet",
+      "live_recording": "Newport Jazz Festival, July 4, 1964",
+      "items": [
+        {
+          "item_id": "take_five_live_1964_instrumentation",
+          "fact_type": "instrumentation",
+          "question": "In this live recording of 'Take Five' from the Newport Jazz Festival, what instrument plays the lead melody, and is the same quartet lineup performing as on the 1959 studio recording? Explain briefly, then end with: Final answer: <instrument / same or different lineup>",
+          "expected_answer": "alto saxophone (Paul Desmond); same lineup as the studio recording (Brubeck, Desmond, Wright, Morello)",
+          "answer_aliases": ["alto sax, same quartet"],
+          "sources": [
+            {"name": "davebrubeckjazz.com - Dave Brubeck Quartet, Newport Jazz Festival, July 4 1964 (discography entry)", "url": "http://www.davebrubeckjazz.com/recordings/Detail/Dave-Brubeck-Quartet,Newport-Jazz-Festival,-July-4-1964/00425"},
+            {"name": "Wikipedia - Take Five (this quartet lineup served together 1958-1968, already cited for the Tier-1 item)", "url": "https://en.wikipedia.org/wiki/Take_Five"}
+          ],
+          "source_agreement": true,
+          "notes": "The second source is the same Wikipedia article already cited in Tier 1 -- accepted here because it makes a specific, checkable date-range claim (lineup stable 1958-1968) that the 1964 date falls within, rather than being reused for a different fact. Flagged as a weaker form of independence than two entirely separate outlets."
+        }
+      ]
+    },
+    {
+      "song_id": "billie_jean",
+      "title": "Billie Jean",
+      "artist": "Michael Jackson",
+      "live_recording": "Live at Wembley Stadium, July 16, 1988 (official live album/video)",
+      "items": [
+        {
+          "item_id": "billie_jean_live_wembley_length",
+          "fact_type": "structure",
+          "question": "This is a live recording of 'Billie Jean' from Wembley Stadium, 1988. Is it longer or shorter than the studio version, and roughly by how much? Explain briefly, then end with: Final answer: <longer/shorter, approximate difference>",
+          "expected_answer": "longer; approximately 8:36 live vs. approximately 4:54 studio, roughly 3.5 minutes longer",
+          "answer_aliases": ["longer, extended arrangement, about double the studio length"],
+          "sources": [
+            {"name": "Wikipedia - Live at Wembley July 16, 1988 (track listing gives 8:36 for Billie Jean)", "url": "https://en.wikipedia.org/wiki/Live_at_Wembley_July_16,_1988"},
+            {"name": "Wikipedia - Billie Jean (studio length ~4:54, standard album cut)", "url": "https://en.wikipedia.org/wiki/Billie_Jean"}
+          ],
+          "source_agreement": true,
+          "notes": "This is a structural/duration fact, not a key or tempo claim, and is directly checkable against the track listing itself rather than resting on descriptive prose -- the strongest-evidenced Tier-2 item found in this pass for exactly that reason."
+        }
+      ]
+    }
+  ],
+  "attempted_but_insufficient": [
+    {
+      "song_id": "billie_jean",
+      "fact_type": "key/tempo (Motown 25, 1983)",
+      "what_was_tried": "Searched specifically for documented key or tempo differences in the famous March 25, 1983 Motown 25 performance.",
+      "why_dropped": "Only source found making a specific claim (performed 'down a quarter step') was an unmoderated fan-forum thread (MJJCommunity), explicitly phrased as listener speculation ('people claiming they can hear a difference'), not a verified fact. Rejected for source quality, not because no claim exists."
+    },
+    {
+      "song_id": "billie_jean",
+      "fact_type": "tempo (Bad Tour vs. HIStory Tour)",
+      "what_was_tried": "Searched for a documented tempo difference across tours.",
+      "why_dropped": "The only sources making this claim (two near-identical articles on unrelated-looking content-farm domains, moorlandassociation.org and bills.com.au) read as low-quality aggregated/generated content, not credible music journalism, despite surface plausibility. Rejected on source-credibility grounds -- a plausible-sounding claim from a non-credible outlet is exactly the kind of fact this rule exists to catch, not just outright disagreement between good sources."
+    },
+    {
+      "song_id": "clocks",
+      "fact_type": "key (studio vs. live)",
+      "what_was_tried": "Searched for documented key consistency/change across Coldplay's live performances of 'Clocks'.",
+      "why_dropped": "Only source found (Tunebat, algorithmic key detection run against a 'Clocks - Live' track) reported F minor, a whole tone away from the studio's Eb Mixolydian -- but this is a single algorithmic source with no independent confirmation, and the project's own research already treats these detectors with caution given known octave/interval-level errors. Not enough to assert a real transposition, not enough to assert it's unchanged either -- genuinely inconclusive, so no item was created either way."
+    },
+    {
+      "song_id": "clocks",
+      "fact_type": "performance history / frequency",
+      "what_was_tried": "setlist.fm documents 1,029 live performances of 'Clocks' (first: June 19, 2002, Edinburgh; most recent: Sept 12, 2025, Wembley).",
+      "why_dropped": "Not actually a Tier-2-shaped fact: it's aggregate touring metadata, not something answerable by listening to one specific live recording paired with a question, which is what every other item in this design (Tier 1 and Tier 2 alike) is built around. Noted here as a good source for a *different* kind of question (e.g. 'has this song been performed live extensively') if the design is ever extended to include performance-history questions, but out of scope for this tier as currently defined."
+    },
+    {
+      "song_id": "take_five",
+      "fact_type": "structure (1967 Newport performance)",
+      "what_was_tried": "A search summary indicated the May 3, 1967 Newport performance was an abbreviated rendition omitting Joe Morello's drum solo -- a genuinely good candidate fact (specific date, specific structural change).",
+      "why_dropped": "Could not independently verify: the primary source (davebrubeckjazz.com's own detail page for that date) failed to load twice (connection reset) during this research pass. Not rejected on merits -- just unconfirmed. Worth retrying on a future pass rather than treated as settled either way."
+    }
+  ],
+  "known_limitations": [
+    "Only 2 scored items across 2 songs -- this tier's real yield under the no-human-annotator constraint, not an artificially small pilot size. A production version of this benchmark should expect Tier 2 to stay the smallest tier by a wide margin unless the sourcing constraint is relaxed.",
+    "Both scored items lean on Wikipedia for at least one of their two sources, which is a weaker independence bar than Tier 1 managed to hit for most of its items after the second-source pass -- worth revisiting if Tier 2 is scaled up.",
+    "The two rejected-for-source-quality cases (Motown 25 quarter-step claim, Bad Tour tempo claim) are the more interesting musical facts and the ones a human fan community actually believes -- but 'widely believed by fans' and 'documented by a source we'd trust to gate a benchmark item' turned out to be different bars, which is exactly the discipline this design is supposed to enforce."
+  ]
+}

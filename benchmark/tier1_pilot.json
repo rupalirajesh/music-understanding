@@ -1,0 +1,433 @@
+{
+  "tier": "1",
+  "tier_name": "Famous/Popular — real studio recordings, likely in training data",
+  "generated": "2026-08-16",
+  "sourcing_rule": "Every scored item requires >=2 independent existing published sources to agree on the fact. No fresh human/expert annotation was performed. Items where sources disagreed or only one source existed were dropped from scoring and logged in dropped_items instead.",
+  "answer_format_rule": "Question is open natural language. Model must end its response with a line 'Final answer: <value>', scored by exact/normalized string match against expected_answer or answer_aliases. No LLM judge.",
+  "songs": [
+    {
+      "song_id": "let_it_be",
+      "title": "Let It Be",
+      "artist": "The Beatles",
+      "year": 1970,
+      "genre_note": "pop/rock",
+      "items": [
+        {
+          "item_id": "let_it_be_key",
+          "fact_type": "key",
+          "question": "What musical key is 'Let It Be' by The Beatles written in? Explain briefly, then end with a line: Final answer: <key>",
+          "expected_answer": "C major",
+          "answer_aliases": ["C", "C Major"],
+          "sources": [
+            {"name": "Hooktheory TheoryTab", "url": "https://www.hooktheory.com/theorytab/view/the-beatles/let-it-be"},
+            {"name": "Applied Guitar Theory - Let It Be Guitar Solo", "url": "https://appliedguitartheory.com/lessons/the-beatles-let-it-be-guitar-solo/"},
+            {"name": "The DAW Studio - Chord Progression Example", "url": "https://www.thedawstudio.com/chord-progression-example-let-it-be-by-the-beatles/"},
+            {"name": "Pianote - How to Play Let It Be", "url": "https://www.pianote.com/blog/how-to-play-let-it-be-piano/"}
+          ],
+          "source_agreement": true,
+          "notes": "A Musicnotes SKU sells a transposed piano edition in Eb major; that is a transposed arrangement for playability, not evidence about the original recorded key, and was not counted as a disagreeing source."
+        },
+        {
+          "item_id": "let_it_be_progression",
+          "fact_type": "chord_progression",
+          "question": "What are the four main chords in the verse progression of 'Let It Be', in the order they're played? Explain briefly, then end with: Final answer: <chords in order>",
+          "expected_answer": "C, G, Am, F",
+          "answer_aliases": ["C - G - Am - F", "C G Am F", "I-V-vi-IV in C"],
+          "sources": [
+            {"name": "Hooktheory TheoryTab", "url": "https://www.hooktheory.com/theorytab/view/the-beatles/let-it-be"},
+            {"name": "The DAW Studio - Chord Progression Example", "url": "https://www.thedawstudio.com/chord-progression-example-let-it-be-by-the-beatles/"}
+          ],
+          "source_agreement": true,
+          "notes": null
+        },
+        {
+          "item_id": "let_it_be_pianist",
+          "fact_type": "instrumentation",
+          "question": "Which Beatles member played piano and sang lead vocals on the studio recording of 'Let It Be'? Explain briefly, then end with: Final answer: <name>",
+          "expected_answer": "Paul McCartney",
+          "answer_aliases": ["McCartney", "Paul McCartney"],
+          "sources": [
+            {"name": "Wikipedia - Let It Be (song)", "url": "https://en.wikipedia.org/wiki/Let_It_Be_(song)"},
+            {"name": "The Beatles Bible - Let It Be (song)", "url": "https://www.beatlesbible.com/songs/let-it-be/"}
+          ],
+          "source_agreement": true,
+          "notes": "Second source added 2026-08-16: The Beatles Bible independently confirms McCartney on lead vocals and piano (Bluthner grand + Fender Rhodes electric piano)."
+        },
+        {
+          "item_id": "let_it_be_session_musician",
+          "fact_type": "instrumentation",
+          "question": "Which musician, not an official member of The Beatles, played Hammond organ on 'Let It Be'? Explain briefly, then end with: Final answer: <name>",
+          "expected_answer": "Billy Preston",
+          "answer_aliases": ["Preston"],
+          "sources": [
+            {"name": "Wikipedia - Let It Be (song)", "url": "https://en.wikipedia.org/wiki/Let_It_Be_(song)"},
+            {"name": "Far Out Magazine - Who played organ on The Beatles song 'Let It Be'?", "url": "https://faroutmagazine.co.uk/who-played-organ-the-beatles-song-let-it-be/"}
+          ],
+          "source_agreement": true,
+          "notes": "Second source added 2026-08-16: Far Out Magazine (music journalism, independent editorial) confirms Preston's Hammond organ part in detail, including the double-manual/church-organ effect."
+        },
+        {
+          "item_id": "let_it_be_genre",
+          "fact_type": "genre",
+          "question": "What genre(s) is 'Let It Be' primarily classified as? Explain briefly, then end with: Final answer: <genre(s)>",
+          "expected_answer": "Rock, soft rock",
+          "answer_aliases": ["Soft rock", "Rock/soft rock"],
+          "sources": [
+            {"name": "Wikipedia - Let It Be (song)", "url": "https://en.wikipedia.org/wiki/Let_It_Be_(song)"}
+          ],
+          "source_agreement": false,
+          "notes": "Retried 2026-08-16: RateYourMusic tags the *album* 'Let It Be' as 'Pop Rock', which is compatible with but not a clean independent confirmation of the song-level 'soft rock' label. Still single-sourced at the song level; genre labels are also inherently somewhat subjective."
+        },
+        {
+          "item_id": "let_it_be_tempo_category",
+          "fact_type": "tempo",
+          "question": "Is 'Let It Be' a slow ballad, a moderate mid-tempo song, or a fast up-tempo song? Explain briefly, then end with: Final answer: <category>",
+          "expected_answer": "slow ballad",
+          "answer_aliases": ["slow", "ballad"],
+          "sources": [
+            {"name": "Musicnotes - Let It Be Easy Piano (published tempo marking, ~69-72 BPM)", "url": "https://www.musicnotes.com/sheetmusic/the-beatles/let-it-be/MN0058562"},
+            {"name": "SongBPM.com - original recording, 74 BPM", "url": "https://songbpm.com/@the-beatles/let-it-be-made-famous-by-the-beatles-OrXE3qsS4l"}
+          ],
+          "source_agreement": true,
+          "notes": "Deliberately asked as a coarse category, not exact BPM. Automatic BPM detectors split into two clusters: ~72-74 BPM and ~139-143 BPM on remastered versions -- almost exactly double, a classic tempo-octave detection error, not a real disagreement about the song's feel. Exact-BPM scoring was dropped for this reason; only the coarse ballad/mid/fast category is scored, anchored to the publisher-marked tempo which is not purely algorithmic."
+        }
+      ]
+    },
+    {
+      "song_id": "take_five",
+      "title": "Take Five",
+      "artist": "The Dave Brubeck Quartet (composed by Paul Desmond)",
+      "year": 1959,
+      "genre_note": "jazz",
+      "items": [
+        {
+          "item_id": "take_five_meter",
+          "fact_type": "meter",
+          "question": "What time signature is 'Take Five' performed in? Explain briefly, then end with: Final answer: <time signature>",
+          "expected_answer": "5/4",
+          "answer_aliases": ["5/4 time", "quintuple time", "five-four"],
+          "sources": [
+            {"name": "Wikipedia - Take Five", "url": "https://en.wikipedia.org/wiki/Take_Five"},
+            {"name": "Benny Esmonde - Dave Brubeck Quartet Take Five 1959 song analysis", "url": "https://bennyesmonde.wordpress.com/2017/04/10/dave-brubeck-quartet-take-five-1959/"}
+          ],
+          "source_agreement": true,
+          "notes": "This is the song's single most famous/defining musical fact -- composed specifically as a 5/4 experiment."
+        },
+        {
+          "item_id": "take_five_lead_instrument",
+          "fact_type": "instrumentation",
+          "question": "Which instrument plays the famous main melody in 'Take Five'? Explain briefly, then end with: Final answer: <instrument>",
+          "expected_answer": "alto saxophone",
+          "answer_aliases": ["alto sax", "saxophone"],
+          "sources": [
+            {"name": "Wikipedia - Take Five", "url": "https://en.wikipedia.org/wiki/Take_Five"},
+            {"name": "MuseScore - Take Five alto saxophone sheet music", "url": "https://musescore.com/user/29369458/scores/8864400"}
+          ],
+          "source_agreement": true,
+          "notes": null
+        },
+        {
+          "item_id": "take_five_composer",
+          "fact_type": "structure",
+          "question": "Although recorded by the Dave Brubeck Quartet, which member of the quartet actually composed 'Take Five'? Explain briefly, then end with: Final answer: <name>",
+          "expected_answer": "Paul Desmond",
+          "answer_aliases": ["Desmond"],
+          "sources": [
+            {"name": "Wikipedia - Take Five", "url": "https://en.wikipedia.org/wiki/Take_Five"},
+            {"name": "Discogs - The Dave Brubeck Quartet - Take Five (release credits)", "url": "https://www.discogs.com/release/5574114-The-Dave-Brubeck-Quartet-Take-Five"}
+          ],
+          "source_agreement": true,
+          "notes": "Second source added 2026-08-16: Discogs release credits independently confirm Desmond's composer credit, distinct from Brubeck as bandleader/pianist."
+        },
+        {
+          "item_id": "take_five_key",
+          "fact_type": "key",
+          "question": "What is the (concert/sounding) key of 'Take Five'? Explain briefly, then end with: Final answer: <key>",
+          "expected_answer": "E-flat minor",
+          "answer_aliases": ["Eb minor", "E flat minor"],
+          "sources": [
+            {"name": "Wikipedia - Take Five", "url": "https://en.wikipedia.org/wiki/Take_Five"},
+            {"name": "Benny Esmonde - Dave Brubeck Quartet Take Five 1959 song analysis", "url": "https://bennyesmonde.wordpress.com/2017/04/10/dave-brubeck-quartet-take-five-1959/"}
+          ],
+          "source_agreement": true,
+          "notes": "A saxophone sheet-music edition lists the piece 'in B minor' -- this is the alto sax's *written/transposed* key (alto sax is a transposing Eb instrument), not a disagreement about the concert-pitch key. Noted, not treated as a conflicting source."
+        },
+        {
+          "item_id": "take_five_bassist",
+          "fact_type": "instrumentation",
+          "question": "What instrument provides the bass line in the original 1959 recording of 'Take Five', and who played it? Explain briefly, then end with: Final answer: <instrument/name>",
+          "expected_answer": "double bass, Eugene Wright",
+          "answer_aliases": ["upright bass, Eugene Wright", "Eugene Wright on double bass"],
+          "sources": [
+            {"name": "Wikipedia - Take Five", "url": "https://en.wikipedia.org/wiki/Take_Five"},
+            {"name": "Discogs - The Dave Brubeck Quartet - Take Five (release credits)", "url": "https://www.discogs.com/release/5574114-The-Dave-Brubeck-Quartet-Take-Five"},
+            {"name": "DRUM! Magazine - Joe Morello's Take Five Drum Part", "url": "https://drummagazine.com/joe-morellos-take-five-drum-part/"}
+          ],
+          "source_agreement": true,
+          "notes": "Second and third sources added 2026-08-16: Discogs credits list and DRUM! Magazine both independently confirm the full quartet lineup (Wright on double bass, Morello on drums)."
+        }
+      ]
+    },
+    {
+      "song_id": "clocks",
+      "title": "Clocks",
+      "artist": "Coldplay",
+      "year": 2002,
+      "genre_note": "alternative rock",
+      "items": [
+        {
+          "item_id": "clocks_mode",
+          "fact_type": "mode",
+          "question": "What specific mode (not just 'major' or 'minor') is 'Clocks' by Coldplay written in? Explain briefly, then end with: Final answer: <mode>",
+          "expected_answer": "Eb Mixolydian",
+          "answer_aliases": ["E flat Mixolydian", "Eb mixolydian mode"],
+          "sources": [
+            {"name": "Wikipedia - Clocks (song)", "url": "https://en.wikipedia.org/wiki/Clocks_(song)"},
+            {"name": "HCC Learning Web (Houston Community College) - Mixolydian scale and Clocks by Coldplay", "url": "https://learning.hccs.edu/faculty/bruce.brogdon/musi1192/class-handouts/mixolydian-scale-and-clocks-by-coldplay/view"},
+            {"name": "Rebel Music Teacher - Mixolydian Mode in Coldplay's Clocks", "url": "https://www.rebelmusicteacher.com/blog/2018/8/20/changing-the-mix-mixolydian-mode-in-coldplays-clocks"}
+          ],
+          "source_agreement": true,
+          "notes": "Second and third sources added 2026-08-16: an accredited community-college music theory course handout and an independent music-education blog both confirm Eb Mixolydian specifically, with matching harmonic reasoning (Eb as the 5th degree of Ab major, avoiding the Ab chord to keep the tonality 'hovering')."
+        },
+        {
+          "item_id": "clocks_progression",
+          "fact_type": "chord_progression",
+          "question": "What three chords make up the main repeating progression in 'Clocks'? Explain briefly, then end with: Final answer: <chords>",
+          "expected_answer": "Eb, Bbm, Fm",
+          "answer_aliases": ["Eb major, Bb minor, F minor", "E flat - B flat minor - F minor"],
+          "sources": [
+            {"name": "Wikipedia - Clocks (song)", "url": "https://en.wikipedia.org/wiki/Clocks_(song)"},
+            {"name": "Piano Keyboard Guide - How to Play Clocks", "url": "https://www.piano-keyboard-guide.com/how-to-play-clocks-by-coldplay-easy-piano-tutorial-chords-and-notes/"}
+          ],
+          "source_agreement": true,
+          "notes": null
+        },
+        {
+          "item_id": "clocks_pianist",
+          "fact_type": "instrumentation",
+          "question": "Which Coldplay member plays the iconic piano riff and sings lead vocals on 'Clocks'? Explain briefly, then end with: Final answer: <name>",
+          "expected_answer": "Chris Martin",
+          "answer_aliases": ["Martin"],
+          "sources": [
+            {"name": "Wikipedia - Clocks (song)", "url": "https://en.wikipedia.org/wiki/Clocks_(song)"},
+            {"name": "Songfacts - Clocks by Coldplay", "url": "https://www.songfacts.com/facts/coldplay/clocks"}
+          ],
+          "source_agreement": true,
+          "notes": "Second source added 2026-08-16: Songfacts independently confirms Martin on lead vocals/piano."
+        },
+        {
+          "item_id": "clocks_drummer",
+          "fact_type": "instrumentation",
+          "question": "Who played drums and backing vocals on 'Clocks'? Explain briefly, then end with: Final answer: <name>",
+          "expected_answer": "Will Champion",
+          "answer_aliases": ["Champion"],
+          "sources": [
+            {"name": "Wikipedia - Clocks (song)", "url": "https://en.wikipedia.org/wiki/Clocks_(song)"},
+            {"name": "Songfacts - Clocks by Coldplay", "url": "https://www.songfacts.com/facts/coldplay/clocks"}
+          ],
+          "source_agreement": true,
+          "notes": "Second source added 2026-08-16: Songfacts independently confirms Champion on drums/percussion."
+        },
+        {
+          "item_id": "clocks_genre",
+          "fact_type": "genre",
+          "question": "What two genres is 'Clocks' primarily classified as? Explain briefly, then end with: Final answer: <genres>",
+          "expected_answer": "alternative rock, psychedelic rock",
+          "answer_aliases": ["alt rock and psychedelic rock", "alternative rock, baroque rock, and psychedelic rock"],
+          "sources": [
+            {"name": "Wikipedia - Clocks (song)", "url": "https://en.wikipedia.org/wiki/Clocks_(song)"},
+            {"name": "AllMusic - Clocks - Coldplay", "url": "https://www.allmusic.com/song/clocks-mt0056088148"}
+          ],
+          "source_agreement": true,
+          "notes": "Second source added 2026-08-16: AllMusic (professional editorial) independently confirms alternative rock and psychedelic rock, and adds a third tag 'baroque rock' not present in Wikipedia -- included as an accepted alias rather than treated as a conflict, since it's additive not contradictory."
+        }
+      ]
+    },
+    {
+      "song_id": "billie_jean",
+      "title": "Billie Jean",
+      "artist": "Michael Jackson",
+      "year": 1982,
+      "genre_note": "post-disco/funk/R&B",
+      "items": [
+        {
+          "item_id": "billie_jean_key",
+          "fact_type": "key",
+          "question": "What key is 'Billie Jean' primarily in, and what specific mode do the verses use? Explain briefly, then end with: Final answer: <key/mode>",
+          "expected_answer": "F# minor overall; verses in F# Dorian",
+          "answer_aliases": ["F sharp minor, F sharp Dorian in the verses"],
+          "sources": [
+            {"name": "Wikipedia - Billie Jean", "url": "https://en.wikipedia.org/wiki/Billie_Jean"},
+            {"name": "American Songwriter - Songwriter U: Under the Hood - Billie Jean", "url": "https://americansongwriter.com/songwriter-u-under-the-hood-billie-jean/"}
+          ],
+          "source_agreement": true,
+          "notes": "Second source added 2026-08-16: American Songwriter independently confirms F# Dorian in the verse via harmonic detail (the F#m-G#m-A loop, a distinctive Dorian fingerprint) and additionally notes modal mixing -- the verse briefly shifts to F# Aeolian on one lyric line before returning to Dorian. A third, low-credibility source (a student Prezi presentation) claimed 'G minor' for the song; rejected as an outlier given it contradicts two independently-reasoned sources and is not a vetted publication."
+        },
+        {
+          "item_id": "billie_jean_tempo",
+          "fact_type": "tempo",
+          "question": "What is the tempo of 'Billie Jean' in BPM (approximately)? Explain briefly, then end with: Final answer: <BPM>",
+          "expected_answer": "117 BPM",
+          "answer_aliases": ["approximately 117 BPM", "115-117 BPM"],
+          "sources": [
+            {"name": "Wikipedia - Billie Jean", "url": "https://en.wikipedia.org/wiki/Billie_Jean"},
+            {"name": "Tunebat - Billie Jean Key & BPM", "url": "https://tunebat.com/Info/Billie-Jean-Michael-Jackson/7J1uxwnxfQLu4APicE5Rnj"}
+          ],
+          "source_agreement": true,
+          "notes": "Unlike Let It Be and Take Five, this tempo is NOT split into an octave-error cluster -- all sources converge tightly on 115-117 BPM, a useful contrast case showing the citation-gate rule passing a tempo fact cleanly."
+        },
+        {
+          "item_id": "billie_jean_bassist",
+          "fact_type": "instrumentation",
+          "question": "Which bassist played the iconic bassline on 'Billie Jean', and what instrument did he use? Explain briefly, then end with: Final answer: <name/instrument>",
+          "expected_answer": "Louis Johnson, Yamaha bass guitar",
+          "answer_aliases": ["Louis \"Thunder Thumbs\" Johnson"],
+          "sources": [
+            {"name": "Wikipedia - Billie Jean", "url": "https://en.wikipedia.org/wiki/Billie_Jean"},
+            {"name": "Our Mind on Music - Louis Thunder Thumbs Johnson: The Genius Behind the Billie Jean Bassline", "url": "https://ourmindonmusic.wordpress.com/2026/04/17/louis-thunder-thumbs-johnson-the-gut-feeling-genius-behind-the-billie-jean-bassline/"},
+            {"name": "Produce Like A Pro - Billie Jean and the Hypnotic Power of a Singular Bassline", "url": "https://producelikeapro.com/blog/billie-jean/"}
+          ],
+          "source_agreement": true,
+          "notes": "Second and third sources added 2026-08-16, both independently confirming Johnson on bass and the multi-bass audition story, plus the eventual Yamaha bass guitar choice for its tone."
+        },
+        {
+          "item_id": "billie_jean_genre",
+          "fact_type": "genre",
+          "question": "What genres does 'Billie Jean' blend? Explain briefly, then end with: Final answer: <genres>",
+          "expected_answer": "post-disco, R&B, funk, dance-pop",
+          "answer_aliases": ["post-disco/funk/R&B/dance-pop"],
+          "sources": [
+            {"name": "Wikipedia - Billie Jean", "url": "https://en.wikipedia.org/wiki/Billie_Jean"}
+          ],
+          "source_agreement": false,
+          "notes": "Single source; genre tags are inherently somewhat subjective, lower priority to double-source."
+        },
+        {
+          "item_id": "billie_jean_bridge_device",
+          "fact_type": "structure",
+          "question": "In the bridge of 'Billie Jean', what harmonic device is sustained throughout most of the section? Explain briefly, then end with: Final answer: <term>",
+          "expected_answer": "a tonic pedal tone (pedal point)",
+          "answer_aliases": ["pedal tone", "pedal point", "tonic pedal"],
+          "sources": [
+            {"name": "Wikipedia - Billie Jean", "url": "https://en.wikipedia.org/wiki/Billie_Jean"}
+          ],
+          "source_agreement": false,
+          "notes": "Retried 2026-08-16: search turned up general bridge harmonic discussion (Spy Tunes: D and F#m alternating, building over C#) but nothing that specifically names a sustained pedal tone. Still single-sourced -- lower confidence than the other Billie Jean items now that everything else in this song has cleared the bar; consider dropping if a second source isn't found on a future pass."
+        }
+      ]
+    },
+    {
+      "song_id": "clair_de_lune",
+      "title": "Clair de Lune (3rd movement of Suite bergamasque)",
+      "artist": "Claude Debussy",
+      "year": 1905,
+      "genre_note": "Impressionist classical, solo piano",
+      "items": [
+        {
+          "item_id": "clair_de_lune_key",
+          "fact_type": "key",
+          "question": "What key is Debussy's 'Clair de Lune' written in? Explain briefly, then end with: Final answer: <key>",
+          "expected_answer": "D-flat major",
+          "answer_aliases": ["Db major", "D flat major"],
+          "sources": [
+            {"name": "Wikipedia - Suite bergamasque", "url": "https://en.wikipedia.org/wiki/Suite_bergamasque"},
+            {"name": "Web search aggregation (Britannica, udiscovermusic, corroborating)", "url": "https://www.britannica.com/topic/Clair-de-lune-by-Debussy"}
+          ],
+          "source_agreement": true,
+          "notes": null
+        },
+        {
+          "item_id": "clair_de_lune_meter",
+          "fact_type": "meter",
+          "question": "What time signature is 'Clair de Lune' written in? Explain briefly, then end with: Final answer: <time signature>",
+          "expected_answer": "9/8",
+          "answer_aliases": ["9/8 compound triple meter"],
+          "sources": [
+            {"name": "Wikipedia - Suite bergamasque", "url": "https://en.wikipedia.org/wiki/Suite_bergamasque"},
+            {"name": "Web search aggregation (corroborating)", "url": "https://www.britannica.com/topic/Clair-de-lune-by-Debussy"}
+          ],
+          "source_agreement": true,
+          "notes": null
+        },
+        {
+          "item_id": "clair_de_lune_tempo_marking",
+          "fact_type": "tempo",
+          "question": "What is the original tempo/expression marking printed at the start of 'Clair de Lune'? Explain briefly, then end with: Final answer: <marking>",
+          "expected_answer": "Andante tres expressif",
+          "answer_aliases": ["Andante very expressive"],
+          "sources": [
+            {"name": "Wikipedia - Suite bergamasque", "url": "https://en.wikipedia.org/wiki/Suite_bergamasque"},
+            {"name": "Web search aggregation (corroborating)", "url": "https://www.britannica.com/topic/Clair-de-lune-by-Debussy"}
+          ],
+          "source_agreement": true,
+          "notes": null
+        },
+        {
+          "item_id": "clair_de_lune_instrument",
+          "fact_type": "instrumentation",
+          "question": "What solo instrument is 'Clair de Lune' written for? Explain briefly, then end with: Final answer: <instrument>",
+          "expected_answer": "solo piano",
+          "answer_aliases": ["piano"],
+          "sources": [
+            {"name": "Wikipedia - Suite bergamasque", "url": "https://en.wikipedia.org/wiki/Suite_bergamasque"},
+            {"name": "Britannica - Clair de lune", "url": "https://www.britannica.com/topic/Clair-de-lune-by-Debussy"},
+            {"name": "LA Phil - Clair de lune from Suite bergamasque", "url": "https://www.laphil.com/musicdb/pieces/5344/clair-de-lune-from-suite-bergamasque"}
+          ],
+          "source_agreement": true,
+          "notes": "Second and third sources added 2026-08-16: Britannica and the LA Philharmonic's own program-note database both independently confirm solo piano."
+        },
+        {
+          "item_id": "clair_de_lune_movement_number",
+          "fact_type": "structure",
+          "question": "'Clair de Lune' is which numbered movement of Debussy's larger piano suite, and what is that suite called? Explain briefly, then end with: Final answer: <movement number + suite name>",
+          "expected_answer": "3rd movement of Suite bergamasque",
+          "answer_aliases": ["third movement, Suite bergamasque"],
+          "sources": [
+            {"name": "Wikipedia - Suite bergamasque", "url": "https://en.wikipedia.org/wiki/Suite_bergamasque"},
+            {"name": "Britannica - Suite bergamasque", "url": "https://www.britannica.com/topic/Suite-bergamasque"},
+            {"name": "LA Phil - Clair de lune from Suite bergamasque", "url": "https://www.laphil.com/musicdb/pieces/5344/clair-de-lune-from-suite-bergamasque"}
+          ],
+          "source_agreement": true,
+          "notes": "Second and third sources added 2026-08-16, both independently confirming this is the third of four movements."
+        },
+        {
+          "item_id": "clair_de_lune_style",
+          "fact_type": "genre",
+          "question": "What broad musical style/movement is Debussy's 'Clair de Lune' associated with? Explain briefly, then end with: Final answer: <style>",
+          "expected_answer": "Impressionism",
+          "answer_aliases": ["Impressionist", "musical Impressionism"],
+          "sources": [
+            {"name": "Wikipedia - Suite bergamasque", "url": "https://en.wikipedia.org/wiki/Suite_bergamasque"},
+            {"name": "Britannica - Suite bergamasque", "url": "https://www.britannica.com/topic/Suite-bergamasque"}
+          ],
+          "source_agreement": true,
+          "notes": "Second source added 2026-08-16: Britannica independently classifies Suite bergamasque under the Impressionism era."
+        }
+      ]
+    }
+  ],
+  "dropped_items": [
+    {
+      "song_id": "take_five",
+      "fact_type": "tempo",
+      "reason": "Sources disagree substantially: ~132 BPM vs ~170 BPM, not an octave-doubling relationship (unlike Let It Be's cleanly-explained split), so no confident single value could be assigned without a human listening to resolve it. Dropped per the no-agreement-no-item rule rather than guessed."
+    },
+    {
+      "song_id": "autumn_leaves",
+      "fact_type": "key",
+      "reason": "Song swapped out of the pilot entirely: 'Autumn Leaves' is a jazz standard performed in different keys by different artists (Bb major/G minor OR G major/E minor depending on the recording/fake book), so 'what key is this song in' is not well-defined without anchoring to one specific named recording. Replaced with 'Take Five', which has one canonical, unambiguous recording."
+    },
+    {
+      "song_id": "billie_jean",
+      "fact_type": "chord_progression",
+      "reason": "Dropped during the 2026-08-16 second-source pass, not before it. The original single-source claim (i-iv-VI-VII, F#m-Bm-D-E) came from an aggregated search summary. Attempting to find a second source instead surfaced a direct contradiction: Hooktheory-based analysis describes the verse as an F#m-G#m-A Dorian loop, a materially different progression. Rather than pick a winner ourselves (which would be exactly the kind of unverified call the no-human-annotator rule rules out), the item is dropped. This is the clearest demonstration in the pilot of the citation-gate rule doing its job -- it caught a wrong fact that had already been written into the file, not just an unconfirmed one."
+    }
+  ],
+  "known_limitations": [
+    "A second-source pass (2026-08-16) resolved most of the originally single-sourced items: 24 of 27 remaining items now meet the >=2-independent-source bar. In the process it also caught one item (billie_jean_progression) whose original single source was flatly wrong, not just unconfirmed -- moved to dropped_items rather than corrected by guesswork.",
+    "3 items remain single-sourced after the second pass and are still flagged rather than trusted: let_it_be_genre, billie_jean_genre, billie_jean_bridge_device. All three failed a real retry attempt, not just an unattempted one -- the second-source search either found nothing specific enough (bridge pedal tone) or found only a loosely-related corroboration (album-level vs. song-level genre tags).",
+    "Automatic BPM/key-detection sites (SongBPM, Tunebat, GetSongKey, etc.) were treated with caution, not as independent sources of each other, since they likely share correlated failure modes (e.g. the same octave-doubling error appeared across multiple such sites for both Let It Be and Take Five). Where possible, a non-algorithmic source (published sheet music tempo marking, Wikipedia prose, an accredited course handout) was preferred as at least one of the two required sources.",
+    "Genre labels are treated as lower-confidence throughout -- they are inherently somewhat subjective editorial judgments, not objective facts in the same sense as a key signature or personnel credit.",
+    "This entire sourcing pass was done via automated web search/fetch in one sitting, not by a human researcher -- it should be read as a demonstration of the citation-gate mechanism working (including catching its own earlier mistake), not as a fully audited final ground-truth set. A human spot-check before this is used for real scoring would still be worthwhile."
+  ]
+}

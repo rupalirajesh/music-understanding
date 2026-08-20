@@ -54,6 +54,10 @@ vendor-reported. Treat those as "as reproduced by a rival lab," not ground truth
 | **OpenMU-Bench** | Captioning, reasoning, MCQ, lyrics, tool-use | ~1M examples | Training-data bench, not eval-only | Open | Bootstrapped via GPT-3.5 + existing datasets | 2410.15573 |
 | **Song Describer Dataset** | Free-text captioning/retrieval | 1.1K captions / 706 tracks | Ready-made; also feeds 227 MuChoMusic tracks | Open, CC-licensed | Lower than MusicCaps by design, but overlaps MuChoMusic | 2311.10057 |
 | **JamendoMaxCaps** | Large-scale captions w/ imputed metadata | 362K instrumental tracks | Captioning-scale, not chat-QA | Open (CC) | Newer (2025), lower risk, but same MTG-Jamendo family | 2502.07461 |
+| **MusICA-MetaBench** ("Music I Care About", 2026) | On-demand meta-benchmark: auto-derives MCQ from *any* audio you feed it — pitch, interval, rhythmic notation, temporal proportion, harmonic analysis, piece-level | Framework, not fixed size (bundles ChoraleBricks real + ChoralSynth synthetic) | Ready-made, but **MCQ only** (5-option incl. "none correct") | Open (framework) | Low on its own bundled data (ChoraleBricks); depends entirely on what you feed it if reused generically | 2607.06015 |
+| **BASS** (2026) | 12 tasks / 4 categories: structural segmentation, lyric transcription, artist collaboration, and genre (**"musicological analysis" = genre tasks only, despite the name — no key/chord/harmony content**) | 2,658 questions / 1,993 unique real songs / 138 hrs | Ready-made | Open (GitHub+HF) | Not assessed directly, but its own headline finding is a text-prior one: metadata-only (artist+title, no audio) *improves* lyric-transcription score over audio-only | 2602.04085 |
+| SongBench (2026) | **Not a comprehension benchmark** — rates AI-*generated* song quality across 7 dimensions (vocal/instrument/melody/structure/arrangement/mixing/musicality) against expert ratings | 11,717 expert-rated generated samples | Generation-quality eval, out of scope for LALM-comprehension testing | Open (GitHub, Tencent) | N/A (evaluates generated audio, not a training-data-contamination-relevant corpus) | 2604.25937 |
+| SongEval (2026) | **Not a comprehension benchmark** — aesthetic ratings (coherence, memorability, vocal naturalness, structure clarity, musicality) on full songs, for judging generative/enhancement models | 2,399 full songs / 140+ hrs, EN+ZH | Generation-quality eval, out of scope | Open (HF: ASLP-lab/SongEval) | N/A, same reason as SongBench | 2505.10793 |
 
 **Read on this table**: everything genuinely "chat-ready" (MuChoMusic, MMAU family, AIR-Bench,
 MMAR, CMI-Bench) either tests caption/tag-grade semantics or is only 1-2 years old and
@@ -292,7 +296,169 @@ its behavioral tier with a matched L2 probe on the same stimuli, which is what o
 
 ---
 
-## Sources (arXiv IDs, spot-checked 2026-08-13)
+## 5. The tool-aided-model claim: do we need a new benchmark, or does the existing landscape cover it?
+
+Separate question from §4, and answered later (2026-08-16/17). §4 justifies this project's
+*existing* synthetic battery (atomic/structural precision, contamination-proof by
+construction). This section is about a *different* ask that came up afterward: for the
+tool-aided model this project is building, we want to claim it doesn't just improve on
+narrow, hyper-specific synthetic pitch tasks (which a task-specific classifier could match)
+— it generalizes to **real music, with open natural-language prompts, on genuine music
+theory content (not just genre/mood/vibe), including instrument- and vocal-technique
+questions.** Does that need a new custom benchmark, or does combining existing ones cover it?
+
+**A custom "famous song" benchmark was prototyped first, then set aside.** Before landing on
+the answer below, we built a small pilot (`benchmark/tier1_pilot.json`,
+`benchmark/tier2_pilot.json`) testing detailed theory questions on famous commercial
+recordings (Let It Be, Take Five, Clocks, Billie Jean, Clair de Lune), citation-gated against
+existing published sources (Hooktheory, Wikipedia, AllMusic, music journalism — no fresh
+human/expert annotation) rather than hired annotators. It worked as a methodology
+demonstration — it caught its own wrong fact (a chord-progression claim that a second-source
+check contradicted) and rejected two plausible-sounding fan claims about live performances on
+source-quality grounds alone — but it stalled on a problem that has nothing to do with
+research design: **actually running it needs the real audio bytes**, and these are
+commercial copyrighted recordings we can't legally host or redistribute. Buying a handful of
+tracks for personal testing was the workable path, but that only covers 5 songs, doesn't
+scale, and doesn't get us anything the existing landscape doesn't already provide more
+rigorously. Kept as `benchmark/*.json` + a review artifact as a methodology appendix, not
+scaled into a maintained tier.
+
+**Checked against the project's actual RQs (RESEARCH_PLAN.md), existing infrastructure
+already covers most of this:**
+- **RQ1 (capability map)** — the project's own synthetic battery already handles
+  atomic/structural precision; nothing new needed there.
+- **RQ2 (mechanism — encoder vs. LLM usage)** — already unique to this project (Track
+  A behavior + Track B probing on identical stimuli). No surveyed benchmark, old or new,
+  pairs behavior with representation probing this way, so no existing benchmark closes or
+  opens this gap either way.
+- **RQ3 (failure etiology, esp. contamination)** — the famous-song tiers were built
+  specifically to test this, but **CMI-Bench already ran this experiment**, more
+  rigorously and peer-reviewed: it directly attributes Qwen2-Audio's inflated
+  genre/tagging scores to training-data overlap with MTG-Jamendo/FMA (§2, cross-cutting
+  flags). BASS adds a second, independent contamination-adjacent finding at real scale
+  (1,993 songs): giving a model just artist+title (no audio) *improves* lyric-transcription
+  score over audio-only, direct evidence of text-prior reliance. Citing both is stronger
+  than re-deriving the same phenomenon from 5 purchased tracks.
+
+**Final portfolio for the tool-aided-model generalization claim** (no new benchmark built):
+
+| Role | Benchmark | Covers |
+|---|---|---|
+| Anchor | **CMI-Bench** | Natural-language instruction format (not MCQ), real audio, explicitly named "vocal technique recognition" + "instrument performance technique detection" tasks, theory-precision tasks (key/pitch/melody/beat, not just genre) |
+| Real + unheard | **MUSE Benchmark** | Original, never-before-released recordings (genuinely unheard, not just "less famous"); chord ID, key modulation, syncopation, meter — but **forced-choice format**, not open NL |
+| Real + unheard, on-demand | **MusICA-MetaBench** | Auto-generates theory questions (pitch/interval/rhythm/harmony) from *any* fed-in audio, piece-level context — but **MCQ format**, not open NL |
+| Narrow-task baseline | **PitchBench** | Synthetic, controlled pitch psychophysics — this is exactly the "hyper-specific task a classifier could match" baseline the real-music results need to beat |
+| Technique depth | **VocalSet / GuitarSet** (direct, not via CMI-Bench's sampling) | Real audio, CC-licensed, no gating, if more technique coverage is wanted than CMI-Bench's built-in tasks sample |
+| Supplementary | **BASS** | Real audio at genre-diverse scale (1,993 songs); the text-prior/memorization finding above. Not a theory-task source — its "musicological analysis" category is genre classification only, no harmony/key/chord/technique content despite the name |
+| Out of scope | SongBench, SongEval | Score *generated* music quality/aesthetics, not model comprehension — relevant only if the tool-aided model's output (not its listening) is ever being judged |
+
+**Honest gap that remains:** natural-language format is concentrated almost entirely in
+CMI-Bench; MUSE, MusICA-MetaBench, and PitchBench are all forced-choice/MCQ. Nothing
+surveyed combines real + unheard + theory-precise + open-NL in one place. If that specific
+combination becomes essential to the paper's claim later, the cheapest fix is *not* reviving
+the famous-song plan — it's writing an open-NL question layer on top of MUSE's or
+MusICA-MetaBench's already-licensed, already-ground-truthed audio, since the hard part
+(real, unheard, legally clear audio with verified answers) is already solved by those two.
+
+Also worth being precise about: CMI-Bench's "real" audio is real, publicly-available
+MIR-research tracks — not necessarily mainstream-recognizable the way the famous-song pilot's
+Beatles/Michael Jackson songs were. If the paper's claim is "generalizes to real full-mix
+audio, not synthetic tones," this portfolio fully supports it. If it specifically needs
+"famous enough that a listener would recognize it," that's still not covered by anything
+here — only by the shelved pilot.
+
+---
+
+## 6. Does the model we're fine-tuning already do well on this portfolio? (2026-08-19)
+
+Mentor's framing, relayed 2026-08-19: a multi-benchmark eval is only evidence of anything if
+the model being fine-tuned does *poorly* across the board first — otherwise "we ran our model
+on more benchmarks" isn't a contribution. This section checks that premise directly, task by
+task, against the §5 portfolio, for **Qwen2.5-Omni-7B** (the Track C–Z LoRA base / the model
+actually being fine-tuned).
+
+**MUSE Benchmark — re-derived from the authors' own logs, not a new run.** MUSE's GitHub repo
+(`brandoncarone/MUSE_music_benchmark`) ships full per-question logs for every model it tested,
+including Qwen2.5-Omni-7B (`Gemini_Qwen_AF_logs/`, 120 log files = 10 tasks × 2 prompt modes ×
+2 stimulus groups × 3 seeds, 10 questions/log). Their own paper states this qualitatively
+("at or near chance on advanced tasks"); `experiments/gpu/parse_musebench_qwen.py` parses the
+raw `Evaluation: Correct/Incorrect` lines directly and checks each task's actual chance level
+against its own `expected=` answer field (not assumed from the task description) — output at
+`experiments/results/external_benchmarks/muse_qwen25omni.csv`:
+
+| task | tier | acc | chance | verdict |
+|---|---|---|---|---|
+| chord_quality | advanced | 0.500 | 0.50 (binary maj/min) | **exactly chance** |
+| syncopation | advanced | 0.500 | 0.50 (binary A/B) | **exactly chance** |
+| meter_identification | advanced | 0.342 | ≤0.33 (≥3-way) | **at chance** |
+| chord_progression_matching | advanced | 0.550 | 0.50 (binary) | **at chance** |
+| key_modulation | advanced | 0.550 | 0.50 (binary) | **at chance** |
+| contourID | beginner | 0.208 | 0.25 (4-way) | **at/below chance** |
+| rhythm_matching | beginner | 0.533 | 0.50 (binary) | **at chance** |
+| transposition | beginner | 0.550 | 0.50 (binary) | **at chance** |
+| oddballs | beginner | 0.717 | 0.50 (binary) | above chance — real signal |
+| instrumentID | beginner | 0.983 | n/a (timbre ID) | near ceiling |
+
+**Every one of the 5 advanced (theory/relational) tasks lands within a few points of chance.**
+Only instrument identification (a coarse timbre task, consistent with this project's own
+`instrument_id` near-ceiling result) and oddball detection show real above-chance skill. This
+is not a close call — it's the same shape as this project's own battery (near-floor on
+`mode_id`/`key_id`/`interval_id`, near-ceiling on `instrument_id`/`octave_id`), now confirmed
+on an independent benchmark, independent stimuli, and independent authors.
+
+**A second, qualitative finding worth citing alongside the numbers**: several logs show the
+model emitting near-identical templated reasoning text across genuinely different audio
+files — e.g. `chord_progression_matching`'s COT/GroupA/seed1 log reasons "I–vi–IV–V
+progression in the key of C major" for both excerpts, on every question in the log, regardless
+of which two (different, non-C-major) files were actually presented. This is independent
+third-party evidence of the same mechanism this project's own attention diagnostic already
+quantified (`gpu/attention_audio.py`: audio tokens attended at 0.03–0.31 against a uniform
+baseline of ~0.55–0.67) — the model is pattern-completing a plausible-sounding answer rather
+than reading the audio, not an isolated scoring artifact.
+
+**CMI-Bench, PitchBench, BASS — harnesses built and schema-verified 2026-08-19; GPU runs not
+yet executed (no GPU on the laptop).** Unlike MUSE, none of these three have an existing
+Qwen2.5-Omni log to mine, so each needed a real first-party harness rather than a re-derivation.
+Full detail in `experiments/scripts/RUNBOOK_external_benchmarks.md`; short version:
+- **CMI-Bench** (`gpu/eval_cmibench.py`) — this portfolio's NL-format anchor, covers
+  key/melody/beat/vocal-technique/instrument-technique with published SOTA-gap context already
+  in §2 (Qwen2-Audio trails specialist MIR SOTA by 60+ points on key detection and melody
+  extraction). Real repo cloned and read directly to get the I/O format right — their scorer
+  expects output as a **JSON array**, not JSONL, despite the `.jsonl` filename, a real trap the
+  obvious assumption would have walked into silently.
+- **PitchBench** (`gpu/eval_pitchbench.py`) — the closest published neighbor to this project's
+  own battery (§5), confirmed live on HF (`pitchbench-authors/PitchBench`, 30 configs, CC BY
+  4.0) via the `datasets-server` API directly. Their own paper tested 6 frontier models
+  including Qwen-**3.5**-Omni (not 2.5) and still found "pitch hearing remains highly
+  unreliable" — itself citable corroborating evidence regardless of what our own run of
+  Qwen2.5-Omni shows.
+- **BASS** — schema confirmed real and live, but genuinely **blocked**: each row's audio field
+  is a bare filename with no resolvable path or embedded bytes alongside it, and the only
+  fallback (`youtube_url`) is the same fragile path already deprioritized once for MuChoMusic's
+  MusicCaps subset. Lower priority anyway (§5: supplementary, not anchor).
+Not built: **GuitarSet** (no chat-QA wrapper exists anywhere, would need one built from
+scratch like `real_music_medleydb.py`; VocalSet's already covered — it's one of CMI-Bench's
+own sub-tasks). **MusICA-MetaBench** (no public code repo locatable at all; already
+deprioritized in §5 as framework/MCQ-only).
+
+**Reading for the mentor conversation**: the premise holds, on the evidence gathered so far.
+Qwen2.5-Omni does not do well across this portfolio's theory/relational tasks — it's at chance
+on structural music understanding and only "does well" on the one coarse task (timbre/
+instrument ID) every model in this survey also does well on. That's consistent with, not
+contradicted by, this project's own capability map. It does NOT by itself answer the second
+half of the mentor's worry — that the project's contribution can't just be "a fine-tuned model
+that scores higher on these same benchmarks." A model that closes this gap through more
+training data on these specific task formats would be a capability result, not a music-
+understanding-research contribution; what makes Tracks C–Z's findings a research contribution
+is that they explain *why* the gap exists at the representation level (front-ends that fix
+pitch don't transfer to harmony/rhythm; the encoder itself is frozen under LoRA; wrong-audio
+controls show most gains are readout-level, not perceptual) — see RESEARCH_PLAN.md §12.6 and
+decision 16 in PROJECT_STATE.md. The benchmark-gap evidence in this section is motivation for
+*why the study matters*, not a substitute for that mechanistic contribution.
+
+---
+
+## Sources (arXiv IDs, spot-checked 2026-08-13, plus 4 more spot-checked 2026-08-17)
 
 2408.01337 (MuChoMusic) · 2504.00369 (RU-MuChoMusic) · 2410.19168 (MMAU) · 2508.13992
 (MMAU-Pro) · 2506.12285 (CMI-Bench) · 2306.10548 (MARBLE) · 2402.07729 (AIR-Bench) ·
@@ -304,9 +470,11 @@ Metrics) · 2311.10057 (Song Describer Dataset) · 2502.07461 (JamendoMaxCaps) �
 · 2507.08128 (Audio Flamingo 3) · 2511.10289 (Music Flamingo) · 2503.20215 (Qwen2.5-Omni) ·
 2509.17765 (Qwen3-Omni) · 2604.15804 (Qwen3.5-Omni) · 2407.10759 (Qwen2-Audio) · 1306.1461
 (GTZAN faults, Sturm 2013) · 2008.07142 (POP909) · 2507.16632 (Step-Audio 2 — source of the
-loosely-attributed Gemini MMAU 71.6 figure, verify directly before citing).
+loosely-attributed Gemini MMAU 71.6 figure, verify directly before citing) · 2607.06015
+(MusICA-MetaBench) · 2602.04085 (BASS) · 2604.25937 (SongBench) · 2505.10793 (SongEval).
 
 Compiled from two parallel research passes (dataset/performance survey; training-data
-survey) plus direct arXiv title verification on a spot-check sample of 8 IDs (all matched).
-Numbers not independently re-derived from primary PDFs beyond what's noted above — treat
-this as a literature survey, not a replication.
+survey) plus direct arXiv title verification on a spot-check sample of 8 IDs (all matched,
+2026-08-13) and a second spot-check of 4 more IDs (all matched, 2026-08-17). Numbers not
+independently re-derived from primary PDFs beyond what's noted above — treat this as a
+literature survey, not a replication.
