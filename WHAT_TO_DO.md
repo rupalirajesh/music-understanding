@@ -96,12 +96,17 @@ First inspect the remote repository and do not overwrite user work:
 
 ```bash
 cd /workspace
-git clone <REPOSITORY-URL> music-understanding
+git clone https://github.com/rupalirajesh/music-understanding.git music-understanding
 cd /workspace/music-understanding
+git checkout rupali-solo
 git status
 ```
 
-If the repository is private, use the user's normal authenticated Git method.
+Work exclusively on the `rupali-solo` branch, not `main`. This project has a second
+contributor (Sethu) who pushes directly to `main`; `rupali-solo` is a dedicated
+branch so this work never collides with or depends on his pushes. Push only to
+`rupali-solo` (`git push origin rupali-solo`) — never push to `main`.
+
 Do **not** stage, commit, discard, or reformat unrelated changes.
 
 Install the audio/system dependency and Python environment. Adapt only if the
