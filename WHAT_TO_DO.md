@@ -98,14 +98,14 @@ First inspect the remote repository and do not overwrite user work:
 cd /workspace
 git clone https://github.com/rupalirajesh/music-understanding.git music-understanding
 cd /workspace/music-understanding
-git checkout rupali-solo
+git checkout rupali-music
 git status
 ```
 
-Work exclusively on the `rupali-solo` branch, not `main`. This project has a second
-contributor (Sethu) who pushes directly to `main`; `rupali-solo` is a dedicated
+Work exclusively on the `rupali-music` branch, not `main`. This project has a second
+contributor (Sethu) who pushes directly to `main`; `rupali-music` is a dedicated
 branch so this work never collides with or depends on his pushes. Push only to
-`rupali-solo` (`git push origin rupali-solo`) — never push to `main`.
+`rupali-music` (`git push origin rupali-music`) — never push to `main`.
 
 Do **not** stage, commit, discard, or reformat unrelated changes.
 
