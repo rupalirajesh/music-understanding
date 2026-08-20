@@ -30,10 +30,42 @@ deprioritized in §5 as framework-only/MCQ-only).
 
 ## 1. CMI-Bench
 
+**Re-checked 2026-08-20 (laptop, before the RunPod session): the single `test_Data.zip`
+this section originally described no longer exists on HF.** The dataset was restructured
+into a 550-part split zip archive (`test_data.z01`-`z550` + a terminal `test_data.zip`),
+confirmed directly via the HF API (`siblings` listing), totaling **~57.7 GB**. Real
+implications, not just a filename fix:
+
+- **No partial download.** It's one archive spanning all 21 CMI-Bench tasks — there is no
+  way to fetch audio for only the 7 priority tasks. Extracting anything, even for a 5-item
+  smoke test, requires all 550 parts downloaded first.
+- **Disk headroom**: extracting needs the downloaded parts AND the extracted output on disk
+  at the same time — peak usage can reach ~120-170GB (57.7GB parts + up to 57.7GB rejoined
+  zip if using the `zip -s0` method + ~55-60GB extracted audio). **This will not fit on the
+  100GB persistent volume `WHAT_TO_DO.md`/`TONIGHT_AZURE_PLAN.md` recommend** alongside model
+  weights. Either provision a larger volume (200GB+) specifically before attempting this
+  section, or delete the split parts (and the rejoined zip if using Method 1) immediately
+  after extraction completes, before running anything else.
+- **Time/cost**: 57.7GB of download is real billed pod time on top of the disk decision above
+  — budget for this separately from the cheap PitchBench/Track-Z smoke tests, don't assume it
+  fits in the same short session.
+
+Correct extraction (per the dataset's own README, both methods work — 7z skips the
+recombination step and needs less peak disk):
+
 ```
 git clone https://github.com/nicolaus625/CMI-bench.git <cmi_dir>
-cd <cmi_dir> && wget https://huggingface.co/datasets/nicolaus625/CMI-bench/resolve/main/test_Data.zip
-unzip test_Data.zip -d test
+cd <cmi_dir>
+huggingface-cli download nicolaus625/CMI-bench --repo-type dataset --local-dir .   # pulls all 551 files
+
+# Method 1 (zip):
+zip -s0 test_data.zip --out test_data_full.zip
+unzip test_data_full.zip -d test
+rm test_data.z* test_data_full.zip   # reclaim disk before running anything else
+
+# Method 2 (7z, lower peak disk -- no separate merge step):
+7z x test_data.zip -o./test
+rm test_data.z*
 
 cd <path to this repo>/experiments
 python gpu/eval_cmibench.py --cmi-bench-dir <cmi_dir> --limit 5    # smoke test, eyeball responses first
@@ -46,6 +78,11 @@ cd <cmi_dir>
 # name in the filename, not the model name, so this is safe
 python evaluate.py --model qwen25omni --task all
 ```
+
+**Recommendation given the above**: do not fold this into tonight's smoke-test session.
+Run PitchBench (no download, streams from HF) and the Track Z smoke test first — both are
+fast and cheap. Come back to CMI-Bench as its own session once a suitably large volume is
+provisioned, since the 57.7GB download can't be shrunk to a quick smoke test.
 
 Cross-reference while reading the output: `BENCHMARK_LANDSCAPE.md` §2 already has
 Qwen2-Audio's CMI-Bench numbers (GTZAN 72.07%, GiantSteps key 8.28 vs SOTA 74.3,
