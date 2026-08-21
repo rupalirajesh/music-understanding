@@ -35,7 +35,7 @@ sys.path.insert(0, str(GPU_DIR)); sys.path.insert(0, str(GPU_DIR.parent))
 from train_track_d import load_qwen_omni_for_training, build_lora_config  # noqa: E402
 from train_track_c import assert_lora_applied, _held_out_mask  # noqa: E402
 from musicprobe.config import EXP_ROOT, RESULTS_DIR, MANIFEST_PATH  # noqa: E402
-from musicprobe.image_jobs import IMAGE_JOBS_PATH, DEFAULT_TASKS, build_image_jobs  # noqa: E402
+from musicprobe.image_jobs import IMAGE_JOBS_PATH, DEFAULT_TASKS, build_image_jobs, _save  # noqa: E402
 from musicprobe.f0_contour import f0_contour_path, f0_zoom_path  # noqa: E402
 
 # training-example modality mix (per step): both / image-only / audio-only
@@ -114,8 +114,13 @@ def _split(exp_root):
         # actually ran; deleting that stale file to rebuild with the new label
         # exposed the latent bug. Without this fix, D-zoom would have silently
         # trained against spectrogram images instead of its own f0zoom images.
-        build_image_jobs(tasks=DEFAULT_TASKS + ("pitch_note_id",),
-                         image_path_fn=_PATH_FN[IMAGE_KIND])
+        # ALSO real bug found 2026-08-21: build_image_jobs() only returns a
+        # DataFrame, it never writes to disk -- only the CLI's _save() call
+        # does that. _split() previously discarded the return value entirely,
+        # so IMAGE_JOBS_PATH was never actually created (again never caught
+        # before because the file already existed from a prior committed run).
+        _save(build_image_jobs(tasks=DEFAULT_TASKS + ("pitch_note_id",),
+                               image_path_fn=_PATH_FN[IMAGE_KIND]))
     jobs = pd.read_parquet(IMAGE_JOBS_PATH)
     man = pd.read_parquet(MANIFEST_PATH)[["stimulus_id", "factors"]]
     wf = jobs.merge(man, on="stimulus_id", how="left")
