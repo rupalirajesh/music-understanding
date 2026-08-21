@@ -119,11 +119,22 @@ apt-get install -y fluidsynth
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install torch transformers accelerate peft datasets soundfile librosa
+# Plain `pip install torch` pulls the newest default build (currently cu130),
+# which needs a CUDA-13-capable driver. Check `nvidia-smi`'s "CUDA Version"
+# first -- if it reports 12.x (as most current RunPod A100 images do), torch
+# will install fine but torch.cuda.is_available() will silently return False.
+# Confirmed on a real pod 2026-08-21: driver reported CUDA 12.8, default pip
+# install gave torch 2.13.0+cu130 with cuda.is_available()==False; fixed by
+# installing a cu124 build instead, which is backward-compatible with 12.8.
+python -m pip install transformers accelerate peft datasets soundfile librosa
+python -m pip install torch --index-url https://download.pytorch.org/whl/cu124
 python -m pip install -r requirements.txt
 
 nvidia-smi
 python -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_name(0))"
+# If this prints False, torch installed a build too new for this driver --
+# uninstall (pip uninstall -y torch) and reinstall from an older cu1xx index
+# matching nvidia-smi's reported CUDA Version, not necessarily cu124.
 ```
 
 The source audio files are deliberately ignored by Git. Regenerate them from

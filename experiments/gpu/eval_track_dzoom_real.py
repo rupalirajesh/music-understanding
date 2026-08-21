@@ -12,9 +12,17 @@ doesn't exist, the checkpoint was cleared from this box since the original
 train_track_d_force.py --seed {seed} --image-kind f0zoom) --
 this script does NOT retrain, it only evaluates.
 
-Prereq (laptop, already done + committed): manifests/real_nsynth_dzoom_jobs
-.parquet + the rendered stimuli/f0zoom/real_nsynth/*.png images --
-built via `python -m musicprobe.real_music_nsynth --dzoom-jobs`.
+Prereq -- CORRECTED 2026-08-21, the note below was wrong: only
+manifests/real_nsynth_dzoom_jobs.parquet is actually committed (verified via
+`git ls-files`). The rendered stimuli/f0zoom/real_nsynth/*.png images and the
+underlying real_nsynth/*.wav audio are NOT committed (same gitignore pattern
+that excludes all of stimuli/) -- they must be regenerated on whichever box
+runs this eval, via:
+  python -m musicprobe.real_music_nsynth --n 60 --seed 0        # pulls NSynth
+                                                                 # audio from HF
+  python -m musicprobe.real_music_nsynth --dzoom-jobs --seed 0  # renders images
+before running this script. Both are deterministic/seeded, so re-running them
+on a new box reproduces the same content the manifest was built against.
 
   python gpu/eval_track_dzoom_real.py --seed 0
   python gpu/eval_track_dzoom_real.py --seed 0 --limit 20   # smoke test first
