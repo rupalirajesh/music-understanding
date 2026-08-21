@@ -179,6 +179,22 @@ python gpu/train_track_z_transcribe.py --seed 0
 performance with the matched base-model rows and re-probe the audio encoder. The
 publication-quality result requires three seeds and real-audio transfer.
 
+## Retraining Track D-zoom from scratch (added 2026-08-21)
+
+If the saved checkpoint isn't on this box (true for any fresh pod -- checkpoints
+are gitignored/regenerable, never committed), retraining needs a prerequisite
+step this doc never mentioned: the f0-zoom PNG images for the synthetic battery
+must be rendered first, or `train_track_d_force.py --image-kind f0zoom` crashes
+on a missing-file error (confirmed 2026-08-21 -- the error transformers raises
+is a misleading "Incorrect padding" base64-decode message, not a clear
+file-not-found; check the file actually exists before trusting that message).
+
+```bash
+python scripts/render_f0_contours.py --zoom   # CPU-only, ~472 images, a few minutes
+python gpu/train_track_d_force.py --seed 0 --smoke-test --image-kind f0zoom
+python gpu/train_track_d_force.py --seed 0 --image-kind f0zoom   # full run, after checking the smoke result
+```
+
 ## Optional Run 4 — narrow real-timbre transfer check
 
 Run this only if the saved Track-D-zoom adapter is actually available on the VM.
