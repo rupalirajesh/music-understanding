@@ -88,8 +88,13 @@ def evaluate(seed, model, processor, jobs, exp_root, limit=None, no_lora=False):
     import torch
     model.eval()
     if limit:
-        jobs = jobs.groupby("image_condition", group_keys=False).apply(
-            lambda g: g.head(max(1, limit // jobs.image_condition.nunique())))
+        # NOT groupby(...).apply(lambda g: g.head(n)) -- confirmed 2026-08-21 on
+        # pandas 3.0.5: groupby().apply() now drops the grouping column from what
+        # the lambda receives by default, silently deleting image_condition from
+        # the result. GroupBy.head() is a different code path and doesn't have
+        # this problem.
+        jobs = jobs.groupby("image_condition", group_keys=False).head(
+            max(1, limit // jobs.image_condition.nunique()))
     results = []
     for n, row in enumerate(jobs.itertuples(), 1):
         content = []
