@@ -127,8 +127,14 @@ python -m pip install --upgrade pip
 # install gave torch 2.13.0+cu130 with cuda.is_available()==False; fixed by
 # installing a cu124 build instead, which is backward-compatible with 12.8.
 python -m pip install transformers accelerate peft datasets soundfile librosa
-python -m pip install torch --index-url https://download.pytorch.org/whl/cu124
+python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
 python -m pip install -r requirements.txt
+# Confirmed 2026-08-21: Qwen2.5-Omni's AutoProcessor pulls in a video-processor
+# sub-component that requires torchvision, even for audio-only use -- omitting
+# it fails at import time (before any model download / GPU use) with
+# "ImportError: Qwen2VLVideoProcessor requires the Torchvision library".
+# torchvision must match the same cu1xx index as torch above, not a bare
+# `pip install torchvision`.
 
 nvidia-smi
 python -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_name(0))"
