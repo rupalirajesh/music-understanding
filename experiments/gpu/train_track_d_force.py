@@ -99,7 +99,13 @@ class DropoutDataset:
 
 def _split(exp_root):
     if not IMAGE_JOBS_PATH.exists():
-        build_image_jobs()
+        # Explicit tasks= override (not the bare DEFAULT_TASKS default) -- added
+        # 2026-08-21 to include pitch_note_id, the one task in the battery that
+        # tests genuine absolute-pitch identification and was never covered by
+        # any causal fine-tuning track before now. Passed explicitly rather than
+        # editing DEFAULT_TASKS itself, so this doesn't silently change any
+        # other track that might import that shared constant later.
+        build_image_jobs(tasks=DEFAULT_TASKS + ("pitch_note_id",))
     jobs = pd.read_parquet(IMAGE_JOBS_PATH)
     man = pd.read_parquet(MANIFEST_PATH)[["stimulus_id", "factors"]]
     wf = jobs.merge(man, on="stimulus_id", how="left")

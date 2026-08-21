@@ -209,9 +209,14 @@ def build_manifest(n: int = 60, seed: int = 0, exp_root: Path = EXP_ROOT):
 
 
 IMAGE_CONDITIONS = ("image", "no_image", "wrong_image", "image_wrong_audio")
-DZOOM_TASKS = ("cents_discrimination", "tuning_judgment")  # the only two tasks Track
-                                                           # D-zoom ever targeted --
-                                                           # pitch_note_id gets no image
+DZOOM_TASKS = ("cents_discrimination", "tuning_judgment", "pitch_note_id")  # extended
+                                                           # 2026-08-21: pitch_note_id
+                                                           # added now that render_zoom
+                                                           # labels the absolute pitch --
+                                                           # previously excluded because
+                                                           # the un-labeled chart had no
+                                                           # absolute-identification signal
+                                                           # to offer this task at all.
 
 
 def build_dzoom_image_jobs(manifest_path: Path = MANIFEST_PATH, seed: int = 0,

@@ -48,14 +48,36 @@ def _extract_f0(wav_path: Path):
     return f0, t
 
 
+def _absolute_label(center_hz: float, has_pitch: bool) -> str:
+    """Text label stating the estimated ABSOLUTE pitch -- added 2026-08-21 so
+    the same chart that already carries fine relative/cents information also
+    carries the one thing it previously discarded by auto-centering. Without
+    this, the chart structurally cannot answer any absolute-identification
+    question (e.g. PitchBench's 'what MIDI note is this') since the y-axis is
+    only ever cents-from-its-own-center, with no absolute anchor printed
+    anywhere. This is the ONE addition needed -- same zoom, same recipe,
+    consistent across every pitch task, not a per-task special case."""
+    if not has_pitch:
+        return "center: no clear pitch detected"
+    from musicprobe.theory import NOTE_NAMES
+    midi = librosa.hz_to_midi(center_hz)
+    note_idx = int(round(midi)) % 12
+    octave = int(round(midi)) // 12 - 1  # MIDI 60 -> C4, matches l1_baselines convention
+    return f"center: {center_hz:.1f} Hz ≈ {NOTE_NAMES[note_idx]}{octave} (MIDI {round(midi)})"
+
+
 def render_zoom(wav_path: Path, out_path: Path, task: str) -> None:
-    """Cents-scale pitch chart, auto-centred so fine differences are visible.
-    Centre + reference are set from the pyin-ESTIMATED pitch (not ground truth)."""
+    """Cents-scale pitch chart, auto-centred so fine differences are visible,
+    PLUS a text label stating the absolute pitch the chart is centred on --
+    same recipe for every pitch task: estimate -> zoom on the deviation ->
+    label the absolute value. Centre + reference are set from the
+    pyin-ESTIMATED pitch (not ground truth)."""
     f0, t = _extract_f0(wav_path)
     vf = f0[np.isfinite(f0)]
     span = ZOOM_SPAN.get(task, ZOOM_DEFAULT_SPAN)
     refline = None
-    if len(vf) == 0:
+    has_pitch = len(vf) > 0
+    if not has_pitch:
         # no trackable pitch (e.g. polyphonic note_count) -> still emit a valid,
         # empty chart so downstream image loading never breaks (note_count is the
         # negative control anyway; its image content is irrelevant).
@@ -82,6 +104,7 @@ def render_zoom(wav_path: Path, out_path: Path, task: str) -> None:
     ax.set_xlim(0, t[-1] if len(t) else 1)
     ax.set_ylabel("pitch (cents from reference)")
     ax.set_xlabel("time (s)")
+    ax.set_title(_absolute_label(center, has_pitch), fontsize=10)
     fig.tight_layout()
     fig.savefig(out_path)
     plt.close(fig)
@@ -151,7 +174,8 @@ if __name__ == "__main__":
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--tasks", nargs="*",
-                    default=["octave_id", "tuning_judgment", "cents_discrimination", "note_count"])
+                    default=["octave_id", "tuning_judgment", "cents_discrimination",
+                             "note_count", "pitch_note_id"])
     ap.add_argument("--zoom", action="store_true",
                     help="render the ZOOMED cents-scale image (f0zoom/) instead of f0contours/")
     args = ap.parse_args()
