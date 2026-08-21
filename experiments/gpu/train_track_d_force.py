@@ -119,8 +119,14 @@ def _split(exp_root):
         # does that. _split() previously discarded the return value entirely,
         # so IMAGE_JOBS_PATH was never actually created (again never caught
         # before because the file already existed from a prior committed run).
-        _save(build_image_jobs(tasks=DEFAULT_TASKS + ("pitch_note_id",),
-                               image_path_fn=_PATH_FN[IMAGE_KIND]))
+        # Diagnostic toggle (2026-08-21): the labeled image + pitch_note_id were
+        # added in the same run, confounding whether the label or task-dilution
+        # caused the observed regression. Set DZOOM_TASKS_OVERRIDE=default to
+        # isolate the label alone against the original 4-task list.
+        import os
+        _tasks = DEFAULT_TASKS if os.environ.get("DZOOM_TASKS_OVERRIDE") == "default" \
+            else DEFAULT_TASKS + ("pitch_note_id",)
+        _save(build_image_jobs(tasks=_tasks, image_path_fn=_PATH_FN[IMAGE_KIND]))
     jobs = pd.read_parquet(IMAGE_JOBS_PATH)
     man = pd.read_parquet(MANIFEST_PATH)[["stimulus_id", "factors"]]
     wf = jobs.merge(man, on="stimulus_id", how="left")
