@@ -182,32 +182,37 @@ def load_for_eval(seed):
 
 
 def evaluate(seed, model, processor, held, exp_root):
-    """Eval each held-out job under its image_condition, but with F0-contour
-    images (swap the stored spectrogram path). image_wrong_audio keeps its wrong
-    audio; wrong_image keeps a wrong (F0) image."""
-    import numpy as np
+    """Eval each held-out job under its image_condition, using row.image_path
+    directly -- build_image_jobs() already computes it correctly (for BOTH the
+    "image" and "wrong_image" conditions) via whatever image_path_fn was passed
+    to it, so no remapping is needed.
+
+    REAL BUG FIXED 2026-08-21: this function used to string-replace
+    "stimuli/spectrograms/" out of row.image_path to derive the F0 path -- a
+    leftover from when image_jobs.parquet's image_path was always a spectrogram
+    path (Track D Phase 1's front-end) and needed converting. Since _split() now
+    builds image_jobs with image_path_fn=f0_zoom_path directly, row.image_path
+    is ALREADY the correct f0zoom path -- the string-replace did nothing (the
+    substring no longer existed), producing a garbled, nonexistent path that
+    never matched any real file, silently falling back to a UNIFORM RANDOM
+    image from the entire pool for every single row. Every "image"-condition
+    score in every run tonight after the image_path_fn fix was actually scoring
+    the model against a random, unrelated image, not the correct one -- this is
+    almost certainly the real explanation for the "impossible" result (adding a
+    label making performance worse than chance-random substitution would).
+    Confirmed by re-reading build_image_jobs() directly: it already applies the
+    correct image_path_fn per condition, no remapping needed for either "image"
+    or "wrong_image" rows."""
     import torch
     model.eval()
-    # existing F0 pngs (only the shortlist was rendered) -> wrong_image fallback
-    f0_root = exp_root / "stimuli" / _DIRNAME[IMAGE_KIND]
-    existing = {str(p.relative_to(exp_root)) for p in f0_root.rglob("*.png")}
-
-    def f0_img(image_path, job_id):
-        wav = image_path.replace("stimuli/spectrograms/", "stimuli/").replace(".png", ".wav")
-        cand = _f0_for(wav)
-        if cand in existing:
-            return cand
-        pool = sorted(existing)                       # wrong-image partner not in shortlist
-        return pool[int(np.random.default_rng(abs(hash(job_id)) % (2**32)).integers(len(pool)))]
 
     results = []
     for row in held.itertuples():
         content = []
         if isinstance(row.audio_path, str):
             content.append({"type": "audio", "audio": str(exp_root / row.audio_path)})
-        # remap image to the F0 contour of whatever the stored image referred to
         if isinstance(row.image_path, str):
-            content.append({"type": "image", "image": str(exp_root / f0_img(row.image_path, row.job_id))})
+            content.append({"type": "image", "image": str(exp_root / row.image_path)})
         content.append({"type": "text", "text": row.prompt})
         inp = processor.apply_chat_template([{"role": "user", "content": content}],
                                             add_generation_prompt=True, tokenize=True,
