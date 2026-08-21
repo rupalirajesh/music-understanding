@@ -93,8 +93,14 @@ def evaluate(seed, model, processor, jobs, exp_root, limit=None, no_lora=False):
         # the lambda receives by default, silently deleting image_condition from
         # the result. GroupBy.head() is a different code path and doesn't have
         # this problem.
-        jobs = jobs.groupby("image_condition", group_keys=False).head(
-            max(1, limit // jobs.image_condition.nunique()))
+        # ALSO confirmed 2026-08-21: grouping by image_condition alone isn't
+        # enough -- within this jobs table, cents_discrimination rows come
+        # before tuning_judgment rows in every condition group, so head(n)
+        # silently only ever sampled cents_discrimination, never reaching
+        # tuning_judgment at all. Stratify by (task, image_condition) together.
+        n_groups = jobs.task.nunique() * jobs.image_condition.nunique()
+        jobs = jobs.groupby(["task", "image_condition"], group_keys=False).head(
+            max(1, limit // n_groups))
     results = []
     for n, row in enumerate(jobs.itertuples(), 1):
         content = []
