@@ -119,8 +119,10 @@ def parse_midi(response: str):
 
 def run(model_name: str, out_dir: Path, configs: list[str], limit: int | None,
         lora_checkpoint: str | None = None, model_tag: str = MODEL_TAG):
-    from datasets import load_dataset
+    import io
+    from datasets import load_dataset, Audio
     import librosa
+    import soundfile as sf
 
     processor, model = load_model(model_name, lora_checkpoint)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -131,6 +133,12 @@ def run(model_name: str, out_dir: Path, configs: list[str], limit: int | None,
             print(f"skip (exists): {out_path.name}")
             continue
         ds = load_dataset(HF_DATASET, config, split="test")
+        # decode=False avoids HF datasets' default torchcodec-based audio decode --
+        # confirmed 2026-08-21 the pod's torchcodec build (cu124 index tops out at
+        # 0.2.1) doesn't have AudioDecoder yet (added in a later release with no
+        # matching cu124 wheel). Same pattern already used in
+        # musicprobe/real_music_nsynth.py for exactly this reason.
+        ds = ds.cast_column("audio", Audio(decode=False))
         if limit:
             ds = ds.select(range(min(limit, len(ds))))
         print(f"{config}: {len(ds)} rows, fields={ds.column_names}")
@@ -139,9 +147,15 @@ def run(model_name: str, out_dir: Path, configs: list[str], limit: int | None,
         for row in ds:
             prompt = row["prompt_midi"]  # see module docstring: fails loudly (KeyError) if a config's schema differs
             gt = row["gt_midi"]
-            audio = row["audio"]  # HF Audio feature: {'array': np.ndarray, 'sampling_rate': int}
-            wav = librosa.resample(audio["array"], orig_sr=audio["sampling_rate"], target_sr=16000) \
-                if audio["sampling_rate"] != 16000 else audio["array"]
+            audio_raw = row["audio"]  # {'bytes': ..., 'path': ...} with decode=False
+            if audio_raw.get("bytes") is not None:
+                arr, sr = sf.read(io.BytesIO(audio_raw["bytes"]))
+            else:
+                arr, sr = sf.read(audio_raw["path"])
+            if arr.ndim > 1:
+                arr = arr.mean(axis=1)
+            wav = librosa.resample(arr, orig_sr=sr, target_sr=16000) \
+                if sr != 16000 else arr
             response = generate(processor, model, prompt, wav)
             pred = parse_midi(response)
             results.append({
