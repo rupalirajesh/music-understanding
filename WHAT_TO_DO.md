@@ -67,6 +67,13 @@ RunPod's `/workspace` volume survives a stopped Pod; the ordinary container
 disk does not. Stop (do not terminate) when pausing. Terminate only after
 copying anything important from the volume.
 
+**Confirmed 2026-08-21, hit for real after a volume resize (which restarts the
+pod):** the Python venv under `/workspace` survives a restart, but anything
+installed via `apt-get` (e.g. `fluidsynth`) does not -- it lives on the
+ephemeral container disk, not the volume. After any pod stop/restart,
+re-run `apt-get install -y fluidsynth` before trying to generate audio again;
+don't assume the first session's setup carried over.
+
 ## Connect VS Code to the Pod
 
 1. Before deploying the Pod, add the local machine's public SSH key to the RunPod account.
