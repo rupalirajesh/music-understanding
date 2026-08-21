@@ -105,7 +105,17 @@ def _split(exp_root):
         # any causal fine-tuning track before now. Passed explicitly rather than
         # editing DEFAULT_TASKS itself, so this doesn't silently change any
         # other track that might import that shared constant later.
-        build_image_jobs(tasks=DEFAULT_TASKS + ("pitch_note_id",))
+        #
+        # ALSO must pass image_path_fn=_PATH_FN[IMAGE_KIND] explicitly -- real bug
+        # found 2026-08-21: build_image_jobs() defaults to image_path_fn=
+        # spectrogram_path (Track D Phase 1's front-end), NOT f0_zoom_path. This
+        # was never triggered before because image_jobs.parquet already existed
+        # (committed from a prior session, built correctly) so this branch never
+        # actually ran; deleting that stale file to rebuild with the new label
+        # exposed the latent bug. Without this fix, D-zoom would have silently
+        # trained against spectrogram images instead of its own f0zoom images.
+        build_image_jobs(tasks=DEFAULT_TASKS + ("pitch_note_id",),
+                         image_path_fn=_PATH_FN[IMAGE_KIND])
     jobs = pd.read_parquet(IMAGE_JOBS_PATH)
     man = pd.read_parquet(MANIFEST_PATH)[["stimulus_id", "factors"]]
     wf = jobs.merge(man, on="stimulus_id", how="left")
