@@ -51,10 +51,46 @@ torch 2.6.0+cu124. Model: Qwen2.5-Omni-7B, base (no fine-tuning) unless noted.
   This independently reproduces the original 2026-07-29 result (cents
   0.55→0.94, tuning 0.53→0.89) from a completely fresh training run on this
   new pod — a real, credible confirmation, not a fluke.
-- **Not yet done**: the real-NSynth generalization test (does this fix
-  survive real instrument timbre, not just synthetic tones) — harness is
-  built (`eval_track_dzoom_real.py`), checkpoint now exists, just hasn't been
-  run yet.
+
+- **Real-NSynth generalization test — DONE, full 1,440-job battery both
+  halves (baseline + fine-tuned), n=180/cell**. Two real bugs found and
+  fixed en route: a pandas-3.0.5 `groupby().apply()` version change that
+  silently dropped the `image_condition` column, and a sampling bug where
+  `--limit` never actually reached `tuning_judgment` (task ordering issue).
+  Both fixed and pushed.
+
+  | Task | Condition | Baseline | Fine-tuned |
+  |---|---|---|---|
+  | cents_discrimination | image (correct) | 0.583 | 0.661 |
+  | | image_wrong_audio | 0.556 | 0.667 |
+  | | no_image | 0.350 | 0.356 |
+  | | wrong_image | 0.317 | 0.367 |
+  | tuning_judgment | image (correct) | 0.611 | 0.661 |
+  | | image_wrong_audio | 0.628 | 0.656 |
+  | | no_image | 0.467 | 0.478 |
+  | | wrong_image | 0.478 | 0.417 |
+
+  Applying the 4-part success bar from `GROUNDING_PILOT_PLAN.md`:
+  1. **Real improvement, holding image condition fixed** ✓ — fine-tuning
+     raises accuracy in the `image` condition (cents 0.583→0.661, tuning
+     0.611→0.661) while `no_image` barely moves (+0.006, +0.011) — the
+     fine-tuning specifically improved image-use, not general audio ability.
+     Modest compared to the synthetic battery's 0.55→0.94 jump, but real.
+  2. **Degrades with wrong image** ✓ — `wrong_image` scores clearly below
+     correct `image` in both tasks.
+  3. **Degrades with wrong audio** ✗ — **fails**. `image_wrong_audio` (correct
+     image, swapped-in wrong audio) scores *as well as* the fully-correct
+     condition (0.667 vs 0.661; 0.656 vs 0.661). A genuinely audio-grounded
+     model should get worse with wrong audio; it doesn't, as long as the
+     image is right.
+
+  **Honest verdict**: this is the "substitution, not complement" pattern the
+  project's own code comments already worried about, now confirmed on real
+  instrument timbre specifically (not tested before tonight). The fix
+  transfers a real, modest benefit — but the mechanism looks like reading the
+  image and disregarding conflicting audio, not genuine multi-modal
+  integration. A real, citable, narrower result — not "the fix works on real
+  music" as originally hoped.
 
 ## Real-recordings key-ID eval (genuine real music — full performances, not isolated notes)
 
@@ -94,6 +130,8 @@ reviewed and revised; ready to move into building.
 
 ## Cost
 
-Pod up ~8h45m tonight (rough estimate from the pod's own clock, not an
+Pod up ~8h45m+ tonight (rough estimate from the pod's own clock, not an
 authoritative billing pull — check the RunPod dashboard for the real number).
-Actual GPU-active time across all runs above: well under 30 minutes total.
+Actual GPU-active time across all runs above: roughly 45-50 minutes total
+(D-zoom training 7.2 min + real-NSynth baseline+fine-tuned full batteries
+~18 min + everything else well under a few minutes each).
