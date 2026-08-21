@@ -103,8 +103,11 @@ def prepare_qwen_omni(model_name: str):
     processor = AutoProcessor.from_pretrained(model_name)
     model = Cls.from_pretrained(model_name, torch_dtype="auto", device_map="auto",
                                 attn_implementation="eager").eval()
-    if hasattr(model, "disable_talker"):
-        model.disable_talker()
+    # NOT calling disable_talker() -- confirmed 2026-08-21: on the installed
+    # transformers version, disable_talker() deletes self.talker, but
+    # generate()'s talker_kwargs dict unconditionally reads
+    # self.talker.codec_pad_token regardless of return_audio, crashing any
+    # later generate() call. Costs ~10GB extra; fits an 80GB A100 fine.
     target_sr = 16000
     # Qwen-Omni nests it in thinker_config, and the field name differs by version:
     # 2.5-Omni -> thinker_config.audio_token_index; 3-Omni -> thinker_config.audio_token_id

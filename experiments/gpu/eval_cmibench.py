@@ -81,8 +81,11 @@ def load_model(model_name: str, lora_checkpoint: str | None = None):
     processor = AutoProcessor.from_pretrained(model_name)
     model = Qwen2_5OmniForConditionalGeneration.from_pretrained(
         model_name, torch_dtype="auto", device_map="auto").eval()
-    if hasattr(model, "disable_talker"):
-        model.disable_talker()  # text out only, saves ~10GB -- same as run_local.py
+    # NOT calling disable_talker() -- confirmed 2026-08-21: on the installed
+    # transformers version, disable_talker() deletes self.talker, but
+    # generate()'s talker_kwargs dict unconditionally reads
+    # self.talker.codec_pad_token regardless of return_audio, crashing any
+    # later generate() call. Costs ~10GB extra; fits an 80GB A100 fine.
     if lora_checkpoint:
         # same wrapping pattern as image_track_common.load_for_eval /
         # attention_audio.py's --lora-checkpoint: the LoRA adapter only ever

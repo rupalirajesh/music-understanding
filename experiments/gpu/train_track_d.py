@@ -78,8 +78,14 @@ def load_qwen_omni_for_training():
     processor = AutoProcessor.from_pretrained(MODEL_NAME)
     model = Qwen2_5OmniForConditionalGeneration.from_pretrained(
         MODEL_NAME, torch_dtype="auto", device_map="cuda")
-    if hasattr(model, "disable_talker"):
-        model.disable_talker()  # text out only, saves ~10GB — same as run_local.py
+    # NOT calling disable_talker() -- confirmed 2026-08-21 on the installed
+    # transformers version (5.15.1): disable_talker() does `del self.talker`,
+    # but generate()'s talker_kwargs dict unconditionally reads
+    # self.talker.codec_pad_token regardless of return_audio, so any later
+    # generate() call crashes with AttributeError even with return_audio=False.
+    # Costs ~10GB extra vs the old pattern; fits comfortably on an 80GB A100.
+    # This affects every track that imports load_qwen_omni_for_training (Track
+    # Z, Track D/D-force/D-zoom) -- fixed once here for all of them.
     assert hasattr(model, "thinker"), "expected model.thinker on Qwen2.5-Omni"
     # path is relative to thinker (LoRA wraps thinker, not the full model)
     lm_path, _ = _find_submodule(model.thinker, LM_PATH_REL_CANDIDATES,

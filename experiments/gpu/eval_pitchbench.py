@@ -82,8 +82,13 @@ def load_model(model_name: str, lora_checkpoint: str | None = None):
     processor = AutoProcessor.from_pretrained(model_name)
     model = Qwen2_5OmniForConditionalGeneration.from_pretrained(
         model_name, torch_dtype="auto", device_map="auto").eval()
-    if hasattr(model, "disable_talker"):
-        model.disable_talker()
+    # NOT calling disable_talker() -- confirmed 2026-08-21 on the installed
+    # transformers version (5.15.1): disable_talker() does `del self.talker`,
+    # but generate()'s internal talker_kwargs dict unconditionally reads
+    # self.talker.codec_pad_token regardless of return_audio, so calling
+    # generate() after disable_talker() always crashes with AttributeError,
+    # even with return_audio=False. Costs ~10GB extra vs the old pattern;
+    # fits comfortably on an 80GB A100.
     if lora_checkpoint:
         # same .thinker-only wrapping as eval_cmibench.py / image_track_common.py
         from peft import PeftModel
